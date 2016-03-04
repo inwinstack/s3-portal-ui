@@ -1,0 +1,46 @@
+<md-content layout-padding>
+
+  <h2 class="md-display-1">Sign Up</h2>
+
+  <form name="signup.form">
+
+    <md-input-container class="md-block">
+      <label>Email</label>
+      <input type="email" email name="email" ng-model="signup.credentials.username">
+      <div ng-messages="signup.form.email.$error">
+        <div ng-message="email">This is required and must is email address.</div>
+      </div>
+    </md-input-container>
+
+    <md-input-container class="md-block">
+      <label>Password</label>
+      <input type="password" required minlength="6" name="password" ng-model="signup.credentials.password">
+      <div ng-messages="signup.form.password.$error">
+        <div ng-message-exp="['required', 'minlength']">This is required and more than 6 characters.</div>
+      </div>
+    </md-input-container>
+
+    <md-input-container class="md-block">
+      <label>Password Confirmation</label>
+      <input
+        type="password" name="passwordConfirmation" ng-model="signup.credentials.passwordConfirmation"
+        required match="signup.credentials.password"
+      >
+      <div ng-messages="signup.form.passwordConfirmation.$error">
+        <div ng-message-exp="['required', 'match']">This is required and must match the previous entry.</div>
+      </div>
+    </md-input-container>
+
+    <md-input-container class="md-block">
+      <md-button
+        type="submit"
+        class="md-raised"
+        ng-disabled="signup.form.$invalid || signup.form.$submitted"
+        ng-click="signup.submit()"
+      >Submit</md-button>
+    </md-input-container>
+
+    <md-button class="md-raised" ui-sref="auth.signin">Sign In</md-button>
+
+  </form>
+</md-content>
