@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const PORT = process.env.PORT || 3000;
 
 module.exports = {
   devtool: 'eval',
@@ -23,8 +24,8 @@ module.exports = {
     }),
     new BrowserSyncPlugin({
       host: 'localhost',
-      port: 3001,
-      proxy: 'http://localhost:3000/',
+      port: (+PORT + 1),
+      proxy: `http://localhost:${PORT}/`,
     }),
   ],
   resolve: {

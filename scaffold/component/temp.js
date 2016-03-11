@@ -1,5 +1,5 @@
-import angular from 'angular';
-import uiRouter from 'angular-ui-router';
+import { module } from 'angular';
+import router from 'angular-ui-router';
 import <%= upCaseName %>Controller from './<%= name %>.controller';<% if (route) { %>
 import <%= upCaseName %>Template from './<%= name %>.html';
 <% } %>
@@ -12,20 +12,14 @@ const route = $stateProvider => {
     parent: 'root',
     template: <%= upCaseName %>Template,
     controller: '<%= upCaseName %>Controller',
-    controllerAs: '<%= name %>'
+    controllerAs: '<%= name %>',
   });
 };
-<% } if (route) { %>
-export default angular
-  .module('<%= name %>', [
-    uiRouter,
-  ])
-  .controller('<%= upCaseName %>Controller', <%= upCaseName %>Controller)
-  .config(route);
-<% } else { %>
-export default angular
-  .module('<%= name %>', [
-    uiRouter,
-  ])
-  .controller('<%= upCaseName %>Controller', <%= upCaseName %>Controller);
 <% } %>
+const <%= upCaseName %> = module('<%= name %>', [
+  router,
+])
+.controller('<%= upCaseName %>Controller', <%= upCaseName %>Controller)<% if (route) { %>
+.config(route);
+<% } %>
+export default <%= upCaseName %>.name;

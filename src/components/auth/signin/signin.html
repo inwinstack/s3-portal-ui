@@ -1,0 +1,35 @@
+<md-content layout-padding>
+
+  <h2 class="md-display-1">Sign In</h2>
+
+  <form name="signin.form">
+
+    <md-input-container class="md-block">
+      <label>Email</label>
+      <input type="email" email name="email" ng-model="signin.credentials.username">
+      <div ng-messages="signin.form.email.$error">
+        <div ng-message="email">This is required and must is email address.</div>
+      </div>
+    </md-input-container>
+
+    <md-input-container class="md-block">
+      <label>Password</label>
+      <input type="password" required name="password" ng-model="signin.credentials.password">
+      <div ng-messages="signin.form.password.$error">
+        <div ng-message="required">This is required.</div>
+      </div>
+    </md-input-container>
+
+    <md-input-container class="md-block">
+      <md-button
+        type="submit"
+        class="md-raised"
+        ng-disabled="signin.form.$invalid || signin.form.$submitted"
+        ng-click="signin.submit()"
+      >Submit</md-button>
+    </md-input-container>
+
+    <md-button class="md-raised" ui-sref="auth.signup">Sign Up</md-button>
+
+  </form>
+</md-content>

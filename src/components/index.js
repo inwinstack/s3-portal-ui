@@ -1,7 +1,12 @@
-import angular from 'angular';
-import notFound from './notFound/notFound';
+import { module } from 'angular';
+import NotFound from './notFound/notFound';
+import Auth from './auth/auth';
+import Dashboard from './dashboard/dashboard';
 
-export default angular
-  .module('app.components', [
-    notFound.name,
-  ]);
+const Components = module('app.components', [
+  NotFound,
+  Auth,
+  Dashboard,
+]);
+
+export default Components.name;
