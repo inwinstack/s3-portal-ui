@@ -1,7 +1,10 @@
-import angular from 'angular';
+import { module } from 'angular';
 import Toast from './toast/toast';
+import Fetch from './fetch/fetch';
 
-export default angular
-  .module('app.utils', [
-    Toast.name,
-  ]);
+const Utils = module('app.utils', [
+  Toast,
+  Fetch,
+]);
+
+export default Utils.name;

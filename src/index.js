@@ -1,19 +1,16 @@
-import angular from 'angular';
-import uiRouter from 'angular-ui-router';
-import ngMaterial from 'angular-material';
-import translate from 'angular-translate';
+import { module } from 'angular';
 
 import './index.css';
-import Components from './components/';
-import Utils from './utils';
+import Vendor from './vendor';
 import Config from './config';
+import Utils from './utils';
+import Validators from './validators';
+import Components from './components/';
 
-angular.module('app', [
-  uiRouter,
-  ngMaterial,
-  translate,
-
-  Config.name,
-  Components.name,
-  Utils.name,
+module('app', [
+  Vendor,
+  Config,
+  Utils,
+  Validators,
+  Components,
 ]);
