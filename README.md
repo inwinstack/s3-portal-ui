@@ -18,23 +18,28 @@
 ### Usage
 
 Install dependencies:
+
 ```sh
 $ npm install
 ```
 
 Open another terminal and running below command:
+
 ```sh
 $ npm start
 ```
 
-`http://localhost:3001` will automatic open in your browser with browser-sync.
+`http://localhost:3001` will automatically open with browser-sync.
 
 ### Build
 
 Build the bundle js:
+
 ```sh
 $ npm run build
 ```
+
+The static file will build on `./dist`.
 
 ### Test
 

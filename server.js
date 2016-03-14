@@ -28,5 +28,9 @@ app.listen(port, '0.0.0.0', (err) => {
     return;
   }
 
-  console.log(`Listening at http://0.0.0.0:${port}`);
+  console.log(`The dev server are listening at http://0.0.0.0:${port}
+Please wait for the first time of bundle that will
+take a while. The browser will automatically open
+with browser-sync when bundle completed.
+(browser-sync will listening at http://0.0.0.0:${port + 1})`);
 });
