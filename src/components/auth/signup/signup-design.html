@@ -1,7 +1,7 @@
 
 <div ng-controller="@A.2">
     <div class="panel-signup" layout="column" layout-paddings>
-        <md-content class="radius-10px md-whiteframe-1dp">
+        <md-content class="radius-large md-whiteframe-1dp">
             <div class="panel-title text-center">
                 <h1 class="no-margin">S3 Portal</h1>
             </div>
@@ -10,7 +10,7 @@
                 <md-subheader class="text-center">Create an account</md-subheader>
                 <form name="signupForm">
                     <md-input-container md-no-float class="md-icon-left md-block">
-                        <md-icon class="material-icons icon-gray" ng-class="{'md-warn:@A.29'}">email</md-icon>
+                        <md-icon class="material-icons icon-default" ng-class="{'md-warn:@A.29'}">email</md-icon>
                         <md-icon class="material-icons icon-success" ng-if="@A.3">done</md-icon>
                         <md-progress-circular class="md-accent" md-mode="indeterminate" md-diameter="24" ng-show="@A.4"></md-progress-circular>
                         
@@ -24,7 +24,7 @@
                     </md-input-container>
                     
                     <md-input-container md-no-float class="md-icon-left md-block">
-                        <md-icon class="material-icons icon-gray">lock</md-icon>
+                        <md-icon class="material-icons icon-default">lock</md-icon>
                         
                         <input name="password" ng-model="@A.13" type="password" placeholder="Password" ng-required="@A.14" ng-readonly="@A.15" >
                         
@@ -34,7 +34,7 @@
                     </md-input-container>
                     
                     <md-input-container md-no-float class="md-icon-left md-block">
-                        <md-icon class="material-icons icon-gray">lock</md-icon>
+                        <md-icon class="material-icons icon-default">lock</md-icon>
                         
                         <input name="password_confirm" ng-model="@A.18" type="password" placeholder="Retype Password" ng-required="@A.19" ng-equals="@A.20" ng-readonly="@A.21" >
                         
@@ -51,7 +51,7 @@
                 
                 <div class="panel-footer text-center md-caption">
                     <span>Already have an account? </span>
-                    <a href="" ng-href="@A.28">Login in</a>
+                    <a href="" ng-href="@A.28">Log in</a>
                 </div>
             </div>
         </md-content>
