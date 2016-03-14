@@ -11,7 +11,6 @@ const route = $stateProvider => {
     url: '/auth',
     abstract: true,
     template: AuthTemplate,
-    controllerAs: 'auth',
   });
 };
 

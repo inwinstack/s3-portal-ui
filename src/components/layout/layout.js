@@ -10,7 +10,6 @@ const route = $stateProvider => {
     url: '/layout',
     parent: 'root',
     template: LayoutTemplate,
-    controllerAs: 'layout',
   });
 };
 
