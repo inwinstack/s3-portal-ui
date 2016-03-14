@@ -4,15 +4,15 @@
  */
  
 /* border radius ----------------------------------------- */
-.radius-4px {
+.radius-small {
     border-radius: 4px;
 }
 
-.radius-6px {
+.radius-medium {
     border-radius: 6px;
 }
 
-.radius-10px {
+.radius-large {
     border-radius: 10px;
 }
 
@@ -59,7 +59,7 @@ button md-progress-circular {
 }
 
 /* icon ---------------------------------------------------*/
-.icon-gray {
+.icon-default {
     color: #616161;
 }
 
