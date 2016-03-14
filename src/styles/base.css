@@ -1,0 +1,34 @@
+
+/**
+ * @author Jamie jamie.h@inwinstack.com
+ */
+ 
+/* margin ----------------------------------------------- */
+.no-margin {
+    margin: 0;
+}
+
+.no-margin-b{
+    margin-bottom: 0;
+}
+
+.no-margin-l{
+    margin-left: 0;
+}
+
+.no-margin-r{
+    margin-right: 0;
+}
+
+.no-margin-t{
+    margin-top: 0;
+}
+
+/* text ------------------------------------------------- */
+.text-center {
+    text-align: center;
+}
+
+.md-warn {
+    color: #FF6D00;
+}
