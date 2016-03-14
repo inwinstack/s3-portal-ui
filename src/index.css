@@ -1,3 +1,5 @@
 @import 'angular-material/angular-material.css';
 @import 'font-awesome/css/font-awesome.css';
 @import 'material-design-icons/iconfont/material-icons.css';
+@import './styles/base.css';
+@import './styles/s3.css';
