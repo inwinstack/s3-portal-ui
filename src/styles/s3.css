@@ -1,0 +1,101 @@
+
+/**
+ * @author Jamie jamie.h@inwinstack.com
+ */
+
+/* panel ------------------------------------------------- */
+.panel-signup,
+.panel-login {
+    border-radius: 4px;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: 200px;
+    width: 360px;
+}
+
+.panel-title {
+    background: #616161;
+    color: #fff;
+    height: 50px;
+    padding-top: 12px;
+}
+
+.panel-body {
+    padding: 0 8px 8px 8px;;
+}
+
+.panel-footer {
+    margin: 20px;
+}
+
+/* button ------------------------------------------------ */
+.btn-block {
+    display: block;
+    margin: 6px 0;
+    width: 100%;
+}
+
+button md-progress-circular {
+    position: absolute;
+    top: 3px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+}
+
+/* icon ---------------------------------------------------*/
+.icon-default {
+    color: #616161;
+}
+
+.icon-success {
+    color: #00BCD4;
+}
+
+.icon-warn {
+    color: #FF6D00;
+}
+
+/* text ------------------------------------------------- */
+.text-warn {
+    color: #FF6D00;
+}
+
+.text-success {
+    color: #00BCD4;
+}
+
+/* input container -------------------------------------- */
+md-input-container.md-input-invalid md-icon {
+    color: #FF9800;
+}
+
+md-input-container md-progress-circular {
+    position: absolute;
+    top: 5px;
+    left: 2px;
+    right: auto;
+}
+
+
+/* breadcrumb ------------------------------------------- */
+.breadcrumb {
+  color: #16b;
+  list-style:none;
+  margin: 0;
+  padding: 0 8px;
+}
+
+.breadcrumb > li {
+  display: inline-block;
+  font-weight: bold;
+}
+
+.breadcrumb>li+li:before {
+  color: gray;
+  content: "/\00a0";
+  padding: 0 5px;
+}
+
