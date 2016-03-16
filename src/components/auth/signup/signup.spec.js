@@ -1,17 +1,17 @@
-/* eslint-env mocha */
-/* eslint no-unused-vars:0 */
-/* global inject, chai, sinon */
+import signUpModule from './signup';
+import signUpCtrl from './signup.controller';
 
-import SignupModule from './signup';
-import SignupController from './signup.controller';
-import SignupTemplate from './signup.html';
-
-describe('Signup', () => {
+describe('SignUp', function() {
   let $rootScope;
-  let makeDeferred;
   let makeController;
+  let makeDeferred;
+  
+  const $auth = {};
+  const $state = {};
+  const $toast = {};
+  const form = {};
 
-  beforeEach(window.module(SignupModule.name));
+  beforeEach(window.module('signup'));
 
   beforeEach(inject(($q, _$rootScope_) => {
     $rootScope = _$rootScope_;
@@ -21,27 +21,47 @@ describe('Signup', () => {
     };
 
     makeController = () => {
-      return new SignupController();
+      return new signUpCtrl($auth, $state, $toast);
     };
   }));
 
-  describe('Module', () => {
-    // top-level specs: i.e., routes, injection, naming
-  });
+  it('signup success unit test', function() {
+    $auth.signup = () => {};
+    const AuthMock = sinon.mock($auth);
+    const authDeferred = makeDeferred();
+    AuthMock.expects('signup').once().returns(authDeferred.promise);
+    authDeferred.resolve();
 
-  describe('Controller', () => {
-    // controller specs
-    it('has a name property [REMOVE]', () => { // erase if removing this.name from the controller
-      const controller = makeController();
-      expect(controller).to.have.property('name');
-    });
-  });
+    $state.go = sinon.spy();
+    $toast.show = sinon.spy();
 
-  describe('Template', () => {
-    // template specs
-    // tip: use regex to ensure correct bindings are used e.g., {{  }}
-    it('has name in template [REMOVE]', () => {
-      expect(SignupTemplate).to.match(/{{\s?vm\.name\s?}}/g);
-    });
-  });
-});
+    const controller = makeController();
+    controller.submit();
+    $rootScope.$digest();
+
+    AuthMock.verify();
+    chai.expect($state.go.called).to.eq(true);
+    chai.expect($toast.show.called).to.eq(true);
+  })
+  it('signup fail unit test', function() {
+    $auth.signup = () => {};
+    const AuthMock = sinon.mock($auth);
+    const authDeferred = makeDeferred();
+    AuthMock.expects('signup').once().returns(authDeferred.promise);
+    authDeferred.reject();
+
+    $state.go = sinon.spy();
+    $toast.show = sinon.spy();
+
+    const controller = makeController();
+    controller.form = { '$submitted': true };
+
+    controller.submit();
+    $rootScope.$digest();
+
+    AuthMock.verify();
+    chai.expect(controller.form.$submitted).to.eq(false);
+    chai.expect($state.go.called).to.eq(false);
+    chai.expect($toast.show.called).to.eq(false);
+  })
+})
