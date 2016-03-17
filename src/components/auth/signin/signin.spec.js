@@ -1,11 +1,11 @@
-import signUpModule from './signin';
-import signUpCtrl from './signin.controller';
+import signInModule from './signin';
+import signInCtrl from './signin.controller';
 
 describe('SignIn', function() {
   let $rootScope;
   let makeController;
   let makeDeferred;
-  
+
   const $auth = {};
   const $state = {};
   const $toast = {};
@@ -13,7 +13,7 @@ describe('SignIn', function() {
 
   beforeEach(window.module('auth.signin'));
 
-  beforeEach(inject(($q, _$rootScope_) => {
+  beforeEach(inject(($q, _$rootScope_,$compile) => {
     $rootScope = _$rootScope_;
 
     makeDeferred = () => {
@@ -21,10 +21,9 @@ describe('SignIn', function() {
     };
 
     makeController = () => {
-      return new signUpCtrl($auth, $state, $toast);
+      return new signInCtrl($auth, $state, $toast);
     };
   }));
-
   it('signin success unit test', function() {
     $auth.login = () => {};
     const AuthMock = sinon.mock($auth);
@@ -32,10 +31,11 @@ describe('SignIn', function() {
     AuthMock.expects('login').once().returns(authDeferred.promise);
     authDeferred.resolve();
 
+    const controller = makeController();
+
     $state.go = sinon.spy();
     $toast.show = sinon.spy();
-
-    const controller = makeController();
+    
     controller.submit();
     $rootScope.$digest();
 
@@ -50,10 +50,10 @@ describe('SignIn', function() {
     AuthMock.expects('login').once().returns(authDeferred.promise);
     authDeferred.reject();
 
+    const controller = makeController();
+
     $state.go = sinon.spy();
     $toast.show = sinon.spy();
-
-    const controller = makeController();
     controller.form = { '$submitted' : true };
 
     controller.submit();
