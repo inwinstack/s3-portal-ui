@@ -1,5 +1,6 @@
 import { module } from 'angular';
 import router from 'angular-ui-router';
+import AuthService from './auth.service';
 import AuthTemplate from './auth.html';
 
 import SignUp from './signup/signup';
@@ -20,6 +21,7 @@ const Auth = module('auth', [
   SignUp,
   SignIn,
 ])
+.service('AuthService', AuthService)
 .config(route);
 
 export default Auth.name;

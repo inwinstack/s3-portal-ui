@@ -1,13 +1,37 @@
 export default class SignUpController {
   /** @ngInject */
-  constructor($auth, $state, $toast) {
+  constructor($auth, $state, $toast, AuthService) {
     Object.assign(this, {
-      $auth, $state, $toast,
+      $auth, $state, $toast, AuthService, credentials: {},
     });
   }
 
   /**
+   * Check whether the email is used if user email is valid.
+   *
+   * @return void
+   */
+  checkEmail() {
+    if (this.form.email.$valid) {
+      const { email } = this.credentials;
+      this.isCheckEmail = true;
+
+      this.AuthService.checkEmail(email)
+        .then(() => {
+          this.emailIsValid = true;
+          this.emailIsInvalid = false;
+        })
+        .catch(() => {
+          this.emailIsValid = false;
+          this.emailIsInvalid = true;
+        })
+        .finally(() => (this.isCheckEmail = false));
+    }
+  }
+
+  /**
    * Register a new user.
+   *
    * @return void
    */
   submit() {

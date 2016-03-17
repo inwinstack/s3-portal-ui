@@ -84,6 +84,7 @@
     "karma-webpack": "^1.5.1",
     "mocha": "^2.3.0",
     "ng-annotate-loader": "0.1.0",
+    "ng-cache-loader": "0.0.15",
     "node-libs-browser": "^1.0.0",
     "null-loader": "^0.1.1",
     "path": "^0.12.7",
