@@ -13,8 +13,6 @@
                     
                     <input name="@A.3" ng-model="@A.4" type="email" placeholder="Email" required ng-email="@A.5" ng-readonly="@A.6" >
                     
-                    <span class="md-caption text-warn" ng-show="@A.7">Sorry, we don't recognize that email.</span>
-                    
                     <div ng-show="@A.8" ng-messages="@A.9">
                         <div ng-messages-include="@A.10"></div>
                     </div>
@@ -25,12 +23,14 @@
                     
                     <input name="@A.11" ng-model="@A.12" type="password" placeholder="Password" required ng-readonly="@A.6" >
                     
-                    <span class="md-caption md-warn" ng-show="@A.13">The email and password you entered don't match.</span>
-                    
                     <div ng-show="@A.14" ng-messages="@A.15">
                         <div ng-messages-include="@A.10"></div>
                     </div>
                 </md-input-container>
+                
+                <div ng-show="@A.20" class="text-center">
+                    <span class="md-caption text-warn">Your email or password was incorrect. Please try again.</span>
+                </div>
                 
                 <md-button class="md-raised md-primary btn-block" type="submit" ng-disabled="@A.16" ng-click="@A.17">
                     <span ng-hide="@A.18">Sign In</span>
