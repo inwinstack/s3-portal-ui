@@ -19,7 +19,7 @@ export default class SignInController {
       })
       .catch(() => {
         this.form.$submitted = false;
-        this.incorrectd = true;
+        this.incorrect = true;
       });
   }
 }
