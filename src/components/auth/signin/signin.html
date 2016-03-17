@@ -18,7 +18,7 @@
 
           <div
             ng-messages="signin.form.email.$error"
-            ng-show="signin.form.email.$touched"
+            ng-if="signin.form.email.$touched"
           >
             <div ng-messages-include="messages.html"></div>
           </div>
@@ -35,7 +35,7 @@
 
           <div
             ng-messages="signin.form.password.$error"
-            ng-show="signin.form.password.$touched"
+            ng-if="signin.form.password.$touched"
           >
             <div ng-messages-include="messages.html"></div>
           </div>
