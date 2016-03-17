@@ -1,43 +1,37 @@
 export default class SignUpController {
   /** @ngInject */
-  constructor($auth, $state, $toast, $fetch) {
+  constructor($auth, $state, $toast, AuthService) {
     Object.assign(this, {
-      $auth, $state, $toast, $fetch, credentials: {},
+      $auth, $state, $toast, AuthService, credentials: {},
     });
   }
 
   /**
-   * Check whether the email is used.
+   * Check whether the email is used if user email is valid.
+   *
    * @return void
    */
   checkEmail() {
     if (this.form.email.$valid) {
-      this.checkEmailRequest();
+      const { email } = this.credentials;
+      this.isCheckEmail = true;
+
+      this.AuthService.checkEmail(email)
+        .then(() => {
+          this.emailIsValid = true;
+          this.emailIsInvalid = false;
+        })
+        .catch(() => {
+          this.emailIsValid = false;
+          this.emailIsInvalid = true;
+        })
+        .finally(() => (this.isCheckEmail = false));
     }
   }
 
   /**
-   * Send a request to server for check the email.
-   * @return void
-   */
-  checkEmailRequest() {
-    const { email } = this.credentials;
-    this.isCheckEmail = true;
-
-    this.$fetch.post('/v1/auth/checkEmail', { email })
-      .then(() => {
-        this.emailIsValid = true;
-        this.emailIsInvalid = false;
-      })
-      .catch(() => {
-        this.emailIsValid = false;
-        this.emailIsInvalid = true;
-      })
-      .finally(() => (this.isCheckEmail = false));
-  }
-
-  /**
    * Register a new user.
+   *
    * @return void
    */
   submit() {
