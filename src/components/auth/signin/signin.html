@@ -1,35 +1,66 @@
-<md-content layout-padding>
+<div class="panel-login" layout="column" layout-paddings>
+  <md-content class="radius-large md-whiteframe-1dp">
+    <div class="panel-title text-center">
+        <h1 class="no-margin">S3 Portal</h1>
+    </div>
 
-  <h2 class="md-display-1">Sign In</h2>
+    <div class="panel-body">
+      <md-subheader class="text-center">Log in to your account</md-subheader>
+      <form name="signin.form">
+        <md-input-container md-no-float class="md-icon-left md-block">
+          <md-icon class="icon-default">email</md-icon>
 
-  <form name="signin.form">
+          <input
+            type="email" name="email" placeholder="Email" required email
+            ng-model="signin.credentials.email"
+            ng-readonly="signin.form.$submitted"
+          >
 
-    <md-input-container class="md-block">
-      <label>Email</label>
-      <input type="email" email name="email" ng-model="signin.credentials.username">
-      <div ng-messages="signin.form.email.$error">
-        <div ng-message="email">This is required and must is email address.</div>
+          <div
+            ng-messages="signin.form.email.$error"
+            ng-if="signin.form.email.$touched"
+          >
+            <div ng-messages-include="messages.html"></div>
+          </div>
+        </md-input-container>
+
+        <md-input-container md-no-float class="md-icon-left md-block">
+          <md-icon class="icon-default">lock</md-icon>
+
+          <input
+            type="password" name="password" placeholder="Password" required
+            ng-model="signin.credentials.password"
+            ng-readonly="signin.form.$submitted"
+          >
+
+          <div
+            ng-messages="signin.form.password.$error"
+            ng-if="signin.form.password.$touched"
+          >
+            <div ng-messages-include="messages.html"></div>
+          </div>
+        </md-input-container>
+
+        <div ng-show="signin.incorrectd" class="text-center">
+          <span class="md-caption text-warn">Your email or password was incorrect. Please try again.</span>
+        </div>
+
+        <md-button class="md-raised md-primary btn-block" type="submit"
+          ng-disabled="signin.form.$invalid || signin.form.$submitted"
+          ng-click="signin.submit()"
+        >
+          <span ng-hide="signup.form.$submitted">Sign In</span>
+          <md-progress-circular
+            class="md-accent" md-mode="indeterminate"
+            md-diameter="30" ng-hide="! signin.form.$submitted"
+          ></md-progress-circular>
+        </md-button>
+      </form>
+
+      <div class="panel-footer text-center md-caption">
+        <span>Don't have an account? </span>
+        <a ui-sref="auth.signup">Create an account</a>
       </div>
-    </md-input-container>
-
-    <md-input-container class="md-block">
-      <label>Password</label>
-      <input type="password" required name="password" ng-model="signin.credentials.password">
-      <div ng-messages="signin.form.password.$error">
-        <div ng-message="required">This is required.</div>
-      </div>
-    </md-input-container>
-
-    <md-input-container class="md-block">
-      <md-button
-        type="submit"
-        class="md-raised"
-        ng-disabled="signin.form.$invalid || signin.form.$submitted"
-        ng-click="signin.submit()"
-      >Submit</md-button>
-    </md-input-container>
-
-    <md-button class="md-raised" ui-sref="auth.signup">Sign Up</md-button>
-
-  </form>
-</md-content>
+    </div>
+  </md-content>
+</div>
