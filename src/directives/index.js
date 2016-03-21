@@ -1,7 +1,7 @@
 import { module } from 'angular';
 import email from './email';
 
-const Validators = module('app.Validators', [])
+const Directives = module('app.Directives', [])
   .directive('email', email);
 
-export default Validators.name;
+export default Directives.name;
