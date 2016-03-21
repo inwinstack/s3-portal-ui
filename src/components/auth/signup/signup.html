@@ -9,9 +9,8 @@
     <md-subheader class="text-center">Create an account</md-subheader>
     <form name="signup.form">
 
-      <md-input-container md-no-float class="md-icon-left md-block">
+      <md-input-container md-no-float ng-class="{'md-icon-right':signup.emailIsValid}" class="md-icon-left md-block">
         <md-icon class="icon-default" ng-class="{'md-warn': signup.emailIsInvalid}">email</md-icon>
-        <md-icon class="icon-success" ng-if="signup.emailIsValid">done</md-icon>
         <md-progress-circular
           class="md-accent" md-mode="indeterminate"
           md-diameter="24" ng-show="signup.isCheckEmail"
@@ -23,6 +22,8 @@
           ng-readonly="signup.form.$submitted"
           ng-blur="signup.checkEmail()"
         >
+
+        <md-icon class="icon-success" ng-if="signup.emailIsValid">done</md-icon>
 
         <span class="md-caption text-warn" ng-show="signup.emailIsInvalid">
           Someone already has that username. Try another?
