@@ -45,7 +45,6 @@ describe('SignIn', function() {
     controller.submit();
     $rootScope.$digest();
 
-    AuthMock.verify();
     chai.expect($state.go).to.have.been.calledWith('dashboard');
     chai.expect($toast.show).to.have.been.calledWith('Sign In Success!');
   })
@@ -62,7 +61,6 @@ describe('SignIn', function() {
     controller.submit();
     $rootScope.$digest();
 
-    AuthMock.verify();
     chai.expect(controller.incorrect).to.eq(true);
     chai.expect(controller.form.$submitted).to.eq(false);
     
