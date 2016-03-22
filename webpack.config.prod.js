@@ -41,7 +41,13 @@ module.exports = {
       },
       {
         test: /\.html$/,
+        exclude: path.join(__dirname, 'src/templates'),
         loader: 'raw',
+      },
+      {
+        test: /\.html$/,
+        include: path.join(__dirname, 'src/templates'),
+        loader: 'ng-cache',
       },
       {
         test: /\.(png|jpg|gif|svg|ttf|eot|woff(2)?)\??.*$/,
