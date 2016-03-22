@@ -1,20 +1,27 @@
 import signInModule from './signin';
 import signInCtrl from './signin.controller';
+import app from '../../../index.js';
 
 describe('SignIn', function() {
   let $rootScope;
   let makeController;
   let makeDeferred;
+  let $toast;
+  let $state;
+  let $auth;
 
-  const $auth = {};
-  const $state = {};
-  const $toast = {};
   const form = {};
 
-  beforeEach(window.module('auth.signin'));
+  beforeEach(window.module('app'));
 
-  beforeEach(inject(($q, _$rootScope_,$compile) => {
+  beforeEach(inject(($q, _$rootScope_, _$toast_, _$state_, _$auth_) => {
     $rootScope = _$rootScope_;
+
+    $toast = _$toast_;
+
+    $state = _$state_;
+
+    $auth = _$auth_;
 
     makeDeferred = () => {
       return $q.defer();
@@ -25,10 +32,9 @@ describe('SignIn', function() {
     };
   }));
   it('signin success unit test', function() {
-    $auth.login = () => {};
     const AuthMock = sinon.mock($auth);
     const authDeferred = makeDeferred();
-    AuthMock.expects('login').once().returns(authDeferred.promise);
+    AuthMock.expects('login').returns(authDeferred.promise);
     authDeferred.resolve();
 
     const controller = makeController();
@@ -40,28 +46,25 @@ describe('SignIn', function() {
     $rootScope.$digest();
 
     AuthMock.verify();
-    chai.expect($state.go.called).to.eq(true);
-    chai.expect($toast.show.called).to.eq(true);
+    chai.expect($state.go).to.have.been.calledWith('dashboard');
+    chai.expect($toast.show).to.have.been.calledWith('Sign In Success!');
   })
   it('signin fail unit test', function() {
-    $auth.login = () => {};
     const AuthMock = sinon.mock($auth);
     const authDeferred = makeDeferred();
-    AuthMock.expects('login').once().returns(authDeferred.promise);
+    AuthMock.expects('login').returns(authDeferred.promise);
     authDeferred.reject();
 
     const controller = makeController();
 
-    $state.go = sinon.spy();
-    $toast.show = sinon.spy();
     controller.form = { '$submitted' : true };
 
     controller.submit();
     $rootScope.$digest();
 
     AuthMock.verify();
+    chai.expect(controller.incorrect).to.eq(true);
     chai.expect(controller.form.$submitted).to.eq(false);
-    chai.expect($state.go.called).to.eq(false);
-    chai.expect($toast.show.called).to.eq(false);
+    
   })
 })

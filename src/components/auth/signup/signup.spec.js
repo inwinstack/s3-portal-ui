@@ -1,57 +1,94 @@
 import signUpModule from './signup';
 import signUpCtrl from './signup.controller';
+import app from '../../../index.js';
 
 describe('SignUp', function() {
   let $rootScope;
   let makeController;
   let makeDeferred;
-  
-  const $auth = {};
-  const $state = {};
-  const $toast = {};
+  let $toast;
+  let $state;
+  let $auth;
+  let AuthService;
+
   const form = {};
 
-  beforeEach(window.module('signup'));
+  beforeEach(window.module('app'));
 
-  beforeEach(inject(($q, _$rootScope_) => {
+  beforeEach(inject(($q, _$rootScope_, _$toast_, _$state_, _$auth_, _AuthService_) => {
     $rootScope = _$rootScope_;
+
+    $toast = _$toast_;
+
+    $state = _$state_;
+
+    $auth = _$auth_;
+
+    AuthService = _AuthService_;
 
     makeDeferred = () => {
       return $q.defer();
     };
 
     makeController = () => {
-      return new signUpCtrl($auth, $state, $toast);
+      return new signUpCtrl($auth, $state, $toast, AuthService);
     };
   }));
 
+  it('checkEmail success unit test', function() {
+    const AuthServiceMock = sinon.mock(AuthService);
+    const authDeferred = makeDeferred();
+    AuthServiceMock.expects('checkEmail').returns(authDeferred.promise);
+    authDeferred.resolve();
+   
+    const controller = makeController();
+
+    controller.form = { email: {'$valid' : true }};
+    controller.checkEmail();
+    $rootScope.$digest();
+
+    chai.expect(controller.emailIsValid).to.eq(true);
+    chai.expect(controller.emailIsInvalid).to.eq(false);
+    chai.expect(controller.isCheckEmail).to.eq(false);
+  })
+  it('checkEmail fail unit test', function() {
+    const AuthServiceMock = sinon.mock(AuthService);
+    const authDeferred = makeDeferred();
+    AuthServiceMock.expects('checkEmail').returns(authDeferred.promise);
+    authDeferred.reject();
+    
+    const controller = makeController();
+
+    controller.form = { email: {'$valid' : true }};
+    controller.checkEmail();
+    $rootScope.$digest();
+
+    chai.expect(controller.emailIsValid).to.eq(false);
+    chai.expect(controller.emailIsInvalid).to.eq(true);
+    chai.expect(controller.isCheckEmail).to.eq(false);
+  })
   it('signup success unit test', function() {
-    $auth.signup = () => {};
     const AuthMock = sinon.mock($auth);
     const authDeferred = makeDeferred();
-    AuthMock.expects('signup').once().returns(authDeferred.promise);
+    AuthMock.expects('signup').returns(authDeferred.promise);
     authDeferred.resolve();
+
+    const controller = makeController();
 
     $state.go = sinon.spy();
     $toast.show = sinon.spy();
-
-    const controller = makeController();
+   
     controller.submit();
     $rootScope.$digest();
 
-    AuthMock.verify();
-    chai.expect($state.go.called).to.eq(true);
-    chai.expect($toast.show.called).to.eq(true);
+    chai.expect($state.go).to.have.been.calledWith('auth.signin');
+    chai.expect($toast.show).to.have.been.calledWith('Sign Up Success!');
   })
   it('signup fail unit test', function() {
-    $auth.signup = () => {};
     const AuthMock = sinon.mock($auth);
     const authDeferred = makeDeferred();
-    AuthMock.expects('signup').once().returns(authDeferred.promise);
+    AuthMock.expects('signup').returns(authDeferred.promise);
     authDeferred.reject();
-
-    $state.go = sinon.spy();
-    $toast.show = sinon.spy();
 
     const controller = makeController();
     controller.form = { '$submitted': true };
@@ -59,9 +96,6 @@ describe('SignUp', function() {
     controller.submit();
     $rootScope.$digest();
 
-    AuthMock.verify();
     chai.expect(controller.form.$submitted).to.eq(false);
-    chai.expect($state.go.called).to.eq(false);
-    chai.expect($toast.show.called).to.eq(false);
   })
 })
