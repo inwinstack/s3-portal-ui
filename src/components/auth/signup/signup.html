@@ -20,12 +20,12 @@
           type="email" name="email" required email placeholder="Email"
           ng-model="signup.credentials.email"
           ng-readonly="signup.form.$submitted"
-          ng-blur="signup.checkEmail()"
+          ng-change="signup.checkEmail()"
         >
 
         <md-icon class="icon-success" ng-if="signup.emailIsValid">done</md-icon>
 
-        <span class="md-caption text-warn" ng-show="signup.emailIsInvalid">
+        <span class="md-caption text-warn" ng-show="signup.emailIsInvalid && signup.showEmailCheckedMessage">
           Someone already has that username. Try another?
         </span>
 
