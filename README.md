@@ -41,6 +41,12 @@ $ npm run build
 
 The static file will build on `./dist`.
 
+You can start the production server:
+
+```sh
+$ npm run prod
+```
+
 ### Test
 
 ```sh
