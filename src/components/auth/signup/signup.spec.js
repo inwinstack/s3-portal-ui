@@ -13,7 +13,7 @@ describe('SignUp', function() {
 
   const form = {};
 
-  beforeEach(window.module('app'));
+  beforeEach(angular.mock.module('app'));
 
   beforeEach(inject(($q, _$rootScope_, _$toast_, _$state_, _$auth_, _AuthService_) => {
     $rootScope = _$rootScope_;
