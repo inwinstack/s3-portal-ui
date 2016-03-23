@@ -19,6 +19,7 @@
         <input
           type="email" name="email" required email placeholder="Email"
           ng-model="signup.credentials.email"
+          ng-model-options='{ debounce: 500 }'
           ng-readonly="signup.form.$submitted"
           ng-change="signup.checkEmail()"
         >
