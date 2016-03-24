@@ -24,8 +24,11 @@ export default class SignUpController {
         .catch(() => {
           this.emailIsValid = false;
           this.emailIsInvalid = true;
+          this.showEmailCheckedMessage = true;
         })
         .finally(() => (this.isCheckEmail = false));
+    } else {
+      this.showEmailCheckedMessage = false;
     }
   }
 
