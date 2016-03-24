@@ -11,8 +11,6 @@ describe('SignUp', function() {
   let $auth;
   let AuthService;
 
-  const form = {};
-
   beforeEach(window.module('app'));
 
   beforeEach(inject(($q, _$rootScope_, _$toast_, _$state_, _$auth_, _AuthService_) => {
@@ -75,14 +73,14 @@ describe('SignUp', function() {
 
     const controller = makeController();
 
-    $state.go = sinon.spy();
-    $toast.show = sinon.spy();
+    const state = sinon.spy($state, 'go');
+    const toast = sinon.spy($toast, 'show');
    
     controller.submit();
     $rootScope.$digest();
 
-    chai.expect($state.go).to.have.been.calledWith('auth.signin');
-    chai.expect($toast.show).to.have.been.calledWith('Sign Up Success!');
+    chai.expect(state).to.have.been.calledWith('auth.signin');
+    chai.expect(toast).to.have.been.calledWith('Sign Up Success!');
   })
   it('signup fail unit test', function() {
     const AuthMock = sinon.mock($auth);
