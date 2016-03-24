@@ -7,7 +7,6 @@ import app from './../../index.js';
 describe('register user functional test', function() {
   let $rootScope;
   let makeController;
-  let makeDeferred;
   let makeDirective;
   let makeTemplate
   let $toast;
@@ -20,7 +19,7 @@ describe('register user functional test', function() {
 
   beforeEach(angular.mock.module('app'));
 
-  beforeEach(inject(($q, _$rootScope_, _$toast_, _$state_, _$auth_, _$compile_, _AuthService_, _$httpBackend_) => {
+  beforeEach(inject((_$rootScope_, _$toast_, _$state_, _$auth_, _$compile_, _AuthService_, _$httpBackend_) => {
     $rootScope = _$rootScope_;
 
     $httpBackend = _$httpBackend_;
@@ -37,15 +36,9 @@ describe('register user functional test', function() {
 
     makeTemplate = angular.element(signUpTemplate);
 
-    $rootScope.credentials = { email: null};
-
     $compile(makeTemplate)($rootScope);
 
     form = $rootScope.signup.form;
-
-    makeDeferred = () => {
-      return $q.defer();
-    };
 
     makeController = () => {
       return new signUpCtrl($auth, $state, $toast, AuthService);
