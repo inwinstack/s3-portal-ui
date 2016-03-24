@@ -15,7 +15,6 @@ describe('register user functional test', function() {
   let $auth;
   let $compile;
   let form;
-  let $http;
   let AuthService;
   let $httpBackend;
 
