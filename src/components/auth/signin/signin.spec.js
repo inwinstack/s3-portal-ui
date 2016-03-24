@@ -39,14 +39,14 @@ describe('SignIn', function() {
 
     const controller = makeController();
 
-    $state.go = sinon.spy();
-    $toast.show = sinon.spy();
+    const state = sinon.spy($state, 'go');
+    const toast = sinon.spy($toast, 'show');
     
     controller.submit();
     $rootScope.$digest();
 
-    chai.expect($state.go).to.have.been.calledWith('dashboard');
-    chai.expect($toast.show).to.have.been.calledWith('Sign In Success!');
+    chai.expect(state).to.have.been.calledWith('dashboard');
+    chai.expect(toast).to.have.been.calledWith('Sign In Success!');
   })
   it('signin fail unit test', function() {
     const AuthMock = sinon.mock($auth);
