@@ -99,3 +99,17 @@ md-input-container md-progress-circular {
   padding: 0 5px;
 }
 
+/* toolbar ----------------------------------------------- */
+@media only screen and (max-width: 959px) and (min-width: 0) and (orientation: landscape) {
+  .md-toolbar-tools {
+    height: 64px;
+    max-height: 64px;
+  }
+}
+
+@media only screen and (max-width: 959px) and (min-width: 0) and (orientation: portrait) {
+  .md-toolbar-tools {
+    height: 64px;
+    max-height: 64px;
+  }
+}
