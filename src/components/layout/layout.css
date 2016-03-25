@@ -1,3 +1,20 @@
-.layout {
-    background-color: red;
+
+/**
+ * @author Jamie jamie.h@inwinstack.com
+ */
+
+.layout-scrollable {
+  overflow: auto;
+}
+
+#breadcrumb-container {
+  border-bottom: 2px solid #E0E0E0;
+}
+
+#container {
+  height: 100%;
+}
+
+#list-container {
+  border-right: 4px solid #E0E0E0;
 }
