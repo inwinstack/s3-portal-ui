@@ -7,6 +7,7 @@ const route = $stateProvider => {
   $stateProvider.state('notFound', {
     url: '/404',
     template: NotFoundTemplate,
+    noAuth: true,
   });
 };
 
