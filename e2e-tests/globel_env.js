@@ -17,7 +17,10 @@ var array = {
   'internet explorer-win8': 'ie-win8@inwinstack.com,ie-win8',
   'chrome-win10': 'chrome-win10@inwinstack.com,chrome-win10',
   'firefox-win10': 'firefox-win10@inwinstack.com,firefox-win10',
-  'internet explorer-win10': 'ie-win10@inwinstack.com,ie-win10'
+  'internet explorer-win10': 'ie-win10@inwinstack.com,ie-win10',
+  'chrome-osx': 'chrome-osx@inwinstack.com,chrome-osx',
+  'firefox-osx': 'firefox-osx@inwinstack.com,firefox-osx',
+  'safari-osx': 'safari-osx@inwinstack.com,safari-osx'
 };
 
 User.prototype.getWeb = function(){

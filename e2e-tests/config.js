@@ -1,6 +1,10 @@
 exports.config = {
   framework: 'jasmine2',
-  specs: ['*.js'],
+  specs: [
+    './auth/signup.js',
+    './auth/back.js',
+    './auth/signin.js'
+  ],
   multiCapabilities: [{
     browserName: 'chrome',
     seleniumAddress: 'http://10.26.1.27:4444/wd/hub',
@@ -33,6 +37,18 @@ exports.config = {
     browserName: 'firefox',
     seleniumAddress: 'http://10.26.1.56:4444/wd/hub',
     os: 'win10'
+  },{
+    browserName: 'chrome',
+    seleniumAddress: 'http://10.21.20.167:4444/wd/hub',
+    os: 'osx'
+  },{
+    browserName: 'firefox',
+    seleniumAddress: 'http://10.21.20.167:4444/wd/hub',
+    os: 'osx'
+  },{
+    browserName: 'safari',
+    seleniumAddress: 'http://10.21.20.167:4444/wd/hub',
+    os: 'osx'
   }],
   onPrepare: function() {
     const SpecReporter = require('jasmine-spec-reporter');
