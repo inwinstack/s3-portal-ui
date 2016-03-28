@@ -12,6 +12,7 @@ const route = $stateProvider => {
     template: SigninTemplate,
     controller: SignInController,
     controllerAs: 'signin',
+    noAuth: true,
   });
 };
 
