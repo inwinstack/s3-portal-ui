@@ -2,7 +2,7 @@ import signInModule from './signin';
 import signInCtrl from './signin.controller';
 import app from '../../../index.js';
 
-describe('SignIn', function() {
+describe('SignIn controller unit test', function() {
   let $rootScope;
   let makeController;
   let makeDeferred;
@@ -31,22 +31,38 @@ describe('SignIn', function() {
       return new signInCtrl($auth, $state, $toast);
     };
   }));
-  it('signin success unit test', function() {
-    const AuthMock = sinon.mock($auth);
-    const authDeferred = makeDeferred();
-    AuthMock.expects('login').returns(authDeferred.promise);
-    authDeferred.resolve();
+  describe('when signin success', function() {
+    it('should invoke $state.go called with dashboard', function() {
+      const AuthMock = sinon.mock($auth);
+      const authDeferred = makeDeferred();
+      AuthMock.expects('login').returns(authDeferred.promise);
+      authDeferred.resolve();
 
-    const controller = makeController();
+      const controller = makeController();
 
-    const state = sinon.spy($state, 'go');
-    const toast = sinon.spy($toast, 'show');
+      const state = sinon.spy($state, 'go');
     
-    controller.submit();
-    $rootScope.$digest();
+      controller.submit();
+      $rootScope.$digest();
 
-    chai.expect(state).to.have.been.calledWith('dashboard');
-    chai.expect(toast).to.have.been.calledWith('Sign In Success!');
+      chai.expect(state).to.have.been.calledWith('dashboard');
+      chai.expect(toast).to.have.been.calledWith('Sign In Success!');
+    });
+    it ('should invoke $toast.show called with Sign In Success!', function() {
+      const AuthMock = sinon.mock($auth);
+      const authDeferred = makeDeferred();
+      AuthMock.expects('login').returns(authDeferred.promise);
+      authDeferred.resolve();
+
+      const controller = makeController();
+
+      const toast = sinon.spy($toast, 'show');
+
+      controller.submit();
+      $rootScoe.$digest();
+      
+      chai.expect(toast).to.have.been.calledWith('Sign In Success!');
+    });
   })
   it('signin fail unit test', function() {
     const AuthMock = sinon.mock($auth);
