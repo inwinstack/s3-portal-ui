@@ -7,12 +7,20 @@
   overflow: auto;
 }
 
+#header-container {
+  position: absolute;
+  width: 100%;
+}
+
 #breadcrumb-container {
   border-bottom: 2px solid #E0E0E0;
 }
 
 #container {
   height: 100%;
+  padding-top: 146px;
+  position: absolute;
+  width: 100%;
 }
 
 #list-container {
