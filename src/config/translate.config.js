@@ -1,16 +1,16 @@
 import {
-  en,
-  tw,
-  cn,
+  EN,
+  TW,
+  CN,
 } from '../translations';
 
 /** @ngInject */
 export default $translateProvider => {
   $translateProvider
     .useSanitizeValueStrategy('escape')
-    .translations('en', en)
-    .translations('tw', tw)
-    .translations('cn', cn)
-    .preferredLanguage('en')
-    .fallbackLanguage('en');
+    .translations('EN', EN)
+    .translations('TW', TW)
+    .translations('CN', CN)
+    .preferredLanguage('EN')
+    .fallbackLanguage('EN');
 };
