@@ -8,36 +8,36 @@
 
     <md-menu md-offset="0 60" md-position-mode="target-right target">
       <md-button
-        aria-label="Settings Menu" class="md-icon-button toolbar-buttons" 
-        ng-click="@A.1"
+        aria-label="Settings Menu" class="md-icon-button toolbar-buttons"
+        ng-click="$mdOpenMenu($event)"
       >
-        <md-icon class="material-icons">arrow_drop_down</md-icon>
+        <md-icon>arrow_drop_down</md-icon>
       </md-button>
 
       <md-menu-content>
-        <md-menu-item ui-sref="@A.2">
+        <md-menu-item ui-sref="">
           <md-button aria-label="My Account">
             <span>My Account</span>
           </md-button>
         </md-menu-item>
-        
-        <md-menu-item ui-sref="@A.3">
+
+        <md-menu-item ui-sref="">
           <md-button aria-label="Billing and Cost Management">
             <span>Billing & Cost Management</span>
           </md-button>
         </md-menu-item>
-        
-        <md-menu-item ui-sref="@A.4">
+
+        <md-menu-item ui-sref="">
           <md-button aria-label="Security Credentials">
             <span>Security Credentials</span>
           </md-button>
         </md-menu-item>
-        
+
         <md-menu-divider></md-menu-divider>
-        
+
         <md-menu-item>
-          <md-button aria-label="Sign Out" ng-click="@A.5">
-            <span>Sign Out</span>
+          <md-button aria-label="Sign Out" ng-click="nav.signout()">
+            <span>{{ 'SETTINGS.SIGN_OUT' | translate }}</span>
           </md-button>
         </md-menu-item>
       </md-menu-content>
@@ -46,27 +46,16 @@
     <md-menu md-offset="0 60" md-position-mode="target-right target">
       <md-button
         aria-label="Languages" class="md-icon-button toolbar-buttons"
-        ng-click="@A.6"
+        ng-click="$mdOpenMenu($event)"
       >
-        <md-icon class="material-icons">public</md-icon>
+        <md-icon>public</md-icon>
       </md-button>
 
       <md-menu-content>
-        <md-menu-item>
-          <md-button aria-label="English" ng-click="@A.7">
-            <span>English</span>
-          </md-button>
-        </md-menu-item>
-        
-        <md-menu-item>
-          <md-button aria-label="繁體中文" ng-click="@A.8">
-            <span>繁體中文</span>
-          </md-button>
-        </md-menu-item>
-        
-        <md-menu-item>
-          <md-button aria-label="簡體中文" ng-click="@A.9">
-            <span>简体中文</span>
+        <md-menu-item ng-repeat="language in nav.languages">
+          <md-button aria-label="language.name" ng-click="nav.changeLanguage(language.key)">
+            <span>{{ language.name }}</span>
+            <md-icon ng-show="language.key === nav.currentLanguage">done</md-icon>
           </md-button>
         </md-menu-item>
       </md-menu-content>
