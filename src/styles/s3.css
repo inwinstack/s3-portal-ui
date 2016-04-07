@@ -95,7 +95,6 @@ md-input-container md-progress-circular {
 }
 
 .breadcrumb > li:last-child {
-  cursor: text;
   color: #1976D2;
   cursor: text;
 }
