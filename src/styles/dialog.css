@@ -6,3 +6,17 @@
 .md-confirm-dialog-warn-theme md-dialog-actions button:last-child {
   color: #FF6D00;
 }
+
+md-dialog-content md-input-container.md-icon-right md-progress-circular {
+  margin: 0;
+  right: 2px;
+  left: auto;
+}
+
+md-dialog.create-dialog {
+  width: 600px;
+}
+
+.dialog-description {
+  margin-bottom: 30px;
+}
