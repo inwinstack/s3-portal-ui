@@ -120,3 +120,10 @@ md-input-container md-progress-circular {
     max-height: 64px;
   }
 }
+
+/* page state -------------------------------------------- */
+.progress-state,
+.empty-state,
+.load-fail-state {
+  margin-top: 10%;
+}
