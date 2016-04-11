@@ -13,4 +13,13 @@ export default class AuthService {
   checkEmail(email) {
     return this.$fetch.post('/v1/auth/checkEmail', { email });
   }
+
+  /**
+   * Invalidated the API token.
+   *
+   * @return {promise}
+   */
+  signOut() {
+    return this.$fetch.post('/v1/auth/logout');
+  }
 }
