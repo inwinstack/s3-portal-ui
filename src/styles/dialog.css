@@ -3,6 +3,6 @@
  * @author Jamie jamie.h@inwinstack.com
  */
 
-.md-confirm-dialog-warn-theme md-dialog-actions button:last-child {
-  color: #FF6D00;
+.md-default-theme md-dialog-actions button:last-child {
+  color: #FF6D00 !important;
 }

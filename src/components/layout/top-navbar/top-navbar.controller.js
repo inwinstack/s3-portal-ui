@@ -1,27 +1,69 @@
 export default class TopNavbarController {
   /** @ngInject */
-  constructor($translate, $auth, $state, $toast) {
-    const languages = [
+  constructor($translate, $auth, $state, $toast, $mdDialog, AuthService) {
+    Object.assign(this, {
+      $translate, $auth, $state, $toast, $mdDialog, AuthService,
+    });
+
+    this.languages = [
       { key: 'EN', name: 'English' },
       { key: 'TW', name: '繁體中文' },
       { key: 'CN', name: '简体中文' },
     ];
 
-    const currentLanguage = $translate.use();
-
-    Object.assign(this, {
-      $translate, $auth, $state, $toast, languages, currentLanguage,
-    });
+    this.currentLanguage = $translate.use();
   }
 
+  /**
+   * Change the language of UI.
+   *
+   * @param  {string} key
+   * @return {void}
+   */
   changeLanguage(key) {
     this.$translate.use(key);
     this.currentLanguage = key;
   }
 
-  signout() {
-    this.$auth.logout();
-    this.$state.go('auth.signin');
-    this.$toast.show('Sign Out Success!');
+  /**
+   * Do the sign out flow when user click the sign out button.
+   *
+   * @param  {Object} $event
+   * @return {void}
+   */
+  signOut($event) {
+    this.showConfirmMessage($event).then(this.executedSignOut);
   }
+
+  /**
+   * Show a confirm message for sign out.
+   *
+   * @param  {Object} $event
+   * @return {Promise}
+   */
+  showConfirmMessage($event) {
+    const confirm = this.$mdDialog.confirm()
+      .title('Would you like to sign out without your upload?')
+      .textContent(`You have in progress opreations
+or uploads and leaving now will cancel them.Still leaving?`)
+      .ariaLabel('Sign out')
+      .targetEvent($event)
+      .ok('Leave')
+      .cancel('Stay');
+
+    return this.$mdDialog.show(confirm);
+  }
+
+  /**
+   * Executed sign out when user confirm the message.
+   *
+   * @return {Promise} [description]
+   */
+  executedSignOut = () => this.AuthService.signOut()
+    .then(() => {
+      this.$auth.logout();
+      this.$state.go('auth.signin');
+      this.$toast.show('Sign Out Success!');
+    })
+    .catch(() => this.$toast.show('Sign Out Failure!'));
 }
