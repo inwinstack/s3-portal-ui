@@ -8,7 +8,6 @@
 }
 
 #header-container {
-  position: absolute;
   width: 100%;
 }
 
@@ -18,8 +17,6 @@
 
 #container {
   height: 100%;
-  padding-top: 146px;
-  position: absolute;
   width: 100%;
 }
 

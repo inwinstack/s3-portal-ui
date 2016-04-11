@@ -4,7 +4,6 @@ import router from 'angular-ui-router';
 import LayoutTemplate from './layout.html';
 import TopNavbarController from './top-navbar/top-navbar.controller';
 import TopNavbarTemplate from './top-navbar/top-navbar.html';
-import BreadcrumbTemplate from './breadcrumb.html';
 
 import './layout.css';
 
@@ -21,9 +20,6 @@ const route = $stateProvider => {
         template: TopNavbarTemplate,
         controller: TopNavbarController,
         controllerAs: 'nav',
-      },
-      'breadcrumb@root': {
-        template: BreadcrumbTemplate,
       },
     },
   });
