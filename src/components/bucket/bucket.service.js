@@ -10,6 +10,11 @@ export default class BucketService {
     this.initState();
   }
 
+  /**
+   * Initial the state of bucket service.
+   *
+   * @return {void}
+   */
   initState() {
     this.state = {
       lists: [],
@@ -18,6 +23,11 @@ export default class BucketService {
     };
   }
 
+  /**
+   * Call the bucket list API and modify the state of service.
+   *
+   * @return {void}
+   */
   getBuckets() {
     this.state.requesting = true;
     this.state.lists = [];
