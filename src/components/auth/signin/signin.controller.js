@@ -14,7 +14,7 @@ export default class SignInController {
   submit() {
     this.$auth.login(this.credentials)
       .then(() => {
-        this.$state.go('dashboard');
+        this.$state.go('bucket');
         this.$toast.show('Sign In Success!');
       })
       .catch(() => {

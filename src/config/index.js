@@ -5,6 +5,7 @@ import satellizer from './satellizer.config';
 import material from './material.config';
 import authenticateGuard from './AuthenticateGuard';
 import http from './http.config';
+import breadcrumb from './breadcrumb.config';
 
 const Config = module('app.config', [])
   .config(router)
@@ -12,6 +13,7 @@ const Config = module('app.config', [])
   .config(satellizer)
   .config(material)
   .config(http)
+  .config(breadcrumb)
   .constant('Config', {
     API_URL: 'http://163.17.136.83:8080/api',
   })

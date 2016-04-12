@@ -4,7 +4,7 @@ export default ($rootScope, $state, $auth, $toast, $timeout) => {
     if (next.noAuth) {
       if ($auth.isAuthenticated()) {
         event.preventDefault();
-        $timeout(() => $state.go('dashboard'), 0);
+        $timeout(() => $state.go('bucket'), 0);
       }
       return;
     }
@@ -13,6 +13,12 @@ export default ($rootScope, $state, $auth, $toast, $timeout) => {
       event.preventDefault();
       $toast.show('You should Login!');
       $timeout(() => $state.go('auth.signin'), 0);
+    }
+  });
+
+  $rootScope.$on('$routeChangeError', ($event, current, previous, rejection) => {
+    if (rejection.status === 404) {
+      $timeout(() => $state.go('404'), 0);
     }
   });
 };
