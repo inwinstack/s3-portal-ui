@@ -5,4 +5,8 @@ export default class ActionNavbarController {
       $bucket,
     });
   }
+
+  createBucket($event) {
+    this.$bucket.createDialog($event);
+  }
 }

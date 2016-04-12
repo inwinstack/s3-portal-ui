@@ -1,7 +1,7 @@
 <md-content layout-padding>
   <div
     class="md-whiteframe-4dp"
-    ng-if="bucket.lists.length && ! bucket.requesting && ! bucket.error"
+    ng-if="bucket.data.length && ! bucket.requesting && ! bucket.error"
   >
     <table class="table table-cursor table-hover">
       <thead>
@@ -12,13 +12,13 @@
       </thead>
 
       <tbody>
-        <tr ng-repeat="bucket in bucket.lists" ng-class="{active:@A.3}">
+        <tr ng-repeat="bucket in bucket.data" ng-class="{active:@A.3}">
           <td>
             <a ng-click="@A.4">
               <md-icon>info_outline</md-icon>
             </a>
           </td>
-          <td ng-bind="bucket">
+          <td ng-bind="bucket.Name">
             <a ng-click="@A.11"></a>
           </td>
         </tr>
@@ -38,14 +38,14 @@
   <div
     class="empty-state"
     layout="column" layout-align="center center"
-    ng-if="! bucket.lists.length && ! bucket.requesting"
+    ng-if="! bucket.data.length && ! bucket.requesting && ! bucket.error"
   >
     <div class="md-headline">Looks like you don't have any Bucket</div>
     <div class="md-subhead">Don't worry. It's easy to create one.</div>
 
     <md-button
       class="md-raised md-primary" aria-label="Create Bucket"
-      ng-click="@A.8"
+      ng-click="bucket.createBucket($event)"
     >
       <md-icon>add</md-icon>
       <span>Create Bucket</span>
