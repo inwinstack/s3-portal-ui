@@ -3,7 +3,7 @@ function User() {
   this.incorrectEmail = 'no';
   this.correctpassword = 'password';
   this.incorrectPassword = 'pass';
-  this.web = 'http://10.26.1.63:3000/auth/signin'
+  this.web = 'http://10.26.1.63:3000';
 };
 
 var array = {

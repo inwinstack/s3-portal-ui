@@ -39,15 +39,15 @@ exports.config = {
     os: 'win10'
   },{
     browserName: 'chrome',
-    seleniumAddress: 'http://10.21.20.167:4444/wd/hub',
+    seleniumAddress: 'http://10.21.20.69:4444/wd/hub',
     os: 'osx'
   },{
     browserName: 'firefox',
-    seleniumAddress: 'http://10.21.20.167:4444/wd/hub',
+    seleniumAddress: 'http://10.21.20.69:4444/wd/hub',
     os: 'osx'
   },{
     browserName: 'safari',
-    seleniumAddress: 'http://10.21.20.167:4444/wd/hub',
+    seleniumAddress: 'http://10.21.20.69:4444/wd/hub',
     os: 'osx'
   }],
   onPrepare: function() {
