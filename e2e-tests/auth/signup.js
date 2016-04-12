@@ -6,6 +6,12 @@ describe('Sign up : ',() => {
   const passwdConfInput = element(by.css('[ng-model="signup.credentials.password_confirmation"]'));
   const loginPageButton = element(by.css('[href="/auth/signup"]'));
   const signupButton = element(by.css('[ng-click="signup.submit()"]'));
+  const emailMessage = element(by.css('[ng-messages="signup.form.email.$error"]'));
+  const passwordMessage = element(by.css('[ng-messages="signup.form.password.$error"]'));
+  const passwordConfMessage = element(by.css('[ng-messages="signup.form.password_confirmation.$error"]'));
+  const successMessage = element(by.css('[class="ng-binding flex"]'));
+  const emailExsitMessage = element(by.css('[ng-show="signup.emailIsInvalid && signup.showEmailCheckedMessage"]'));
+
   const env = new environment();
 
   browser.getProcessedConfig().then((config) => {
@@ -13,16 +19,16 @@ describe('Sign up : ',() => {
   });
 
   beforeEach(() => {
-    browser.get(env.getWeb());
+    browser.get(env.getWeb()+'/auth/signin');
   });
 
-  describe('When users entry this website and click [Create an account] : ',() => {
+  describe('When users enter this website and click [Create an account] : ',() => {
     beforeEach(() => {
       loginPageButton.click();
     });
-    it('Should check title will show that \"Create an account\".',() => {
+    it('Should check title will show \"Create an account\".',() => {
       browser.getCurrentUrl().then((result) => {
-        expect(result).toBe('http://10.26.1.63:3000/auth/signup');
+        expect(result).toBe(env.getWeb()+'/auth/signup');
       });
     });
   });
@@ -32,7 +38,7 @@ describe('Sign up : ',() => {
      loginPageButton.click();
     });
     it('Should check [SIGN UP] button will disabled',() => {
-      expect(signupButton.isEnabled()).toBe(false);
+      expect(signupButton.isEnabled()).not.toBe(true);
     });
   });
 
@@ -45,25 +51,19 @@ describe('Sign up : ',() => {
       emailInput.sendKeys();
     });
     it('Should check [SIGN UP] button will disabled',() => {
-      expect(signupButton.isEnabled()).toBe(false);
+      expect(signupButton.isEnabled()).not.toBe(true);
     });
-    it('Should check message will show that \"You left the field blank.\"',() => {
-      element(by.css('[ng-messages="signup.form.email.$error"]')).getAttribute('class').then((result) => {
-        expect(result).toContain('ng-active');
-      });
-      element(by.css('[ng-messages="signup.form.email.$error"]')).getText().then((result) => {
+    it('Should check message will show \"You left the field blank.\"',() => {
+      expect(emailMessage.isDisplayed()).toBe(true);
+      emailMessage.getText().then((result) => {
         expect(result).toBe('You left the field blank.');
       });
-      element(by.css('[ng-messages="signup.form.password.$error"]')).getAttribute('class').then((result) => {
-        expect(result).toContain('ng-active');
-      });
-      element(by.css('[ng-messages="signup.form.password.$error"]')).getText().then((result) => {
+      expect(passwordMessage.isDisplayed()).toBe(true);
+      passwordMessage.getText().then((result) => {
         expect(result).toBe('You left the field blank.');
       });
-      element(by.css('[ng-messages="signup.form.password_confirmation.$error"]')).getAttribute('class').then((result) => {
-        expect(result).toContain('ng-active');
-      });
-      element(by.css('[ng-messages="signup.form.password_confirmation.$error"]')).getText().then((result) => {
+      expect(passwordConfMessage.isDisplayed()).toBe(true);
+      passwordConfMessage.getText().then((result) => {
         expect(result).toBe('You left the field blank.');
       });
     });
@@ -76,12 +76,10 @@ describe('Sign up : ',() => {
       passwdInput.sendKeys();
     });
     it('Should check [SIGN UP] button will disabled',() => {
-      expect(signupButton.isEnabled()).toBe(false);
+      expect(signupButton.isEnabled()).not.toBe(true);
     });
-    it('Should check icon will done',() => {
-      element(by.css('[class="icon-success ng-scope ng-isolate-scope material-icons"]')).getText().then((result) => {
-        expect(result).toBe('done');
-      });
+    it('Should check not any messages',() => {
+      expect(emailMessage.isDisplayed()).not.toBe(true);
     });
   });
 
@@ -92,13 +90,11 @@ describe('Sign up : ',() => {
       passwdInput.sendKeys();
     });
     it('Should check [SIGN UP] button will disabled',() => {
-      expect(signupButton.isEnabled()).toBe(false);
+      expect(signupButton.isEnabled()).not.toBe(true);
     });
-    it('Should check message will show that \"Your email must be look like an e-mail address.\"',() => {
-      element(by.css('[ng-if="signup.form.email.$touched"]')).getAttribute('class').then((result) => {
-        expect(result).toContain('ng-active');
-      });
-      element(by.css('[ng-if="signup.form.email.$touched"]')).getText().then((result) => {
+    it('Should check message will show \"Your email must be look like an e-mail address.\"',() => {
+      expect(emailMessage.isDisplayed()).toBe(true);
+      emailMessage.getText().then((result) => {
         expect(result).toBe('Your email must be look like an e-mail address.');
       });
     });
@@ -111,7 +107,7 @@ describe('Sign up : ',() => {
       passwdConfInput.sendKeys();
     });
     it('Should check [SIGN UP] button will disabled',() => {
-      expect(signupButton.isEnabled()).toBe(false);
+      expect(signupButton.isEnabled()).not.toBe(true);
     });
   });
 
@@ -122,13 +118,11 @@ describe('Sign up : ',() => {
       passwdConfInput.sendKeys();
     });
     it('Should check [SIGN UP] button will disabled',() => {
-      expect(signupButton.isEnabled()).toBe(false);
+      expect(signupButton.isEnabled()).not.toBe(true);
     });
-    it('Should check message will show that \"Please enter at least 6 characters.\"',() => {
-      element(by.css('[ng-if="signup.form.password.$touched"]')).getAttribute('class').then((result) => {
-        expect(result).toContain('ng-active');
-      });
-      element(by.css('[ng-if="signup.form.password.$touched"]')).getText().then((result) => {
+    it('Should check message will show \"Please enter at least 6 characters.\"',() => {
+      expect(passwordMessage.isDisplayed()).toBe(true);
+      passwordMessage.getText().then((result) => {
         expect(result).toBe('Please enter at least 6 characters.');
       });
     });
@@ -142,13 +136,11 @@ describe('Sign up : ',() => {
       emailInput.sendKeys();
     });
     it('Should check [SIGN UP] button will disabled',() => {
-      expect(signupButton.isEnabled()).toBe(false);
+      expect(signupButton.isEnabled()).not.toBe(true);
     });
-    it('Should check message will show that \"Please enter the same value again.\"',() => {
-      element(by.css('[ng-if="signup.form.password_confirmation.$touched"]')).getAttribute('class').then((result) => {
-        expect(result).toContain('ng-active');
-      });
-      element(by.css('[ng-if="signup.form.password_confirmation.$touched"]')).getText('class').then((result) => {
+    it('Should check message will show \"Please enter the same value again.\"',() => {
+      expect(passwordConfMessage.isDisplayed()).toBe(true);
+      passwordConfMessage.getText().then((result) => {
         expect(result).toBe('Please enter the same value again.');
       });
     });
@@ -160,14 +152,15 @@ describe('Sign up : ',() => {
       emailInput.sendKeys(env.getCorrectEmail());
       passwdInput.sendKeys(env.getCorrectPassword());
       passwdConfInput.sendKeys(env.getCorrectPassword());
+      emailInput.sendKeys();
     });
     it('Should check [SIGN UP] button will enabled',() => {
       expect(signupButton.isEnabled()).toBe(true);
     });
-    it('Should check icon will done',() => {
-      element(by.css('[class="icon-success ng-scope ng-isolate-scope material-icons"]')).getText().then((result) => {
-        expect(result).toBe('done');
-      });
+    it('Should check not any messages',() => {
+      expect(emailMessage.isDisplayed()).not.toBe(true);
+      expect(passwordMessage.isDisplayed()).not.toBe(true);
+      expect(passwordConfMessage.isDisplayed()).not.toBe(true);
     });
   });
 
@@ -179,13 +172,13 @@ describe('Sign up : ',() => {
       passwdConfInput.sendKeys(env.getCorrectPassword());
       signupButton.click();
     });
-    it('Should check message will show that \"Sign Up Success!\" and goto signin page',() => {
-      element(by.css('[class="ng-binding flex"]')).getText().then((result) => {
+    it('Should check message will show \"Sign Up Success!\" and goto signin page',() => {
+      successMessage.getText().then((result) => {
         expect(result).toBe('Sign Up Success!');
       });
       browser.sleep(10000);
       browser.getCurrentUrl().then((result) => {
-        expect(result).toBe('http://10.26.1.63:3000/auth/signin');
+        expect(result).toBe(env.getWeb()+'/auth/signin');
       });
     });
   });
@@ -197,13 +190,11 @@ describe('Sign up : ',() => {
       passwdInput.sendKeys();
     });
     it('Should check [SIGN UP] button will disabled',() => {
-      expect(signupButton.isEnabled()).toBe(false);
+      expect(signupButton.isEnabled()).not.toBe(true);
     });
-    it('Should check message will show that \"Someone already has that username. Try another?\"',() => {
-      element(by.css('[ng-show="signup.emailIsInvalid && signup.showEmailCheckedMessage"]')).getAttribute('aria-hidden').then((result) => {
-        expect(result).toBe('false');
-      });
-      element(by.css('[ng-show="signup.emailIsInvalid && signup.showEmailCheckedMessage"]')).getText().then((result) => {
+    it('Should check message will show \"Someone already has that username. Try another?\"',() => {
+      expect(emailExsitMessage.isDisplayed()).toBe(true);
+      emailExsitMessage.getText().then((result) => {
         expect(result).toBe('Someone already has that username. Try another?');
       });
     });
