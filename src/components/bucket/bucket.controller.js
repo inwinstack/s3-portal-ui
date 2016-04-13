@@ -6,10 +6,14 @@ export default class BucketController {
     });
 
     this.$scope.$watch(
-      () => $bucket.state,
+      () => $bucket.state.lists,
       newVal => Object.assign(this, newVal)
     , true);
 
     this.$bucket.getBuckets();
+  }
+
+  createBucket($event) {
+    this.$bucket.createDialog($event);
   }
 }
