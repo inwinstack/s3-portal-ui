@@ -1,0 +1,75 @@
+<md-toolbar>
+  <div class="md-toolbar-tools">
+    <h2>
+      <span>S3 Portal</span>
+    </h2>
+
+    <span flex></span>
+
+    <md-menu md-offset="0 60" md-position-mode="target-right target">
+      <md-button
+        aria-label="Settings Menu" class="md-icon-button toolbar-buttons" 
+        ng-click="@A.1"
+      >
+        <md-icon class="material-icons">arrow_drop_down</md-icon>
+      </md-button>
+
+      <md-menu-content>
+        <md-menu-item ui-sref="@A.2">
+          <md-button aria-label="My Account">
+            <span>My Account</span>
+          </md-button>
+        </md-menu-item>
+        
+        <md-menu-item ui-sref="@A.3">
+          <md-button aria-label="Billing and Cost Management">
+            <span>Billing & Cost Management</span>
+          </md-button>
+        </md-menu-item>
+        
+        <md-menu-item ui-sref="@A.4">
+          <md-button aria-label="Security Credentials">
+            <span>Security Credentials</span>
+          </md-button>
+        </md-menu-item>
+        
+        <md-menu-divider></md-menu-divider>
+        
+        <md-menu-item>
+          <md-button aria-label="Sign Out" ng-click="@A.5">
+            <span>Sign Out</span>
+          </md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+
+    <md-menu md-offset="0 60" md-position-mode="target-right target">
+      <md-button
+        aria-label="Languages" class="md-icon-button toolbar-buttons"
+        ng-click="@A.6"
+      >
+        <md-icon class="material-icons">public</md-icon>
+      </md-button>
+
+      <md-menu-content>
+        <md-menu-item>
+          <md-button aria-label="English" ng-click="@A.7">
+            <span>English</span>
+          </md-button>
+        </md-menu-item>
+        
+        <md-menu-item>
+          <md-button aria-label="繁體中文" ng-click="@A.8">
+            <span>繁體中文</span>
+          </md-button>
+        </md-menu-item>
+        
+        <md-menu-item>
+          <md-button aria-label="簡體中文" ng-click="@A.9">
+            <span>简体中文</span>
+          </md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+  </div>
+</md-toolbar>

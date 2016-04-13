@@ -1,3 +1,13 @@
-<div class="layout">
-  <h1>{{ layout.name }}</h1>
-</div>
+<header id="header-container">
+  <div id="top-navbar" layout="row" ui-view="@A.1"></div>
+
+  <div id="action-navbar" layout="row" ui-view="@A.2"></div>
+
+  <div id="breadcrumb-container" layout="row" ui-view="@A.3"></div>
+</header>
+
+<section id="container" layout="row" class="layout-scrollable">
+  <article id="list-container" flex layout="column" ui-view="@A.4"></article>
+
+  <article id="info-container" flex layout="column" ng-show="@A.6" ui-view="@A.5"></article>
+</section>
