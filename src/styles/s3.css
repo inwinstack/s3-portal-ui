@@ -88,15 +88,16 @@ md-input-container md-progress-circular {
   padding: 0 8px;
 }
 
-.breadcrumb > li {
+.breadcrumb > li > a {
+  text-decoration: none;
   cursor: pointer;
   display: inline-block;
   font-weight: bold;
 }
 
-.breadcrumb > li:last-child {
-  color: #1976D2;
+.breadcrumb > li:last-child > a {
   cursor: text;
+  color: #1976D2;
 }
 
 .breadcrumb>li+li:before {

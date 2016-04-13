@@ -1,5 +1,8 @@
 <md-content layout-padding>
-  <div class="md-whiteframe-4dp" ng-if="@A.1">
+  <div
+    class="md-whiteframe-4dp"
+    ng-if="bucket.lists.length && ! bucket.requesting && ! bucket.error"
+  >
     <table class="table table-cursor table-hover">
       <thead>
         <tr>
@@ -9,13 +12,13 @@
       </thead>
 
       <tbody>
-        <tr ng-repeat="@A.2" ng-class="{active:@A.3}">
+        <tr ng-repeat="bucket in bucket.lists" ng-class="{active:@A.3}">
           <td>
             <a ng-click="@A.4">
-              <md-icon class="material-icons">info_outline</md-icon>
+              <md-icon>info_outline</md-icon>
             </a>
           </td>
-          <td ng-bind="@A.5">
+          <td ng-bind="bucket">
             <a ng-click="@A.11"></a>
           </td>
         </tr>
@@ -26,25 +29,25 @@
   <div
     class="progress-state"
     layout="column" layout-align="center center"
-    ng-if="@A.6"
+    ng-if="bucket.requesting"
   >
-    <md-progress-circular md-diameter="70"></md-progress-circular>
+    <md-progress-circular md-mode="indeterminate" md-diameter="70"></md-progress-circular>
     <div class="md-headline">Loading...</div>
   </div>
 
   <div
-    class="empty-state" 
+    class="empty-state"
     layout="column" layout-align="center center"
-    ng-if="@A.7"
+    ng-if="! bucket.lists.length && ! bucket.requesting"
   >
     <div class="md-headline">Looks like you don't have any Bucket</div>
-    <div class="md-subhead">Don't worry. It's easy yo create one.</div>
+    <div class="md-subhead">Don't worry. It's easy to create one.</div>
 
     <md-button
       class="md-raised md-primary" aria-label="Create Bucket"
       ng-click="@A.8"
     >
-      <md-icon class="material-icons">add</md-icon>
+      <md-icon>add</md-icon>
       <span>Create Bucket</span>
     </md-button>
   </div>
@@ -52,16 +55,16 @@
   <div
     class="load-fail-state"
     layout="column" layout-align="center center"
-    ng-if="@A.9"
+    ng-if="bucket.error && ! bucket.requesting"
   >
     <div class="md-headline">Oops, your connection seems off...</div>
     <div class="md-subhead">Don't worry. You can refresh to try again.</div>
 
     <md-button
       class="md-icon-button" aria-label="Refresh"
-      ng-click="@A.10"
+      ng-click="bucket.$bucket.getBuckets()"
     >
-      <md-icon class="material-icons icon-default">refresh</md-icon>
+      <md-icon class="icon-default">refresh</md-icon>
     </md-button>
   </div>
 </md-content>

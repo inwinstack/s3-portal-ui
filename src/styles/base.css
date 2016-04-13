@@ -2,7 +2,7 @@
 /**
  * @author Jamie jamie.h@inwinstack.com
  */
- 
+
 /* margin ----------------------------------------------- */
 .no-margin {
     margin: 0;
@@ -23,7 +23,7 @@
 .no-margin-t{
     margin-top: 0;
 }
- 
+
 /* border radius ----------------------------------------- */
 .radius-small {
     border-radius: 4px;
