@@ -4,7 +4,7 @@ import bucketServ from './bucket.service';
 import createTem from './create/create.html';
 import app from './../../index.js';
 
-describe('bucket list', function() {
+describe('bucket testing', function() {
   let $rootScope;
   let makeService;
   let makeTem;
