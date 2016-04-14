@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const config = require('../config');
 
 module.exports = {
   devtool: 'eval',
@@ -13,9 +14,7 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production'),
-      },
+      'process.env': JSON.stringify(config),
     }),
   ],
   resolve: {
