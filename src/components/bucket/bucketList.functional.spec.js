@@ -224,7 +224,7 @@ describe('bucket list', function() {
     it('should let controller.error to be true and requesting to be false', function() {
       const service = makeService();
       const controller = makeController(service);
-      $httpBackend.expectPOST($fetch.API_URL + '/v1/bucket/list').respond(429);
+      $httpBackend.expectPOST($fetch.API_URL + '/v1/bucket/list').respond(429, 'Too Many Attempts.');
       $rootScope.$digest();
       $httpBackend.flush();
       expect(controller.error).to.eq(true);
