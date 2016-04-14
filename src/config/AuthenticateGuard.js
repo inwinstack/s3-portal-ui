@@ -1,5 +1,5 @@
 /** @ngInject */
-export default ($rootScope, $state, $auth, $toast, $timeout) => {
+export default ($rootScope, $state, $auth, $toast) => {
   $rootScope.$on('$stateChangeStart', (event, next) => {
     if (next.noAuth) {
       if ($auth.isAuthenticated()) {
@@ -18,7 +18,7 @@ export default ($rootScope, $state, $auth, $toast, $timeout) => {
 
   $rootScope.$on('$routeChangeError', ($event, current, previous, rejection) => {
     if (rejection.status === 404) {
-      $timeout(() => $state.go('404'), 0);
+      $state.go('404');
     }
   });
 };
