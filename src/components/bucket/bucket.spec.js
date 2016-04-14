@@ -290,4 +290,20 @@ describe('bucket list', function() {
       expect(controller.data[7].Name).to.eq('abd22');
     });
   });
+  describe('when create bucket fail', function() {
+    it('should invoke $toast.show and called with failture message', function() {
+      const postData = { bucket: 'abd12' };
+      const service = makeService();
+      service.getBuckets = () => {};
+      const createController = makeCreateController(service);
+      const controller = makeController(service);
+      createController.bucket = 'abd12';
+      const toast = sinon.spy($toast, 'show');
+      $httpBackend.expectPOST($fetch.API_URL + '/v1/bucket/create', postData).respond(401, 'Create Bucket Error');
+      createController.create();
+      $httpBackend.flush();
+      $rootScope.$digest();
+      expect(toast).to.have.been.calledWith('Bucket create failure, please try again!');
+    });
+  });
 });
