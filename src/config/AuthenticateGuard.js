@@ -4,15 +4,15 @@ export default ($rootScope, $state, $auth, $toast, $timeout) => {
     if (next.noAuth) {
       if ($auth.isAuthenticated()) {
         event.preventDefault();
-        $timeout(() => $state.go('bucket'), 0);
+        $state.go('bucket');
       }
       return;
     }
 
     if (! $auth.isAuthenticated()) {
       event.preventDefault();
+      $state.go('auth.signin');
       $toast.show('You should Login!');
-      $timeout(() => $state.go('auth.signin'), 0);
     }
   });
 
