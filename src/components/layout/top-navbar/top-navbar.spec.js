@@ -48,104 +48,68 @@ describe('User log out', function() {
       expect(showDialog.called).to.eq(true);
     });
   });
-  describe('when confirm logout', function() {
-    it('should invoke controller.executedSignOut', function() {
+  describe('when showConfirmMessage', function() {
+    it('should invoke $mdDialog.confirm', function() {
       const controller = makeController();
-      const signOutMock = sinon.mock(controller.$mdDialog);
-      const signOutDeferred = makeDeferred();
-      signOutMock.expects('show').returns(signOutDeferred.promise);
-      signOutDeferred.resolve();
-      controller.executedSignOut = () => {};
-
-      const executedSignOut = sinon.spy(controller, 'executedSignOut');
+      const dialog = sinon.spy($mdDialog, 'confirm');
       controller.signOut();
       $rootScope.$digest();
-      expect(executedSignOut.called).to.eq(true);
+      expect(dialog.called).to.eq(true);
     });
   });
-  describe('when un-confirm logout', function() {
-    it('should not invoke controller.executedSignOut', function() {
-      const controller = makeController();
-      const signOutMock = sinon.mock(controller.$mdDialog);
-      const signOutDeferred = makeDeferred();
-      signOutMock.expects('show').returns(signOutDeferred.promise);
-      signOutDeferred.reject();
-      controller.executedSignOut = () => {};
-
-      const executedSignOut = sinon.spy(controller, 'executedSignOut');
-      controller.signOut();
-      $rootScope.$digest();
-      expect(executedSignOut.called).to.eq(false);
-    });
-  });
-  describe('when confirm logout and logout success', function() {
+  describe('when executedSignOut resolve', function() {
     it('should invoke $auth.logout', function() {
       const controller = makeController();
-      const signOutMock = sinon.mock(controller.$mdDialog);
-      const signOutDeferred = makeDeferred();
-      const authMock = sinon.mock(AuthService);
-      const authDeferred = makeDeferred();
-      signOutMock.expects('show').returns(signOutDeferred.promise);
-      signOutDeferred.resolve();
-      authMock.expects('signOut').returns(authDeferred.promise);
-      authDeferred.resolve();
-
+      const AuthMock = sinon.mock(AuthService);
+      const deferred = makeDeferred();
+      AuthMock.expects('signOut').returns(deferred.promise);
+      deferred.resolve();
       const auth = sinon.spy($auth, 'logout');
-      controller.signOut();
+      controller.executedSignOut();
       $rootScope.$digest();
       expect(auth.called).to.eq(true);
     });
     it('should invoke $state.go and called with auth.signin', function() {
       const controller = makeController();
-      const signOutMock = sinon.mock(controller.$mdDialog);
-      const signOutDeferred = makeDeferred();
-      const authMock = sinon.mock(AuthService);
-      const authDeferred = makeDeferred();
-      signOutMock.expects('show').returns(signOutDeferred.promise);
-      signOutDeferred.resolve();
-      authMock.expects('signOut').returns(authDeferred.promise);
-      authDeferred.resolve();
-
+      const AuthMock = sinon.mock(AuthService);
+      const deferred = makeDeferred();
+      AuthMock.expects('signOut').returns(deferred.promise);
+      deferred.resolve();
       const state = sinon.spy($state, 'go');
-      controller.signOut();
+      controller.executedSignOut();
       $rootScope.$digest();
       expect(state).to.have.been.calledWith('auth.signin');
     });
-    it('should invoke $toast.show and called with Sign Out Success!', function() {
+    it('should invoke $toast.show and called with success message', function() {
       const controller = makeController();
-      const signOutMock = sinon.mock(controller.$mdDialog);
-      const signOutDeferred = makeDeferred();
-      const authMock = sinon.mock(AuthService);
-      const authDeferred = makeDeferred();
-      signOutMock.expects('show').returns(signOutDeferred.promise);
-      signOutDeferred.resolve();
-      authMock.expects('signOut').returns(authDeferred.promise);
-      authDeferred.resolve();
-
+      const AuthMock = sinon.mock(AuthService);
+      const deferred = makeDeferred();
+      AuthMock.expects('signOut').returns(deferred.promise);
+      deferred.resolve();
       const toast = sinon.spy($toast, 'show');
-      controller.signOut();
+      controller.executedSignOut();
       $rootScope.$digest();
       expect(toast).to.have.been.calledWith('Sign Out Success!');
     });
   });
-  describe('when confirm logout and logout fail', function() {
-    it('should invoke $toast.show and called with Sign Out Failure!', function() {
+  describe('when executedSignOut reject', function() {
+    it('should invoke $toast.show and call with fail message', function() {
       const controller = makeController();
       const signOutMock = sinon.mock(controller.$mdDialog);
-      const signOutDeferred = makeDeferred();
+      const deferred = makeDeferred();
       const authMock = sinon.mock(AuthService);
       const authDeferred = makeDeferred();
-      signOutMock.expects('show').returns(signOutDeferred.promise);
-      signOutDeferred.resolve();
+      signOutMock.expects('show').returns(deferred.promise);
+      deferred.reject();
       authMock.expects('signOut').returns(authDeferred.promise);
       authDeferred.reject();
 
       const toast = sinon.spy($toast, 'show');
-      controller.signOut();
+      controller.executedSignOut();
       $rootScope.$digest();
       expect(toast).to.have.been.calledWith('Sign Out Failure!');
-    })
-  })
+    });
+  });
 });
 
 
