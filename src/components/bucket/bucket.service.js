@@ -70,6 +70,7 @@ export default class BucketService {
    */
   closeDialog() {
     this.$mdDialog.cancel();
+    this.resetCheckBucketState();
   }
 
   /**
@@ -147,7 +148,6 @@ export default class BucketService {
       })
       .finally(() => {
         this.closeDialog();
-        this.state.create.checked = false;
       });
   }
 }
