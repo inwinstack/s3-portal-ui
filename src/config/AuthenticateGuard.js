@@ -1,24 +1,24 @@
 /** @ngInject */
-export default ($rootScope, $state, $auth, $toast, $timeout) => {
+export default ($rootScope, $state, $auth, $toast) => {
   $rootScope.$on('$stateChangeStart', (event, next) => {
     if (next.noAuth) {
       if ($auth.isAuthenticated()) {
         event.preventDefault();
-        $timeout(() => $state.go('bucket'), 0);
+        $state.go('bucket');
       }
       return;
     }
 
     if (! $auth.isAuthenticated()) {
       event.preventDefault();
+      $state.go('auth.signin');
       $toast.show('You should Login!');
-      $timeout(() => $state.go('auth.signin'), 0);
     }
   });
 
   $rootScope.$on('$routeChangeError', ($event, current, previous, rejection) => {
     if (rejection.status === 404) {
-      $timeout(() => $state.go('404'), 0);
+      $state.go('404');
     }
   });
 };
