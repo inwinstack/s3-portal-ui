@@ -8,7 +8,7 @@ module.exports = {
     './src',
   ],
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, '../dist'),
     filename: 'bundle.js',
   },
   plugins: [
@@ -46,6 +46,7 @@ module.exports = {
         test: /\.(png|jpg|gif|svg|ttf|eot|woff(2)?)\??.*$/,
         loader: 'url',
         query: {
+          preifx: 'static',
           limit: 100000,
         },
       },
