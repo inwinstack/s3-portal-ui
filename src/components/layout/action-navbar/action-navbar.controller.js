@@ -1,12 +1,12 @@
 export default class ActionNavbarController {
   /** @ngInject */
-  constructor($scope, $bucket, $actionNav) {
+  constructor($scope, $bucket, $nav) {
     Object.assign(this, {
       $scope, $bucket,
     });
 
     this.$scope.$watch(
-      () => $actionNav.type,
+      () => $nav.type,
       newVal => (this.type = newVal)
     );
   }

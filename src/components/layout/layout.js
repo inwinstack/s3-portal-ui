@@ -36,7 +36,7 @@ const route = $stateProvider => {
 const Layout = module('layout', [
   router,
 ])
-.service('$actionNav', ActionNavbarService)
+.service('$nav', ActionNavbarService)
 .config(route);
 
 export default Layout.name;
