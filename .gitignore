@@ -7,3 +7,4 @@ db.json
 /node_modules
 /dist
 /coverage
+config.js

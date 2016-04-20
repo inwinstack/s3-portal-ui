@@ -15,7 +15,7 @@ const Config = module('app.config', [])
   .config(http)
   .config(breadcrumb)
   .constant('Config', {
-    API_URL: 'http://163.17.136.83:8080/api',
+    API_URL: `${process.env.SERVER_HOST}/api`,
   })
   .run(authenticateGuard);
 

@@ -17,6 +17,13 @@
 
 ### Usage
 
+Copy the `./config.example.js` file to `./config.js` and configure the file for your environment:
+
+```sh
+$ cp config.example.js config.js
+$ vim config.js
+```
+
 Install dependencies:
 
 ```sh
