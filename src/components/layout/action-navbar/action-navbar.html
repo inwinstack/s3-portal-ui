@@ -2,10 +2,10 @@
   <div class="md-toolbar-tools">
     <md-button
       class="md-raised md-primary" aria-label="Create Bucket"
-      ng-click="nav.createBucket($event)"
+      ng-click="actionNav.create($event)"
     >
       <md-icon class="material-icons">add</md-icon>
-      <span>Create Bucket</span>
+      <span>Create {{ actionNav.type }}</span>
     </md-button>
 
     <md-menu md-offset="0 44">
@@ -21,9 +21,9 @@
         <md-menu-item>
           <md-button
             aria-label="Create Bucket"
-            ng-click="nav.createBucket($event)"
+            ng-click="actionNav.create($event)"
           >
-            <span>Create Bucket</span>
+            <span>Create {{ actionNav.type }}</span>
           </md-button>
         </md-menu-item>
 
@@ -32,7 +32,7 @@
             aria-label="Delete Bucket"
             ng-click="@A.3" ng-disabled="@A.4"
           >
-            <span>Delete Bucket</span>
+            <span>Delete {{ actionNav.type }}</span>
           </md-button>
         </md-menu-item>
 
@@ -41,7 +41,7 @@
         <md-menu-item>
           <md-button
             aria-label="Refresh"
-            ng-click="nav.$bucket.getBuckets()"
+            ng-click="actionNav.refresh()"
           >
             <span>Refresh</span>
           </md-button>
@@ -86,7 +86,7 @@
 
     <md-button
       class="md-icon-button" aria-label="Refresh"
-      ng-click="nav.$bucket.getBuckets()"
+      ng-click="actionNav.refresh()"
     >
       <md-icon class="material-icons icon-default">refresh</md-icon>
     </md-button>
