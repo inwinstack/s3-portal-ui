@@ -127,3 +127,8 @@ md-input-container md-progress-circular {
 .load-fail-state {
   margin-top: 10%;
 }
+
+/* fix flexbox type layout issues in IE10 */
+span.flex {
+  display: block;
+}
