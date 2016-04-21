@@ -25,9 +25,6 @@ const route = $stateProvider => {
         controllerAs: 'nav',
       },
     },
-    ncyBreadcrumb: {
-      label: 'All Buckets ( {{ bucket.data.length }} )',
-    },
   });
 };
 

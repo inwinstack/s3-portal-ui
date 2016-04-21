@@ -5,9 +5,9 @@ import BucketCreateTemplate from './create/create.html';
 
 export default class BucketService {
   /** @ngInject */
-  constructor($fetch, $toast, $mdDialog) {
+  constructor($fetch, $toast, $mdDialog, $breadcrumb) {
     Object.assign(this, {
-      $fetch, $toast, $mdDialog,
+      $fetch, $toast, $mdDialog, $breadcrumb,
     });
 
     this.initState();
@@ -105,6 +105,7 @@ export default class BucketService {
       })
       .finally(() => {
         this.state.lists.requesting = false;
+        this.$breadcrumb.updateBucketPath(this.state.lists.data.length);
       });
   }
 
