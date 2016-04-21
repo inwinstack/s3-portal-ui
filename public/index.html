@@ -9,17 +9,12 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <base href="/">
-    <style>
-      .loading {
-        margin: 200px 0;
-        text-align: center;
-      }
-    </style>
+    <link rel="stylesheet" href="/css/app-loading.css">
   </head>
   <body layout="column" ng-app="app" ng-strict-di ng-cloak>
 
     <div ui-view layout="column" flex>
-      <h2 class="loading">Loading...</h2>
+      <div class="spinner"></div>
     </div>
 
     <script src="/static/bundle.js"></script>
