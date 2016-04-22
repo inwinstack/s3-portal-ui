@@ -7,7 +7,7 @@
       <thead>
         <tr>
           <th style="width:24px;"></th>
-          <th>Name</th>
+          <th translate>UTILS.NAME</th>
         </tr>
       </thead>
 
@@ -32,7 +32,7 @@
     ng-if="bucket.requesting"
   >
     <md-progress-circular md-mode="indeterminate" md-diameter="70"></md-progress-circular>
-    <div class="md-headline">Loading...</div>
+    <div class="md-headline" translate>UTILS.LOADING</div>
   </div>
 
   <div
@@ -40,15 +40,15 @@
     layout="column" layout-align="center center"
     ng-if="! bucket.data.length && ! bucket.requesting && ! bucket.error"
   >
-    <div class="md-headline">Looks like you don't have any Bucket</div>
-    <div class="md-subhead">Don't worry. It's easy to create one.</div>
+    <div class="md-headline" translate>BUCKET.EMPTY_MESSAGE</div>
+    <div class="md-subhead" translate>BUCKET.CREATE_MESSAGE</div>
 
     <md-button
       class="md-raised md-primary" aria-label="Create Bucket"
       ng-click="bucket.createBucket($event)"
     >
       <md-icon>add</md-icon>
-      <span>Create Bucket</span>
+      <span translate>BUCKET.CREATE</span>
     </md-button>
   </div>
 
@@ -57,8 +57,8 @@
     layout="column" layout-align="center center"
     ng-if="bucket.error && ! bucket.requesting"
   >
-    <div class="md-headline">Oops, your connection seems off...</div>
-    <div class="md-subhead">Don't worry. You can refresh to try again.</div>
+    <div class="md-headline" translate>BUCKET.ERROR_MESSAGE</div>
+    <div class="md-subhead" translate>BUCKET.REFRESH_MESSAGE</div>
 
     <md-button
       class="md-icon-button" aria-label="Refresh"
