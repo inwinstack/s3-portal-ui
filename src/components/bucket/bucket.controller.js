@@ -1,8 +1,8 @@
 export default class BucketController {
   /** @ngInject */
-  constructor($scope, $bucket) {
+  constructor($scope, $bucket, $state) {
     Object.assign(this, {
-      $scope, $bucket,
+      $scope, $bucket, $state,
     });
 
     this.$scope.$watch(
@@ -15,5 +15,9 @@ export default class BucketController {
 
   createBucket($event) {
     this.$bucket.createDialog($event);
+  }
+
+  selectBucket(bucket) {
+    this.$state.go('file', { path: bucket });
   }
 }
