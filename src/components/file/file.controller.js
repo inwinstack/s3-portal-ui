@@ -1,7 +1,16 @@
 export default class FileController {
   /** @ngInject */
-  constructor($stateParams) {
-    this.path = $stateParams.path;
-    console.log(this.path.split('/')); // ['bucketName', 'folderA', 'folderB'];
+  constructor($scope, $stateParams, $file) {
+    Object.assign(this, {
+      $scope, $file,
+    });
+
+    this.$scope.$watch(
+      () => $file.state.lists,
+      newVal => Object.assign(this, newVal)
+    , true);
+
+    this.$file.setPaths($stateParams.path);
+    this.$file.getFiles();
   }
 }
