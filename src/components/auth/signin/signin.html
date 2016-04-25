@@ -49,7 +49,7 @@
           ng-disabled="signin.form.$invalid || signin.form.$submitted"
           ng-click="signin.submit()"
         >
-          <span ng-hide="signup.form.$submitted">Sign In</span>
+          <span ng-hide="signin.form.$submitted">Sign In</span>
           <md-progress-circular
             class="md-accent" md-mode="indeterminate"
             md-diameter="30" ng-hide="! signin.form.$submitted"
