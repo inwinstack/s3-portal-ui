@@ -1,13 +1,13 @@
 export default class ActionNavbarService {
   constructor() {
-    this.type = 'Bucket';
+    this.type = 'BUCKET';
   }
 
   setTypeToBucket() {
-    this.type = 'Bucket';
+    this.type = 'BUCKET';
   }
 
   setTypeToFile() {
-    this.type = 'File';
+    this.type = 'FILE';
   }
 }
