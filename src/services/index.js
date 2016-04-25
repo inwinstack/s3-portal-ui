@@ -2,9 +2,9 @@ import { module } from 'angular';
 import Toast from './toast/toast';
 import Fetch from './fetch/fetch';
 
-const Utils = module('app.utils', [
+const Services = module('app.services', [
   Toast,
   Fetch,
 ]);
 
-export default Utils.name;
+export default Services.name;
