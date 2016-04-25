@@ -12,29 +12,66 @@ export default class ActionNavbarController {
   }
 
   /**
+   * Returns the type is FILE or not.
+   *
+   * @return {Boolean}
+   */
+  isFile() {
+    return this.type === 'FILE';
+  }
+
+  open() {
+    //
+  }
+
+  download() {
+    //
+  }
+
+  upload() {
+    //
+  }
+
+  delete() {
+    //
+  }
+
+  none() {
+    //
+  }
+
+  properties() {
+    //
+  }
+
+  transfers() {
+    //
+  }
+
+  /**
    * Display the create dialog by `this.type`
    *
-   * @param  {object} $event
-   * @return {void}
+   * @param  {Object} $event
+   * @return {Void}
    */
   create($event) {
-    if (this.type === 'Bucket') {
-      this.$bucket.createDialog($event);
-    } else {
+    if (this.isFile()) {
       // create file dialog
+    } else {
+      this.$bucket.createDialog($event);
     }
   }
 
   /**
    * Refresh the list by `this.type`
    *
-   * @return {void}
+   * @return {Void}
    */
   refresh() {
-    if (this.type === 'Bucket') {
-      this.$bucket.getBuckets();
-    } else {
+    if (this.isFile()) {
       // get the files
+    } else {
+      this.$bucket.getBuckets();
     }
   }
 }
