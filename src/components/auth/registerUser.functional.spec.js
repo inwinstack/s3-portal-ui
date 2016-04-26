@@ -7,7 +7,6 @@ import app from './../../index.js';
 describe('User sign up', function() {
   let $rootScope;
   let makeController;
-  let makeTemplate
   let $toast;
   let $state;
   let $auth;
@@ -34,11 +33,7 @@ describe('User sign up', function() {
 
     AuthService = _AuthService_;
 
-    makeTemplate = angular.element(signUpTemplate);
-
-    $rootScope.credentials = { email: null};
-
-    $compile(makeTemplate)($rootScope);
+    $compile(signUpTemplate)($rootScope);
 
     form = $rootScope.signup.form;
 
@@ -46,6 +41,36 @@ describe('User sign up', function() {
       return new signUpCtrl($auth, $state, $toast, AuthService);
     };
   }));
+  describe('when fill a exist email', function() {
+    it('should let emailIsValid be false and emailIsInValid be true', function() {
+      const controller = makeController();
+      controller.form = form;
+      controller.form.email.$setViewValue = 'chaoen@inwinstack.com';
+      const data = { email: controller.form.email.$viewValue };
+      controller.credentials = data;
+      $httpBackend.expectPOST('http://163.17.136.83:8080/api/v1/auth/checkEmail', data).respond(403);
+      controller.checkEmail();
+      $httpBackend.flush();
+      $rootScope.$digest();
+      expect(controller.emailIsValid).to.eq(false);
+      expect(controller.emailIsInvalid).to.eq(true);
+    })
+  })
+  describe('when fill a non-exist email', function() {
+    it('should let emailIsValid be ture and emailIsInValid be false', function() {
+      const controller = makeController();
+      controller.form = form;
+      controller.form.email.$setViewValue= 'chaoen.l@inwinstack.com';
+      const data = { email: controller.form.email.$viewValue };
+      controller.credentials = data;
+      $httpBackend.expectPOST('http://163.17.136.83:8080/api/v1/auth/checkEmail', data).respond(200);
+      controller.checkEmail();
+      $httpBackend.flush();
+      $rootScope.$digest();
+      expect(controller.emailIsValid).to.eq(true);
+      expect(controller.emailIsInvalid).to.eq(false);
+    })
+  })
   describe('when sign up success', function() {
     it('should invoke $state.go and called by auth.signin', function() {
       const controller = makeController();
@@ -75,7 +100,8 @@ describe('User sign up', function() {
       const controller = makeController();
       const data = { email: 'chaoen.l@inwinstack.com', password: 'abc1234' };
       controller.credentials = data;
-      controller.form = { '$submitted': true };
+      controller.form = form;
+      controller.form.$submitted = true;
       $httpBackend.expectPOST('http://163.17.136.83:8080/api/v1/auth/register', data).respond(403);
       controller.submit();
       $httpBackend.flush();
