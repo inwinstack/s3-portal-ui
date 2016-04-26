@@ -35,6 +35,10 @@ describe('bucket testing', function() {
 
     $compile(createTem)($rootScope);
 
+    form = $rootScope.create.form;
+
+    form.bucket.$options.debounce = 0;
+
     $auth.isAuthenticated = () => true;
 
     $httpBackend = _$httpBackend_;
@@ -336,11 +340,20 @@ describe('bucket testing', function() {
   });
   describe('when fill valid bucket name', function() {
     it('should be valid', function() {
+      form.bucket.$setViewValue('BucketName');
       $rootScope.$digest();
-      const form = $rootScope.create.form;
-      form.bucket.$setModelValue('5555');
+      expect(form.bucket.$viewValue).to.eq('BucketName');
+      expect(form.bucket.$valid).to.eq(true);
+      expect(form.bucket.$invalid).to.eq(false);
+    });
+  });
+  describe('when fill a non-valid email', function() {
+    it('should be invalid', function() {
+      form.bucket.$setViewValue('');
       $rootScope.$digest();
-      console.log(form.bucket);
+      expect(form.bucket.$viewValue).to.eq('');
+      expect(form.bucket.$valid).to.eq(false);
+      expect(form.bucket.$invalid).to.eq(true);
     });
   });
   describe('when create() in bucketCtrl', function() {
