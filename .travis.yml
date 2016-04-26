@@ -1,12 +1,6 @@
 language: node_js
 node_js:
   - "4.2"
-<<<<<<< HEAD
-branches:
-  only:
-   - test/signupFunctionalTest
-=======
->>>>>>> inwin/dev
 env:
   - CXX=g++-4.8
 addons:
