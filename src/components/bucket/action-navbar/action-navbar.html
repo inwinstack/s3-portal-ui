@@ -1,0 +1,94 @@
+<md-toolbar class="md-menu-toolbar">
+  <div class="md-toolbar-tools">
+    <md-button
+      class="md-raised md-primary" aria-label="Create Bucket"
+      ng-click="nav.createBucket($event)"
+    >
+      <md-icon class="material-icons">add</md-icon>
+      <span>Create Bucket</span>
+    </md-button>
+
+    <md-menu md-offset="0 44">
+      <md-button
+        class="md-raised" aria-label="Actions Menu"
+        ng-click="$mdOpenMenu($event)"
+      >
+        <span>Actions</span>
+        <md-icon class="icon-default">arrow_drop_down</md-icon>
+      </md-button>
+
+      <md-menu-content width="4">
+        <md-menu-item>
+          <md-button
+            aria-label="Create Bucket"
+            ng-click="nav.createBucket($event)"
+          >
+            <span>Create Bucket</span>
+          </md-button>
+        </md-menu-item>
+
+        <md-menu-item>
+          <md-button
+            aria-label="Delete Bucket"
+            ng-click="@A.3" ng-disabled="@A.4"
+          >
+            <span>Delete Bucket</span>
+          </md-button>
+        </md-menu-item>
+
+        <md-menu-divider></md-menu-divider>
+
+        <md-menu-item>
+          <md-button
+            aria-label="Refresh"
+            ng-click="nav.$bucket.getBuckets()"
+          >
+            <span>Refresh</span>
+          </md-button>
+        </md-menu-item>
+
+        <md-menu-divider></md-menu-divider>
+
+        <md-menu-item>
+          <md-button
+            aria-label="Properties"
+            ng-click="@A.6" ng-disabled="@A.4"
+          >
+            <span>Properties</span>
+          </md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+
+    <span flex></span>
+
+    <md-button
+      class="md-raised" aria-label="None"
+      ng-click="@A.7" ng-disabled="@A.8"
+    >
+      <span>None</span>
+    </md-button>
+
+    <md-button
+      class="md-raised" aria-label="Properties"
+      ng-click="@A.6" ng-disabled="@A.9"
+    >
+      <md-icon class="material-icons icon-default">info_outline</md-icon>
+      <span>Properties</span>
+    </md-button>
+
+    <md-button
+      class="md-raised" aria-label="Transfers"
+      ng-click="@A.10" ng-disabled="@A.11"
+    >
+      <span>Transfers</span>
+    </md-button>
+
+    <md-button
+      class="md-icon-button" aria-label="Refresh"
+      ng-click="nav.$bucket.getBuckets()"
+    >
+      <md-icon class="material-icons icon-default">refresh</md-icon>
+    </md-button>
+  </div>
+</md-toolbar>

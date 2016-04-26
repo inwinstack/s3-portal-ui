@@ -17,6 +17,13 @@
 
 ### Usage
 
+Copy the `./config.example.js` file to `./config.js` and configure the file for your environment:
+
+```sh
+$ cp config.example.js config.js
+$ vim config.js
+```
+
 Install dependencies:
 
 ```sh
@@ -41,6 +48,12 @@ $ npm run build
 
 The static file will build on `./dist`.
 
+You can start the production server:
+
+```sh
+$ npm run prod
+```
+
 ### Test
 
 ```sh
@@ -51,30 +64,6 @@ $ npm test
 
 ```sh
 $ npm run lint
-```
-
-### Scaffold
-
-```sh
-$ gulp make --name={name} --path={path} [--route]
-```
-
-- `name`: component name.
-- `path`: component path.
-- `route`: if you set `--route` option that will stubing route config for your module.
-
-For example, if you execute `gulp make --name=create --path=posts --route`, it will generate following files and include route config:
-
-```
-src/
-└── components
-    └── posts
-        └── create
-            ├── create.controller.js
-            ├── create.css
-            ├── create.html
-            ├── create.js
-            └── create.spec.js
 ```
 
 ### Referencies

@@ -1,12 +1,13 @@
 import { module } from 'angular';
 import router from 'angular-ui-router';
-import NotFoundTemplate from './notFound.html';
+import NotFoundTemplate from './not-found.html';
 
 /** @ngInject */
 const route = $stateProvider => {
-  $stateProvider.state('notFound', {
+  $stateProvider.state('not-found', {
     url: '/404',
     template: NotFoundTemplate,
+    noAuth: true,
   });
 };
 

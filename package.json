@@ -4,12 +4,13 @@
   "description": "",
   "scripts": {
     "clean": "rimraf dist coverage",
-    "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
+    "build:webpack": "cross-env NODE_ENV=production webpack --config ./webpack/webpack.config.prod.js",
     "build": "npm run clean && npm run build:webpack",
     "test:coverage": "karma start",
     "test": "npm run clean && npm run test:coverage",
     "lint": "eslint src",
-    "start": "node server.js"
+    "start": "node ./bin/server.dev.js",
+    "prod": "node ./bin/server.prod.js"
   },
   "keywords": [
     "s3",
@@ -23,27 +24,29 @@
   ],
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/inwinstack/s3-portal-ui.git"
   },
   "author": "Evan Ye <jigsaw.ye@gmail.com> (http://github.com/jigsawye)",
   "engines": {
     "node": ">=4.2.0"
   },
-  "license": "MIT",
+  "license": "",
   "bugs": {
-    "url": "https://github.com/"
+    "url": "https://github.com/inwinstack/s3-portal-ui/issues"
   },
-  "homepage": "https://github.com/",
+  "homepage": "https://github.com/inwinstack/s3-portal-ui",
   "dependencies": {
     "angular": "^1.5.0",
     "angular-animate": "^1.5.0",
     "angular-aria": "^1.5.0",
+    "angular-breadcrumb": "^0.4.1",
     "angular-material": "^1.0.5",
     "angular-messages": "^1.5.0",
     "angular-translate": "^2.9.2",
     "angular-ui-router": "^0.2.18",
     "angular-validation-match": "^1.7.1",
     "font-awesome": "^4.5.0",
+    "javascript-natural-sort": "^0.7.1",
     "lodash": "^4.5.1",
     "material-design-icons": "^2.2.0",
     "satellizer": "^0.14.0"
@@ -52,7 +55,7 @@
     "angular-mocks": "^1.3.15",
     "autoprefixer": "^6.2.3",
     "babel-core": "^6.5.0",
-    "babel-eslint": "^5.0.0",
+    "babel-eslint": "^6.0.0",
     "babel-loader": "^6.2.0",
     "babel-polyfill": "^6.5.0",
     "babel-preset-es2015": "^6.5.0",
@@ -63,13 +66,10 @@
     "cross-env": "^1.0.7",
     "css-loader": "^0.23.1",
     "eslint": "^2.2.0",
-    "eslint-config-airbnb": "^6.0.0",
+    "eslint-config-airbnb": "^7.0.0",
     "express": "^4.13.3",
     "file-loader": "^0.8.5",
     "fs-walk": "0.0.1",
-    "gulp": "^3.9.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-template": "^3.1.0",
     "isparta": "^4.0.0",
     "isparta-loader": "^2.0.0",
     "karma": "^0.13.9",
@@ -101,7 +101,6 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.9.5",
     "webpack-dev-middleware": "^1.2.0",
-    "webpack-hot-middleware": "^2.4.1",
-    "yargs": "^4.1.0"
+    "webpack-hot-middleware": "^2.4.1"
   }
 }
