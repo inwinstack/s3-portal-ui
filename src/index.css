@@ -3,3 +3,5 @@
 @import 'material-design-icons/iconfont/material-icons.css';
 @import './styles/base.css';
 @import './styles/s3.css';
+@import './styles/dialog.css';
+@import './styles/table.css';

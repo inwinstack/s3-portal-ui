@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const config = require('../config');
 
 module.exports = {
   devtool: 'eval',
@@ -8,21 +9,12 @@ module.exports = {
     './src',
   ],
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, '../dist'),
     filename: 'bundle.js',
   },
   plugins: [
-    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production'),
-      },
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compressor: {
-        screw_ie8: true,
-        warnings: false,
-      },
+      'process.env': JSON.stringify(config),
     }),
   ],
   resolve: {
@@ -41,12 +33,19 @@ module.exports = {
       },
       {
         test: /\.html$/,
+        exclude: path.join(__dirname, '../src/templates'),
         loader: 'raw',
+      },
+      {
+        test: /\.html$/,
+        include: path.join(__dirname, '../src/templates'),
+        loader: 'ng-cache',
       },
       {
         test: /\.(png|jpg|gif|svg|ttf|eot|woff(2)?)\??.*$/,
         loader: 'url',
         query: {
+          preifx: 'static',
           limit: 100000,
         },
       },
