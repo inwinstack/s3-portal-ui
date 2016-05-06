@@ -36,12 +36,10 @@ export default class FileService {
     this.state.lists.requesting = true;
     this.state.lists.data = [];
 
-    const fakeList = ['folder1', 'folder2', 'folder3', 'folder4'];
-
-    this.$q(resolve => setTimeout(() => resolve(fakeList), 2000))
-      .then(list => {
+    this.$fetch.get(`/v1/file/list/${this.paths.bucket}`)
+      .then(({ data }) => {
         this.state.lists.error = false;
-        this.state.lists.data = list;
+        this.state.lists.data = data.files || [];
       })
       .catch(() => {
         this.state.lists.error = true;
