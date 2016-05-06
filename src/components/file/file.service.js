@@ -1,8 +1,8 @@
 export default class FileService {
   /** @ngInject */
-  constructor($q, $fetch, $bucket) {
+  constructor($fetch, $bucket) {
     Object.assign(this, {
-      $q, $fetch, $bucket,
+      $fetch, $bucket,
     });
 
     this.initState();
@@ -12,7 +12,7 @@ export default class FileService {
     this.state = {
       paths: {
         bucket: '',
-        folders: '',
+        folders: [],
       },
       lists: {
         data: [],
@@ -36,7 +36,8 @@ export default class FileService {
     this.state.lists.requesting = true;
     this.state.lists.data = [];
 
-    this.$fetch.get(`/v1/file/list/${this.paths.bucket}`)
+    this.$fetch
+      .get(`/v1/file/list/${this.paths.bucket}?prefix=${this.paths.folders.join('/')}`)
       .then(({ data }) => {
         this.state.lists.error = false;
         this.state.lists.data = data.files || [];
