@@ -4,5 +4,5 @@ export default ($mdThemingProvider) => {
     .theme('default')
     .primaryPalette('blue')
     .warnPalette('orange')
-    .accentPalette('grey');
+    .accentPalette('indigo');
 };
