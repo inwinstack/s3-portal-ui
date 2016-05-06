@@ -1,7 +1,7 @@
 <md-content layout-padding>
   <div
     class="md-whiteframe-4dp"
-    ng-if="@A.1"
+    ng-if="file.data.length && ! file.requesting && ! file.error"
   >
     <table class="table table-cursor table-hover">
       <thead>
@@ -15,28 +15,28 @@
       </thead>
     </table>
     <md-list>
-      <md-list-item ng-class="{checked:message.selected}" ng-repeat="@A.2">
+      <md-list-item ng-class="{checked:message.selected}" ng-repeat="f in file.data">
           <md-checkbox ng-model="message.selected"></md-checkbox>
           <md-icon>insert_drive_file</md-icon>
           <p class="break-word flex-grow">
-            <span ng-bind="@A.3"></span>
+            <span ng-bind="f.Key"></span>
           </p>
           <p class="flex-none" hide show-gt-sm>
             <span
               class="storage-class-width inline-block"
-              ng-bind="@A.10"
+              ng-bind="f.StorageClass"
             ></span>
           </p>
           <p class="flex-none">
             <span
               class="size-width inline-block"
-              ng-bind="@A.11"
+              ng-bind="f.Size"
             ></span>
           </p>
           <p class="flex-none" hide show-gt-sm>
             <span
               class="time-width inline-block"
-              ng-bind="@A.12"
+              ng-bind="f.LastModified"
             ></span>
           </p>
       </md-list-item>
@@ -46,7 +46,7 @@
   <div
     class="progress-state"
     layout="column" layout-align="center center"
-    ng-if="@A.4"
+    ng-if="file.requesting"
   >
     <md-progress-circular md-mode="indeterminate" md-diameter="70"></md-progress-circular>
     <div class="md-headline">Loading...</div>
@@ -55,7 +55,7 @@
   <div
     class="empty-state"
     layout="column" layout-align="center center"
-    ng-if="@A.5"
+    ng-if="! file.data.length && ! file.requesting && ! file.error"
   >
     <div class="md-headline">This bucket is empty</div>
     <div class="md-subhead">You can do the following actions</div>
@@ -84,7 +84,7 @@
   <div
     class="load-fail-state"
     layout="column" layout-align="center center"
-    ng-if="@A.8"
+    ng-if="file.error && ! file.requesting"
   >
     <div class="md-headline">Oops, your connection seems off...</div>
     <div class="md-subhead">Don't worry. You can refresh to try again.</div>
