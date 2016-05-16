@@ -36,7 +36,7 @@
         <md-menu-divider></md-menu-divider>
 
         <md-menu-item>
-          <md-button aria-label="Sign Out" ng-click="nav.signOut($event)">
+          <md-button aria-label="Sign Out" ng-click="topNav.signOut($event)">
             <span>{{ 'SETTINGS.SIGN_OUT' | translate }}</span>
           </md-button>
         </md-menu-item>
@@ -52,10 +52,10 @@
       </md-button>
 
       <md-menu-content>
-        <md-menu-item ng-repeat="language in nav.languages">
-          <md-button aria-label="language.name" ng-click="nav.changeLanguage(language.key)">
+        <md-menu-item ng-repeat="language in topNav.languages">
+          <md-button aria-label="language.name" ng-click="topNav.changeLanguage(language.key)">
             <span>{{ language.name }}</span>
-            <md-icon ng-show="language.key === nav.currentLanguage">done</md-icon>
+            <md-icon ng-show="language.key === topNav.currentLanguage">done</md-icon>
           </md-button>
         </md-menu-item>
       </md-menu-content>
