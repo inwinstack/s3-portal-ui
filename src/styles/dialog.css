@@ -20,3 +20,18 @@ md-dialog.input-dialog {
 .dialog-description {
   margin-bottom: 30px;
 }
+
+.dialog-footer {
+  margin-left: 20px;
+  margin-top: 25px;
+  text-align: center;
+  width: 100%;
+}
+
+.dialog-footer span {
+  padding-right: 10px;
+}
+
+.list-dialog md-list-item p {
+  margin-right: 40px;
+}

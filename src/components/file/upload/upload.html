@@ -1,0 +1,78 @@
+<md-dialog class="list-dialog" aria-label="Upload Files Dialog">
+  <form name="@A.1">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2 translate>Upload Files</h2>
+        
+        <span flex></span>
+
+        <md-button
+          class="md-icon-button" aria-label="Close Upload Files Dialog"
+          ng-click="@A.2"
+        >
+          <md-icon class="material-icons">clear</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <div class="dialog-description">
+          <p translate>
+            To upload files to S3 Portal, click Add Files. To remove files already selected, click the ✖ to the far right of the file name.
+          </p>
+        </div>
+        
+        <md-list>
+          <md-list-item
+            aria-label="Add Files"
+            ng-click="@A.3" ng-disabled="@A.13"
+          >
+            <p translate>Add Files</p>
+            <md-icon class="material-icons md-primary">add</md-icon>
+          </md-list-item>
+          
+          <md-divider></md-divider>
+          
+          <md-list-item ng-repeat="@A.4">
+            <md-icon class="material-icons" ng-if="@A.5">photo</md-icon>
+            <md-icon class="material-icons" ng-if="@A.6">insert_drive_file</md-icon>
+            
+            <p class="flex-grow" ng-bind="@A.7"></p>
+            <p class="flex-none" ng-bind="@A.8"></p>
+            
+            <md-icon
+              class="material-icons md-warn md-secondary" aria-label="Remove File"
+              ng-click="@A.9" ng-disabled="@A.13"
+            >clear</md-icon>
+          </md-list-item>
+          
+          <md-divider></md-divider>
+          <p class="md-caption dialog-footer" translate>
+            Number of files:
+            <span ng-bind="@A.10"></span>
+            Total upload size:
+            <span ng-bind="@A.11"></span>
+          </p>
+        </md-list>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button aria-label="Cancel" ng-click="@A.2">
+        <span translate>Cancel</span>
+      </md-button>
+
+      <md-button
+        ng-click="@A.12" type="submit"
+        aria-label="Upload" class="md-primary"
+        ng-disabled="@A.14"
+      >
+        <span translate>Upload</span>
+        <md-progress-circular
+          class="md-primary" md-mode="indeterminate"
+          md-diameter="30" ng-show="@A.15"
+        ></md-progress-circular>
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
