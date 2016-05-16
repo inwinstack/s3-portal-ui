@@ -11,7 +11,7 @@
 
     <md-button
       class="md-raised" aria-label="Create"
-      ng-class="{md-primary: !actionNav.isFile()}"
+      ng-class="{'md-primary': !actionNav.isFile()}"
       ng-click="actionNav.create($event)"
     >
       <md-icon class="material-icons" ng-hide="actionNav.isFile()">add</md-icon>
