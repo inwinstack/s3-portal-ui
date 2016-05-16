@@ -14,6 +14,7 @@ const route = $stateProvider => {
     controller: FileController,
     controllerAs: 'file',
     template: FileTemplate,
+    onEnter: $nav => $nav.setTypeToFile(),
   });
 };
 

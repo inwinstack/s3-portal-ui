@@ -27,17 +27,19 @@ export default class FileService {
     };
   }
 
-  setPaths(path) {
-    const [bucket, ...folders] = path.split('/');
+  setPaths(bucket, folders) {
     this.paths = { bucket, folders };
   }
 
   getFiles() {
+    const { bucket, folders } = this.paths;
+    const endpoint = `/v1/file/list/${bucket}?prefix=${folders.join('/')}`;
+
     this.state.lists.requesting = true;
     this.state.lists.data = [];
 
     this.$fetch
-      .get(`/v1/file/list/${this.paths.bucket}?prefix=${this.paths.folders.join('/')}`)
+      .get(endpoint)
       .then(({ data }) => {
         this.state.lists.error = false;
         this.state.lists.data = data.files || [];
