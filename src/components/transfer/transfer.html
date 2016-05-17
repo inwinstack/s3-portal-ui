@@ -1,0 +1,96 @@
+<md-content layout-padding>
+  <div class="md-whiteframe-4dp">
+    <md-toolbar class="md-menu-toolbar">
+      <div class="md-toolbar-tools">
+        <h2>
+          <span translate>Transfers</span>
+        </h2>
+        
+        <span flex></span>
+        
+        <md-button
+          aria-label="Close Transfers" class="md-icon-button toolbar-buttons"
+          ng-click="@A.1"
+        >
+          <md-icon>clear</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    
+    <md-content>
+      <md-list class="transfer-list">
+        <md-list-item>
+          <md-checkbox aria-label="Automatically clear finished transfers"
+            ng-model="@A.2"
+          ></md-checkbox>
+          <p class="md-body-1 md-accent" translate>Automatically clear finished transfers</p>
+        </md-list-item>
+        
+        <md-list-item
+          ng-class="{'md-2-line':@A.3,'md-3-line':@A.4}"
+          ng-repeat="@A.5"
+        >
+          <md-icon
+            class="material-icons" ng-if="@A.6"
+          >file_upload</md-icon>
+          <md-icon
+            class="material-icons" ng-if="@A.7"
+          >delete</md-icon>
+          
+          <div class="md-list-item-text">
+            <h3
+              class="inline-block"
+              translate="{{@A.8}}" translate-values="@A.9"
+            ></h3>
+            
+            <div class="transfer-rate" ng-if="@A.10">
+              <md-progress-linear
+                md-mode="determinate" value="{{@A.11}}"
+              ></md-progress-linear>
+            </div>
+            
+            <p class="transfer-info">
+              <span ng-if="@A.12" translate="{{@A.13}}"></span>
+              <span
+                class="text-warn" ng-if="@A.14"
+                translate="{{@A.15}}"
+              ></span>
+              
+              <span class="transfer-loaded" ng-if="@A.10">
+                <span ng-bind="@A.16">1.87MB</span>
+                <span> / </span>
+                <span class="transfer-size" ng-bind="@A.17">2GB</span>
+              </span>
+              
+              <span class="transfer-percentage" ng-if="@A.10">
+                <span ng-bind="@A.18"></span>
+                <span>%</span>
+              </span>
+            </p>
+          </div>
+          
+          <md-icon
+            class="material-icons md-primary"
+            ng-if="@A.19"
+          >check_circle</md-icon>
+          <!--  Those feature are not included in this sprint.
+          <md-icon
+            class="material-icons md-warn"
+            ng-if="@A.20" ng-click="@A.23"
+          >pause_circle_outline</md-icon>
+          <md-icon
+            class="material-icons md-warn"
+            ng-if="@A.21" ng-click="@A.24"
+          >refresh</md-icon>-->
+          
+          <div class="margin-auto" ng-if="@A.22">
+            <md-progress-circular
+              class="inline-block valign-middle"
+              md-mode="indeterminate" md-diameter="30"
+            ></md-progress-circular>
+          </div>
+        </md-list-item>
+      </md-list>
+    </md-content>
+  </div>
+</md-content>
