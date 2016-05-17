@@ -4,6 +4,7 @@ import router from 'angular-ui-router';
 import FileController from './file.controller';
 import FileService from './file.service';
 import FileTemplate from './file.html';
+import './file.css';
 
 /** @ngInject */
 const route = $stateProvider => {
@@ -13,6 +14,7 @@ const route = $stateProvider => {
     controller: FileController,
     controllerAs: 'file',
     template: FileTemplate,
+    onEnter: $nav => $nav.setTypeToFile(),
   });
 };
 

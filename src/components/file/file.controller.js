@@ -1,8 +1,8 @@
 export default class FileController {
   /** @ngInject */
-  constructor($scope, $stateParams, $file) {
+  constructor($scope, $stateParams, $file, $bucket, $breadcrumb) {
     Object.assign(this, {
-      $scope, $file,
+      $scope, $file, $bucket, $breadcrumb,
     });
 
     this.$scope.$watch(
@@ -10,7 +10,12 @@ export default class FileController {
       newVal => Object.assign(this, newVal)
     , true);
 
-    this.$file.setPaths($stateParams.path);
+    const [bucket, ...folders] = $stateParams.path.split('/');
+
+    this.$file.setPaths(bucket, folders);
+    this.$breadcrumb.updateFilePath(folders);
+
+    this.$bucket.getBuckets();
     this.$file.getFiles();
   }
 }

@@ -1,4 +1,99 @@
-<h1>File List</h1>
-<p>Requesting: {{ file.requesting }}</p>
-<p>Error: {{ file.error }}</p>
-<p ng-repeat="f in file.data">{{ f }}</p>
+<md-content layout-padding>
+  <div
+    class="md-whiteframe-4dp"
+    ng-if="file.data.length && ! file.requesting && ! file.error"
+  >
+    <table class="table table-cursor table-hover">
+      <thead>
+        <tr>
+          <th class="checkbox-icon-width"></th>
+          <th>Name</th>
+          <th class="hide show-gt-sm storage-class-width">Storage Class</th>
+          <th class="size-width">Size</th>
+          <th class="hide show-gt-sm time-title-width">Last Modified</th>
+        </tr>
+      </thead>
+    </table>
+    <md-list>
+      <md-list-item ng-class="{checked:message.selected}" ng-repeat="f in file.data">
+          <md-checkbox ng-model="message.selected"></md-checkbox>
+          <md-icon>insert_drive_file</md-icon>
+          <p class="break-word flex-grow">
+            <span ng-bind="f.Key"></span>
+          </p>
+          <p class="flex-none" hide show-gt-sm>
+            <span
+              class="storage-class-width inline-block"
+              ng-bind="f.StorageClass"
+            ></span>
+          </p>
+          <p class="flex-none">
+            <span
+              class="size-width inline-block"
+              ng-bind="f.Size"
+            ></span>
+          </p>
+          <p class="flex-none" hide show-gt-sm>
+            <span
+              class="time-width inline-block"
+              ng-bind="f.LastModified"
+            ></span>
+          </p>
+      </md-list-item>
+    </md-list>
+  </div>
+
+  <div
+    class="progress-state"
+    layout="column" layout-align="center center"
+    ng-if="file.requesting"
+  >
+    <md-progress-circular md-mode="indeterminate" md-diameter="70"></md-progress-circular>
+    <div class="md-headline">Loading...</div>
+  </div>
+
+  <div
+    class="empty-state"
+    layout="column" layout-align="center center"
+    ng-if="! file.data.length && ! file.requesting && ! file.error"
+  >
+    <div class="md-headline">This bucket is empty</div>
+    <div class="md-subhead">You can do the following actions</div>
+
+    <div layout="row" layout-align="center center">
+      <md-button
+        class="md-raised md-primary" aria-label="Upload File"
+        ng-click="@A.6"
+      >
+        <md-icon>file_upload</md-icon>
+        <span>Upload File</span>
+      </md-button>
+
+      <span>or</span>
+
+      <md-button
+        class="md-raised" aria-label="Create Folder"
+        ng-click="@A.7"
+      >
+        <md-icon class="material-icons">create_new_folder</md-icon>
+        <span>Create Folder</span>
+      </md-button>
+    </div>
+  </div>
+
+  <div
+    class="load-fail-state"
+    layout="column" layout-align="center center"
+    ng-if="file.error && ! file.requesting"
+  >
+    <div class="md-headline">Oops, your connection seems off...</div>
+    <div class="md-subhead">Don't worry. You can refresh to try again.</div>
+
+    <md-button
+      class="md-icon-button" aria-label="Refresh"
+      ng-click="@A.9"
+    >
+      <md-icon class="icon-default">refresh</md-icon>
+    </md-button>
+  </div>
+</md-content>
