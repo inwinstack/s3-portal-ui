@@ -6,6 +6,7 @@ import Vendor from './vendor';
 import Config from './config';
 import Services from './services';
 import Directives from './directives';
+import Filters from './filters';
 import Components from './components';
 
 module('app', [
@@ -13,5 +14,6 @@ module('app', [
   Config,
   Services,
   Directives,
+  Filters,
   Components,
 ]);
