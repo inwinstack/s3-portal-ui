@@ -41,3 +41,35 @@
 .text-center {
     text-align: center;
 }
+
+.break-word {
+  word-break: break-word;
+}
+
+/* display */
+
+.inline{
+	display: inline;
+}
+
+.block{
+	display: block;
+}
+
+.inline-block{
+	display: inline-block;
+}
+
+/* align */
+
+.valign-bottom{
+	vertical-align: bottom;
+}
+
+.valign-middle{
+	vertical-align: middle;
+}
+
+.valign-top{
+	vertical-align: top;
+}
