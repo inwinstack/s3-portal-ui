@@ -1,8 +1,8 @@
 export default class FileService {
   /** @ngInject */
-  constructor($fetch, $bucket) {
+  constructor($mdDialog, $fetch, $bucket) {
     Object.assign(this, {
-      $fetch, $bucket,
+      $mdDialog, $fetch, $bucket,
     });
 
     this.initState();
@@ -18,11 +18,6 @@ export default class FileService {
         data: [],
         requesting: false,
         error: false,
-      },
-      create: {
-        checking: false,
-        checked: false,
-        duplicated: false,
       },
     };
   }
