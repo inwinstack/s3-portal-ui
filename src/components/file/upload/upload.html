@@ -41,15 +41,15 @@
           <md-divider></md-divider>
 
           <md-list-item ng-repeat="file in upload.files">
-            <md-icon class="material-icons" ng-if="file.startWith('image/')">photo</md-icon>
-            <md-icon class="material-icons" ng-if="! file.startWith('image/')">insert_drive_file</md-icon>
+            <md-icon class="material-icons" ng-if="file.detail.type.startWith('image/')">photo</md-icon>
+            <md-icon class="material-icons" ng-if="! file.detail.type.startWith('image/')">insert_drive_file</md-icon>
 
-            <p class="flex-grow" ng-bind="file.name"></p>
-            <p class="flex-none" ng-bind="(file.size | filesize)"></p>
+            <p class="flex-grow" ng-bind="file.detail.name"></p>
+            <p class="flex-none" ng-bind="(file.detail.size | filesize)"></p>
 
             <md-icon
               class="material-icons md-warn md-secondary" aria-label="Remove File"
-              ng-click="upload.delete(file.name)" ng-disabled="@A.13"
+              ng-click="upload.delete(file.id)" ng-disabled="@A.13"
             >clear</md-icon>
           </md-list-item>
 
