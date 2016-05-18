@@ -14,8 +14,10 @@ import ActionNavbarTemplate from './action-navbar/action-navbar.html';
 import ActionNavbarService from './action-navbar/action-navbar.service';
 import TransferController from './transfer/transfer.controller';
 import TransferTemplate from './transfer/transfer.html';
+import TransferService from './transfer/transfer.service';
 
 import './layout.css';
+import './transfer/transfer.css';
 
 /** @ngInject */
 const route = $stateProvider => {
@@ -58,6 +60,7 @@ const Layout = module('layout', [
 .service('$breadcrumb', BreadcrumbService)
 .service('$nav', ActionNavbarService)
 .service('$layout', LayoutService)
+.service('$transfer', TransferService)
 .config(route);
 
 export default Layout.name;
