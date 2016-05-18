@@ -16,6 +16,7 @@ export default class FileUploadService {
     this.state = {
       files: [],
       size: 0,
+      uploading: false,
       uploadingFiles: [],
     };
   }
@@ -37,7 +38,7 @@ export default class FileUploadService {
   }
 
   isUploading() {
-    return !! this.state.uploadingFiles.length;
+    return this.state.uploading;
   }
 
   abort() {
@@ -61,19 +62,20 @@ export default class FileUploadService {
     return files.reduce((previous, current) => previous + current.size, 0);
   }
 
-  uploadFile = (url, data) => {
+  uploadFile(url, data) {
     const { name } = data.file;
     const upload = this.Upload.upload({ url, data });
     this.state.uploadingFiles.push(upload);
+    this.state.uploading = true;
 
     upload.then(
       () => this.handleUploadSuccess(name),
-      () => this.handleUploadFailure(name),
-      this.handleEvent
+      err => this.handleUploadFailure(name, err),
+      evt => this.handleEvent(name, evt)
     );
   }
 
-  handleEvent = evt => {
+  handleEvent(name, evt) {
     console.log(evt);
   }
 
@@ -83,15 +85,19 @@ export default class FileUploadService {
     this.$toast.show(`${name} is uploaded successfully!`);
   }
 
-  handleUploadFailure(name) {
+  handleUploadFailure(name, err) {
     this.removeUploadingFile(name);
-    this.$toast.show(`${name} is uploaded failure!`);
+    this.$toast.show(`${name} is uploaded failure! Error: ${err}`);
   }
 
   removeUploadingFile(name) {
     this.state.uploadingFiles.filter(uploadingFile =>
       uploadingFile.name !== name
     );
+
+    if (! this.state.uploadingFiles.length) {
+      this.state.uploading = false;
+    }
   }
 
   createDialog($event) {
