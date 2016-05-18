@@ -1,11 +1,11 @@
 export default class FileController {
   /** @ngInject */
-  constructor($scope, $stateParams, $file, $bucket, $breadcrumb) {
+  constructor($scope, $stateParams, $file, $bucket, $breadcrumb, $upload) {
     Object.assign(this, {
-      $scope, $file, $bucket, $breadcrumb,
+      $file, $upload, $bucket, $breadcrumb,
     });
 
-    this.$scope.$watch(
+    $scope.$watch(
       () => $file.state.lists,
       newVal => Object.assign(this, newVal)
     , true);
@@ -16,6 +16,18 @@ export default class FileController {
     this.$breadcrumb.updateFilePath(folders);
 
     this.$bucket.getBuckets();
+    this.$file.getFiles();
+  }
+
+  createFolder($event) {
+    this.$file.createFolder($event);
+  }
+
+  upload($event) {
+    this.$upload.createDialog($event);
+  }
+
+  refresh() {
     this.$file.getFiles();
   }
 }
