@@ -30,13 +30,13 @@
           <p class="flex-none">
             <span
               class="size-width inline-block"
-              ng-bind="f.Size"
+              ng-bind="(f.Size | filesize)"
             ></span>
           </p>
           <p class="flex-none" hide show-gt-sm>
             <span
               class="time-width inline-block"
-              ng-bind="f.LastModified"
+              ng-bind="(f.LastModified | date: 'yyyy-MM-dd')"
             ></span>
           </p>
       </md-list-item>
@@ -63,7 +63,7 @@
     <div layout="row" layout-align="center center">
       <md-button
         class="md-raised md-primary" aria-label="Upload File"
-        ng-click="@A.6"
+        ng-click="file.upload()"
       >
         <md-icon>file_upload</md-icon>
         <span>Upload File</span>
@@ -73,7 +73,7 @@
 
       <md-button
         class="md-raised" aria-label="Create Folder"
-        ng-click="@A.7"
+        ng-click="file.createFolder()"
       >
         <md-icon class="material-icons">create_new_folder</md-icon>
         <span>Create Folder</span>
@@ -91,7 +91,7 @@
 
     <md-button
       class="md-icon-button" aria-label="Refresh"
-      ng-click="@A.9"
+      ng-click="file.refresh()"
     >
       <md-icon class="icon-default">refresh</md-icon>
     </md-button>
