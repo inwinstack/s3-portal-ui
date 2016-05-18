@@ -10,10 +10,11 @@ export default class FileController {
       newVal => Object.assign(this, newVal)
     , true);
 
-    const [bucket, ...folders] = $stateParams.path.split('/');
+    const paths = $stateParams.path.split('/');
+    const [bucket, ...folders] = paths;
 
     this.$file.setPaths(bucket, folders);
-    this.$breadcrumb.updateFilePath(folders);
+    this.$breadcrumb.updateFilePath(paths);
 
     this.$bucket.getBuckets();
     this.$file.getFiles();

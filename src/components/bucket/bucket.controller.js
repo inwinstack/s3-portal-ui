@@ -1,6 +1,6 @@
 export default class BucketController {
   /** @ngInject */
-  constructor($scope, $bucket, $state) {
+  constructor($scope, $bucket, $state, $breadcrumb) {
     Object.assign(this, {
       $scope, $bucket, $state,
     });
@@ -10,6 +10,7 @@ export default class BucketController {
       newVal => Object.assign(this, newVal)
     , true);
 
+    $breadcrumb.initPaths();
     this.$bucket.getBuckets();
   }
 

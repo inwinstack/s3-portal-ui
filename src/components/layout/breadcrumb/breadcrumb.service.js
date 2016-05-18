@@ -37,9 +37,11 @@ export default class BreadcrumbService {
    * @return {void}
    */
   updateFilePath(paths) {
-    paths.forEach(path => {
-      const pathLink = this.paths.map(({ link }) => link).join('');
-      this.paths.push({ link: pathLink, text: path });
-    });
+    this.initPaths();
+    paths.reduce((previous, current) => {
+      const link = `${previous}/${current}`;
+      this.paths.push({ link, text: current });
+      return link;
+    }, '/bucket');
   }
 }
