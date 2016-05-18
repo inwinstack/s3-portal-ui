@@ -66,8 +66,8 @@ export default class FileUploadService {
     this.state.uploading = true;
 
     upload.then(
-      () => this.handleUploadSuccess(name),
-      err => this.handleUploadFailure(name, err),
+      () => this.handleSuccess(name),
+      err => this.handleFailure(name, err),
       evt => this.handleEvent(name, evt)
     );
   }
@@ -76,13 +76,13 @@ export default class FileUploadService {
     console.log(evt);
   }
 
-  handleUploadSuccess(name) {
+  handleSuccess(name) {
     this.removeUploadingFile(name);
     this.$file.getFiles();
     this.$toast.show(`${name} is uploaded successfully!`);
   }
 
-  handleUploadFailure(name, err) {
+  handleFailure(name, err) {
     this.removeUploadingFile(name);
     this.$toast.show(`${name} is uploaded failure! Error: ${err}`);
   }
