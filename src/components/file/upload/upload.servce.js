@@ -18,21 +18,29 @@ export default class FileUploadService {
       files: [],
       size: 0,
       uploading: false,
-      uploadingFiles: [],
     };
   }
 
-  select(selectFiles) {
-    const filterFiles = selectFiles.filter(selectFile =>
-      this.state.files.every(file => file.name !== selectFile.name)
-    );
-    const files = this.state.files.concat(filterFiles);
+  select(selectedFiles) {
+    const additionalFiles = selectedFiles.filter(selectedFile =>
+      this.state.files.every(({ detail, status }) =>
+        (detail.name === selectedFile.name && status !== 'PENDING') ||
+        (detail.name !== selectedFile.name && status === 'PENDING')
+      )
+    ).map(detail => ({
+      id: Symbol('unique id'),
+      status: 'PENDING',
+      detail,
+    }));
+
+    const files = [...this.state.files, ...additionalFiles];
+
     const size = totalSize(files);
     this.state = { ...this.state, files, size };
   }
 
-  delete(name) {
-    const files = this.state.files.filter(file => file.name !== name);
+  delete(id) {
+    const files = this.state.files.filter(file => file.id !== id);
     const size = totalSize(files);
 
     this.state = { ...this.state, files, size };
@@ -43,8 +51,12 @@ export default class FileUploadService {
   }
 
   abort() {
-    this.state.uploadingFiles.forEach(file => file.abort());
-    this.state.uploadingFiles = [];
+    this.state.files.forEach(file => file.upload.abort());
+    this.state.files = [];
+  }
+
+  findFileIndex(id) {
+    return this.state.files.findIndex(file => file.id === id);
   }
 
   upload() {
@@ -52,49 +64,63 @@ export default class FileUploadService {
     const prefix = folders.length ? '' : `${folders.join('/')}/`;
     const url = `${this.Config.API_URL}/v1/file/create`;
 
-    this.state.files.forEach(file =>
-      this.uploadFile(url, { bucket, prefix, file })
-    );
+    this.state = {
+      uploading: true,
+      files: this.state.files.map(file => ({
+        ...file,
+        status: 'UPLOADING',
+        upload: this.uploadFile(file.id, {
+          bucket, prefix, file: file.detail,
+        }, url),
+      })),
+    };
 
     this.closeDialog();
   }
 
-  uploadFile(url, data) {
-    const { name } = data.file;
+  uploadFile(id, data, url) {
     const upload = this.Upload.upload({ url, data });
-    this.state.uploadingFiles.push(upload);
-    this.state.uploading = true;
 
     upload.then(
-      () => this.handleSuccess(name),
-      err => this.handleFailure(name, err),
-      evt => this.handleEvent(name, evt)
+      res => this.handleSuccess(id, res),
+      err => this.handleFailure(id, err),
+      evt => this.handleEvent(id, evt)
     );
+
+    return upload;
   }
 
-  handleEvent(name, evt) {
-    console.log(evt);
+  handleEvent(id, evt) {
+    const i = this.findFileIndex(id);
+    this.state.files[i].process = evt;
+    console.log(this.state.files[i].process);
+    console.log(this.state);
   }
 
-  handleSuccess(name) {
-    this.removeUploadingFile(name);
+  handleSuccess(id, res) {
+    const i = this.findFileIndex(id);
+    this.state.files[i].status = 'UPLOADED';
+    this.updateUpdateStatus();
     this.$file.getFiles();
-    this.$toast.show(`${name} is uploaded successfully!`);
+    console.log(res);
   }
 
-  handleFailure(name, err) {
-    this.removeUploadingFile(name);
-    this.$toast.show(`${name} is uploaded failure! Error: ${err}`);
+  handleFailure(id, err) {
+    const i = this.findFileIndex(id);
+    this.state.files[i].status = 'FAILURE';
+    this.updateUpdateStatus();
+    console.log(err);
   }
 
-  removeUploadingFile(name) {
-    this.state.uploadingFiles.filter(uploadingFile =>
-      uploadingFile.name !== name
+  removeUploadFile(id) {
+    const i = this.findFileIndex(id);
+    delete this.state.files[i];
+  }
+
+  updateUpdateStatus() {
+    this.state.uploading = this.state.files.every(
+      file => file.status === 'UPLOADING'
     );
-
-    if (! this.state.uploadingFiles.length) {
-      this.state.uploading = false;
-    }
   }
 
   createDialog($event) {
@@ -110,7 +136,6 @@ export default class FileUploadService {
 
   closeDialog() {
     this.$mdDialog.cancel();
-    this.state.files = [];
     this.state.size = 0;
   }
 }

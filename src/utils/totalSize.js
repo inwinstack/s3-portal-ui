@@ -5,5 +5,5 @@
  */
 export default files => files
   .reduce((previous, current) =>
-    previous + current.size, 0
+    previous + current.detail.size, 0
   );
