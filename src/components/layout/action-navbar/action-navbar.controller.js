@@ -1,8 +1,8 @@
 export default class ActionNavbarController {
   /** @ngInject */
-  constructor($scope, $bucket, $nav) {
+  constructor($scope, $bucket, $nav, $file, $upload) {
     Object.assign(this, {
-      $scope, $bucket,
+      $scope, $bucket, $file, $upload,
     });
 
     this.$scope.$watch(
@@ -28,8 +28,8 @@ export default class ActionNavbarController {
     //
   }
 
-  upload() {
-    //
+  upload($event) {
+    this.$upload.createDialog($event);
   }
 
   delete() {
@@ -56,7 +56,7 @@ export default class ActionNavbarController {
    */
   create($event) {
     if (this.isFile()) {
-      // create file dialog
+      //
     } else {
       this.$bucket.createDialog($event);
     }
@@ -69,7 +69,7 @@ export default class ActionNavbarController {
    */
   refresh() {
     if (this.isFile()) {
-      // get the files
+      this.$file.getFiles();
     } else {
       this.$bucket.getBuckets();
     }

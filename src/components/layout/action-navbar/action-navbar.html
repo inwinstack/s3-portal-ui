@@ -2,7 +2,7 @@
   <div class="md-toolbar-tools">
     <md-button
       class="md-raised md-primary" aria-label="Upload"
-      ng-click="actionNav.upload()"
+      ng-click="actionNav.upload($event)"
       ng-if="actionNav.isFile()"
     >
       <md-icon class="material-icons">file_upload</md-icon>
