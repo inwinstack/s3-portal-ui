@@ -1,8 +1,8 @@
 export default class ActionNavbarController {
   /** @ngInject */
-  constructor($scope, $bucket, $nav, $file, $upload) {
+  constructor($scope, $bucket, $nav, $file, $upload, $layout) {
     Object.assign(this, {
-      $scope, $bucket, $file, $upload,
+      $scope, $bucket, $file, $upload, $layout,
     });
 
     this.$scope.$watch(
@@ -44,8 +44,8 @@ export default class ActionNavbarController {
     //
   }
 
-  transfers() {
-    //
+  toggleTransfer() {
+    this.$layout.toggleTransfer();
   }
 
   /**
