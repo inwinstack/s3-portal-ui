@@ -59,3 +59,17 @@
 .inline-block{
 	display: inline-block;
 }
+
+/* align */
+
+.valign-bottom{
+	vertical-align: bottom;
+}
+
+.valign-middle{
+	vertical-align: middle;
+}
+
+.valign-top{
+	vertical-align: top;
+}

@@ -153,6 +153,13 @@ md-list-item .md-list-item-inner > .md-list-item-inner > p.flex-grow {
   -ms-flex: 1 1 100%;
 }
 
+md-list.md-default-theme md-list-item.md-2-line .md-list-item-text p.text-warn,
+md-list md-list-item.md-2-line .md-list-item-text p.text-warn,
+md-list.md-default-theme md-list-item.md-3-line .md-list-item-text p.text-warn,
+md-list md-list-item.md-3-line .md-list-item-text p.text-warn {
+  color: #FF6D00;
+}
+
 /* fix flexbox type layout issues in IE10 */
 span.flex {
   display: block;
