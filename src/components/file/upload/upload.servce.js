@@ -1,4 +1,5 @@
 import { element } from 'angular';
+import totalSize from '../../../utils/totalSize';
 import FileUploadController from './upload.controller';
 import FileUploadTemplate from './upload.html';
 
@@ -26,13 +27,13 @@ export default class FileUploadService {
       this.state.files.every(file => file.name !== selectFile.name)
     );
     const files = this.state.files.concat(filterFiles);
-    const size = this.size(files);
+    const size = totalSize(files);
     this.state = { ...this.state, files, size };
   }
 
   delete(name) {
     const files = this.state.files.filter(file => file.name !== name);
-    const size = this.size(files);
+    const size = totalSize(files);
 
     this.state = { ...this.state, files, size };
   }
@@ -56,10 +57,6 @@ export default class FileUploadService {
     );
 
     this.closeDialog();
-  }
-
-  size(files) {
-    return files.reduce((previous, current) => previous + current.size, 0);
   }
 
   uploadFile(url, data) {
