@@ -2,6 +2,8 @@ import { module } from 'angular';
 import router from 'angular-ui-router';
 import NotFoundTemplate from './not-found.html';
 
+import './not-found.css';
+
 /** @ngInject */
 const route = $stateProvider => {
   $stateProvider.state('not-found', {
