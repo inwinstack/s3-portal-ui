@@ -35,7 +35,7 @@ export default class ActionNavbarController {
   }
 
   download() {
-    //
+    this.$file.download();
   }
 
   upload($event) {

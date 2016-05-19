@@ -1,8 +1,8 @@
 export default class FileService {
   /** @ngInject */
-  constructor($mdDialog, $fetch, $bucket) {
+  constructor($mdDialog, $fetch, $bucket, Config) {
     Object.assign(this, {
-      $mdDialog, $fetch, $bucket,
+      $mdDialog, $fetch, $bucket, Config,
     });
 
     this.initState();
@@ -12,7 +12,7 @@ export default class FileService {
     this.state = {
       paths: {
         bucket: '',
-        folders: [],
+        prefix: '',
       },
       lists: {
         data: [],
@@ -23,13 +23,13 @@ export default class FileService {
     };
   }
 
-  setPaths(bucket, folders) {
-    this.paths = { bucket, folders };
+  setPaths(bucket, prefix) {
+    this.state.paths = { bucket, prefix };
   }
 
   getFiles() {
-    const { bucket, folders } = this.paths;
-    const endpoint = `/v1/file/list/${bucket}?prefix=${folders.join('/')}`;
+    const { bucket, prefix } = this.state.paths;
+    const endpoint = `/v1/file/list/${bucket}?prefix=${prefix}`;
 
     this.state.lists.requesting = true;
     this.state.lists.data = [];
@@ -71,9 +71,22 @@ export default class FileService {
 
     if (count === 1) {
       const index = this.state.lists.data.findIndex(file => file.checked);
-      downloadName = this.state.lists.data[index].Name;
+      downloadName = this.state.lists.data[index].Key;
     }
 
     this.state.lists.downloadName = downloadName;
+  }
+
+  download() {
+    const { bucket, prefix } = this.state.paths;
+    const { downloadName } = this.state.lists;
+    const endpoint = `/v1/file/get/${bucket}/${prefix}${downloadName}`;
+
+    this.$fetch.get(endpoint)
+      .then(({ data }) => {
+        const { uri } = data;
+        window.open(`${this.Config.BASE_URL}${uri}`);
+      })
+      .catch(err => console.log(err));
   }
 }
