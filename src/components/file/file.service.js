@@ -38,7 +38,7 @@ export default class FileService {
       .get(endpoint)
       .then(({ data }) => {
         this.state.lists.error = false;
-        this.state.lists.data = this.formatFilesData(data);
+        this.state.lists.data = this.formatFilesData(data.files);
       })
       .catch(() => {
         this.state.lists.error = true;
@@ -48,11 +48,12 @@ export default class FileService {
       });
   }
 
-  formatFilesData({ files = [] }) {
-    return files.map(file => ({
-      ...file,
-      checked: false,
-    }));
+  formatFilesData(files) {
+    return (files === null) ? [] :
+      files.map(file => ({
+        ...file,
+        checked: false,
+      }));
   }
 
   selectFile(etag) {
