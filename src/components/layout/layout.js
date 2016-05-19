@@ -4,6 +4,9 @@ import router from 'angular-ui-router';
 import LayoutTemplate from './layout.html';
 import TopNavbarController from './top-navbar/top-navbar.controller';
 import TopNavbarTemplate from './top-navbar/top-navbar.html';
+import ActionNavbarController from './action-navbar/action-navbar.controller';
+import ActionNavbarTemplate from './action-navbar/action-navbar.html';
+import ActionNavbarService from './action-navbar/action-navbar.service';
 
 import './layout.css';
 
@@ -19,7 +22,12 @@ const route = $stateProvider => {
       'top-navbar@root': {
         template: TopNavbarTemplate,
         controller: TopNavbarController,
-        controllerAs: 'nav',
+        controllerAs: 'topNav',
+      },
+      'action-navbar@root': {
+        template: ActionNavbarTemplate,
+        controller: ActionNavbarController,
+        controllerAs: 'actionNav',
       },
     },
   });
@@ -28,6 +36,7 @@ const route = $stateProvider => {
 const Layout = module('layout', [
   router,
 ])
+.service('$nav', ActionNavbarService)
 .config(route);
 
 export default Layout.name;
