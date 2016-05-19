@@ -41,8 +41,7 @@ export default class FileUploadService {
   }
 
   upload() {
-    const { bucket, folders } = this.$file.paths;
-    const prefix = folders.length ? '' : `${folders.join('/')}/`;
+    const { bucket, prefix } = this.$file.state.paths;
     const url = `${this.Config.API_URL}/v1/file/create`;
 
     this.state.uploading = true;
@@ -55,7 +54,9 @@ export default class FileUploadService {
       type: 'UPLOAD',
       status: 'UPLOADING',
       upload: this.uploadFile(id, {
-        bucket, prefix, file: detail,
+        bucket,
+        file: detail,
+        prefix: (prefix === '' ? '' : `${prefix}/`),
       }, url),
     })));
 
