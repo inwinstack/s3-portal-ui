@@ -61,7 +61,7 @@ export default class TransferService {
   handleSuccess(id) {
     const i = this.findTransferIndex(id);
     this.state.transfers[i].status = 'COMPLETED';
-    this.$toast.show(`${name} is uploaded successfully!`);
+    this.$toast.show(`${this.state.transfers[i].name} is uploaded successfully!`);
 
     if (this.state.autoClear) {
       this.remove(i);
@@ -78,7 +78,9 @@ export default class TransferService {
       status: 'FAILED',
       message: statusText,
     };
-    this.$toast.show(`${name} is uploaded failure! Error message: ${statusText}`);
+    this.$toast.show(
+      `${this.state.transfers[i].name} is uploaded failure! Error message: ${statusText}`
+    );
     this.updateProcessStatus();
   }
 
