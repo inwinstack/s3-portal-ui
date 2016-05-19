@@ -1,8 +1,8 @@
 export default class TransferService {
   /** @ngInject */
-  constructor($toast) {
+  constructor($toast, $file) {
     Object.assign(this, {
-      $toast,
+      $toast, $file,
     });
     this.initState();
   }
