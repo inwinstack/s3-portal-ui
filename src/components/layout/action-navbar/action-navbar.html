@@ -107,14 +107,15 @@
 
     <md-button
       class="md-raised" aria-label="None"
-      ng-click="actionNav.none()" ng-disabled="@A.8"
+      ng-click="actionNav.closeSidePanels()"
+      ng-disabled="! (actionNav.properties || actionNav.transfers)"
     >
       <span>None</span>
     </md-button>
 
     <md-button
       class="md-raised" aria-label="Properties"
-      ng-click="actionNav.properties()" ng-disabled="@A.9"
+      ng-click="actionNav.openProperties()" ng-disabled="actionNav.properties"
     >
       <md-icon class="material-icons icon-default">info_outline</md-icon>
       <span>Properties</span>
@@ -122,7 +123,7 @@
 
     <md-button
       class="md-raised" aria-label="Transfers"
-      ng-click="actionNav.toggleTransfer()" ng-disabled="@A.11"
+      ng-click="actionNav.openTransfers()" ng-disabled="actionNav.transfers"
     >
       <span>Transfers</span>
     </md-button>

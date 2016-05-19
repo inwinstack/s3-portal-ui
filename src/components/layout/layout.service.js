@@ -5,11 +5,29 @@ export default class LayoutService {
 
   initState() {
     this.state = {
-      transfer: false,
+      transfers: false,
+      properties: false,
     };
   }
 
-  toggleTransfer() {
-    this.state.transfer = ! this.state.transfer;
+  openProperties() {
+    this.state = {
+      transfers: false,
+      properties: true,
+    };
+  }
+
+  openTransfers() {
+    this.state = {
+      transfers: true,
+      properties: false,
+    };
+  }
+
+  closeSidePanels() {
+    this.state = {
+      transfers: false,
+      properties: false,
+    };
   }
 }

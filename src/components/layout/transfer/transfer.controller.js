@@ -16,7 +16,7 @@ export default class TransferController {
   }
 
   close() {
-    this.$layout.toggleTransfer();
+    this.$layout.closeSidePanels();
   }
 
   md2line(t) {

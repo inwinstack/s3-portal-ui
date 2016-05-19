@@ -9,6 +9,11 @@ export default class ActionNavbarController {
       () => $nav.type,
       newVal => (this.type = newVal)
     );
+
+    this.$scope.$watch(
+      () => $layout.state,
+      newVal => Object.assign(this, newVal)
+    );
   }
 
   /**
@@ -36,16 +41,16 @@ export default class ActionNavbarController {
     //
   }
 
-  none() {
-    //
+  closeSidePanels() {
+    this.$layout.closeSidePanels();
   }
 
-  properties() {
-    //
+  openProperties() {
+    this.$layout.openProperties();
   }
 
-  toggleTransfer() {
-    this.$layout.toggleTransfer();
+  openTransfers() {
+    this.$layout.openTransfers();
   }
 
   /**
