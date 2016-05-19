@@ -15,6 +15,11 @@ export default {
     BILLING: 'Billing & Cost Management',
     SECURITY: 'Security Credentials',
     SIGN_OUT: 'Sign Out',
+    SIGN_OUT_CONFIRM_TITLE: 'Would you like to sign out without your upload?',
+    SIGN_OUT_CONFIRM_MESSAGE: `You have in progress opreations
+      or uploads and leaving now will cancel them.Still leaving?`,
+    LEAVE: 'Leave',
+    STAY: 'Stay',
   },
   BUCKET: {
     EMPTY_MESSAGE: 'Looks like you don\'t have any Bucket',
@@ -36,5 +41,24 @@ export default {
     PROPERTIES: 'Properties',
     TRANSFERS: 'Transfers',
     NONE: 'None',
+  },
+  TOAST: {
+    SIGN_IN_SUCCESS: 'Sign In Success!',
+    SIGN_UP_SUCCESS: 'Sign Up Success!',
+    CREATE_BUCKET_SUCCESS: 'Bucket {{ bucket }} are create success!',
+    CREATE_BUCKET_FAILURE: 'Bucket {{ bucket }} are create failure, please try again!',
+  },
+  AUTH: {
+    EMAIL: 'Email',
+    PASSWORD: 'Password',
+    RETYPE_PASSWORD: 'Retype Password',
+    SIGN_IN: 'Sign In',
+    SIGN_UP: 'Sign Up',
+    HAVE_ACCOUNT: 'Already have an account?',
+    HAVE_NOT_ACCOUNT: 'Don\'t have an account?',
+    CREATE_ACCOUNT: 'Create an account',
+    LOGIN_TO_YOUR_ACCOUNT: 'Log in to your account',
+    ALREADY_EXIST: 'Someone already has that username. Try another?',
+    SIGN_IN_INCORRECT: 'Your email or password was incorrect. Please try again.',
   },
 };

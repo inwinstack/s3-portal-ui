@@ -15,6 +15,10 @@ export default {
     BILLING: '付款與費用管理',
     SECURITY: '安全憑證',
     SIGN_OUT: '登出',
+    SIGN_OUT_CONFIRM_TITLE: '你確定要停止所有上傳並登出嗎？',
+    SIGN_OUT_CONFIRM_MESSAGE: '你有正在進行的操作或上傳檔案，若離開會將它們全部取消。確定要離開嗎？',
+    LEAVE: '離開',
+    STAY: '留下',
   },
   BUCKET: {
     EMPTY_MESSAGE: '看來你目前沒有任何的 Bucket',
@@ -35,5 +39,22 @@ export default {
     PROPERTIES: '屬性',
     TRANSFERS: '傳遞',
     NONE: '無',
+  },
+  TOAST: {
+    SIGN_IN_SUCCESS: '登入成功！',
+    SIGN_UP_SUCCESS: '註冊成功！',
+  },
+  AUTH: {
+    EMAIL: '電子郵件',
+    PASSWORD: '密碼',
+    RETYPE_PASSWORD: '再次輸入密碼',
+    SIGN_IN: '登入',
+    SIGN_UP: '註冊',
+    HAVE_ACCOUNT: '已經有帳號了嗎？',
+    HAVE_NOT_ACCOUNT: '尚未註冊帳號嗎？',
+    CREATE_ACCOUNT: '建立帳號',
+    LOGIN_TO_YOUR_ACCOUNT: '登入你的帳號',
+    ALREADY_EXIST: '已有其他人使用這個電子郵件，請換一個試試',
+    SIGN_IN_INCORRECT: '你的電子郵件或密碼不正確，請再試一次。',
   },
 };

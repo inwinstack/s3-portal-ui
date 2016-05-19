@@ -5,9 +5,9 @@ import BucketCreateTemplate from './create/create.html';
 
 export default class BucketService {
   /** @ngInject */
-  constructor($fetch, $toast, $mdDialog) {
+  constructor($fetch, $toast, $mdDialog, $translate) {
     Object.assign(this, {
-      $fetch, $toast, $mdDialog,
+      $fetch, $toast, $mdDialog, $translate,
     });
 
     this.initState();
@@ -141,10 +141,12 @@ export default class BucketService {
     this.$fetch.post('/v1/bucket/create', { bucket })
       .then(({ data }) => {
         this.state.lists.data = data.Buckets.sort(this.sortByName);
-        this.$toast.show(`Bucket ${bucket} has created!`);
       })
+      .then(() => this.$translate('TOAST.CREATE_BUCKET_SUCCESS', { bucket }))
+      .then(createSuccess => this.$toast.show(createSuccess))
       .catch(() => {
-        this.$toast.show('Bucket create failure, please try again!');
+        this.$translate('TOAST.CREATE_BUCKET_FAILURE', { bucket })
+          .then(createFailure => this.$toast.show(createFailure));
       })
       .finally(() => {
         this.closeDialog();

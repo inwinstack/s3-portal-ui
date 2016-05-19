@@ -15,6 +15,10 @@ export default {
     BILLING: '付款与费用管理',
     SECURITY: '安全凭证',
     SIGN_OUT: '登出',
+    SIGN_OUT_CONFIRM_TITLE: '你确定要停止所有上传并登出吗？',
+    SIGN_OUT_CONFIRM_MESSAGE: '你有正在进行的操作或上传档案，若离开会将它们全部取消。确定要离开吗？',
+    LEAVE: '离开',
+    STAY: '留下',
   },
   BUCKET: {
     EMPTY_MESSAGE: '看来你目前没有任何的 Bucket',
@@ -35,5 +39,22 @@ export default {
     PROPERTIES: '属性',
     TRANSFERS: '传递',
     NONE: '无',
+  },
+  TOAST: {
+    SIGN_IN_SUCCESS: '登入成功！',
+    SIGN_UP_SUCCESS: '注册成功！',
+  },
+  AUTH: {
+    EMAIL: '电邮',
+    PASSWORD: '密码',
+    RETYPE_PASSWORD: '再次输入密码',
+    SIGN_IN: '登入',
+    SIGN_UP: '注册',
+    HAVE_ACCOUNT: '已经有帐户了吗？',
+    HAVE_NOT_ACCOUNT: '尚未注册帐戶吗？',
+    CREATE_ACCOUNT: '建立帐户',
+    LOGIN_TO_YOUR_ACCOUNT: '登入你的帐户',
+    ALREADY_EXIST: '已有其他人使用这个电邮，请换一个试试',
+    SIGN_IN_INCORRECT: '你的电邮或密码不正确，请再试一次。',
   },
 };
