@@ -21,49 +21,51 @@
       <md-list class="transfer-list">
         <md-list-item>
           <md-checkbox aria-label="Automatically clear finished transfers"
-            ng-model="@A.2"
+            ng-checked="transfer.autoClear" ng-click="transfer.toggleAutoClear()"
           ></md-checkbox>
           <p class="md-body-1 md-accent" translate>Automatically clear finished transfers</p>
         </md-list-item>
 
         <md-list-item
-          ng-class="{'md-2-line':@A.3,'md-3-line':@A.4}"
-          ng-repeat="@A.5"
+          ng-class="{
+            'md-2-line': transfer.md2line(t),
+            'md-3-line': transfer.md3line(t)
+          }"
+          ng-repeat="t in transfer.transfers"
         >
           <md-icon
-            class="material-icons" ng-if="@A.6"
+            class="material-icons" ng-if="transfer.isUpload(t)"
           >file_upload</md-icon>
           <md-icon
-            class="material-icons" ng-if="@A.7"
+            class="material-icons" ng-if="transfer.isDelete(t)"
           >delete</md-icon>
 
           <div class="md-list-item-text">
             <h3
               class="inline-block"
-              translate="{{@A.8}}" translate-values="@A.9"
+              translate="TRANSFER.TITLE.{{ t.type }}"
+              translate-value-name="{{ t.name }}"
+              translate-value-bucket="{{ t.bucket }}"
             ></h3>
 
-            <div class="transfer-rate" ng-if="@A.10">
+            <div class="transfer-rate" ng-if="transfer.isUploading(t)">
               <md-progress-linear
-                md-mode="determinate" value="{{@A.11}}"
+                md-mode="determinate" value="{{ t.process.precentage }}"
               ></md-progress-linear>
             </div>
 
             <p class="transfer-info">
-              <span ng-if="@A.12" translate="{{@A.13}}"></span>
-              <span
-                class="text-warn" ng-if="@A.14"
-                translate="{{@A.15}}"
-              ></span>
+              <span ng-if="transfer.showInfo(t)" translate="TRANSFER.STATUS.{{ t.status }}"></span>
+              <span class="text-warn" ng-if="! transfer.showInfo(t)" ng-bind="t.message"></span>
 
-              <span class="transfer-loaded" ng-if="@A.10">
-                <span ng-bind="@A.16">1.87MB</span>
+              <span class="transfer-loaded" ng-if="transfer.isUploading(t)">
+                <span ng-bind="(t.process.loaded | filesize)"></span>
                 <span> / </span>
-                <span class="transfer-size" ng-bind="@A.17">2GB</span>
+                <span class="transfer-size" ng-bind="(t.process.total | filesize)"></span>
               </span>
 
-              <span class="transfer-percentage" ng-if="@A.10">
-                <span ng-bind="@A.18"></span>
+              <span class="transfer-percentage" ng-if="transfer.isUploading(t)">
+                <span ng-bind="t.process.precentage"></span>
                 <span>%</span>
               </span>
             </p>
@@ -71,7 +73,7 @@
 
           <md-icon
             class="material-icons md-primary"
-            ng-if="@A.19"
+            ng-if="transfer.isCompleted(t)"
           >check_circle</md-icon>
           <!--  Those feature are not included in this sprint.
           <md-icon
@@ -83,7 +85,7 @@
             ng-if="@A.21" ng-click="@A.24"
           >refresh</md-icon>-->
 
-          <div class="margin-auto" ng-if="@A.22">
+          <div class="margin-auto" ng-if="transfer.isResuming(t)">
             <md-progress-circular
               class="inline-block valign-middle"
               md-mode="indeterminate" md-diameter="30"

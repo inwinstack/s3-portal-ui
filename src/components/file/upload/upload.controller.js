@@ -7,10 +7,7 @@ export default class FileUploadController {
 
     $scope.$watch(
       () => $upload.state,
-      newVal => Object.assign(this, {
-        ...newVal,
-        files: newVal.files.filter(file => file.status === 'PENDING'),
-      })
+      newVal => Object.assign(this, newVal)
     , true);
   }
 
