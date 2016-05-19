@@ -11,7 +11,7 @@ export default class AuthService {
    * @return {promise}
    */
   checkEmail(email) {
-    return this.$fetch.post('/v1/auth/checkEmail', { email });
+    return this.$fetch.get(`/v1/auth/checkEmail/${email}`);
   }
 
   /**
