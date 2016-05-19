@@ -1,0 +1,13 @@
+
+/**
+ * @author Jamie jamie.h@inwinstack.com
+ */
+
+.notFound {
+  margin: auto;
+  top: -88px;
+}
+
+.notFound .md-headline {
+  color: #777;
+}
