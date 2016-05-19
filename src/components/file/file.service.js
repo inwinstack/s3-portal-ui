@@ -16,6 +16,7 @@ export default class FileService {
       },
       lists: {
         data: [],
+        downloadName: null,
         requesting: false,
         error: false,
       },
@@ -37,7 +38,7 @@ export default class FileService {
       .get(endpoint)
       .then(({ data }) => {
         this.state.lists.error = false;
-        this.state.lists.data = data.files || [];
+        this.state.lists.data = this.formatFilesData(data);
       })
       .catch(() => {
         this.state.lists.error = true;
@@ -45,5 +46,33 @@ export default class FileService {
       .finally(() => {
         this.state.lists.requesting = false;
       });
+  }
+
+  formatFilesData({ files = [] }) {
+    return files.map(file => ({
+      ...file,
+      checked: false,
+    }));
+  }
+
+  selectFile(etag) {
+    let count = 0;
+    let downloadName = null;
+
+    this.state.lists.data = this.state.lists.data.map(file => {
+      let checked = file.checked;
+
+      if (file.ETag === etag) checked = ! checked;
+      if (checked) count ++;
+
+      return { ...file, checked };
+    });
+
+    if (count === 1) {
+      const index = this.state.lists.data.findIndex(file => file.checked);
+      downloadName = this.state.lists.data[index].Name;
+    }
+
+    this.state.lists.downloadName = downloadName;
   }
 }
