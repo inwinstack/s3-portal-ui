@@ -2,22 +2,21 @@
   <div class="md-toolbar-tools">
     <md-button
       class="md-raised md-primary" aria-label="Upload"
-      ng-click="actionNav.upload($event)"
-      ng-if="actionNav.isFile()"
-    >
-      <md-icon class="material-icons">file_upload</md-icon>
-      <span translate>Upload</span>
-    </md-button>
-
-    <md-button
-      class="md-raised" aria-label="Create"
-      ng-class="{'md-primary': !actionNav.isFile()}"
       ng-click="actionNav.create($event)"
     >
       <md-icon class="material-icons" ng-hide="actionNav.isFile()">add</md-icon>
-      <md-icon class="material-icons" ng-show="actionNav.isFile()">create_new_folder</md-icon>
+      <md-icon class="material-icons" ng-show="actionNav.isFile()">file_upload</md-icon>
       <span ng-hide="actionNav.isFile()">Create Bucket</span>
-      <span ng-show="actionNav.isFile()">Create Folder</span>
+      <span ng-show="actionNav.isFile()">Upload</span>
+    </md-button>
+
+    <md-button
+      class="md-raised" aria-label="Create Folder"
+      ng-click="actionNav.createFolder($event)"
+      ng-if="actionNav.isFile()"
+    >
+      <md-icon class="material-icons">create_new_folder</md-icon>
+      <span>Create Folder</span>
     </md-button>
 
     <md-menu md-offset="0 44">
