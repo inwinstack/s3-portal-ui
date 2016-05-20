@@ -28,16 +28,16 @@ export default class FileUploadService {
     }));
 
     const files = [...this.state.files, ...additionalFiles];
-
     const size = totalSize(files);
-    this.state = { ...this.state, files, size };
+
+    this.state = { files, size };
   }
 
   delete(id) {
     const files = this.state.files.filter(file => file.id !== id);
     const size = totalSize(files);
 
-    this.state = { ...this.state, files, size };
+    this.state = { files, size };
   }
 
   upload() {
@@ -87,7 +87,6 @@ export default class FileUploadService {
 
   closeDialog() {
     this.$mdDialog.cancel();
-    this.state.size = 0;
-    this.state.files = [];
+    this.initState();
   }
 }

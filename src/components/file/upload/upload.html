@@ -41,8 +41,8 @@
           <md-divider></md-divider>
 
           <md-list-item ng-repeat="file in upload.files">
-            <md-icon class="material-icons" ng-if="file.detail.type.startWith('image/')">photo</md-icon>
-            <md-icon class="material-icons" ng-if="! file.detail.type.startWith('image/')">insert_drive_file</md-icon>
+            <md-icon class="material-icons" ng-if="file.detail.type.startsWith('image/')">photo</md-icon>
+            <md-icon class="material-icons" ng-if="! file.detail.type.startsWith('image/')">insert_drive_file</md-icon>
 
             <p class="flex-grow" ng-bind="file.detail.name"></p>
             <p class="flex-none" ng-bind="(file.detail.size | filesize)"></p>
