@@ -33,10 +33,6 @@ export default class ActionNavbarController {
     //
   }
 
-  upload($event) {
-    this.$upload.createDialog($event);
-  }
-
   delete() {
     //
   }
@@ -61,10 +57,14 @@ export default class ActionNavbarController {
    */
   create($event) {
     if (this.isFile()) {
-      //
+      this.$upload.createDialog($event);
     } else {
       this.$bucket.createDialog($event);
     }
+  }
+
+  createFolder($event) {
+    // handle the create folder event
   }
 
   /**
