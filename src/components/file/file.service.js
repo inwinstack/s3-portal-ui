@@ -85,7 +85,10 @@ export default class FileService {
     this.$fetch.get(endpoint)
       .then(({ data }) => {
         const { uri } = data;
-        window.open(`${this.Config.BASE_URL}${uri}`);
+        const a = document.createElement('a');
+        a.download = downloadName;
+        a.href = uri;
+        a.click();
       })
       .catch(err => console.log(err));
   }
