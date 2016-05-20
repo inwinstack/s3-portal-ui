@@ -24,5 +24,7 @@ export default () => bytes => {
     unit ++;
   }
 
-  return `${bytes.toFixed(2)} ${units[unit]}`;
+  const result = (unit === 0) ? +bytes : bytes.toFixed(2);
+
+  return `${result} ${units[unit]}`;
 };
