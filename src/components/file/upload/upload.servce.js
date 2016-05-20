@@ -54,9 +54,7 @@ export default class FileUploadService {
       type: 'UPLOAD',
       status: 'UPLOADING',
       upload: this.uploadFile(id, {
-        bucket,
-        file: detail,
-        prefix: (prefix === '' ? '' : `${prefix}/`),
+        bucket, prefix, file: detail,
       }, url),
     })));
 
