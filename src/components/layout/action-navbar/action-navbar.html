@@ -6,8 +6,8 @@
     >
       <md-icon class="material-icons" ng-hide="actionNav.isFile()">add</md-icon>
       <md-icon class="material-icons" ng-show="actionNav.isFile()">file_upload</md-icon>
-      <span ng-hide="actionNav.isFile()">Create Bucket</span>
-      <span ng-show="actionNav.isFile()">Upload</span>
+      <span ng-hide="actionNav.isFile()" translate>BUCKET.CREATE</span>
+      <span ng-show="actionNav.isFile()" translate>UTILS.UPLOAD</span>
     </md-button>
 
     <md-button
@@ -16,7 +16,7 @@
       ng-if="actionNav.isFile()"
     >
       <md-icon class="material-icons">create_new_folder</md-icon>
-      <span>Create Folder</span>
+      <span translate>FILE.CREATE_FOLDER</span>
     </md-button>
 
     <md-menu md-offset="0 44">
@@ -24,7 +24,7 @@
         class="md-raised" aria-label="Actions Menu"
         ng-click="$mdOpenMenu($event)"
       >
-        <span>Actions</span>
+        <span translate>ACTION_NAVBAR.ACTIONS</span>
         <md-icon class="icon-default">arrow_drop_down</md-icon>
       </md-button>
 
@@ -35,7 +35,7 @@
             ng-click="actionNav.open()"
             ng-disabled="@A.15"
           >
-            <span translate>Open</span>
+            <span translate>UTILS.OPEN</span>
           </md-button>
         </md-menu-item>
 
@@ -45,7 +45,7 @@
             ng-click="actionNav.download()"
             ng-disabled="@A.17"
           >
-            <span translate>Download</span>
+            <span translate>UTILS.DOWNLOAD</span>
           </md-button>
         </md-menu-item>
 
@@ -54,8 +54,8 @@
             aria-label="Create"
             ng-click="actionNav.create()"
           >
-            <span ng-hide="actionNav.isFile()">Create Bucket</span>
-            <span ng-show="actionNav.isFile()">Upload</span>
+            <span ng-hide="actionNav.isFile()" translate>BUCKET.CREATE</span>
+            <span ng-show="actionNav.isFile()" translate>UTILS.UPLOAD</span>
           </md-button>
         </md-menu-item>
 
@@ -64,7 +64,7 @@
             aria-label="Create Folder"
             ng-click="actionNav.createFolder($event)"
           >
-          <span>Create Folder</span>
+          <span translate>FILE.CREATE_FOLDER</span>
           </md-button>
         </md-menu-item>
 
@@ -73,8 +73,8 @@
             aria-label="Delete"
             ng-click="actionNav.delete()" ng-disabled="@A.4"
           >
-            <span ng-hide="actionNav.isFile()">Delete Bucket</span>
-            <span ng-show="actionNav.isFile()">Delete</span>
+            <span ng-hide="actionNav.isFile()" translate>BUCKET.DELETE</span>
+            <span ng-show="actionNav.isFile()" translate>UTILS.DELETE</span>
           </md-button>
         </md-menu-item>
 
@@ -85,7 +85,7 @@
             aria-label="Refresh"
             ng-click="actionNav.refresh()"
           >
-            <span>Refresh</span>
+            <span translate>UTILS.REFRESH</span>
           </md-button>
         </md-menu-item>
 
@@ -96,7 +96,7 @@
             aria-label="Properties"
             ng-click="actionNav.openProperties()" ng-disabled="@A.18"
           >
-            <span>Properties</span>
+            <span translate>ACTION_NAVBAR.PROPERTIES</span>
           </md-button>
         </md-menu-item>
       </md-menu-content>
@@ -109,7 +109,7 @@
       ng-click="actionNav.closeSidePanels()"
       ng-disabled="! (actionNav.properties || actionNav.transfers)"
     >
-      <span>None</span>
+      <span translate>ACTION_NAVBAR.NONE</span>
     </md-button>
 
     <md-button
@@ -117,14 +117,14 @@
       ng-click="actionNav.openProperties()" ng-disabled="actionNav.properties"
     >
       <md-icon class="material-icons icon-default">info_outline</md-icon>
-      <span>Properties</span>
+      <span translate>ACTION_NAVBAR.PROPERTIES</span>
     </md-button>
 
     <md-button
       class="md-raised" aria-label="Transfers"
       ng-click="actionNav.openTransfers()" ng-disabled="actionNav.transfers"
     >
-      <span>Transfers</span>
+      <span translate>ACTION_NAVBAR.TRANSFERS</span>
     </md-button>
 
     <md-button

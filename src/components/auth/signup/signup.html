@@ -6,7 +6,9 @@
   </div>
 
   <div class="panel-body">
-    <md-subheader class="text-center">Create an account</md-subheader>
+    <md-subheader class="text-center">
+      <span translate>AUTH.CREATE_ACCOUNT</span>
+    </md-subheader>
     <form name="signup.form">
 
       <md-input-container md-no-float ng-class="{'md-icon-right':signup.emailIsValid}" class="md-icon-left md-block">
@@ -17,7 +19,8 @@
         ></md-progress-circular>
 
         <input
-          type="email" name="email" required email placeholder="Email"
+          type="email" name="email" required email
+          placeholder="{{ 'AUTH.EMAIL' | translate }}"
           ng-model="signup.credentials.email"
           ng-model-options='{ debounce: 500 }'
           ng-readonly="signup.form.$submitted"
@@ -26,9 +29,11 @@
 
         <md-icon class="icon-success" ng-if="signup.emailIsValid">done</md-icon>
 
-        <span class="md-caption text-warn" ng-show="signup.emailIsInvalid && signup.showEmailCheckedMessage">
-          Someone already has that username. Try another?
-        </span>
+        <span
+          class="md-caption text-warn"
+          ng-show="signup.emailIsInvalid && signup.showEmailCheckedMessage"
+          translate
+        >ATUH.ALREADY_EXIST</span>
 
         <div
           ng-messages="signup.form.email.$error"
@@ -42,7 +47,8 @@
         <md-icon class="icon-default">lock</md-icon>
 
         <input
-          name="password" type="password" placeholder="Password"
+          name="password" type="password"
+          placeholder="{{ 'AUTH.PASSWORD' | translate }}"
           required minlength="6"
           ng-model="signup.credentials.password"
           ng-readonly="signup.form.$submitted"
@@ -62,7 +68,8 @@
         <md-icon class="icon-default">lock</md-icon>
 
         <input
-          name="password_confirmation" type="password" placeholder="Retype Password"
+          name="password_confirmation" type="password"
+          placeholder="{{ 'AUTH.RETYPE_PASSWORD' | translate }}"
           required match="signup.credentials.password"
           ng-model="signup.credentials.password_confirmation"
           ng-readonly="signup.form.$submitted"
@@ -80,7 +87,7 @@
         ng-disabled="signup.form.$invalid || signup.form.$submitted || signup.emailIsInvalid"
         ng-click="signup.submit()"
       >
-        <span ng-hide="signup.form.$submitted">Sign Up</span>
+        <span ng-hide="signup.form.$submitted" translate>AUTH.SIGN_UP</span>
         <md-progress-circular
           class="md-accent" md-mode="indeterminate"
           md-diameter="30" ng-hide="! signup.form.$submitted"
@@ -90,8 +97,8 @@
     </form>
 
     <div class="panel-footer text-center md-caption">
-      <span>Already have an account? </span>
-      <a ui-sref="auth.signin">Log in</a>
+      <span translate>AUTH.HAVE_ACCOUNT</span>
+      <a ui-sref="auth.signin" translate>AUTH.SIGN_IN</a>
     </div>
   </div>
 

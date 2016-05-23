@@ -33,7 +33,7 @@ export default class TopNavbarController {
    */
   signOut($event) {
     if (this.$transfer.isProcessing()) {
-      this.showConfirmMessage($event).then(this.executedSignOut);
+      this.showConfirmMessage($event);
     } else {
       this.executedSignOut();
     }
@@ -46,16 +46,26 @@ export default class TopNavbarController {
    * @return {Promise}
    */
   showConfirmMessage($event) {
-    const confirm = this.$mdDialog.confirm()
-      .title('Would you like to sign out without your upload?')
-      .textContent(`You have in progress opreations
-or uploads and leaving now will cancel them.Still leaving?`)
-      .ariaLabel('Sign out')
-      .targetEvent($event)
-      .ok('Leave')
-      .cancel('Stay');
+    const sources = [
+      'SETTINGS.SIGN_OUT_CONFIRM_TITLE',
+      'SETTINGS.SIGN_OUT_CONFIRM_MESSAGE',
+      'SETTINGS.SIGN_OUT',
+      'SETTINGS.LEAVE',
+      'SETTINGS.STAY',
+    ];
 
-    return this.$mdDialog.show(confirm);
+    this.$translate(sources)
+      .then(translations => {
+        const confirm = this.$mdDialog.confirm()
+          .title(translations[sources[0]])
+          .textContent(translations[sources[1]])
+          .ariaLabel(translations[sources[2]])
+          .targetEvent($event)
+          .ok(translations[sources[3]])
+          .cancel(translations[sources[4]]);
+
+        this.$mdDialog.show(confirm).then(this.executedSignOut);
+      });
   }
 
   /**

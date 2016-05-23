@@ -1,8 +1,8 @@
 export default class SignInController {
   /** @ngInject */
-  constructor($auth, $state, $toast) {
+  constructor($auth, $state, $toast, $translate) {
     Object.assign(this, {
-      $auth, $state, $toast, credentials: {},
+      $auth, $state, $toast, $translate, credentials: {},
     });
   }
 
@@ -13,9 +13,10 @@ export default class SignInController {
    */
   submit() {
     this.$auth.login(this.credentials)
-      .then(() => {
+      .then(() => this.$translate('TOAST.SIGN_IN_SUCCESS'))
+      .then(signInSuccess => {
         this.$state.go('bucket');
-        this.$toast.show('Sign In Success!');
+        this.$toast.show(signInSuccess);
       })
       .catch(() => {
         this.form.$submitted = false;
