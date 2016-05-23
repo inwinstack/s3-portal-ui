@@ -1,8 +1,8 @@
 export default class ActionNavbarController {
   /** @ngInject */
-  constructor($scope, $bucket, $nav, $file, $upload, $layout) {
+  constructor($scope, $bucket, $nav, $file, $upload, $layout, $folder) {
     Object.assign(this, {
-      $bucket, $file, $upload, $layout,
+      $bucket, $file, $upload, $layout, $folder
     });
 
     $scope.$watch(
@@ -69,7 +69,7 @@ export default class ActionNavbarController {
   }
 
   createFolder($event) {
-    // handle the create folder event
+    this.$folder.createDialog($event);
   }
 
   /**

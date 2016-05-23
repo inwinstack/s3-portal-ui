@@ -1,8 +1,8 @@
 export default class FileController {
   /** @ngInject */
-  constructor($scope, $stateParams, $file, $bucket, $breadcrumb, $upload) {
+  constructor($scope, $stateParams, $file, $bucket, $breadcrumb, $upload, $folder) {
     Object.assign(this, {
-      $file, $upload, $bucket, $breadcrumb,
+      $file, $upload, $bucket, $breadcrumb, $folder,
     });
 
     $scope.$watch(
@@ -22,7 +22,7 @@ export default class FileController {
   }
 
   createFolder($event) {
-    this.$file.createFolder($event);
+    this.$folder.createDialog($event);
   }
 
   selectFile(etag) {

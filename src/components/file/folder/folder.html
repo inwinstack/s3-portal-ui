@@ -1,0 +1,60 @@
+<md-dialog class="input-dialog" aria-label="Create Folder Dialog">
+  <form name="create.form">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Create Folder</h2>
+        <span flex></span>
+
+        <md-button
+          class="md-icon-button" aria-label="Close Create Folder Dialog"
+          ng-click="create.cancel()"
+        >
+          <md-icon class="material-icons">clear</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <div class="dialog-description">
+          <h2 class="md-title">
+            Create a folder.
+          </h2>
+        </div>
+
+        <md-input-container class="md-block">
+          <label>Folder Name</label>
+          <input
+            name="folder" required
+            ng-model="create.folder"
+            ng-readonly="create.form.$submitted"
+          >
+          <span class="md-caption text-warn" ng-show="create.duplicated">
+            That folder already exists! Please select a different name and try again.
+          </span>
+
+          <div ng-messages="create.form.folder.$error" ng-if="create.form.folder.$touched">
+            <div ng-messages-include="messages.html"></div>
+          </div>
+        </md-input-container>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button aria-label="Cancel" ng-click="create.cancel()">
+        <span>Cancel</span>
+      </md-button>
+
+      <md-button
+        ng-click="create.create()" type="submit"
+        aria-label="Create" class="md-primary"
+        ng-disabled="create.form.$invalid || create.form.$submitted || create.duplicated"
+      >
+        <span>Create</span>
+        <md-progress-circular
+          class="md-primary" md-mode="indeterminate"
+          md-diameter="30" ng-show="create.form.$submitted"
+        ></md-progress-circular>
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

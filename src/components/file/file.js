@@ -5,6 +5,7 @@ import FileController from './file.controller';
 import FileService from './file.service';
 import FileTemplate from './file.html';
 import UploadService from './upload/upload.servce';
+import FolderService from './folder/folder.service';
 import './file.css';
 
 /** @ngInject */
@@ -24,6 +25,7 @@ const File = module('file', [
 ])
 .service('$file', FileService)
 .service('$upload', UploadService)
+.service('$folder', FolderService)
 .config(route);
 
 export default File.name;
