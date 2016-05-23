@@ -77,6 +77,14 @@ export default class FileService {
     this.state.lists.downloadName = downloadName;
   }
 
+  downloadFile(uri, fileName) {
+    const a = document.createElement('a');
+    a.download = fileName;
+    a.href = `${this.Config.BASE_URL}${uri}`;
+    console.log(a.href)
+    a.click();
+  }
+
   download() {
     const { bucket, prefix } = this.state.paths;
     const { downloadName } = this.state.lists;
@@ -85,10 +93,7 @@ export default class FileService {
     this.$fetch.get(endpoint)
       .then(({ data }) => {
         const { uri } = data;
-        const a = document.createElement('a');
-        a.download = downloadName;
-        a.href = uri;
-        a.click();
+        this.downloadFile(uri, downloadName);
       })
       .catch(err => console.log(err));
   }
