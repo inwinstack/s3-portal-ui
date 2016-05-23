@@ -1,3 +1,5 @@
+import { stringify } from 'querystring';
+
 export default class FetchService {
   /** @ngInject */
   constructor($http, Config) {
@@ -25,8 +27,8 @@ export default class FetchService {
    *
    * @return {Promise}
    */
-  get(entry) {
-    return this.request('get', entry);
+  get(entry, payload = '') {
+    return this.request('get', `${entry}${stringify(payload)}`);
   }
 
   /**
