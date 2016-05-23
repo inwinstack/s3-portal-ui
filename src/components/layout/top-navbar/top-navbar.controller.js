@@ -70,10 +70,13 @@ export default class TopNavbarController {
    * @return {Promise} [description]
    */
   executedSignOut = () => this.AuthService.signOut()
-    .then(() => {
+    .then(() => this.$translate('TOAST.SIGN_OUT_SUCCESS'))
+    .then(signOutSuccess => {
       this.$auth.logout();
       this.$state.go('auth.signin');
-      this.$toast.show('Sign Out Success!');
+      this.$toast.show(signOutSuccess);
     })
-    .catch(() => this.$toast.show('Sign Out Failure!'));
+    .catch(() => this.$translate('TOAST.SIGN_OUT_FAILURE')
+      .then(signOutFailure => this.$toast.show(signOutFailure))
+    );
 }
