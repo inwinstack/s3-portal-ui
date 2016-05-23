@@ -10,11 +10,13 @@ export default class BreadcrumbService {
    * @return {void}
    */
   initPaths() {
+    const len = (typeof this.paths === 'undefined') ? 0 : this.paths[0].len;
+
     this.paths = [{
       link: '/bucket',
       text: 'All Bucket',
       isBucket: true,
-      len: 0,
+      len,
     }];
   }
 

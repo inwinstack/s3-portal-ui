@@ -13,6 +13,7 @@ const Config = module('app.config', [])
   .config(material)
   .config(http)
   .constant('Config', {
+    BASE_URL: process.env.SERVER_HOST,
     API_URL: `${process.env.SERVER_HOST}/api`,
   })
   .run(authenticateGuard);
