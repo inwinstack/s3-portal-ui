@@ -1,8 +1,8 @@
 export default class FileService {
   /** @ngInject */
-  constructor($mdDialog, $fetch, $bucket, Config) {
+  constructor($mdDialog, $fetch, $bucket, $toast, Config) {
     Object.assign(this, {
-      $mdDialog, $fetch, $bucket, Config,
+      $mdDialog, $fetch, $bucket, $toast, Config,
     });
 
     this.initState();
@@ -95,6 +95,9 @@ export default class FileService {
         const { uri } = data;
         this.downloadFile(uri, downloadName);
       })
-      .catch(err => console.log(err));
+      .catch(({ data }) => {
+        this.$toast.show(`The ${downloadName} doesn't exist, please try again!`);
+        this.getFiles();
+      });
   }
 }
