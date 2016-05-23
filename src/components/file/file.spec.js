@@ -7,6 +7,7 @@ describe('File Unit Test', function() {
     let $rootScope;
     let makeService;
     let BucService;
+    let makeDeferred;
     let makeController;
     let $fetch;
     let $toast;
@@ -32,6 +33,10 @@ describe('File Unit Test', function() {
 
         makeService = () => {
             return new fileService($fetch, BucService);
+        };
+
+        makeDeferred = () => {
+        	return $q.defer();
         };
 
         BucService = new bucketService($fetch, $toast, $mdDialog, $breadcrumb);
@@ -78,20 +83,64 @@ describe('File Unit Test', function() {
         });
     });
 
-    describe('when getFiles in service', function() {
+    describe('when getFiles in service and response success', function() {
         let service;
         let testMock;
+        let fetchMock;
+        let deferred;
+        let res;
         beforeEach(function() {
             service = makeService();
-            testMock = sinon.spy(service.$fetch, 'get');
+            deferred = makeDeferred();
+            fetchMock = sinon.mock(service.$fetch);
+            fetchMock.expects('get').returns(deferred.promise);
+            // testMock = sinon.spy(service.$fetch, 'get');
+            res = {
+			  "files": [
+			    {
+			      "name": "fileName",
+			      "Size": "323844"
+			    }
+			  ]
+			}
             service.paths = { bucket: 'BucketName', folders: ['FolderA', 'FolderB']};
+            deferred.resolve({ data:res });
             service.getFiles();
+        	$rootScope.$digest();
         });
-        it('should test', function() {
-        	// expect(service.state.lists.requesting).to.eq(true)
-        	// expect(testMock).to.have.been.calledWith('saf');
-        	// console.log(service.state.lists.requesting);
+        it('should requesting to be false', function() {
+        	expect(service.state.lists.requesting).to.eq(false);
         });
+        it('should let data have files information', function() {
+        	expect(service.state.lists.data).to.have.deep.property('[0].name', "fileName");
+            expect(service.state.lists.data).to.have.deep.property('[0].Size', "323844")
+        });
+        it('should let error to be false', function() {
+            expect(service.state.lists.error).to.eq(false);
+        })
+    });
+
+    describe('when getFiles in service and response fail', function() {
+        let service;
+        let testMock;
+        let fetchMock;
+        let deferred;
+        beforeEach(function() {
+            service = makeService();
+            deferred = makeDeferred();
+            fetchMock = sinon.mock(service.$fetch);
+            fetchMock.expects('get').returns(deferred.promise);
+            service.paths = { bucket: 'BucketName', folders: ['FolderA', 'FolderB']};
+            deferred.reject();
+            service.getFiles();
+            $rootScope.$digest();
+        });
+        it('should requesting to be false', function() {
+            expect(service.state.lists.requesting).to.eq(false);
+        });
+        it('should let error to be true', function() {
+            expect(service.state.lists.error).to.eq(true);
+        })
     });
 
     describe('when init controller', function() {
