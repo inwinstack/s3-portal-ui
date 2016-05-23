@@ -49,22 +49,22 @@
           </md-button>
         </md-menu-item>
 
-        <md-menu-item>
+        <md-menu-item ng-if="actionNav.isFile()">
           <md-button
-            aria-label="Create"
-            ng-click="actionNav.create()"
+            aria-label="Upload"
+            ng-click="actionNav.upload()"
           >
-            <span ng-hide="actionNav.isFile()">Create Bucket</span>
-            <span ng-show="actionNav.isFile()">Upload</span>
+            <span translate>Upload</span>
           </md-button>
         </md-menu-item>
 
-        <md-menu-item ng-if="actionNav.isFile()">
+        <md-menu-item>
           <md-button
-            aria-label="Create Folder"
-            ng-click="actionNav.createFolder($event)"
+            aria-label="Create"
+            ng-click="actionNav.create($event)"
           >
-          <span>Create Folder</span>
+          <span ng-hide="actionNav.isFile()">Create Bucket</span>
+          <span ng-show="actionNav.isFile()">Create Folder</span>
           </md-button>
         </md-menu-item>
 
