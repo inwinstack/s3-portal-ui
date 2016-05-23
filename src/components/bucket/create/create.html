@@ -21,27 +21,15 @@
           </h2>
         </div>
 
-        <md-input-container class="md-block md-icon-right">
+        <md-input-container class="md-block">
           <label>Bucket Name</label>
           <input
             name="bucket" required
             ng-model="create.bucket"
             ng-readonly="create.form.$submitted"
-            ng-change="create.check()"
-            ng-model-options='{ debounce: 500 }'
           >
 
-          <md-progress-circular
-            class="md-primary" md-diameter="30" md-mode="indeterminate"
-            ng-show="create.checking"
-          ></md-progress-circular>
-
-          <md-icon
-            class="icon-success"
-            ng-show="! create.duplicated && ! create.checking && create.checked"
-          >done</md-icon>
-
-          <span class="md-caption text-warn" ng-show="create.duplicated &&  ! create.checking && create.checked">
+          <span class="md-caption text-warn" ng-show="create.duplicated">
             That bucket already exists! Please select a different name and try again.
           </span>
 

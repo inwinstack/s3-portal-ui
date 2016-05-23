@@ -26,23 +26,8 @@ export default class BucketService {
         error: false,
       },
       create: {
-        checking: false,
-        checked: false,
         duplicated: false,
       },
-    };
-  }
-
-  /**
-   * Reset the state of checke bucket.
-   *
-   * @return {void}
-   */
-  resetCheckBucketState() {
-    this.state.create = {
-      checking: false,
-      checked: false,
-      duplicated: false,
     };
   }
 
@@ -70,7 +55,7 @@ export default class BucketService {
    */
   closeDialog() {
     this.$mdDialog.cancel();
-    this.resetCheckBucketState();
+    this.state.create.duplicated = false;
   }
 
   /**
@@ -97,28 +82,6 @@ export default class BucketService {
   }
 
   /**
-   * Check the bucket name has created or not.
-   *
-   * @param  {string} bucket
-   * @return {void}
-   */
-  checkBucket(bucket) {
-    this.state.create.checking = true;
-
-    this.$fetch.post('/v1/bucket/check', { bucket })
-      .then(() => {
-        this.state.create.duplicated = false;
-      })
-      .catch(() => {
-        this.state.create.duplicated = true;
-      })
-      .finally(() => {
-        this.state.create.checking = false;
-        this.state.create.checked = true;
-      });
-  }
-
-  /**
    * Send a request with bucket name for create bucket.
    *
    * @param  {string} bucket
@@ -129,12 +92,10 @@ export default class BucketService {
       .then(({ data }) => {
         this.state.lists.data = data.Buckets.sort(sortByName);
         this.$toast.show(`Bucket ${bucket} has created!`);
+        this.closeDialog();
       })
       .catch(() => {
-        this.$toast.show('Bucket create failure, please try again!');
-      })
-      .finally(() => {
-        this.closeDialog();
+        this.state.create.duplicated = true;
       });
   }
 }
