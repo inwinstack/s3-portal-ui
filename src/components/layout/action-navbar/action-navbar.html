@@ -2,7 +2,7 @@
   <div class="md-toolbar-tools">
     <md-button
       class="md-raised md-primary" aria-label="Upload"
-      ng-click="actionNav.upload()"
+      ng-click="actionNav.upload($event)"
       ng-if="actionNav.isFile()"
     >
       <md-icon class="material-icons">file_upload</md-icon>
@@ -11,7 +11,7 @@
 
     <md-button
       class="md-raised" aria-label="Create"
-      ng-class="{md-primary: !actionNav.isFile()}"
+      ng-class="{'md-primary': !actionNav.isFile()}"
       ng-click="actionNav.create($event)"
     >
       <md-icon class="material-icons" ng-hide="actionNav.isFile()">add</md-icon>
@@ -44,7 +44,7 @@
           <md-button
             aria-label="Download File"
             ng-click="actionNav.download()"
-            ng-disabled="@A.17"
+            ng-disabled="actionNav.downloadButton"
           >
             <span translate>Download</span>
           </md-button>
@@ -95,7 +95,7 @@
         <md-menu-item>
           <md-button
             aria-label="Properties"
-            ng-click="actionNav.properties()" ng-disabled="@A.18"
+            ng-click="actionNav.openProperties()" ng-disabled="@A.18"
           >
             <span>Properties</span>
           </md-button>
@@ -107,14 +107,15 @@
 
     <md-button
       class="md-raised" aria-label="None"
-      ng-click="actionNav.none()" ng-disabled="@A.8"
+      ng-click="actionNav.closeSidePanels()"
+      ng-disabled="! (actionNav.properties || actionNav.transfers)"
     >
       <span>None</span>
     </md-button>
 
     <md-button
       class="md-raised" aria-label="Properties"
-      ng-click="actionNav.properties()" ng-disabled="@A.9"
+      ng-click="actionNav.openProperties()" ng-disabled="actionNav.properties"
     >
       <md-icon class="material-icons icon-default">info_outline</md-icon>
       <span>Properties</span>
@@ -122,7 +123,7 @@
 
     <md-button
       class="md-raised" aria-label="Transfers"
-      ng-click="actionNav.transfers()" ng-disabled="@A.11"
+      ng-click="actionNav.openTransfers()" ng-disabled="actionNav.transfers"
     >
       <span>Transfers</span>
     </md-button>

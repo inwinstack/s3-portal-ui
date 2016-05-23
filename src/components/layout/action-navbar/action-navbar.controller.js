@@ -1,13 +1,23 @@
 export default class ActionNavbarController {
   /** @ngInject */
-  constructor($scope, $bucket, $nav) {
+  constructor($scope, $bucket, $nav, $file, $upload, $layout) {
     Object.assign(this, {
-      $scope, $bucket,
+      $bucket, $file, $upload, $layout,
     });
 
-    this.$scope.$watch(
+    $scope.$watch(
       () => $nav.type,
       newVal => (this.type = newVal)
+    );
+
+    $scope.$watch(
+      () => $layout.state,
+      newVal => Object.assign(this, newVal)
+    );
+
+    $scope.$watch(
+      () => $file.state.lists.downloadName,
+      newVal => (this.downloadButton = newVal === null)
     );
   }
 
@@ -25,27 +35,27 @@ export default class ActionNavbarController {
   }
 
   download() {
-    //
+    this.$file.download();
   }
 
-  upload() {
-    //
+  upload($event) {
+    this.$upload.createDialog($event);
   }
 
   delete() {
     //
   }
 
-  none() {
-    //
+  closeSidePanels() {
+    this.$layout.closeSidePanels();
   }
 
-  properties() {
-    //
+  openProperties() {
+    this.$layout.openProperties();
   }
 
-  transfers() {
-    //
+  openTransfers() {
+    this.$layout.openTransfers();
   }
 
   /**
@@ -56,7 +66,7 @@ export default class ActionNavbarController {
    */
   create($event) {
     if (this.isFile()) {
-      // create file dialog
+      //
     } else {
       this.$bucket.createDialog($event);
     }
@@ -69,7 +79,7 @@ export default class ActionNavbarController {
    */
   refresh() {
     if (this.isFile()) {
-      // get the files
+      this.$file.getFiles();
     } else {
       this.$bucket.getBuckets();
     }

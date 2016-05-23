@@ -12,14 +12,13 @@
       </thead>
 
       <tbody>
-        <tr ng-repeat="bucket in bucket.data" ng-class="{active:@A.3}">
+        <tr ng-repeat="b in bucket.data" ng-class="{active:@A.3}">
           <td>
             <a ng-click="@A.4">
               <md-icon>info_outline</md-icon>
             </a>
           </td>
-          <td ng-bind="bucket.Name">
-            <a ng-click="@A.11"></a>
+          <td ng-bind="b.Name" ng-click="bucket.selectBucket(b.Name)">
           </td>
         </tr>
       </tbody>

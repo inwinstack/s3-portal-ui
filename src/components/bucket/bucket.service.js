@@ -1,13 +1,13 @@
 import { element } from 'angular';
-import natural from 'javascript-natural-sort';
+import { sortByName } from '../../utils/sort';
 import BucketCreateController from './create/create.controller';
 import BucketCreateTemplate from './create/create.html';
 
 export default class BucketService {
   /** @ngInject */
-  constructor($fetch, $toast, $mdDialog) {
+  constructor($fetch, $toast, $mdDialog, $breadcrumb) {
     Object.assign(this, {
-      $fetch, $toast, $mdDialog,
+      $fetch, $toast, $mdDialog, $breadcrumb,
     });
 
     this.initState();
@@ -74,20 +74,6 @@ export default class BucketService {
   }
 
   /**
-   * Natural sort for the specified object key.
-   *
-   * @param  {Object} a
-   * @param  {Object} b
-   * @return {Integer}
-   */
-  sortByName(a, b) {
-    const x = a.Name;
-    const y = b.Name;
-
-    return natural(x, y);
-  }
-
-  /**
    * Call the bucket list API and modify the state of service.
    *
    * @return {void}
@@ -99,13 +85,14 @@ export default class BucketService {
     this.$fetch.post('/v1/bucket/list')
       .then(({ data }) => {
         this.state.lists.error = false;
-        this.state.lists.data = data.Buckets.sort(this.sortByName);
+        this.state.lists.data = data.Buckets.sort(sortByName);
       })
       .catch(() => {
         this.state.lists.error = true;
       })
       .finally(() => {
         this.state.lists.requesting = false;
+        this.$breadcrumb.updateBucketPath(this.state.lists.data.length);
       });
   }
 
@@ -140,7 +127,7 @@ export default class BucketService {
   createBucket(bucket) {
     this.$fetch.post('/v1/bucket/create', { bucket })
       .then(({ data }) => {
-        this.state.lists.data = data.Buckets.sort(this.sortByName);
+        this.state.lists.data = data.Buckets.sort(sortByName);
         this.$toast.show(`Bucket ${bucket} has created!`);
       })
       .catch(() => {

@@ -4,14 +4,16 @@ import './index.css';
 import './templates';
 import Vendor from './vendor';
 import Config from './config';
-import Utils from './utils';
+import Services from './services';
 import Directives from './directives';
+import Filters from './filters';
 import Components from './components';
 
 module('app', [
   Vendor,
   Config,
-  Utils,
+  Services,
   Directives,
+  Filters,
   Components,
 ]);

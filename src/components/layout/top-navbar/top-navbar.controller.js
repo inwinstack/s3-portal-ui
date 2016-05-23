@@ -1,8 +1,8 @@
 export default class TopNavbarController {
   /** @ngInject */
-  constructor($translate, $auth, $state, $toast, $mdDialog, AuthService) {
+  constructor($scope, $translate, $auth, $state, $toast, $mdDialog, $transfer, AuthService) {
     Object.assign(this, {
-      $translate, $auth, $state, $toast, $mdDialog, AuthService,
+      $scope, $translate, $auth, $state, $toast, $mdDialog, $transfer, AuthService,
     });
 
     this.languages = [
@@ -32,7 +32,11 @@ export default class TopNavbarController {
    * @return {void}
    */
   signOut($event) {
-    this.showConfirmMessage($event).then(this.executedSignOut);
+    if (this.$transfer.isProcessing()) {
+      this.showConfirmMessage($event).then(this.executedSignOut);
+    } else {
+      this.executedSignOut();
+    }
   }
 
   /**
@@ -61,6 +65,7 @@ or uploads and leaving now will cancel them.Still leaving?`)
    */
   executedSignOut = () => this.AuthService.signOut()
     .then(() => {
+      this.$transfer.abort();
       this.$auth.logout();
       this.$state.go('auth.signin');
       this.$toast.show('Sign Out Success!');

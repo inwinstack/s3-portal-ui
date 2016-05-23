@@ -39,7 +39,6 @@
     "angular": "^1.5.0",
     "angular-animate": "^1.5.0",
     "angular-aria": "^1.5.0",
-    "angular-breadcrumb": "^0.4.1",
     "angular-material": "^1.0.5",
     "angular-messages": "^1.5.0",
     "angular-translate": "^2.9.2",
@@ -49,6 +48,7 @@
     "javascript-natural-sort": "^0.7.1",
     "lodash": "^4.5.1",
     "material-design-icons": "^2.2.0",
+    "ng-file-upload": "^12.0.4",
     "satellizer": "^0.14.0"
   },
   "devDependencies": {
