@@ -43,6 +43,10 @@ export default {
   TOAST: {
     SIGN_IN_SUCCESS: '登入成功！',
     SIGN_UP_SUCCESS: '註冊成功！',
+    SIGN_OUT_SUCCESS: '登出成功！',
+    SIGN_OUT_FAILURE: '登出失敗！',
+    CREATE_BUCKET_SUCCESS: 'Bucket {{ bucket }} 已建立成功！',
+    CREATE_BUCKET_FAILURE: 'Bucket {{ bucket }} 建立失敗，請再試一次！',
   },
   AUTH: {
     EMAIL: '電子郵件',

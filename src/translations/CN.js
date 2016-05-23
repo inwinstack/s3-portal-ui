@@ -43,6 +43,10 @@ export default {
   TOAST: {
     SIGN_IN_SUCCESS: '登入成功！',
     SIGN_UP_SUCCESS: '注册成功！',
+    SIGN_OUT_SUCCESS: '登出成功！',
+    SIGN_OUT_FAILURE: '登出失敗！',
+    CREATE_BUCKET_SUCCESS: 'Bucket {{ bucket }} 已创建成功！',
+    CREATE_BUCKET_FAILURE: 'Bucket {{ bucket }} 创建失敗，请再试一次！',
   },
   AUTH: {
     EMAIL: '电邮',
@@ -52,7 +56,7 @@ export default {
     SIGN_UP: '注册',
     HAVE_ACCOUNT: '已经有帐户了吗？',
     HAVE_NOT_ACCOUNT: '尚未注册帐戶吗？',
-    CREATE_ACCOUNT: '建立帐户',
+    CREATE_ACCOUNT: '创建帐户',
     LOGIN_TO_YOUR_ACCOUNT: '登入你的帐户',
     ALREADY_EXIST: '已有其他人使用这个电邮，请换一个试试',
     SIGN_IN_INCORRECT: '你的电邮或密码不正确，请再试一次。',

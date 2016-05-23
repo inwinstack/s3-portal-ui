@@ -45,6 +45,8 @@ export default {
   TOAST: {
     SIGN_IN_SUCCESS: 'Sign In Success!',
     SIGN_UP_SUCCESS: 'Sign Up Success!',
+    SIGN_OUT_SUCCESS: 'Sign Out Success!',
+    SIGN_OUT_FAILURE: 'Sign Out Failure!',
     CREATE_BUCKET_SUCCESS: 'Bucket {{ bucket }} are create success!',
     CREATE_BUCKET_FAILURE: 'Bucket {{ bucket }} are create failure, please try again!',
   },
