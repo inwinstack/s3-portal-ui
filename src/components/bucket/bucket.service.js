@@ -73,6 +73,12 @@ export default class BucketService {
     this.resetCheckBucketState();
   }
 
+  selectBucket(name) {
+    const { data } = this.state.lists;
+    const index = data.findIndex(bucket => bucket.Name === name);
+    this.state.lists.data[index].checked = ! data[index].checked;
+  }
+
   /**
    * Call the bucket list API and modify the state of service.
    *
@@ -85,7 +91,11 @@ export default class BucketService {
     this.$fetch.post('/v1/bucket/list')
       .then(({ data }) => {
         this.state.lists.error = false;
-        this.state.lists.data = data.Buckets.sort(sortByName);
+        const buckets = data.Buckets.map(bucket => ({
+          ...bucket,
+          checked: false,
+        }));
+        this.state.lists.data = buckets.sort(sortByName);
       })
       .catch(() => {
         this.state.lists.error = true;

@@ -13,10 +13,18 @@
     </table>
 
     <md-list>
-      <md-list-item ng-class="{checked:message.selected}" ng-repeat="bucket in bucket.data">
-        <md-checkbox ng-model="message.selected"></md-checkbox>
+      <md-list-item
+        aria-label="Bucket list item"
+        ng-class="{ checked: b.checked }"
+        ng-repeat="b in bucket.data"
+        ng-click="bucket.clickBucket(b.Name)"
+      >
+        <md-checkbox
+          ng-checked="b.checked"
+          ng-click="bucket.selectBucket(b.Name)"
+        ></md-checkbox>
         <p class="break-word flex-grow">
-          <span ng-bind="bucket.Name"></span>
+          <span ng-bind="b.Name"></span>
         </p>
       </md-list-item>
     </md-list>
