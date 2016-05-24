@@ -134,7 +134,7 @@ md-list-item.checked {
 }
 
 md-list-item > .md-list-item-inner > p {
-  padding: 0 8px;
+  padding: 0 15px;
 }
 
 md-list-item > p.flex-none,

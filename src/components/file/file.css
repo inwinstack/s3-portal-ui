@@ -4,21 +4,29 @@
  */
 
 .checkbox-icon-width {
-  width: 80px;
+  width: 100px;
 }
 
-.storage-class-width {
+.storage-class-title-width {
   width: 140px;
 }
 
-.size-width {
+.storage-class-width {
+  width: 156px;
+}
+
+.size-title-width {
   width: 84px;
 }
 
-.time-width {
-  width: 270px;
+.size-width {
+  width: 100px;
 }
 
 .time-title-width {
-  width: 286px;
+  width: 220px;
+}
+
+.time-width {
+  width: 225px;
 }

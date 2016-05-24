@@ -8,9 +8,15 @@
         <tr>
           <th class="checkbox-icon-width"></th>
           <th>Name</th>
-          <th class="hide show-gt-sm storage-class-width">Storage Class</th>
-          <th class="size-width">Size</th>
-          <th class="hide show-gt-sm time-title-width">Last Modified</th>
+          <th
+            class="hide show-gt-sm storage-class-title-width"
+            ng-hide="layout.$layout.state.transfers"
+          >Storage Class</th>
+          <th class="size-title-width">Size</th>
+          <th
+            class="hide show-gt-sm time-title-width"
+            ng-hide="layout.$layout.state.transfers"
+          >Last Modified</th>
         </tr>
       </thead>
     </table>
@@ -18,24 +24,30 @@
       <md-list-item ng-class="{ checked: f.checked }" ng-repeat="f in file.data">
           <md-checkbox ng-checked="f.checked" ng-click="file.selectFile(f.ETag)"></md-checkbox>
           <md-icon>insert_drive_file</md-icon>
-          <p class="break-word flex-grow">
+          <p class="break-word flex-grows">
             <span ng-bind="f.Key"></span>
           </p>
-          <p class="flex-none" hide show-gt-sm>
+          <p
+            class="flex-none storage-class-width hide show-gt-sm"
+            ng-hide="layout.$layout.state.transfers"
+          >
             <span
-              class="storage-class-width inline-block"
+              class="inline-block"
               ng-bind="f.StorageClass"
             ></span>
           </p>
-          <p class="flex-none">
+          <p class="flex-none size-width text-center">
             <span
-              class="size-width inline-block"
+              class="inline-block"
               ng-bind="(f.Size | filesize)"
             ></span>
           </p>
-          <p class="flex-none" hide show-gt-sm>
+          <p
+            class="flex-none hide show-gt-sm time-width"
+            ng-hide="layout.$layout.state.transfers"
+          >
             <span
-              class="time-width inline-block"
+              class="inline-block"
               ng-bind="(f.LastModified | date: 'yyyy-MM-dd')"
             ></span>
           </p>
