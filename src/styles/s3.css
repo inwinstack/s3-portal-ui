@@ -133,10 +133,6 @@ md-list-item.checked {
   background: #E8EAF6;
 }
 
-md-list-item > .md-list-item-inner > p {
-  padding: 0 15px;
-}
-
 md-list-item > p.flex-none,
 md-list-item > .md-list-item-inner > p.flex-none,
 md-list-item .md-list-item-inner > p.flex-none,

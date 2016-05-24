@@ -3,6 +3,10 @@
  * @author Jamie jamie.h@inwinstack.com
  */
 
+.file-list  md-list-item > .md-list-item-inner > p {
+  padding: 0 15px;
+}
+
 .checkbox-icon-width {
   width: 100px;
 }
@@ -12,7 +16,7 @@
 }
 
 .storage-class-width {
-  width: 156px;
+  width: 135px;
 }
 
 .size-title-width {
@@ -20,7 +24,7 @@
 }
 
 .size-width {
-  width: 100px;
+  width: 110px;
 }
 
 .time-title-width {

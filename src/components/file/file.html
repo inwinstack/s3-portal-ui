@@ -20,11 +20,11 @@
         </tr>
       </thead>
     </table>
-    <md-list>
+    <md-list class="file-list">
       <md-list-item ng-class="{ checked: f.checked }" ng-repeat="f in file.data">
           <md-checkbox ng-checked="f.checked" ng-click="file.selectFile(f.ETag)"></md-checkbox>
           <md-icon>insert_drive_file</md-icon>
-          <p class="break-word flex-grows">
+          <p class="break-word flex-grow">
             <span ng-bind="f.Key"></span>
           </p>
           <p
