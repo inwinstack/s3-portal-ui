@@ -2,13 +2,14 @@ import app from '../../../index.js';
 import upCtrl from './upload.controller';
 import fileService from '../file.service';
 import uploadService from './upload.servce';
-import totalSize from '../../../utils/totalSize'
+import transService from '../../layout/transfer/transfer.service';
 
 describe('Upload Unit Test', function() {
     let $rootScope;
     let makeFileService;
     let BucService;
     let makeUpService;
+    let makeTransService;
     let makeDeferred;
     let makeController;
     let $fetch;
@@ -40,8 +41,8 @@ describe('Upload Unit Test', function() {
             return new fileService($mdDialog, $fetch, BucService);
         };
 
-        makeUpService = (service) => {
-            return new uploadService(Config, Upload, $mdDialog, service, $toast);
+        makeUpService = (fileService, transService) => {
+            return new uploadService(Config, Upload, $mdDialog, fileService, transService);
         };
 
         makeDeferred = () => {
@@ -50,6 +51,10 @@ describe('Upload Unit Test', function() {
 
         makeController = (fileService, upService) => {
             return new upCtrl(fileService, upService, $rootScope);
+        };
+
+        makeTransService = (fileService) => {
+            return new transService($toast, fileService);
         };
     }));
     describe('when upload in controller', function() {
@@ -237,8 +242,105 @@ describe('Upload Unit Test', function() {
         it('should total size', function() {
             service.delete(service.state.files[0].id);
             expect(service.state.size).to.eq(service.state.files.reduce((p, c) => p+c.detail.size,0));
-            // console.log(service.state.size);
-            // console.log(service.state.files.reduce((p, c) => p+c.detail.size,0))
+        });
+    });
+    describe('when upload in service', function() {
+        let service;
+        let fileService;
+        let transService;
+        let mockPut;
+        let mockCloseDialog;
+        let mockUploadFile;
+        beforeEach(function() {
+            fileService = makeFileService();
+            transService = makeTransService(fileService);
+            fileService.paths = { bucket: 'BucketName', folders: ['FolderA', 'FolderB']};
+            service = makeUpService(fileService, transService);
+            service.state.files = [
+                {
+                    id: Symbol('unique id'),
+                    detail: {
+                        name: 'FileName',
+                        size: 888
+                    }
+                }
+            ];
+            service.uploadFile = () => { return 'aPromise' };
+            service.closeDialog = () => {};
+            mockCloseDialog = sinon.spy(service, 'closeDialog');
+            mockUploadFile = sinon.spy(service, 'uploadFile');
+            mockPut = sinon.spy(transService, 'put');
+            service.upload();
+            $rootScope.$digest();
+        });
+        it('should let uploading to be true', function() {
+            expect(service.state.uploading).to.eq(true);
+        });
+        it('should invoke $transfer.put and call by right way', function() {
+            const { bucket, folders } = fileService.paths;
+            const called = [{
+                id: service.state.files[0].id,
+                bucket: bucket,
+                name: service.state.files[0].detail.name,
+                type: 'UPLOAD',
+                status: 'UPLOADING',
+                upload: 'aPromise'
+            }];
+            expect(mockPut).to.have.been.calledWith(called);
+        });
+        it('should invoke uploadFile and call by id, data and url', function() {
+            const { bucket, folders } = fileService.paths;
+            const prefix = folders.length ? '' : `${folders.join('/')}/`;
+            const called = {
+                id: service.state.files[0].id,
+                data: {
+                    bucket: bucket,
+                    prefix: prefix,
+                    file: service.state.files[0].detail
+                },
+                url:`${Config.API_URL}/v1/file/create`
+            }
+            expect(mockUploadFile).to.have.been.calledWith(called.id, called.data, called.url);
+        });
+        it('should invoke closeDialog', function() {
+            expect(mockCloseDialog.called).to.eq(true);
+        });
+    });
+    describe('when createDialog in service', function() {
+        let service;
+        let fileService;
+        let transService;
+        let mockCreateDialog;
+        beforeEach(function() {
+            fileService = makeFileService();
+            transService = makeTransService(fileService);
+            service = makeUpService(fileService, transService);
+            mockCreateDialog = sinon.spy($mdDialog, 'show');
+            service.createDialog();
+        });
+        it('should invoke mdDialog.show', function() {
+            expect(mockCreateDialog.called).to.eq(true);
+        });
+    });
+    describe('when closeDialog in service', function() {
+        let service;
+        let fileService;
+        let transService;
+        let mockCancelDialog;
+        let mockInitState;
+        beforeEach(function() {
+            fileService = makeFileService();
+            transService = makeTransService(fileService);
+            service = makeUpService(fileService, transService);
+            mockInitState = sinon.spy(service, 'initState');
+            mockCancelDialog = sinon.spy($mdDialog, 'cancel');
+            service.closeDialog();
+        });
+        it('should invoke mdDialog.cancel', function() {
+            expect(mockCancelDialog.called).to.eq(true);
+        });
+        it('should invoke initState in service', function() {
+            expect(mockInitState.called).to.eq(true);
         });
     });
 });
