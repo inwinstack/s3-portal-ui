@@ -1,0 +1,70 @@
+<md-dialog class="input-dialog" aria-label="Delete Bucket Dialog">
+  <form name="@A.1">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2 translate>Delete Bucket</h2>
+        <span flex></span>
+
+        <md-button
+          class="md-icon-button" aria-label="Close Delete Bucket Dialog"
+          ng-click="@A.2"
+        >
+          <md-icon class="material-icons">clear</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <div class="dialog-description">
+          <div layout="row" layout-align="space-around center" layout-margin>
+            <md-icon class="md-warn">error</md-icon>
+            <p class="text-warn" translate>
+              Amazon S3 buckets are unique. If you delete this bucket, you may lose the bucket name to another AWS user.
+            </p>
+          </div>
+          
+          <p translate>
+            Deleting this bucket and its objects (including older versions if applicable) <b>cannot be undone</b>.
+            Are you sure you want to delete <b>{{bucket}}</b>?
+          </p>
+          <p translate>Type the name of the bucket to confirm deletion:</p>
+        </div>
+
+        <md-input-container class="md-block">
+          <label translate>Bucket Name</label>
+          <input
+            name="@A.3" required
+            ng-model="@A.4"
+            ng-readonly="@A.5"
+          >
+
+          <span class="md-caption text-warn" ng-show="@A.6" translate>
+            Type the exact name of the bucket you are trying to delete.
+          </span>
+
+          <div ng-messages="@A.7" ng-if="@A.8">
+            <div ng-messages-include="messages.html"></div>
+          </div>
+        </md-input-container>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button aria-label="Cancel" ng-click="@A.2">
+        <span translate>Cancel</span>
+      </md-button>
+
+      <md-button
+        ng-click="@A.9" type="submit"
+        aria-label="Delete" class="md-warn"
+        ng-disabled="@A.10"
+      >
+        <span translate>Delete</span>
+        <md-progress-circular
+          class="md-primary" md-mode="indeterminate"
+          md-diameter="30" ng-show="@A.11"
+        ></md-progress-circular>
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
