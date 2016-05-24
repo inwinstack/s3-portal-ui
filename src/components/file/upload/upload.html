@@ -16,29 +16,19 @@
     </md-toolbar>
     <md-dialog-content>
       <div class="md-dialog-content">
-        <div class="dialog-description">
-          <p translate>
-            To upload files to S3 Portal, click Add Files. To remove files already selected, click the ✖ to the far right of the file name.
-          </p>
-        </div>
+        <p translate>
+          To upload files to S3 Portal, click Add Files. To remove files already selected, click the ✖ to the far right of the file name.
+        </p>
 
         <md-list>
-          <md-list-item
-            aria-label="Add Files"
-            ng-disabled="@A.13"
-            ng-click="u()"
+          <div
+            flex class="md-list-item-inner"
+            ngf-select="upload.select($files)" multiple
+            name="files"
+            layout="row"
           >
-            <div
-              flex class="md-list-item-inner"
-              ngf-select="upload.select($files)" multiple
-              name="files"
-            >
-              <p translate>Add Files</p>
-              <md-icon class="material-icons md-primary">add</md-icon>
-            </div>
-          </md-list-item>
-
-          <md-divider></md-divider>
+            <md-button flex class="md-raised" aria-label="Add Files">Add Files</md-button>
+          </div>
 
           <md-list-item ng-repeat="file in upload.files">
             <md-icon class="material-icons" ng-if="file.detail.type.startWith('image/')">photo</md-icon>
@@ -53,7 +43,7 @@
             >clear</md-icon>
           </md-list-item>
 
-          <md-divider></md-divider>
+          <md-divider ng-show="upload.files.length"></md-divider>
           <p class="md-caption dialog-footer">
             Number of files:
             <span ng-bind="upload.files.length"></span>
