@@ -41,6 +41,10 @@ export default class TransferController {
     return t.status === 'UPLOADING';
   }
 
+  isCompleted(t) {
+    return t.status === 'COMPLETED';
+  }
+
   showInfo(t) {
     const status = ['FAILED', 'PAUSED'];
     return status.indexOf(t.status) < 0;
