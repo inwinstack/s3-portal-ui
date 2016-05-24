@@ -160,6 +160,14 @@ md-list md-list-item.md-3-line .md-list-item-text p.text-warn {
   color: #FF6D00;
 }
 
+.transfer-list md-list-item.md-2-line .md-list-item-text h3,
+.transfer-list md-list-item.md-2-line > .md-no-style .md-list-item-text h3,
+.transfer-list md-list-item.md-3-line .md-list-item-text h3,
+.transfer-list md-list-item.md-3-line > .md-no-style .md-list-item-text h3 {
+  margin-top: 3px;
+  white-space: normal;
+}
+
 /* fix flexbox type layout issues in IE10 */
 span.flex {
   display: block;
