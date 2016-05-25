@@ -1,3 +1,6 @@
+import getIconString from '../../utils/icon';
+import { sortFiles } from '../../utils/sort';
+
 export default class FileService {
   /** @ngInject */
   constructor($mdDialog, $fetch, $bucket, $toast, Config) {
@@ -23,6 +26,11 @@ export default class FileService {
     };
   }
 
+  getFullPaths() {
+    const { bucket, prefix } = this.state.paths;
+    return `${bucket}/${prefix}`;
+  }
+
   setPaths(bucket, prefix) {
     this.state.paths = { bucket, prefix };
   }
@@ -38,7 +46,7 @@ export default class FileService {
       .get(endpoint)
       .then(({ data }) => {
         this.state.lists.error = false;
-        this.state.lists.data = this.formatFilesData(data.files);
+        this.state.lists.data = sortFiles(this.formatFilesData(data.files));
       })
       .catch(() => {
         this.state.lists.error = true;
@@ -48,10 +56,33 @@ export default class FileService {
       });
   }
 
+  getIcon(name) {
+    return getIconString(name);
+  }
+
+  formatFileType(name) {
+    const isFolder = (name.endsWith('/'))
+    const removeSlash = isFolder ? name.slice(0, -1) : name;
+    const display = removeSlash.replace(this.state.paths.prefix, '');
+    return { isFolder, display };
+  }
+
   formatFilesData(files) {
-    return (files === null) ? [] :
-      files.map(file => ({
+    const { prefix } = this.state.paths;
+    const baseLen = prefix.split('/').length;
+
+    return (! files) ? [] :
+      files.filter(({ Key }) => {
+        const { length } = Key.split('/');
+        return (
+          length === baseLen
+          || length === baseLen + 1
+          && Key.endsWith('/')
+        ) && Key !== prefix;
+      }).map(file => ({
         ...file,
+        ...this.formatFileType(file.Key),
+        icon: this.getIcon(file.Key),
         checked: false,
       }));
   }
@@ -71,7 +102,7 @@ export default class FileService {
 
     if (count === 1) {
       const index = this.state.lists.data.findIndex(file => file.checked);
-      downloadName = this.state.lists.data[index].Key;
+      downloadName = this.state.lists.data[index].display;
     }
 
     this.state.lists.downloadName = downloadName;
