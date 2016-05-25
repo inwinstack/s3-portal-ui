@@ -2,20 +2,20 @@ export default class ActionNavbarController {
   /** @ngInject */
   constructor($scope, $bucket, $nav, $file, $upload, $layout) {
     Object.assign(this, {
-      $scope, $bucket, $file, $upload, $layout,
+      $bucket, $file, $upload, $layout,
     });
 
-    this.$scope.$watch(
+    $scope.$watch(
       () => $nav.type,
       newVal => (this.type = newVal)
     );
 
-    this.$scope.$watch(
+    $scope.$watch(
       () => $layout.state,
       newVal => Object.assign(this, newVal)
     );
 
-    this.$scope.$watch(
+    $scope.$watch(
       () => $bucket.state.delete.name,
       newVal => this.disableDeleteButton = ! newVal && ! this.isFile()
     );
