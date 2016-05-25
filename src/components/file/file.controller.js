@@ -33,8 +33,8 @@ export default class FileController {
     }
   }
 
-  selectFile(etag) {
-    this.$file.selectFile(etag);
+  selectFile(name) {
+    this.$file.selectFile(name);
   }
 
   upload($event) {
