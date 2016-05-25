@@ -20,6 +20,8 @@
         ng-click="bucket.clickBucket(b.Name)"
       >
         <md-checkbox
+          aria-label="checkbox of bucket list item"
+          class="md-secondary"
           ng-checked="b.checked"
           ng-click="bucket.selectBucket(b.Name)"
         ></md-checkbox>
