@@ -87,14 +87,14 @@ export default class FileService {
       }));
   }
 
-  selectFile(etag) {
+  selectFile(name) {
     let count = 0;
     let downloadName = null;
 
     this.state.lists.data = this.state.lists.data.map(file => {
       let checked = file.checked;
 
-      if (file.ETag === etag) checked = ! checked;
+      if (file.Key === name) checked = ! checked;
       if (checked) count ++;
 
       return { ...file, checked };
