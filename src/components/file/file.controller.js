@@ -25,8 +25,8 @@ export default class FileController {
     this.$file.createFolder($event);
   }
 
-  selectFile(etag) {
-    this.$file.selectFile(etag);
+  selectFile(name) {
+    this.$file.selectFile(name);
   }
 
   upload($event) {
