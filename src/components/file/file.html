@@ -21,7 +21,11 @@
         ng-class="{ checked: f.checked }"
         ng-click="file.clickFile(f)"
       >
-          <md-checkbox ng-checked="f.checked" ng-click="file.selectFile(f.Key)"></md-checkbox>
+          <md-checkbox
+            class="md-secondary"
+            ng-checked="f.checked"
+            ng-click="file.selectFile(f.Key)"
+          ></md-checkbox>
           <md-icon ng-bind="f.icon"></md-icon>
           <p class="break-word flex-grow">
             <span ng-bind="f.display"></span>
