@@ -2,6 +2,8 @@ import { element } from 'angular';
 import { sortByName } from '../../utils/sort';
 import BucketCreateController from './create/create.controller';
 import BucketCreateTemplate from './create/create.html';
+import BucketDeleteController from './delete/delete.controller';
+import BucketDeleteTemplate from './delete/delete.html';
 
 export default class BucketService {
   /** @ngInject */
@@ -30,6 +32,9 @@ export default class BucketService {
         checked: false,
         duplicated: false,
       },
+      delete: {
+        name: null,
+      }
     };
   }
 
@@ -63,6 +68,17 @@ export default class BucketService {
     });
   }
 
+  deleteDialog($event) {
+    this.$mdDialog.show({
+      controller: BucketDeleteController,
+      controllerAs: 'delete',
+      template: BucketDeleteTemplate,
+      parent: element(document.body),
+      targetEvent: $event,
+      clickOutsideToClose: true,
+    });
+  }
+
   /**
    * Close the dialog.
    *
@@ -71,6 +87,33 @@ export default class BucketService {
   closeDialog() {
     this.$mdDialog.cancel();
     this.resetCheckBucketState();
+  }
+
+  selectBucket(name) {
+    const { data } = this.state.lists;
+    const index = data.findIndex(bucket => bucket.Name === name);
+    this.state.lists.data = data.map((bucket, id) => ({
+      ...bucket,
+      checked: (id === index) ? ! bucket.checked : false,
+    }));
+
+    this.state.delete.name = this.state.lists.data[index].checked ? data[index].Name : null;
+  }
+
+  deleteBucket() {
+    const { name } = this.state.delete;
+    this.$fetch.delete(`/v1/bucket/delete/${name}`)
+      .then(() => {
+        this.state.delete.name = null;
+        this.$toast.show(`Bucket ${name} has been deleted!`);
+        this.getBuckets();
+      })
+      .catch(err => {
+        this.$toast.show(`Bucket ${name} delete failed, please try again!`);
+      })
+      .finally(() => {
+        this.closeDialog();
+      });
   }
 
   /**
@@ -85,7 +128,11 @@ export default class BucketService {
     this.$fetch.post('/v1/bucket/list')
       .then(({ data }) => {
         this.state.lists.error = false;
-        this.state.lists.data = data.Buckets.sort(sortByName);
+        const buckets = data.Buckets.map(bucket => ({
+          ...bucket,
+          checked: false,
+        }));
+        this.state.lists.data = buckets.sort(sortByName);
       })
       .catch(() => {
         this.state.lists.error = true;

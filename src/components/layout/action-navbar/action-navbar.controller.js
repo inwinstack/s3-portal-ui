@@ -19,6 +19,11 @@ export default class ActionNavbarController {
       () => $file.state.lists.downloadName,
       newVal => (this.downloadButton = newVal === null)
     );
+
+    $scope.$watch(
+      () => $bucket.state.delete.name,
+      newVal => this.disableDeleteButton = ! newVal && ! this.isFile()
+    );
   }
 
   /**
@@ -39,7 +44,11 @@ export default class ActionNavbarController {
   }
 
   delete() {
-    //
+    if (this.isFile()) {
+      // handle delete file
+    } else {
+      this.$bucket.deleteDialog();
+    }
   }
 
   closeSidePanels() {
