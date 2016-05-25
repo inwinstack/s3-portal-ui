@@ -102,7 +102,10 @@ export default class FileService {
 
     if (count === 1) {
       const index = this.state.lists.data.findIndex(file => file.checked);
-      downloadName = this.state.lists.data[index].display;
+      const { isFolder, display } = this.state.lists.data[index];
+      if (! isFolder) {
+        downloadName = display;
+      }
     }
 
     this.state.lists.downloadName = downloadName;
