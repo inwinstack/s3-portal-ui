@@ -15,8 +15,8 @@
       </thead>
     </table>
     <md-list>
-      <md-list-item ng-class="{checked:message.selected}" ng-repeat="f in file.data">
-          <md-checkbox ng-model="message.selected"></md-checkbox>
+      <md-list-item ng-class="{ checked: f.checked }" ng-repeat="f in file.data">
+          <md-checkbox ng-checked="f.checked" ng-click="file.selectFile(f.ETag)"></md-checkbox>
           <md-icon>insert_drive_file</md-icon>
           <p class="break-word flex-grow">
             <span ng-bind="f.Key"></span>

@@ -12,8 +12,9 @@ export default class FileController {
 
     const paths = $stateParams.path.split('/');
     const [bucket, ...folders] = paths;
+    const prefix = (folders.length) ? `${folders.join('/')}/` : '';
 
-    this.$file.setPaths(bucket, folders);
+    this.$file.setPaths(bucket, prefix);
     this.$breadcrumb.updateFilePath(paths);
 
     this.$bucket.getBuckets();
@@ -22,6 +23,10 @@ export default class FileController {
 
   createFolder($event) {
     this.$file.createFolder($event);
+  }
+
+  selectFile(etag) {
+    this.$file.selectFile(etag);
   }
 
   upload($event) {
