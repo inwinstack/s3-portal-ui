@@ -12,7 +12,6 @@ export default {
       DELETED: 'Deleted',
       UPLOADING: 'Uploading',
       COMPLETED: 'Completed',
-      DELETE: 'Deleted',
       RESUMING: 'Resuming',
     },
   },
