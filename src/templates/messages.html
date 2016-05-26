@@ -1,10 +1,15 @@
 <script type ="text/ng-template" id="messages.html">
-    <div ng-message="required">You left the field blank.</div>
-
-    <div ng-message="email">Your email must be look like an e-mail address.</div>
-
-    <div ng-message="minlength">Please enter at least {{minlength}} characters.</div>
-    <div ng-message="maxlength">Please enter no more than {{maxlength}} characters.</div>
-
-    <div ng-message="match">Please enter the same value again.</div>
+  <div ng-message="required" translate>VALIDATION.REQUIRED</div>
+  <div ng-message="email" translate>VALIDATION.EMAIL</div>
+  <div
+    ng-message="minlength"
+    translate="VALIDATION.MIN_LENGTH"
+    translate-value-minlength="{{ minlength }}"
+  ></div>
+  <div
+    ng-message="maxlength"
+    translate="VALIDATION.MAX_LENGTH"
+    translate-value-maxlength="{{ minlength }}"
+  ></div>
+  <div ng-message="match" translate="VALIDATION.MATCH"></div>
 </script>
