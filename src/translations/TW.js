@@ -19,5 +19,6 @@ export default {
     TOTAL_SIZE: '總上傳容量大小：',
     FOLDER_NAME: '資料夾名稱',
     FOLDER_DUPLICATED_MESSAGE: '此資料夾已存在！請選擇一個不同的名稱並再試一次。',
+    NEW_FOLDER: '新資料夾',
   },
 };
