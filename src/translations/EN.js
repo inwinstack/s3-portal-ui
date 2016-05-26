@@ -9,6 +9,7 @@ export default {
     DOWNLOAD: 'Download',
     DELETE: 'Delete',
     REFRESH: 'Refresh',
+    OR: 'or',
   },
   SETTINGS: {
     ACCOUNT: 'My Account',
@@ -32,9 +33,6 @@ export default {
     NAME: 'Bucket Name',
     CREATE_DESCRIPTION: `The name that you choose must be unique across
     existing bucket names in S3 Portal.`,
-  },
-  FILE: {
-    CREATE_FOLDER: 'Create Folder',
   },
   ACTION_NAVBAR: {
     ACTIONS: 'Actions',
@@ -76,5 +74,25 @@ export default {
       COMPLETED: 'Completed',
       RESUMING: 'Resuming',
     },
+  },
+  FILE: {
+    CREATE_FOLDER: 'Create Folder',
+    STORAGE_CLASS: 'Storage Class',
+    SIZE: 'Size',
+    LAST_MODIFIED: 'Last Modified',
+    EMPTY: '',
+    DO_ACTIONS: 'You can do the following actions',
+    UPLOAD: 'Upload File',
+    EMPTY_BUCKET: 'This bucket is empty',
+    EMPTY_FOLDER: 'This folder is empty',
+    UPLOAD_DESCRIPTION: `To upload files to S3 Portal,
+    click Add Files. To remove files already selected,
+    click the ✖ to the far right of the file name.`,
+    ADD: 'Add Files',
+    NUMBER_OF: 'Number of files:',
+    TOTAL_SIZE: 'Total upload size:',
+    FOLDER_NAME: 'Folder Name',
+    FOLDER_DUPLICATED_MESSAGE: `That folder already exists!
+    Please select a different name and try again.`,
   },
 };

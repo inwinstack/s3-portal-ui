@@ -2,7 +2,7 @@
   <form name="upload.form">
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <h2 translate>Upload Files</h2>
+        <h2 translate>UTILS.UPLOAD</h2>
 
         <span flex></span>
 
@@ -16,10 +16,11 @@
     </md-toolbar>
     <md-dialog-content>
       <div class="md-dialog-content">
-        <p translate>
-          To upload files to S3 Portal, click Add Files. To remove files already selected, click the ✖ to the far right of the file name.
-        </p>
-
+        <div class="dialog-description">
+          <p translate>
+            FILE.UPLOAD_DESCRIPTION
+          </p>
+        </div>
         <md-list>
           <div
             flex class="md-list-item-inner"
@@ -27,7 +28,15 @@
             name="files"
             layout="row"
           >
-            <md-button flex class="md-raised" aria-label="Add Files">Add Files</md-button>
+            <md-button
+              flex class="md-raised"
+              aria-label="Add Files"
+              ngf-select="upload.select($files)"
+              name="files"
+              translate="FILE.ADD"
+              multiple
+            >
+            </md-button>
           </div>
 
           <md-list-item ng-repeat="file in upload.files">
@@ -45,9 +54,9 @@
 
           <md-divider ng-show="upload.files.length"></md-divider>
           <p class="md-caption dialog-footer">
-            Number of files:
+            <span translate>FILE.NUMBER_OF</span>
             <span ng-bind="upload.files.length"></span>
-            Total upload size:
+            <span translate>FILE.TOTAL_SIZE</span>
             <span ng-bind="(upload.size | filesize)"></span>
           </p>
         </md-list>
@@ -56,7 +65,7 @@
 
     <md-dialog-actions layout="row">
       <md-button aria-label="Cancel" ng-click="upload.cancel()">
-        <span translate>Cancel</span>
+        <span translate>UTILS.CANCEL</span>
       </md-button>
 
       <md-button
@@ -64,7 +73,7 @@
         aria-label="Upload" class="md-primary"
         ng-disabled="! upload.files.length"
       >
-        <span translate>Upload</span>
+        <span translate>UTILS.UPLOAD</span>
         <md-progress-circular
           class="md-primary" md-mode="indeterminate"
           md-diameter="30" ng-show="upload.uploadingFiles.length"

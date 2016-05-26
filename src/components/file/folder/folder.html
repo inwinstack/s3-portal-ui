@@ -2,7 +2,7 @@
   <form name="create.form">
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <h2>Create Folder</h2>
+        <h2 translate>FILE.CREATE_FOLDER</h2>
         <span flex></span>
 
         <md-button
@@ -16,14 +16,14 @@
     <md-dialog-content>
       <div class="md-dialog-content">
         <md-input-container class="md-block">
-          <label>Folder Name</label>
+          <label translate>FILE.FOLDER_NAME</label>
           <input
             name="folder" required
             ng-model="create.folder"
             ng-readonly="create.form.$submitted"
           >
-          <span class="md-caption text-warn" ng-show="create.duplicated">
-            That folder already exists! Please select a different name and try again.
+          <span class="md-caption text-warn" ng-show="create.duplicated" translate>
+            FOLDER_DUPLICATED_MESSAGE
           </span>
 
           <div ng-messages="create.form.folder.$error" ng-if="create.form.folder.$touched">
@@ -35,7 +35,7 @@
 
     <md-dialog-actions layout="row">
       <md-button aria-label="Cancel" ng-click="create.cancel()">
-        <span>Cancel</span>
+        <span translate>UTILS.CANCEL</span>
       </md-button>
 
       <md-button
@@ -43,7 +43,7 @@
         aria-label="Create" class="md-primary"
         ng-disabled="create.form.$invalid || create.form.$submitted || create.duplicated"
       >
-        <span>Create</span>
+        <span translate>UTILS.CREATE</span>
         <md-progress-circular
           class="md-primary" md-mode="indeterminate"
           md-diameter="30" ng-show="create.form.$submitted"
