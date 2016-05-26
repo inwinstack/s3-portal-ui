@@ -37,7 +37,7 @@ export default {
   ACTION_NAVBAR: {
     ACTIONS: '操作',
     PROPERTIES: '屬性',
-    TRANSFERS: '傳遞',
+    TRANSFERS: '傳輸',
     NONE: '無',
   },
   TOAST: {
