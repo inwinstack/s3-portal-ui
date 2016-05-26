@@ -6,6 +6,8 @@ import AuthTemplate from './auth.html';
 import SignUp from './signup/signup';
 import SignIn from './signin/signin';
 
+import './auth.css';
+
 /** @ngInject */
 const route = $stateProvider => {
   $stateProvider.state('auth', {
