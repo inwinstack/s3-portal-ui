@@ -10,6 +10,20 @@ export default {
     DELETE: 'Delete',
     REFRESH: 'Refresh',
   },
+  VALIDATION: {
+    REQUIRED: 'You left the field blank.',
+    EMAIL: 'Your email must be look like an e-mail address.',
+    MIN_LENGTH: 'Please enter at least {{ minlength }} characters.',
+    MAX_LENGTH: 'Please enter no more than {{ maxlength }} characters.',
+    MATCH: 'Please enter the same value again.',
+  },
+  VALIDATION: {
+    REQUIRED: 'You left the field blank.',
+    EMAIL: 'Your email must be look like an e-mail address.',
+    MIN_LENGTH: 'Please enter at least {{ minlength }} characters.',
+    MAX_LENGTH: 'Please enter no more than {{ maxlength }} characters.',
+    MATCH: 'Please enter the same value again.',
+  },
   SETTINGS: {
     ACCOUNT: 'My Account',
     BILLING: 'Billing & Cost Management',

@@ -10,6 +10,20 @@ export default {
     DELETE: '刪除',
     REFRESH: '重新整理',
   },
+  VALIDATION: {
+    REQUIRED: '此欄位不得為空。',
+    EMAIL: '此欄位必須符合電子郵件格式。',
+    MIN_LENGTH: '此欄位不得小於 {{ minlength }} 個字元。',
+    MAX_LENGTH: '此欄位不得大於 {{ maxlength }} 個字元。',
+    MATCH: '請輸入與前一個欄位相同的值。',
+  },
+  VALIDATION: {
+    REQUIRED: '此欄位不得為空。',
+    EMAIL: '此欄位必須符合電子郵件格式。',
+    MIN_LENGTH: '此欄位不得小於 {{ minlength }} 個字元。',
+    MAX_LENGTH: '此欄位不得大於 {{ maxlength }} 個字元。',
+    MATCH: '請輸入與前一個欄位相同的值。',
+  },
   SETTINGS: {
     ACCOUNT: '我的帳戶',
     BILLING: '付款與費用管理',
