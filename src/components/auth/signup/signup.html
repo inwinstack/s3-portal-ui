@@ -1,106 +1,113 @@
 <div class="panel-signup" layout="column" layout-paddings>
-  <md-content class="radius-large md-whiteframe-1dp">
-
   <div class="panel-title text-center">
     <h1 class="no-margin">S3 Portal</h1>
   </div>
 
-  <div class="panel-body">
-    <md-subheader class="text-center">
-      <span translate>AUTH.CREATE_ACCOUNT</span>
-    </md-subheader>
-    <form name="signup.form">
+  <md-content class="radius-large md-whiteframe-1dp">
+    <div class="panel-body">
+      <md-subheader class="text-center">
+        <span translate>AUTH.CREATE_ACCOUNT</span>
+      </md-subheader>
+      <form name="signup.form">
 
-      <md-input-container md-no-float ng-class="{'md-icon-right':signup.emailIsValid}" class="md-icon-left md-block">
-        <md-icon class="icon-default" ng-class="{'md-warn': signup.emailIsInvalid}">email</md-icon>
-        <md-progress-circular
-          class="md-accent" md-mode="indeterminate"
-          md-diameter="24" ng-show="signup.isCheckEmail"
-        ></md-progress-circular>
+        <md-input-container md-no-float ng-class="{'md-icon-right':signup.emailIsValid}" class="md-icon-left md-block">
+          <md-icon class="icon-default" ng-class="{'md-warn': signup.emailIsInvalid}">email</md-icon>
+          <md-progress-circular
+            class="md-accent" md-mode="indeterminate"
+            md-diameter="24" ng-show="signup.isCheckEmail"
+          ></md-progress-circular>
 
-        <input
-          type="email" name="email" required email
-          placeholder="{{ 'AUTH.EMAIL' | translate }}"
-          ng-model="signup.credentials.email"
-          ng-model-options='{ debounce: 500 }'
-          ng-readonly="signup.form.$submitted"
-          ng-change="signup.checkEmail()"
-        >
+          <input
+            type="email" name="email" required email
+            placeholder="{{ 'AUTH.EMAIL' | translate }}"
+            ng-model="signup.credentials.email"
+            ng-model-options='{ debounce: 500 }'
+            ng-readonly="signup.form.$submitted"
+            ng-change="signup.checkEmail()"
+          >
 
-        <md-icon class="icon-success" ng-if="signup.emailIsValid">done</md-icon>
+          <md-icon class="icon-success" ng-if="signup.emailIsValid">done</md-icon>
 
-        <span
-          class="md-caption text-warn"
-          ng-show="signup.emailIsInvalid && signup.showEmailCheckedMessage"
-          translate
-        >ATUH.ALREADY_EXIST</span>
+          <span
+            class="md-caption text-warn"
+            ng-show="signup.emailIsInvalid && signup.showEmailCheckedMessage"
+            translate
+          >ATUH.ALREADY_EXIST</span>
 
-        <div
-          ng-messages="signup.form.email.$error"
-          ng-if="signup.form.email.$touched"
-        >
-          <div ng-messages-include="messages.html"></div>
-        </div>
-      </md-input-container>
-
-      <md-input-container md-no-float class="md-icon-left md-block">
-        <md-icon class="icon-default">lock</md-icon>
-
-        <input
-          name="password" type="password"
-          placeholder="{{ 'AUTH.PASSWORD' | translate }}"
-          required minlength="6"
-          ng-model="signup.credentials.password"
-          ng-readonly="signup.form.$submitted"
-        >
-
-        <div
-          ng-messages="signup.form.password.$error"
-          ng-if="signup.form.password.$touched"
-        >
-          <div ng-messages-include="messages.html">
-            <i ng-init="minlength=6"></i>
+          <div
+            ng-messages="signup.form.email.$error"
+            ng-if="signup.form.email.$touched"
+          >
+            <div ng-messages-include="messages.html"></div>
           </div>
-        </div>
-      </md-input-container>
+        </md-input-container>
 
-      <md-input-container md-no-float class="md-icon-left md-block">
-        <md-icon class="icon-default">lock</md-icon>
+        <md-input-container md-no-float class="md-icon-left md-block">
+          <md-icon class="icon-default">lock</md-icon>
 
-        <input
-          name="password_confirmation" type="password"
-          placeholder="{{ 'AUTH.RETYPE_PASSWORD' | translate }}"
-          required match="signup.credentials.password"
-          ng-model="signup.credentials.password_confirmation"
-          ng-readonly="signup.form.$submitted"
+          <input
+            name="password" type="password"
+            placeholder="{{ 'AUTH.PASSWORD' | translate }}"
+            required minlength="6"
+            ng-model="signup.credentials.password"
+            ng-readonly="signup.form.$submitted"
+          >
+
+          <div
+            ng-messages="signup.form.password.$error"
+            ng-if="signup.form.password.$touched"
+          >
+            <div ng-messages-include="messages.html">
+              <i ng-init="minlength=6"></i>
+            </div>
+          </div>
+        </md-input-container>
+
+        <md-input-container md-no-float class="md-icon-left md-block">
+          <md-icon class="icon-default">lock</md-icon>
+
+          <input
+            name="password_confirmation" type="password"
+            placeholder="{{ 'AUTH.RETYPE_PASSWORD' | translate }}"
+            required match="signup.credentials.password"
+            ng-model="signup.credentials.password_confirmation"
+            ng-readonly="signup.form.$submitted"
+          >
+
+          <div
+            ng-messages="signup.form.password_confirmation.$error"
+            ng-if="signup.form.password_confirmation.$touched"
+          >
+            <div ng-messages-include="messages.html"></div>
+          </div>
+        </md-input-container>
+
+        <md-button class="md-raised md-primary btn-block" type="submit"
+          ng-disabled="signup.form.$invalid || signup.form.$submitted || signup.emailIsInvalid"
+          ng-click="signup.submit()"
         >
+          <span ng-hide="signup.form.$submitted" translate>AUTH.SIGN_UP</span>
+          <md-progress-circular
+            class="md-accent" md-mode="indeterminate"
+            md-diameter="30" ng-hide="! signup.form.$submitted"
+          ></md-progress-circular>
+        </md-button>
 
-        <div
-          ng-messages="signup.form.password_confirmation.$error"
-          ng-if="signup.form.password_confirmation.$touched"
-        >
-          <div ng-messages-include="messages.html"></div>
-        </div>
-      </md-input-container>
+      </form>
 
-      <md-button class="md-raised md-primary btn-block" type="submit"
-        ng-disabled="signup.form.$invalid || signup.form.$submitted || signup.emailIsInvalid"
-        ng-click="signup.submit()"
-      >
-        <span ng-hide="signup.form.$submitted" translate>AUTH.SIGN_UP</span>
-        <md-progress-circular
-          class="md-accent" md-mode="indeterminate"
-          md-diameter="30" ng-hide="! signup.form.$submitted"
-        ></md-progress-circular>
-      </md-button>
-
-    </form>
-
-    <div class="panel-footer text-center md-caption">
-      <span translate>AUTH.HAVE_ACCOUNT</span>
-      <a ui-sref="auth.signin" translate>AUTH.SIGN_IN</a>
+      <div class="panel-footer text-center md-caption">
+        <span translate>AUTH.HAVE_ACCOUNT</span>
+        <a ui-sref="auth.signin" translate>AUTH.SIGN_IN</a>
+      </div>
     </div>
-  </div>
 
   </md-content>
+</div>
+
+<div class="footer text-center md-caption">
+  <ul>
+    <li ng-repeat="@A.1">
+      <a href ng-class={active: @A.2} ng-click="@A.3" ng-bind="@A.4"></a>
+    </li>
+  </ul>
 </div>
