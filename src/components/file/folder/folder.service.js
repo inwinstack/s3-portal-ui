@@ -20,15 +20,15 @@ export default class FolderCreateService {
     const { bucket, prefix } = this.$file.state.paths;
     const finalPrefix = `${prefix}${folder}/`;
 
-    this.$fetch.post('/v1/file/create/folder', {
+    this.$fetch.post('/v1/folder/create', {
       bucket, prefix: finalPrefix,
     })
-    .then(res => {
+    .then(() => {
       this.$file.getFiles();
       this.$toast.show(`Bucket ${folder} has created!`);
-      this.closeDialog()
+      this.closeDialog();
     })
-    .catch(() => this.state.duplicated = true);
+    .catch(() => (this.state.duplicated = true));
   }
 
   createDialog($event) {
