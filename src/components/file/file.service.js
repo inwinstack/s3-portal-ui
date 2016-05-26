@@ -3,9 +3,9 @@ import { sortFiles } from '../../utils/sort';
 
 export default class FileService {
   /** @ngInject */
-  constructor($mdDialog, $fetch, $bucket, $toast, Config) {
+  constructor($mdDialog, $fetch, $bucket, $toast, $injector, Config) {
     Object.assign(this, {
-      $mdDialog, $fetch, $bucket, $toast, Config,
+      $mdDialog, $fetch, $bucket, $toast, $injector, Config,
     });
 
     this.initState();
@@ -61,7 +61,7 @@ export default class FileService {
   }
 
   formatFileType(name) {
-    const isFolder = (name.endsWith('/'))
+    const isFolder = name.endsWith('/');
     const removeSlash = isFolder ? name.slice(0, -1) : name;
     const display = removeSlash.replace(this.state.paths.prefix, '');
     return { isFolder, display };
@@ -111,11 +111,38 @@ export default class FileService {
     this.state.lists.downloadName = downloadName;
   }
 
+  deleteObject(id, bucket, { Key, isFolder }) {
+    const objectType = isFolder ? 'folder' : 'file';
+    const key = isFolder ? Key.slice(0, -1) : Key;
+    return this.$fetch.delete(`/v1/${objectType}/delete/${bucket}/${key}`)
+      .then(res => this.$injector.get('$transfer').handleDeleteSuccess(id, res))
+      .catch(err => this.$injector.get('$transfer').handleDeleteFailure(id, err));
+  }
+
+  delete() {
+    const { data } = this.state.lists;
+    const { bucket } = this.state.paths;
+    const deleteObjects = data.filter(({ checked }) => checked);
+    const deleteTransfers = deleteObjects.map(object => {
+      const id = Symbol('unique id');
+      const request = this.deleteObject(id, bucket, object);
+      return {
+        id,
+        request,
+        bucket,
+        name: object.display,
+        type: 'DELETE',
+        status: 'DELETING',
+      };
+    });
+
+    this.$injector.get('$transfer').putDelete(deleteTransfers);
+  }
+
   downloadFile(uri, fileName) {
     const a = document.createElement('a');
     a.download = fileName;
     a.href = `${this.Config.BASE_URL}${uri}`;
-    console.log(a.href)
     a.click();
   }
 
@@ -129,7 +156,7 @@ export default class FileService {
         const { uri } = data;
         this.downloadFile(uri, downloadName);
       })
-      .catch(({ data }) => {
+      .catch(() => {
         this.$toast.show(`The ${downloadName} doesn't exist, please try again!`);
         this.getFiles();
       });

@@ -2,7 +2,7 @@ export default class ActionNavbarController {
   /** @ngInject */
   constructor($scope, $bucket, $nav, $file, $upload, $layout, $folder) {
     Object.assign(this, {
-      $bucket, $file, $upload, $layout, $folder
+      $bucket, $file, $upload, $layout, $folder,
     });
 
     $scope.$watch(
@@ -16,13 +16,16 @@ export default class ActionNavbarController {
     );
 
     $scope.$watch(
-      () => $file.state.lists.downloadName,
-      newVal => (this.downloadButton = newVal === null)
-    );
+      () => $file.state.lists,
+      newVal => Object.assign(this, {
+        fileSelected: !! newVal.data.filter(({ checked }) => checked).length,
+        downloadButton: ! newVal.downloadName,
+      })
+    , true);
 
     $scope.$watch(
       () => $bucket.state.delete.name,
-      newVal => this.disableDeleteButton = ! newVal && ! this.isFile()
+      newVal => (this.bucketSelected = !! newVal)
     );
   }
 
@@ -45,7 +48,7 @@ export default class ActionNavbarController {
 
   delete() {
     if (this.isFile()) {
-      // handle delete file
+      this.$file.delete();
     } else {
       this.$bucket.deleteDialog();
     }

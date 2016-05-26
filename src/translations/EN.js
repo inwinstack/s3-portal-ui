@@ -8,6 +8,8 @@ export default {
       DELETE: 'Delete {{ name }} from {{ bucket }}',
     },
     STATUS: {
+      DELETING: 'Deleting',
+      DELETED: 'Deleted',
       UPLOADING: 'Uploading',
       COMPLETED: 'Completed',
       DELETE: 'Deleted',

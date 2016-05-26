@@ -31,6 +31,13 @@ export default class TransferService {
     ];
   }
 
+  putDelete(transfers) {
+    this.state.transfers = [
+      ...this.state.transfers,
+      ...transfers,
+    ];
+  }
+
   abort() {
     this.state.transfers.forEach(transfer => {
       if (transfer.status === 'UPLOADING') {
@@ -82,6 +89,28 @@ export default class TransferService {
       `${this.state.transfers[i].name} is uploaded failure! Error message: ${statusText}`
     );
     this.updateProcessStatus();
+  }
+
+  handleDeleteSuccess(id) {
+    const i = this.findTransferIndex(id);
+    this.state.transfers[i].status = 'DELETED';
+    this.$toast.show(`${this.state.transfers[i].name} is deleted successfully!`);
+
+    if (this.state.autoClear) this.remove(i);
+
+    this.$file.getFiles();
+  }
+
+  handleDeleteFailure(id, { statusText }) {
+    const i = this.findTransferIndex(id);
+    this.state.transfers[i] = {
+      ...this.state.transfers[i],
+      status: 'FAILED',
+      message: statusText,
+    };
+    this.$toast.show(
+      `${this.state.transfers[i].name} is deleted failure! Error message: ${statusText}`
+    );
   }
 
   updateProcessStatus() {

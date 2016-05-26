@@ -71,8 +71,11 @@
         <md-menu-item>
           <md-button
             aria-label="Delete"
-            ng-click="actionNav.delete()" ng-disabled="actionNav.disableDeleteButton"
-          >
+            ng-click="actionNav.delete()"
+            ng-disabled="
+              ! actionNav.fileSelected && actionNav.isFile() ||
+              ! actionNav.bucketSelected && ! actionNav.isFile()
+            ">
             <span ng-hide="actionNav.isFile()">Delete Bucket</span>
             <span ng-show="actionNav.isFile()">Delete</span>
           </md-button>

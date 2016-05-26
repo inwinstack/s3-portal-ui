@@ -54,6 +54,10 @@
               ></md-progress-linear>
             </div>
 
+            <div class="transfer-rate" ng-if="transfer.isDeleting(t)">
+              <md-progress-linear md-mode="indeterminate"></md-progress-linear>
+            </div>
+
             <p class="transfer-info">
               <span ng-if="transfer.showInfo(t)" translate="TRANSFER.STATUS.{{ t.status }}"></span>
               <span class="text-warn" ng-if="! transfer.showInfo(t)" ng-bind="t.message"></span>
