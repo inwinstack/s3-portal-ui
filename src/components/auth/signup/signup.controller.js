@@ -1,9 +1,22 @@
 export default class SignUpController {
   /** @ngInject */
-  constructor($auth, $state, $toast, AuthService) {
+  constructor($auth, $state, $toast, $translate, AuthService) {
     Object.assign(this, {
-      $auth, $state, $toast, AuthService, credentials: {},
+      $auth, $state, $toast, $translate, AuthService, credentials: {},
     });
+
+    this.languages = [
+      { key: 'EN', name: 'English' },
+      { key: 'TW', name: '繁體中文' },
+      { key: 'CN', name: '简体中文' },
+    ];
+
+    this.currentLanguage = $translate.use();
+  }
+
+  changeLanguage(key) {
+    this.$translate.use(key);
+    this.currentLanguage = key;
   }
 
   /**
@@ -39,9 +52,10 @@ export default class SignUpController {
    */
   submit() {
     this.$auth.signup(this.credentials)
-      .then(() => {
+      .then(() => this.$translate('TOAST.SIGN_UP_SUCCESS'))
+      .then(signUpSuccess => {
         this.$state.go('auth.signin');
-        this.$toast.show('Sign Up Success!');
+        this.$toast.show(signUpSuccess);
       })
       .catch(() => (this.form.$submitted = false));
   }

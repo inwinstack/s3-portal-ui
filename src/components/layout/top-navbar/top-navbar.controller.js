@@ -1,8 +1,8 @@
 export default class TopNavbarController {
   /** @ngInject */
-  constructor($translate, $auth, $state, $toast, $mdDialog, AuthService) {
+  constructor($scope, $translate, $auth, $state, $toast, $mdDialog, $transfer, AuthService) {
     Object.assign(this, {
-      $translate, $auth, $state, $toast, $mdDialog, AuthService,
+      $scope, $translate, $auth, $state, $toast, $mdDialog, $transfer, AuthService,
     });
 
     this.languages = [
@@ -32,7 +32,11 @@ export default class TopNavbarController {
    * @return {void}
    */
   signOut($event) {
-    this.showConfirmMessage($event).then(this.executedSignOut);
+    if (this.$transfer.isProcessing()) {
+      this.showConfirmMessage($event);
+    } else {
+      this.executedSignOut();
+    }
   }
 
   /**
@@ -42,16 +46,26 @@ export default class TopNavbarController {
    * @return {Promise}
    */
   showConfirmMessage($event) {
-    const confirm = this.$mdDialog.confirm()
-      .title('Would you like to sign out without your upload?')
-      .textContent(`You have in progress opreations
-or uploads and leaving now will cancel them.Still leaving?`)
-      .ariaLabel('Sign out')
-      .targetEvent($event)
-      .ok('Leave')
-      .cancel('Stay');
+    const sources = [
+      'SETTINGS.SIGN_OUT_CONFIRM_TITLE',
+      'SETTINGS.SIGN_OUT_CONFIRM_MESSAGE',
+      'SETTINGS.SIGN_OUT',
+      'SETTINGS.LEAVE',
+      'SETTINGS.STAY',
+    ];
 
-    return this.$mdDialog.show(confirm);
+    this.$translate(sources)
+      .then(translations => {
+        const confirm = this.$mdDialog.confirm()
+          .title(translations[sources[0]])
+          .textContent(translations[sources[1]])
+          .ariaLabel(translations[sources[2]])
+          .targetEvent($event)
+          .ok(translations[sources[3]])
+          .cancel(translations[sources[4]]);
+
+        this.$mdDialog.show(confirm).then(this.executedSignOut);
+      });
   }
 
   /**
@@ -60,10 +74,14 @@ or uploads and leaving now will cancel them.Still leaving?`)
    * @return {Promise} [description]
    */
   executedSignOut = () => this.AuthService.signOut()
-    .then(() => {
+    .then(() => this.$translate('TOAST.SIGN_OUT_SUCCESS'))
+    .then(signOutSuccess => {
+      this.$transfer.abort()
       this.$auth.logout();
       this.$state.go('auth.signin');
-      this.$toast.show('Sign Out Success!');
+      this.$toast.show(signOutSuccess);
     })
-    .catch(() => this.$toast.show('Sign Out Failure!'));
+    .catch(() => this.$translate('TOAST.SIGN_OUT_FAILURE')
+      .then(signOutFailure => this.$toast.show(signOutFailure))
+    );
 }

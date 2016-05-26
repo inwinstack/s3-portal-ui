@@ -1,0 +1,20 @@
+
+/**
+ * @author Jamie jamie.h@inwinstack.com
+ */
+
+.transfer-list md-list-item {
+  border-bottom: 1px solid #eee;
+}
+
+.transfer-list md-list-item:last-child {
+  border-bottom: none;
+}
+
+.transfer-loaded {
+  padding-right: 20px;
+}
+
+.transfer-rate {
+  margin: 10px 20px 10px 0;
+}

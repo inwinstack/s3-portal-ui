@@ -2,7 +2,7 @@
   <form name="create.form">
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <h2>Create Bucket</h2>
+        <h2 translate>BUCKET.CREATE</h2>
         <span flex></span>
 
         <md-button
@@ -16,33 +16,21 @@
     <md-dialog-content>
       <div class="md-dialog-content">
         <div class="dialog-description">
-          <h2 class="md-title">
-            The name that you choose must be unique across all existing bucket names in S3 Portal.
+          <h2 class="md-title" translate>
+            BUCKET.CREATE_DESCRIPTION
           </h2>
         </div>
 
-        <md-input-container class="md-block md-icon-right">
-          <label>Bucket Name</label>
+        <md-input-container class="md-block">
+          <label translate>BUCKET.NAME</label>
           <input
             name="bucket" required
             ng-model="create.bucket"
             ng-readonly="create.form.$submitted"
-            ng-change="create.check()"
-            ng-model-options='{ debounce: 500 }'
           >
 
-          <md-progress-circular
-            class="md-primary" md-diameter="30" md-mode="indeterminate"
-            ng-show="create.checking"
-          ></md-progress-circular>
-
-          <md-icon
-            class="icon-success"
-            ng-show="! create.duplicated && ! create.checking && create.checked"
-          >done</md-icon>
-
-          <span class="md-caption text-warn" ng-show="create.duplicated &&  ! create.checking && create.checked">
-            That bucket already exists! Please select a different name and try again.
+          <span class="md-caption text-warn" ng-show="create.duplicated" translate>
+            BUCKET.DUPLICATE_MESSAGE
           </span>
 
           <div ng-messages="create.form.bucket.$error" ng-if="create.form.bucket.$touched">
@@ -54,7 +42,7 @@
 
     <md-dialog-actions layout="row">
       <md-button aria-label="Cancel" ng-click="create.cancel()">
-        <span>Cancel</span>
+        <span translate>UTILS.CANCEL</span>
       </md-button>
 
       <md-button
@@ -62,7 +50,7 @@
         aria-label="Create" class="md-primary"
         ng-disabled="create.form.$invalid || create.form.$submitted || create.duplicated"
       >
-        <span>Create</span>
+        <span translate>UTILS.CREATE</span>
         <md-progress-circular
           class="md-primary" md-mode="indeterminate"
           md-diameter="30" ng-show="create.form.$submitted"

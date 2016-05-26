@@ -1,13 +1,31 @@
 export default class ActionNavbarController {
   /** @ngInject */
-  constructor($scope, $bucket, $nav) {
+  constructor($scope, $bucket, $nav, $file, $upload, $layout, $folder) {
     Object.assign(this, {
-      $scope, $bucket,
+      $bucket, $file, $upload, $layout, $folder,
     });
 
-    this.$scope.$watch(
+    $scope.$watch(
       () => $nav.type,
       newVal => (this.type = newVal)
+    );
+
+    $scope.$watch(
+      () => $layout.state,
+      newVal => Object.assign(this, newVal)
+    );
+
+    $scope.$watch(
+      () => $file.state.lists,
+      newVal => Object.assign(this, {
+        fileSelected: !! newVal.data.filter(({ checked }) => checked).length,
+        downloadButton: ! newVal.downloadName,
+      })
+    , true);
+
+    $scope.$watch(
+      () => $bucket.state.delete.name,
+      newVal => (this.bucketSelected = !! newVal)
     );
   }
 
@@ -25,27 +43,27 @@ export default class ActionNavbarController {
   }
 
   download() {
-    //
-  }
-
-  upload() {
-    //
+    this.$file.download();
   }
 
   delete() {
-    //
+    if (this.isFile()) {
+      this.$file.delete();
+    } else {
+      this.$bucket.deleteDialog();
+    }
   }
 
-  none() {
-    //
+  closeSidePanels() {
+    this.$layout.closeSidePanels();
   }
 
-  properties() {
-    //
+  openProperties() {
+    this.$layout.openProperties();
   }
 
-  transfers() {
-    //
+  openTransfers() {
+    this.$layout.openTransfers();
   }
 
   /**
@@ -56,10 +74,14 @@ export default class ActionNavbarController {
    */
   create($event) {
     if (this.isFile()) {
-      // create file dialog
+      this.$upload.createDialog($event);
     } else {
       this.$bucket.createDialog($event);
     }
+  }
+
+  createFolder($event) {
+    this.$folder.createDialog($event);
   }
 
   /**
@@ -69,7 +91,7 @@ export default class ActionNavbarController {
    */
   refresh() {
     if (this.isFile()) {
-      // get the files
+      this.$file.getFiles();
     } else {
       this.$bucket.getBuckets();
     }

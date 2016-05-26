@@ -7,7 +7,7 @@ import {
 /** @ngInject */
 export default $translateProvider => {
   $translateProvider
-    .useSanitizeValueStrategy('escape')
+    .useSanitizeValueStrategy('escapeParameters')
     .translations('EN', EN)
     .translations('TW', TW)
     .translations('CN', CN)

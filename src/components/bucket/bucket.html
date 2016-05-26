@@ -7,23 +7,29 @@
       <thead>
         <tr>
           <th style="width:24px;"></th>
-          <th>Name</th>
+          <th translate>UTILS.NAME</th>
         </tr>
       </thead>
-
-      <tbody>
-        <tr ng-repeat="bucket in bucket.data" ng-class="{active:@A.3}">
-          <td>
-            <a ng-click="@A.4">
-              <md-icon>info_outline</md-icon>
-            </a>
-          </td>
-          <td ng-bind="bucket.Name">
-            <a ng-click="@A.11"></a>
-          </td>
-        </tr>
-      </tbody>
     </table>
+
+    <md-list>
+      <md-list-item
+        aria-label="Bucket list item"
+        ng-class="{ checked: b.checked }"
+        ng-repeat="b in bucket.data"
+        ng-click="bucket.clickBucket(b.Name)"
+      >
+        <md-checkbox
+          aria-label="checkbox of bucket list item"
+          class="md-secondary"
+          ng-checked="b.checked"
+          ng-click="bucket.selectBucket(b.Name)"
+        ></md-checkbox>
+        <p class="break-word flex-grow">
+          <span ng-bind="b.Name"></span>
+        </p>
+      </md-list-item>
+    </md-list>
   </div>
 
   <div
@@ -32,7 +38,7 @@
     ng-if="bucket.requesting"
   >
     <md-progress-circular md-mode="indeterminate" md-diameter="70"></md-progress-circular>
-    <div class="md-headline">Loading...</div>
+    <div class="md-headline" translate>UTILS.LOADING</div>
   </div>
 
   <div
@@ -40,15 +46,15 @@
     layout="column" layout-align="center center"
     ng-if="! bucket.data.length && ! bucket.requesting && ! bucket.error"
   >
-    <div class="md-headline">Looks like you don't have any Bucket</div>
-    <div class="md-subhead">Don't worry. It's easy to create one.</div>
+    <div class="md-headline" translate>BUCKET.EMPTY_MESSAGE</div>
+    <div class="md-subhead" translate>BUCKET.CREATE_MESSAGE</div>
 
     <md-button
       class="md-raised md-primary" aria-label="Create Bucket"
       ng-click="bucket.createBucket($event)"
     >
       <md-icon>add</md-icon>
-      <span>Create Bucket</span>
+      <span translate>BUCKET.CREATE</span>
     </md-button>
   </div>
 
@@ -57,8 +63,8 @@
     layout="column" layout-align="center center"
     ng-if="bucket.error && ! bucket.requesting"
   >
-    <div class="md-headline">Oops, your connection seems off...</div>
-    <div class="md-subhead">Don't worry. You can refresh to try again.</div>
+    <div class="md-headline" translate>BUCKET.ERROR_MESSAGE</div>
+    <div class="md-subhead" translate>BUCKET.REFRESH_MESSAGE</div>
 
     <md-button
       class="md-icon-button" aria-label="Refresh"

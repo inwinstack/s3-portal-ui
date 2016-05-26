@@ -1,13 +1,15 @@
 import { element } from 'angular';
-import natural from 'javascript-natural-sort';
+import { sortByName } from '../../utils/sort';
 import BucketCreateController from './create/create.controller';
 import BucketCreateTemplate from './create/create.html';
+import BucketDeleteController from './delete/delete.controller';
+import BucketDeleteTemplate from './delete/delete.html';
 
 export default class BucketService {
   /** @ngInject */
-  constructor($fetch, $toast, $mdDialog) {
+  constructor($fetch, $toast, $mdDialog, $breadcrumb, $translate) {
     Object.assign(this, {
-      $fetch, $toast, $mdDialog,
+      $fetch, $toast, $mdDialog, $breadcrumb, $translate
     });
 
     this.initState();
@@ -26,23 +28,11 @@ export default class BucketService {
         error: false,
       },
       create: {
-        checking: false,
-        checked: false,
         duplicated: false,
       },
-    };
-  }
-
-  /**
-   * Reset the state of checke bucket.
-   *
-   * @return {void}
-   */
-  resetCheckBucketState() {
-    this.state.create = {
-      checking: false,
-      checked: false,
-      duplicated: false,
+      delete: {
+        name: null,
+      }
     };
   }
 
@@ -63,6 +53,17 @@ export default class BucketService {
     });
   }
 
+  deleteDialog($event) {
+    this.$mdDialog.show({
+      controller: BucketDeleteController,
+      controllerAs: 'delete',
+      template: BucketDeleteTemplate,
+      parent: element(document.body),
+      targetEvent: $event,
+      clickOutsideToClose: true,
+    });
+  }
+
   /**
    * Close the dialog.
    *
@@ -70,21 +71,34 @@ export default class BucketService {
    */
   closeDialog() {
     this.$mdDialog.cancel();
-    this.resetCheckBucketState();
+    this.state.create.duplicated = false;
   }
 
-  /**
-   * Natural sort for the specified object key.
-   *
-   * @param  {Object} a
-   * @param  {Object} b
-   * @return {Integer}
-   */
-  sortByName(a, b) {
-    const x = a.Name;
-    const y = b.Name;
+  selectBucket(name) {
+    const { data } = this.state.lists;
+    const index = data.findIndex(bucket => bucket.Name === name);
+    this.state.lists.data = data.map((bucket, id) => ({
+      ...bucket,
+      checked: (id === index) ? ! bucket.checked : false,
+    }));
 
-    return natural(x, y);
+    this.state.delete.name = this.state.lists.data[index].checked ? data[index].Name : null;
+  }
+
+  deleteBucket() {
+    const { name } = this.state.delete;
+    this.$fetch.delete(`/v1/bucket/delete/${name}`)
+      .then(() => {
+        this.state.delete.name = null;
+        this.$toast.show(`Bucket ${name} has been deleted!`);
+        this.getBuckets();
+      })
+      .catch(err => {
+        this.$toast.show(`Bucket ${name} delete failed, please try again!`);
+      })
+      .finally(() => {
+        this.closeDialog();
+      });
   }
 
   /**
@@ -99,35 +113,18 @@ export default class BucketService {
     this.$fetch.post('/v1/bucket/list')
       .then(({ data }) => {
         this.state.lists.error = false;
-        this.state.lists.data = data.Buckets.sort(this.sortByName);
+        const buckets = data.Buckets.map(bucket => ({
+          ...bucket,
+          checked: false,
+        }));
+        this.state.lists.data = buckets.sort(sortByName);
       })
       .catch(() => {
         this.state.lists.error = true;
       })
       .finally(() => {
         this.state.lists.requesting = false;
-      });
-  }
-
-  /**
-   * Check the bucket name has created or not.
-   *
-   * @param  {string} bucket
-   * @return {void}
-   */
-  checkBucket(bucket) {
-    this.state.create.checking = true;
-
-    this.$fetch.post('/v1/bucket/check', { bucket })
-      .then(() => {
-        this.state.create.duplicated = false;
-      })
-      .catch(() => {
-        this.state.create.duplicated = true;
-      })
-      .finally(() => {
-        this.state.create.checking = false;
-        this.state.create.checked = true;
+        this.$breadcrumb.updateBucketPath(this.state.lists.data.length);
       });
   }
 
@@ -140,14 +137,14 @@ export default class BucketService {
   createBucket(bucket) {
     this.$fetch.post('/v1/bucket/create', { bucket })
       .then(({ data }) => {
-        this.state.lists.data = data.Buckets.sort(this.sortByName);
-        this.$toast.show(`Bucket ${bucket} has created!`);
+        this.state.lists.data = data.Buckets.sort(sortByName);
       })
+      .then(() => this.$translate('TOAST.CREATE_BUCKET_SUCCESS', { bucket }))
+      .then(createSuccess => this.$toast.show(createSuccess))
       .catch(() => {
-        this.$toast.show('Bucket create failure, please try again!');
-      })
-      .finally(() => {
-        this.closeDialog();
+        this.state.create.duplicated = true;
+        this.$translate('TOAST.CREATE_BUCKET_FAILURE', { bucket })
+          .then(createFailure => this.$toast.show(createFailure));
       });
   }
 }

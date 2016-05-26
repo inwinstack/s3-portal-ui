@@ -1,0 +1,122 @@
+<md-content layout-padding>
+  <div
+    class="md-whiteframe-4dp"
+    ng-if="file.data.length && ! file.requesting && ! file.error"
+  >
+    <table class="table table-cursor table-hover">
+      <thead>
+        <tr>
+          <th class="checkbox-icon-width"></th>
+          <th translate>UTILS.NAME</th>
+          <th
+            class="hide show-gt-sm storage-class-title-width"
+            ng-hide="layout.$layout.state.transfers"
+            translate
+          >FILE.STORAGE_CLASS</th>
+          <th class="size-title-width" translate>FILE.SIZE</th>
+          <th
+            class="hide show-gt-sm time-title-width"
+            ng-hide="layout.$layout.state.transfers"
+            translate
+          >FILE.LAST_MODIFIED</th>
+        </tr>
+      </thead>
+    </table>
+    <md-list class="file-list">
+      <md-list-item
+        aria-label="Click a file"
+        ng-repeat="f in file.data"
+        ng-class="{ checked: f.checked }"
+        ng-click="file.clickFile(f)"
+      >
+        <md-checkbox
+          class="md-secondary"
+          ng-checked="f.checked"
+          ng-click="file.selectFile(f.Key)"
+        ></md-checkbox>
+          <md-icon ng-bind="f.icon"></md-icon>
+          <p class="break-word flex-grow">
+            <span ng-bind="f.display"></span>
+          </p>
+          <p
+            class="flex-none storage-class-width hide show-gt-sm"
+            ng-hide="layout.$layout.state.transfers"
+          >
+            <span
+              class="inline-block"
+              ng-bind="f.StorageClass"
+            ></span>
+          </p>
+          <p class="flex-none size-width text-center">
+            <span
+              class="inline-block"
+              ng-bind="(f.Size | filesize)"
+            ></span>
+          </p>
+          <p
+            class="flex-none hide show-gt-sm time-width"
+            ng-hide="layout.$layout.state.transfers"
+          >
+            <span
+              class="inline-block"
+              ng-bind="(f.LastModified | date: 'yyyy-MM-dd')"
+            ></span>
+          </p>
+      </md-list-item>
+    </md-list>
+  </div>
+
+  <div
+    class="progress-state"
+    layout="column" layout-align="center center"
+    ng-if="file.requesting"
+  >
+    <md-progress-circular md-mode="indeterminate" md-diameter="70"></md-progress-circular>
+    <div class="md-headline">Loading...</div>
+  </div>
+
+  <div
+    class="empty-state"
+    layout="column" layout-align="center center"
+    ng-if="! file.data.length && ! file.requesting && ! file.error"
+  >
+    <div class="md-headline" translate="FILE.EMPTY_{{ file.level }}"></div>
+    <div class="md-subhead" translate>FILE.DO_ACTIONS</div>
+
+    <div layout="row" layout-align="center center">
+      <md-button
+        class="md-raised md-primary" aria-label="Upload File"
+        ng-click="file.upload()"
+      >
+        <md-icon>file_upload</md-icon>
+        <span translate>FILE.UPLOAD</span>
+      </md-button>
+
+      <span translate>UTILS.OR</span>
+
+      <md-button
+        class="md-raised" aria-label="Create Folder"
+        ng-click="file.createFolder()"
+      >
+        <md-icon class="material-icons">create_new_folder</md-icon>
+        <span>FIEL.CREATE_FOLDER</span>
+      </md-button>
+    </div>
+  </div>
+
+  <div
+    class="load-fail-state"
+    layout="column" layout-align="center center"
+    ng-if="file.error && ! file.requesting"
+  >
+    <div class="md-headline">BUCKET.ERROR_MESSAGE</div>
+    <div class="md-subhead">BUCKET.REFRESH_MESSAGE</div>
+
+    <md-button
+      class="md-icon-button" aria-label="Refresh"
+      ng-click="file.refresh()"
+    >
+      <md-icon class="icon-default">refresh</md-icon>
+    </md-button>
+  </div>
+</md-content>

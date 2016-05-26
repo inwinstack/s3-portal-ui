@@ -1,0 +1,84 @@
+<md-dialog class="list-dialog" aria-label="Upload Files Dialog">
+  <form name="upload.form">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2 translate>UTILS.UPLOAD</h2>
+
+        <span flex></span>
+
+        <md-button
+          class="md-icon-button" aria-label="Close Upload Files Dialog"
+          ng-click="upload.cancel()"
+        >
+          <md-icon class="material-icons">clear</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <div class="dialog-description">
+          <p translate>
+            FILE.UPLOAD_DESCRIPTION
+          </p>
+        </div>
+        <md-list>
+          <div
+            flex class="md-list-item-inner"
+            ngf-select="upload.select($files)" multiple
+            name="files"
+            layout="row"
+          >
+            <md-button
+              flex class="md-raised"
+              aria-label="Add Files"
+              ngf-select="upload.select($files)"
+              name="files"
+              translate="FILE.ADD"
+              multiple
+            >
+            </md-button>
+          </div>
+
+          <md-list-item ng-repeat="file in upload.files">
+            <md-icon class="material-icons" ng-if="file.detail.type.startsWith('image/')">photo</md-icon>
+            <md-icon class="material-icons" ng-if="! file.detail.type.startsWith('image/')">insert_drive_file</md-icon>
+
+            <p class="flex-grow" ng-bind="file.detail.name"></p>
+            <p class="flex-none" ng-bind="(file.detail.size | filesize)"></p>
+
+            <md-icon
+              class="material-icons md-warn md-secondary" aria-label="Remove File"
+              ng-click="upload.delete(file.id)" ng-disabled="@A.13"
+            >clear</md-icon>
+          </md-list-item>
+
+          <md-divider ng-show="upload.files.length"></md-divider>
+          <p class="md-caption dialog-footer">
+            <span translate>FILE.NUMBER_OF</span>
+            <span ng-bind="upload.files.length"></span>
+            <span translate>FILE.TOTAL_SIZE</span>
+            <span ng-bind="(upload.size | filesize)"></span>
+          </p>
+        </md-list>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button aria-label="Cancel" ng-click="upload.cancel()">
+        <span translate>UTILS.CANCEL</span>
+      </md-button>
+
+      <md-button
+        ng-click="upload.upload()" type="submit"
+        aria-label="Upload" class="md-primary"
+        ng-disabled="! upload.files.length"
+      >
+        <span translate>UTILS.UPLOAD</span>
+        <md-progress-circular
+          class="md-primary" md-mode="indeterminate"
+          md-diameter="30" ng-show="upload.uploadingFiles.length"
+        ></md-progress-circular>
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
