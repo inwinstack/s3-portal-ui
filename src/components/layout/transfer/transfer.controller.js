@@ -20,7 +20,7 @@ export default class TransferController {
   }
 
   md2line(t) {
-    const status = ['FAILED', 'DELETED', 'PAUSED', 'COMPLETED'];
+    const status = ['FAILED', 'DELETED', 'PAUSED', 'COMPLETED', 'DELETING'];
     return status.indexOf(t.status) >= 0;
   }
 
@@ -37,8 +37,17 @@ export default class TransferController {
     return t.type === 'DELETE';
   }
 
+  isDeleting(t) {
+    return t.status === 'DELETING';
+  }
+
   isUploading(t) {
     return t.status === 'UPLOADING';
+  }
+
+  isCompleted(t) {
+    const status = ['COMPLETED', 'DELETED'];
+    return status.indexOf(t.status) >= 0;
   }
 
   showInfo(t) {

@@ -1,8 +1,11 @@
+import getIconString from '../../utils/icon';
+import { sortFiles } from '../../utils/sort';
+
 export default class FileService {
   /** @ngInject */
-  constructor($mdDialog, $fetch, $bucket, $toast, Config) {
+  constructor($mdDialog, $fetch, $bucket, $toast, $injector, Config) {
     Object.assign(this, {
-      $mdDialog, $fetch, $bucket, $toast, Config,
+      $mdDialog, $fetch, $bucket, $toast, $injector, Config,
     });
 
     this.initState();
@@ -23,6 +26,11 @@ export default class FileService {
     };
   }
 
+  getFullPaths() {
+    const { bucket, prefix } = this.state.paths;
+    return `${bucket}/${prefix}`;
+  }
+
   setPaths(bucket, prefix) {
     this.state.paths = { bucket, prefix };
   }
@@ -38,7 +46,7 @@ export default class FileService {
       .get(endpoint)
       .then(({ data }) => {
         this.state.lists.error = false;
-        this.state.lists.data = this.formatFilesData(data.files);
+        this.state.lists.data = sortFiles(this.formatFilesData(data.files));
       })
       .catch(() => {
         this.state.lists.error = true;
@@ -48,22 +56,45 @@ export default class FileService {
       });
   }
 
+  getIcon(name) {
+    return getIconString(name);
+  }
+
+  formatFileType(name) {
+    const isFolder = name.endsWith('/');
+    const removeSlash = isFolder ? name.slice(0, -1) : name;
+    const display = removeSlash.replace(this.state.paths.prefix, '');
+    return { isFolder, display };
+  }
+
   formatFilesData(files) {
-    return (files === null) ? [] :
-      files.map(file => ({
+    const { prefix } = this.state.paths;
+    const baseLen = prefix.split('/').length;
+
+    return (! files) ? [] :
+      files.filter(({ Key }) => {
+        const { length } = Key.split('/');
+        return (
+          length === baseLen
+          || length === baseLen + 1
+          && Key.endsWith('/')
+        ) && Key !== prefix;
+      }).map(file => ({
         ...file,
+        ...this.formatFileType(file.Key),
+        icon: this.getIcon(file.Key),
         checked: false,
       }));
   }
 
-  selectFile(etag) {
+  selectFile(name) {
     let count = 0;
     let downloadName = null;
 
     this.state.lists.data = this.state.lists.data.map(file => {
       let checked = file.checked;
 
-      if (file.ETag === etag) checked = ! checked;
+      if (file.Key === name) checked = ! checked;
       if (checked) count ++;
 
       return { ...file, checked };
@@ -71,17 +102,47 @@ export default class FileService {
 
     if (count === 1) {
       const index = this.state.lists.data.findIndex(file => file.checked);
-      downloadName = this.state.lists.data[index].Key;
+      const { isFolder, display } = this.state.lists.data[index];
+      if (! isFolder) {
+        downloadName = display;
+      }
     }
 
     this.state.lists.downloadName = downloadName;
+  }
+
+  deleteObject(id, bucket, { Key, isFolder }) {
+    const objectType = isFolder ? 'folder' : 'file';
+    const key = isFolder ? Key.slice(0, -1) : Key;
+    return this.$fetch.delete(`/v1/${objectType}/delete/${bucket}/${key}`)
+      .then(res => this.$injector.get('$transfer').handleDeleteSuccess(id, res))
+      .catch(err => this.$injector.get('$transfer').handleDeleteFailure(id, err));
+  }
+
+  delete() {
+    const { data } = this.state.lists;
+    const { bucket } = this.state.paths;
+    const deleteObjects = data.filter(({ checked }) => checked);
+    const deleteTransfers = deleteObjects.map(object => {
+      const id = Symbol('unique id');
+      const request = this.deleteObject(id, bucket, object);
+      return {
+        id,
+        request,
+        bucket,
+        name: object.display,
+        type: 'DELETE',
+        status: 'DELETING',
+      };
+    });
+
+    this.$injector.get('$transfer').putDelete(deleteTransfers);
   }
 
   downloadFile(uri, fileName) {
     const a = document.createElement('a');
     a.download = fileName;
     a.href = `${this.Config.BASE_URL}${uri}`;
-    console.log(a.href)
     a.click();
   }
 
@@ -95,7 +156,7 @@ export default class FileService {
         const { uri } = data;
         this.downloadFile(uri, downloadName);
       })
-      .catch(({ data }) => {
+      .catch(() => {
         this.$toast.show(`The ${downloadName} doesn't exist, please try again!`);
         this.getFiles();
       });

@@ -18,7 +18,11 @@ export default class BucketController {
     this.$bucket.createDialog($event);
   }
 
-  selectBucket(bucket) {
-    this.$state.go('file', { path: bucket });
+  clickBucket(path) {
+    this.$state.go('file', { path });
+  }
+
+  selectBucket(name) {
+    this.$bucket.selectBucket(name);
   }
 }

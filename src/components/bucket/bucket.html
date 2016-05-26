@@ -10,19 +10,26 @@
           <th translate>UTILS.NAME</th>
         </tr>
       </thead>
-
-      <tbody>
-        <tr ng-repeat="b in bucket.data" ng-class="{active:@A.3}">
-          <td>
-            <a ng-click="@A.4">
-              <md-icon>info_outline</md-icon>
-            </a>
-          </td>
-          <td ng-bind="b.Name" ng-click="bucket.selectBucket(b.Name)">
-          </td>
-        </tr>
-      </tbody>
     </table>
+
+    <md-list>
+      <md-list-item
+        aria-label="Bucket list item"
+        ng-class="{ checked: b.checked }"
+        ng-repeat="b in bucket.data"
+        ng-click="bucket.clickBucket(b.Name)"
+      >
+        <md-checkbox
+          aria-label="checkbox of bucket list item"
+          class="md-secondary"
+          ng-checked="b.checked"
+          ng-click="bucket.selectBucket(b.Name)"
+        ></md-checkbox>
+        <p class="break-word flex-grow">
+          <span ng-bind="b.Name"></span>
+        </p>
+      </md-list-item>
+    </md-list>
   </div>
 
   <div
