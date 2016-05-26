@@ -135,10 +135,6 @@ md-list-item.checked {
   background: #E8EAF6;
 }
 
-md-list-item > .md-list-item-inner > p {
-  padding: 0 8px;
-}
-
 md-list-item > p.flex-none,
 md-list-item > .md-list-item-inner > p.flex-none,
 md-list-item .md-list-item-inner > p.flex-none,
@@ -160,6 +156,14 @@ md-list md-list-item.md-2-line .md-list-item-text p.text-warn,
 md-list.md-default-theme md-list-item.md-3-line .md-list-item-text p.text-warn,
 md-list md-list-item.md-3-line .md-list-item-text p.text-warn {
   color: #FF6D00;
+}
+
+.transfer-list md-list-item.md-2-line .md-list-item-text h3,
+.transfer-list md-list-item.md-2-line > .md-no-style .md-list-item-text h3,
+.transfer-list md-list-item.md-3-line .md-list-item-text h3,
+.transfer-list md-list-item.md-3-line > .md-no-style .md-list-item-text h3 {
+  margin-top: 3px;
+  white-space: normal;
 }
 
 /* fix flexbox type layout issues in IE10 */
