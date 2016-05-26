@@ -88,5 +88,6 @@ export default {
     TOTAL_SIZE: '总上传容量大小：',
     FOLDER_NAME: '文件夹名称',
     FOLDER_DUPLICATED_MESSAGE: '此文件夹已存在！请选择一个不同的名称并再试一次。',
+    NEW_FOLDER: '新文件夾',
   },
 };

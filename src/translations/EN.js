@@ -94,5 +94,6 @@ export default {
     FOLDER_NAME: 'Folder Name',
     FOLDER_DUPLICATED_MESSAGE: `That folder already exists!
     Please select a different name and try again.`,
+    NEW_FOLDER: 'New folder',
   },
 };
