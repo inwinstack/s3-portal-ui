@@ -61,4 +61,18 @@ export default {
     ALREADY_EXIST: '已有其他人使用这个电邮，请换一个试试',
     SIGN_IN_INCORRECT: '你的电邮或密码不正确，请再试一次。',
   },
+  TRANSFER: {
+    AUTO_CLEAR: '自动清除已完成传输',
+    TITLE: {
+      UPLOAD: '上传 {{ name }} 至 {{ bucket }}',
+      DELETE: '從 {{ bucket }} 删除 {{ name }}',
+    },
+    STATUS: {
+      DELETING: '删除中',
+      DELETED: '已删除',
+      UPLOADING: '上传中',
+      COMPLETED: '已完成',
+      RESUMING: '重新开始',
+    },
+  },
 };

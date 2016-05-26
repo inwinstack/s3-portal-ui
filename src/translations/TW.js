@@ -61,4 +61,18 @@ export default {
     ALREADY_EXIST: '已有其他人使用這個電子郵件，請換一個試試',
     SIGN_IN_INCORRECT: '你的電子郵件或密碼不正確，請再試一次。',
   },
+  TRANSFER: {
+    AUTO_CLEAR: '自動清除已完成傳輸',
+    TITLE: {
+      UPLOAD: '上傳 {{ name }} 至 {{ bucket }}',
+      DELETE: '從 {{ bucket }} 刪除 {{ name }}',
+    },
+    STATUS: {
+      DELETING: '刪除中',
+      DELETED: '已刪除',
+      UPLOADING: '上傳中',
+      COMPLETED: '已完成',
+      RESUMING: '重新開始',
+    },
+  },
 };

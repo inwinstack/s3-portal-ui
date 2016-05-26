@@ -64,6 +64,7 @@ export default {
     SIGN_IN_INCORRECT: 'Your email or password was incorrect. Please try again.',
   },
   TRANSFER: {
+    AUTO_CLEAR: 'Automatically clear finished transfers',
     TITLE: {
       UPLOAD: 'Upload {{ name }} to {{ bucket }}',
       DELETE: 'Delete {{ name }} from {{ bucket }}',
@@ -73,7 +74,6 @@ export default {
       DELETED: 'Deleted',
       UPLOADING: 'Uploading',
       COMPLETED: 'Completed',
-      DELETE: 'Deleted',
       RESUMING: 'Resuming',
     },
   },
