@@ -3,6 +3,7 @@ export default {
     SIGN_OUT: '登出',
   },
   TRANSFER: {
+    AUTO_CLEAR: '自动清除已完成传输',
     TITLE: {
       UPLOAD: '上传 {{ name }} 至 {{ bucket }}',
       DELETE: '從 {{ bucket }} 删除 {{ name }}',
