@@ -4,6 +4,19 @@ export default class SignUpController {
     Object.assign(this, {
       $auth, $state, $toast, $translate, AuthService, credentials: {},
     });
+
+    this.languages = [
+      { key: 'EN', name: 'English' },
+      { key: 'TW', name: '繁體中文' },
+      { key: 'CN', name: '简体中文' },
+    ];
+
+    this.currentLanguage = $translate.use();
+  }
+
+  changeLanguage(key) {
+    this.$translate.use(key);
+    this.currentLanguage = key;
   }
 
   /**

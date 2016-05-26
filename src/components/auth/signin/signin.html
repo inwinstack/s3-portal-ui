@@ -2,7 +2,7 @@
   <div class="panel-title text-center">
     <h1 class="no-margin">S3 Portal</h1>
   </div>
-  
+
   <md-content class="radius-large md-whiteframe-1dp">
     <div class="panel-body">
       <md-subheader class="text-center">
@@ -68,11 +68,12 @@
     </div>
   </md-content>
 </div>
-  
+
 <div class="footer text-center md-caption">
   <ul>
-    <li ng-repeat="@A.26">
-      <a href ng-class={active: @A.27} ng-click="@A.28" ng-bind="@A.29"></a>
+    <li ng-repeat="language in signin.languages">
+      <a href ng-class="{active: language.key === signin.currentLanguage}"
+        ng-click="signin.changeLanguage(language.key)" ng-bind="language.name"></a>
     </li>
   </ul>
 </div>
