@@ -82,22 +82,24 @@ md-input-container md-progress-circular {
 
 /* breadcrumb ------------------------------------------- */
 .breadcrumb {
-  color: #2196F3;
+  display: inherit;
   list-style: none;
   margin: 0;
   padding: 0 8px;
 }
 
 .breadcrumb > li > a {
-  text-decoration: none;
+  color: #1976D2;
   cursor: pointer;
   display: inline-block;
+  text-decoration: none;
   font-weight: bold;
 }
 
 .breadcrumb > li:last-child > a {
-  color: #1976D2;
+  color: #999;
   cursor: text;
+  pointer-events: none;
 }
 
 .breadcrumb>li+li:before {
