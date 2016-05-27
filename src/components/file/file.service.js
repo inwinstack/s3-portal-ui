@@ -3,9 +3,9 @@ import { sortFiles } from '../../utils/sort';
 
 export default class FileService {
   /** @ngInject */
-  constructor($mdDialog, $fetch, $bucket, $toast, $injector, Config) {
+  constructor($mdDialog, $fetch, $bucket, $toast, $injector, Config, $http) {
     Object.assign(this, {
-      $mdDialog, $fetch, $bucket, $toast, $injector, Config,
+      $mdDialog, $fetch, $bucket, $toast, $injector, Config, $http,
     });
 
     this.initState();
@@ -149,12 +149,19 @@ export default class FileService {
   download() {
     const { bucket, prefix } = this.state.paths;
     const { downloadName } = this.state.lists;
-    const endpoint = `/v1/file/get/${bucket}/${prefix}${downloadName}`;
+    const url = `${this.Config.API_URL}/v1/file/get/${bucket}/${prefix}${downloadName}`;
 
-    this.$fetch.get(endpoint)
+    this.$http({ url, responseType: 'arraybuffer' })
       .then(({ data }) => {
-        const { uri } = data;
-        this.downloadFile(uri, downloadName);
+        const blob = new Blob([data]);
+        const href = URL.createObjectURL(blob);
+        const anchor = document.createElement('a');
+
+        anchor.href = href;
+        anchor.download = downloadName;
+        anchor.click();
+
+        URL.revokeObjectURL(href);
       })
       .catch(() => {
         this.$toast.show(`The ${downloadName} doesn't exist, please try again!`);
