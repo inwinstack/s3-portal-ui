@@ -18,13 +18,6 @@ export default {
     MAX_LENGTH: 'Please enter no more than {{ maxlength }} characters.',
     MATCH: 'Please enter the same value again.',
   },
-  VALIDATION: {
-    REQUIRED: 'You left the field blank.',
-    EMAIL: 'Your email must be look like an e-mail address.',
-    MIN_LENGTH: 'Please enter at least {{ minlength }} characters.',
-    MAX_LENGTH: 'Please enter no more than {{ maxlength }} characters.',
-    MATCH: 'Please enter the same value again.',
-  },
   SETTINGS: {
     ACCOUNT: 'My Account',
     BILLING: 'Billing & Cost Management',
@@ -47,6 +40,13 @@ export default {
     NAME: 'Bucket Name',
     CREATE_DESCRIPTION: `The name that you choose must be unique across
     existing bucket names in S3 Portal.`,
+    DELETE_DESCRIPTION: `The buckets in S3 Portal are unique.
+    If you delete this bucket, you may lose the bucket name to another S3 user.`,
+    DELETE_TYPE_NAME: 'Type the name of the bucket to confirm deletion:',
+    DELETE_ERROR_MESSAGE: 'Type the exact name of the bucket you are trying to delete.',
+    DELETE_CONFIRM: `Deleting this bucket and its objects (
+    including older versions if applicable) <b>cannot be undone</b>.
+    Are you sure you want to delete <b>{{ name }}</b>?`,
   },
   ACTION_NAVBAR: {
     ACTIONS: 'Actions',

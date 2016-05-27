@@ -18,13 +18,6 @@ export default {
     MAX_LENGTH: '此栏位不得大于 ​​{{ maxlength }} 个字元。',
     MATCH: '请输入与前一个栏位相同的值。',
   },
-  VALIDATION: {
-    REQUIRED: '此栏位不得为空。',
-    EMAIL: '此栏位必须符合电邮格式。',
-    MIN_LENGTH: '此栏位不得小于 {{ minlength }} 个字元。',
-    MAX_LENGTH: '此栏位不得大于 ​​{{ maxlength }} 个字元。',
-    MATCH: '请输入与前一个栏位相同的值。',
-  },
   SETTINGS: {
     ACCOUNT: '我的帐户',
     BILLING: '付款与费用管理',
@@ -45,6 +38,12 @@ export default {
     DELETE: '删除 Bucket',
     NAME: 'Bucket 名称',
     CREATE_DESCRIPTION: '你所使用的名称不得重复于 S3 Portal 中已存在的 bucket 名称。',
+    DELETE_DESCRIPTION: 'S3 Portal 的 bucket 是唯一的。如果你删除此 bucket，其他 S3 的使用者可能会使用此名称。',
+    DELETE_TYPE_NAME: '请输入 bucket 名称以确认删除。',
+    DELETE_ERROR_MESSAGE: '请输入欲删除的完整 bucket 名称。',
+    DELETE_CONFIRM: `删除此 bucket 及此 bucket 内的所有文件与文件夹
+    （若有支援旧版本则包含旧版本）<b>会无法复原</b>。
+    你确认要删除 <b>{{ name }}</b> 吗？`,
   },
   ACTION_NAVBAR: {
     ACTIONS: '操作',

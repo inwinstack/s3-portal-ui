@@ -18,13 +18,6 @@ export default {
     MAX_LENGTH: '此欄位不得大於 {{ maxlength }} 個字元。',
     MATCH: '請輸入與前一個欄位相同的值。',
   },
-  VALIDATION: {
-    REQUIRED: '此欄位不得為空。',
-    EMAIL: '此欄位必須符合電子郵件格式。',
-    MIN_LENGTH: '此欄位不得小於 {{ minlength }} 個字元。',
-    MAX_LENGTH: '此欄位不得大於 {{ maxlength }} 個字元。',
-    MATCH: '請輸入與前一個欄位相同的值。',
-  },
   SETTINGS: {
     ACCOUNT: '我的帳戶',
     BILLING: '付款與費用管理',
@@ -45,6 +38,12 @@ export default {
     DELETE: '刪除 Bucket',
     NAME: 'Bucket 名稱',
     CREATE_DESCRIPTION: '你所使用的名稱不得重複於 S3 Portal 中已存在的 bucket 名稱。',
+    DELETE_DESCRIPTION: 'S3 Portal 的 bucket 是唯一的。如果你刪除此 bucket，其他 S3 的使用者可能會使用此名稱。',
+    DELETE_TYPE_NAME: '請輸入 bucket 名稱以確認刪除。',
+    DELETE_ERROR_MESSAGE: '請輸入欲刪除的完整 bucket 名稱。',
+    DELETE_CONFIRM: `刪除此 bucket 及此 bucket 內的所有檔案與資料夾
+    （若有支援舊版本則包含舊版本）<b>會無法復原</b>。
+    你確認要刪除 <b>{{ name }}</b> 嗎？`,
   },
   ACTION_NAVBAR: {
     ACTIONS: '操作',
