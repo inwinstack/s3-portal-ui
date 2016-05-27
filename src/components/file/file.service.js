@@ -1,8 +1,8 @@
 export default class FileService {
   /** @ngInject */
-  constructor($mdDialog, $fetch, $bucket, $toast, Config) {
+  constructor($mdDialog, $fetch, $bucket, $toast, Config, $http) {
     Object.assign(this, {
-      $mdDialog, $fetch, $bucket, $toast, Config,
+      $mdDialog, $fetch, $bucket, $toast, Config, $http,
     });
 
     this.initState();
@@ -77,23 +77,22 @@ export default class FileService {
     this.state.lists.downloadName = downloadName;
   }
 
-  downloadFile(uri, fileName) {
-    const a = document.createElement('a');
-    a.download = fileName;
-    a.href = `${this.Config.BASE_URL}${uri}`;
-    console.log(a.href)
-    a.click();
-  }
-
   download() {
     const { bucket, prefix } = this.state.paths;
     const { downloadName } = this.state.lists;
-    const endpoint = `/v1/file/get/${bucket}/${prefix}${downloadName}`;
+    const url = `${this.Config.API_URL}/v1/file/get/${bucket}/${prefix}${downloadName}`;
 
-    this.$fetch.get(endpoint)
+    this.$http({ url, responseType: 'arraybuffer' })
       .then(({ data }) => {
-        const { uri } = data;
-        this.downloadFile(uri, downloadName);
+        const blob = new Blob([data]);
+        const href = URL.createObjectURL(blob);
+        const anchor = document.createElement('a');
+
+        anchor.href = href;
+        anchor.download = downloadName;
+        anchor.click();
+
+        URL.revokeObjectURL(href);
       })
       .catch(({ data }) => {
         this.$toast.show(`The ${downloadName} doesn't exist, please try again!`);
