@@ -2,7 +2,7 @@
   <form name="delete.form">
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <h2 translate>Delete Bucket</h2>
+        <h2 translate>BUCKET.DELETE</h2>
         <span flex></span>
 
         <md-button
@@ -19,19 +19,19 @@
           <div layout="row" layout-align="space-around center" layout-margin>
             <md-icon class="md-warn">error</md-icon>
             <p class="text-warn" translate>
-              Amazon S3 buckets are unique. If you delete this bucket, you may lose the bucket name to another AWS user.
+              BUCKET.DELETE_DESCRIPTION
             </p>
           </div>
 
-          <p>
-            Deleting this bucket and its objects (including older versions if applicable) <b>cannot be undone</b>.
-            Are you sure you want to delete <b>{{ delete.deleteName }}</b>?
-          </p>
-          <p translate>Type the name of the bucket to confirm deletion:</p>
+          <p
+            translate="BUCKET.DELETE_CONFIRM"
+            translate-value-name="{{ delete.deleteName }}"
+          ></p>
+          <p translate>BUCKET.DELETE_TYPE_NAME</p>
         </div>
 
         <md-input-container class="md-block">
-          <label translate>Bucket Name</label>
+          <label translate>BUCKET.NAME</label>
           <input
             name="name" required
             ng-model="delete.inputName"
@@ -41,7 +41,7 @@
           >
 
           <span class="md-caption text-warn" ng-show="delete.checkStatus" translate>
-            Type the exact name of the bucket you are trying to delete.
+            BUCKET.DELETE_ERROR_MESSAGE
           </span>
 
           <div ng-messages="delete.form.name.$error" ng-if="delete.form.name.$touched">
@@ -53,7 +53,7 @@
 
     <md-dialog-actions layout="row">
       <md-button aria-label="Cancel" ng-click="delete.cancel()">
-        <span translate>Cancel</span>
+        <span translate>UTILS.CANCEL</span>
       </md-button>
 
       <md-button
@@ -61,7 +61,7 @@
         aria-label="Delete" class="md-warn"
         ng-disabled="delete.form.$invalid || delete.form.$submitted || delete.checkStatus"
       >
-        <span translate>Delete</span>
+        <span translate>UTILS.DELETE</span>
         <md-progress-circular
           class="md-primary" md-mode="indeterminate"
           md-diameter="30" ng-show="delete.form.$submitted"
