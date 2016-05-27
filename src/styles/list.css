@@ -1,0 +1,17 @@
+
+/**
+ * @author Jamie jamie.h@inwinstack.com
+ */
+
+.list md-list-item .md-no-style.md-button {
+  padding-left: 80px;
+}
+
+.list md-list-item .md-secondary-container {
+  left: 0;
+}
+
+.list md-list-item .md-list-item-inner > md-icon:first-child:not(.md-avatar-icon) {
+  margin-right: 16px;
+  margin-top: 9px;
+}

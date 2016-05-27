@@ -7,6 +7,10 @@
   padding: 0 15px;
 }
 
+.checkbox-width {
+  width: 55px;
+}
+
 .checkbox-icon-width {
   width: 100px;
 }
