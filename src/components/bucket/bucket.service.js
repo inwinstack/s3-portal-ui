@@ -143,7 +143,10 @@ export default class BucketService {
         this.state.lists.data = data.Buckets.sort(this.sortByName);
       })
       .then(() => this.$translate('TOAST.CREATE_BUCKET_SUCCESS', { bucket }))
-      .then(createSuccess => this.$toast.show(createSuccess))
+      .then(createSuccess => {
+        this.$toast.show(createSuccess);
+        this.closeDialog();
+      })
       .catch(() => {
         this.$translate('TOAST.CREATE_BUCKET_FAILURE', { bucket })
           .then(createFailure => this.$toast.show(createFailure));
