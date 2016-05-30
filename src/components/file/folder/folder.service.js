@@ -8,6 +8,8 @@ export default class FolderCreateService {
     Object.assign(this, {
       $mdDialog, $fetch, $file, $toast,
     });
+
+    this.initState();
   }
 
   initState() {
@@ -20,7 +22,7 @@ export default class FolderCreateService {
     const { bucket, prefix } = this.$file.state.paths;
     const finalPrefix = `${prefix}${folder}/`;
 
-    this.$fetch.post('/v1/folder/create', {
+    return this.$fetch.post('/v1/folder/create', {
       bucket, prefix: finalPrefix,
     })
     .then(() => {
