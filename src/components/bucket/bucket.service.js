@@ -140,7 +140,10 @@ export default class BucketService {
         this.state.lists.data = data.Buckets.sort(sortByName);
       })
       .then(() => this.$translate('TOAST.CREATE_BUCKET_SUCCESS', { bucket }))
-      .then(createSuccess => this.$toast.show(createSuccess))
+      .then(createSuccess => {
+        this.$toast.show(createSuccess);
+        this.closeDialog();
+      })
       .catch(() => {
         this.state.create.duplicated = true;
         this.$translate('TOAST.CREATE_BUCKET_FAILURE', { bucket })
