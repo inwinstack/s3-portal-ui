@@ -85,7 +85,7 @@ export default class TransferService {
   }
 
   updateProcessStatus() {
-    this.state.process = this.state.transfers.every(
+    this.state.processing = this.state.transfers.every(
       transfer => transfer.status !== 'UPLOADING' && transfer.status !== 'RESUMING'
     );
   }
