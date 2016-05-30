@@ -37,7 +37,8 @@ export default class TransferService {
         transfer.upload.abort();
       }
     });
-    this.state.transfers = [];
+
+    this.initState();
   }
 
   remove(id) {
@@ -85,7 +86,7 @@ export default class TransferService {
   }
 
   updateProcessStatus() {
-    this.state.processing = this.state.transfers.every(
+    this.state.processing = ! this.state.transfers.every(
       transfer => transfer.status !== 'UPLOADING' && transfer.status !== 'RESUMING'
     );
   }
