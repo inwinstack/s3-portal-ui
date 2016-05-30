@@ -11,6 +11,13 @@ export default {
     REFRESH: '刷新',
     OR: '或',
   },
+  VALIDATION: {
+    REQUIRED: '此栏位不得为空。',
+    EMAIL: '此栏位必须符合电邮格式。',
+    MIN_LENGTH: '此栏位不得小于 {{ minlength }} 个字元。',
+    MAX_LENGTH: '此栏位不得大于 ​​{{ maxlength }} 个字元。',
+    MATCH: '请输入与前一个栏位相同的值。',
+  },
   SETTINGS: {
     ACCOUNT: '我的帐户',
     BILLING: '付款与费用管理',
