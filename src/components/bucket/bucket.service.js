@@ -135,7 +135,7 @@ export default class BucketService {
    * @return {void}
    */
   createBucket(bucket) {
-    this.$fetch.post('/v1/bucket/create', { bucket })
+    return this.$fetch.post('/v1/bucket/create', { bucket })
       .then(({ data }) => {
         this.state.lists.data = data.Buckets.sort(sortByName);
       })

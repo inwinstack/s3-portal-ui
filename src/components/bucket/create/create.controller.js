@@ -12,7 +12,8 @@ export default class BucketCreateController {
   }
 
   create() {
-    this.$bucket.createBucket(this.bucket);
+    this.$bucket.createBucket(this.bucket)
+      .then(() => (this.form.$submitted = false));
   }
 
   cancel() {
