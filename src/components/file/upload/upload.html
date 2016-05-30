@@ -22,22 +22,18 @@
           </p>
         </div>
         <md-list>
-          <div
-            flex class="md-list-item-inner"
-            ngf-select="upload.select($files)" multiple
-            name="files"
-            layout="row"
-          >
+          <md-list-item>
             <md-button
               flex class="md-raised"
               aria-label="Add Files"
               ngf-select="upload.select($files)"
+              ngf-multiple="true"
               name="files"
               translate="FILE.ADD"
               multiple
             >
             </md-button>
-          </div>
+          </md-list-item>
 
           <md-list-item ng-repeat="file in upload.files">
             <md-icon class="material-icons" ng-if="file.detail.type.startsWith('image/')">photo</md-icon>
