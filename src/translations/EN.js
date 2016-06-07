@@ -16,4 +16,10 @@ export default {
       RESUMING: 'Resuming',
     },
   },
+  FILE: {
+    DELETE_TITLE: 'Would you like to delete the selected items?',
+    DELETE_DESCRIPTION: `Deleting those objects cannot be undone.
+    Are you sure you want to delete selected items?`,
+    DELETE_ARIA_LABEL: 'Delete Objects',
+  },
 };
