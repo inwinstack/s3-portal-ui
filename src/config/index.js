@@ -5,7 +5,6 @@ import satellizer from './satellizer.config';
 import material from './material.config';
 import authenticateGuard from './AuthenticateGuard';
 import http from './http.config';
-import breadcrumb from './breadcrumb.config';
 
 const Config = module('app.config', [])
   .config(router)
@@ -13,8 +12,8 @@ const Config = module('app.config', [])
   .config(satellizer)
   .config(material)
   .config(http)
-  .config(breadcrumb)
   .constant('Config', {
+    BASE_URL: process.env.SERVER_HOST,
     API_URL: `${process.env.SERVER_HOST}/api`,
   })
   .run(authenticateGuard);

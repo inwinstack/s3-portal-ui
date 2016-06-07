@@ -1,0 +1,85 @@
+<md-dialog class="list-dialog" aria-label="Upload Files Dialog">
+  <form name="upload.form">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2 translate>Upload Files</h2>
+
+        <span flex></span>
+
+        <md-button
+          class="md-icon-button" aria-label="Close Upload Files Dialog"
+          ng-click="upload.cancel()"
+        >
+          <md-icon class="material-icons">clear</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <div class="dialog-description">
+          <p translate>
+            To upload files to S3 Portal, click Add Files. To remove files already selected, click the ✖ to the far right of the file name.
+          </p>
+        </div>
+
+        <md-list>
+          <md-list-item
+            aria-label="Add Files"
+            ng-disabled="@A.13"
+            ng-click="u()"
+          >
+            <div
+              flex class="md-list-item-inner"
+              ngf-select="upload.select($files)" multiple
+              name="files"
+            >
+              <p translate>Add Files</p>
+              <md-icon class="material-icons md-primary">add</md-icon>
+            </div>
+          </md-list-item>
+
+          <md-divider></md-divider>
+
+          <md-list-item ng-repeat="file in upload.files">
+            <md-icon class="material-icons" ng-if="file.detail.type.startsWith('image/')">photo</md-icon>
+            <md-icon class="material-icons" ng-if="! file.detail.type.startsWith('image/')">insert_drive_file</md-icon>
+
+            <p class="flex-grow" ng-bind="file.detail.name"></p>
+            <p class="flex-none" ng-bind="(file.detail.size | filesize)"></p>
+
+            <md-icon
+              class="material-icons md-warn md-secondary" aria-label="Remove File"
+              ng-click="upload.delete(file.id)" ng-disabled="@A.13"
+            >clear</md-icon>
+          </md-list-item>
+
+          <md-divider></md-divider>
+          <p class="md-caption dialog-footer">
+            Number of files:
+            <span ng-bind="upload.files.length"></span>
+            Total upload size:
+            <span ng-bind="(upload.size | filesize)"></span>
+          </p>
+        </md-list>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button aria-label="Cancel" ng-click="upload.cancel()">
+        <span translate>Cancel</span>
+      </md-button>
+
+      <md-button
+        ng-click="upload.upload()" type="submit"
+        aria-label="Upload" class="md-primary"
+        ng-disabled="! upload.files.length"
+      >
+        <span translate>Upload</span>
+        <md-progress-circular
+          class="md-primary" md-mode="indeterminate"
+          md-diameter="30" ng-show="upload.uploadingFiles.length"
+        ></md-progress-circular>
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
