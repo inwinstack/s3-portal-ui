@@ -18,17 +18,23 @@ describe('bucket testing', function() {
   let $fetch;
   let form;
   let $breadcrumb;
+  let $bucket;
+  let $state;
 
   beforeEach(angular.mock.module('app'));
 
-  beforeEach(inject(($q, _$compile_, _$rootScope_, _$auth_, _$toast_, _$mdDialog_, _$breadcrumb_, _$state_, _$fetch_, _$httpBackend_) => {
+  beforeEach(inject(($q, _$bucket_ ,_$compile_, _$rootScope_, _$auth_, _$toast_, _$mdDialog_, _$breadcrumb_, _$state_, _$fetch_, _$httpBackend_) => {
     $rootScope = _$rootScope_;
+
+    $bucket = _$bucket_;
 
     $compile = _$compile_;
 
     $fetch = _$fetch_;
 
     $toast = _$toast_;
+
+    $state = _$state_;
 
     $mdDialog = _$mdDialog_;
 
@@ -54,8 +60,8 @@ describe('bucket testing', function() {
       return $q.defer();
     }
 
-    makeController = (service) => {
-        return new bucketCtrl($rootScope, service);
+    makeController = (service = $bucket) => {
+        return new bucketCtrl($rootScope, service, $state, $breadcrumb);
     };
 
     makeCreateController = (service) => {
@@ -378,56 +384,22 @@ describe('bucket testing', function() {
     });
   });
   describe('when init controller', function() {
+    let service;
+    let controller;
+    let mockGet;
+    let mockBread;
+    beforeEach(() => {
+        service = makeService();
+        service.getBuckets = () => {};
+        mockGet = sinon.spy(service, 'getBuckets');
+        mockBread = sinon.spy($breadcrumb, 'initPaths')
+        controller = makeController(service);
+    });
     it('should invoke getBuckets in service', function() {
-        const service = makeService();
-        const getB = sinon.spy(service, 'getBuckets');
-        const controller = makeController(service);
-        const data = {
-            Buckets: [{
-                Name: 'BucketName',
-                CreationDate: '2016-04-08T14:46:28.000Z'
-            }]
-        };
-        $httpBackend.expectPOST($fetch.API_URL + '/v1/bucket/list').respond(200, data);
-        $httpBackend.flush();
-        $rootScope.$digest();
-        expect(getB.called).to.eq(true);
+        expect(mockGet.called).to.eq(true);
     });
-    it('should invoke sortByName in service', function() {
-        const service = makeService();
-        const sortFunction = sinon.spy(service, 'sortByName');
-        const controller = makeController(service);
-        const data = {
-            Buckets: [{
-                Name: 'BucketName',
-                CreationDate: '2016-04-08T14:46:28.000Z'
-            }, {
-                Name: 'BucketName1',
-                CreationDate: '2016-04-08T14:36:16.000Z'
-            }]
-        };
-        $httpBackend.expectPOST($fetch.API_URL + '/v1/bucket/list').respond(200, data);
-        $httpBackend.flush();
-        $rootScope.$digest();
-        expect(sortFunction.called).to.eq(true);
-    });
-    it('should let state.lists.data save what backend response', function() {
-        const service = makeService();
-        expect(service.state.lists.data).to.be.empty;
-        const controller = makeController(service);
-        const data = {
-            Buckets: [{
-                Name: 'BucketName',
-                CreationDate: '2016-04-08T14:46:28.000Z'
-            }, {
-                Name: 'BucketName1',
-                CreationDate: '2016-04-08T14:36:16.000Z'
-            }]
-        };
-        $httpBackend.expectPOST($fetch.API_URL + '/v1/bucket/list').respond(200, data);
-        $httpBackend.flush();
-        $rootScope.$digest();
-        expect(service.state.lists.data).not.to.empty;
+    it('should initPaths in breadcrumb service', function() {
+        expect(mockBread.called).to.eq(true);
     });
   });
   describe('when createBucket in bucketCtrl', function() {
@@ -439,6 +411,33 @@ describe('bucket testing', function() {
       controller.createBucket();
       $rootScope.$digest();
       expect(dialog.called).to.eq(true);
+    });
+  });
+  describe('when clickBucket in bucketCtrl', () => {
+    let controller;
+    let mockState;
+    let path;
+    beforeEach(() => {
+      path = { path: 'String' };
+      controller = makeController();
+      mockState = sinon.spy($state, 'go');
+      controller.clickBucket(path);
+    });
+    it('should invoke state.go and call with file and path', () => {
+      expect(mockState).to.have.been.calledWith('file', {path:path});
+    });
+  });
+  describe('when selectBucket in bucket controller', () => {
+    let controller;
+    let mockSelect;
+    beforeEach(() => {
+      $bucket.selectBucket = () => {};
+      controller = makeController();
+      mockSelect = sinon.spy($bucket, 'selectBucket');
+      controller.selectBucket('name')
+    });
+    it('should invoke selectBucket in bucket service and called with name', () => {
+      expect(mockSelect).to.have.been.calledWith('name');
     });
   });
   describe('when fill valid bucket name', function() {
@@ -480,5 +479,5 @@ describe('bucket testing', function() {
       $rootScope.$digest();
       expect(close.called).to.eq(true);
     });
-  })
+  });
 });
