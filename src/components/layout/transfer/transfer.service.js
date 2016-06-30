@@ -1,8 +1,8 @@
 export default class TransferService {
   /** @ngInject */
-  constructor($toast, $file) {
+  constructor($toast, $file, $translate) {
     Object.assign(this, {
-      $toast, $file,
+      $toast, $file, $translate,
     });
     this.initState();
   }
@@ -68,8 +68,12 @@ export default class TransferService {
 
   handleSuccess(id) {
     const i = this.findTransferIndex(id);
+    const name = this.state.transfers[i].name;
     this.state.transfers[i].status = 'COMPLETED';
-    this.$toast.show(`${this.state.transfers[i].name} is uploaded successfully!`);
+    this.$translate("TOAST.UPLOAD_FILE_SUCCESS", { name })
+    .then(message => {
+      this.$toast.show(message);
+    })
 
     if (this.state.autoClear) {
       this.remove(i);
@@ -81,21 +85,30 @@ export default class TransferService {
 
   handleFailure(id, { statusText }) {
     const i = this.findTransferIndex(id);
+    const name = this.state.transfers[i].name;
     this.state.transfers[i] = {
       ...this.state.transfers[i],
       status: 'FAILED',
       message: statusText,
     };
-    this.$toast.show(
-      `${this.state.transfers[i].name} is uploaded failure! Error message: ${statusText}`
-    );
+    this.$translate("TOAST.UPLOAD_FILE_FAILURE", { name })
+    .then(message => {
+      this.$toast.show(message);
+    })
+    // this.$toast.show(
+    //   `${this.state.transfers[i].name} is uploaded failure! Error message: ${statusText}`
+    // );
     this.updateProcessStatus();
   }
 
   handleDeleteSuccess(id) {
     const i = this.findTransferIndex(id);
+    const name = this.state.transfers[i].name;
     this.state.transfers[i].status = 'DELETED';
-    this.$toast.show(`${this.state.transfers[i].name} is deleted successfully!`);
+    this.$translate("TOAST.DELETE_FILE_SUCCESS", { name })
+    .then(message => {
+      this.$toast.show(message);
+    })
 
     if (this.state.autoClear) this.remove(i);
 
@@ -104,14 +117,16 @@ export default class TransferService {
 
   handleDeleteFailure(id, { statusText }) {
     const i = this.findTransferIndex(id);
+    const name = this.state.transfers[i].name;
     this.state.transfers[i] = {
       ...this.state.transfers[i],
       status: 'FAILED',
       message: statusText,
     };
-    this.$toast.show(
-      `${this.state.transfers[i].name} is deleted failure! Error message: ${statusText}`
-    );
+    this.$translate("TOAST.DELETE_FILE_FAILURE", { name })
+    .then(message => {
+      this.$toast.show(message);
+    })
   }
 
   updateProcessStatus() {

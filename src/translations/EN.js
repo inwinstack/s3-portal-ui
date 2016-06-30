@@ -63,6 +63,12 @@ export default {
     CREATE_BUCKET_FAILURE: 'Bucket {{ bucket }} are create failure, please try again!',
     DELETE_BUCKET_SUCCESS: 'Bucket {{ bucket }} Delete Success！',
     DELETE_BUCKET_FAILURE: 'Bucket {{ bucket }} Delete Fail Please Try Again！',
+    CREATE_FOLDER_SUCCESS: 'Folder {{ folder }} Create Success！',
+    CREATE_FOLDER_FAILURE: 'Folder {{ folder }} Create Fail Please Try Again！',
+    UPLOAD_FILE_SUCCESS: 'File {{ name }} Upload Success!',
+    UPLOAD_FILE_FAILURE: 'File {{ name }} Upload Fail Please Try Again!',
+    DELETE_FILE_SUCCESS: '{{ name }} Delete Success！',
+    DELETE_FILE_FAILURE: '{{ name }} Delete Fail Please Try Again！',
   },
   AUTH: {
     EMAIL: 'Email',

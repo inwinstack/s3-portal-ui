@@ -4,9 +4,9 @@ import FolderCreateTemplate from './folder.html';
 
 export default class FolderCreateService {
   /** @ngInject */
-  constructor($mdDialog, $fetch, $file, $toast) {
+  constructor($mdDialog, $fetch, $file, $toast, $translate) {
     Object.assign(this, {
-      $mdDialog, $fetch, $file, $toast,
+      $mdDialog, $fetch, $file, $toast, $translate,
     });
 
     this.initState();
@@ -25,12 +25,17 @@ export default class FolderCreateService {
     return this.$fetch.post('/v1/folder/create', {
       bucket, prefix: finalPrefix,
     })
-    .then(() => {
+    .then(() => this.$translate("TOAST.CREATE_FOLDER_SUCCESS", { folder })
+    .then(message => {
       this.$file.getFiles();
-      this.$toast.show(`Bucket ${folder} has created!`);
+      this.$toast.show(message);
       this.closeDialog();
-    })
-    .catch(() => (this.state.duplicated = true));
+    }))
+    .catch(() => this.$translate("TOAST.CREATE_FOLDER_FAILURE", { folder })
+    .then(message => {
+      this.state.duplicated = true;
+      this.$toast.show(message);
+    }));
   }
 
   createDialog($event) {

@@ -60,6 +60,12 @@ export default {
     CREATE_BUCKET_FAILURE: 'Bucket {{ bucket }} 创建失敗，请再试一次！',
     DELETE_BUCKET_SUCCESS: 'Bucket {{ bucket }} 删除成功!',
     DELETE_BUCKET_FAILURE: 'Bucket {{ bucket }} 删除失败,请再试一次!',
+    CREATE_FOLDER_SUCCESS: '资料夹 {{ folder }} 建立成功！',
+    CREATE_FOLDER_FAILURE: '资料夹 {{ folder }} 建立失败，请再试一次！',
+    UPLOAD_FILE_SUCCESS: '档案 {{ name }} 上传成功!',
+    UPLOAD_FILE_FAILURE: '档案 {{ name }} 上传失败，请再试一次!',
+    DELETE_FILE_SUCCESS: '{{ name }} 删除成功！',
+    DELETE_FILE_FAILURE: '{{ name }} 删除失败,请再试一次！',
   },
   AUTH: {
     EMAIL: '电邮',

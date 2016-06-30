@@ -60,6 +60,12 @@ export default {
     CREATE_BUCKET_FAILURE: 'Bucket {{ bucket }} 建立失敗，請再試一次！',
     DELETE_BUCKET_SUCCESS: 'Bucket {{ bucket }} 刪除成功！',
     DELETE_BUCKET_FAILURE: 'Bucket {{ bucket }} 刪除失敗，請再試一次！',
+    CREATE_FOLDER_SUCCESS: '資料夾 {{ folder }} 建立成功！',
+    CREATE_FOLDER_FAILURE: '資料夾 {{ folder }} 建立失敗，請再試一次！',
+    UPLOAD_FILE_SUCCESS: '檔案 {{ name }} 上傳成功!',
+    UPLOAD_FILE_FAILURE: '檔案 {{ name }} 上傳失敗，請再試一次!',
+    DELETE_FILE_SUCCESS: '{{ name }} 刪除成功！',
+    DELETE_FILE_FAILURE: '{{ name }} 刪除失敗，請再試一次！',
   },
   AUTH: {
     EMAIL: '電子郵件',
