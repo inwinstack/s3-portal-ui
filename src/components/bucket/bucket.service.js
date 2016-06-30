@@ -86,16 +86,18 @@ export default class BucketService {
   }
 
   deleteBucket() {
-    const { name } = this.state.delete;
-    this.$fetch.delete(`/v1/bucket/delete/${name}`)
-      .then(() => {
+    const bucket = this.state.delete.name;
+    this.$fetch.delete(`/v1/bucket/delete/${bucket}`)
+      .then(() => this.$translate("TOAST.DELETE_BUCKET_SUCCESS", { bucket })
+      .then(message => {
         this.state.delete.name = null;
-        this.$toast.show(`Bucket ${name} has been deleted!`);
+        this.$toast.show(message);
         this.getBuckets();
-      })
-      .catch(err => {
-        this.$toast.show(`Bucket ${name} delete failed, please try again!`);
-      })
+      }))
+      .catch(() => this.$translate("TOAST.DELETE_BUCKET_FAILURE", { bucket })
+      .then(message => {
+        this.$toast.show(message);
+      }))
       .finally(() => {
         this.closeDialog();
       });

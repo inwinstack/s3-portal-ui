@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 6000;
 const config = require('./webpack.config.base');
 
 config.entry.push('webpack-hot-middleware/client');

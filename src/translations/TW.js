@@ -58,6 +58,8 @@ export default {
     SIGN_OUT_FAILURE: '登出失敗！',
     CREATE_BUCKET_SUCCESS: 'Bucket {{ bucket }} 已建立成功！',
     CREATE_BUCKET_FAILURE: 'Bucket {{ bucket }} 建立失敗，請再試一次！',
+    DELETE_BUCKET_SUCCESS: 'Bucket {{ bucket }} 刪除成功！',
+    DELETE_BUCKET_FAILURE: 'Bucket {{ bucket }} 刪除失敗，請再試一次！',
   },
   AUTH: {
     EMAIL: '電子郵件',

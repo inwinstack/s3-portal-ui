@@ -61,6 +61,8 @@ export default {
     SIGN_OUT_FAILURE: 'Sign Out Failure!',
     CREATE_BUCKET_SUCCESS: 'Bucket {{ bucket }} are create success!',
     CREATE_BUCKET_FAILURE: 'Bucket {{ bucket }} are create failure, please try again!',
+    DELETE_BUCKET_SUCCESS: 'Bucket {{ bucket }} Delete Success！',
+    DELETE_BUCKET_FAILURE: 'Bucket {{ bucket }} Delete Fail Please Try Again！',
   },
   AUTH: {
     EMAIL: 'Email',
