@@ -48,7 +48,7 @@ export default class ActionNavbarController {
 
   delete() {
     if (this.isFile()) {
-      this.$file.delete();
+      this.$file.deleteDialog();
     } else {
       this.$bucket.deleteDialog();
     }

@@ -110,5 +110,8 @@ export default {
     FOLDER_NAME: '文件夹名称',
     FOLDER_DUPLICATED_MESSAGE: '此文件夹已存在！请选择一个不同的名称并再试一次。',
     NEW_FOLDER: '新文件夾',
+    DELETE_TITLE: '您确定要删除所选项目吗?',
+    DELETE_DESCRIPTION: `删除后将无法复原，您确定要删除所选项目吗?`,
+    DELETE_ARIA_LABEL: 'Delete Objects',
   },
 };

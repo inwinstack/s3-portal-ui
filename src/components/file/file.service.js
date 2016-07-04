@@ -3,9 +3,9 @@ import { sortFiles } from '../../utils/sort';
 
 export default class FileService {
   /** @ngInject */
-  constructor($mdDialog, $fetch, $bucket, $toast, $injector, Config, $http) {
+  constructor($mdDialog, $fetch, $bucket, $toast, $injector, Config, $http, $translate) {
     Object.assign(this, {
-      $mdDialog, $fetch, $bucket, $toast, $injector, Config, $http,
+      $mdDialog, $fetch, $bucket, $toast, $injector, Config, $http, $translate,
     });
 
     this.initState();
@@ -117,6 +117,28 @@ export default class FileService {
     return this.$fetch.delete(`/v1/${objectType}/delete/${bucket}/${key}`)
       .then(res => this.$injector.get('$transfer').handleDeleteSuccess(id, res))
       .catch(err => this.$injector.get('$transfer').handleDeleteFailure(id, err));
+  }
+
+  deleteDialog($event) {
+    const sources = [
+      'FILE.DELETE_TITLE',
+      'FILE.DELETE_DESCRIPTION',
+      'FILE.DELETE_ARIA_LABEL',
+      'UTILS.DELETE',
+      'UTILS.CANCEL',
+    ];
+
+    this.$translate(sources)
+      .then(translations => this.$mdDialog.confirm()
+        .title(translations[sources[0]])
+        .textContent(translations[sources[1]])
+        .ariaLabel(translations[sources[2]])
+        .targetEvent($event)
+        .ok(translations[sources[3]])
+        .cancel(translations[sources[4]]))
+      .then(confirm => this.$mdDialog.show(confirm)
+        .then(() => this.delete())
+      );
   }
 
   delete() {

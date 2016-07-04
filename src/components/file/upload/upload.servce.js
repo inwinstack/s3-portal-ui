@@ -21,12 +21,19 @@ export default class FileUploadService {
   }
 
   select(selectedFiles) {
+    selectedFiles.map((index, elem) => {
+      this.state.files.forEach((oldData) => {
+        if (oldData.detail.name == index.name) {
+          this.delete(oldData.id);
+        }
+      })
+    });
+
     const additionalFiles = selectedFiles.filter(selectedFile =>
       this.state.files.every(({ detail }) => detail.name !== selectedFile.name)
     ).map(detail => ({
       id: Symbol('unique id'), detail,
     }));
-
     const files = [...this.state.files, ...additionalFiles];
     const size = totalSize(files);
 
@@ -81,6 +88,9 @@ export default class FileUploadService {
       parent: element(document.body),
       targetEvent: $event,
       clickOutsideToClose: true,
+      onRemoving: () => {
+        this.initState();
+      }
     });
   }
 
