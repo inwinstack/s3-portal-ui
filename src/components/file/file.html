@@ -8,17 +8,6 @@
         <tr>
           <th class="checkbox-icon-width"></th>
           <th translate>UTILS.NAME</th>
-          <th
-            class="hide show-gt-sm storage-class-title-width"
-            ng-hide="layout.$layout.state.transfers"
-            translate
-          >FILE.STORAGE_CLASS</th>
-          <th class="size-title-width" translate>FILE.SIZE</th>
-          <th
-            class="hide show-gt-sm time-title-width"
-            ng-hide="layout.$layout.state.transfers"
-            translate
-          >FILE.LAST_MODIFIED</th>
         </tr>
       </thead>
     </table>
@@ -28,39 +17,16 @@
         ng-repeat="f in file.data"
         ng-class="{ checked: f.checked }"
         ng-click="file.clickFile(f)"
+        ng-Dblclick="file.doubleClick(f)"
       >
         <md-checkbox
           class="md-secondary"
           ng-checked="f.checked"
-          ng-click="file.selectFile(f.Key)"
+          ng-click="file.selectFile(f)"
         ></md-checkbox>
           <md-icon ng-bind="f.icon"></md-icon>
           <p class="break-word flex-grow">
             <span ng-bind="f.display"></span>
-          </p>
-          <p
-            class="flex-none storage-class-width hide show-gt-sm"
-            ng-hide="layout.$layout.state.transfers"
-          >
-            <span
-              class="inline-block"
-              ng-bind="f.StorageClass"
-            ></span>
-          </p>
-          <p class="flex-none size-width text-center">
-            <span
-              class="inline-block"
-              ng-bind="(f.Size | filesize)"
-            ></span>
-          </p>
-          <p
-            class="flex-none hide show-gt-sm time-width"
-            ng-hide="layout.$layout.state.transfers"
-          >
-            <span
-              class="inline-block"
-              ng-bind="(f.LastModified | date: 'yyyy-MM-dd')"
-            ></span>
           </p>
       </md-list-item>
     </md-list>

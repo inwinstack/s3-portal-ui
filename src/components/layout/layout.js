@@ -15,6 +15,9 @@ import ActionNavbarService from './action-navbar/action-navbar.service';
 import TransferController from './transfer/transfer.controller';
 import TransferTemplate from './transfer/transfer.html';
 import TransferService from './transfer/transfer.service';
+import PropertiesTemplate from './properties/properties.html';
+import PropertiesController from './properties/properties.controller';
+import PropertiesService from './properties/properties.service';
 
 import './layout.css';
 import './transfer/transfer.css';
@@ -50,6 +53,11 @@ const route = $stateProvider => {
         controller: TransferController,
         controllerAs: 'transfer',
       },
+      'properties@root': {
+        template: PropertiesTemplate,
+        controller: PropertiesController,
+        controllerAs: 'propertie',
+      },
     },
   });
 };
@@ -61,6 +69,7 @@ const Layout = module('layout', [
 .service('$nav', ActionNavbarService)
 .service('$layout', LayoutService)
 .service('$transfer', TransferService)
+.service('$properties', PropertiesService)
 .config(route);
 
 export default Layout.name;

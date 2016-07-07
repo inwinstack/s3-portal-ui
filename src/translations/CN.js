@@ -99,6 +99,7 @@ export default {
     STORAGE_CLASS: '储存类型',
     SIZE: '容量大小',
     LAST_MODIFIED: '最后修改时间',
+    OWNER: '拥有者',
     DO_ACTIONS: '你可以执行以下操作',
     UPLOAD: '上传档案',
     EMPTY_BUCKET: '这个 bucket 是空的',

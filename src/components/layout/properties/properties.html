@@ -1,0 +1,42 @@
+<md-content layout-padding>
+  <div class="md-whiteframe-4dp">
+    <md-toolbar class="md-menu-toolbar">
+      <div class="md-toolbar-tools">
+        <h2>
+          <span translate>ACTION_NAVBAR.PROPERTIES</span>
+        </h2>
+        <span flex></span>
+        <md-button
+          aria-label="Close Transfers" class="md-icon-button toolbar-buttons"
+          ng-click="propertie.test()"
+        >
+          <md-icon>clear</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-content>
+      <md-list class="transfer-list">
+        <md-list-item>
+          <h1 class="time-title-width" translate>FILE.PROPERTIES_NAME</h1>
+          <p class="md-body-1 md-accent">{{ propertie.state.Key }}</p>
+        </md-list-item>
+        <md-list-item>
+          <h1 class="time-title-width" translate>FILE.SIZE</h1>
+          <p class="md-body-1 md-accent">{{ propertie.state.Size | filesize }}</p>
+        </md-list-item>
+        <md-list-item>
+          <h1 class="time-title-width" translate>FILE.STORAGE_CLASS</h1>
+          <p class="md-body-1 md-accent">{{ propertie.state.StorageClass }}</p>
+        </md-list-item>
+        <md-list-item>
+          <h1 class="time-title-width" translate>FILE.LAST_MODIFIED</h1>
+          <p class="md-body-1 md-accent">{{ propertie.state.LastModified | date: 'yyyy-MM-dd HH:mm:ss'}}</p>
+        </md-list-item>
+        <md-list-item>
+          <h1 class="time-title-width" translate>FILE.OWNER</h1>
+          <p class="md-body-1 md-accent">{{ propertie.state.Owner.DisplayName }}</p>
+        </md-list-item>
+      </md-list>
+    </md-content>
+  </div>
+</md-content>

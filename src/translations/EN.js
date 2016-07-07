@@ -102,6 +102,7 @@ export default {
     STORAGE_CLASS: 'Storage Class',
     SIZE: 'Size',
     LAST_MODIFIED: 'Last Modified',
+    OWNER: 'Owner',
     EMPTY: '',
     DO_ACTIONS: 'You can do the following actions',
     UPLOAD: 'Upload File',
@@ -121,5 +122,6 @@ export default {
     DELETE_DESCRIPTION: `Deleting those objects cannot be undone.
     Are you sure you want to delete selected items?`,
     DELETE_ARIA_LABEL: 'Delete Objects',
+    PROPERTIES_NAME: 'File Name',
   },
 };

@@ -1,8 +1,8 @@
 export default class FileController {
   /** @ngInject */
-  constructor($scope, $location, $stateParams, $file, $bucket, $breadcrumb, $upload, $folder) {
+  constructor($scope, $location, $stateParams, $file, $bucket, $breadcrumb, $upload, $folder, $properties) {
     Object.assign(this, {
-      $location, $file, $upload, $bucket, $breadcrumb, $folder,
+      $location, $file, $upload, $bucket, $breadcrumb, $folder, $properties,
     });
 
     $scope.$watch(
@@ -27,7 +27,11 @@ export default class FileController {
     this.$folder.createDialog($event);
   }
 
-  clickFile({ isFolder, display }) {
+  clickFile(file) {
+    this.$properties.showProperties(file);
+  }
+
+  doubleClick({ isFolder, display }) {
     if (isFolder) {
       const currentPath = this.$file.getFullPaths();
       const path = `/bucket/${currentPath}${display}`;
@@ -35,8 +39,8 @@ export default class FileController {
     }
   }
 
-  selectFile(name) {
-    this.$file.selectFile(name);
+  selectFile(file) {
+    this.$file.selectFile(file.Key);
   }
 
   upload($event) {

@@ -17,7 +17,8 @@
         aria-label="Bucket list item"
         ng-class="{ checked: b.checked }"
         ng-repeat="b in bucket.data"
-        ng-click="bucket.clickBucket(b.Name)"
+        ng-click="bucket.doNothing()"
+        ng-Dblclick="bucket.clickBucket(b.Name)"
       >
         <md-checkbox
           aria-label="checkbox of bucket list item"

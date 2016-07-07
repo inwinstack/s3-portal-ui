@@ -128,6 +128,7 @@ export default class BucketService {
         this.state.lists.requesting = false;
         this.$breadcrumb.updateBucketPath(this.state.lists.data.length);
       });
+
   }
 
   /**
