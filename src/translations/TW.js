@@ -8,6 +8,7 @@ export default {
     OPEN: '開啟',
     DOWNLOAD: '下載',
     DELETE: '刪除',
+    RENAME: '重新命名',
     REFRESH: '重新整理',
     OR: '或',
   },

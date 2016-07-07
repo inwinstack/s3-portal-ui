@@ -8,6 +8,7 @@ export default {
     OPEN: 'Open',
     DOWNLOAD: 'Download',
     DELETE: 'Delete',
+    RENAME: 'Rename',
     REFRESH: 'Refresh',
     OR: 'or',
   },
@@ -122,6 +123,9 @@ export default {
     DELETE_DESCRIPTION: `Deleting those objects cannot be undone.
     Are you sure you want to delete selected items?`,
     DELETE_ARIA_LABEL: 'Delete Objects',
+    RENAME_TITLE: 'Would you like to rename the selected item?',
+    RENAME_DESCRIPTION: `Are you sure you want to rename this item?`,
+    RENAME_ARIA_LABEL: 'Rename Object',
     PROPERTIES_NAME: 'File Name',
   },
 };

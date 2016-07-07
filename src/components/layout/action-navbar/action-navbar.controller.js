@@ -1,8 +1,8 @@
 export default class ActionNavbarController {
   /** @ngInject */
-  constructor($scope, $bucket, $nav, $file, $upload, $layout, $folder) {
+  constructor($scope, $bucket, $nav, $file, $upload, $layout, $folder, $rename) {
     Object.assign(this, {
-      $bucket, $file, $upload, $layout, $folder,
+      $bucket, $file, $upload, $layout, $folder, $rename,
     });
 
     $scope.$watch(
@@ -19,6 +19,8 @@ export default class ActionNavbarController {
       () => $file.state.lists,
       newVal => Object.assign(this, {
         fileSelected: !! newVal.data.filter(({ checked }) => checked).length,
+        fileSelectedOne: newVal.data.filter(({ checked }) => checked).length == 1,
+        folderSelected: this.judgeFolder(newVal.data.filter(({ checked }) => checked)),
         downloadButton: ! newVal.downloadName,
       })
     , true);
@@ -38,6 +40,10 @@ export default class ActionNavbarController {
     return this.type === 'FILE';
   }
 
+  judgeFolder(files) {
+    return !(files.filter(({ isFolder }) => isFolder).length)
+  }
+
   open() {
     //
   }
@@ -52,6 +58,10 @@ export default class ActionNavbarController {
     } else {
       this.$bucket.deleteDialog();
     }
+  }
+
+  rename($event) {
+    this.$rename.createDialog($event);
   }
 
   closeSidePanels() {

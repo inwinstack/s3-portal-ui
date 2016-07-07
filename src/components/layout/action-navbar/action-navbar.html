@@ -81,6 +81,18 @@
           </md-button>
         </md-menu-item>
 
+        <md-menu-item>
+          <md-button
+            aria-label="Rename"
+            ng-click="actionNav.rename($event)"
+            ng-disabled="
+              ! (actionNav.fileSelectedOne && actionNav.folderSelected)
+            ">
+            <span translate>UTILS.RENAME</span>
+          </md-button>
+        </md-menu-item>
+
+
         <md-menu-divider></md-menu-divider>
 
         <md-menu-item>
