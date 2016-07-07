@@ -1,0 +1,13 @@
+
+/**
+ * @author Jamie jamie.h@inwinstack.com
+ */
+
+.auth {
+  background-image: url("./background1920x1200.jpg");
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

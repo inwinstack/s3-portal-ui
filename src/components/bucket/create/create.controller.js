@@ -11,16 +11,9 @@ export default class BucketCreateController {
     , true);
   }
 
-  check() {
-    if (this.form.bucket.$valid) {
-      this.$bucket.checkBucket(this.bucket);
-    } else {
-      this.$bucket.resetCheckBucketState();
-    }
-  }
-
   create() {
-    this.$bucket.createBucket(this.bucket);
+    this.$bucket.createBucket(this.bucket)
+      .then(() => (this.form.$submitted = false));
   }
 
   cancel() {

@@ -3,11 +3,20 @@
 
   <div id="action-navbar" layout="row" ui-view="action-navbar"></div>
 
-  <div id="breadcrumb-container" layout="row" ncy-breadcrumb></div>
+  <div id="breadcrumb-container" layout="row" ui-view="breadcrumb"></div>
 </header>
 
 <section id="container" layout="row" class="layout-scrollable">
   <article id="list-container" flex layout="column" ui-view></article>
 
-  <!-- <article id="info-container" flex layout="column" ng-show="@A.6" ui-view="@A.5"></article> -->
+  <article
+    id="info-container" flex layout="column"
+    ng-show="layout.$layout.state.transfers"
+    ui-view="transfer"
+  ></article>
+  <article
+    id="info-container" flex layout="column"
+    ng-show="layout.$layout.state.properties"
+    ui-view="properties"
+  ></article>
 </section>

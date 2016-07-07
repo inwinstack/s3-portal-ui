@@ -14,9 +14,6 @@ const route = $stateProvider => {
     controllerAs: 'bucket',
     template: BucketTemplate,
     onEnter: $nav => $nav.setTypeToBucket(),
-    ncyBreadcrumb: {
-      label: 'All Buckets ( {{ bucket.data.length }} )',
-    },
   });
 };
 

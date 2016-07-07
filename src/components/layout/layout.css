@@ -8,6 +8,7 @@
 }
 
 #header-container {
+  position: absolute;
   width: 100%;
 }
 
@@ -16,7 +17,9 @@
 }
 
 #container {
-  height: 100%;
+  bottom: 0;
+  top: 154px;
+  position: absolute;
   width: 100%;
 }
 

@@ -1,0 +1,8 @@
+<ul class="breadcrumb md-body-2">
+  <li ng-repeat="path in bc.paths">
+    <a href="{{ path.link }}">
+      {{ path.text }}
+      <span ng-if="path.isBucket">( {{ path.len }} )</span>
+    </a>
+  </li>
+</ul>
