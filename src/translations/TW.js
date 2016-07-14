@@ -120,7 +120,7 @@ export default {
     RENAME_ARIA_LABEL: 'Rename Object',
     ITEM_NAME:'物件名稱',
     NEW_NAME:'新名稱',
-    RENAME_SUCCESS: 'Your File {{ fileName }} Rename Success',
-    RENAME_FAILURE: 'Your File {{ fileName }} Rename Failure, Please Try Again!',
+    RENAME_SUCCESS: '檔案 {{ fileName }} 重新命名成功',
+    RENAME_FAILURE: '檔案 {{ fileName }} 重新命名失敗，請再試一次!',
   },
 };
