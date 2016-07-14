@@ -2,7 +2,7 @@
   <form name="rename.form">
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <h2 translate>UTILS.RENAME</h2>
+        <h2 translate>FILE.RENAME_TITLE</h2>
         <span flex></span>
 
         <md-button
@@ -15,11 +15,24 @@
     </md-toolbar>
     <md-dialog-content>
       <div class="md-dialog-content">
-        <md-input-container class="md-block">
-          <label translate>FILE.FOLDER_NAME</label>
+        <span translate class="ng-binding">FILE.RENAME_DESCRIPTION</span>
+      </div>
+      <div class="md-dialog-content">
+
+        <md-input-container class="md-prompt-input-container ng-scope md-input-has-placeholder md-default-theme md-input-has-value">
+          <label translate>FILE.ITEM_NAME</label>
           <input
             name="folder" required
-            ng-model="rename.folder"
+            ng-model="rename.fileSelected[0].display"
+            ng-readonly="true"
+          >
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label translate>FILE.NEW_NAME</label>
+          <input
+            name="folder" required
+            ng-model="rename.newName"
             ng-readonly="rename.form.$submitted"
           >
           <span class="md-caption text-warn" ng-show="rename.duplicated" translate>
@@ -39,7 +52,7 @@
       </md-button>
 
       <md-button
-        ng-click="rename.create()" type="submit"
+        ng-click="rename.rename()" type="submit"
         aria-label="Create" class="md-primary"
         ng-disabled="rename.form.$invalid || rename.form.$submitted"
       >

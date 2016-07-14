@@ -115,5 +115,12 @@ export default {
     DELETE_TITLE: '您確定要刪除所選項目嗎?',
     DELETE_DESCRIPTION: `刪除後將無法復原，您確定要刪除所選項目嗎?`,
     DELETE_ARIA_LABEL: 'Delete Objects',
+    RENAME_TITLE: '重新命名',
+    RENAME_DESCRIPTION: `您確定要修改這個物件的名稱嗎?`,
+    RENAME_ARIA_LABEL: 'Rename Object',
+    ITEM_NAME:'物件名稱',
+    NEW_NAME:'新名稱',
+    RENAME_SUCCESS: 'Your File {{ fileName }} Rename Success',
+    RENAME_FAILURE: 'Your File {{ fileName }} Rename Failure, Please Try Again!',
   },
 };
