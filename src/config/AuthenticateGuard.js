@@ -1,5 +1,5 @@
 /** @ngInject */
-export default ($rootScope, $state, $auth, $toast) => {
+export default ($rootScope, $state, $auth, $toast, AuthService) => {
   $rootScope.$on('$stateChangeStart', (event, next) => {
     if (next.noAuth) {
       if ($auth.isAuthenticated()) {
@@ -8,6 +8,14 @@ export default ($rootScope, $state, $auth, $toast) => {
       }
       return;
     }
+    if (next.isAdmin) {
+      if (!AuthService.checkAdmin()) {
+        event.preventDefault();
+        $state.go('bucket');
+      }
+      return;
+    }
+
 
     if (! $auth.isAuthenticated()) {
       event.preventDefault();

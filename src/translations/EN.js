@@ -124,4 +124,12 @@ export default {
     DELETE_ARIA_LABEL: 'Delete Objects',
     PROPERTIES_NAME: 'File Name',
   },
+  MANAGER: {
+    USER_LIST: 'User List',
+    CREATE_USER: 'Create Account',
+    USER_DELETE: 'Delete Account',
+    USER_ACCOUNT: 'Account',
+    USER_ROLE: 'Role',
+    USER_REGISTER_TIME: 'Register Time',
+  },
 };

@@ -39,6 +39,10 @@ export default class TopNavbarController {
     }
   }
 
+  goManager() {
+    this.$state.go('manager.list');
+  }
+
   /**
    * Show a confirm message for sign out.
    *

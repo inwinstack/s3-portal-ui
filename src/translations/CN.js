@@ -115,4 +115,12 @@ export default {
     DELETE_DESCRIPTION: `删除后将无法复原，您确定要删除所选项目吗?`,
     DELETE_ARIA_LABEL: 'Delete Objects',
   },
+  MANAGER: {
+    USER_LIST: '使用者列表',
+    CREATE_USER: '新增使用者',
+    USER_DELETE: '删除使用者',
+    USER_ACCOUNT: '账号',
+    USER_ROLE: '权限',
+    USER_REGISTER_TIME: '注册时间',
+  },
 };

@@ -115,4 +115,12 @@ export default {
     DELETE_DESCRIPTION: `刪除後將無法復原，您確定要刪除所選項目嗎?`,
     DELETE_ARIA_LABEL: 'Delete Objects',
   },
+  MANAGER: {
+    USER_LIST: '使用者列表',
+    CREATE_USER: '新增使用者',
+    USER_DELETE: '刪除使用者',
+    USER_ACCOUNT: '帳號',
+    USER_ROLE: '權限',
+    USER_REGISTER_TIME: '註冊時間',
+  },
 };

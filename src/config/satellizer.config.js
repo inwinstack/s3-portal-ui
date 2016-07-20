@@ -4,4 +4,5 @@ export default ($authProvider, Config) => {
 
   $authProvider.loginUrl = `${API_URL}/v1/auth/login`;
   $authProvider.signupUrl = `${API_URL}/v1/auth/register`;
+  $authProvider.storageType = 'sessionStorage';
 };

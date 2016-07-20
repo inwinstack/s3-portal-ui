@@ -15,6 +15,12 @@
       </md-button>
 
       <md-menu-content>
+        <md-menu-item ng-show="topNav.AuthService.checkAdmin()" ui-sref="manager.list">
+          <md-button aria-label="Account List">
+            <span translate>List</span>
+          </md-button>
+        </md-menu-item>
+
         <md-menu-item ui-sref="">
           <md-button aria-label="My Account">
             <span translate>SETTINGS.ACCOUNT</span>
