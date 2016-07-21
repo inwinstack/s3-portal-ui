@@ -6,7 +6,9 @@ export default class ActionNavbarController {
     });
   }
 
-
+  createAccountDialog($event) {
+    this.$manager.createAccountDialog($event);
+  }
 
   refresh() {
     this.$manager.getAccounts();
