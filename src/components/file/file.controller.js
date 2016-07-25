@@ -28,7 +28,7 @@ export default class FileController {
   }
 
   clickFile(file) {
-    this.$properties.showProperties(file);
+    this.$properties.showProperties(this.$file.state.paths.bucket ,file);
   }
 
   doubleClick({ isFolder, display }) {

@@ -14,7 +14,7 @@ const units = [
  */
 export default () => bytes => {
   if (isNaN(parseFloat(bytes)) || ! isFinite(bytes)) {
-    return '?';
+    return '';
   }
 
   let unit = 0;
