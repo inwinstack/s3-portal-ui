@@ -1,0 +1,67 @@
+<md-dialog class="input-dialog" aria-label="Create Folder Dialog">
+  <form name="rename.form">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2 translate>FILE.RENAME_TITLE</h2>
+        <span flex></span>
+
+        <md-button
+          class="md-icon-button" aria-label="Close Create Folder Dialog"
+          ng-click="rename.cancel()"
+        >
+          <md-icon class="material-icons">clear</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <span translate class="ng-binding">FILE.RENAME_DESCRIPTION</span>
+      </div>
+      <div class="md-dialog-content">
+
+        <md-input-container class="md-prompt-input-container ng-scope md-input-has-placeholder md-default-theme md-input-has-value">
+          <label translate>FILE.ITEM_NAME</label>
+          <input
+            name="folder" required
+            ng-model="rename.fileSelected[0].display"
+            ng-readonly="true"
+          >
+        </md-input-container>
+
+        <md-input-container class="md-block">
+          <label translate>FILE.NEW_NAME</label>
+          <input
+            name="folder" required
+            ng-model="rename.newName"
+            ng-readonly="rename.form.$submitted"
+          >
+          <span class="md-caption text-warn" ng-show="rename.duplicated" translate>
+            FILE.FOLDER_DUPLICATED_MESSAGE
+          </span>
+
+          <div ng-messages="rename.form.folder.$error" ng-if="rename.form.folder.$touched">
+            <div ng-messages-include="messages.html"></div>
+          </div>
+        </md-input-container>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button aria-label="Cancel" ng-click="rename.cancel()">
+        <span translate>UTILS.CANCEL</span>
+      </md-button>
+
+      <md-button
+        ng-click="rename.rename()" type="submit"
+        aria-label="Create" class="md-primary"
+        ng-disabled="rename.form.$invalid || rename.form.$submitted"
+      >
+        <span translate>UTILS.CREATE</span>
+        <md-progress-circular
+          class="md-primary" md-mode="indeterminate"
+          md-diameter="30" ng-show="rename.form.$submitted"
+        ></md-progress-circular>
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

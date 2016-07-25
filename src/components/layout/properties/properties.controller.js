@@ -5,8 +5,6 @@ export default class PropertiesController {
       $layout, $transfer,
     });
 
-    this.state = { Size : '123'};
-
     $scope.$watch(
       () => $properties.state.file,
       newVal => this.state = newVal

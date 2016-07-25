@@ -4,8 +4,9 @@ import router from 'angular-ui-router';
 import FileController from './file.controller';
 import FileService from './file.service';
 import FileTemplate from './file.html';
-import UploadService from './upload/upload.servce';
+import UploadService from './upload/upload.service';
 import FolderService from './folder/folder.service';
+import RenameService from './rename/rename.service';
 import './file.css';
 
 /** @ngInject */
@@ -26,6 +27,7 @@ const File = module('file', [
 .service('$file', FileService)
 .service('$upload', UploadService)
 .service('$folder', FolderService)
+.service('$rename', RenameService)
 .config(route);
 
 export default File.name;
