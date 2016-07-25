@@ -132,4 +132,12 @@ export default {
     RENAME_SUCCESS: 'Your File {{ fileName }} Rename Success',
     RENAME_FAILURE: 'Your File {{ fileName }} Rename Failure, Please Try Again!',
   },
+  MANAGER: {
+    USER_LIST: 'User List',
+    CREATE_USER: 'Create Account',
+    USER_DELETE: 'Delete Account',
+    USER_ACCOUNT: 'Account',
+    USER_ROLE: 'Role',
+    USER_REGISTER_TIME: 'Register Time',
+  },
 };

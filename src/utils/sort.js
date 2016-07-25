@@ -19,6 +19,8 @@ const sortByDisplay = sortKey('display');
  */
 export const sortByName = sortKey('Name');
 
+export const sortByEmail = sortKey('email')
+
 export const sortFiles = xs => {
   const folders = xs.filter(x => x.isFolder);
   const files = xs.filter(x => ! x.isFolder);

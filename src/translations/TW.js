@@ -123,4 +123,12 @@ export default {
     RENAME_SUCCESS: '檔案 {{ fileName }} 重新命名成功',
     RENAME_FAILURE: '檔案 {{ fileName }} 重新命名失敗，請再試一次!',
   },
+  MANAGER: {
+    USER_LIST: '使用者列表',
+    CREATE_USER: '新增使用者',
+    USER_DELETE: '刪除使用者',
+    USER_ACCOUNT: '帳號',
+    USER_ROLE: '權限',
+    USER_REGISTER_TIME: '註冊時間',
+  },
 };
