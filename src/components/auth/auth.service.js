@@ -24,6 +24,7 @@ export default class AuthService {
    * @return {promise}
    */
   signOut() {
+    this.$cookies.remove('role');
     return this.$fetch.post('/v1/auth/logout');
   }
 
