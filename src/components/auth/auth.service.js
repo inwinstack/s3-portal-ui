@@ -1,7 +1,11 @@
 export default class AuthService {
   /** @ngInject */
-  constructor($fetch) {
-    this.$fetch = $fetch;
+  constructor($fetch, $cookies) {
+    Object.assign(this, {
+      $fetch, $cookies,
+    });
+
+    this.role = {};
   }
 
   /**
@@ -20,6 +24,11 @@ export default class AuthService {
    * @return {promise}
    */
   signOut() {
+    this.$cookies.remove('role');
     return this.$fetch.post('/v1/auth/logout');
+  }
+
+  checkAdmin() {
+    return this.$cookies.get('role') === 'admin';
   }
 }

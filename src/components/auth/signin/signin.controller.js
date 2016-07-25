@@ -1,8 +1,8 @@
 export default class SignInController {
   /** @ngInject */
-  constructor($auth, $state, $toast, $translate) {
+  constructor($auth, $state, $toast, $translate, $cookies) {
     Object.assign(this, {
-      $auth, $state, $toast, $translate, credentials: {},
+      $auth, $state, $toast, $translate, $cookies, credentials: {},
     });
 
     this.languages = [
@@ -10,7 +10,6 @@ export default class SignInController {
       { key: 'TW', name: '繁體中文' },
       { key: 'CN', name: '简体中文' },
     ];
-
     this.currentLanguage = $translate.use();
   }
 
@@ -26,10 +25,14 @@ export default class SignInController {
    */
   submit() {
     this.$auth.login(this.credentials)
-      .then(() => this.$translate('TOAST.SIGN_IN_SUCCESS'))
-      .then(signInSuccess => {
-        this.$state.go('bucket');
-        this.$toast.show(signInSuccess);
+      .then(res => {
+        // this.AuthService.role = res.data.role;
+        this.$cookies.put('role', res.data.role);
+        this.$translate('TOAST.SIGN_IN_SUCCESS')
+          .then(signInSuccess => {
+            this.$state.go('bucket');
+            this.$toast.show(signInSuccess);
+          })
       })
       .catch(() => {
         this.form.$submitted = false;

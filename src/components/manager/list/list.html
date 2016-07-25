@@ -1,32 +1,45 @@
 <md-content layout-padding>
   <div
     class="md-whiteframe-4dp"
-    ng-if="file.data.length && ! file.requesting && ! file.error"
+    ng-if="list.data.length && ! list.requesting && ! list.error"
   >
     <table class="table table-cursor table-hover">
       <thead>
         <tr>
-          <th class="checkbox-icon-width"></th>
-          <th translate>UTILS.NAME</th>
+          <th class="manager-checkbox-icon-width"></th>
+          <th translate>MANAGER.USER_ACCOUNT</th>
+          <th class="size-width" translate>MANAGER.USER_ROLE</th>
+          <th class="hide show-gt-sm time-title-width" translate>MANAGER.USER_REGISTER_TIME</th>
         </tr>
       </thead>
     </table>
     <md-list class="list">
       <md-list-item
         aria-label="Click a file"
-        ng-repeat="f in file.data"
+        ng-repeat="f in list.data"
         ng-class="{ checked: f.checked }"
-        ng-click="file.clickFile(f)"
-        ng-Dblclick="file.doubleClick(f)"
+        ng-click="list.clickFile(f)"
+        ng-Dblclick="list.doubleClick(f)"
       >
         <md-checkbox
           class="md-secondary"
           ng-checked="f.checked"
-          ng-click="file.selectFile(f)"
+          ng-click="list.selectAccount(f)"
         ></md-checkbox>
-          <md-icon ng-bind="f.icon"></md-icon>
           <p class="break-word flex-grow">
             <span ng-bind="f.name"></span>
+          </p>
+          <p class="flex-none">
+            <span
+              class="size-width inline-block"
+              ng-bind="f.role"
+            ></span>
+          </p>
+          <p class="flex-none" hide show-gt-sm>
+            <span
+              class="time-width inline-block"
+              ng-bind="(f.created_at | date: 'yyyy-MM-dd')"
+            ></span>
           </p>
       </md-list-item>
     </md-list>
@@ -35,7 +48,7 @@
   <div
     class="progress-state"
     layout="column" layout-align="center center"
-    ng-if="file.requesting"
+    ng-if="list.requesting"
   >
     <md-progress-circular md-mode="indeterminate" md-diameter="70"></md-progress-circular>
     <div class="md-headline" translate>UTILS.LOADING</div>
@@ -44,15 +57,15 @@
   <div
     class="empty-state"
     layout="column" layout-align="center center"
-    ng-if="! file.data.length && ! file.requesting && ! file.error"
+    ng-if="! list.data.length && ! list.requesting && ! list.error"
   >
-    <div class="md-headline" translate="FILE.EMPTY_{{ file.level }}"></div>
+    <div class="md-headline" translate="FILE.EMPTY_{{ list.level }}"></div>
     <div class="md-subhead" translate>FILE.DO_ACTIONS</div>
 
     <div layout="row" layout-align="center center">
       <md-button
         class="md-raised md-primary" aria-label="Upload File"
-        ng-click="file.upload()"
+        ng-click="list.upload()"
       >
         <md-icon>file_upload</md-icon>
         <span translate>FILE.UPLOAD</span>
@@ -62,7 +75,7 @@
 
       <md-button
         class="md-raised" aria-label="Create Folder"
-        ng-click="file.createFolder()"
+        ng-click="list.createFolder()"
       >
         <md-icon class="material-icons">create_new_folder</md-icon>
         <span translate>FILE.CREATE_FOLDER</span>
@@ -73,14 +86,14 @@
   <div
     class="load-fail-state"
     layout="column" layout-align="center center"
-    ng-if="file.error && ! file.requesting"
+    ng-if="list.error && ! list.requesting"
   >
     <div class="md-headline">BUCKET.ERROR_MESSAGE</div>
     <div class="md-subhead">BUCKET.REFRESH_MESSAGE</div>
 
     <md-button
       class="md-icon-button" aria-label="Refresh"
-      ng-click="file.refresh()"
+      ng-click="list.refresh()"
     >
       <md-icon class="icon-default">refresh</md-icon>
     </md-button>

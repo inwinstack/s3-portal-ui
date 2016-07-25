@@ -123,4 +123,12 @@ export default {
     RENAME_SUCCESS: '档案 {{ fileName }} 重新命名成功',
     RENAME_FAILURE: '档案 {{ fileName }} 重新命名失败，请再试一次!',
   },
+  MANAGER: {
+    USER_LIST: '使用者列表',
+    CREATE_USER: '新增使用者',
+    USER_DELETE: '删除使用者',
+    USER_ACCOUNT: '账号',
+    USER_ROLE: '权限',
+    USER_REGISTER_TIME: '注册时间',
+  },
 };
