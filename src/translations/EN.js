@@ -138,6 +138,7 @@ export default {
   },
   MANAGER: {
     USER_LIST: 'User List',
+    SEARCH: 'Search',
     CREATE_USER: 'Create Account',
     USER_DELETE: 'Delete Account',
     USER_ACCOUNT: 'Account',

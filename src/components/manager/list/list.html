@@ -1,4 +1,12 @@
 <md-content layout-padding>
+    <md-input-container flex-gt-sm>
+      <label translate>MANAGER.SEARCH</label>
+      <input 
+        name="searchText" 
+        ng-model="list.searchText"
+        ng-model-options='{ debounce: 500 }'
+      />
+    </md-input-container>
   <div
     class="md-whiteframe-4dp"
     ng-if="list.data.length && ! list.requesting && ! list.error"
@@ -16,7 +24,7 @@
     <md-list class="list">
       <md-list-item
         aria-label="Click a file"
-        ng-repeat="f in list.data"
+        ng-repeat="f in list.data | filter:list.searchText"
         ng-class="{ checked: f.checked }"
         ng-click="list.clickFile(f)"
         ng-Dblclick="list.doubleClick(f)"
