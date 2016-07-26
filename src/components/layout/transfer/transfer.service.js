@@ -140,12 +140,16 @@ export default class TransferService {
   }
 
   abortUploading(transfering) {
+    const { name } = transfering;
     this.state.transfers.forEach(trans => {
       if (trans.id == transfering.id) {
         trans.cancel = true;
       }
     });
-    transfering.upload.abort()
-    console.log(this.state.transfers);
+    transfering.upload.abort();
+    this.$translate("TOAST.CANCEL_UPLOAD", { name })
+    .then(message => {
+      this.$toast.show(message);
+    })
   }
 }

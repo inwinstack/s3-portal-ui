@@ -57,9 +57,9 @@ export default class TransferController {
 
   abortConfirm($event, transfering) {
     const sources = [
-      'FILE.DELETE_TITLE',
-      'FILE.DELETE_DESCRIPTION',
-      'FILE.DELETE_ARIA_LABEL',
+      'TRANSFER.TITLE.CANCEL',
+      'TRANSFER.CANCEL_DESCRIPTION',
+      'TRANSFER.CANCEL_ARIA_LABEL',
       'UTILS.DELETE',
       'UTILS.CANCEL',
     ];
