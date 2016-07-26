@@ -67,7 +67,7 @@ describe('File Properties',() => {
   describe('When user selects the folder and clicks properties : ', () => {
     beforeEach(() => {
       // be.bucketList.first().click();
-      browser.actions().doubleClick(be.bucketList.first()).perform();      browser.actions().doubleClick(fo.folderList.first()).perform();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       fo.createFolderBtn.first().click();
       fo.createFolderInput.clear();
       fo.createFolderInput.sendKeys(env.folderName);
@@ -87,7 +87,7 @@ describe('File Properties',() => {
   describe('When user selects the files and clicks properties : ', () => {
     beforeEach(() => {
       // be.bucketList.first().click();
-      browser.actions().doubleClick(be.bucketList.first()).perform();      browser.actions().doubleClick(fo.folderList.first()).perform();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       browser.actions().doubleClick(fo.folderList.first()).perform();
       fe.uploadBtn.click();
       fe.selectUploadFile.sendKeys(env.smallImgPath1 + env.smallImgName1);
@@ -108,7 +108,8 @@ describe('File Properties',() => {
   describe('When user selects the files and clicks properties : ', () => {
     beforeEach(() => {
       // be.bucketList.first().click();
-      browser.actions().doubleClick(be.bucketList.first()).perform();      browser.actions().doubleClick(fo.folderList.first()).perform();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
+      browser.actions().doubleClick(fo.folderList.first()).perform();
       fe.uploadBtn.click();
       fe.selectUploadFile.sendKeys(env.smallImgPath1 + env.smallImgName1);
       fe.checkUploadBtn.click();
