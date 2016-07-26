@@ -89,6 +89,8 @@ export default {
     SIGN_IN_INCORRECT: 'Your email or password was incorrect. Please try again.',
   },
   TRANSFER: {
+    CANCEL: 'Cancel',
+    CANCELED: 'Transfer Canceled',
     AUTO_CLEAR: 'Automatically clear finished transfers',
     TITLE: {
       UPLOAD: 'Upload {{ name }} to {{ bucket }}',

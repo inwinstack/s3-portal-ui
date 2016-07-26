@@ -91,6 +91,10 @@ export default class TransferService {
       status: 'FAILED',
       message: statusText,
     };
+    if (this.state.transfers[i].cancel) {
+      this.updateProcessStatus();
+      return;
+    }
     this.$translate("TOAST.UPLOAD_FILE_FAILURE", { name })
     .then(message => {
       this.$toast.show(message);
@@ -133,5 +137,15 @@ export default class TransferService {
     this.state.processing = ! this.state.transfers.every(
       transfer => transfer.status !== 'UPLOADING' && transfer.status !== 'RESUMING'
     );
+  }
+
+  abortUploading(transfering) {
+    this.state.transfers.forEach(trans => {
+      if (trans.id == transfering.id) {
+        trans.cancel = true;
+      }
+    });
+    transfering.upload.abort()
+    console.log(this.state.transfers);
   }
 }

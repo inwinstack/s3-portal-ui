@@ -1,8 +1,8 @@
 export default class TransferController {
   /** @ngInject */
-  constructor($scope, $layout, $transfer) {
+  constructor($scope, $layout, $transfer, $translate, $mdDialog) {
     Object.assign(this, {
-      $layout, $transfer,
+      $layout, $transfer, $translate, $mdDialog,
     });
 
     $scope.$watch(
@@ -53,5 +53,27 @@ export default class TransferController {
   showInfo(t) {
     const status = ['FAILED', 'PAUSED'];
     return status.indexOf(t.status) < 0;
+  }
+
+  abortConfirm($event, transfering) {
+    const sources = [
+      'FILE.DELETE_TITLE',
+      'FILE.DELETE_DESCRIPTION',
+      'FILE.DELETE_ARIA_LABEL',
+      'UTILS.DELETE',
+      'UTILS.CANCEL',
+    ];
+
+    this.$translate(sources)
+      .then(translations => this.$mdDialog.confirm()
+        .title(translations[sources[0]])
+        .textContent(translations[sources[1]])
+        .ariaLabel(translations[sources[2]])
+        .targetEvent($event)
+        .ok(translations[sources[3]])
+        .cancel(translations[sources[4]]))
+      .then(confirm => this.$mdDialog.show(confirm)
+        .then(() => this.$transfer.abortUploading(transfering))
+      );
   }
 }

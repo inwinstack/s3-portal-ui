@@ -84,6 +84,8 @@ export default {
     SIGN_IN_INCORRECT: '你的电邮或密码不正确，请再试一次。',
   },
   TRANSFER: {
+    CANCEL: '取消',
+    CANCELED: '取消传输',
     AUTO_CLEAR: '自动清除已完成传输',
     TITLE: {
       UPLOAD: '上传 {{ name }} 至 {{ bucket }}',
