@@ -71,6 +71,7 @@ export default {
     DELETE_ACCOUNT_FAIL: '{{ name }} 刪除失敗，請再試一次!',
     RESET_SUCCESS: '{{ email }} 更改密碼成功!',
     RESET_FAIL: '{{ email }} 更改密碼失敗，請再試一次',
+    CANCEL_UPLOAD: '{{ name }} 的上傳已被取消',
   },
   AUTH: {
     EMAIL: '電子郵件',
@@ -86,10 +87,14 @@ export default {
     SIGN_IN_INCORRECT: '你的電子郵件或密碼不正確，請再試一次。',
   },
   TRANSFER: {
+    CANCEL: '取消',
+    CANCELED: '取消傳輸',
     AUTO_CLEAR: '自動清除已完成傳輸',
+    CANCEL_DESCRIPTION: '取消上傳將無法復原，你確定要這樣做嗎?',
     TITLE: {
       UPLOAD: '上傳 {{ name }} 至 {{ bucket }}',
       DELETE: '從 {{ bucket }} 刪除 {{ name }}',
+      CANCEL: '你確定要取消這項上傳嗎?'
     },
     STATUS: {
       DELETING: '刪除中',

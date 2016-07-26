@@ -69,6 +69,7 @@ export default {
     DELETE_FILE_FAILURE: '{{ name }} 删除失败,请再试一次！',
     RESET_SUCCESS: '{{ email }} 更改密码成功!',
     RESET_FAIL: '{{ email }} 更改密码失败，请再试一次',
+    CANCEL_UPLOAD: '{{ name }} 的上传已被取消',
   },
   AUTH: {
     EMAIL: '电邮',
@@ -84,10 +85,14 @@ export default {
     SIGN_IN_INCORRECT: '你的电邮或密码不正确，请再试一次。',
   },
   TRANSFER: {
+    CANCEL: '取消',
+    CANCELED: '取消传输',
     AUTO_CLEAR: '自动清除已完成传输',
+    CANCEL_DESCRIPTION: '取消上传将无法复原，你确定要这样做吗?',
     TITLE: {
       UPLOAD: '上传 {{ name }} 至 {{ bucket }}',
       DELETE: '從 {{ bucket }} 删除 {{ name }}',
+      CANCEL: '你确定要取消这项上传吗?'
     },
     STATUS: {
       DELETING: '删除中',

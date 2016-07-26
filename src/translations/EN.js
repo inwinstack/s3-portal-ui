@@ -74,6 +74,7 @@ export default {
     DELETE_ACCOUNT_FAIL: '{{ name }} Delete Fail Please Try Again!',
     RESET_SUCCESS: '{{ email }} Reset Password Success!',
     RESET_FAIL: '{{ email }} Reset Password Fail，Please Try Again!',
+    CANCEL_UPLOAD: 'Upload {{ name }} Has Been Cancel',
   },
   AUTH: {
     EMAIL: 'Email',
@@ -89,10 +90,15 @@ export default {
     SIGN_IN_INCORRECT: 'Your email or password was incorrect. Please try again.',
   },
   TRANSFER: {
+    CANCEL: 'Cancel',
+    CANCELED: 'Transfer Canceled',
     AUTO_CLEAR: 'Automatically clear finished transfers',
+    CANCEL_ARIA_LABEL: 'Cancel Object',
+    CANCEL_DESCRIPTION: 'Cancel this upload cannot be undone, Are You Sure you wanna do this?',
     TITLE: {
       UPLOAD: 'Upload {{ name }} to {{ bucket }}',
       DELETE: 'Delete {{ name }} from {{ bucket }}',
+      CANCEL: 'Would you like to cancel the selected upload?'
     },
     STATUS: {
       DELETING: 'Deleting',
