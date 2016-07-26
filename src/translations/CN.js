@@ -127,6 +127,7 @@ export default {
   },
   MANAGER: {
     USER_LIST: '使用者列表',
+    SEARCH: '搜寻',
     CREATE_USER: '新增使用者',
     USER_DELETE: '删除使用者',
     USER_ACCOUNT: '账号',
