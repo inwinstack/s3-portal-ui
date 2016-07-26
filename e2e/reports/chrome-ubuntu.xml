@@ -1,156 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
- <testsuite name="File Properties" timestamp="2016-07-26T13:45:39" hostname="localhost" time="48.625" errors="0" tests="0" skipped="0" disabled="0" failures="0">
+ <testsuite name="File Properties" timestamp="2016-07-26T15:07:49" hostname="localhost" time="28.279" errors="0" tests="0" skipped="0" disabled="0" failures="0">
  </testsuite>
- <testsuite name="File Properties.When user selects the bucketList and clicks properties : " timestamp="2016-07-26T13:45:39" hostname="localhost" time="12.424" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Properties.When user selects the bucketList and clicks properties : " name="Should check whether the properties page" time="12.423" />
+ <testsuite name="File Properties.When user selects the bucketList and clicks properties : " timestamp="2016-07-26T15:07:49" hostname="localhost" time="11.889" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Properties.When user selects the bucketList and clicks properties : " name="Should check whether the properties page" time="11.889" />
  </testsuite>
- <testsuite name="File Properties.When user selects the bucketList and clicks other properties : " timestamp="2016-07-26T13:45:52" hostname="localhost" time="2.286" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Properties.When user selects the bucketList and clicks other properties : " name="Should check whether the properties page" time="2.286" />
+ <testsuite name="File Properties.When user selects the bucketList and clicks other properties : " timestamp="2016-07-26T15:08:01" hostname="localhost" time="2.52" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Properties.When user selects the bucketList and clicks other properties : " name="Should check whether the properties page" time="2.52" />
  </testsuite>
- <testsuite name="File Properties.When user into the file properties form and click [X] btn  : " timestamp="2016-07-26T13:45:54" hostname="localhost" time="2.693" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Properties.When user into the file properties form and click [X] btn  : " name="Should check the properties form is closed and properties is enabled" time="2.693" />
+ <testsuite name="File Properties.When user into the file properties form and click [X] btn  : " timestamp="2016-07-26T15:08:03" hostname="localhost" time="2.708" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Properties.When user into the file properties form and click [X] btn  : " name="Should check the properties form is closed and properties is enabled" time="2.706" />
  </testsuite>
- <testsuite name="File Properties.When user selects the folder and clicks properties : " timestamp="2016-07-26T13:45:57" hostname="localhost" time="8.641" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Properties.When user selects the folder and clicks properties : " name="Should check whether the empty folder properties" time="8.641" />
- </testsuite>
- <testsuite name="File Properties.When user selects the files and clicks properties : " timestamp="2016-07-26T13:46:05" hostname="localhost" time="8.617" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Properties.When user selects the files and clicks properties : " name="Should check whether the folder properties" time="8.617" />
- </testsuite>
- <testsuite name="File Properties.When user selects the files and clicks properties : " timestamp="2016-07-26T13:46:14" hostname="localhost" time="8.442" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Properties.When user selects the files and clicks properties : " name="Should check whether the files properties" time="8.442" />
- </testsuite>
- <testsuite name="File Properties.Clear" timestamp="2016-07-26T13:46:22" hostname="localhost" time="5.521" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Properties.Clear" name="Clear" time="5.521" />
- </testsuite>
- <testsuite name="File List" timestamp="2016-07-26T13:46:28" hostname="localhost" time="8.715" errors="0" tests="0" skipped="0" disabled="0" failures="0">
- </testsuite>
- <testsuite name="File List.When user clicks the bucket : " timestamp="2016-07-26T13:46:28" hostname="localhost" time="6.591" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File List.When user clicks the bucket : " name="Should check into the file management page" time="6.591" />
- </testsuite>
- <testsuite name="File List.When user into the file management page but do not have any of the file" timestamp="2016-07-26T13:46:35" hostname="localhost" time="2.122" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File List.When user into the file management page but do not have any of the file" name="Should check the [UPLOAD FILE] and [CREATE FOLDER] button is display and enabled and display title" time="2.122" />
- </testsuite>
- <testsuite name="Upload File" timestamp="2016-07-26T13:46:37" hostname="localhost" time="46.903" errors="0" tests="0" skipped="0" disabled="0" failures="0">
- </testsuite>
- <testsuite name="Upload File.When user into the upload file form but the list is empty : " timestamp="2016-07-26T13:46:37" hostname="localhost" time="2.766" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Upload File.When user into the upload file form but the list is empty : " name="Should check the [UPLOAD] button is disabled and the number and size of files is 0" time="2.766" />
- </testsuite>
- <testsuite name="Upload File.When user into the upload file form and click [CANCEL] btn : " timestamp="2016-07-26T13:46:39" hostname="localhost" time="3.279" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Upload File.When user into the upload file form and click [CANCEL] btn : " name="Should check the upload form is closed" time="3.279" />
- </testsuite>
- <testsuite name="Upload File.When user into the upload file form and click [X] btn : " timestamp="2016-07-26T13:46:43" hostname="localhost" time="3.49" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Upload File.When user into the upload file form and click [X] btn : " name="Should check the upload form is closed" time="3.49" />
- </testsuite>
- <testsuite name="Upload File.When user into the upload file form and the list is not empty : " timestamp="2016-07-26T13:46:46" hostname="localhost" time="2.905" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Upload File.When user into the upload file form and the list is not empty : " name="Should check the number and size of files is not 0 and the [UPLOAD] button is enabled" time="2.905" />
- </testsuite>
- <testsuite name="Upload File.When user into the upload file form and the list is not empty and click [x] button : " timestamp="2016-07-26T13:46:49" hostname="localhost" time="3.388" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Upload File.When user into the upload file form and the list is not empty and click [x] button : " name="Should check the number and size of files is not 0" time="3.388" />
- </testsuite>
- <testsuite name="Upload File.When user has selected file but upload file form off and then turned on : " timestamp="2016-07-26T13:46:53" hostname="localhost" time="4.233" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Upload File.When user has selected file but upload file form off and then turned on : " name="Should check the number and size of files is not 0" time="4.233" />
- </testsuite>
- <testsuite name="Upload File.When user successfully uploaded files : " timestamp="2016-07-26T13:46:57" hostname="localhost" time="4.169" errors="0" tests="1" skipped="0" disabled="0" failures="2">
-  <testcase classname="Upload File.When user successfully uploaded files : " name="Should check show upload success message and the file exists in the file list" time="4.169">
-   <failure type="toContain" message="Expected [  ] to contain &apos;small.png&apos;."><![CDATA[Error: Failed expectation
-    at Object.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/upload.js:111:66)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:96:23
-    at new Promise (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1043:7)
-    at controlFlowExecute (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:82:18)
-    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
-    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2697:25
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:639:7
-    at process._tickCallback (node.js:368:9)]]>
-   </failure>
-   <failure type="toContain" message="Expected [  ] to contain &apos;8.15 KB&apos;."><![CDATA[Error: Failed expectation
-    at Object.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/upload.js:112:76)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:96:23
-    at new Promise (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1043:7)
-    at controlFlowExecute (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:82:18)
-    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
-    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2697:25
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:639:7
-    at process._tickCallback (node.js:368:9)]]>
-   </failure>
-  </testcase>
- </testsuite>
- <testsuite name="Upload File.When user uploads a file name that already exists : " timestamp="2016-07-26T13:47:01" hostname="localhost" time="6.448" errors="0" tests="1" skipped="0" disabled="0" failures="2">
-  <testcase classname="Upload File.When user uploads a file name that already exists : " name="Should check the file overwrite the original file" time="6.448">
-   <failure type="toContain" message="Expected [  ] to contain &apos;small.png&apos;."><![CDATA[Error: Failed expectation
-    at Object.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/upload.js:125:66)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:96:23
-    at new Promise (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1043:7)
-    at controlFlowExecute (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:82:18)
-    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
-    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2697:25
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:639:7
-    at process._tickCallback (node.js:368:9)]]>
-   </failure>
-   <failure type="toContain" message="Expected [  ] to contain &apos;8.15 KB&apos;."><![CDATA[Error: Failed expectation
-    at Object.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/upload.js:126:76)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:96:23
-    at new Promise (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1043:7)
-    at controlFlowExecute (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:82:18)
-    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
-    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2697:25
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:639:7
-    at process._tickCallback (node.js:368:9)]]>
-   </failure>
-  </testcase>
- </testsuite>
- <testsuite name="Upload File.When user attempts to sign out but is being uploaded file : " timestamp="2016-07-26T13:47:07" hostname="localhost" time="4.819" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Upload File.When user attempts to sign out but is being uploaded file : " name="Should check whether logout confirmation" time="4.819" />
- </testsuite>
- <testsuite name="Upload File.When user attempts to sign out and clicks the [Stay] button but is being uploaded file : " timestamp="2016-07-26T13:47:12" hostname="localhost" time="5.462" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Upload File.When user attempts to sign out and clicks the [Stay] button but is being uploaded file : " name="Should check stay on the current page" time="5.46" />
- </testsuite>
- <testsuite name="Upload File.When user attempts to sign out and clicks the [Leave] button but is being uploaded file : " timestamp="2016-07-26T13:47:18" hostname="localhost" time="5.943" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Upload File.When user attempts to sign out and clicks the [Leave] button but is being uploaded file : " name="Should check back to sign in page" time="5.943" />
- </testsuite>
- <testsuite name="Upload File Status" timestamp="2016-07-26T13:47:24" hostname="localhost" time="14.999" errors="0" tests="0" skipped="0" disabled="0" failures="0">
- </testsuite>
- <testsuite name="Upload File Status.When user is uploading files : " timestamp="2016-07-26T13:47:24" hostname="localhost" time="5.632" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Upload File Status.When user is uploading files : " name="Should check whether the upload status page" time="5.632" />
- </testsuite>
- <testsuite name="Upload File Status.When user is uploading a file and open the upload status page : " timestamp="2016-07-26T13:47:29" hostname="localhost" time="4.296" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Upload File Status.When user is uploading a file and open the upload status page : " name="Should check the display upload file name and upload progress" time="4.296" />
- </testsuite>
- <testsuite name="Upload File Status.When user upload a file is completed and clicks automatically clear : " timestamp="2016-07-26T13:47:34" hostname="localhost" time="5.071" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Upload File Status.When user upload a file is completed and clicks automatically clear : " name="Should check clear file upload is complete" time="5.071" />
- </testsuite>
- <testsuite name="Download File" timestamp="2016-07-26T13:47:39" hostname="localhost" time="14.345" errors="0" tests="0" skipped="0" disabled="0" failures="0">
- </testsuite>
- <testsuite name="Download File.When user wants to download the file but not yet selected : " timestamp="2016-07-26T13:47:39" hostname="localhost" time="2.597" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Download File.When user wants to download the file but not yet selected : " name="Should check the [Download] button is disabled" time="2.597" />
- </testsuite>
- <testsuite name="Download File.When the user wants to download files but select multiple files : " timestamp="2016-07-26T13:47:41" hostname="localhost" time="8.359" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Download File.When the user wants to download files but select multiple files : " name="Should check the [Download] button is disabled" time="8.358" />
- </testsuite>
- <testsuite name="Download File.When the user wants to download the file and select a file only : " timestamp="2016-07-26T13:47:50" hostname="localhost" time="3.387" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Download File.When the user wants to download the file and select a file only : " name="Should check the [Download] button is enabled" time="3.387" />
- </testsuite>
- <testsuite name="Delete File" timestamp="2016-07-26T13:47:53" hostname="localhost" time="14.591" errors="0" tests="0" skipped="0" disabled="0" failures="0">
- </testsuite>
- <testsuite name="Delete File.When user does not select any of the file : " timestamp="2016-07-26T13:47:53" hostname="localhost" time="2.62" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Delete File.When user does not select any of the file : " name="Should check the [Delete] button is disabled" time="2.62" />
- </testsuite>
- <testsuite name="Delete File.When user selects a file to be deleted : " timestamp="2016-07-26T13:47:56" hostname="localhost" time="3.388" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Delete File.When user selects a file to be deleted : " name="Should check the [Delete] button is enabled" time="3.388" />
- </testsuite>
- <testsuite name="Delete File.When the user selects multiple files to be deleted : " timestamp="2016-07-26T13:47:59" hostname="localhost" time="4.03" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Delete File.When the user selects multiple files to be deleted : " name="Should check the [Delete] button is enabled" time="4.03" />
- </testsuite>
- <testsuite name="Delete File.When the user selects multiple files to be deleted and clicks the [Delete] : " timestamp="2016-07-26T13:48:03" hostname="localhost" time="4.553" errors="0" tests="1" skipped="0" disabled="0" failures="1">
-  <testcase classname="Delete File.When the user selects multiple files to be deleted and clicks the [Delete] : " name="Should check show delete file success message and files has been deleted" time="4.553">
-   <failure type="exception" message="Failed: No element found using locator: By(css selector, [class=&quot;ng-binding flex&quot;])"><![CDATA[NoSuchElementError: No element found using locator: By(css selector, [class="ng-binding flex"])
+ <testsuite name="File Properties.When user selects the folder and clicks properties : " timestamp="2016-07-26T15:08:06" hostname="localhost" time="1.938" errors="0" tests="1" skipped="0" disabled="0" failures="5">
+  <testcase classname="File Properties.When user selects the folder and clicks properties : " name="Should check whether the empty folder properties" time="1.938">
+   <failure type="exception" message="Failed: Index out of bound. Trying to access element at index: 0, but there are only 0 elements that match locator by.repeater(&quot;f in file.data&quot;)"><![CDATA[NoSuchElementError: Index out of bound. Trying to access element at index: 0, but there are only 0 elements that match locator by.repeater("f in file.data")
     at WebDriverError (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/error.js:27:10)
     at NoSuchElementError (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/error.js:230:10)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:662:27
+    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:248:27
     at Promise.invokeCallback_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1329:14)
     at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
     at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
@@ -159,16 +25,16 @@
     at process._tickCallback (node.js:368:9)
 Error
     at ElementArrayFinder.applyAction_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:371:27)
-    at ElementArrayFinder._this.(anonymous function) [as isDisplayed] (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:83:30)
-    at ElementFinder._this.(anonymous function) [as isDisplayed] (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:685:22)
-    at Object.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/delete.js:69:30)
+    at ElementArrayFinder._this.(anonymous function) [as getRawId] (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:83:30)
+    at ElementFinder._this.(anonymous function) [as getRawId] (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:685:22)
+    at ActionSequence.mouseMove (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/actions.js:147:44)
+    at ActionSequence.scheduleMouseAction_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/actions.js:185:14)
+    at ActionSequence.doubleClick (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/actions.js:309:17)
+    at Object.<anonymous> (/home/user/inwinStack-S3/github/s3-portal-ui/e2e/file/properties.js:70:94)
     at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:96:23
     at new Promise (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1043:7)
     at controlFlowExecute (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:82:18)
-    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
-    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2697:25
-From: Task: Run it("Should check show delete file success message and files has been deleted") in control flow
+From: Task: Run beforeEach in control flow
     at Object.<anonymous> (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:81:14)
     at attemptAsync (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1916:24)
     at QueueRunner.run (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1871:9)
@@ -181,26 +47,68 @@ From: Task: Run it("Should check show delete file success message and files has 
     at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2652:27
 From asynchronous test: 
 Error
-    at Suite.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/delete.js:66:5)
+    at Suite.<anonymous> (/home/user/inwinStack-S3/github/s3-portal-ui/e2e/file/properties.js:68:5)
     at addSpecsToSuite (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:833:25)
     at Env.describe (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:802:7)
     at jasmineInterface.describe (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3375:18)
-    at Suite.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/delete.js:58:3)
+    at Suite.<anonymous> (/home/user/inwinStack-S3/github/s3-portal-ui/e2e/file/properties.js:67:3)
     at addSpecsToSuite (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:833:25)
     at Env.describe (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:802:7)
     at jasmineInterface.describe (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3375:18)
-    at Object.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/delete.js:9:1)]]>
+    at Object.<anonymous> (/home/user/inwinStack-S3/github/s3-portal-ui/e2e/file/properties.js:11:1)]]>
+   </failure>
+   <failure type="toBe" message="Expected &apos;&apos; to be &apos;ubuntu-chrome-folder&apos;."><![CDATA[Error: Failed expectation
+    at Object.<anonymous> (/home/user/inwinStack-S3/github/s3-portal-ui/e2e/file/properties.js:79:61)
+    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:96:23
+    at new Promise (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1043:7)
+    at controlFlowExecute (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:82:18)
+    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
+    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
+    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2697:25
+    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:639:7
+    at process._tickCallback (node.js:368:9)]]>
+   </failure>
+   <failure type="toBe" message="Expected &apos;&apos; to be &apos;0 bytes&apos;."><![CDATA[Error: Failed expectation
+    at Object.<anonymous> (/home/user/inwinStack-S3/github/s3-portal-ui/e2e/file/properties.js:80:60)
+    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:96:23
+    at new Promise (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1043:7)
+    at controlFlowExecute (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:82:18)
+    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
+    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
+    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2697:25
+    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:639:7
+    at process._tickCallback (node.js:368:9)]]>
+   </failure>
+   <failure type="toBe" message="Expected &apos;&apos; to be &apos;STANDARD&apos;."><![CDATA[Error: Failed expectation
+    at Object.<anonymous> (/home/user/inwinStack-S3/github/s3-portal-ui/e2e/file/properties.js:81:60)
+    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:96:23
+    at new Promise (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1043:7)
+    at controlFlowExecute (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:82:18)
+    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
+    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
+    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2697:25
+    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:639:7
+    at process._tickCallback (node.js:368:9)]]>
+   </failure>
+   <failure type="toBe" message="Expected &apos;&apos; to be &apos;ubuntu-chrome@inwinstack.com&apos;."><![CDATA[Error: Failed expectation
+    at Object.<anonymous> (/home/user/inwinStack-S3/github/s3-portal-ui/e2e/file/properties.js:83:60)
+    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:96:23
+    at new Promise (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1043:7)
+    at controlFlowExecute (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:82:18)
+    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
+    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
+    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2697:25
+    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:639:7
+    at process._tickCallback (node.js:368:9)]]>
    </failure>
   </testcase>
  </testsuite>
- <testsuite name="File Translation" timestamp="2016-07-26T13:48:08" hostname="localhost" time="80.213" errors="0" tests="0" skipped="0" disabled="0" failures="0">
- </testsuite>
- <testsuite name="File Translation.When user into the file management page and selects the Traditional Chinese language : " timestamp="2016-07-26T13:48:08" hostname="localhost" time="3.219" errors="0" tests="1" skipped="0" disabled="0" failures="1">
-  <testcase classname="File Translation.When user into the file management page and selects the Traditional Chinese language : " name="Should check every elements using the right language" time="3.219">
-   <failure type="exception" message="Failed: No element found using locator: By(css selector, [ng-click=&quot;file.upload()&quot;])"><![CDATA[NoSuchElementError: No element found using locator: By(css selector, [ng-click="file.upload()"])
+ <testsuite name="File Properties.When user selects the files and clicks properties : " timestamp="2016-07-26T15:08:08" hostname="localhost" time="2.044" errors="0" tests="1" skipped="0" disabled="0" failures="5">
+  <testcase classname="File Properties.When user selects the files and clicks properties : " name="Should check whether the folder properties" time="2.044">
+   <failure type="exception" message="Failed: Index out of bound. Trying to access element at index: 0, but there are only 0 elements that match locator by.repeater(&quot;f in file.data&quot;)"><![CDATA[NoSuchElementError: Index out of bound. Trying to access element at index: 0, but there are only 0 elements that match locator by.repeater("f in file.data")
     at WebDriverError (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/error.js:27:10)
     at NoSuchElementError (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/error.js:230:10)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:662:27
+    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:248:27
     at Promise.invokeCallback_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1329:14)
     at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
     at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
@@ -209,16 +117,16 @@ Error
     at process._tickCallback (node.js:368:9)
 Error
     at ElementArrayFinder.applyAction_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:371:27)
-    at ElementArrayFinder._this.(anonymous function) [as getText] (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:83:30)
-    at ElementFinder._this.(anonymous function) [as getText] (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:685:22)
-    at Object.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:37:74)
+    at ElementArrayFinder._this.(anonymous function) [as getRawId] (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:83:30)
+    at ElementFinder._this.(anonymous function) [as getRawId] (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:685:22)
+    at ActionSequence.mouseMove (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/actions.js:147:44)
+    at ActionSequence.scheduleMouseAction_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/actions.js:185:14)
+    at ActionSequence.doubleClick (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/actions.js:309:17)
+    at Object.<anonymous> (/home/user/inwinStack-S3/github/s3-portal-ui/e2e/file/properties.js:90:94)
     at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:96:23
     at new Promise (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1043:7)
     at controlFlowExecute (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:82:18)
-    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
-    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2697:25
-From: Task: Run it("Should check every elements using the right language") in control flow
+From: Task: Run beforeEach in control flow
     at Object.<anonymous> (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:81:14)
     at attemptAsync (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1916:24)
     at QueueRunner.run (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1871:9)
@@ -231,22 +139,18 @@ From: Task: Run it("Should check every elements using the right language") in co
     at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2652:27
 From asynchronous test: 
 Error
-    at Suite.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:36:5)
+    at Suite.<anonymous> (/home/user/inwinStack-S3/github/s3-portal-ui/e2e/file/properties.js:88:5)
     at addSpecsToSuite (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:833:25)
     at Env.describe (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:802:7)
     at jasmineInterface.describe (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3375:18)
-    at Suite.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:30:3)
+    at Suite.<anonymous> (/home/user/inwinStack-S3/github/s3-portal-ui/e2e/file/properties.js:87:3)
     at addSpecsToSuite (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:833:25)
     at Env.describe (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:802:7)
     at jasmineInterface.describe (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3375:18)
-    at Object.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:11:1)]]>
+    at Object.<anonymous> (/home/user/inwinStack-S3/github/s3-portal-ui/e2e/file/properties.js:11:1)]]>
    </failure>
-  </testcase>
- </testsuite>
- <testsuite name="File Translation.When user into the upload file form and selects the Traditional Chinese language : " timestamp="2016-07-26T13:48:11" hostname="localhost" time="4.735" errors="0" tests="1" skipped="0" disabled="0" failures="2">
-  <testcase classname="File Translation.When user into the upload file form and selects the Traditional Chinese language : " name="Should check every elements using the right language" time="4.735">
-   <failure type="toBe" message="Expected &apos;&apos; to be &apos;檔案總數：&apos;."><![CDATA[Error: Failed expectation
-    at Object.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:59:79)
+   <failure type="toBe" message="Expected &apos;&apos; to be &apos;ubuntu-chrome-folder&apos;."><![CDATA[Error: Failed expectation
+    at Object.<anonymous> (/home/user/inwinStack-S3/github/s3-portal-ui/e2e/file/properties.js:100:61)
     at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:96:23
     at new Promise (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1043:7)
     at controlFlowExecute (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:82:18)
@@ -256,8 +160,30 @@ Error
     at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:639:7
     at process._tickCallback (node.js:368:9)]]>
    </failure>
-   <failure type="toBe" message="Expected &apos;檔案總數：&apos; to be &apos;總上傳容量大小：&apos;."><![CDATA[Error: Failed expectation
-    at Object.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:60:79)
+   <failure type="toBe" message="Expected &apos;&apos; to be &apos;8.15 KB&apos;."><![CDATA[Error: Failed expectation
+    at Object.<anonymous> (/home/user/inwinStack-S3/github/s3-portal-ui/e2e/file/properties.js:101:60)
+    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:96:23
+    at new Promise (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1043:7)
+    at controlFlowExecute (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:82:18)
+    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
+    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
+    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2697:25
+    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:639:7
+    at process._tickCallback (node.js:368:9)]]>
+   </failure>
+   <failure type="toBe" message="Expected &apos;&apos; to be &apos;STANDARD&apos;."><![CDATA[Error: Failed expectation
+    at Object.<anonymous> (/home/user/inwinStack-S3/github/s3-portal-ui/e2e/file/properties.js:102:60)
+    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:96:23
+    at new Promise (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1043:7)
+    at controlFlowExecute (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:82:18)
+    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
+    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
+    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2697:25
+    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:639:7
+    at process._tickCallback (node.js:368:9)]]>
+   </failure>
+   <failure type="toBe" message="Expected &apos;&apos; to be &apos;ubuntu-chrome@inwinstack.com&apos;."><![CDATA[Error: Failed expectation
+    at Object.<anonymous> (/home/user/inwinStack-S3/github/s3-portal-ui/e2e/file/properties.js:104:60)
     at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:96:23
     at new Promise (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1043:7)
     at controlFlowExecute (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:82:18)
@@ -269,30 +195,12 @@ Error
    </failure>
   </testcase>
  </testsuite>
- <testsuite name="File Translation.When user successfully uploaded files and selects the Traditional Chinese language : " timestamp="2016-07-26T13:48:15" hostname="localhost" time="8.908" errors="0" tests="1" skipped="0" disabled="0" failures="1">
-  <testcase classname="File Translation.When user successfully uploaded files and selects the Traditional Chinese language : " name="Should check every elements using the right language" time="8.908">
-   <failure type="toMatch" message="Expected &apos;檔案 small.png 上傳成功!&apos; to match /^.* is uploaded successfully!$/."><![CDATA[Error: Failed expectation
-    at Object.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:79:41)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:96:23
-    at new Promise (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1043:7)
-    at controlFlowExecute (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:82:18)
-    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
-    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2697:25
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:639:7
-    at process._tickCallback (node.js:368:9)]]>
-   </failure>
-  </testcase>
- </testsuite>
- <testsuite name="File Translation.When user click properties and selects the Traditional Chinese language : " timestamp="2016-07-26T13:48:24" hostname="localhost" time="3.736" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Translation.When user click properties and selects the Traditional Chinese language : " name="Should check every elements using the right language" time="3.736" />
- </testsuite>
- <testsuite name="File Translation.When user selects a file to be deleted and selects the Traditional Chinese language : " timestamp="2016-07-26T13:48:28" hostname="localhost" time="5.956" errors="0" tests="1" skipped="0" disabled="0" failures="1">
-  <testcase classname="File Translation.When user selects a file to be deleted and selects the Traditional Chinese language : " name="Should check every elements using the right language" time="5.956">
-   <failure type="exception" message="Failed: No element found using locator: By(css selector, [class=&quot;ng-binding flex&quot;])"><![CDATA[NoSuchElementError: No element found using locator: By(css selector, [class="ng-binding flex"])
+ <testsuite name="File Properties.When user selects the files and clicks properties : " timestamp="2016-07-26T15:08:10" hostname="localhost" time="2.168" errors="0" tests="1" skipped="0" disabled="0" failures="5">
+  <testcase classname="File Properties.When user selects the files and clicks properties : " name="Should check whether the files properties" time="2.167">
+   <failure type="exception" message="Failed: Index out of bound. Trying to access element at index: 0, but there are only 0 elements that match locator by.repeater(&quot;f in file.data&quot;)"><![CDATA[NoSuchElementError: Index out of bound. Trying to access element at index: 0, but there are only 0 elements that match locator by.repeater("f in file.data")
     at WebDriverError (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/error.js:27:10)
     at NoSuchElementError (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/error.js:230:10)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:662:27
+    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:248:27
     at Promise.invokeCallback_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1329:14)
     at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
     at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
@@ -301,16 +209,16 @@ Error
     at process._tickCallback (node.js:368:9)
 Error
     at ElementArrayFinder.applyAction_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:371:27)
-    at ElementArrayFinder._this.(anonymous function) [as getText] (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:83:30)
-    at ElementFinder._this.(anonymous function) [as getText] (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:685:22)
-    at Object.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:116:30)
+    at ElementArrayFinder._this.(anonymous function) [as getRawId] (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:83:30)
+    at ElementFinder._this.(anonymous function) [as getRawId] (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:685:22)
+    at ActionSequence.mouseMove (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/actions.js:147:44)
+    at ActionSequence.scheduleMouseAction_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/actions.js:185:14)
+    at ActionSequence.doubleClick (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/actions.js:309:17)
+    at Object.<anonymous> (/home/user/inwinStack-S3/github/s3-portal-ui/e2e/file/properties.js:111:94)
     at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:96:23
     at new Promise (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1043:7)
     at controlFlowExecute (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:82:18)
-    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
-    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2697:25
-From: Task: Run it("Should check every elements using the right language") in control flow
+From: Task: Run beforeEach in control flow
     at Object.<anonymous> (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:81:14)
     at attemptAsync (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1916:24)
     at QueueRunner.run (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1871:9)
@@ -323,70 +231,18 @@ From: Task: Run it("Should check every elements using the right language") in co
     at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2652:27
 From asynchronous test: 
 Error
-    at Suite.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:113:5)
+    at Suite.<anonymous> (/home/user/inwinStack-S3/github/s3-portal-ui/e2e/file/properties.js:109:5)
     at addSpecsToSuite (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:833:25)
     at Env.describe (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:802:7)
     at jasmineInterface.describe (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3375:18)
-    at Suite.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:104:3)
+    at Suite.<anonymous> (/home/user/inwinStack-S3/github/s3-portal-ui/e2e/file/properties.js:108:3)
     at addSpecsToSuite (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:833:25)
     at Env.describe (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:802:7)
     at jasmineInterface.describe (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3375:18)
-    at Object.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:11:1)]]>
+    at Object.<anonymous> (/home/user/inwinStack-S3/github/s3-portal-ui/e2e/file/properties.js:11:1)]]>
    </failure>
-  </testcase>
- </testsuite>
- <testsuite name="File Translation.When user into the file management page and selects the Simplified Chinese language : " timestamp="2016-07-26T13:48:34" hostname="localhost" time="3.343" errors="0" tests="1" skipped="0" disabled="0" failures="1">
-  <testcase classname="File Translation.When user into the file management page and selects the Simplified Chinese language : " name="Should check every elements using the right language" time="3.343">
-   <failure type="exception" message="Failed: No element found using locator: By(css selector, [ng-click=&quot;file.upload()&quot;])"><![CDATA[NoSuchElementError: No element found using locator: By(css selector, [ng-click="file.upload()"])
-    at WebDriverError (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/error.js:27:10)
-    at NoSuchElementError (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/error.js:230:10)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:662:27
-    at Promise.invokeCallback_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1329:14)
-    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
-    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2652:27
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:639:7
-    at process._tickCallback (node.js:368:9)
-Error
-    at ElementArrayFinder.applyAction_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:371:27)
-    at ElementArrayFinder._this.(anonymous function) [as getText] (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:83:30)
-    at ElementFinder._this.(anonymous function) [as getText] (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:685:22)
-    at Object.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:129:74)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:96:23
-    at new Promise (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1043:7)
-    at controlFlowExecute (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:82:18)
-    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
-    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2697:25
-From: Task: Run it("Should check every elements using the right language") in control flow
-    at Object.<anonymous> (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:81:14)
-    at attemptAsync (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1916:24)
-    at QueueRunner.run (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1871:9)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1898:16
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1842:9
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:18:5
-    at Promise.invokeCallback_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1329:14)
-    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
-    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2652:27
-From asynchronous test: 
-Error
-    at Suite.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:128:5)
-    at addSpecsToSuite (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:833:25)
-    at Env.describe (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:802:7)
-    at jasmineInterface.describe (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3375:18)
-    at Suite.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:122:3)
-    at addSpecsToSuite (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:833:25)
-    at Env.describe (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:802:7)
-    at jasmineInterface.describe (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3375:18)
-    at Object.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:11:1)]]>
-   </failure>
-  </testcase>
- </testsuite>
- <testsuite name="File Translation.When user into the upload file form and selects the Simplified Chinese language : " timestamp="2016-07-26T13:48:37" hostname="localhost" time="4.687" errors="0" tests="1" skipped="0" disabled="0" failures="2">
-  <testcase classname="File Translation.When user into the upload file form and selects the Simplified Chinese language : " name="Should check every elements using the right language" time="4.685">
-   <failure type="toBe" message="Expected &apos;&apos; to be &apos;档案总数：&apos;."><![CDATA[Error: Failed expectation
-    at Object.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:151:79)
+   <failure type="toBe" message="Expected &apos;&apos; to be &apos;small.png&apos;."><![CDATA[Error: Failed expectation
+    at Object.<anonymous> (/home/user/inwinStack-S3/github/s3-portal-ui/e2e/file/properties.js:119:61)
     at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:96:23
     at new Promise (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1043:7)
     at controlFlowExecute (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:82:18)
@@ -396,8 +252,30 @@ Error
     at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:639:7
     at process._tickCallback (node.js:368:9)]]>
    </failure>
-   <failure type="toBe" message="Expected &apos;档案总数：&apos; to be &apos;总上传容量大小：&apos;."><![CDATA[Error: Failed expectation
-    at Object.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:152:79)
+   <failure type="toBe" message="Expected &apos;&apos; to be &apos;8.15 KB&apos;."><![CDATA[Error: Failed expectation
+    at Object.<anonymous> (/home/user/inwinStack-S3/github/s3-portal-ui/e2e/file/properties.js:120:60)
+    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:96:23
+    at new Promise (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1043:7)
+    at controlFlowExecute (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:82:18)
+    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
+    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
+    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2697:25
+    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:639:7
+    at process._tickCallback (node.js:368:9)]]>
+   </failure>
+   <failure type="toBe" message="Expected &apos;&apos; to be &apos;STANDARD&apos;."><![CDATA[Error: Failed expectation
+    at Object.<anonymous> (/home/user/inwinStack-S3/github/s3-portal-ui/e2e/file/properties.js:121:60)
+    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:96:23
+    at new Promise (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1043:7)
+    at controlFlowExecute (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:82:18)
+    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
+    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
+    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2697:25
+    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:639:7
+    at process._tickCallback (node.js:368:9)]]>
+   </failure>
+   <failure type="toBe" message="Expected &apos;&apos; to be &apos;ubuntu-chrome@inwinstack.com&apos;."><![CDATA[Error: Failed expectation
+    at Object.<anonymous> (/home/user/inwinStack-S3/github/s3-portal-ui/e2e/file/properties.js:123:60)
     at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:96:23
     at new Promise (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1043:7)
     at controlFlowExecute (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:82:18)
@@ -409,259 +287,7 @@ Error
    </failure>
   </testcase>
  </testsuite>
- <testsuite name="File Translation.When user successfully uploaded files and selects the Simplified Chinese language : " timestamp="2016-07-26T13:48:42" hostname="localhost" time="8.878" errors="0" tests="1" skipped="0" disabled="0" failures="1">
-  <testcase classname="File Translation.When user successfully uploaded files and selects the Simplified Chinese language : " name="Should check every elements using the right language" time="8.878">
-   <failure type="toMatch" message="Expected &apos;档案 small.png 上传成功!&apos; to match /^.* is uploaded successfully!$/."><![CDATA[Error: Failed expectation
-    at Object.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:171:41)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:96:23
-    at new Promise (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1043:7)
-    at controlFlowExecute (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:82:18)
-    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
-    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2697:25
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:639:7
-    at process._tickCallback (node.js:368:9)]]>
-   </failure>
-  </testcase>
- </testsuite>
- <testsuite name="File Translation.When user click properties and selects the Simplified Chinese language : " timestamp="2016-07-26T13:48:51" hostname="localhost" time="3.643" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Translation.When user click properties and selects the Simplified Chinese language : " name="Should check every elements using the right language" time="3.643" />
- </testsuite>
- <testsuite name="File Translation.When user selects a file to be deleted and selects the Simplified Chinese language : " timestamp="2016-07-26T13:48:55" hostname="localhost" time="6.045" errors="0" tests="1" skipped="0" disabled="0" failures="1">
-  <testcase classname="File Translation.When user selects a file to be deleted and selects the Simplified Chinese language : " name="Should check every elements using the right language" time="6.045">
-   <failure type="exception" message="Failed: No element found using locator: By(css selector, [class=&quot;ng-binding flex&quot;])"><![CDATA[NoSuchElementError: No element found using locator: By(css selector, [class="ng-binding flex"])
-    at WebDriverError (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/error.js:27:10)
-    at NoSuchElementError (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/error.js:230:10)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:662:27
-    at Promise.invokeCallback_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1329:14)
-    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
-    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2652:27
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:639:7
-    at process._tickCallback (node.js:368:9)
-Error
-    at ElementArrayFinder.applyAction_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:371:27)
-    at ElementArrayFinder._this.(anonymous function) [as getText] (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:83:30)
-    at ElementFinder._this.(anonymous function) [as getText] (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:685:22)
-    at Object.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:208:30)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:96:23
-    at new Promise (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1043:7)
-    at controlFlowExecute (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:82:18)
-    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
-    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2697:25
-From: Task: Run it("Should check every elements using the right language") in control flow
-    at Object.<anonymous> (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:81:14)
-    at attemptAsync (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1916:24)
-    at QueueRunner.run (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1871:9)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1898:16
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1842:9
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:18:5
-    at Promise.invokeCallback_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1329:14)
-    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
-    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2652:27
-From asynchronous test: 
-Error
-    at Suite.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:205:5)
-    at addSpecsToSuite (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:833:25)
-    at Env.describe (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:802:7)
-    at jasmineInterface.describe (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3375:18)
-    at Suite.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:196:3)
-    at addSpecsToSuite (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:833:25)
-    at Env.describe (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:802:7)
-    at jasmineInterface.describe (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3375:18)
-    at Object.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:11:1)]]>
-   </failure>
-  </testcase>
- </testsuite>
- <testsuite name="File Translation.When user into the file management page and selects the English language : " timestamp="2016-07-26T13:49:01" hostname="localhost" time="3.51" errors="0" tests="1" skipped="0" disabled="0" failures="1">
-  <testcase classname="File Translation.When user into the file management page and selects the English language : " name="Should check every elements using the right language" time="3.51">
-   <failure type="exception" message="Failed: No element found using locator: By(css selector, [ng-click=&quot;file.upload()&quot;])"><![CDATA[NoSuchElementError: No element found using locator: By(css selector, [ng-click="file.upload()"])
-    at WebDriverError (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/error.js:27:10)
-    at NoSuchElementError (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/error.js:230:10)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:662:27
-    at Promise.invokeCallback_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1329:14)
-    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
-    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2652:27
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:639:7
-    at process._tickCallback (node.js:368:9)
-Error
-    at ElementArrayFinder.applyAction_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:371:27)
-    at ElementArrayFinder._this.(anonymous function) [as getText] (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:83:30)
-    at ElementFinder._this.(anonymous function) [as getText] (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:685:22)
-    at Object.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:221:74)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:96:23
-    at new Promise (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1043:7)
-    at controlFlowExecute (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:82:18)
-    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
-    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2697:25
-From: Task: Run it("Should check every elements using the right language") in control flow
-    at Object.<anonymous> (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:81:14)
-    at attemptAsync (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1916:24)
-    at QueueRunner.run (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1871:9)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1898:16
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1842:9
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:18:5
-    at Promise.invokeCallback_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1329:14)
-    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
-    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2652:27
-From asynchronous test: 
-Error
-    at Suite.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:220:5)
-    at addSpecsToSuite (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:833:25)
-    at Env.describe (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:802:7)
-    at jasmineInterface.describe (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3375:18)
-    at Suite.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:214:3)
-    at addSpecsToSuite (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:833:25)
-    at Env.describe (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:802:7)
-    at jasmineInterface.describe (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3375:18)
-    at Object.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:11:1)]]>
-   </failure>
-  </testcase>
- </testsuite>
- <testsuite name="File Translation.When user into the upload file form and selects the English language : " timestamp="2016-07-26T13:49:04" hostname="localhost" time="4.698" errors="0" tests="1" skipped="0" disabled="0" failures="2">
-  <testcase classname="File Translation.When user into the upload file form and selects the English language : " name="Should check every elements using the right language" time="4.698">
-   <failure type="toBe" message="Expected &apos;&apos; to be &apos;Number of files:&apos;."><![CDATA[Error: Failed expectation
-    at Object.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:243:79)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:96:23
-    at new Promise (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1043:7)
-    at controlFlowExecute (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:82:18)
-    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
-    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2697:25
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:639:7
-    at process._tickCallback (node.js:368:9)]]>
-   </failure>
-   <failure type="toBe" message="Expected &apos;Number of files:&apos; to be &apos;Total upload size:&apos;."><![CDATA[Error: Failed expectation
-    at Object.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:244:79)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:96:23
-    at new Promise (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1043:7)
-    at controlFlowExecute (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:82:18)
-    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
-    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2697:25
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:639:7
-    at process._tickCallback (node.js:368:9)]]>
-   </failure>
-  </testcase>
- </testsuite>
- <testsuite name="File Translation.When user successfully uploaded files and selects the English language : " timestamp="2016-07-26T13:49:09" hostname="localhost" time="9.025" errors="0" tests="1" skipped="0" disabled="0" failures="1">
-  <testcase classname="File Translation.When user successfully uploaded files and selects the English language : " name="Should check every elements using the right language" time="9.025">
-   <failure type="toMatch" message="Expected &apos;File small.png Upload Success!&apos; to match /^.* is uploaded successfully!$/."><![CDATA[Error: Failed expectation
-    at Object.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:263:41)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:96:23
-    at new Promise (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1043:7)
-    at controlFlowExecute (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:82:18)
-    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
-    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2697:25
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:639:7
-    at process._tickCallback (node.js:368:9)]]>
-   </failure>
-  </testcase>
- </testsuite>
- <testsuite name="File Translation.When user click properties and selects the English language : " timestamp="2016-07-26T13:49:18" hostname="localhost" time="3.87" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Translation.When user click properties and selects the English language : " name="Should check every elements using the right language" time="3.87" />
- </testsuite>
- <testsuite name="File Translation.When user selects a file to be deleted and selects the English language : " timestamp="2016-07-26T13:49:22" hostname="localhost" time="5.96" errors="0" tests="1" skipped="0" disabled="0" failures="1">
-  <testcase classname="File Translation.When user selects a file to be deleted and selects the English language : " name="Should check every elements using the right language" time="5.96">
-   <failure type="exception" message="Failed: No element found using locator: By(css selector, [class=&quot;ng-binding flex&quot;])"><![CDATA[NoSuchElementError: No element found using locator: By(css selector, [class="ng-binding flex"])
-    at WebDriverError (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/error.js:27:10)
-    at NoSuchElementError (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/error.js:230:10)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:662:27
-    at Promise.invokeCallback_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1329:14)
-    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
-    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2652:27
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:639:7
-    at process._tickCallback (node.js:368:9)
-Error
-    at ElementArrayFinder.applyAction_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:371:27)
-    at ElementArrayFinder._this.(anonymous function) [as getText] (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:83:30)
-    at ElementFinder._this.(anonymous function) [as getText] (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/built/element.js:685:22)
-    at Object.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:300:30)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:96:23
-    at new Promise (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1043:7)
-    at controlFlowExecute (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:82:18)
-    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
-    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2697:25
-From: Task: Run it("Should check every elements using the right language") in control flow
-    at Object.<anonymous> (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:81:14)
-    at attemptAsync (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1916:24)
-    at QueueRunner.run (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1871:9)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1898:16
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1842:9
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:18:5
-    at Promise.invokeCallback_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1329:14)
-    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
-    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2652:27
-From asynchronous test: 
-Error
-    at Suite.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:297:5)
-    at addSpecsToSuite (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:833:25)
-    at Env.describe (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:802:7)
-    at jasmineInterface.describe (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3375:18)
-    at Suite.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:288:3)
-    at addSpecsToSuite (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:833:25)
-    at Env.describe (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:802:7)
-    at jasmineInterface.describe (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:3375:18)
-    at Object.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/file/translation.js:11:1)]]>
-   </failure>
-  </testcase>
- </testsuite>
- <testsuite name="Create Folder" timestamp="2016-07-26T13:49:28" hostname="localhost" time="25.167" errors="0" tests="0" skipped="0" disabled="0" failures="0">
- </testsuite>
- <testsuite name="Create Folder.When user clicks the [Create folder] button : " timestamp="2016-07-26T13:49:28" hostname="localhost" time="2.468" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Create Folder.When user clicks the [Create folder] button : " name="Should check the display to create folder form" time="2.468" />
- </testsuite>
- <testsuite name="Create Folder.When user clicks the [Action] and select the [Create folder] button : " timestamp="2016-07-26T13:49:30" hostname="localhost" time="3.408" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Create Folder.When user clicks the [Action] and select the [Create folder] button : " name="Should check the display to create folder form" time="3.407" />
- </testsuite>
- <testsuite name="Create Folder.When user opens the form create a folder : " timestamp="2016-07-26T13:49:34" hostname="localhost" time="2.583" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Create Folder.When user opens the form create a folder : " name="Should check the [Create] is enabled" time="2.583" />
- </testsuite>
- <testsuite name="Create Folder.When user opens the form create a folder and clicks the [Cancel] button : " timestamp="2016-07-26T13:49:36" hostname="localhost" time="3.43" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Create Folder.When user opens the form create a folder and clicks the [Cancel] button : " name="Should check create folders form has been closed" time="3.43" />
- </testsuite>
- <testsuite name="Create Folder.When user opens the form create a folder and clicks the [x] button : " timestamp="2016-07-26T13:49:40" hostname="localhost" time="3.145" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Create Folder.When user opens the form create a folder and clicks the [x] button : " name="Should check create folders form has been closed" time="3.145" />
- </testsuite>
- <testsuite name="Create Folder.When user inputs a name for the folder does not exist and clicks the [Create] button : " timestamp="2016-07-26T13:49:43" hostname="localhost" time="6.546" errors="0" tests="1" skipped="0" disabled="0" failures="1">
-  <testcase classname="Create Folder.When user inputs a name for the folder does not exist and clicks the [Create] button : " name="Should check show create folder success message and the folder name exists in the list" time="6.545">
-   <failure type="toContain" message="Expected [  ] to contain &apos;ubuntu-chrome-folder&apos;."><![CDATA[Error: Failed expectation
-    at Object.<anonymous> (/home/user/inwinStack-S3/gitlab/s3-portal-ui/e2e/folder/create.js:92:68)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:96:23
-    at new Promise (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1043:7)
-    at controlFlowExecute (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasminewd2/index.js:82:18)
-    at TaskQueue.execute_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2790:14)
-    at TaskQueue.executeNext_ (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2773:21)
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2697:25
-    at /home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:639:7
-    at process._tickCallback (node.js:368:9)]]>
-   </failure>
-  </testcase>
- </testsuite>
- <testsuite name="Create Folder.When user has to create a new folder : " timestamp="2016-07-26T13:49:49" hostname="localhost" time="3.587" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Create Folder.When user has to create a new folder : " name="Should check sort situation" time="3.587" />
- </testsuite>
- <testsuite name="Folder Translation" timestamp="2016-07-26T13:49:53" hostname="localhost" time="17.352" errors="0" tests="0" skipped="0" disabled="0" failures="0">
- </testsuite>
- <testsuite name="Folder Translation.When user opens the create folder form and selects the Traditional Chinese language: " timestamp="2016-07-26T13:49:53" hostname="localhost" time="4.482" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Folder Translation.When user opens the create folder form and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="4.482" />
- </testsuite>
- <testsuite name="Folder Translation.When user opens the create folder form and selects the Simplified Chinese language: " timestamp="2016-07-26T13:49:57" hostname="localhost" time="4.509" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Folder Translation.When user opens the create folder form and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="4.509" />
- </testsuite>
- <testsuite name="Folder Translation.When user opens the create folder form and selects the English language: " timestamp="2016-07-26T13:50:02" hostname="localhost" time="4.45" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Folder Translation.When user opens the create folder form and selects the English language: " name="Should check every elements using the right language" time="4.45" />
- </testsuite>
- <testsuite name="Folder Translation.Clear" timestamp="2016-07-26T13:50:06" hostname="localhost" time="3.911" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Folder Translation.Clear" name="Clear" time="3.91" />
+ <testsuite name="File Properties.Clear" timestamp="2016-07-26T15:08:12" hostname="localhost" time="5.01" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Properties.Clear" name="Clear" time="5.01" />
  </testsuite>
 </testsuites>
