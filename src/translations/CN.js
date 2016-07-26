@@ -67,6 +67,8 @@ export default {
     UPLOAD_FILE_FAILURE: '档案 {{ name }} 上传失败，请再试一次!',
     DELETE_FILE_SUCCESS: '{{ name }} 删除成功！',
     DELETE_FILE_FAILURE: '{{ name }} 删除失败,请再试一次！',
+    RESET_SUCCESS: '{{ email }} 更改密码成功!',
+    RESET_FAIL: '{{ email }} 更改密码失败，请再试一次',
   },
   AUTH: {
     EMAIL: '电邮',
@@ -130,6 +132,7 @@ export default {
     USER_ACCOUNT: '账号',
     USER_ROLE: '权限',
     USER_REGISTER_TIME: '注册时间',
+    USER_RESET: '重新设定密码',
     EMAIL:'使用者 Email',
     DELETE_TYPE_NAME: '请输入 Email 以确认删除。',
     DELETE_ERROR_MESSAGE: '请输入欲删除的完整 Email。',

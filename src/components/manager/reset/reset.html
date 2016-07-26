@@ -1,0 +1,108 @@
+<md-dialog class="input-dialog" aria-label="Create Account Dialog">
+  <form name="reset.form">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2 translate>MANAGER.CREATE_USER</h2>
+        <span flex></span>
+
+        <md-button
+          class="md-icon-button" aria-label="Close Create Account Dialog"
+          ng-click="reset.cancel()"
+        >
+          <md-icon class="material-icons">clear</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content> 
+      <div class="md-dialog-content">
+        <md-input-container md-no-float ng-class="{'md-icon-right':create.emailIsValid}" class="md-icon-left md-block">
+          <md-icon class="icon-default" ng-class="{'md-warn': create.emailIsInvalid}">email</md-icon>
+          <md-progress-circular
+            class="md-accent" md-mode="indeterminate"
+            md-diameter="24" ng-show="create.isCheckEmail"
+          ></md-progress-circular>
+
+          <input
+            type="email" name="email" required email
+            placeholder="{{ 'AUTH.EMAIL' | translate }}"
+            ng-model="reset.resetAccount[0].name"
+            ng-model-options='{ debounce: 500 }'
+            ng-readonly="true"
+          >
+
+          <md-icon class="icon-success" ng-if="create.emailIsValid">done</md-icon>
+
+          <span
+            class="md-caption text-warn"
+            ng-show="create.emailIsInvalid && create.showEmailCheckedMessage"
+            translate
+          >AUTH.ALREADY_EXIST</span>
+
+          <div
+            ng-messages="create.form.email.$error"
+            ng-if="create.form.email.$touched"
+          >
+            <div ng-messages-include="messages.html"></div>
+          </div>
+        </md-input-container>
+
+        <md-input-container md-no-float class="md-icon-left md-block">
+          <md-icon class="icon-default">lock</md-icon>
+
+          <input
+            name="password" type="password"
+            placeholder="{{ 'AUTH.PASSWORD' | translate }}"
+            required minlength="6"
+            ng-model="reset.password"
+            ng-readonly="reset.form.$submitted"
+          >
+
+          <div
+            ng-messages="reset.form.password.$error"
+            ng-if="reset.form.password.$touched"
+          >
+            <div ng-messages-include="messages.html">
+              <i ng-init="minlength=6"></i>
+            </div>
+          </div>
+        </md-input-container>
+
+        <md-input-container md-no-float class="md-icon-left md-block">
+          <md-icon class="icon-default">lock</md-icon>
+
+          <input
+            name="password_confirmation" type="password"
+            placeholder="{{ 'AUTH.RETYPE_PASSWORD' | translate }}"
+            required match="reset.password"
+            ng-model="reset.password_confirmation"
+            ng-readonly="reset.form.$submitted"
+          >
+
+          <div
+            ng-messages="reset.form.password_confirmation.$error"
+            ng-if="reset.form.password_confirmation.$touched"
+          >
+            <div ng-messages-include="messages.html"></div>
+          </div>
+        </md-input-container>
+      </div>
+    </md-dialog-content>
+  <md-dialog-actions layout="row">
+      <md-button aria-label="Cancel" ng-click="reset.cancel()">
+        <span translate>UTILS.CANCEL</span>
+      </md-button>
+
+      <md-button
+        ng-click="reset.submit()" type="submit"
+        aria-label="Create" class="md-primary"
+        ng-disabled="reset.form.$invalid || reset.form.$submitted"
+      >
+        <span translate>UTILS.CREATE</span>
+        <md-progress-circular
+          class="md-primary" md-mode="indeterminate"
+          md-diameter="30" ng-show="reset.form.$submitted"
+        ></md-progress-circular>
+      </md-button>
+    </md-dialog-actions>
+  </form> 
+</md-dialog>

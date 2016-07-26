@@ -8,7 +8,7 @@ export default class ActionNavbarController {
     $scope.$watch(
       () => $manager.state.lists,
       newVal => Object.assign(this, {
-        showDelete: newVal.data.filter(({ checked }) => checked).length == 1,
+        selectedOne: newVal.data.filter(({ checked }) => checked).length == 1,
       })
     , true);
   }
@@ -23,5 +23,9 @@ export default class ActionNavbarController {
 
   delete() {
     this.$manager.deleteDialog();
+  }
+
+  reset() {
+    this.$manager.resetDialog();
   }
 }
