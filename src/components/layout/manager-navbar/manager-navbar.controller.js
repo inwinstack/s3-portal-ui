@@ -4,6 +4,13 @@ export default class ActionNavbarController {
     Object.assign(this, {
       $manager,
     });
+
+    $scope.$watch(
+      () => $manager.state.lists,
+      newVal => Object.assign(this, {
+        showDelete: newVal.data.filter(({ checked }) => checked).length == 1,
+      })
+    , true);
   }
 
   createAccountDialog($event) {
@@ -12,5 +19,9 @@ export default class ActionNavbarController {
 
   refresh() {
     this.$manager.getAccounts();
+  }
+
+  delete() {
+    this.$manager.deleteDialog();
   }
 }

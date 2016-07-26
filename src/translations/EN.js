@@ -70,6 +70,8 @@ export default {
     UPLOAD_FILE_FAILURE: 'File {{ name }} Upload Fail Please Try Again!',
     DELETE_FILE_SUCCESS: '{{ name }} Delete Success！',
     DELETE_FILE_FAILURE: '{{ name }} Delete Fail Please Try Again！',
+    DELETE_ACCOUNT_SUCCESS: '{{ name }} Delete Success!',
+    DELETE_ACCOUNT_FAIL: '{{ name }} Delete Fail Please Try Again!',
   },
   AUTH: {
     EMAIL: 'Email',
@@ -139,5 +141,11 @@ export default {
     USER_ACCOUNT: 'Account',
     USER_ROLE: 'Role',
     USER_REGISTER_TIME: 'Register Time',
+    EMAIL: 'User Email',
+    DELETE_TYPE_NAME: 'Type the email of the account to confirm deletion:',
+    DELETE_ERROR_MESSAGE: 'Type the exact email of the account you are trying to delete.',
+    DELETE_CONFIRM: `Deleting this account and its bucket (
+    including older versions if applicable) <b>cannot be undone</b>.
+    Are you sure you want to delete <b>{{ name }}</b>?`,
   },
 };

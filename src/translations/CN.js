@@ -130,5 +130,12 @@ export default {
     USER_ACCOUNT: '账号',
     USER_ROLE: '权限',
     USER_REGISTER_TIME: '注册时间',
+    EMAIL:'使用者 Email',
+    DELETE_TYPE_NAME: '请输入 Email 以确认删除。',
+    DELETE_ERROR_MESSAGE: '请输入欲删除的完整 Email。',
+    DELETE_CONFIRM: `删除此 Account 及此 Account 内的所有 Bucket 
+    （若有支持旧版本则包含旧版本）<b>会无法复原</b>。
+    你确认要删除 <b>{{ name }}</b> 吗？`,
+
   },
 };
