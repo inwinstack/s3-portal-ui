@@ -4,6 +4,8 @@ import AccountCreateController from './create/create.controller';
 import AccountCreateTemplate from './create/create.html';
 import DeleteAccountController from './delete/delete.controller';
 import DeleteAccountTemplate from './delete/delete.html';
+import ResetPasswordController from './reset/reset.controller';
+import ResetPasswordTemplate from './reset/reset.html';
 
 
 /** @ngInject */
@@ -90,6 +92,37 @@ export default class ManagerService {
           this.getAccounts();
         }))
       .catch(() => this.$translate("TOAST.DELETE_ACCOUNT_FAIL", { name })
+        .then(message => {
+          this.$toast.show(message);
+        }))
+      .finally(() => {
+        this.$mdDialog.cancel();
+      })
+  }
+
+  resetDialog($event) {
+    this.$mdDialog.show({
+      controller: ResetPasswordController,
+      controllerAs: 'reset',
+      template: ResetPasswordTemplate,
+      parent: element(document.body),
+      targetEvent: $event,
+      clickOutsideToClose: true,
+    });
+  }
+
+  closeResetDialog() {
+    this.$mdDialog.cancel();
+  }
+
+  resetPassword(email, password) {
+    this.$fetch.post('/v1/admin/reset', { email: email, password: password})
+      .then(() => this.$translate("TOAST.RESET_SUCCESS", { email })
+        .then(message => {
+          this.$toast.show(message);
+          this.getAccounts();
+        }))
+      .catch(() => this.$translate("TOAST.RESET_FAIL", { email })
         .then(message => {
           this.$toast.show(message);
         }))

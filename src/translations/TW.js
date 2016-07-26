@@ -68,7 +68,9 @@ export default {
     DELETE_FILE_SUCCESS: '{{ name }} 刪除成功！',
     DELETE_FILE_FAILURE: '{{ name }} 刪除失敗，請再試一次！',
     DELETE_ACCOUNT_SUCCESS: '{{ name }} 删除成功!',
-    DELETE_ACCOUNT_FAIL: '{{ name }} 删除失败，请再试一次!',
+    DELETE_ACCOUNT_FAIL: '{{ name }} 刪除失敗，請再試一次!',
+    RESET_SUCCESS: '{{ email }} 更改密碼成功!',
+    RESET_FAIL: '{{ email }} 更改密碼失敗，請再試一次',
   },
   AUTH: {
     EMAIL: '電子郵件',
@@ -132,6 +134,7 @@ export default {
     USER_ACCOUNT: '帳號',
     USER_ROLE: '權限',
     USER_REGISTER_TIME: '註冊時間',
+    USER_RESET: '重新設定密碼',
     EMAIL:'使用者 Email',
     DELETE_TYPE_NAME: '請輸入 Email 以確認刪除。',
     DELETE_ERROR_MESSAGE: '請輸入欲刪除的完整 Email。',
