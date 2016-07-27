@@ -47,6 +47,11 @@
               translate-value-name="{{ t.name }}"
               translate-value-bucket="{{ t.bucket }}"
             ></h3>
+            <p 
+              ng-if="t.cancel"
+              translate="TRANSFER.CANCELED"
+            >
+            </p>
 
             <div class="transfer-rate" ng-if="transfer.isUploading(t)">
               <md-progress-linear
@@ -72,6 +77,17 @@
                 <span ng-bind="t.process.precentage"></span>
                 <span>%</span>
               </span>
+              <div 
+                layout="row"
+                layout-align="end start"
+              >
+                <md-button
+                  ng-if="transfer.isUploading(t)"
+                  ng-click="transfer.abortConfirm($event, t)"
+                >
+                <p translate>TRANSFER.CANCEL</p>
+                </md-button>
+              </div>
             </p>
           </div>
 

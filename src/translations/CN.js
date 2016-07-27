@@ -67,6 +67,9 @@ export default {
     UPLOAD_FILE_FAILURE: '档案 {{ name }} 上传失败，请再试一次!',
     DELETE_FILE_SUCCESS: '{{ name }} 删除成功！',
     DELETE_FILE_FAILURE: '{{ name }} 删除失败,请再试一次！',
+    RESET_SUCCESS: '{{ email }} 更改密码成功!',
+    RESET_FAIL: '{{ email }} 更改密码失败，请再试一次',
+    CANCEL_UPLOAD: '{{ name }} 的上传已被取消',
   },
   AUTH: {
     EMAIL: '电邮',
@@ -82,10 +85,14 @@ export default {
     SIGN_IN_INCORRECT: '你的电邮或密码不正确，请再试一次。',
   },
   TRANSFER: {
+    CANCEL: '取消',
+    CANCELED: '取消传输',
     AUTO_CLEAR: '自动清除已完成传输',
+    CANCEL_DESCRIPTION: '取消上传将无法复原，你确定要这样做吗?',
     TITLE: {
       UPLOAD: '上传 {{ name }} 至 {{ bucket }}',
       DELETE: '從 {{ bucket }} 删除 {{ name }}',
+      CANCEL: '你确定要取消这项上传吗?'
     },
     STATUS: {
       DELETING: '删除中',
@@ -125,10 +132,19 @@ export default {
   },
   MANAGER: {
     USER_LIST: '使用者列表',
+    SEARCH: '搜寻',
     CREATE_USER: '新增使用者',
     USER_DELETE: '删除使用者',
     USER_ACCOUNT: '账号',
     USER_ROLE: '权限',
     USER_REGISTER_TIME: '注册时间',
+    USER_RESET: '重新设定密码',
+    EMAIL:'使用者 Email',
+    DELETE_TYPE_NAME: '请输入 Email 以确认删除。',
+    DELETE_ERROR_MESSAGE: '请输入欲删除的完整 Email。',
+    DELETE_CONFIRM: `删除此 Account 及此 Account 内的所有 Bucket 
+    （若有支持旧版本则包含旧版本）<b>会无法复原</b>。
+    你确认要删除 <b>{{ name }}</b> 吗？`,
+
   },
 };

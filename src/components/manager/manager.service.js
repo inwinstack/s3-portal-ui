@@ -2,12 +2,17 @@ import { element } from 'angular';
 import { sortByEmail } from '../../utils/sort';
 import AccountCreateController from './create/create.controller';
 import AccountCreateTemplate from './create/create.html';
+import DeleteAccountController from './delete/delete.controller';
+import DeleteAccountTemplate from './delete/delete.html';
+import ResetPasswordController from './reset/reset.controller';
+import ResetPasswordTemplate from './reset/reset.html';
+
 
 /** @ngInject */
 export default class ManagerService {
-  constructor($toast, $mdDialog, $fetch) {
+  constructor($toast, $mdDialog, $fetch, $translate) {
     Object.assign(this, {
-      $toast, $mdDialog, $fetch,
+      $toast, $mdDialog, $fetch, $translate,
     });
 
     this.state = {
@@ -31,7 +36,6 @@ export default class ManagerService {
           checked: false,
         }));
         this.state.lists.data = users.sort(sortByEmail);
-        console.log(this.state.lists.data)
       })
       .catch(() => {
         this.state.lists.error = true;
@@ -62,6 +66,69 @@ export default class ManagerService {
       targetEvent: $event,
       clickOutsideToClose: true,
     });
+  }
+
+  deleteDialog($event) {
+    this.$mdDialog.show({
+      controller: DeleteAccountController,
+      controllerAs: 'delete',
+      template: DeleteAccountTemplate,
+      parent: element(document.body),
+      targetEvent: $event,
+      clickOutsideToClose: true,
+    });
+  }
+
+  closeDeleteDialog() {
+    this.$mdDialog.cancel();
+  }
+
+  deleteAccount(account) {
+    const { name } = account;
+    this.$fetch.delete(`/v1/admin/delete/${name}`)
+      .then(() => this.$translate("TOAST.DELETE_ACCOUNT_SUCCESS", { name })
+        .then(message => {
+          this.$toast.show(message);
+          this.getAccounts();
+        }))
+      .catch(() => this.$translate("TOAST.DELETE_ACCOUNT_FAIL", { name })
+        .then(message => {
+          this.$toast.show(message);
+        }))
+      .finally(() => {
+        this.$mdDialog.cancel();
+      })
+  }
+
+  resetDialog($event) {
+    this.$mdDialog.show({
+      controller: ResetPasswordController,
+      controllerAs: 'reset',
+      template: ResetPasswordTemplate,
+      parent: element(document.body),
+      targetEvent: $event,
+      clickOutsideToClose: true,
+    });
+  }
+
+  closeResetDialog() {
+    this.$mdDialog.cancel();
+  }
+
+  resetPassword(email, password) {
+    this.$fetch.post('/v1/admin/reset', { email: email, password: password})
+      .then(() => this.$translate("TOAST.RESET_SUCCESS", { email })
+        .then(message => {
+          this.$toast.show(message);
+          this.getAccounts();
+        }))
+      .catch(() => this.$translate("TOAST.RESET_FAIL", { email })
+        .then(message => {
+          this.$toast.show(message);
+        }))
+      .finally(() => {
+        this.$mdDialog.cancel();
+      })
   }
 }
 

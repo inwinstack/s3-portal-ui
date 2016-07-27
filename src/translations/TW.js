@@ -67,6 +67,11 @@ export default {
     UPLOAD_FILE_FAILURE: '檔案 {{ name }} 上傳失敗，請再試一次!',
     DELETE_FILE_SUCCESS: '{{ name }} 刪除成功！',
     DELETE_FILE_FAILURE: '{{ name }} 刪除失敗，請再試一次！',
+    DELETE_ACCOUNT_SUCCESS: '{{ name }} 删除成功!',
+    DELETE_ACCOUNT_FAIL: '{{ name }} 刪除失敗，請再試一次!',
+    RESET_SUCCESS: '{{ email }} 更改密碼成功!',
+    RESET_FAIL: '{{ email }} 更改密碼失敗，請再試一次',
+    CANCEL_UPLOAD: '{{ name }} 的上傳已被取消',
   },
   AUTH: {
     EMAIL: '電子郵件',
@@ -82,10 +87,14 @@ export default {
     SIGN_IN_INCORRECT: '你的電子郵件或密碼不正確，請再試一次。',
   },
   TRANSFER: {
+    CANCEL: '取消',
+    CANCELED: '取消傳輸',
     AUTO_CLEAR: '自動清除已完成傳輸',
+    CANCEL_DESCRIPTION: '取消上傳將無法復原，你確定要這樣做嗎?',
     TITLE: {
       UPLOAD: '上傳 {{ name }} 至 {{ bucket }}',
       DELETE: '從 {{ bucket }} 刪除 {{ name }}',
+      CANCEL: '你確定要取消這項上傳嗎?'
     },
     STATUS: {
       DELETING: '刪除中',
@@ -125,10 +134,18 @@ export default {
   },
   MANAGER: {
     USER_LIST: '使用者列表',
+    SEARCH: '搜尋',
     CREATE_USER: '新增使用者',
     USER_DELETE: '刪除使用者',
     USER_ACCOUNT: '帳號',
     USER_ROLE: '權限',
     USER_REGISTER_TIME: '註冊時間',
+    USER_RESET: '重新設定密碼',
+    EMAIL:'使用者 Email',
+    DELETE_TYPE_NAME: '請輸入 Email 以確認刪除。',
+    DELETE_ERROR_MESSAGE: '請輸入欲刪除的完整 Email。',
+    DELETE_CONFIRM: `刪除此 Account 及此 Account 內的所有 Bucket 
+    （若有支援舊版本則包含舊版本）<b>會無法復原</b>。
+    你確認要刪除 <b>{{ name }}</b> 嗎？`,
   },
 };

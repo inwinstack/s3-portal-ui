@@ -8,8 +8,17 @@
     </md-button>
     <md-button
       class="md-raised"
+      ng-click="managerNav.delete()"
+      ng-disabled="!managerNav.selectedOne"
     >
       <span translate>MANAGER.USER_DELETE</span>
+    </md-button>
+    <md-button
+      class="md-raised"
+      ng-click="managerNav.reset()"
+      ng-disabled="!managerNav.selectedOne"
+    >
+      <span translate>MANAGER.USER_RESET</span>
     </md-button>
 
     <span flex></span>

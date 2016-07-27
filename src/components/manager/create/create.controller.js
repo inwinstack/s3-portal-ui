@@ -7,7 +7,6 @@ export default class AccountCreateController {
   }
 
   checkEmail() {
-    console.log('123');
     if (this.form.email.$valid) {
       const { email } = this.credentials;
       this.isCheckEmail = true;
@@ -29,7 +28,6 @@ export default class AccountCreateController {
   }
 
   cancel() {
-    console.log(123);
     this.$mdDialog.cancel();
   }
 
