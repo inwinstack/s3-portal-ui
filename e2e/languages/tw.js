@@ -106,7 +106,15 @@ const languages = {
   'RENAME_NEW_NAME': '新名稱',
   'RENAME_SUCCESS': /^檔案.*重新命名成功$/,
   'RENAME_FAILURE': /^檔案.*重新命名失敗，請再試一次!$/,
-
+  // MANAGER
+  'MANAGER_USER_LIST': '使用者列表',
+  'MANAGER_CREATE_USER': '新增使用者',
+  'MANAGER_USER_DELETE': '刪除使用者',
+  'MANAGER_USER_ACCOUNT': '帳號',
+  'MANAGER_USER_ROLE': '權限',
+  'MANAGER_USER_REGISTER_TIME': '註冊時間',
+  'MANAGER_USER_RESET': '重新設定密碼',
+  'MANAGER_SEARCH': '搜尋',
 
   // // AUTH
   // 'AUTH_LOGIN_TO_YOUR_ACCOUNT': '登入你的帳號',

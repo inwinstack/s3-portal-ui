@@ -1,64 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
- <testsuite name="File Properties" timestamp="2016-07-27T12:29:52" hostname="localhost" time="51.353" errors="0" tests="0" skipped="0" disabled="0" failures="0">
+ <testsuite name="User List" timestamp="2016-07-27T15:06:55" hostname="localhost" time="10.397" errors="0" tests="0" skipped="0" disabled="0" failures="0">
  </testsuite>
- <testsuite name="File Properties.When user selects the bucketList and clicks properties : " timestamp="2016-07-27T12:29:52" hostname="localhost" time="12.138" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Properties.When user selects the bucketList and clicks properties : " name="Should check whether the properties page" time="12.136" />
+ <testsuite name="User List.When user signIn with administrator and click user list: " timestamp="2016-07-27T15:06:55" hostname="localhost" time="7.346" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="User List.When user signIn with administrator and click user list: " name="Should check into the user list page" time="7.345" />
  </testsuite>
- <testsuite name="File Properties.When user selects the bucketList and clicks other properties : " timestamp="2016-07-27T12:30:04" hostname="localhost" time="2.446" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Properties.When user selects the bucketList and clicks other properties : " name="Should check whether the properties page" time="2.446" />
+ <testsuite name="User List.When user clicks the bucket list : " timestamp="2016-07-27T15:07:02" hostname="localhost" time="3.05" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="User List.When user clicks the bucket list : " name="Should check back the bucket page" time="3.049" />
  </testsuite>
- <testsuite name="File Properties.When user into the file properties form and click [X] btn  : " timestamp="2016-07-27T12:30:07" hostname="localhost" time="2.701" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Properties.When user into the file properties form and click [X] btn  : " name="Should check the properties form is closed and properties is enabled" time="2.701" />
+ <testsuite name="User List Translation" timestamp="2016-07-27T15:07:05" hostname="localhost" time="25.677" errors="0" tests="0" skipped="0" disabled="0" failures="0">
  </testsuite>
- <testsuite name="File Properties.When user selects the folder and clicks properties : " timestamp="2016-07-27T12:30:10" hostname="localhost" time="7.912" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Properties.When user selects the folder and clicks properties : " name="Should check whether the empty folder properties" time="7.912" />
+ <testsuite name="User List Translation.When user into the manage page and selects the Traditional Chinese language: " timestamp="2016-07-27T15:07:05" hostname="localhost" time="4.232" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="User List Translation.When user into the manage page and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="4.232" />
  </testsuite>
- <testsuite name="File Properties.When user selects the files and clicks properties : " timestamp="2016-07-27T12:30:18" hostname="localhost" time="8.618" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Properties.When user selects the files and clicks properties : " name="Should check whether the folder properties" time="8.618" />
+ <testsuite name="User List Translation.When user into the manage page and selects the Traditional Chinese language: " timestamp="2016-07-27T15:07:09" hostname="localhost" time="5.345" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="User List Translation.When user into the manage page and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="5.345" />
  </testsuite>
- <testsuite name="File Properties.When user selects the files and clicks properties : " timestamp="2016-07-27T12:30:26" hostname="localhost" time="9.358" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Properties.When user selects the files and clicks properties : " name="Should check whether the files properties" time="9.358" />
+ <testsuite name="User List Translation.When user into the manage page and selects the Simplified Chinese language: " timestamp="2016-07-27T15:07:15" hostname="localhost" time="3.31" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="User List Translation.When user into the manage page and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="3.31" />
  </testsuite>
- <testsuite name="File Properties.Clear" timestamp="2016-07-27T12:30:35" hostname="localhost" time="8.179" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Properties.Clear" name="Clear" time="8.179" />
+ <testsuite name="User List Translation.When user into the manage page and selects the Simplified Chinese language: " timestamp="2016-07-27T15:07:18" hostname="localhost" time="4.664" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="User List Translation.When user into the manage page and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="4.664" />
  </testsuite>
- <testsuite name="File Rename" timestamp="2016-07-27T12:30:44" hostname="localhost" time="79.629" errors="0" tests="0" skipped="0" disabled="0" failures="0">
+ <testsuite name="User List Translation.When user into the manage page and selects the English language: " timestamp="2016-07-27T15:07:23" hostname="localhost" time="3.453" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="User List Translation.When user into the manage page and selects the English language: " name="Should check every elements using the right language" time="3.453" />
  </testsuite>
- <testsuite name="File Rename.When user not select any file : " timestamp="2016-07-27T12:30:44" hostname="localhost" time="1.853" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Rename.When user not select any file : " name="Should check the [Rename] button is disabled " time="1.853" />
- </testsuite>
- <testsuite name="File Rename.When user select bucket : " timestamp="2016-07-27T12:30:46" hostname="localhost" time="7.116" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Rename.When user select bucket : " name="Should check the [Rename] button is disabled " time="7.116" />
- </testsuite>
- <testsuite name="File Rename.When user select folder : " timestamp="2016-07-27T12:30:53" hostname="localhost" time="8.187" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Rename.When user select folder : " name="Should check the [Rename] button is disabled " time="8.187" />
- </testsuite>
- <testsuite name="File Rename.When user select file : " timestamp="2016-07-27T12:31:01" hostname="localhost" time="8.153" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Rename.When user select file : " name="Should check the [Rename] button is enabled " time="8.153" />
- </testsuite>
- <testsuite name="File Rename.When user select file and select [Rename] button : " timestamp="2016-07-27T12:31:09" hostname="localhost" time="4.77" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Rename.When user select file and select [Rename] button : " name="Should check the rename file form is displayed " time="4.77" />
- </testsuite>
- <testsuite name="File Rename.When user into the file rename form and click [X] btn " timestamp="2016-07-27T12:31:14" hostname="localhost" time="5.462" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Rename.When user into the file rename form and click [X] btn " name="Should check the rename file form is not displayed " time="5.461" />
- </testsuite>
- <testsuite name="File Rename.When user into the file rename form and click cancel btn " timestamp="2016-07-27T12:31:19" hostname="localhost" time="5.223" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Rename.When user into the file rename form and click cancel btn " name="Should check the rename file form is not displayed " time="5.223" />
- </testsuite>
- <testsuite name="File Rename.When user into the file rename form and send empty " timestamp="2016-07-27T12:31:24" hostname="localhost" time="4.78" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Rename.When user into the file rename form and send empty " name="Should check the rename check button is disabled " time="4.78" />
- </testsuite>
- <testsuite name="File Rename.When user into the file rename form and send same file name " timestamp="2016-07-27T12:31:29" hostname="localhost" time="6.278" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Rename.When user into the file rename form and send same file name " name="Should check the rename error message " time="6.278" />
- </testsuite>
- <testsuite name="File Rename.When user into the file rename form and send new file name " timestamp="2016-07-27T12:31:35" hostname="localhost" time="8.691" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Rename.When user into the file rename form and send new file name " name="Should check the rename success message " time="8.691" />
- </testsuite>
- <testsuite name="File Rename.When user into the file rename form and send other file name " timestamp="2016-07-27T12:31:44" hostname="localhost" time="10.178" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Rename.When user into the file rename form and send other file name " name="Should check the rename error message " time="10.177" />
- </testsuite>
- <testsuite name="File Rename.Clear" timestamp="2016-07-27T12:31:54" hostname="localhost" time="8.936" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Rename.Clear" name="Clear" time="8.936" />
+ <testsuite name="User List Translation.When user into the manage page and selects the English language: " timestamp="2016-07-27T15:07:26" hostname="localhost" time="4.672" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="User List Translation.When user into the manage page and selects the English language: " name="Should check every elements using the right language" time="4.671" />
  </testsuite>
 </testsuites>

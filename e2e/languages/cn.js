@@ -108,6 +108,15 @@ const languages = {
   'RENAME_NEW_NAME': '新名称',
   'RENAME_SUCCESS': /^档案.*重新命名成功$/,
   'RENAME_FAILURE': /^档案.*重新命名失败，请再试一次!$/,
+  // MANAGER
+  'MANAGER_USER_LIST': '使用者列表',
+  'MANAGER_CREATE_USER': '新增使用者',
+  'MANAGER_USER_DELETE': '删除使用者',
+  'MANAGER_USER_ACCOUNT': '账号',
+  'MANAGER_USER_ROLE': '权限',
+  'MANAGER_USER_REGISTER_TIME': '注册时间',
+  'MANAGER_USER_RESET': '重新设定密码',
+  'MANAGER_SEARCH': '搜寻',
 }
 
 module.exports = Translate;
