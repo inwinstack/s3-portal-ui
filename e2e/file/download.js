@@ -25,7 +25,7 @@ describe('Download File',() => {
 
   describe('When user wants to download the file but not yet selected : ',() => {
     beforeEach(() => {
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       ne.menuBtn.get(2).click();
     });
     it('Should check the [Download] button is disabled', () => {
@@ -35,7 +35,7 @@ describe('Download File',() => {
 
   describe('When the user wants to download files but select multiple files : ',() => {
     beforeEach(() => {
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       fe.uploadBtn.click();
       fe.selectUploadFile.sendKeys(env.smallImgPath2 + env.smallImgName2);
       fe.checkUploadBtn.click();
@@ -50,7 +50,7 @@ describe('Download File',() => {
 
   describe('When the user wants to download the file and select a file only : ',() => {
     beforeEach(() => {
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       fe.fileCheckbox.first().click();
       ne.menuBtn.get(2).click();
     });

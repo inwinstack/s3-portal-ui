@@ -26,7 +26,7 @@ describe('Upload File Status',() => {
       sie.emailInput.sendKeys(env.correctEmail);
       sie.passwordInput.sendKeys(env.correctPassword);
       sie.signinBtn.click();
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       fe.transfersBtn.click();
     });
     it('Should check whether the upload status page', () => {
@@ -36,7 +36,7 @@ describe('Upload File Status',() => {
 
   describe('When user is uploading a file and open the upload status page : ',() => {
     beforeEach(() => {
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       fe.transfersBtn.click();
       fe.uploadBtn.click();
       fe.selectUploadFile.sendKeys(env.bigImgPath + env.bigImgName);
@@ -53,7 +53,7 @@ describe('Upload File Status',() => {
 
   describe('When user upload a file is completed and clicks automatically clear : ',() => {
     beforeEach(() => {
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       fe.transfersBtn.click();
       fe.clearTransferList.click();
       fe.uploadBtn.click();

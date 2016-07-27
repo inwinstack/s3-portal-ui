@@ -27,7 +27,7 @@ describe('File List',() => {
       be.createBucketBtn.click();
       be.createBucketInput.sendKeys(env.bucketName);
       be.checkCreateBucketBtn.click();
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
     });
     it('Should check into the file management page', () => {
       expect(browser.getCurrentUrl()).toBe(ps.bucketListPage + '/' + env.bucketName);
@@ -36,7 +36,7 @@ describe('File List',() => {
 
   describe('When user into the file management page but do not have any of the file', () => {
     beforeEach(() => {
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
     });
     it('Should check the [UPLOAD FILE] and [CREATE FOLDER] button is display and enabled and display title', () => {
       expect(fe.uploadFileBtn.isPresent()).toBe(true);

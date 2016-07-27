@@ -25,7 +25,7 @@ describe('Upload File',() => {
 
   describe('When user into the upload file form but the list is empty : ',() => {
     beforeEach(() => {
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       fe.uploadBtn.click();
     });
     it('Should check the [UPLOAD] button is disabled and the number and size of files is 0', () => {
@@ -37,7 +37,7 @@ describe('Upload File',() => {
 
   describe('When user into the upload file form and click [CANCEL] btn : ',() => {
     beforeEach(() => {
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       fe.uploadBtn.click();
       fe.uploadCancelBtn.get(1).click();
     })
@@ -48,7 +48,7 @@ describe('Upload File',() => {
 
   describe('When user into the upload file form and click [X] btn : ',() => {
     beforeEach(() => {
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       fe.uploadBtn.click();
       fe.uploadCancelBtn.first().click();
     })
@@ -59,7 +59,7 @@ describe('Upload File',() => {
 
   describe('When user into the upload file form and the list is not empty : ',() => {
     beforeEach(() => {
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       fe.uploadBtn.click();
       fe.selectUploadFile.sendKeys(env.smallImgPath1 + env.smallImgName1);
     });
@@ -72,7 +72,7 @@ describe('Upload File',() => {
 
   describe('When user into the upload file form and the list is not empty and click [x] button : ',() => {
     beforeEach(() => {
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       fe.uploadBtn.click();
       fe.selectUploadFile.sendKeys(env.smallImgPath1 + env.smallImgName1);
       fe.cancelSeletedFiles.first().click();
@@ -85,7 +85,7 @@ describe('Upload File',() => {
 
   describe('When user has selected file but upload file form off and then turned on : ',() => {
     beforeEach(() => {
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       fe.uploadBtn.click();
       fe.selectUploadFile.sendKeys(env.smallImgPath1 + env.smallImgName1);
       fe.uploadCancelBtn.first().click();
@@ -99,7 +99,7 @@ describe('Upload File',() => {
 
   describe('When user successfully uploaded files : ',() => {
     beforeEach(() => {
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       fe.uploadBtn.click();
       fe.selectUploadFile.sendKeys(env.smallImgPath1 + env.smallImgName1);
       fe.checkUploadBtn.click();
@@ -116,7 +116,7 @@ describe('Upload File',() => {
 
   describe('When user uploads a file name that already exists : ',() => {
     beforeEach(() => {
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       fe.uploadBtn.click();
       fe.selectUploadFile.sendKeys(env.smallImgPath1 + env.smallImgName1);
       fe.checkUploadBtn.click();
@@ -129,7 +129,7 @@ describe('Upload File',() => {
 
   describe('When user attempts to sign out but is being uploaded file : ',() => {
     beforeEach(() => {
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       fe.uploadBtn.click();
       fe.selectUploadFile.sendKeys(env.bigImgPath + env.bigImgName);
       fe.checkUploadBtn.click();
@@ -148,7 +148,7 @@ describe('Upload File',() => {
 
   describe('When user attempts to sign out and clicks the [Stay] button but is being uploaded file : ',() => {
     beforeEach(() => {
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       fe.uploadBtn.click();
       fe.selectUploadFile.sendKeys(env.bigImgPath + env.bigImgName);
       fe.checkUploadBtn.click();
@@ -172,7 +172,7 @@ describe('Upload File',() => {
 
   describe('When user attempts to sign out and clicks the [Leave] button but is being uploaded file : ',() => {
     beforeEach(() => {
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       fe.uploadBtn.click();
       fe.selectUploadFile.sendKeys(env.bigImgPath + env.bigImgName);
       fe.checkUploadBtn.click();
