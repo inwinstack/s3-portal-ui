@@ -112,6 +112,15 @@ const languages = {
   'FILE_FOLDER_NAME': 'Folder Name',
   'FILE_FOLDER_DUPLICATED_MESSAGE': 'That folder already exists! Please select a different name and try again.',
   'FILE_NEW_FOLDER': 'New folder',
+  'FILE_UPLOAD_SUCCESS_MESSAGE': /^File .* Upload Success!$/,
+  'FILE_DELETE_SUCCESS_MESSAGE': /^.* Delete Success！$/,
+  // RENAME
+  'RENAME_TITLE': 'Rename',
+  'RENAME_DESCRIPTION': 'Are you sure you want to rename this item?',
+  'RENAME_ITEM_NAME': 'Item Name',
+  'RENAME_NEW_NAME': 'New Name',
+  'RENAME_SUCCESS': /^Your File.*Rename Success$/,
+  'RENAME_FAILURE': /^Your File.*Rename Failure, Please Try Again!$/,
 }
 
 module.exports = Translate;

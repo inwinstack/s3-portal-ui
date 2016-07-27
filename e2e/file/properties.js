@@ -134,11 +134,11 @@ describe('File Properties',() => {
       be.checkDeleteBucket.click();
     });
     it('Clear',() => {
-      browser.sleep(1000);
       browser.ignoreSynchronization = true;
+      browser.sleep(1000);
       expect(ne.toastMessage.isDisplayed()).toBe(true);
-      expect(be.bucketList.getText()).not.toContain(env.bucketName);
       browser.ignoreSynchronization = false;
+      expect(be.bucketList.getText()).not.toContain(env.bucketName);
     });
   });
 });

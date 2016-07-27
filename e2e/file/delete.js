@@ -24,7 +24,7 @@ describe('Delete File',() => {
 
   describe('When user does not select any of the file : ',() => {
     beforeEach(() => {
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       ne.menuBtn.get(2).click();
     });
     it('Should check the [Delete] button is disabled',() => {
@@ -34,7 +34,7 @@ describe('Delete File',() => {
 
   describe('When user selects a file to be deleted : ',() => {
     beforeEach(() => {
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       fe.fileCheckbox.first().click();
       ne.menuBtn.get(2).click();
     });
@@ -45,7 +45,7 @@ describe('Delete File',() => {
 
   describe('When the user selects multiple files to be deleted : ',() => {
     beforeEach(() => {
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       fe.fileCheckbox.first().click();
       fe.fileCheckbox.get(1).click();
       ne.menuBtn.get(2).click();
@@ -57,7 +57,7 @@ describe('Delete File',() => {
 
   describe('When the user selects multiple files to be deleted and clicks the [Delete] : ',() => {
     beforeEach(() => {
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       fe.fileCheckbox.first().click();
       fe.fileCheckbox.get(1).click();
       ne.menuBtn.get(2).click();

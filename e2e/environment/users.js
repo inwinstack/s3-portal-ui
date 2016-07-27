@@ -7,7 +7,8 @@ const users = {
     'smallImg': {
       'name': 'small.png',
       'path': '/Users/2114/Desktop/img/',
-      'size': '97.73 KB'
+      'size': '97.73 KB',
+      'newName': 'newSmall.png'
     },
     'smallImg2': {
       'name': 'small2.png',
@@ -30,7 +31,8 @@ const users = {
     'smallImg': {
       'name': 'small.png',
       'path': '/home/ubuntu/img/',
-      'size': '8.15 KB'
+      'size': '8.15 KB',
+      'newName': 'newSmall.png'
     },
     'smallImg2': {
       'name': 'small2.png',
@@ -53,7 +55,8 @@ const users = {
     'smallImg': {
       'name': 'small.png',
       'path': 'C:\\img\\',
-      'size': '8.15 KB'
+      'size': '8.15 KB',
+      'newName': 'newSmall.png'
     },
     'smallImg2': {
       'name': 'small2.png',
@@ -76,7 +79,8 @@ const users = {
     'smallImg': {
       'name': 'small.png',
       'path': 'C:\\img\\',
-      'size': '8.15 KB'
+      'size': '8.15 KB',
+      'newName': 'newSmall.png'
     },
     'smallImg2': {
       'name': 'small2.png',
@@ -99,7 +103,8 @@ const users = {
     'smallImg': {
       'name': 'small.png',
       'path': 'C:\\img\\',
-      'size': '8.15 KB'
+      'size': '8.15 KB',
+      'newName': 'newSmall.png'
     },
     'smallImg2': {
       'name': 'small2.png',
@@ -122,7 +127,8 @@ const users = {
     'smallImg': {
       'name': 'small.png',
       'path': '/home/ubuntu/img/',
-      'size': '8.15 KB'
+      'size': '8.15 KB',
+      'newName': 'newSmall.png'
     },
     'smallImg2': {
       'name': 'small2.png',
@@ -145,7 +151,8 @@ const users = {
     'smallImg': {
       'name': 'small.png',
       'path': '/Users/2114/Desktop/img/',
-      'size': '97.73 KB'
+      'size': '97.73 KB',
+      'newName': 'newSmall.png'
     },
     'smallImg2': {
       'name': 'small2.png',

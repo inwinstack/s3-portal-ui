@@ -11,6 +11,7 @@ exports.config = {
    './bucket/delete.js',
    './bucket/translation.js',
    './file/properties.js',
+   './file/rename.js',
    './file/list.js',
    './file/upload.js',
    './file/status.js',

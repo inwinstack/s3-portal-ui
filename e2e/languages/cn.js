@@ -99,6 +99,15 @@ const languages = {
   'FILE_FOLDER_NAME': '文件夹名称',
   'FILE_FOLDER_DUPLICATED_MESSAGE': '此文件夹已存在！请选择一个不同的名称并再试一次。',
   'FILE_NEW_FOLDER': '新文件夾',
+  'FILE_UPLOAD_SUCCESS_MESSAGE': /^档案.*上传成功!$/,
+  'FILE_DELETE_SUCCESS_MESSAGE': /^.*删除成功！$/,
+  // RENAME
+  'RENAME_TITLE': '重新命名',
+  'RENAME_DESCRIPTION': '您确定要修改这个物件的名称吗?',
+  'RENAME_ITEM_NAME': '物件名称',
+  'RENAME_NEW_NAME': '新名称',
+  'RENAME_SUCCESS': /^档案.*重新命名成功$/,
+  'RENAME_FAILURE': /^档案.*重新命名失败，请再试一次!$/,
 }
 
 module.exports = Translate;

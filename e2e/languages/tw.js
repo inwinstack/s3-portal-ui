@@ -96,7 +96,17 @@ const languages = {
   'FILE_TOTAL_SIZE': '總上傳容量大小：',
   'FILE_FOLDER_NAME': '資料夾名稱',
   'FILE_FOLDER_DUPLICATED_MESSAGE': '此資料夾已存在！請選擇一個不同的名稱並再試一次。',
-  'FILE_NEW_FOLDER': '新資料夾'
+  'FILE_NEW_FOLDER': '新資料夾',
+  'FILE_UPLOAD_SUCCESS_MESSAGE': /^檔案.*上傳成功!$/,
+  'FILE_DELETE_SUCCESS_MESSAGE': /^.*刪除成功！$/,
+  // RENAME
+  'RENAME_TITLE': '重新命名',
+  'RENAME_DESCRIPTION': '您確定要修改這個物件的名稱嗎?',
+  'RENAME_ITEM_NAME': '物件名稱',
+  'RENAME_NEW_NAME': '新名稱',
+  'RENAME_SUCCESS': /^檔案.*重新命名成功$/,
+  'RENAME_FAILURE': /^檔案.*重新命名失敗，請再試一次!$/,
+
 
   // // AUTH
   // 'AUTH_LOGIN_TO_YOUR_ACCOUNT': '登入你的帳號',

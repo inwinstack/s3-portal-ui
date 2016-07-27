@@ -24,13 +24,18 @@ function elements () {
   this.uploadForm = element(by.css('[aria-label="Upload Files Dialog"]'));
   this.uploadStayBtn = element(by.css('[ng-click="dialog.abort()"]'));
   this.uploadLeaveBtn = element(by.css('[ng-click="dialog.hide()"]'));
-  this.or = element.all(by.css('span[class="ng-scope"]')).get(18);
+  this.or = element.all(by.css('span[class="ng-scope"]')).get(21);
   this.propertiesBtn = element.all(by.css('[ng-click="actionNav.openProperties()"]'));
   this.propertiesForm = element.all(by.id('info-container')).get(1);
   this.propertiesFormTitle = element.all(by.css('[class="md-menu-toolbar"]'));
   this.propertiesCancelBtn = element(by.css('[ng-click="propertie.close()"]'));
   this.propertiesFileListItem = element.all(by.css('h1[class="time-title-width ng-scope"]'));
   this.propertiesFileListDetail = element.all(by.css('p[class="md-body-1 md-accent ng-binding"]'));
+  this.renameFileBtn = element(by.css('[ng-click="actionNav.rename($event)"]'));
+  this.renameFileForm = element(by.name('rename.form'));
+  this.renameFileCancelBtn = element.all(by.css('[ng-click="rename.cancel()"]'));
+  this.renameFileInput = element(by.model('rename.newName'));
+  this.checkRenameBtn = element(by.css('[ng-click="rename.rename()"]'));
 }
 
 module.exports = elements;

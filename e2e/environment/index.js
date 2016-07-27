@@ -8,6 +8,7 @@ User.prototype.setUser = function(user){
   this.incorrectEmail = users[user]['incorrectEmail'];
   this.incorrectPassword = users[user]['incorrectPassword'];
   this.smallImgName1 = users[user]['smallImg']['name'];
+  this.smallImgNewName1 = users[user]['smallImg']['newName'];
   this.smallImgPath1 = users[user]['smallImg']['path'];
   this.smallImgSize1 = users[user]['smallImg']['size'];
   this.smallImgName2 = users[user]['smallImg2']['name'];

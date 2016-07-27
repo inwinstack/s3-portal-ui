@@ -25,7 +25,7 @@ describe('Create Folder',() => {
 
   describe('When user clicks the [Create folder] button : ',() => {
     beforeEach(() => {
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       fe.createFolderBtn.first().click();
     });
     it('Should check the display to create folder form',() => {
@@ -35,7 +35,7 @@ describe('Create Folder',() => {
 
   describe('When user clicks the [Action] and select the [Create folder] button : ',() => {
     beforeEach(() => {
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       ne.menuBtn.get(2).click();
       fe.createFolderBtn.get(1).click();
     });
@@ -46,7 +46,7 @@ describe('Create Folder',() => {
 
   describe('When user opens the form create a folder : ',() => {
     beforeEach(() => {
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       fe.createFolderBtn.first().click();
     });
     it('Should check the [Create] is enabled',() => {
@@ -56,7 +56,7 @@ describe('Create Folder',() => {
 
   describe('When user opens the form create a folder and clicks the [Cancel] button : ',() => {
     beforeEach(() => {
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       fe.createFolderBtn.first().click();
       fe.cancelFormBtn.get(1).click();
     });
@@ -67,7 +67,7 @@ describe('Create Folder',() => {
 
   describe('When user opens the form create a folder and clicks the [x] button : ',() => {
     beforeEach(() => {
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       fe.createFolderBtn.first().click();
       fe.cancelFormBtn.first().click();
     });
@@ -78,7 +78,7 @@ describe('Create Folder',() => {
 
   describe('When user inputs a name for the folder does not exist and clicks the [Create] button : ',() => {
     beforeEach(() => {
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       fe.createFolderBtn.first().click();
       fe.createFolderInput.clear();
       fe.createFolderInput.sendKeys(env.folderName);
@@ -95,7 +95,7 @@ describe('Create Folder',() => {
 
   // describe('When user inputs the name of an existing folder : ',() => {
   //   beforeEach(() => {
-  //     be.bucketList.first().click();
+  //     browser.actions().doubleClick(be.bucketList.first()).perform();
   //     fe.createFolderBtn.first().click();
   //     fe.createFolderInput.clear();
   //     fe.createFolderInput.sendKeys(env.folderName);
@@ -108,7 +108,7 @@ describe('Create Folder',() => {
 
   describe('When user has to create a new folder : ',() => {
     beforeEach(() => {
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
     });
     it('Should check sort situation',() => {
       fe.folderList.getText().then((result) => {

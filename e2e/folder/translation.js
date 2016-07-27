@@ -28,7 +28,7 @@ describe('Folder Translation',() => {
     beforeEach(() => {
       ne.menuBtn.get(1).click();
       ne.topNavLanguagesBtn.get(1).click();
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       foe.createFolderBtn.first().click();
     });
     it('Should check every elements using the right language',() => {
@@ -42,7 +42,7 @@ describe('Folder Translation',() => {
 
   // describe('When user create folder and selects the Traditional Chinese language: ',() => {
   //   beforeEach(() => {
-  //     be.bucketList.first().click();
+  //     browser.actions().doubleClick(be.bucketList.first()).perform();
   //     fe.createFolderBtn.first().click();
   //     fe.createFolderInput.clear();
   //     fe.createFolderInput.sendKeys(env.folderName);
@@ -62,7 +62,7 @@ describe('Folder Translation',() => {
     beforeEach(() => {
       ne.menuBtn.get(1).click();
       ne.topNavLanguagesBtn.get(2).click();
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       foe.createFolderBtn.first().click();
     });
     it('Should check every elements using the right language',() => {
@@ -79,7 +79,7 @@ describe('Folder Translation',() => {
     beforeEach(() => {
       ne.menuBtn.get(1).click();
       ne.topNavLanguagesBtn.get(0).click();
-      be.bucketList.first().click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
       foe.createFolderBtn.first().click();
     });
     it('Should check every elements using the right language',() => {
