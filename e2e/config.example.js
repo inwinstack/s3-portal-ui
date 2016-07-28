@@ -4,6 +4,7 @@ exports.config = {
    './administrator/list.js',
    './administrator/createUser.js',
    './administrator/search.js',
+   './administrator/resetPassword.js',
    './administrator/translation.js',
    './auth/signup.js',
    './auth/signin.js',

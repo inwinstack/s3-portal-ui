@@ -48,7 +48,7 @@ describe('User List Translation',() => {
     it('Should check every elements using the right language',() => {
       expect(ad.createUserBtn.getText()).toBe(translate('tw', 'MANAGER_CREATE_USER'));
       expect(ad.deleteUserBtn.getText()).toBe(translate('tw', 'MANAGER_USER_DELETE'));
-      expect(ad.resetUserPassword.getText()).toBe(translate('tw', 'MANAGER_USER_RESET'));
+      expect(ad.resetUserPasswordBtn.getText()).toBe(translate('tw', 'MANAGER_USER_RESET'));
       expect(element(by.css('md-input-container[class="flex-gt-sm"]')).element(by.css('label[class="ng-scope"]')).getText()).toBe(translate('tw', 'MANAGER_SEARCH'));
       expect(ad.userList.element(by.css('th[class="ng-scope"]')).getText()).toBe(translate('tw', 'MANAGER_USER_ACCOUNT'));
       expect(ad.userList.element(by.css('th[class="size-width ng-scope"]')).getText()).toBe(translate('tw', 'MANAGER_USER_ROLE'));
@@ -78,7 +78,7 @@ describe('User List Translation',() => {
     it('Should check every elements using the right language',() => {
       expect(ad.createUserBtn.getText()).toBe(translate('cn', 'MANAGER_CREATE_USER'));
       expect(ad.deleteUserBtn.getText()).toBe(translate('cn', 'MANAGER_USER_DELETE'));
-      expect(ad.resetUserPassword.getText()).toBe(translate('cn', 'MANAGER_USER_RESET'));
+      expect(ad.resetUserPasswordBtn.getText()).toBe(translate('cn', 'MANAGER_USER_RESET'));
       expect(element(by.css('md-input-container[class="flex-gt-sm"]')).element(by.css('label[class="ng-scope"]')).getText()).toBe(translate('cn', 'MANAGER_SEARCH'));
       expect(ad.userList.element(by.css('th[class="ng-scope"]')).getText()).toBe(translate('cn', 'MANAGER_USER_ACCOUNT'));
       expect(ad.userList.element(by.css('th[class="size-width ng-scope"]')).getText()).toBe(translate('cn', 'MANAGER_USER_ROLE'));
@@ -108,7 +108,7 @@ describe('User List Translation',() => {
     it('Should check every elements using the right language',() => {
       expect(ad.createUserBtn.getText()).toBe(translate('en', 'MANAGER_CREATE_USER'));
       expect(ad.deleteUserBtn.getText()).toBe(translate('en', 'MANAGER_USER_DELETE'));
-      expect(ad.resetUserPassword.getText()).toBe(translate('en', 'MANAGER_USER_RESET'));
+      expect(ad.resetUserPasswordBtn.getText()).toBe(translate('en', 'MANAGER_USER_RESET'));
       expect(element(by.css('md-input-container[class="flex-gt-sm"]')).element(by.css('label[class="ng-scope"]')).getText()).toBe(translate('en', 'MANAGER_SEARCH'));
       expect(ad.userList.element(by.css('th[class="ng-scope"]')).getText()).toBe(translate('en', 'MANAGER_USER_ACCOUNT'));
       expect(ad.userList.element(by.css('th[class="size-width ng-scope"]')).getText()).toBe(translate('en', 'MANAGER_USER_ROLE'));

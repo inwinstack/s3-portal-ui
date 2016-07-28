@@ -40,8 +40,8 @@ describe('User List',() => {
       expect(ad.createUserBtn.isEnabled()).toBe(true);
       expect(ad.deleteUserBtn.isPresent()).toBe(true);
       expect(ad.deleteUserBtn.isEnabled()).toBe(false);
-      expect(ad.resetUserPassword.isPresent()).toBe(true);
-      expect(ad.resetUserPassword.isEnabled()).toBe(false);
+      expect(ad.resetUserPasswordBtn.isPresent()).toBe(true);
+      expect(ad.resetUserPasswordBtn.isEnabled()).toBe(false);
       expect(ad.serachUser.isPresent()).toBe(true);
     });
   });
