@@ -26,6 +26,12 @@ function elements () {
   this.ResetPasswordPasswordConfError = element(by.css('[ng-messages="reset.form.password_confirmation.$error"]'));
   this.cancelResetPasswordBtn = element(by.css('[ng-click="reset.cancel()"]'));
   this.checkResetPasswordBtn = element(by.css('[ng-click="reset.submit()"]'));
+  this.deleteUserEmailInput = element(by.name('name'));
+  this.deleteUserEmailError = element(by.css('[ng-messages="delete.form.name.$error"]'));
+  this.deleteUserEmailNonexistent = element(by.css('[ng-show="delete.checkStatus"]'));
+  this.deleteUserForm = element(by.name('delete.form'));
+  this.cancelDeleteUserBtn = element(by.css('[ng-click="delete.cancel()"]'));
+  this.checkDeleteUserBtn = element(by.css('[ng-click="delete.accountDelete()"]'));
 }
 
 module.exports = elements;
