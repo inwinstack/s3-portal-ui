@@ -121,6 +121,15 @@ const languages = {
   'RENAME_NEW_NAME': 'New Name',
   'RENAME_SUCCESS': /^Your File.*Rename Success$/,
   'RENAME_FAILURE': /^Your File.*Rename Failure, Please Try Again!$/,
+  // MANAGER
+  'MANAGER_USER_LIST': 'User List',
+  'MANAGER_CREATE_USER': 'CREATE ACCOUNT',
+  'MANAGER_USER_DELETE': 'DELETE ACCOUNT',
+  'MANAGER_USER_ACCOUNT': 'Account',
+  'MANAGER_USER_ROLE': 'Role',
+  'MANAGER_USER_REGISTER_TIME': 'Register Time',
+  'MANAGER_USER_RESET': 'RESET PASSWORD',
+  'MANAGER_SEARCH': 'Search',
 }
 
 module.exports = Translate;

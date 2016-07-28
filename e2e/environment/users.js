@@ -21,7 +21,11 @@ const users = {
       'size': ''
     },
     'bucketName': 'osx-chrome-bucket',
-    'folderName': 'osx-chrome-folder'
+    'folderName': 'osx-chrome-folder',
+    'administrator': {
+      'email' : 'root@inwinstack.com',
+      'password' : '123456'
+    }
   },
   'chrome-ubuntu': {
     'correctEmail': 'ubuntu-chrome@inwinstack.com',
@@ -45,7 +49,11 @@ const users = {
       'size': '8.15 KB'
     },
     'bucketName': 'ubuntu-chrome-bucket',
-    'folderName': 'ubuntu-chrome-folder'
+    'folderName': 'ubuntu-chrome-folder',
+    'administrator': {
+      'email' : 'root@inwinstack.com',
+      'password' : '123456'
+    }
   },
   'chrome-win7': {
     'correctEmail': 'win7-chrome@inwinstack.com',
@@ -69,7 +77,11 @@ const users = {
       'size': '8.15 KB'
     },
     'bucketName': 'win7-chrome-bucket',
-    'folderName': 'win7-chrome-folder'
+    'folderName': 'win7-chrome-folder',
+    'administrator': {
+      'email' : 'root@inwinstack.com',
+      'password' : '123456'
+    }
   },
   'chrome-win8': {
     'correctEmail': 'win8-chrome@inwinstack.com',
@@ -93,7 +105,11 @@ const users = {
       'size': ''
     },
     'bucketName': 'win8-chrome-bucket',
-    'folderName': 'win8-chrome-folder'
+    'folderName': 'win8-chrome-folder',
+    'administrator': {
+      'email' : 'root@inwinstack.com',
+      'password' : '123456'
+    }
   },
   'chrome-win10': {
     'correctEmail': 'win10-chrome@inwinstack.com',
@@ -117,7 +133,11 @@ const users = {
       'size': ''
     },
     'bucketName': 'win10-chrome-bucket',
-    'folderName': 'win10-chrome-folder'
+    'folderName': 'win10-chrome-folder',
+    'administrator': {
+      'email' : 'root@inwinstack.com',
+      'password' : '123456'
+    }
   },
   'firefox-ubuntu': {
     'correctEmail': 'ubuntu-firefox@inwinstack.com',
@@ -141,7 +161,11 @@ const users = {
       'size': '8.15 KB'
     },
     'bucketName': 'ubuntu-firefox-bucket',
-    'folderName': 'ubuntu-firefox-folder'
+    'folderName': 'ubuntu-firefox-folder',
+    'administrator': {
+      'email' : 'root@inwinstack.com',
+      'password' : '123456'
+    }
   },
   'safari-mac': {
     'correctEmail': 'osx-safari@inwinstack.com',
@@ -165,7 +189,11 @@ const users = {
       'size': ''
     },
     'bucketName': 'osx-safari-bucket',
-    'folderName': 'osx-safari-folder'
+    'folderName': 'osx-safari-folder',
+    'administrator': {
+      'email' : 'root@inwinstack.com',
+      'password' : '123456'
+    }
   },
 };
 

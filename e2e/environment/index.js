@@ -19,6 +19,8 @@ User.prototype.setUser = function(user){
   this.bigImgSize = users[user]['bigImg']['size'];
   this.bucketName = users[user]['bucketName'];
   this.folderName = users[user]['folderName'];
+  this.adminEmail = users[user]['administrator']['email'];
+  this.adminPassword = users[user]['administrator']['password'];
 };
 
 module.exports = User;

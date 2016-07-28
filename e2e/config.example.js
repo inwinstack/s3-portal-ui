@@ -19,7 +19,9 @@ exports.config = {
    './file/delete.js',
    './file/translation.js',
    './folder/create.js',
-   './folder/translation.js'
+   './folder/translation.js',
+   './administrator/list.js',
+   './administrator/translation.js',
   ],
   multiCapabilities: [
   {
