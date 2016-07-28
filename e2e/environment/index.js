@@ -4,6 +4,7 @@ function User() {};
 
 User.prototype.setUser = function(user){
   this.correctEmail = users[user]['correctEmail'];
+  this.correctEmailCreate = users[user]['correctEmailCreate'];
   this.correctPassword = users[user]['correctPassword'];
   this.incorrectEmail = users[user]['incorrectEmail'];
   this.incorrectPassword = users[user]['incorrectPassword'];

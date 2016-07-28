@@ -1,6 +1,9 @@
 exports.config = {
   framework: 'jasmine2',
   specs: [
+   './administrator/list.js',
+   './administrator/createUser.js',
+   './administrator/translation.js',
    './auth/signup.js',
    './auth/signin.js',
    './auth/signout.js',
@@ -20,8 +23,6 @@ exports.config = {
    './file/translation.js',
    './folder/create.js',
    './folder/translation.js',
-   './administrator/list.js',
-   './administrator/translation.js',
   ],
   multiCapabilities: [
   {

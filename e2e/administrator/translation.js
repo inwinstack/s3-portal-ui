@@ -115,4 +115,12 @@ describe('User List Translation',() => {
       // expect(ad.userList.element(by.css('table[class="table table-cursor table-hover"]')).getText()).toBe(translate('en', 'MANAGER_USER_REGISTER_TIME'));
     });
   });
+
+  describe('When admin click the [Sign Out] : ',() => {
+    beforeEach(() => {
+      ne.menuBtn.first().click();
+      ne.signoutBtn.click();
+    });
+    it('Clear',() => {});
+  });
 });

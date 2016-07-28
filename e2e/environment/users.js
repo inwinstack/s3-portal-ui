@@ -1,6 +1,7 @@
 const users = {
   'chrome-mac': {
     'correctEmail': 'osx-chrome@inwinstack.com',
+    'correctEmailCreate': 'osx-chrome-create@inwinstack.com',
     'incorrectEmail': 'osx-chrome@inwinstack',
     'correctPassword': 'password',
     'incorrectPassword': 'pass',
@@ -29,6 +30,7 @@ const users = {
   },
   'chrome-ubuntu': {
     'correctEmail': 'ubuntu-chrome@inwinstack.com',
+    'correctEmailCreate': 'ubuntu-chrome-create@inwinstack.com',
     'incorrectEmail': 'ubuntu-chrome@inwinstack',
     'correctPassword': 'password',
     'incorrectPassword': 'pass',
@@ -57,6 +59,7 @@ const users = {
   },
   'chrome-win7': {
     'correctEmail': 'win7-chrome@inwinstack.com',
+    'correctEmailCreate': 'win7-chrome-create@inwinstack.com',
     'incorrectEmail': 'win7-chrome@inwinstack',
     'correctPassword': 'password',
     'incorrectPassword': 'pass',
@@ -85,6 +88,7 @@ const users = {
   },
   'chrome-win8': {
     'correctEmail': 'win8-chrome@inwinstack.com',
+    'correctEmailCreate': 'win8-chrome-create@inwinstack.com',
     'incorrectEmail': 'win8-chrome@inwinstack',
     'correctPassword': 'password',
     'incorrectPassword': 'pass',
@@ -113,6 +117,7 @@ const users = {
   },
   'chrome-win10': {
     'correctEmail': 'win10-chrome@inwinstack.com',
+    'correctEmailCreate': 'win10-chrome-create@inwinstack.com',
     'incorrectEmail': 'win10-chrome@inwinstack',
     'correctPassword': 'password',
     'incorrectPassword': 'pass',
@@ -141,6 +146,7 @@ const users = {
   },
   'firefox-ubuntu': {
     'correctEmail': 'ubuntu-firefox@inwinstack.com',
+    'correctEmailCreate': 'ubuntu-firefox-create@inwinstack.com',
     'incorrectEmail': 'ubuntu-firefox@inwinstack',
     'correctPassword': 'password',
     'incorrectPassword': 'pass',
@@ -169,6 +175,7 @@ const users = {
   },
   'safari-mac': {
     'correctEmail': 'osx-safari@inwinstack.com',
+    'correctEmailCreate': 'osx-safari-create@inwinstack.com',
     'incorrectEmail': 'osx-safari@inwinstack',
     'correctPassword': 'password',
     'incorrectPassword': 'pass',
