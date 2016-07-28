@@ -16,8 +16,7 @@ function elements () {
   this.createUserPasswordConfError = element(by.css('[ng-messages="create.form.password_confirmation.$error"]'));
   this.createUserEmailExist = element(by.css('[ng-show="create.emailIsInvalid && create.showEmailCheckedMessage"]'));
   this.checkCreateUserBtn = element(by.css('[ng-click="create.submit()"]'));
-  this.cancelCreateUserBtn = element(by.css('[ng-click="create.cancel()"]'));
-  // this.cancelCreateUserBtn = element.all(by.css('[ng-click="create.cancel()"]'));
+  this.cancelCreateUserBtn = element.all(by.css('[ng-click="create.cancel()"]'));
 }
 
 module.exports = elements;

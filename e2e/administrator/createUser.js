@@ -67,25 +67,24 @@ describe('Create User', () => {
     });
   });
 
-  // describe('When admin click create account and click [X] button : ', () => {
-  //   beforeEach(() => {
-  //     ne.menuBtn.first().click();
-  //     ad.accountListBtn.click();
-  //     ad.createUserBtn.click();
-  //     ad.cancelCreateUserBtn.first().click();
-  //   });
-  //   it('Should check create account form is close', () => {
-  //     expect(ad.createUserForm.isPresent()).toBe(true);
-  //   });
-  // });
+  describe('When admin click create account and click [X] button : ', () => {
+    beforeEach(() => {
+      ne.menuBtn.first().click();
+      ad.accountListBtn.click();
+      ad.createUserBtn.click();
+      ad.cancelCreateUserBtn.first().click();
+    });
+    it('Should check create account form is close', () => {
+      expect(ad.createUserForm.isPresent()).toBe(false);
+    });
+  });
 
   describe('When admin click create account and click [CANCEL] button : ', () => {
     beforeEach(() => {
       ne.menuBtn.first().click();
       ad.accountListBtn.click();
       ad.createUserBtn.click();
-      // ad.cancelCreateUserBtn.get(1).click();
-      ad.cancelCreateUserBtn.click();
+      ad.cancelCreateUserBtn.get(1).click();
     });
     it('Should check create account form is close', () => {
       expect(ad.createUserForm.isPresent()).toBe(false);
