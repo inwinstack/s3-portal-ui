@@ -3,6 +3,7 @@ exports.config = {
   specs: [
    './administrator/list.js',
    './administrator/createUser.js',
+   './administrator/search.js',
    './administrator/translation.js',
    './auth/signup.js',
    './auth/signin.js',
