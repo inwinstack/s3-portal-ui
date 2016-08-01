@@ -88,7 +88,7 @@
             ng-disabled="
               ! (actionNav.fileSelectedOne && actionNav.folderSelected)
             ">
-            <span translate>UTILS.RENAME</span>
+            <span ng-show="actionNav.isFile()" translate>UTILS.RENAME</span>
           </md-button>
         </md-menu-item>
 

@@ -128,6 +128,7 @@ export default {
     RENAME_ARIA_LABEL: 'Rename Object',
     ITEM_NAME:'物件名称',
     NEW_NAME:'新名称',
+    PROPERTIES_NAME: '文件名',
     RENAME_SUCCESS: '档案 {{ fileName }} 重新命名成功',
     RENAME_FAILURE: '档案 {{ fileName }} 重新命名失败，请再试一次!',
   },
