@@ -10,6 +10,7 @@ export default {
     DELETE: '删除',
     RENAME: '重新命名',
     REFRESH: '刷新',
+    CONFIRM: '确定',
     OR: '或',
   },
   VALIDATION: {

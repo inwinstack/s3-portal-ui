@@ -10,6 +10,7 @@ export default {
     DELETE: 'Delete',
     RENAME: 'Rename',
     REFRESH: 'Refresh',
+    CONFIRM: 'Confirm',
     OR: 'or',
   },
   VALIDATION: {
