@@ -137,6 +137,7 @@ export default {
   },
   MANAGER: {
     USER_LIST: '使用者列表',
+    RESET_USER: '重新設定密碼',
     SEARCH: '搜尋',
     CREATE_USER: '新增使用者',
     USER_DELETE: '刪除使用者',
@@ -145,6 +146,7 @@ export default {
     USER_REGISTER_TIME: '註冊時間',
     USER_RESET: '重新設定密碼',
     EMAIL:'使用者 Email',
+    DELETE_TITLE: '刪除使用者',
     DELETE_TYPE_NAME: '請輸入 Email 以確認刪除。',
     DELETE_ERROR_MESSAGE: '請輸入欲刪除的完整 Email。',
     DELETE_CONFIRM: `刪除此 Account 及此 Account 內的所有 Bucket 

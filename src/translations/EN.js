@@ -147,6 +147,7 @@ export default {
   },
   MANAGER: {
     USER_LIST: 'User List',
+    RESET_USER: 'Reset Password',
     SEARCH: 'Search',
     CREATE_USER: 'Create Account',
     USER_DELETE: 'Delete Account',
@@ -155,6 +156,7 @@ export default {
     USER_REGISTER_TIME: 'Register Time',
     USER_RESET: 'Reset password',
     EMAIL: 'User Email',
+    DELETE_TITLE: 'Delete User',
     DELETE_TYPE_NAME: 'Type the email of the account to confirm deletion:',
     DELETE_ERROR_MESSAGE: 'Type the exact email of the account you are trying to delete.',
     DELETE_CONFIRM: `Deleting this account and its bucket (

@@ -135,6 +135,7 @@ export default {
   },
   MANAGER: {
     USER_LIST: '使用者列表',
+    RESET_USER: '重新设定密码',
     SEARCH: '搜寻',
     CREATE_USER: '新增使用者',
     USER_DELETE: '删除使用者',
@@ -143,6 +144,7 @@ export default {
     USER_REGISTER_TIME: '注册时间',
     USER_RESET: '重新设定密码',
     EMAIL:'使用者 Email',
+    DELETE_TITLE: '删除使用者',
     DELETE_TYPE_NAME: '请输入 Email 以确认删除。',
     DELETE_ERROR_MESSAGE: '请输入欲删除的完整 Email。',
     DELETE_CONFIRM: `删除此 Account 及此 Account 内的所有 Bucket 
