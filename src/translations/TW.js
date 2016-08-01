@@ -121,6 +121,7 @@ export default {
     TOTAL_SIZE: '總上傳容量大小：',
     FOLDER_NAME: '資料夾名稱',
     FOLDER_DUPLICATED_MESSAGE: '此資料夾已存在！請選擇一個不同的名稱並再試一次。',
+    DUPLICATED_MESSAGE: '此檔案名稱已存在！請選擇一個不同的名稱並再試一次。',
     NEW_FOLDER: '新資料夾',
     DELETE_TITLE: '您確定要刪除所選項目嗎?',
     DELETE_DESCRIPTION: `刪除後將無法復原，您確定要刪除所選項目嗎?`,

@@ -129,6 +129,8 @@ export default {
     FOLDER_NAME: 'Folder Name',
     FOLDER_DUPLICATED_MESSAGE: `That folder already exists!
     Please select a different name and try again.`,
+    DUPLICATED_MESSAGE: `That file name already exists!
+    Please select a different name and try again.`,
     NEW_FOLDER: 'New folder',
     DELETE_TITLE: 'Would you like to delete the selected items?',
     DELETE_DESCRIPTION: `Deleting those objects cannot be undone.
