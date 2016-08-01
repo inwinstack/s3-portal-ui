@@ -71,6 +71,34 @@ describe('Delete User', () => {
     });
   });
 
+  describe('When admin click [DELETE ACCOUNT] button and click [X] button : ', () => {
+    beforeEach(() => {
+      ne.menuBtn.first().click();
+      ad.accountListBtn.click();
+      ad.searchUser.sendKeys(env.correctEmailCreate);
+      ad.accountListCheckbox.first().click();
+      ad.deleteUserBtn.click();
+      ad.cancelDeleteUserBtn.first().click();
+    });
+    it('Should check delete account form is close', () => {
+      expect(ad.deleteUserForm.isPresent()).toBe(false);
+    });
+  });
+
+  describe('When admin click [DELETE ACCOUNT] button and click [CANCEL] button : ', () => {
+    beforeEach(() => {
+      ne.menuBtn.first().click();
+      ad.accountListBtn.click();
+      ad.searchUser.sendKeys(env.correctEmailCreate);
+      ad.accountListCheckbox.first().click();
+      ad.deleteUserBtn.click();
+      ad.cancelDeleteUserBtn.get(1).click();
+    });
+    it('Should check delete account form is close', () => {
+      expect(ad.deleteUserForm.isPresent()).toBe(false);
+    });
+  });
+
   describe('When admin input null e-mail : ', () => {
     beforeEach(() => {
       ne.menuBtn.first().click();

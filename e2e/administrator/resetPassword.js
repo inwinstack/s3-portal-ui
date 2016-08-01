@@ -60,6 +60,34 @@ describe('Reset Password', () => {
     });
   });
 
+  describe('When admin click [RESET PASSWORD] button and click [X] button : ', () => {
+    beforeEach(() => {
+      ne.menuBtn.first().click();
+      ad.accountListBtn.click();
+      ad.searchUser.sendKeys(env.correctEmailCreate);
+      ad.accountListCheckbox.first().click();
+      ad.resetUserPasswordBtn.click();
+      ad.cancelResetPasswordBtn.first().click();
+    });
+    it('Should check reset password form is close', () => {
+      expect(ad.resetPasswordForm.isPresent()).toBe(false);
+    });
+  });
+
+  describe('When admin click [RESET PASSWORD] button and click [CANCEL] button : ', () => {
+    beforeEach(() => {
+      ne.menuBtn.first().click();
+      ad.accountListBtn.click();
+      ad.searchUser.sendKeys(env.correctEmailCreate);
+      ad.accountListCheckbox.first().click();
+      ad.resetUserPasswordBtn.click();
+      ad.cancelResetPasswordBtn.get(1).click();
+    });
+    it('Should check reset password form is close', () => {
+      expect(ad.resetPasswordForm.isPresent()).toBe(false);
+    });
+  });
+
   describe('When admin not inputs password and password confirmation : ', () => {
     beforeEach(() => {
       ne.menuBtn.first().click();
