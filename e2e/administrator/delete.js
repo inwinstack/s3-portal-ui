@@ -62,7 +62,7 @@ describe('Delete User', () => {
     beforeEach(() => {
       ne.menuBtn.first().click();
       ad.accountListBtn.click();
-      ad.serachUser.sendKeys(env.correctEmailCreate);
+      ad.searchUser.sendKeys(env.correctEmailCreate);
       ad.accountListCheckbox.first().click();
       ad.deleteUserBtn.click();
     });
@@ -75,7 +75,7 @@ describe('Delete User', () => {
     beforeEach(() => {
       ne.menuBtn.first().click();
       ad.accountListBtn.click();
-      ad.serachUser.sendKeys(env.correctEmailCreate);
+      ad.searchUser.sendKeys(env.correctEmailCreate);
       ad.accountListCheckbox.first().click();
       ad.deleteUserBtn.click();
       ad.deleteUserEmailInput.sendKeys();
@@ -91,7 +91,7 @@ describe('Delete User', () => {
     beforeEach(() => {
       ne.menuBtn.first().click();
       ad.accountListBtn.click();
-      ad.serachUser.sendKeys(env.correctEmailCreate);
+      ad.searchUser.sendKeys(env.correctEmailCreate);
       ad.accountListCheckbox.first().click();
       ad.deleteUserBtn.click();
       ad.deleteUserEmailInput.sendKeys(env.incorrectEmail);
@@ -106,7 +106,7 @@ describe('Delete User', () => {
     beforeEach(() => {
       ne.menuBtn.first().click();
       ad.accountListBtn.click();
-      ad.serachUser.sendKeys(env.correctEmailCreate);
+      ad.searchUser.sendKeys(env.correctEmailCreate);
       ad.accountListCheckbox.first().click();
       ad.deleteUserBtn.click();
       ad.deleteUserEmailInput.sendKeys(env.correctEmailCreate);
@@ -120,7 +120,7 @@ describe('Delete User', () => {
     beforeEach(() => {
       ne.menuBtn.first().click();
       ad.accountListBtn.click();
-      ad.serachUser.sendKeys(env.correctEmailCreate);
+      ad.searchUser.sendKeys(env.correctEmailCreate);
       ad.accountListCheckbox.first().click();
       ad.deleteUserBtn.click();
       ad.deleteUserEmailInput.sendKeys(env.correctEmailCreate);

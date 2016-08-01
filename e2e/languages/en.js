@@ -67,6 +67,9 @@ const languages = {
   'TOAST_SIGN_OUT_FAILURE': 'Sign Out Failure!',
   'TOAST_CREATE_BUCKET_SUCCESS': /^Bucket.*are create success!$/,
   'TOAST_CREATE_BUCKET_FAILURE': /^Bucket.*are create failure, please try again!$/,
+  'TOAST_RESET_PASSWORD_SUCCESS': /^.*Reset Password Success!$/,
+  'TOAST_DELETE_ACCOUNT_SUCCESS': /^.* Delete Success!$/,
+  'TOAST_DELETE_ACCOUNT_FAIL': /^.* Delete Fail Please Try Again!$/,
   // AUTH:
   'AUTH_EMAIL': 'Email',
   'AUTH_PASSWORD': 'Password',
@@ -81,6 +84,7 @@ const languages = {
   'AUTH_LOGIN_TO_YOUR_ACCOUNT': 'Log in to your account',
   'AUTH_ALREADY_EXIST': 'Someone already has that username. Try another?',
   'AUTH_SIGN_IN_INCORRECT': 'Your email or password was incorrect. Please try again.',
+  'ADMIN_CREATE_ACCOUNT': 'Create Account',
   // TRANSFER:
   'TRANSFER_AUTO_CLEAR': 'Automatically clear finished transfers',
   'TRANSFER_TITLE_UPLOAD': /^Upload .* to .*$/,
@@ -130,6 +134,11 @@ const languages = {
   'MANAGER_USER_REGISTER_TIME': 'Register Time',
   'MANAGER_USER_RESET': 'RESET PASSWORD',
   'MANAGER_SEARCH': 'Search',
-}
+  'MANAGER_DELETE_TITLE': '',
+  'MANAGER_DELETE_EMAIL': 'User Email',
+  'MANAGER_DELETE_TYPE_NAME': 'Type the email of the account to confirm deletion:',
+  'MANAGER_DELETE_ERROR_MESSAGE': 'Type the exact email of the account you are trying to delete.',
+  'MANAGER_DELETE_CONFIRM': /^Deleting this account and its bucket (including older versions if applicable) cannot be undone. Are you sure you want to delete .*？$/,
+  }
 
 module.exports = Translate;

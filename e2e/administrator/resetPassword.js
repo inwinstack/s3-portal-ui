@@ -39,7 +39,7 @@ describe('Reset Password', () => {
     beforeEach(() => {
       ne.menuBtn.first().click();
       ad.accountListBtn.click();
-      ad.serachUser.sendKeys(env.correctEmailCreate);
+      ad.searchUser.sendKeys(env.correctEmailCreate);
       ad.accountListCheckbox.first().click();
     });
     it('Should check the [RESET PASSWORD] button is enabled', () => {
@@ -51,7 +51,7 @@ describe('Reset Password', () => {
     beforeEach(() => {
       ne.menuBtn.first().click();
       ad.accountListBtn.click();
-      ad.serachUser.sendKeys(env.correctEmailCreate);
+      ad.searchUser.sendKeys(env.correctEmailCreate);
       ad.accountListCheckbox.first().click();
       ad.resetUserPasswordBtn.click();
     });
@@ -64,7 +64,7 @@ describe('Reset Password', () => {
     beforeEach(() => {
       ne.menuBtn.first().click();
       ad.accountListBtn.click();
-      ad.serachUser.sendKeys(env.correctEmailCreate);
+      ad.searchUser.sendKeys(env.correctEmailCreate);
       ad.accountListCheckbox.first().click();
       ad.resetUserPasswordBtn.click();
     });
@@ -77,7 +77,7 @@ describe('Reset Password', () => {
     beforeEach(() => {
       ne.menuBtn.first().click();
       ad.accountListBtn.click();
-      ad.serachUser.sendKeys(env.correctEmailCreate);
+      ad.searchUser.sendKeys(env.correctEmailCreate);
       ad.accountListCheckbox.first().click();
       ad.resetUserPasswordBtn.click();
       ad.ResetPasswordPasswordInput.sendKeys();
@@ -95,7 +95,7 @@ describe('Reset Password', () => {
     beforeEach(() => {
       ne.menuBtn.first().click();
       ad.accountListBtn.click();
-      ad.serachUser.sendKeys(env.correctEmailCreate);
+      ad.searchUser.sendKeys(env.correctEmailCreate);
       ad.accountListCheckbox.first().click();
       ad.resetUserPasswordBtn.click();
       ad.ResetPasswordPasswordInput.sendKeys(env.correctPassword);
@@ -110,7 +110,7 @@ describe('Reset Password', () => {
     beforeEach(() => {
       ne.menuBtn.first().click();
       ad.accountListBtn.click();
-      ad.serachUser.sendKeys(env.correctEmailCreate);
+      ad.searchUser.sendKeys(env.correctEmailCreate);
       ad.accountListCheckbox.first().click();
       ad.resetUserPasswordBtn.click();
       ad.ResetPasswordPasswordInput.sendKeys(env.incorrectPassword);
@@ -126,7 +126,7 @@ describe('Reset Password', () => {
     beforeEach(() => {
       ne.menuBtn.first().click();
       ad.accountListBtn.click();
-      ad.serachUser.sendKeys(env.correctEmailCreate);
+      ad.searchUser.sendKeys(env.correctEmailCreate);
       ad.accountListCheckbox.first().click();
       ad.resetUserPasswordBtn.click();
       ad.ResetPasswordPasswordInput.sendKeys(env.correctPassword);
@@ -143,7 +143,7 @@ describe('Reset Password', () => {
     beforeEach(() => {
       ne.menuBtn.first().click();
       ad.accountListBtn.click();
-      ad.serachUser.sendKeys(env.correctEmailCreate);
+      ad.searchUser.sendKeys(env.correctEmailCreate);
       ad.accountListCheckbox.first().click();
       ad.resetUserPasswordBtn.click();
       ad.ResetPasswordPasswordInput.sendKeys(env.correctPassword);
@@ -158,7 +158,7 @@ describe('Reset Password', () => {
     beforeEach(() => {
       ne.menuBtn.first().click();
       ad.accountListBtn.click();
-      ad.serachUser.sendKeys(env.correctEmailCreate);
+      ad.searchUser.sendKeys(env.correctEmailCreate);
       ad.accountListCheckbox.first().click();
       ad.resetUserPasswordBtn.click();
       ad.ResetPasswordPasswordInput.sendKeys(env.correctPassword);

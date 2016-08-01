@@ -42,7 +42,7 @@ describe('User List',() => {
       expect(ad.deleteUserBtn.isEnabled()).toBe(false);
       expect(ad.resetUserPasswordBtn.isPresent()).toBe(true);
       expect(ad.resetUserPasswordBtn.isEnabled()).toBe(false);
-      expect(ad.serachUser.isPresent()).toBe(true);
+      expect(ad.searchUser.isPresent()).toBe(true);
     });
   });
 

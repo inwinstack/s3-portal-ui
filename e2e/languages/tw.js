@@ -58,6 +58,10 @@ const languages = {
   'TOAST_SIGN_OUT_FAILURE': '登出失敗！',
   'TOAST_CREATE_BUCKET_SUCCESS': /^Bucket.*已建立成功！$/,
   'TOAST_CREATE_BUCKET_FAILURE': /^Bucket.*建立失敗，請再試一次！$/,
+  'TOAST_RESET_PASSWORD_SUCCESS': /^.*更改密碼成功!$/,
+  'TOAST_RESET_PASSWORD_FAILURE': /^.*更改密碼失敗，請再試一次$/,
+  'TOAST_DELETE_ACCOUNT_SUCCESS': /^.* 删除成功!$/,
+  'TOAST_DELETE_ACCOUNT_FAIL': /^.* 删除失败，请再试一次!$/,
   // AUTH
   'AUTH_EMAIL': '電子郵件',
   'AUTH_PASSWORD': '密碼',
@@ -70,6 +74,7 @@ const languages = {
   'AUTH_LOGIN_TO_YOUR_ACCOUNT': '登入你的帳號',
   'AUTH_ALREADY_EXIST': '已有其他人使用這個電子郵件，請換一個試試',
   'AUTH_SIGN_IN_INCORRECT': '你的電子郵件或密碼不正確，請再試一次。',
+  'ADMIN_CREATE_ACCOUNT': '新增使用者',
   // TRANSFER
   'TRANSFER_AUTO_CLEAR': '自動清除已完成傳輸',
   'TRANSFER_TITLE_UPLOAD': /^上傳.*至.*$/,
@@ -115,6 +120,11 @@ const languages = {
   'MANAGER_USER_REGISTER_TIME': '註冊時間',
   'MANAGER_USER_RESET': '重新設定密碼',
   'MANAGER_SEARCH': '搜尋',
+  'MANAGER_DELETE_TITLE': '',
+  'MANAGER_DELETE_EMAIL': '使用者 Email',
+  'MANAGER_DELETE_TYPE_NAME': '請輸入 Email 以確認刪除。',
+  'MANAGER_DELETE_ERROR_MESSAGE': '請輸入欲刪除的完整 Email。',
+  'MANAGER_DELETE_CONFIRM': /^刪除此 Account 及此 Account 內的所有 Bucket （若有支援舊版本則包含舊版本）會無法復原。你確認要刪除.*嗎？$/,
 
   // // AUTH
   // 'AUTH_LOGIN_TO_YOUR_ACCOUNT': '登入你的帳號',

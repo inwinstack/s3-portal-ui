@@ -29,7 +29,7 @@ describe('Search Account and Role',() => {
     beforeEach(() => {
       ne.menuBtn.first().click();
       ad.accountListBtn.click();
-      ad.serachUser.sendKeys(env.correctEmail + '2');
+      ad.searchUser.sendKeys(env.correctEmail + '2');
     });
     it('Should check user list count is zero', () => {
       expect(ad.allAccountList.count()).toBe(0);
@@ -40,7 +40,7 @@ describe('Search Account and Role',() => {
     beforeEach(() => {
       ne.menuBtn.first().click();
       ad.accountListBtn.click();
-      ad.serachUser.sendKeys('admin');
+      ad.searchUser.sendKeys('admin');
     });
     it('Should check user list count is not zero', () => {
       expect(ad.allAccountList.count()).not.toBe(0);
@@ -51,7 +51,7 @@ describe('Search Account and Role',() => {
     beforeEach(() => {
       ne.menuBtn.first().click();
       ad.accountListBtn.click();
-      ad.serachUser.sendKeys(env.adminEmail);
+      ad.searchUser.sendKeys(env.adminEmail);
     });
     it('Should check user list have this account and count is one', () => {
       expect(ad.allAccountList.count()).toBe(1);
