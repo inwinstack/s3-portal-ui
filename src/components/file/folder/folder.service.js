@@ -46,11 +46,13 @@ export default class FolderCreateService {
       parent: element(document.body),
       targetEvent: $event,
       clickOutsideToClose: true,
+      onRemoving: () => {
+        this.initState();
+      }
     });
   }
 
   closeDialog() {
     this.$mdDialog.cancel();
-    this.initState();
   }
 }

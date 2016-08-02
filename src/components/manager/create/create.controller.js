@@ -1,8 +1,8 @@
 export default class AccountCreateController {
   /** @ngInject */
-  constructor($manager, $fetch, $mdDialog, AuthService, $translate) {
+  constructor($manager, $fetch, $mdDialog, AuthService, $translate, $toast) {
     Object.assign(this, {
-      $manager, $fetch, $mdDialog, AuthService, $translate, credentials: {},
+      $manager, $fetch, $mdDialog, AuthService, $translate, $toast, credentials: {},
     });
   }
 

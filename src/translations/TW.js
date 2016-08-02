@@ -10,6 +10,7 @@ export default {
     DELETE: '刪除',
     RENAME: '重新命名',
     REFRESH: '重新整理',
+    CONFIRM: '確定',
     OR: '或',
   },
   VALIDATION: {
@@ -120,6 +121,7 @@ export default {
     TOTAL_SIZE: '總上傳容量大小：',
     FOLDER_NAME: '資料夾名稱',
     FOLDER_DUPLICATED_MESSAGE: '此資料夾已存在！請選擇一個不同的名稱並再試一次。',
+    DUPLICATED_MESSAGE: '此檔案名稱已存在！請選擇一個不同的名稱並再試一次。',
     NEW_FOLDER: '新資料夾',
     DELETE_TITLE: '您確定要刪除所選項目嗎?',
     DELETE_DESCRIPTION: `刪除後將無法復原，您確定要刪除所選項目嗎?`,
@@ -129,11 +131,13 @@ export default {
     RENAME_ARIA_LABEL: 'Rename Object',
     ITEM_NAME:'物件名稱',
     NEW_NAME:'新名稱',
+    PROPERTIES_NAME: '檔案名稱',
     RENAME_SUCCESS: '檔案 {{ fileName }} 重新命名成功',
     RENAME_FAILURE: '檔案 {{ fileName }} 重新命名失敗，請再試一次!',
   },
   MANAGER: {
     USER_LIST: '使用者列表',
+    RESET_USER: '重新設定密碼',
     SEARCH: '搜尋',
     CREATE_USER: '新增使用者',
     USER_DELETE: '刪除使用者',
@@ -142,6 +146,7 @@ export default {
     USER_REGISTER_TIME: '註冊時間',
     USER_RESET: '重新設定密碼',
     EMAIL:'使用者 Email',
+    DELETE_TITLE: '刪除使用者',
     DELETE_TYPE_NAME: '請輸入 Email 以確認刪除。',
     DELETE_ERROR_MESSAGE: '請輸入欲刪除的完整 Email。',
     DELETE_CONFIRM: `刪除此 Account 及此 Account 內的所有 Bucket 
