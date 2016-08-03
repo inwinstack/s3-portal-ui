@@ -10,6 +10,7 @@ export default {
     DELETE: 'Delete',
     RENAME: 'Rename',
     REFRESH: 'Refresh',
+    CONFIRM: 'Confirm',
     OR: 'or',
   },
   VALIDATION: {
@@ -128,6 +129,8 @@ export default {
     FOLDER_NAME: 'Folder Name',
     FOLDER_DUPLICATED_MESSAGE: `That folder already exists!
     Please select a different name and try again.`,
+    DUPLICATED_MESSAGE: `That file name already exists!
+    Please select a different name and try again.`,
     NEW_FOLDER: 'New folder',
     DELETE_TITLE: 'Would you like to delete the selected items?',
     DELETE_DESCRIPTION: `Deleting those objects cannot be undone.
@@ -144,6 +147,7 @@ export default {
   },
   MANAGER: {
     USER_LIST: 'User List',
+    RESET_USER: 'Reset Password',
     SEARCH: 'Search',
     CREATE_USER: 'Create Account',
     USER_DELETE: 'Delete Account',
@@ -152,6 +156,7 @@ export default {
     USER_REGISTER_TIME: 'Register Time',
     USER_RESET: 'Reset password',
     EMAIL: 'User Email',
+    DELETE_TITLE: 'Delete User',
     DELETE_TYPE_NAME: 'Type the email of the account to confirm deletion:',
     DELETE_ERROR_MESSAGE: 'Type the exact email of the account you are trying to delete.',
     DELETE_CONFIRM: `Deleting this account and its bucket (

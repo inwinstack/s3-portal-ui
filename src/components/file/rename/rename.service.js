@@ -41,6 +41,9 @@ export default class RenameService {
       parent: element(document.body),
       targetEvent: $event,
       clickOutsideToClose: true,
+      onRemoving: () => {
+        this.state.duplicated = false;
+      }
     });
   }
 

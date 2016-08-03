@@ -60,7 +60,7 @@ export default class TransferController {
       'TRANSFER.TITLE.CANCEL',
       'TRANSFER.CANCEL_DESCRIPTION',
       'TRANSFER.CANCEL_ARIA_LABEL',
-      'UTILS.DELETE',
+      'UTILS.CONFIRM',
       'UTILS.CANCEL',
     ];
 
