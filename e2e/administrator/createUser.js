@@ -185,10 +185,10 @@ describe('Create User', () => {
       ad.checkCreateUserBtn.click();
     });
     it('Should check show create success message', () => {
-      // browser.ignoreSynchronization = true;
-      // browser.sleep(1000);
+      browser.ignoreSynchronization = true;
+      browser.sleep(1000);
       // expect(ne.toastMessage.isDisplayed()).toBe(true);
-      // browser.ignoreSynchronization = false;
+      browser.ignoreSynchronization = false;
     });
   });
 

@@ -18,9 +18,16 @@ function elements () {
   this.transfersList = element.all(by.repeater('t in transfer.transfers'));
   this.transfersProgress = element(by.css('[ng-if="transfer.isUploading(t)"]'));
   this.transfersInto = element(by.css('[class="transfer-info"]'));
+  this.transfersCanceled = element(by.css('p[ng-if="t.cancel"]'));
   this.uploadFileBtn = element(by.css('[ng-click="file.upload()"]'));
   this.uploadBtn = element(by.css('[ng-click="actionNav.create($event)"]'));
   this.uploadCancelBtn = element.all(by.css('[ng-click="upload.cancel()"]'));
+  this.uploadInterruptBtn = element(by.css('[ng-click="transfer.abortConfirm($event, t)"]'));
+  this.uploadInterruptForm = element(by.css('[ng-class="dialog.css"]'));
+  this.uploadInterruptTitle = element(by.css('h2[class="md-title ng-binding"]'));
+  this.uploadInterruptDescription = element(by.css('div[ng-if="::!dialog.mdHtmlContent"]'));
+  this.cancelUploadInterrupt = element(by.css('[ng-click="dialog.abort()"]'));
+  this.checkUploadInterrupt = element(by.css('[ng-click="dialog.hide()"]'));
   this.uploadForm = element(by.css('[aria-label="Upload Files Dialog"]'));
   this.uploadStayBtn = element(by.css('[ng-click="dialog.abort()"]'));
   this.uploadLeaveBtn = element(by.css('[ng-click="dialog.hide()"]'));

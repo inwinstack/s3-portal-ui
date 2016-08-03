@@ -66,18 +66,18 @@ const users = {
     'smallImg': {
       'name': 'small.png',
       'path': 'C:\\img\\',
-      'size': '8.15 KB',
+      'size': '15.82 KB',
       'newName': 'newSmall.png'
     },
     'smallImg2': {
       'name': 'small2.png',
       'path': 'C:\\img\\',
-      'size': '46.41 KB'
+      'size': '34.2 KB'
     },
     'bigImg': {
-      'name': 'win10.iso',
+      'name': 'WinXP.iso',
       'path': 'C:\\img\\',
-      'size': '8.15 KB'
+      'size': '633.9 MB'
     },
     'bucketName': 'win7-chrome-bucket',
     'folderName': 'win7-chrome-folder',

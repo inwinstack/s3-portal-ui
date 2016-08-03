@@ -29,9 +29,6 @@ describe('File Translation', () => {
   // TW
   describe('When user into the file management page and selects the Traditional Chinese language : ', () => {
     beforeEach(() => {
-      sie.emailInput.sendKeys(env.correctEmail);
-      sie.passwordInput.sendKeys(env.correctPassword);
-      sie.signinBtn.click();
       browser.actions().doubleClick(be.bucketList.first()).perform();
       ne.menuBtn.get(1).click();
       ne.topNavLanguagesBtn.get(1).click();
@@ -177,6 +174,70 @@ describe('File Translation', () => {
       browser.sleep(1000);
       expect(ne.toastMessage.getText()).toMatch(translate('tw', 'FILE_DELETE_SUCCESS_MESSAGE'));
       browser.ignoreSynchronization = false;
+    });
+  });
+
+  describe('When user upload file and selects the Traditional Chinese language : ', () => {
+    beforeEach(() => {
+      browser.actions().doubleClick(be.bucketList.first()).perform();
+      ne.menuBtn.get(1).click();
+      ne.topNavLanguagesBtn.get(1).click();
+      fie.transfersBtn.click();
+      fie.uploadBtn.click();
+      fie.selectUploadFile.sendKeys(env.bigImgPath + env.bigImgName);
+      fie.checkUploadBtn.click();
+      browser.ignoreSynchronization = true;
+      browser.sleep(500);
+    });
+    it('Should check cancel elements using the right language', () => {
+      expect(fie.uploadInterruptBtn.getText()).toBe(translate('tw' , 'UTILS_CANCEL'));
+      browser.ignoreSynchronization = false;
+    });
+  });
+
+  describe('When user click interrupt upload file  button and selects the Traditional Chinese language : ', () => {
+    beforeEach(() => {
+      browser.actions().doubleClick(be.bucketList.first()).perform();
+      ne.menuBtn.get(1).click();
+      ne.topNavLanguagesBtn.get(1).click();
+      fie.transfersBtn.click();
+      fie.uploadBtn.click();
+      fie.selectUploadFile.sendKeys(env.bigImgPath + env.bigImgName);
+      fie.checkUploadBtn.click();
+      browser.ignoreSynchronization = true;
+      browser.sleep(500);
+      fie.uploadInterruptBtn.click();
+      browser.sleep(500);
+    });
+    it('Should check every elements using the right language', () => {
+      expect(fie.uploadInterruptTitle.getText()).toBe(translate('tw' , 'TRANSFER_CANCEL_TITLE'));
+      expect(fie.uploadInterruptDescription.getText()).toBe(translate('tw' , 'TRANSFER_CANCEL_DESCRIPTION'));
+      expect(fie.cancelUploadInterrupt.getText()).toBe(translate('tw' , 'UTILS_CANCEL'));
+      expect(fie.checkUploadInterrupt.getText()).toBe(translate('tw' , 'UTILS_DELETE'));
+      browser.ignoreSynchronization = false;
+    });
+  });
+
+  describe('When user interrupt success upload file  button and selects the Traditional Chinese language : ', () => {
+    beforeEach(() => {
+      browser.actions().doubleClick(be.bucketList.first()).perform();
+      ne.menuBtn.get(1).click();
+      ne.topNavLanguagesBtn.get(1).click();
+      fie.transfersBtn.click();
+      fie.uploadBtn.click();
+      fie.selectUploadFile.sendKeys(env.bigImgPath + env.bigImgName);
+      fie.checkUploadBtn.click();
+      browser.ignoreSynchronization = true;
+      browser.sleep(500);
+      fie.uploadInterruptBtn.click();
+      browser.sleep(500);
+      fie.checkUploadInterrupt.click();
+      browser.sleep(1000);
+    });
+    it('Should check every elements using the right language', () => {
+      expect(ne.toastMessage.getText()).toMatch(translate('tw', 'TRANSFER_CANCEL_UPLOAD'));
+      browser.ignoreSynchronization = false;
+      expect(fie.transfersCanceled.getText()).toBe(translate('tw' , 'TRANSFER_CANCELED'));
     });
   });
 
@@ -331,6 +392,70 @@ describe('File Translation', () => {
     });
   });
 
+  describe('When user upload file and selects the Simplified Chinese language : ', () => {
+    beforeEach(() => {
+      browser.actions().doubleClick(be.bucketList.first()).perform();
+      ne.menuBtn.get(1).click();
+      ne.topNavLanguagesBtn.get(2).click();
+      fie.transfersBtn.click();
+      fie.uploadBtn.click();
+      fie.selectUploadFile.sendKeys(env.bigImgPath + env.bigImgName);
+      fie.checkUploadBtn.click();
+      browser.ignoreSynchronization = true;
+      browser.sleep(500);
+    });
+    it('Should check cancel elements using the right language', () => {
+      expect(fie.uploadInterruptBtn.getText()).toBe(translate('cn' , 'UTILS_CANCEL'));
+      browser.ignoreSynchronization = false;
+    });
+  });
+
+  describe('When user click interrupt upload file  button and selects the Simplified Chinese language : ', () => {
+    beforeEach(() => {
+      browser.actions().doubleClick(be.bucketList.first()).perform();
+      ne.menuBtn.get(1).click();
+      ne.topNavLanguagesBtn.get(2).click();
+      fie.transfersBtn.click();
+      fie.uploadBtn.click();
+      fie.selectUploadFile.sendKeys(env.bigImgPath + env.bigImgName);
+      fie.checkUploadBtn.click();
+      browser.ignoreSynchronization = true;
+      browser.sleep(500);
+      fie.uploadInterruptBtn.click();
+      browser.sleep(500);
+    });
+    it('Should check every elements using the right language', () => {
+      expect(fie.uploadInterruptTitle.getText()).toBe(translate('cn' , 'TRANSFER_CANCEL_TITLE'));
+      expect(fie.uploadInterruptDescription.getText()).toBe(translate('cn' , 'TRANSFER_CANCEL_DESCRIPTION'));
+      expect(fie.cancelUploadInterrupt.getText()).toBe(translate('cn' , 'UTILS_CANCEL'));
+      expect(fie.checkUploadInterrupt.getText()).toBe(translate('cn' , 'UTILS_DELETE'));
+      browser.ignoreSynchronization = false;
+    });
+  });
+
+  describe('When user interrupt success upload file  button and selects the Simplified Chinese language : ', () => {
+    beforeEach(() => {
+      browser.actions().doubleClick(be.bucketList.first()).perform();
+      ne.menuBtn.get(1).click();
+      ne.topNavLanguagesBtn.get(2).click();
+      fie.transfersBtn.click();
+      fie.uploadBtn.click();
+      fie.selectUploadFile.sendKeys(env.bigImgPath + env.bigImgName);
+      fie.checkUploadBtn.click();
+      browser.ignoreSynchronization = true;
+      browser.sleep(500);
+      fie.uploadInterruptBtn.click();
+      browser.sleep(500);
+      fie.checkUploadInterrupt.click();
+      browser.sleep(1000);
+    });
+    it('Should check every elements using the right language', () => {
+      expect(ne.toastMessage.getText()).toMatch(translate('cn', 'TRANSFER_CANCEL_UPLOAD'));
+      browser.ignoreSynchronization = false;
+      expect(fie.transfersCanceled.getText()).toBe(translate('cn' , 'TRANSFER_CANCELED'));
+    });
+  });
+
   // EN
   describe('When user into the file management page and selects the English language : ', () => {
     beforeEach(() => {
@@ -479,6 +604,70 @@ describe('File Translation', () => {
       browser.sleep(1000);
       expect(ne.toastMessage.getText()).toMatch(translate('en', 'FILE_DELETE_SUCCESS_MESSAGE'));
       browser.ignoreSynchronization = false;
+    });
+  });
+
+  describe('When user upload file and selects the English language : ', () => {
+    beforeEach(() => {
+      browser.actions().doubleClick(be.bucketList.first()).perform();
+      ne.menuBtn.get(1).click();
+      ne.topNavLanguagesBtn.get(0).click();
+      fie.transfersBtn.click();
+      fie.uploadBtn.click();
+      fie.selectUploadFile.sendKeys(env.bigImgPath + env.bigImgName);
+      fie.checkUploadBtn.click();
+      browser.ignoreSynchronization = true;
+      browser.sleep(500);
+    });
+    it('Should check cancel elements using the right language', () => {
+      expect(fie.uploadInterruptBtn.getText()).toBe(translate('en' , 'UTILS_CANCEL'));
+      browser.ignoreSynchronization = false;
+    });
+  });
+
+  describe('When user click interrupt upload file  button and selects the English language : ', () => {
+    beforeEach(() => {
+      browser.actions().doubleClick(be.bucketList.first()).perform();
+      ne.menuBtn.get(1).click();
+      ne.topNavLanguagesBtn.get(0).click();
+      fie.transfersBtn.click();
+      fie.uploadBtn.click();
+      fie.selectUploadFile.sendKeys(env.bigImgPath + env.bigImgName);
+      fie.checkUploadBtn.click();
+      browser.ignoreSynchronization = true;
+      browser.sleep(500);
+      fie.uploadInterruptBtn.click();
+      browser.sleep(500);
+    });
+    it('Should check every elements using the right language', () => {
+      expect(fie.uploadInterruptTitle.getText()).toBe(translate('en' , 'TRANSFER_CANCEL_TITLE'));
+      expect(fie.uploadInterruptDescription.getText()).toBe(translate('en' , 'TRANSFER_CANCEL_DESCRIPTION'));
+      expect(fie.cancelUploadInterrupt.getText()).toBe(translate('en' , 'UTILS_CANCEL'));
+      expect(fie.checkUploadInterrupt.getText()).toBe(translate('en' , 'UTILS_DELETE'));
+      browser.ignoreSynchronization = false;
+    });
+  });
+
+  describe('When user interrupt success upload file  button and selects the English language : ', () => {
+    beforeEach(() => {
+      browser.actions().doubleClick(be.bucketList.first()).perform();
+      ne.menuBtn.get(1).click();
+      ne.topNavLanguagesBtn.get(0).click();
+      fie.transfersBtn.click();
+      fie.uploadBtn.click();
+      fie.selectUploadFile.sendKeys(env.bigImgPath + env.bigImgName);
+      fie.checkUploadBtn.click();
+      browser.ignoreSynchronization = true;
+      browser.sleep(500);
+      fie.uploadInterruptBtn.click();
+      browser.sleep(500);
+      fie.checkUploadInterrupt.click();
+      browser.sleep(1000);
+    });
+    it('Should check every elements using the right language', () => {
+      expect(ne.toastMessage.getText()).toMatch(translate('en', 'TRANSFER_CANCEL_UPLOAD'));
+      browser.ignoreSynchronization = false;
+      expect(fie.transfersCanceled.getText()).toBe(translate('en' , 'TRANSFER_CANCELED'));
     });
   });
 });

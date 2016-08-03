@@ -8,7 +8,7 @@ const naturalSort = require('javascript-natural-sort');
 const translate = require('../languages/index.js');
 const pages = require('../page.js');
 
-describe('User List',() => {
+describe('Search Account and Role',() => {
   const env = new environment();
   const sie = new signinElements();
   const be = new bucketElements();
@@ -25,35 +25,37 @@ describe('User List',() => {
     browser.get(ps.signInPage);
   });
 
-  describe('When user signIn with administrator and click user list: ', () => {
+  describe('When admin input incorrect account or role : ', () => {
     beforeEach(() => {
-      sie.emailInput.sendKeys(env.adminEmail);
-      sie.passwordInput.sendKeys(env.adminPassword);
-      sie.signinBtn.click();
       ne.menuBtn.first().click();
       ad.accountListBtn.click();
+      ad.searchUser.sendKeys(env.correctEmail + '2');
     });
-    it('Should check into the user list page', () => {
-      expect(browser.getCurrentUrl()).toBe(ps.accountListPage);
-      expect(ad.userList.isPresent()).toBe(true);
-      expect(ad.createUserBtn.isPresent()).toBe(true);
-      expect(ad.createUserBtn.isEnabled()).toBe(true);
-      expect(ad.deleteUserBtn.isPresent()).toBe(true);
-      expect(ad.deleteUserBtn.isEnabled()).toBe(false);
-      expect(ad.resetUserPasswordBtn.isPresent()).toBe(true);
-      expect(ad.resetUserPasswordBtn.isEnabled()).toBe(false);
-      expect(ad.searchUser.isPresent()).toBe(true);
+    it('Should check user list count is zero', () => {
+      expect(ad.allAccountList.count()).toBe(0);
     });
   });
 
-  describe('When user clicks the bucket list : ', () => {
+  describe('When admin input admin role : ', () => {
     beforeEach(() => {
       ne.menuBtn.first().click();
-      ad.bucketListBtn.click();
+      ad.accountListBtn.click();
+      ad.searchUser.sendKeys('admin');
     });
-    it('Should check back the bucket page', () => {
-      expect(browser.getCurrentUrl()).toBe(ps.bucketListPage);
+    it('Should check user list count is not zero', () => {
+      expect(ad.allAccountList.count()).not.toBe(0);
     });
   });
 
+  describe('When admin input incorrect account : ', () => {
+    beforeEach(() => {
+      ne.menuBtn.first().click();
+      ad.accountListBtn.click();
+      ad.searchUser.sendKeys(env.adminEmail);
+    });
+    it('Should check user list have this account and count is one', () => {
+      expect(ad.allAccountList.count()).toBe(1);
+      expect(ad.allAccountList.first().element(by.css('p[class="break-word flex-grow"]')).getText()).toBe(env.adminEmail);
+    });
+  });
 });

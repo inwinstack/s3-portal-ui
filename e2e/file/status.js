@@ -64,4 +64,62 @@ describe('Upload File Status',() => {
       expect(fe.transfersList.count()).toBe(0);
     });
   });
+
+  describe('When user is uploading a file and open the upload status page to interrupt upload: ',() => {
+    beforeEach(() => {
+      browser.actions().doubleClick(be.bucketList.first()).perform();
+      fe.transfersBtn.click();
+      fe.uploadBtn.click();
+      fe.selectUploadFile.sendKeys(env.bigImgPath + env.bigImgName);
+      fe.checkUploadBtn.click();
+      browser.ignoreSynchronization = true;
+      browser.sleep(500);
+      fe.uploadInterruptBtn.click();
+      browser.sleep(500);
+    });
+    it('Should check the upload interrupt form is displayed', () => {
+      expect(fe.uploadInterruptForm.isDisplayed()).toBe(true);
+      browser.ignoreSynchronization = false;
+    });
+  });
+
+  describe('When user is uploading a file and click interrupt upload button but click [CANCEL]: ',() => {
+    beforeEach(() => {
+      browser.actions().doubleClick(be.bucketList.first()).perform();
+      fe.transfersBtn.click();
+      fe.uploadBtn.click();
+      fe.selectUploadFile.sendKeys(env.bigImgPath + env.bigImgName);
+      fe.checkUploadBtn.click();
+      browser.ignoreSynchronization = true;
+      browser.sleep(500);
+      fe.uploadInterruptBtn.click();
+      browser.sleep(500);
+      fe.cancelUploadInterrupt.click();
+      browser.sleep(500);
+    });
+    it('Should check the disabled upload progress', () => {
+      expect(fe.transfersProgress.isPresent()).toBe(true);
+      browser.ignoreSynchronization = false;
+    });
+  });
+
+  describe('When user is uploading a file and click interrupt upload button and click [delete]: ',() => {
+    beforeEach(() => {
+      browser.actions().doubleClick(be.bucketList.first()).perform();
+      fe.transfersBtn.click();
+      fe.uploadBtn.click();
+      fe.selectUploadFile.sendKeys(env.bigImgPath + env.bigImgName);
+      fe.checkUploadBtn.click();
+      browser.ignoreSynchronization = true;
+      browser.sleep(500);
+      fe.uploadInterruptBtn.click();
+      browser.sleep(500);
+      fe.checkUploadInterrupt.click();
+      browser.sleep(500);
+    });
+    it('Should check the disabled upload progress', () => {
+      expect(fe.transfersProgress.isPresent()).toBe(false);
+      browser.ignoreSynchronization = false;
+    });
+  });
 });

@@ -1,75 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
- <testsuite name="User List" timestamp="2016-07-28T15:54:36" hostname="localhost" time="10.631" errors="0" tests="0" skipped="0" disabled="0" failures="0">
+ <testsuite name="User List" timestamp="2016-08-02T16:37:58" hostname="localhost" time="9.446" errors="0" tests="0" skipped="0" disabled="0" failures="0">
  </testsuite>
- <testsuite name="User List.When user signIn with administrator and click user list: " timestamp="2016-07-28T15:54:36" hostname="localhost" time="7.697" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="User List.When user signIn with administrator and click user list: " name="Should check into the user list page" time="7.695" />
+ <testsuite name="User List.When user signIn with administrator and click user list: " timestamp="2016-08-02T16:37:58" hostname="localhost" time="6.959" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="User List.When user signIn with administrator and click user list: " name="Should check into the user list page" time="6.959" />
  </testsuite>
- <testsuite name="User List.When user clicks the bucket list : " timestamp="2016-07-28T15:54:44" hostname="localhost" time="2.934" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="User List.When user clicks the bucket list : " name="Should check back the bucket page" time="2.934" />
- </testsuite>
- <testsuite name="Create User" timestamp="2016-07-28T15:54:47" hostname="localhost" time="53.33" errors="0" tests="0" skipped="0" disabled="0" failures="0">
- </testsuite>
- <testsuite name="Create User.When admin into the manager page and click create user: " timestamp="2016-07-28T15:54:47" hostname="localhost" time="3.536" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Create User.When admin into the manager page and click create user: " name="Should check into the create user page" time="3.536" />
- </testsuite>
- <testsuite name="Create User.When admin has not input e-mail, password, and password confirmation : " timestamp="2016-07-28T15:54:50" hostname="localhost" time="3.539" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Create User.When admin has not input e-mail, password, and password confirmation : " name="Should check the [CREATE] button is disabled" time="3.539" />
- </testsuite>
- <testsuite name="Create User.When admin inputs null in the account and password : " timestamp="2016-07-28T15:54:54" hostname="localhost" time="4.932" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Create User.When admin inputs null in the account and password : " name="Should check [CREATE] button is disabled and the message displayed" time="4.932" />
- </testsuite>
- <testsuite name="Create User.When admin click create account and click [X] button : " timestamp="2016-07-28T15:54:59" hostname="localhost" time="4.059" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Create User.When admin click create account and click [X] button : " name="Should check create account form is close" time="4.059" />
- </testsuite>
- <testsuite name="Create User.When admin click create account and click [CANCEL] button : " timestamp="2016-07-28T15:55:03" hostname="localhost" time="3.919" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Create User.When admin click create account and click [CANCEL] button : " name="Should check create account form is close" time="3.919" />
- </testsuite>
- <testsuite name="Create User.When admin inputs the correct format for e-mail : " timestamp="2016-07-28T15:55:07" hostname="localhost" time="4.26" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Create User.When admin inputs the correct format for e-mail : " name="Should check the [CREATE] button is disabled" time="4.26" />
- </testsuite>
- <testsuite name="Create User.When admin inputs the incorrect format for e-mail" timestamp="2016-07-28T15:55:11" hostname="localhost" time="4.356" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Create User.When admin inputs the incorrect format for e-mail" name="Should check the [CREATE] button is disabled and the message displayed" time="4.356" />
- </testsuite>
- <testsuite name="Create User.When admin inputs the correct format for password : " timestamp="2016-07-28T15:55:15" hostname="localhost" time="3.654" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Create User.When admin inputs the correct format for password : " name="Should check [CREATE] button is disabled" time="3.654" />
- </testsuite>
- <testsuite name="Create User.When admin inputs the incorrect format for password : " timestamp="2016-07-28T15:55:19" hostname="localhost" time="3.845" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Create User.When admin inputs the incorrect format for password : " name="Should check the [CREATE] button is disabled and the message displayed" time="3.845" />
- </testsuite>
- <testsuite name="Create User.When admin inputs the password and confirmation is inconsistent :" timestamp="2016-07-28T15:55:23" hostname="localhost" time="4.005" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Create User.When admin inputs the password and confirmation is inconsistent :" name="Should check the [CREATE] button is disabled and the message displayed" time="4.005" />
- </testsuite>
- <testsuite name="Create User.When admin inputs the e-mail, password and confirmation : " timestamp="2016-07-28T15:55:27" hostname="localhost" time="4.32" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Create User.When admin inputs the e-mail, password and confirmation : " name="Should check [CREATE] button is enabled." time="4.32" />
- </testsuite>
- <testsuite name="Create User.When admin inputs the e-mail, password and confirmation and clicks the [SIGN UP] : " timestamp="2016-07-28T15:55:31" hostname="localhost" time="4.739" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Create User.When admin inputs the e-mail, password and confirmation and clicks the [SIGN UP] : " name="Should check show create success message" time="4.739" />
- </testsuite>
- <testsuite name="Create User.When admin inputs an already existing e-mail :" timestamp="2016-07-28T15:55:36" hostname="localhost" time="4.166" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Create User.When admin inputs an already existing e-mail :" name="Should check the [CREATE] button is disabled and the message displayed" time="4.166" />
- </testsuite>
- <testsuite name="User List Translation" timestamp="2016-07-28T15:55:40" hostname="localhost" time="25.841" errors="0" tests="0" skipped="0" disabled="0" failures="0">
- </testsuite>
- <testsuite name="User List Translation.When user into the manage page and selects the Traditional Chinese language: " timestamp="2016-07-28T15:55:40" hostname="localhost" time="3.478" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="User List Translation.When user into the manage page and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="3.478" />
- </testsuite>
- <testsuite name="User List Translation.When user into the manage page and selects the Traditional Chinese language: " timestamp="2016-07-28T15:55:44" hostname="localhost" time="4.63" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="User List Translation.When user into the manage page and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="4.63" />
- </testsuite>
- <testsuite name="User List Translation.When user into the manage page and selects the Simplified Chinese language: " timestamp="2016-07-28T15:55:48" hostname="localhost" time="3.343" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="User List Translation.When user into the manage page and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="3.341" />
- </testsuite>
- <testsuite name="User List Translation.When user into the manage page and selects the Simplified Chinese language: " timestamp="2016-07-28T15:55:52" hostname="localhost" time="4.505" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="User List Translation.When user into the manage page and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="4.504" />
- </testsuite>
- <testsuite name="User List Translation.When user into the manage page and selects the English language: " timestamp="2016-07-28T15:55:56" hostname="localhost" time="3.294" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="User List Translation.When user into the manage page and selects the English language: " name="Should check every elements using the right language" time="3.294" />
- </testsuite>
- <testsuite name="User List Translation.When user into the manage page and selects the English language: " timestamp="2016-07-28T15:55:59" hostname="localhost" time="4.737" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="User List Translation.When user into the manage page and selects the English language: " name="Should check every elements using the right language" time="4.737" />
- </testsuite>
- <testsuite name="User List Translation.When admin click the [Sign Out] : " timestamp="2016-07-28T15:56:04" hostname="localhost" time="1.854" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="User List Translation.When admin click the [Sign Out] : " name="Clear" time="1.854" />
+ <testsuite name="User List.When user clicks the bucket list : " timestamp="2016-08-02T16:38:05" hostname="localhost" time="2.486" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="User List.When user clicks the bucket list : " name="Should check back the bucket page" time="2.485" />
  </testsuite>
 </testsuites>

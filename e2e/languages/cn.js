@@ -61,6 +61,9 @@ const languages = {
   'TOAST_SIGN_OUT_FAILURE': '登出失敗！',
   'TOAST_CREATE_BUCKET_SUCCESS': /^Bucket.*已创建成功！$/,
   'TOAST_CREATE_BUCKET_FAILURE': /^Bucket.*创建失敗，请再试一次！$/,
+  'TOAST_RESET_PASSWORD_SUCCESS': /^.*更改密码成功!$/,
+  'TOAST_DELETE_ACCOUNT_SUCCESS': /^.* 删除成功!$/,
+  'TOAST_DELETE_ACCOUNT_FAIL': /^.* 删除失败，请再试一次!$/,
   // AUTH
   'AUTH_EMAIL': '电邮',
   'AUTH_PASSWORD': '密码',
@@ -73,6 +76,7 @@ const languages = {
   'AUTH_LOGIN_TO_YOUR_ACCOUNT': '登入你的帐户',
   'AUTH_ALREADY_EXIST': '已有其他人使用这个电邮，请换一个试试',
   'AUTH_SIGN_IN_INCORRECT': '你的电邮或密码不正确，请再试一次。',
+  'ADMIN_CREATE_ACCOUNT': '新增使用者',
   // TRANSFER
   'TRANSFER_AUTO_CLEAR': '自动清除已完成传输',
   'TRANSFER_TITLE_UPLOAD': /^上传 .* 至 .*$/,
@@ -82,6 +86,10 @@ const languages = {
   'TRANSFER_STATUS_UPLOADING': '上传中',
   'TRANSFER_STATUS_COMPLETED': '已完成',
   'TRANSFER_STATUS_RESUMING': '重新开始',
+  'TRANSFER_CANCEL_UPLOAD': /^.*的上传已被取消$/,
+  'TRANSFER_CANCEL_TITLE': '你确定要取消这项上传吗?',
+  'TRANSFER_CANCEL_DESCRIPTION': '取消上传将无法复原，你确定要这样做吗?',
+  'TRANSFER_CANCELED': '取消传输',
   // FILE
   'FILE_CREATE_FOLDER': '创建文件夹',
   'FILE_STORAGE_CLASS': '储存类型',
@@ -117,6 +125,11 @@ const languages = {
   'MANAGER_USER_REGISTER_TIME': '注册时间',
   'MANAGER_USER_RESET': '重新设定密码',
   'MANAGER_SEARCH': '搜寻',
+  'MANAGER_DELETE_TITLE': '',
+  'MANAGER_DELETE_EMAIL': '使用者 Email',
+  'MANAGER_DELETE_TYPE_NAME': '请输入 Email 以确认删除。',
+  'MANAGER_DELETE_ERROR_MESSAGE': '请输入欲删除的完整 Email。',
+  'MANAGER_DELETE_CONFIRM': /^删除此 Account 及此 Account 内的所有 Bucket （若有支持旧版本则包含旧版本）会无法复原。你确认要删除 .*吗？$/,
 }
 
 module.exports = Translate;
