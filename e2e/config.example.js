@@ -30,11 +30,11 @@ exports.config = {
   multiCapabilities: [
   {
     browserName: 'chrome',
-    seleniumAddress: 'http://10.26.1.27:4444/wd/hub',
+    seleniumAddress: 'http://10.26.1.180:4444/wd/hub',
     os: 'ubuntu'
   },{
     browserName: 'chrome',
-    seleniumAddress: 'http://10.26.1.34:4444/wd/hub',
+    seleniumAddress: 'http://10.26.1.147:4444/wd/hub',
     os: 'win7'
   },{
     browserName: 'chrome',

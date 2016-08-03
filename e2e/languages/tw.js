@@ -84,6 +84,10 @@ const languages = {
   'TRANSFER_STATUS_UPLOADING': '上傳中',
   'TRANSFER_STATUS_COMPLETED': '已完成',
   'TRANSFER_STATUS_RESUMING': '重新開始',
+  'TRANSFER_CANCEL_UPLOAD': /^.*的上傳已被取消$/,
+  'TRANSFER_CANCEL_TITLE': '你確定要取消這項上傳嗎?',
+  'TRANSFER_CANCEL_DESCRIPTION': '取消上傳將無法復原，你確定要這樣做嗎?',
+  'TRANSFER_CANCELED': '取消傳輸',
   // FILE
   'FILE_CREATE_FOLDER': '建立資料夾',
   'FILE_STORAGE_CLASS': '儲存類型',

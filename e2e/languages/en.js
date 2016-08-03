@@ -94,6 +94,10 @@ const languages = {
   'TRANSFER_STATUS_UPLOADING': 'Uploading',
   'TRANSFER_STATUS_COMPLETED': 'Completed',
   'TRANSFER_STATUS_RESUMING': 'Resuming',
+  'TRANSFER_CANCEL_UPLOAD': /^Upload.*Has Been Cancel$/,
+  'TRANSFER_CANCEL_TITLE': 'Would you like to cancel the selected upload?',
+  'TRANSFER_CANCEL_DESCRIPTION': 'Cancel this upload cannot be undone, Are You Sure you wanna do this?',
+  'TRANSFER_CANCELED': 'Transfer Canceled',
   // FILE:
   'FILE_CREATE_FOLDER': 'CREATE FOLDER',
   'FILE_CREATE_FOLDER_2': 'Create Folder',

@@ -86,6 +86,10 @@ const languages = {
   'TRANSFER_STATUS_UPLOADING': '上传中',
   'TRANSFER_STATUS_COMPLETED': '已完成',
   'TRANSFER_STATUS_RESUMING': '重新开始',
+  'TRANSFER_CANCEL_UPLOAD': /^.*的上传已被取消$/,
+  'TRANSFER_CANCEL_TITLE': '你确定要取消这项上传吗?',
+  'TRANSFER_CANCEL_DESCRIPTION': '取消上传将无法复原，你确定要这样做吗?',
+  'TRANSFER_CANCELED': '取消传输',
   // FILE
   'FILE_CREATE_FOLDER': '创建文件夹',
   'FILE_STORAGE_CLASS': '储存类型',
