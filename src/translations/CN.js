@@ -68,6 +68,8 @@ export default {
     UPLOAD_FILE_FAILURE: '档案 {{ name }} 上传失败，请再试一次!',
     DELETE_FILE_SUCCESS: '{{ name }} 删除成功！',
     DELETE_FILE_FAILURE: '{{ name }} 删除失败,请再试一次！',
+    DELETE_ACCOUNT_SUCCESS: '{{ name }} 删除成功!',
+    DELETE_ACCOUNT_FAIL: '{{ name }} 删除失败，请再试一次!',
     RESET_SUCCESS: '{{ email }} 更改密码成功!',
     RESET_FAIL: '{{ email }} 更改密码失败，请再试一次',
     CANCEL_UPLOAD: '{{ name }} 的上传已被取消',
