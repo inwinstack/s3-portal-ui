@@ -19,6 +19,7 @@ const languages = {
   'UTILS_DELETE': '删除',
   'UTILS_REFRESH': '刷新',
   'UTILS_OR': '或',
+  'UTILS_CONFIRM': '确定',
   // VALIDATION
   'VALIDATION_REQUIRED': '此栏位不得为空。',
   'VALIDATION_EMAIL': '此栏位必须符合电邮格式。',
@@ -96,6 +97,7 @@ const languages = {
   'FILE_SIZE': '容量大小',
   'FILE_LAST_MODIFIED': '最后修改时间',
   'FILE_OWNER': '拥有者',
+  'FILE_NAME': '文件名',
   'FILE_DO_ACTIONS': '你可以执行以下操作',
   'FILE_UPLOAD': '上传档案',
   'FILE_EMPTY_BUCKET': '这个 bucket 是空的',

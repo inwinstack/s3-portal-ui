@@ -21,6 +21,7 @@ const languages = {
   'UTILS_DELETE_2': 'Delete',
   'UTILS_REFRESH': 'Refresh',
   'UTILS_OR': 'or',
+  'UTILS_CONFIRM': 'CONFIRM',
   // VALIDATION
   'VALIDATION_REQUIRED': 'You left the field blank.',
   'VALIDATION_EMAIL': 'Your email must be look like an e-mail address.',

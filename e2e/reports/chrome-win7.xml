@@ -1,26 +1,104 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
- <testsuite name="File Properties" timestamp="2016-08-03T14:29:42" hostname="localhost" time="47.18" errors="0" tests="0" skipped="0" disabled="0" failures="0">
+ <testsuite name="File Translation" timestamp="2016-08-03T15:29:08" hostname="localhost" time="217.083" errors="0" tests="0" skipped="0" disabled="0" failures="0">
  </testsuite>
- <testsuite name="File Properties.When user selects the bucketList and clicks properties : " timestamp="2016-08-03T14:29:42" hostname="localhost" time="12.405" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Properties.When user selects the bucketList and clicks properties : " name="Should check whether the properties page" time="12.404" />
+ <testsuite name="File Translation.When user into the file management page and selects the Traditional Chinese language : " timestamp="2016-08-03T15:29:08" hostname="localhost" time="8.7" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user into the file management page and selects the Traditional Chinese language : " name="Should check every elements using the right language" time="8.699" />
  </testsuite>
- <testsuite name="File Properties.When user selects the bucketList and clicks other properties : " timestamp="2016-08-03T14:29:54" hostname="localhost" time="1.846" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Properties.When user selects the bucketList and clicks other properties : " name="Should check whether the properties page" time="1.846" />
+ <testsuite name="File Translation.When user into the upload file form and selects the Traditional Chinese language : " timestamp="2016-08-03T15:29:17" hostname="localhost" time="4.505" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user into the upload file form and selects the Traditional Chinese language : " name="Should check every elements using the right language" time="4.504" />
  </testsuite>
- <testsuite name="File Properties.When user into the file properties form and click [X] btn  : " timestamp="2016-08-03T14:29:56" hostname="localhost" time="2.484" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Properties.When user into the file properties form and click [X] btn  : " name="Should check the properties form is closed and properties is enabled" time="2.484" />
+ <testsuite name="File Translation.When user successfully uploaded files and selects the Traditional Chinese language : " timestamp="2016-08-03T15:29:21" hostname="localhost" time="8.764" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user successfully uploaded files and selects the Traditional Chinese language : " name="Should check every elements using the right language" time="8.763" />
  </testsuite>
- <testsuite name="File Properties.When user selects the folder and clicks properties : " timestamp="2016-08-03T14:29:59" hostname="localhost" time="7.088" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Properties.When user selects the folder and clicks properties : " name="Should check whether the empty folder properties" time="7.088" />
+ <testsuite name="File Translation.When user select rename files and selects the Traditional Chinese language : " timestamp="2016-08-03T15:29:30" hostname="localhost" time="5.793" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user select rename files and selects the Traditional Chinese language : " name="Should check every elements using the right language" time="5.793" />
  </testsuite>
- <testsuite name="File Properties.When user selects the files and clicks properties : " timestamp="2016-08-03T14:30:06" hostname="localhost" time="8.457" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Properties.When user selects the files and clicks properties : " name="Should check whether the folder properties" time="8.457" />
+ <testsuite name="File Translation.When user select rename files  send same name and selects the Traditional Chinese language : " timestamp="2016-08-03T15:29:36" hostname="localhost" time="9.085" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user select rename files  send same name and selects the Traditional Chinese language : " name="Should check every elements using the right language" time="9.085" />
  </testsuite>
- <testsuite name="File Properties.When user selects the files and clicks properties : " timestamp="2016-08-03T14:30:14" hostname="localhost" time="7.039" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Properties.When user selects the files and clicks properties : " name="Should check whether the files properties" time="7.039" />
+ <testsuite name="File Translation.When user select rename files  send new name and selects the Traditional Chinese language : " timestamp="2016-08-03T15:29:45" hostname="localhost" time="6.922" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user select rename files  send new name and selects the Traditional Chinese language : " name="Should check every elements using the right language" time="6.921" />
  </testsuite>
- <testsuite name="File Properties.Clear" timestamp="2016-08-03T14:30:21" hostname="localhost" time="7.86" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Properties.Clear" name="Clear" time="7.86" />
+ <testsuite name="File Translation.When user click properties and selects the Traditional Chinese language : " timestamp="2016-08-03T15:29:52" hostname="localhost" time="3.689" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user click properties and selects the Traditional Chinese language : " name="Should check every elements using the right language" time="3.688" />
+ </testsuite>
+ <testsuite name="File Translation.When user selects a file to be deleted and selects the Traditional Chinese language : " timestamp="2016-08-03T15:29:55" hostname="localhost" time="6.486" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user selects a file to be deleted and selects the Traditional Chinese language : " name="Should check every elements using the right language" time="6.486" />
+ </testsuite>
+ <testsuite name="File Translation.When user upload file and selects the Traditional Chinese language : " timestamp="2016-08-03T15:30:02" hostname="localhost" time="5.513" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user upload file and selects the Traditional Chinese language : " name="Should check cancel elements using the right language" time="5.513" />
+ </testsuite>
+ <testsuite name="File Translation.When user click interrupt upload file  button and selects the Traditional Chinese language : " timestamp="2016-08-03T15:30:07" hostname="localhost" time="7.003" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user click interrupt upload file  button and selects the Traditional Chinese language : " name="Should check every elements using the right language" time="7.002" />
+ </testsuite>
+ <testsuite name="File Translation.When user interrupt success upload file  button and selects the Traditional Chinese language : " timestamp="2016-08-03T15:30:14" hostname="localhost" time="9.656" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user interrupt success upload file  button and selects the Traditional Chinese language : " name="Should check every elements using the right language" time="9.656" />
+ </testsuite>
+ <testsuite name="File Translation.When user into the file management page and selects the Simplified Chinese language : " timestamp="2016-08-03T15:30:24" hostname="localhost" time="3.863" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user into the file management page and selects the Simplified Chinese language : " name="Should check every elements using the right language" time="3.862" />
+ </testsuite>
+ <testsuite name="File Translation.When user into the upload file form and selects the Simplified Chinese language : " timestamp="2016-08-03T15:30:28" hostname="localhost" time="4.483" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user into the upload file form and selects the Simplified Chinese language : " name="Should check every elements using the right language" time="4.483" />
+ </testsuite>
+ <testsuite name="File Translation.When user successfully uploaded files and selects the Simplified Chinese language : " timestamp="2016-08-03T15:30:32" hostname="localhost" time="8.526" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user successfully uploaded files and selects the Simplified Chinese language : " name="Should check every elements using the right language" time="8.526" />
+ </testsuite>
+ <testsuite name="File Translation.When user select rename files and selects the Simplified Chinese language : " timestamp="2016-08-03T15:30:41" hostname="localhost" time="6.033" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user select rename files and selects the Simplified Chinese language : " name="Should check every elements using the right language" time="6.033" />
+ </testsuite>
+ <testsuite name="File Translation.When user select rename files  send same name and selects the Simplified Chinese language : " timestamp="2016-08-03T15:30:47" hostname="localhost" time="8.987" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user select rename files  send same name and selects the Simplified Chinese language : " name="Should check every elements using the right language" time="8.987" />
+ </testsuite>
+ <testsuite name="File Translation.When user select rename files  send new name and selects the Simplified Chinese language : " timestamp="2016-08-03T15:30:56" hostname="localhost" time="6.646" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user select rename files  send new name and selects the Simplified Chinese language : " name="Should check every elements using the right language" time="6.646" />
+ </testsuite>
+ <testsuite name="File Translation.When user click properties and selects the Simplified Chinese language : " timestamp="2016-08-03T15:31:02" hostname="localhost" time="3.623" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user click properties and selects the Simplified Chinese language : " name="Should check every elements using the right language" time="3.623" />
+ </testsuite>
+ <testsuite name="File Translation.When user selects a file to be deleted and selects the Simplified Chinese language : " timestamp="2016-08-03T15:31:06" hostname="localhost" time="6.607" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user selects a file to be deleted and selects the Simplified Chinese language : " name="Should check every elements using the right language" time="6.607" />
+ </testsuite>
+ <testsuite name="File Translation.When user upload file and selects the Simplified Chinese language : " timestamp="2016-08-03T15:31:13" hostname="localhost" time="5.636" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user upload file and selects the Simplified Chinese language : " name="Should check cancel elements using the right language" time="5.622" />
+ </testsuite>
+ <testsuite name="File Translation.When user click interrupt upload file  button and selects the Simplified Chinese language : " timestamp="2016-08-03T15:31:18" hostname="localhost" time="6.481" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user click interrupt upload file  button and selects the Simplified Chinese language : " name="Should check every elements using the right language" time="6.481" />
+ </testsuite>
+ <testsuite name="File Translation.When user interrupt success upload file  button and selects the Simplified Chinese language : " timestamp="2016-08-03T15:31:25" hostname="localhost" time="9.609" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user interrupt success upload file  button and selects the Simplified Chinese language : " name="Should check every elements using the right language" time="9.609" />
+ </testsuite>
+ <testsuite name="File Translation.When user into the file management page and selects the English language : " timestamp="2016-08-03T15:31:34" hostname="localhost" time="3.837" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user into the file management page and selects the English language : " name="Should check every elements using the right language" time="3.837" />
+ </testsuite>
+ <testsuite name="File Translation.When user into the upload file form and selects the English language : " timestamp="2016-08-03T15:31:38" hostname="localhost" time="4.385" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user into the upload file form and selects the English language : " name="Should check every elements using the right language" time="4.385" />
+ </testsuite>
+ <testsuite name="File Translation.When user successfully uploaded files and selects the English language : " timestamp="2016-08-03T15:31:43" hostname="localhost" time="8.486" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user successfully uploaded files and selects the English language : " name="Should check every elements using the right language" time="8.485" />
+ </testsuite>
+ <testsuite name="File Translation.When user select rename files and selects the English language : " timestamp="2016-08-03T15:31:51" hostname="localhost" time="6.193" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user select rename files and selects the English language : " name="Should check every elements using the right language" time="6.193" />
+ </testsuite>
+ <testsuite name="File Translation.When user select rename files  send same name and selects the English language : " timestamp="2016-08-03T15:31:57" hostname="localhost" time="9.022" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user select rename files  send same name and selects the English language : " name="Should check every elements using the right language" time="9.021" />
+ </testsuite>
+ <testsuite name="File Translation.When user select rename files  send new name and selects the English language : " timestamp="2016-08-03T15:32:06" hostname="localhost" time="6.679" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user select rename files  send new name and selects the English language : " name="Should check every elements using the right language" time="6.679" />
+ </testsuite>
+ <testsuite name="File Translation.When user click properties and selects the English language : " timestamp="2016-08-03T15:32:13" hostname="localhost" time="3.666" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user click properties and selects the English language : " name="Should check every elements using the right language" time="3.666" />
+ </testsuite>
+ <testsuite name="File Translation.When user selects a file to be deleted and selects the English language : " timestamp="2016-08-03T15:32:17" hostname="localhost" time="6.624" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user selects a file to be deleted and selects the English language : " name="Should check every elements using the right language" time="6.623" />
+ </testsuite>
+ <testsuite name="File Translation.When user upload file and selects the English language : " timestamp="2016-08-03T15:32:23" hostname="localhost" time="5.87" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user upload file and selects the English language : " name="Should check cancel elements using the right language" time="5.87" />
+ </testsuite>
+ <testsuite name="File Translation.When user click interrupt upload file  button and selects the English language : " timestamp="2016-08-03T15:32:29" hostname="localhost" time="6.752" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user click interrupt upload file  button and selects the English language : " name="Should check every elements using the right language" time="6.752" />
+ </testsuite>
+ <testsuite name="File Translation.When user interrupt success upload file  button and selects the English language : " timestamp="2016-08-03T15:32:36" hostname="localhost" time="8.959" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File Translation.When user interrupt success upload file  button and selects the English language : " name="Should check every elements using the right language" time="8.958" />
  </testsuite>
 </testsuites>

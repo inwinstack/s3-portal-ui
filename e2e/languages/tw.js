@@ -16,6 +16,7 @@ const languages = {
   'UTILS_DELETE': '刪除',
   'UTILS_REFRESH': '重新整理',
   'UTILS_OR': '或',
+  'UTILS_CONFIRM': '確定',
   // VALIDATION
   'VALIDATION_REQUIRED': '此欄位不得為空。',
   'VALIDATION_EMAIL': '此欄位必須符合電子郵件格式。',

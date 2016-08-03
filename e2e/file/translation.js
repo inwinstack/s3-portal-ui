@@ -29,6 +29,9 @@ describe('File Translation', () => {
   // TW
   describe('When user into the file management page and selects the Traditional Chinese language : ', () => {
     beforeEach(() => {
+      sie.emailInput.sendKeys(env.correctEmail);
+      sie.passwordInput.sendKeys(env.correctPassword);
+      sie.signinBtn.click();
       browser.actions().doubleClick(be.bucketList.first()).perform();
       ne.menuBtn.get(1).click();
       ne.topNavLanguagesBtn.get(1).click();
@@ -100,7 +103,7 @@ describe('File Translation', () => {
       expect(fie.renameFileForm.element(by.css('[class="md-prompt-input-container ng-scope md-input-has-placeholder md-default-theme md-input-has-value"]')).element(by.css('label[class="ng-scope"]')).getText()).toBe(translate('tw', 'RENAME_ITEM_NAME'));
       expect(fie.renameFileForm.element(by.css('[class="md-block"]')).element(by.css('label[class="ng-scope"]')).getText()).toBe(translate('tw', 'RENAME_NEW_NAME'));
       expect(fie.renameFileCancelBtn.get(1).getText()).toBe(translate('tw', 'UTILS_CANCEL'));
-      expect(fie.renameFileForm.element(by.css('[ng-click="rename.rename()"]')).getText()).toBe(translate('tw', 'UTILS_CREATE'));
+      expect(fie.renameFileForm.element(by.css('[ng-click="rename.rename()"]')).getText()).toBe(translate('tw', 'UTILS_CONFIRM'));
     });
   });
 
@@ -151,7 +154,7 @@ describe('File Translation', () => {
     });
     it('Should check every elements using the right language', () => {
       expect(fie.propertiesForm.element(by.css('md-toolbar[class="md-menu-toolbar"]')).element(by.css('span[class="ng-scope"]')).getText()).toBe(translate('tw', 'ACTION_NAVBAR_PROPERTIES'));
-      // expect(fie.propertiesFileListItem.first().getText()).toBe(translate('tw' , 'FILE_NAME'));
+      expect(fie.propertiesFileListItem.first().getText()).toBe(translate('tw' , 'FILE_NAME'));
       expect(fie.propertiesFileListItem.get(1).getText()).toBe(translate('tw', 'FILE_SIZE'));
       expect(fie.propertiesFileListItem.get(2).getText()).toBe(translate('tw', 'FILE_STORAGE_CLASS'));
       expect(fie.propertiesFileListItem.get(3).getText()).toBe(translate('tw', 'FILE_LAST_MODIFIED'));
@@ -213,7 +216,7 @@ describe('File Translation', () => {
       expect(fie.uploadInterruptTitle.getText()).toBe(translate('tw' , 'TRANSFER_CANCEL_TITLE'));
       expect(fie.uploadInterruptDescription.getText()).toBe(translate('tw' , 'TRANSFER_CANCEL_DESCRIPTION'));
       expect(fie.cancelUploadInterrupt.getText()).toBe(translate('tw' , 'UTILS_CANCEL'));
-      expect(fie.checkUploadInterrupt.getText()).toBe(translate('tw' , 'UTILS_DELETE'));
+      expect(fie.checkUploadInterrupt.getText()).toBe(translate('tw' , 'UTILS_CONFIRM'));
       browser.ignoreSynchronization = false;
     });
   });
@@ -315,7 +318,7 @@ describe('File Translation', () => {
       expect(fie.renameFileForm.element(by.css('[class="md-prompt-input-container ng-scope md-input-has-placeholder md-default-theme md-input-has-value"]')).element(by.css('label[class="ng-scope"]')).getText()).toBe(translate('cn', 'RENAME_ITEM_NAME'));
       expect(fie.renameFileForm.element(by.css('[class="md-block"]')).element(by.css('label[class="ng-scope"]')).getText()).toBe(translate('cn', 'RENAME_NEW_NAME'));
       expect(fie.renameFileCancelBtn.get(1).getText()).toBe(translate('cn', 'UTILS_CANCEL'));
-      expect(fie.renameFileForm.element(by.css('[ng-click="rename.rename()"]')).getText()).toBe(translate('cn', 'UTILS_CREATE'));
+      expect(fie.renameFileForm.element(by.css('[ng-click="rename.rename()"]')).getText()).toBe(translate('cn', 'UTILS_CONFIRM'));
     });
   });
 
@@ -366,7 +369,7 @@ describe('File Translation', () => {
     });
     it('Should check every elements using the right language', () => {
       expect(fie.propertiesForm.element(by.css('md-toolbar[class="md-menu-toolbar"]')).element(by.css('span[class="ng-scope"]')).getText()).toBe(translate('cn', 'ACTION_NAVBAR_PROPERTIES'));
-      // expect(fie.propertiesFileListItem.first().getText()).toBe(translate('cn' , 'FILE_NAME'));
+      expect(fie.propertiesFileListItem.first().getText()).toBe(translate('cn' , 'FILE_NAME'));
       expect(fie.propertiesFileListItem.get(1).getText()).toBe(translate('cn', 'FILE_SIZE'));
       expect(fie.propertiesFileListItem.get(2).getText()).toBe(translate('cn', 'FILE_STORAGE_CLASS'));
       expect(fie.propertiesFileListItem.get(3).getText()).toBe(translate('cn', 'FILE_LAST_MODIFIED'));
@@ -428,7 +431,7 @@ describe('File Translation', () => {
       expect(fie.uploadInterruptTitle.getText()).toBe(translate('cn' , 'TRANSFER_CANCEL_TITLE'));
       expect(fie.uploadInterruptDescription.getText()).toBe(translate('cn' , 'TRANSFER_CANCEL_DESCRIPTION'));
       expect(fie.cancelUploadInterrupt.getText()).toBe(translate('cn' , 'UTILS_CANCEL'));
-      expect(fie.checkUploadInterrupt.getText()).toBe(translate('cn' , 'UTILS_DELETE'));
+      expect(fie.checkUploadInterrupt.getText()).toBe(translate('cn' , 'UTILS_CONFIRM'));
       browser.ignoreSynchronization = false;
     });
   });
@@ -530,7 +533,7 @@ describe('File Translation', () => {
       expect(fie.renameFileForm.element(by.css('[class="md-prompt-input-container ng-scope md-input-has-placeholder md-default-theme md-input-has-value"]')).element(by.css('label[class="ng-scope"]')).getText()).toBe(translate('en' , 'RENAME_ITEM_NAME'));
       expect(fie.renameFileForm.element(by.css('[class="md-block"]')).element(by.css('label[class="ng-scope"]')).getText()).toBe(translate('en' , 'RENAME_NEW_NAME'));
       expect(fie.renameFileCancelBtn.get(1).getText()).toBe(translate('en' , 'UTILS_CANCEL'));
-      expect(fie.renameFileForm.element(by.css('[ng-click="rename.rename()"]')).getText()).toBe(translate('en' , 'UTILS_CREATE'));
+      expect(fie.renameFileForm.element(by.css('[ng-click="rename.rename()"]')).getText()).toBe(translate('en' , 'UTILS_CONFIRM'));
     });
   });
 
@@ -643,7 +646,7 @@ describe('File Translation', () => {
       expect(fie.uploadInterruptTitle.getText()).toBe(translate('en' , 'TRANSFER_CANCEL_TITLE'));
       expect(fie.uploadInterruptDescription.getText()).toBe(translate('en' , 'TRANSFER_CANCEL_DESCRIPTION'));
       expect(fie.cancelUploadInterrupt.getText()).toBe(translate('en' , 'UTILS_CANCEL'));
-      expect(fie.checkUploadInterrupt.getText()).toBe(translate('en' , 'UTILS_DELETE'));
+      expect(fie.checkUploadInterrupt.getText()).toBe(translate('en' , 'UTILS_CONFIRM'));
       browser.ignoreSynchronization = false;
     });
   });
