@@ -1,160 +1,154 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
- <testsuite name="User List" timestamp="2016-08-03T16:48:12" hostname="localhost" time="9.315" errors="0" tests="0" skipped="0" disabled="0" failures="0">
+ <testsuite name="Bucket List : " timestamp="2016-08-03T20:05:09" hostname="localhost" time="6.975" errors="0" tests="0" skipped="0" disabled="0" failures="0">
  </testsuite>
- <testsuite name="User List.When user signIn with administrator and click user list: " timestamp="2016-08-03T16:48:12" hostname="localhost" time="6.799" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="User List.When user signIn with administrator and click user list: " name="Should check into the user list page" time="6.798" />
+ <testsuite name="Bucket List : .When the user into the management bucket page but do not have any of the bucket : " timestamp="2016-08-03T20:05:09" hostname="localhost" time="6.975" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Bucket List : .When the user into the management bucket page but do not have any of the bucket : " name="Should check the [CREATE BUCKET] button is display and enabled and the message is displayed" time="6.973" />
  </testsuite>
- <testsuite name="User List.When user clicks the bucket list : " timestamp="2016-08-03T16:48:19" hostname="localhost" time="2.516" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="User List.When user clicks the bucket list : " name="Should check back the bucket page" time="2.516" />
+ <testsuite name="Create Bucket" timestamp="2016-08-03T20:05:16" hostname="localhost" time="17.771" errors="0" tests="0" skipped="0" disabled="0" failures="0">
  </testsuite>
- <testsuite name="Administrator Translation" timestamp="2016-08-03T16:48:22" hostname="localhost" time="305.042" errors="0" tests="0" skipped="0" disabled="0" failures="0">
+ <testsuite name="Create Bucket.When user click the [CREATE BUCKET] button : " timestamp="2016-08-03T20:05:16" hostname="localhost" time="4.236" errors="0" tests="2" skipped="0" disabled="0" failures="0">
+  <testcase classname="Create Bucket.When user click the [CREATE BUCKET] button : " name="Should check the display Bucket form" time="1.752" />
+  <testcase classname="Create Bucket.When user click the [CREATE BUCKET] button : " name="Should check the display Bucket form #2" time="2.484" />
  </testsuite>
- <testsuite name="Administrator Translation.When user into the manage page and selects the Traditional Chinese language: " timestamp="2016-08-03T16:48:22" hostname="localhost" time="3.724" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When user into the manage page and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="3.724" />
+ <testsuite name="Create Bucket.When the bucket form show and the user clicks the [Cancel] button" timestamp="2016-08-03T20:05:20" hostname="localhost" time="2.406" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Create Bucket.When the bucket form show and the user clicks the [Cancel] button" name="Should check hide Create Bucket form" time="2.406" />
  </testsuite>
- <testsuite name="Administrator Translation.When user into the manage page and selects the Traditional Chinese language: " timestamp="2016-08-03T16:48:25" hostname="localhost" time="4.412" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When user into the manage page and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="4.412" />
+ <testsuite name="Create Bucket.When the bucket form show and the user clicks the [x] button" timestamp="2016-08-03T20:05:23" hostname="localhost" time="2.576" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Create Bucket.When the bucket form show and the user clicks the [x] button" name="Should check hide Create Bucket form" time="2.576" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin into the create account page and selects the Traditional Chinese language: " timestamp="2016-08-03T16:48:30" hostname="localhost" time="5.173" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin into the create account page and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="5.173" />
+ <testsuite name="Create Bucket.When user has not input bucket name : " timestamp="2016-08-03T20:05:25" hostname="localhost" time="1.702" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Create Bucket.When user has not input bucket name : " name="Should check the [CREATE] is disabled" time="1.702" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin inputs null e-mail,password and password confirmation and selects the Traditional Chinese language: " timestamp="2016-08-03T16:48:35" hostname="localhost" time="6.174" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin inputs null e-mail,password and password confirmation and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="6.173" />
+ <testsuite name="Create Bucket.When user input bucket name : " timestamp="2016-08-03T20:05:27" hostname="localhost" time="1.791" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Create Bucket.When user input bucket name : " name="Should check the [CREATE] is enabled" time="1.791" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin inputs incorrect e-mail,password and password confirmation and selects the Traditional Chinese language: " timestamp="2016-08-03T16:48:41" hostname="localhost" time="6.852" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin inputs incorrect e-mail,password and password confirmation and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="6.852" />
+ <testsuite name="Create Bucket.When user input bucket name and click the [CREATE] button: " timestamp="2016-08-03T20:05:29" hostname="localhost" time="2.978" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Create Bucket.When user input bucket name and click the [CREATE] button: " name="Should check show create bucket success message" time="2.978" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin inputs incorrect e-mail,password and password confirmation and selects the Traditional Chinese language: " timestamp="2016-08-03T16:48:48" hostname="localhost" time="5.777" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin inputs incorrect e-mail,password and password confirmation and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="5.776" />
+ <testsuite name="Create Bucket.When user has added a new bucket: " timestamp="2016-08-03T20:05:32" hostname="localhost" time="2.081" errors="0" tests="2" skipped="0" disabled="0" failures="0">
+  <testcase classname="Create Bucket.When user has added a new bucket: " name="Should check the bucket exists in the file list" time="1.069" />
+  <testcase classname="Create Bucket.When user has added a new bucket: " name="Should check sort situation" time="1.012" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin inputs correct e-mail,password and password confirmation and selects the Traditional Chinese language: " timestamp="2016-08-03T16:48:54" hostname="localhost" time="9.468" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin inputs correct e-mail,password and password confirmation and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="9.468" />
+ <testsuite name="Delete Bucket" timestamp="2016-08-03T20:05:34" hostname="localhost" time="31.88" errors="0" tests="0" skipped="0" disabled="0" failures="0">
  </testsuite>
- <testsuite name="Administrator Translation.When admin search account and password confirmation and selects the Traditional Chinese language: " timestamp="2016-08-03T16:49:03" hostname="localhost" time="4.109" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin search account and password confirmation and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="4.109" />
+ <testsuite name="Delete Bucket.When user does not select any of the bucket : " timestamp="2016-08-03T20:05:34" hostname="localhost" time="1.808" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Delete Bucket.When user does not select any of the bucket : " name="Should check the [delete bucket] button is disabled" time="1.808" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin reset password and password confirmation and selects the Traditional Chinese language: " timestamp="2016-08-03T16:49:07" hostname="localhost" time="6.274" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin reset password and password confirmation and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="6.274" />
+ <testsuite name="Delete Bucket.When user selects to be deleted Bucket : " timestamp="2016-08-03T20:05:36" hostname="localhost" time="2.469" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Delete Bucket.When user selects to be deleted Bucket : " name="Should check the [delete bucket] button is enabled" time="2.469" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin inputs null password and password confirmation and selects the Traditional Chinese language: " timestamp="2016-08-03T16:49:14" hostname="localhost" time="6.849" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin inputs null password and password confirmation and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="6.848" />
+ <testsuite name="Delete Bucket.When user clicks the [delete bucket] button : " timestamp="2016-08-03T20:05:38" hostname="localhost" time="3.324" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Delete Bucket.When user clicks the [delete bucket] button : " name="Should check the display to delete bucket form" time="3.324" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin input error password and password confirmation and selects the Traditional Chinese language: " timestamp="2016-08-03T16:49:20" hostname="localhost" time="7.294" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin input error password and password confirmation and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="7.293" />
+ <testsuite name="Delete Bucket.When user clicks the [delete bucket] button but did not inputs the Bucket Name : " timestamp="2016-08-03T20:05:41" hostname="localhost" time="3.18" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Delete Bucket.When user clicks the [delete bucket] button but did not inputs the Bucket Name : " name="Should check the [DELETE] button is disabled" time="3.18" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin input correct password and password confirmation and selects the Traditional Chinese language: " timestamp="2016-08-03T16:49:28" hostname="localhost" time="7.518" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin input correct password and password confirmation and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="7.517" />
+ <testsuite name="Delete Bucket.When user opens the form create a folder and clicks the [Cancel] button : " timestamp="2016-08-03T20:05:45" hostname="localhost" time="3.888" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Delete Bucket.When user opens the form create a folder and clicks the [Cancel] button : " name="Should check delete bucket form has been closed" time="3.888" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin click [DELETE ACCOUNT] button and selects the Traditional Chinese language: " timestamp="2016-08-03T16:49:35" hostname="localhost" time="6.511" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin click [DELETE ACCOUNT] button and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="6.511" />
+ <testsuite name="Delete Bucket.When user opens the form create a folder and clicks the [x] button : " timestamp="2016-08-03T20:05:49" hostname="localhost" time="3.969" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Delete Bucket.When user opens the form create a folder and clicks the [x] button : " name="Should check delete bucket form has been closed" time="3.969" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin input null email and selects the Traditional Chinese language: " timestamp="2016-08-03T16:49:42" hostname="localhost" time="6.714" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin input null email and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="6.714" />
+ <testsuite name="Delete Bucket.When user inputs bucket name does not exist : " timestamp="2016-08-03T20:05:52" hostname="localhost" time="3.987" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Delete Bucket.When user inputs bucket name does not exist : " name="Should check the show message bucket name is not exists" time="3.987" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin input incorrect email and selects the Traditional Chinese language: " timestamp="2016-08-03T16:49:48" hostname="localhost" time="6.881" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin input incorrect email and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="6.88" />
+ <testsuite name="Delete Bucket.When user inputs the bucket name consistent : " timestamp="2016-08-03T20:05:56" hostname="localhost" time="4.08" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Delete Bucket.When user inputs the bucket name consistent : " name="Should check the [DELETE] button is enabled" time="4.08" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin input correct email and selects the Traditional Chinese language: " timestamp="2016-08-03T16:49:55" hostname="localhost" time="7.878" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin input correct email and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="7.878" />
+ <testsuite name="Delete Bucket.When user inputs the bucket name consistent and clicks the [DELETE] button : " timestamp="2016-08-03T20:06:01" hostname="localhost" time="5.175" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Delete Bucket.When user inputs the bucket name consistent and clicks the [DELETE] button : " name="Should check show delete bucket success message and bucket has been deleted" time="5.175" />
  </testsuite>
- <testsuite name="Administrator Translation.When user into the manage page and selects the Simplified Chinese language: " timestamp="2016-08-03T16:50:03" hostname="localhost" time="3.319" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When user into the manage page and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="3.319" />
+ <testsuite name="Bucket Translation" timestamp="2016-08-03T20:06:06" hostname="localhost" time="137.461" errors="0" tests="0" skipped="0" disabled="0" failures="0">
  </testsuite>
- <testsuite name="Administrator Translation.When user into the manage page and selects the Simplified Chinese language: " timestamp="2016-08-03T16:50:06" hostname="localhost" time="4.491" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When user into the manage page and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="4.49" />
+ <testsuite name="Bucket Translation.When user enters the bucket page and selects the Traditional Chinese language: " timestamp="2016-08-03T20:06:06" hostname="localhost" time="3.074" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Bucket Translation.When user enters the bucket page and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="3.073" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin into the create account page and selects the Simplified Chinese language: " timestamp="2016-08-03T16:50:11" hostname="localhost" time="5.02" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin into the create account page and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="5.02" />
+ <testsuite name="Bucket Translation.When user opens the create bucket form and selects the Traditional Chinese language: " timestamp="2016-08-03T20:06:09" hostname="localhost" time="3.655" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Bucket Translation.When user opens the create bucket form and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="3.655" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin inputs null e-mail,password and password confirmation and selects the Simplified Chinese language: " timestamp="2016-08-03T16:50:16" hostname="localhost" time="6.073" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin inputs null e-mail,password and password confirmation and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="6.073" />
+ <testsuite name="Bucket Translation.When user clicks the [ACTIONS] button form and selects the Traditional Chinese language: " timestamp="2016-08-03T20:06:12" hostname="localhost" time="3.558" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Bucket Translation.When user clicks the [ACTIONS] button form and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="3.557" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin inputs incorrect e-mail,password and password confirmation and selects the Simplified Chinese language: " timestamp="2016-08-03T16:50:22" hostname="localhost" time="6.886" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin inputs incorrect e-mail,password and password confirmation and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="6.886" />
+ <testsuite name="Bucket Translation.When user clicks the [ACTIONS] button and selects the Traditional Chinese language: " timestamp="2016-08-03T20:06:16" hostname="localhost" time="3.597" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Bucket Translation.When user clicks the [ACTIONS] button and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="3.597" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin inputs incorrect e-mail,password and password confirmation and selects the Simplified Chinese language: " timestamp="2016-08-03T16:50:29" hostname="localhost" time="5.629" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin inputs incorrect e-mail,password and password confirmation and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="5.628" />
+ <testsuite name="Bucket Translation.When user create already exists bucket name and selects the Traditional Chinese language: " timestamp="2016-08-03T20:06:20" hostname="localhost" time="4.556" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Bucket Translation.When user create already exists bucket name and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="4.556" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin inputs correct e-mail,password and password confirmation and selects the Simplified Chinese language: " timestamp="2016-08-03T16:50:35" hostname="localhost" time="8.86" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin inputs correct e-mail,password and password confirmation and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="8.86" />
+ <testsuite name="Bucket Translation.When user create bucket and selects the Traditional Chinese language: " timestamp="2016-08-03T20:06:24" hostname="localhost" time="4.536" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Bucket Translation.When user create bucket and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="4.535" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin search account and password confirmation and selects the Simplified Chinese language: " timestamp="2016-08-03T16:50:43" hostname="localhost" time="4.171" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin search account and password confirmation and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="4.171" />
+ <testsuite name="Bucket Translation.When user open delete bucket form and selects the Traditional Chinese language: " timestamp="2016-08-03T20:06:29" hostname="localhost" time="5.407" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Bucket Translation.When user open delete bucket form and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="5.406" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin reset password and password confirmation and selects the Simplified Chinese language: " timestamp="2016-08-03T16:50:48" hostname="localhost" time="6.442" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin reset password and password confirmation and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="6.442" />
+ <testsuite name="Bucket Translation.When user input null and selects the Traditional Chinese language: " timestamp="2016-08-03T20:06:34" hostname="localhost" time="5.032" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Bucket Translation.When user input null and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="5.032" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin inputs null password and password confirmation and selects the Simplified Chinese language: " timestamp="2016-08-03T16:50:54" hostname="localhost" time="7.072" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin inputs null password and password confirmation and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="7.072" />
+ <testsuite name="Bucket Translation.When user input not the same bucket name and selects the Traditional Chinese language: " timestamp="2016-08-03T20:06:39" hostname="localhost" time="5.484" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Bucket Translation.When user input not the same bucket name and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="5.483" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin input error password and password confirmation and selects the Simplified Chinese language: " timestamp="2016-08-03T16:51:01" hostname="localhost" time="7.264" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin input error password and password confirmation and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="7.264" />
+ <testsuite name="Bucket Translation.When user delete bucket and selects the Traditional Chinese language: " timestamp="2016-08-03T20:06:45" hostname="localhost" time="6.607" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Bucket Translation.When user delete bucket and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="6.607" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin input correct password and password confirmation and selects the Simplified Chinese language: " timestamp="2016-08-03T16:51:08" hostname="localhost" time="7.52" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin input correct password and password confirmation and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="7.52" />
+ <testsuite name="Bucket Translation.When user enters the bucket page and selects the Simplified Chinese language: " timestamp="2016-08-03T20:06:51" hostname="localhost" time="3.15" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Bucket Translation.When user enters the bucket page and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="3.149" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin click [DELETE ACCOUNT] button and selects the Simplified Chinese language: " timestamp="2016-08-03T16:51:16" hostname="localhost" time="6.455" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin click [DELETE ACCOUNT] button and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="6.455" />
+ <testsuite name="Bucket Translation.When user opens the create bucket form and selects the Simplified Chinese language: " timestamp="2016-08-03T20:06:54" hostname="localhost" time="3.542" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Bucket Translation.When user opens the create bucket form and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="3.542" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin input null email and selects the Simplified Chinese language: " timestamp="2016-08-03T16:51:22" hostname="localhost" time="6.336" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin input null email and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="6.336" />
+ <testsuite name="Bucket Translation.When user clicks the [ACTIONS] button form and selects the Simplified Chinese language: " timestamp="2016-08-03T20:06:58" hostname="localhost" time="3.521" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Bucket Translation.When user clicks the [ACTIONS] button form and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="3.521" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin input incorrect email and selects the Simplified Chinese language: " timestamp="2016-08-03T16:51:29" hostname="localhost" time="7.007" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin input incorrect email and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="7.007" />
+ <testsuite name="Bucket Translation.When user clicks the [ACTIONS] button and selects the Simplified Chinese language: " timestamp="2016-08-03T20:07:01" hostname="localhost" time="3.668" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Bucket Translation.When user clicks the [ACTIONS] button and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="3.668" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin input correct email and selects the Simplified Chinese language: " timestamp="2016-08-03T16:51:36" hostname="localhost" time="7.972" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin input correct email and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="7.972" />
+ <testsuite name="Bucket Translation.When user create already exists bucket name and selects the Simplified Chinese language: " timestamp="2016-08-03T20:07:05" hostname="localhost" time="4.586" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Bucket Translation.When user create already exists bucket name and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="4.586" />
  </testsuite>
- <testsuite name="Administrator Translation.When user into the manage page and selects the English language: " timestamp="2016-08-03T16:51:44" hostname="localhost" time="3.485" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When user into the manage page and selects the English language: " name="Should check every elements using the right language" time="3.485" />
+ <testsuite name="Bucket Translation.When user create bucket and selects the Simplified Chinese language: " timestamp="2016-08-03T20:07:10" hostname="localhost" time="4.481" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Bucket Translation.When user create bucket and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="4.481" />
  </testsuite>
- <testsuite name="Administrator Translation.When user into the manage page and selects the English language: " timestamp="2016-08-03T16:51:47" hostname="localhost" time="4.445" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When user into the manage page and selects the English language: " name="Should check every elements using the right language" time="4.445" />
+ <testsuite name="Bucket Translation.When user open delete bucket form and selects the Simplified Chinese language: " timestamp="2016-08-03T20:07:14" hostname="localhost" time="5.26" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Bucket Translation.When user open delete bucket form and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="5.26" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin into the create account page and selects the English language: " timestamp="2016-08-03T16:51:52" hostname="localhost" time="5.097" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin into the create account page and selects the English language: " name="Should check every elements using the right language" time="5.097" />
+ <testsuite name="Bucket Translation.When user input null and selects the Simplified Chinese language: " timestamp="2016-08-03T20:07:19" hostname="localhost" time="5.521" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Bucket Translation.When user input null and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="5.521" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin inputs null e-mail,password and password confirmation and selects the English language: " timestamp="2016-08-03T16:51:57" hostname="localhost" time="6.318" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin inputs null e-mail,password and password confirmation and selects the English language: " name="Should check every elements using the right language" time="6.318" />
+ <testsuite name="Bucket Translation.When user input not the same bucket name and selects the Simplified Chinese language: " timestamp="2016-08-03T20:07:25" hostname="localhost" time="5.719" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Bucket Translation.When user input not the same bucket name and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="5.719" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin inputs incorrect e-mail,password and password confirmation and selects the English language: " timestamp="2016-08-03T16:52:03" hostname="localhost" time="6.534" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin inputs incorrect e-mail,password and password confirmation and selects the English language: " name="Should check every elements using the right language" time="6.534" />
+ <testsuite name="Bucket Translation.When user delete bucket and selects the Simplified Chinese language: " timestamp="2016-08-03T20:07:31" hostname="localhost" time="6.578" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Bucket Translation.When user delete bucket and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="6.578" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin inputs incorrect e-mail,password and password confirmation and selects the English language: " timestamp="2016-08-03T16:52:10" hostname="localhost" time="5.563" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin inputs incorrect e-mail,password and password confirmation and selects the English language: " name="Should check every elements using the right language" time="5.563" />
+ <testsuite name="Bucket Translation.When user enters the bucket page and selects the English language: " timestamp="2016-08-03T20:07:37" hostname="localhost" time="3.149" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Bucket Translation.When user enters the bucket page and selects the English language: " name="Should check every elements using the right language" time="3.149" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin inputs correct e-mail,password and password confirmation and selects the English language: " timestamp="2016-08-03T16:52:15" hostname="localhost" time="9.316" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin inputs correct e-mail,password and password confirmation and selects the English language: " name="Should check every elements using the right language" time="9.316" />
+ <testsuite name="Bucket Translation.When user opens the create bucket form and selects the English language: " timestamp="2016-08-03T20:07:40" hostname="localhost" time="3.51" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Bucket Translation.When user opens the create bucket form and selects the English language: " name="Should check every elements using the right language" time="3.51" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin search account and password confirmation and selects the English language: " timestamp="2016-08-03T16:52:24" hostname="localhost" time="4.224" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin search account and password confirmation and selects the English language: " name="Should check every elements using the right language" time="4.224" />
+ <testsuite name="Bucket Translation.When user clicks the [ACTIONS] button form and selects the English language: " timestamp="2016-08-03T20:07:44" hostname="localhost" time="3.474" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Bucket Translation.When user clicks the [ACTIONS] button form and selects the English language: " name="Should check every elements using the right language" time="3.473" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin reset password and password confirmation and selects the English language: " timestamp="2016-08-03T16:52:29" hostname="localhost" time="6.414" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin reset password and password confirmation and selects the English language: " name="Should check every elements using the right language" time="6.414" />
+ <testsuite name="Bucket Translation.When user clicks the [ACTIONS] button and selects the English language: " timestamp="2016-08-03T20:07:47" hostname="localhost" time="3.581" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Bucket Translation.When user clicks the [ACTIONS] button and selects the English language: " name="Should check every elements using the right language" time="3.581" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin inputs null password and password confirmation and selects the English language: " timestamp="2016-08-03T16:52:35" hostname="localhost" time="7.213" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin inputs null password and password confirmation and selects the English language: " name="Should check every elements using the right language" time="7.213" />
+ <testsuite name="Bucket Translation.When user create already exists bucket name and selects the English language: " timestamp="2016-08-03T20:07:51" hostname="localhost" time="4.58" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Bucket Translation.When user create already exists bucket name and selects the English language: " name="Should check every elements using the right language" time="4.58" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin input error password and password confirmation and selects the English language: " timestamp="2016-08-03T16:52:42" hostname="localhost" time="7.344" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin input error password and password confirmation and selects the English language: " name="Should check every elements using the right language" time="7.344" />
+ <testsuite name="Bucket Translation.When user create bucket and selects the English language: " timestamp="2016-08-03T20:07:56" hostname="localhost" time="4.503" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Bucket Translation.When user create bucket and selects the English language: " name="Should check every elements using the right language" time="4.503" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin input correct password and password confirmation and selects the English language: " timestamp="2016-08-03T16:52:50" hostname="localhost" time="7.421" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin input correct password and password confirmation and selects the English language: " name="Should check every elements using the right language" time="7.421" />
+ <testsuite name="Bucket Translation.When user open delete bucket form and selects the English language: " timestamp="2016-08-03T20:08:00" hostname="localhost" time="5.283" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Bucket Translation.When user open delete bucket form and selects the English language: " name="Should check every elements using the right language" time="5.283" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin click [DELETE ACCOUNT] button and selects the English language: " timestamp="2016-08-03T16:52:57" hostname="localhost" time="6.481" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin click [DELETE ACCOUNT] button and selects the English language: " name="Should check every elements using the right language" time="6.481" />
+ <testsuite name="Bucket Translation.When user input null and selects the English language: " timestamp="2016-08-03T20:08:05" hostname="localhost" time="5.695" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Bucket Translation.When user input null and selects the English language: " name="Should check every elements using the right language" time="5.695" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin input null email and selects the English language: " timestamp="2016-08-03T16:53:04" hostname="localhost" time="6.268" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin input null email and selects the English language: " name="Should check every elements using the right language" time="6.267" />
+ <testsuite name="Bucket Translation.When user input not the same bucket name and selects the English language: " timestamp="2016-08-03T20:08:11" hostname="localhost" time="5.644" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Bucket Translation.When user input not the same bucket name and selects the English language: " name="Should check every elements using the right language" time="5.643" />
  </testsuite>
- <testsuite name="Administrator Translation.When admin input incorrect email and selects the English language: " timestamp="2016-08-03T16:53:10" hostname="localhost" time="6.899" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin input incorrect email and selects the English language: " name="Should check every elements using the right language" time="6.899" />
- </testsuite>
- <testsuite name="Administrator Translation.When admin input correct email and selects the English language: " timestamp="2016-08-03T16:53:17" hostname="localhost" time="8.005" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin input correct email and selects the English language: " name="Should check every elements using the right language" time="8.005" />
- </testsuite>
- <testsuite name="Administrator Translation.When admin click the [Sign Out] : " timestamp="2016-08-03T16:53:25" hostname="localhost" time="1.887" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Administrator Translation.When admin click the [Sign Out] : " name="Clear" time="1.887" />
+ <testsuite name="Bucket Translation.When user delete bucket and selects the English language: " timestamp="2016-08-03T20:08:17" hostname="localhost" time="6.509" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Bucket Translation.When user delete bucket and selects the English language: " name="Should check every elements using the right language" time="6.509" />
  </testsuite>
 </testsuites>

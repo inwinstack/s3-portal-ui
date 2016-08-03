@@ -175,8 +175,10 @@ describe('Bucket Translation', () => {
       be.checkDeleteBucket.click();
     });
     it('Should check every elements using the right language',() => {
+      browser.ignoreSynchronization = true;
       browser.sleep(1000);
-      expect(be.deleteBucketMessage.getText()).toBe(translate('tw', 'BUCKET_DELETE_ERROR_MESSAGE'));
+      expect(ne.toastMessage.getText()).toMatch(translate('tw', 'TOAST_DELETE_BUCKET_SUCCESS'));
+      browser.ignoreSynchronization = false;
     });
   });
 
@@ -334,8 +336,10 @@ describe('Bucket Translation', () => {
       be.checkDeleteBucket.click();
     });
     it('Should check every elements using the right language',() => {
+      browser.ignoreSynchronization = true;
       browser.sleep(1000);
-      expect(be.deleteBucketMessage.getText()).toBe(translate('cn', 'BUCKET_DELETE_ERROR_MESSAGE'));
+      expect(ne.toastMessage.getText()).toMatch(translate('cn', 'TOAST_DELETE_BUCKET_SUCCESS'));
+      browser.ignoreSynchronization = false;
     });
   });
 
@@ -493,8 +497,10 @@ describe('Bucket Translation', () => {
       be.checkDeleteBucket.click();
     });
     it('Should check every elements using the right language',() => {
+      browser.ignoreSynchronization = true;
       browser.sleep(1000);
-      expect(be.deleteBucketMessage.getText()).toBe(translate('en', 'BUCKET_DELETE_ERROR_MESSAGE'));
+      expect(ne.toastMessage.getText()).toMatch(translate('en', 'TOAST_DELETE_BUCKET_SUCCESS'));
+      browser.ignoreSynchronization = false;
     });
   });
 });

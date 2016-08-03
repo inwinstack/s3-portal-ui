@@ -59,6 +59,7 @@ const languages = {
   'TOAST_SIGN_OUT_FAILURE': '登出失敗！',
   'TOAST_CREATE_BUCKET_SUCCESS': /^Bucket.*已建立成功！$/,
   'TOAST_CREATE_BUCKET_FAILURE': /^Bucket.*建立失敗，請再試一次！$/,
+  'TOAST_DELETE_BUCKET_SUCCESS': /^Bucket.*刪除成功！$/,
   'TOAST_RESET_PASSWORD_SUCCESS': /^.*更改密碼成功!$/,
   'TOAST_RESET_PASSWORD_FAILURE': /^.*更改密碼失敗，請再試一次$/,
   'TOAST_DELETE_ACCOUNT_SUCCESS': /^.* 删除成功!$/,

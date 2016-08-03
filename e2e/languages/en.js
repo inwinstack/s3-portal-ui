@@ -68,6 +68,7 @@ const languages = {
   'TOAST_SIGN_OUT_FAILURE': 'Sign Out Failure!',
   'TOAST_CREATE_BUCKET_SUCCESS': /^Bucket.*are create success!$/,
   'TOAST_CREATE_BUCKET_FAILURE': /^Bucket.*are create failure, please try again!$/,
+  'TOAST_DELETE_BUCKET_SUCCESS': /^Bucket.*Delete Success！$/,
   'TOAST_RESET_PASSWORD_SUCCESS': /^.*Reset Password Success!$/,
   'TOAST_DELETE_ACCOUNT_SUCCESS': /^.* Delete Success!$/,
   'TOAST_DELETE_ACCOUNT_FAIL': /^.* Delete Fail Please Try Again!$/,
