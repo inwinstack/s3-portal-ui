@@ -19,6 +19,7 @@ const languages = {
   'UTILS_DELETE': '删除',
   'UTILS_REFRESH': '刷新',
   'UTILS_OR': '或',
+  'UTILS_CONFIRM': '确定',
   // VALIDATION
   'VALIDATION_REQUIRED': '此栏位不得为空。',
   'VALIDATION_EMAIL': '此栏位必须符合电邮格式。',
@@ -96,6 +97,7 @@ const languages = {
   'FILE_SIZE': '容量大小',
   'FILE_LAST_MODIFIED': '最后修改时间',
   'FILE_OWNER': '拥有者',
+  'FILE_NAME': '文件名',
   'FILE_DO_ACTIONS': '你可以执行以下操作',
   'FILE_UPLOAD': '上传档案',
   'FILE_EMPTY_BUCKET': '这个 bucket 是空的',
@@ -125,11 +127,11 @@ const languages = {
   'MANAGER_USER_REGISTER_TIME': '注册时间',
   'MANAGER_USER_RESET': '重新设定密码',
   'MANAGER_SEARCH': '搜寻',
-  'MANAGER_DELETE_TITLE': '',
+  'MANAGER_DELETE_TITLE': '删除使用者',
   'MANAGER_DELETE_EMAIL': '使用者 Email',
   'MANAGER_DELETE_TYPE_NAME': '请输入 Email 以确认删除。',
   'MANAGER_DELETE_ERROR_MESSAGE': '请输入欲删除的完整 Email。',
-  'MANAGER_DELETE_CONFIRM': /^删除此 Account 及此 Account 内的所有 Bucket （若有支持旧版本则包含旧版本）会无法复原。你确认要删除 .*吗？$/,
+  'MANAGER_DELETE_CONFIRM': /^删除此 Account 及此 Account 内的所有 Bucket （若有支持旧版本则包含旧版本）会无法复原。 你确认要删除 .* 吗？$/,
 }
 
 module.exports = Translate;

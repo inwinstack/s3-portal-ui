@@ -1,26 +1,160 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
- <testsuite name="File Properties" timestamp="2016-08-03T14:29:42" hostname="localhost" time="47.18" errors="0" tests="0" skipped="0" disabled="0" failures="0">
+ <testsuite name="User List" timestamp="2016-08-03T16:48:12" hostname="localhost" time="9.315" errors="0" tests="0" skipped="0" disabled="0" failures="0">
  </testsuite>
- <testsuite name="File Properties.When user selects the bucketList and clicks properties : " timestamp="2016-08-03T14:29:42" hostname="localhost" time="12.405" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Properties.When user selects the bucketList and clicks properties : " name="Should check whether the properties page" time="12.404" />
+ <testsuite name="User List.When user signIn with administrator and click user list: " timestamp="2016-08-03T16:48:12" hostname="localhost" time="6.799" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="User List.When user signIn with administrator and click user list: " name="Should check into the user list page" time="6.798" />
  </testsuite>
- <testsuite name="File Properties.When user selects the bucketList and clicks other properties : " timestamp="2016-08-03T14:29:54" hostname="localhost" time="1.846" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Properties.When user selects the bucketList and clicks other properties : " name="Should check whether the properties page" time="1.846" />
+ <testsuite name="User List.When user clicks the bucket list : " timestamp="2016-08-03T16:48:19" hostname="localhost" time="2.516" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="User List.When user clicks the bucket list : " name="Should check back the bucket page" time="2.516" />
  </testsuite>
- <testsuite name="File Properties.When user into the file properties form and click [X] btn  : " timestamp="2016-08-03T14:29:56" hostname="localhost" time="2.484" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Properties.When user into the file properties form and click [X] btn  : " name="Should check the properties form is closed and properties is enabled" time="2.484" />
+ <testsuite name="Administrator Translation" timestamp="2016-08-03T16:48:22" hostname="localhost" time="305.042" errors="0" tests="0" skipped="0" disabled="0" failures="0">
  </testsuite>
- <testsuite name="File Properties.When user selects the folder and clicks properties : " timestamp="2016-08-03T14:29:59" hostname="localhost" time="7.088" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Properties.When user selects the folder and clicks properties : " name="Should check whether the empty folder properties" time="7.088" />
+ <testsuite name="Administrator Translation.When user into the manage page and selects the Traditional Chinese language: " timestamp="2016-08-03T16:48:22" hostname="localhost" time="3.724" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When user into the manage page and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="3.724" />
  </testsuite>
- <testsuite name="File Properties.When user selects the files and clicks properties : " timestamp="2016-08-03T14:30:06" hostname="localhost" time="8.457" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Properties.When user selects the files and clicks properties : " name="Should check whether the folder properties" time="8.457" />
+ <testsuite name="Administrator Translation.When user into the manage page and selects the Traditional Chinese language: " timestamp="2016-08-03T16:48:25" hostname="localhost" time="4.412" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When user into the manage page and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="4.412" />
  </testsuite>
- <testsuite name="File Properties.When user selects the files and clicks properties : " timestamp="2016-08-03T14:30:14" hostname="localhost" time="7.039" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Properties.When user selects the files and clicks properties : " name="Should check whether the files properties" time="7.039" />
+ <testsuite name="Administrator Translation.When admin into the create account page and selects the Traditional Chinese language: " timestamp="2016-08-03T16:48:30" hostname="localhost" time="5.173" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin into the create account page and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="5.173" />
  </testsuite>
- <testsuite name="File Properties.Clear" timestamp="2016-08-03T14:30:21" hostname="localhost" time="7.86" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="File Properties.Clear" name="Clear" time="7.86" />
+ <testsuite name="Administrator Translation.When admin inputs null e-mail,password and password confirmation and selects the Traditional Chinese language: " timestamp="2016-08-03T16:48:35" hostname="localhost" time="6.174" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin inputs null e-mail,password and password confirmation and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="6.173" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin inputs incorrect e-mail,password and password confirmation and selects the Traditional Chinese language: " timestamp="2016-08-03T16:48:41" hostname="localhost" time="6.852" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin inputs incorrect e-mail,password and password confirmation and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="6.852" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin inputs incorrect e-mail,password and password confirmation and selects the Traditional Chinese language: " timestamp="2016-08-03T16:48:48" hostname="localhost" time="5.777" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin inputs incorrect e-mail,password and password confirmation and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="5.776" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin inputs correct e-mail,password and password confirmation and selects the Traditional Chinese language: " timestamp="2016-08-03T16:48:54" hostname="localhost" time="9.468" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin inputs correct e-mail,password and password confirmation and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="9.468" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin search account and password confirmation and selects the Traditional Chinese language: " timestamp="2016-08-03T16:49:03" hostname="localhost" time="4.109" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin search account and password confirmation and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="4.109" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin reset password and password confirmation and selects the Traditional Chinese language: " timestamp="2016-08-03T16:49:07" hostname="localhost" time="6.274" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin reset password and password confirmation and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="6.274" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin inputs null password and password confirmation and selects the Traditional Chinese language: " timestamp="2016-08-03T16:49:14" hostname="localhost" time="6.849" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin inputs null password and password confirmation and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="6.848" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin input error password and password confirmation and selects the Traditional Chinese language: " timestamp="2016-08-03T16:49:20" hostname="localhost" time="7.294" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin input error password and password confirmation and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="7.293" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin input correct password and password confirmation and selects the Traditional Chinese language: " timestamp="2016-08-03T16:49:28" hostname="localhost" time="7.518" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin input correct password and password confirmation and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="7.517" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin click [DELETE ACCOUNT] button and selects the Traditional Chinese language: " timestamp="2016-08-03T16:49:35" hostname="localhost" time="6.511" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin click [DELETE ACCOUNT] button and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="6.511" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin input null email and selects the Traditional Chinese language: " timestamp="2016-08-03T16:49:42" hostname="localhost" time="6.714" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin input null email and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="6.714" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin input incorrect email and selects the Traditional Chinese language: " timestamp="2016-08-03T16:49:48" hostname="localhost" time="6.881" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin input incorrect email and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="6.88" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin input correct email and selects the Traditional Chinese language: " timestamp="2016-08-03T16:49:55" hostname="localhost" time="7.878" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin input correct email and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="7.878" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When user into the manage page and selects the Simplified Chinese language: " timestamp="2016-08-03T16:50:03" hostname="localhost" time="3.319" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When user into the manage page and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="3.319" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When user into the manage page and selects the Simplified Chinese language: " timestamp="2016-08-03T16:50:06" hostname="localhost" time="4.491" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When user into the manage page and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="4.49" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin into the create account page and selects the Simplified Chinese language: " timestamp="2016-08-03T16:50:11" hostname="localhost" time="5.02" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin into the create account page and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="5.02" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin inputs null e-mail,password and password confirmation and selects the Simplified Chinese language: " timestamp="2016-08-03T16:50:16" hostname="localhost" time="6.073" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin inputs null e-mail,password and password confirmation and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="6.073" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin inputs incorrect e-mail,password and password confirmation and selects the Simplified Chinese language: " timestamp="2016-08-03T16:50:22" hostname="localhost" time="6.886" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin inputs incorrect e-mail,password and password confirmation and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="6.886" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin inputs incorrect e-mail,password and password confirmation and selects the Simplified Chinese language: " timestamp="2016-08-03T16:50:29" hostname="localhost" time="5.629" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin inputs incorrect e-mail,password and password confirmation and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="5.628" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin inputs correct e-mail,password and password confirmation and selects the Simplified Chinese language: " timestamp="2016-08-03T16:50:35" hostname="localhost" time="8.86" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin inputs correct e-mail,password and password confirmation and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="8.86" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin search account and password confirmation and selects the Simplified Chinese language: " timestamp="2016-08-03T16:50:43" hostname="localhost" time="4.171" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin search account and password confirmation and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="4.171" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin reset password and password confirmation and selects the Simplified Chinese language: " timestamp="2016-08-03T16:50:48" hostname="localhost" time="6.442" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin reset password and password confirmation and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="6.442" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin inputs null password and password confirmation and selects the Simplified Chinese language: " timestamp="2016-08-03T16:50:54" hostname="localhost" time="7.072" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin inputs null password and password confirmation and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="7.072" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin input error password and password confirmation and selects the Simplified Chinese language: " timestamp="2016-08-03T16:51:01" hostname="localhost" time="7.264" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin input error password and password confirmation and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="7.264" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin input correct password and password confirmation and selects the Simplified Chinese language: " timestamp="2016-08-03T16:51:08" hostname="localhost" time="7.52" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin input correct password and password confirmation and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="7.52" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin click [DELETE ACCOUNT] button and selects the Simplified Chinese language: " timestamp="2016-08-03T16:51:16" hostname="localhost" time="6.455" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin click [DELETE ACCOUNT] button and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="6.455" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin input null email and selects the Simplified Chinese language: " timestamp="2016-08-03T16:51:22" hostname="localhost" time="6.336" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin input null email and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="6.336" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin input incorrect email and selects the Simplified Chinese language: " timestamp="2016-08-03T16:51:29" hostname="localhost" time="7.007" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin input incorrect email and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="7.007" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin input correct email and selects the Simplified Chinese language: " timestamp="2016-08-03T16:51:36" hostname="localhost" time="7.972" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin input correct email and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="7.972" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When user into the manage page and selects the English language: " timestamp="2016-08-03T16:51:44" hostname="localhost" time="3.485" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When user into the manage page and selects the English language: " name="Should check every elements using the right language" time="3.485" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When user into the manage page and selects the English language: " timestamp="2016-08-03T16:51:47" hostname="localhost" time="4.445" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When user into the manage page and selects the English language: " name="Should check every elements using the right language" time="4.445" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin into the create account page and selects the English language: " timestamp="2016-08-03T16:51:52" hostname="localhost" time="5.097" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin into the create account page and selects the English language: " name="Should check every elements using the right language" time="5.097" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin inputs null e-mail,password and password confirmation and selects the English language: " timestamp="2016-08-03T16:51:57" hostname="localhost" time="6.318" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin inputs null e-mail,password and password confirmation and selects the English language: " name="Should check every elements using the right language" time="6.318" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin inputs incorrect e-mail,password and password confirmation and selects the English language: " timestamp="2016-08-03T16:52:03" hostname="localhost" time="6.534" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin inputs incorrect e-mail,password and password confirmation and selects the English language: " name="Should check every elements using the right language" time="6.534" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin inputs incorrect e-mail,password and password confirmation and selects the English language: " timestamp="2016-08-03T16:52:10" hostname="localhost" time="5.563" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin inputs incorrect e-mail,password and password confirmation and selects the English language: " name="Should check every elements using the right language" time="5.563" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin inputs correct e-mail,password and password confirmation and selects the English language: " timestamp="2016-08-03T16:52:15" hostname="localhost" time="9.316" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin inputs correct e-mail,password and password confirmation and selects the English language: " name="Should check every elements using the right language" time="9.316" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin search account and password confirmation and selects the English language: " timestamp="2016-08-03T16:52:24" hostname="localhost" time="4.224" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin search account and password confirmation and selects the English language: " name="Should check every elements using the right language" time="4.224" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin reset password and password confirmation and selects the English language: " timestamp="2016-08-03T16:52:29" hostname="localhost" time="6.414" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin reset password and password confirmation and selects the English language: " name="Should check every elements using the right language" time="6.414" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin inputs null password and password confirmation and selects the English language: " timestamp="2016-08-03T16:52:35" hostname="localhost" time="7.213" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin inputs null password and password confirmation and selects the English language: " name="Should check every elements using the right language" time="7.213" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin input error password and password confirmation and selects the English language: " timestamp="2016-08-03T16:52:42" hostname="localhost" time="7.344" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin input error password and password confirmation and selects the English language: " name="Should check every elements using the right language" time="7.344" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin input correct password and password confirmation and selects the English language: " timestamp="2016-08-03T16:52:50" hostname="localhost" time="7.421" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin input correct password and password confirmation and selects the English language: " name="Should check every elements using the right language" time="7.421" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin click [DELETE ACCOUNT] button and selects the English language: " timestamp="2016-08-03T16:52:57" hostname="localhost" time="6.481" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin click [DELETE ACCOUNT] button and selects the English language: " name="Should check every elements using the right language" time="6.481" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin input null email and selects the English language: " timestamp="2016-08-03T16:53:04" hostname="localhost" time="6.268" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin input null email and selects the English language: " name="Should check every elements using the right language" time="6.267" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin input incorrect email and selects the English language: " timestamp="2016-08-03T16:53:10" hostname="localhost" time="6.899" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin input incorrect email and selects the English language: " name="Should check every elements using the right language" time="6.899" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin input correct email and selects the English language: " timestamp="2016-08-03T16:53:17" hostname="localhost" time="8.005" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin input correct email and selects the English language: " name="Should check every elements using the right language" time="8.005" />
+ </testsuite>
+ <testsuite name="Administrator Translation.When admin click the [Sign Out] : " timestamp="2016-08-03T16:53:25" hostname="localhost" time="1.887" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Administrator Translation.When admin click the [Sign Out] : " name="Clear" time="1.887" />
  </testsuite>
 </testsuites>

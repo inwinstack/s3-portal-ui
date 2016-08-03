@@ -21,6 +21,7 @@ const languages = {
   'UTILS_DELETE_2': 'Delete',
   'UTILS_REFRESH': 'Refresh',
   'UTILS_OR': 'or',
+  'UTILS_CONFIRM': 'CONFIRM',
   // VALIDATION
   'VALIDATION_REQUIRED': 'You left the field blank.',
   'VALIDATION_EMAIL': 'Your email must be look like an e-mail address.',
@@ -137,12 +138,13 @@ const languages = {
   'MANAGER_USER_ROLE': 'Role',
   'MANAGER_USER_REGISTER_TIME': 'Register Time',
   'MANAGER_USER_RESET': 'RESET PASSWORD',
+  'MANAGER_USER_RESET_TITLE': 'Reset Password',
   'MANAGER_SEARCH': 'Search',
-  'MANAGER_DELETE_TITLE': '',
+  'MANAGER_DELETE_TITLE': 'Delete User',
   'MANAGER_DELETE_EMAIL': 'User Email',
   'MANAGER_DELETE_TYPE_NAME': 'Type the email of the account to confirm deletion:',
   'MANAGER_DELETE_ERROR_MESSAGE': 'Type the exact email of the account you are trying to delete.',
-  'MANAGER_DELETE_CONFIRM': /^Deleting this account and its bucket (including older versions if applicable) cannot be undone. Are you sure you want to delete .*？$/,
+  'MANAGER_DELETE_CONFIRM': /^Deleting this account and its bucket \( including older versions if applicable\) cannot be undone\. Are you sure you want to delete .*?$/,
   }
 
 module.exports = Translate;

@@ -16,6 +16,7 @@ const languages = {
   'UTILS_DELETE': '刪除',
   'UTILS_REFRESH': '重新整理',
   'UTILS_OR': '或',
+  'UTILS_CONFIRM': '確定',
   // VALIDATION
   'VALIDATION_REQUIRED': '此欄位不得為空。',
   'VALIDATION_EMAIL': '此欄位必須符合電子郵件格式。',
@@ -124,11 +125,11 @@ const languages = {
   'MANAGER_USER_REGISTER_TIME': '註冊時間',
   'MANAGER_USER_RESET': '重新設定密碼',
   'MANAGER_SEARCH': '搜尋',
-  'MANAGER_DELETE_TITLE': '',
+  'MANAGER_DELETE_TITLE': '刪除使用者',
   'MANAGER_DELETE_EMAIL': '使用者 Email',
   'MANAGER_DELETE_TYPE_NAME': '請輸入 Email 以確認刪除。',
   'MANAGER_DELETE_ERROR_MESSAGE': '請輸入欲刪除的完整 Email。',
-  'MANAGER_DELETE_CONFIRM': /^刪除此 Account 及此 Account 內的所有 Bucket （若有支援舊版本則包含舊版本）會無法復原。你確認要刪除.*嗎？$/,
+  'MANAGER_DELETE_CONFIRM': /^刪除此 Account 及此 Account 內的所有 Bucket （若有支援舊版本則包含舊版本）會無法復原。 你確認要刪除.*嗎？$/,
 
   // // AUTH
   // 'AUTH_LOGIN_TO_YOUR_ACCOUNT': '登入你的帳號',
