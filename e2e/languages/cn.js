@@ -127,11 +127,11 @@ const languages = {
   'MANAGER_USER_REGISTER_TIME': '注册时间',
   'MANAGER_USER_RESET': '重新设定密码',
   'MANAGER_SEARCH': '搜寻',
-  'MANAGER_DELETE_TITLE': '',
+  'MANAGER_DELETE_TITLE': '删除使用者',
   'MANAGER_DELETE_EMAIL': '使用者 Email',
   'MANAGER_DELETE_TYPE_NAME': '请输入 Email 以确认删除。',
   'MANAGER_DELETE_ERROR_MESSAGE': '请输入欲删除的完整 Email。',
-  'MANAGER_DELETE_CONFIRM': /^删除此 Account 及此 Account 内的所有 Bucket （若有支持旧版本则包含旧版本）会无法复原。你确认要删除 .*吗？$/,
+  'MANAGER_DELETE_CONFIRM': /^删除此 Account 及此 Account 内的所有 Bucket （若有支持旧版本则包含旧版本）会无法复原。 你确认要删除 .* 吗？$/,
 }
 
 module.exports = Translate;

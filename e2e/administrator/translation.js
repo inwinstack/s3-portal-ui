@@ -139,12 +139,11 @@ describe('Administrator Translation', () => {
       ad.createUserPasswordConfInput.sendKeys(env.correctPassword);
       ad.checkCreateUserBtn.click();
     });
-    // 無toastMessage
     it('Should check every elements using the right language', () => {
-      // browser.ignoreSynchronization = true;
-      // browser.sleep(1000);
-      // expect(ne.toastMessage.getText()).toBe(translate('tw', ''));
-      // browser.ignoreSynchronization = false;
+      browser.ignoreSynchronization = true;
+      browser.sleep(1000);
+      expect(ne.toastMessage.getText()).toBe(translate('tw', 'TOAST_SIGN_UP_SUCCESS'));
+      browser.ignoreSynchronization = false;
       expect(ad.createUserForm.isPresent()).toBe(false);
     });
   });
@@ -173,12 +172,11 @@ describe('Administrator Translation', () => {
       ad.resetUserPasswordBtn.click();
     });
     it('Should check every elements using the right language', () => {
-      // 無翻譯
-      // expect(ad.ResetPasswordTitle.getText()).toBe(translate('tw', ''));
+      expect(ad.ResetPasswordTitle.getText()).toBe(translate('tw', 'MANAGER_USER_RESET'));
       expect(ad.ResetPasswordPasswordInput.getAttribute('placeholder')).toBe(translate('tw', 'AUTH_PASSWORD'));
       expect(ad.ResetPasswordPasswordConfInput.getAttribute('placeholder')).toBe(translate('tw', 'AUTH_RETYPE_PASSWORD'));
       expect(ad.cancelResetPasswordBtn.get(1).getText()).toBe(translate('tw', 'UTILS_CANCEL'));
-      // expect(ad.checkResetPasswordBtn.getText()).toBe(translate('tw', ''));
+      expect(ad.checkResetPasswordBtn.getText()).toBe(translate('tw', 'UTILS_CONFIRM'));
     });
   });
 
@@ -252,8 +250,8 @@ describe('Administrator Translation', () => {
       ad.deleteUserBtn.click();
     });
     it('Should check every elements using the right language', () => {
-      // expect(ad.deleteUserTitle.getText()).toBe(translate('tw' , 'MANAGER_DELETE_TITLE'));
-      // expect(ad.deleteUserCheckMessage.getText()).toMatch(translate('tw' , 'MANAGER_DELETE_CONFIRM'));
+      expect(ad.deleteUserTitle.getText()).toBe(translate('tw' , 'MANAGER_DELETE_TITLE'));
+      expect(ad.deleteUserCheckMessage.getText()).toMatch(translate('tw' , 'MANAGER_DELETE_CONFIRM'));
       expect(ad.deletePromptMessage.getText()).toBe(translate('tw', 'MANAGER_DELETE_TYPE_NAME'));
       expect(element.all(by.css('label[class="ng-scope"]')).get(1).getText()).toBe(translate('tw', 'MANAGER_DELETE_EMAIL'));
       expect(ad.cancelDeleteUserBtn.get(1).getText()).toBe(translate('tw', 'UTILS_CANCEL'));
@@ -428,12 +426,11 @@ describe('Administrator Translation', () => {
       ad.createUserPasswordConfInput.sendKeys(env.correctPassword);
       ad.checkCreateUserBtn.click();
     });
-    // 無toastMessage
     it('Should check every elements using the right language', () => {
-      // browser.ignoreSynchronization = true;
-      // browser.sleep(1000);
-      // expect(ne.toastMessage.getText()).toBe(translate('cn', ''));
-      // browser.ignoreSynchronization = false;
+      browser.ignoreSynchronization = true;
+      browser.sleep(1000);
+      expect(ne.toastMessage.getText()).toBe(translate('cn', 'TOAST_SIGN_UP_SUCCESS'));
+      browser.ignoreSynchronization = false;
       expect(ad.createUserForm.isPresent()).toBe(false);
     });
   });
@@ -462,12 +459,11 @@ describe('Administrator Translation', () => {
       ad.resetUserPasswordBtn.click();
     });
     it('Should check every elements using the right language', () => {
-      // 無翻譯
-      // expect(ad.ResetPasswordTitle.getText()).toBe(translate('cn', ''));
+      expect(ad.ResetPasswordTitle.getText()).toBe(translate('cn', 'MANAGER_USER_RESET'));
       expect(ad.ResetPasswordPasswordInput.getAttribute('placeholder')).toBe(translate('cn', 'AUTH_PASSWORD'));
       expect(ad.ResetPasswordPasswordConfInput.getAttribute('placeholder')).toBe(translate('cn', 'AUTH_RETYPE_PASSWORD'));
       expect(ad.cancelResetPasswordBtn.get(1).getText()).toBe(translate('cn', 'UTILS_CANCEL'));
-      // expect(ad.checkResetPasswordBtn.getText()).toBe(translate('cn', ''));
+      expect(ad.checkResetPasswordBtn.getText()).toBe(translate('cn', 'UTILS_CONFIRM'));
     });
   });
 
@@ -541,8 +537,8 @@ describe('Administrator Translation', () => {
       ad.deleteUserBtn.click();
     });
     it('Should check every elements using the right language', () => {
-      // expect(ad.deleteUserTitle.getText()).toBe(translate('cn' , 'MANAGER_DELETE_TITLE'));
-      // expect(ad.deleteUserCheckMessage.getText()).toMatch(translate('cn' , 'MANAGER_DELETE_CONFIRM'));
+      expect(ad.deleteUserTitle.getText()).toBe(translate('cn' , 'MANAGER_DELETE_TITLE'));
+      expect(ad.deleteUserCheckMessage.getText()).toMatch(translate('cn' , 'MANAGER_DELETE_CONFIRM'));
       expect(ad.deletePromptMessage.getText()).toBe(translate('cn', 'MANAGER_DELETE_TYPE_NAME'));
       expect(element.all(by.css('label[class="ng-scope"]')).get(1).getText()).toBe(translate('cn', 'MANAGER_DELETE_EMAIL'));
       expect(ad.cancelDeleteUserBtn.get(1).getText()).toBe(translate('cn', 'UTILS_CANCEL'));
@@ -597,10 +593,9 @@ describe('Administrator Translation', () => {
       ad.checkDeleteUserBtn.click();
     });
     it('Should check every elements using the right language', () => {
-      // 未翻譯
       browser.ignoreSynchronization = true;
       browser.sleep(1000);
-      // expect(ne.toastMessage.getText()).toMatch(translate('cn', 'TOAST_DELETE_ACCOUNT_SUCCESS'));
+      expect(ne.toastMessage.getText()).toMatch(translate('cn', 'TOAST_DELETE_ACCOUNT_SUCCESS'));
       browser.ignoreSynchronization = false;
     });
   });
@@ -718,12 +713,11 @@ describe('Administrator Translation', () => {
       ad.createUserPasswordConfInput.sendKeys(env.correctPassword);
       ad.checkCreateUserBtn.click();
     });
-    // 無toastMessage
     it('Should check every elements using the right language', () => {
-      // browser.ignoreSynchronization = true;
-      // browser.sleep(1000);
-      // expect(ne.toastMessage.getText()).toBe(translate('en', ''));
-      // browser.ignoreSynchronization = false;
+      browser.ignoreSynchronization = true;
+      browser.sleep(1000);
+      expect(ne.toastMessage.getText()).toBe(translate('en', 'TOAST_SIGN_UP_SUCCESS'));
+      browser.ignoreSynchronization = false;
       expect(ad.createUserForm.isPresent()).toBe(false);
     });
   });
@@ -752,12 +746,11 @@ describe('Administrator Translation', () => {
       ad.resetUserPasswordBtn.click();
     });
     it('Should check every elements using the right language', () => {
-      // 錯誤標題
-      // expect(ad.ResetPasswordTitle.getText()).toBe(translate('en', ''));
+      expect(ad.ResetPasswordTitle.getText()).toBe(translate('en', 'MANAGER_USER_RESET_TITLE'));
       expect(ad.ResetPasswordPasswordInput.getAttribute('placeholder')).toBe(translate('en', 'AUTH_PASSWORD'));
       expect(ad.ResetPasswordPasswordConfInput.getAttribute('placeholder')).toBe(translate('en', 'AUTH_RETYPE_PASSWORD'));
       expect(ad.cancelResetPasswordBtn.get(1).getText()).toBe(translate('en', 'UTILS_CANCEL'));
-      // expect(ad.checkResetPasswordBtn.getText()).toBe(translate('en', ''));
+      expect(ad.checkResetPasswordBtn.getText()).toBe(translate('en', 'UTILS_CONFIRM'));
     });
   });
 
@@ -831,8 +824,8 @@ describe('Administrator Translation', () => {
       ad.deleteUserBtn.click();
     });
     it('Should check every elements using the right language', () => {
-      // expect(ad.deleteUserTitle.getText()).toBe(translate('en' , 'MANAGER_DELETE_TITLE'));
-      // expect(ad.deleteUserCheckMessage.getText()).toMatch(translate('en' , 'MANAGER_DELETE_CONFIRM'));
+      expect(ad.deleteUserTitle.getText()).toBe(translate('en' , 'MANAGER_DELETE_TITLE'));
+      expect(ad.deleteUserCheckMessage.getText()).toMatch(translate('en' , 'MANAGER_DELETE_CONFIRM'));
       expect(ad.deletePromptMessage.getText()).toBe(translate('en', 'MANAGER_DELETE_TYPE_NAME'));
       expect(element.all(by.css('label[class="ng-scope"]')).get(1).getText()).toBe(translate('en', 'MANAGER_DELETE_EMAIL'));
       expect(ad.cancelDeleteUserBtn.get(1).getText()).toBe(translate('en', 'UTILS_CANCEL'));
