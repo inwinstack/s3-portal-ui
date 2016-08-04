@@ -81,7 +81,7 @@
           </md-button>
         </md-menu-item>
 
-        <md-menu-item>
+        <md-menu-item ng-if="actionNav.isFile()">
           <md-button
             aria-label="Rename"
             ng-click="actionNav.rename($event)"
