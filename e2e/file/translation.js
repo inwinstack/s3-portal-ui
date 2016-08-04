@@ -29,9 +29,6 @@ describe('File Translation', () => {
   // TW
   describe('When user into the file management page and selects the Traditional Chinese language : ', () => {
     beforeEach(() => {
-      sie.emailInput.sendKeys(env.correctEmail);
-      sie.passwordInput.sendKeys(env.correctPassword);
-      sie.signinBtn.click();
       browser.actions().doubleClick(be.bucketList.first()).perform();
       ne.menuBtn.get(1).click();
       ne.topNavLanguagesBtn.get(1).click();

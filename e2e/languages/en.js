@@ -72,6 +72,8 @@ const languages = {
   'TOAST_RESET_PASSWORD_SUCCESS': /^.*Reset Password Success!$/,
   'TOAST_DELETE_ACCOUNT_SUCCESS': /^.* Delete Success!$/,
   'TOAST_DELETE_ACCOUNT_FAIL': /^.* Delete Fail Please Try Again!$/,
+  'TOAST_CREATE_FOLDER_SUCCESS': /^Folder.*Create Success！$/,
+  'TOAST_CREATE_FOLDER_FAIL': /^Folder.*Create Fail Please Try Again！$/,
   // AUTH:
   'AUTH_EMAIL': 'Email',
   'AUTH_PASSWORD': 'Password',

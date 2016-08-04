@@ -62,10 +62,11 @@ describe('Delete File',() => {
       fe.fileCheckbox.get(1).click();
       ne.menuBtn.get(2).click();
       ne.deleteFileBtn.click();
+      fe.checkDeleteFile.click();
     });
     it('Should check show delete file success message and files has been deleted',() => {
       browser.ignoreSynchronization = true;
-      browser.sleep(500);
+      browser.sleep(1000);
       expect(ne.toastMessage.isDisplayed()).toBe(true);
       browser.ignoreSynchronization = false;
       expect(fe.fileList.count()).toBe(0);

@@ -64,6 +64,8 @@ const languages = {
   'TOAST_RESET_PASSWORD_FAILURE': /^.*更改密碼失敗，請再試一次$/,
   'TOAST_DELETE_ACCOUNT_SUCCESS': /^.* 删除成功!$/,
   'TOAST_DELETE_ACCOUNT_FAIL': /^.* 删除失败，请再试一次!$/,
+  'TOAST_CREATE_FOLDER_SUCCESS': /^資料夾.*建立成功！$/,
+  'TOAST_CREATE_FOLDER_FAIL': /^資料夾.*建立失敗，請再試一次！$/,
   // AUTH
   'AUTH_EMAIL': '電子郵件',
   'AUTH_PASSWORD': '密碼',

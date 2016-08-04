@@ -28,9 +28,9 @@ describe('File Properties',() => {
   // open properties form array value have swap
   describe('When user selects the bucketList and clicks properties : ', () => {
     beforeEach(() => {
-      sie.emailInput.sendKeys(env.correctEmail);
-      sie.passwordInput.sendKeys(env.correctPassword);
-      sie.signinBtn.click();
+      // sie.emailInput.sendKeys(env.correctEmail);
+      // sie.passwordInput.sendKeys(env.correctPassword);
+      // sie.signinBtn.click();
       be.createBucketBtn.click();
       be.createBucketInput.sendKeys(env.bucketName);
       be.checkCreateBucketBtn.click();

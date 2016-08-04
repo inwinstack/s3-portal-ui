@@ -40,22 +40,41 @@ describe('Folder Translation',() => {
     });
   });
 
-  // describe('When user create folder and selects the Traditional Chinese language: ',() => {
-  //   beforeEach(() => {
-  //     browser.actions().doubleClick(be.bucketList.first()).perform();
-  //     fe.createFolderBtn.first().click();
-  //     fe.createFolderInput.clear();
-  //     fe.createFolderInput.sendKeys(env.folderName);
-  //     fe.checkCreateFolderBtn.click();
-  //   });
-  //   it('Should check every elements using the right language',() => {
-  //     // 訊息提示尚未修改
-  //     browser.ignoreSynchronization = true;
-  //     browser.sleep(1000);
-  //     // expect(ne.toastMessage.getText()).toBe();
-  //     browser.ignoreSynchronization = false;
-  //   });
-  // });
+  describe('When user create folder and selects the Traditional Chinese language: ',() => {
+    beforeEach(() => {
+      ne.menuBtn.get(1).click();
+      ne.topNavLanguagesBtn.get(1).click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
+      foe.createFolderBtn.first().click();
+      foe.createFolderInput.clear();
+      foe.createFolderInput.sendKeys(env.folderName);
+      foe.checkCreateFolderBtn.click();
+    });
+    it('Should check every elements using the right language',() => {
+      browser.ignoreSynchronization = true;
+      browser.sleep(1000);
+      expect(ne.toastMessage.getText()).toMatch(translate('tw' , 'TOAST_CREATE_FOLDER_SUCCESS'));
+      browser.ignoreSynchronization = false;
+    });
+  });
+
+  describe('When user create folder input isExist name and selects the Traditional Chinese language: ',() => {
+    beforeEach(() => {
+      ne.menuBtn.get(1).click();
+      ne.topNavLanguagesBtn.get(1).click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
+      foe.createFolderBtn.first().click();
+      foe.createFolderInput.clear();
+      foe.createFolderInput.sendKeys(env.folderName);
+      foe.checkCreateFolderBtn.click();
+    });
+    it('Should check every elements using the right language',() => {
+      browser.ignoreSynchronization = true;
+      browser.sleep(1000);
+      expect(ne.toastMessage.getText()).toMatch(translate('tw' , 'TOAST_CREATE_FOLDER_FAIL'));
+      browser.ignoreSynchronization = false;
+    });
+  });
 
   // CN
   describe('When user opens the create folder form and selects the Simplified Chinese language: ',() => {
@@ -71,6 +90,42 @@ describe('Folder Translation',() => {
       expect(foe.folderContainer.element(by.css('input[name="folder"]')).getAttribute('value')).toBe(translate('cn', 'FILE_NEW_FOLDER'));
       expect(foe.checkCreateFolderBtn.element(by.css('span[class="ng-scope"]')).getText()).toBe(translate('cn', 'UTILS_CREATE'));
       expect(foe.cancelFormBtn.get(1).getText()).toBe(translate('cn', 'UTILS_CANCEL'));
+    });
+  });
+
+  describe('When user create folder and selects the Simplified Chinese language: ',() => {
+    beforeEach(() => {
+      ne.menuBtn.get(1).click();
+      ne.topNavLanguagesBtn.get(2).click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
+      foe.createFolderBtn.first().click();
+      foe.createFolderInput.clear();
+      foe.createFolderInput.sendKeys(env.folderName + '1');
+      foe.checkCreateFolderBtn.click();
+    });
+    it('Should check every elements using the right language',() => {
+      browser.ignoreSynchronization = true;
+      browser.sleep(1000);
+      expect(ne.toastMessage.getText()).toMatch(translate('cn' , 'TOAST_CREATE_FOLDER_SUCCESS'));
+      browser.ignoreSynchronization = false;
+    });
+  });
+
+  describe('When user create folder input isExist name and selects the Simplified Chinese language: ',() => {
+    beforeEach(() => {
+      ne.menuBtn.get(1).click();
+      ne.topNavLanguagesBtn.get(2).click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
+      foe.createFolderBtn.first().click();
+      foe.createFolderInput.clear();
+      foe.createFolderInput.sendKeys(env.folderName + '1');
+      foe.checkCreateFolderBtn.click();
+    });
+    it('Should check every elements using the right language',() => {
+      browser.ignoreSynchronization = true;
+      browser.sleep(1000);
+      expect(ne.toastMessage.getText()).toMatch(translate('cn' , 'TOAST_CREATE_FOLDER_FAIL'));
+      browser.ignoreSynchronization = false;
     });
   });
 
@@ -91,7 +146,43 @@ describe('Folder Translation',() => {
     });
   });
 
-  describe('Clear',() => {
+  describe('When user create folder and selects the English language: ',() => {
+    beforeEach(() => {
+      ne.menuBtn.get(1).click();
+      ne.topNavLanguagesBtn.get(0).click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
+      foe.createFolderBtn.first().click();
+      foe.createFolderInput.clear();
+      foe.createFolderInput.sendKeys(env.folderName + '2');
+      foe.checkCreateFolderBtn.click();
+    });
+    it('Should check every elements using the right language',() => {
+      browser.ignoreSynchronization = true;
+      browser.sleep(1000);
+      expect(ne.toastMessage.getText()).toMatch(translate('en' , 'TOAST_CREATE_FOLDER_SUCCESS'));
+      browser.ignoreSynchronization = false;
+    });
+  });
+
+  describe('When user create folder  input isExist name and selects the English language: ',() => {
+    beforeEach(() => {
+      ne.menuBtn.get(1).click();
+      ne.topNavLanguagesBtn.get(0).click();
+      browser.actions().doubleClick(be.bucketList.first()).perform();
+      foe.createFolderBtn.first().click();
+      foe.createFolderInput.clear();
+      foe.createFolderInput.sendKeys(env.folderName + '2');
+      foe.checkCreateFolderBtn.click();
+    });
+    it('Should check every elements using the right language',() => {
+      browser.ignoreSynchronization = true;
+      browser.sleep(1000);
+      expect(ne.toastMessage.getText()).toMatch(translate('en' , 'TOAST_CREATE_FOLDER_FAIL'));
+      browser.ignoreSynchronization = false;
+    });
+  });
+
+  describe('Clear All',() => {
     beforeEach(() => {
       be.bucketCheckbox.first().click();
       ne.menuBtn.get(2).click();
@@ -99,6 +190,10 @@ describe('Folder Translation',() => {
       be.deleteBucketInput.sendKeys(env.bucketName);
       be.checkDeleteBucket.click();
     });
-    it('Clear',() => {});
+    it('Should Clear all',() => {
+      browser.ignoreSynchronization = true;
+      browser.sleep(500);
+      browser.ignoreSynchronization = false;
+    });
   });
 });

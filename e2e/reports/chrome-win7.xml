@@ -1,154 +1,72 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
- <testsuite name="Bucket List : " timestamp="2016-08-03T20:05:09" hostname="localhost" time="6.975" errors="0" tests="0" skipped="0" disabled="0" failures="0">
+ <testsuite name="File List" timestamp="2016-08-04T15:48:42" hostname="localhost" time="12.413" errors="0" tests="0" skipped="0" disabled="0" failures="0">
  </testsuite>
- <testsuite name="Bucket List : .When the user into the management bucket page but do not have any of the bucket : " timestamp="2016-08-03T20:05:09" hostname="localhost" time="6.975" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Bucket List : .When the user into the management bucket page but do not have any of the bucket : " name="Should check the [CREATE BUCKET] button is display and enabled and the message is displayed" time="6.973" />
+ <testsuite name="File List.When user clicks the bucket : " timestamp="2016-08-04T15:48:42" hostname="localhost" time="10.534" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File List.When user clicks the bucket : " name="Should check into the file management page" time="10.533" />
  </testsuite>
- <testsuite name="Create Bucket" timestamp="2016-08-03T20:05:16" hostname="localhost" time="17.771" errors="0" tests="0" skipped="0" disabled="0" failures="0">
+ <testsuite name="File List.When user into the file management page but do not have any of the file" timestamp="2016-08-04T15:48:53" hostname="localhost" time="1.879" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="File List.When user into the file management page but do not have any of the file" name="Should check the [UPLOAD FILE] and [CREATE FOLDER] button is display and enabled and display title" time="1.879" />
  </testsuite>
- <testsuite name="Create Bucket.When user click the [CREATE BUCKET] button : " timestamp="2016-08-03T20:05:16" hostname="localhost" time="4.236" errors="0" tests="2" skipped="0" disabled="0" failures="0">
-  <testcase classname="Create Bucket.When user click the [CREATE BUCKET] button : " name="Should check the display Bucket form" time="1.752" />
-  <testcase classname="Create Bucket.When user click the [CREATE BUCKET] button : " name="Should check the display Bucket form #2" time="2.484" />
+ <testsuite name="Create Folder" timestamp="2016-08-04T15:48:55" hostname="localhost" time="33.117" errors="0" tests="0" skipped="0" disabled="0" failures="0">
  </testsuite>
- <testsuite name="Create Bucket.When the bucket form show and the user clicks the [Cancel] button" timestamp="2016-08-03T20:05:20" hostname="localhost" time="2.406" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Create Bucket.When the bucket form show and the user clicks the [Cancel] button" name="Should check hide Create Bucket form" time="2.406" />
+ <testsuite name="Create Folder.When user clicks the [Create folder] button : " timestamp="2016-08-04T15:48:55" hostname="localhost" time="2.476" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Create Folder.When user clicks the [Create folder] button : " name="Should check the display to create folder form" time="2.474" />
  </testsuite>
- <testsuite name="Create Bucket.When the bucket form show and the user clicks the [x] button" timestamp="2016-08-03T20:05:23" hostname="localhost" time="2.576" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Create Bucket.When the bucket form show and the user clicks the [x] button" name="Should check hide Create Bucket form" time="2.576" />
+ <testsuite name="Create Folder.When user clicks the [Action] and select the [Create folder] button : " timestamp="2016-08-04T15:48:57" hostname="localhost" time="3.314" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Create Folder.When user clicks the [Action] and select the [Create folder] button : " name="Should check the display to create folder form" time="3.314" />
  </testsuite>
- <testsuite name="Create Bucket.When user has not input bucket name : " timestamp="2016-08-03T20:05:25" hostname="localhost" time="1.702" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Create Bucket.When user has not input bucket name : " name="Should check the [CREATE] is disabled" time="1.702" />
+ <testsuite name="Create Folder.When user opens the form create a folder : " timestamp="2016-08-04T15:49:01" hostname="localhost" time="2.391" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Create Folder.When user opens the form create a folder : " name="Should check the [Create] is enabled" time="2.391" />
  </testsuite>
- <testsuite name="Create Bucket.When user input bucket name : " timestamp="2016-08-03T20:05:27" hostname="localhost" time="1.791" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Create Bucket.When user input bucket name : " name="Should check the [CREATE] is enabled" time="1.791" />
+ <testsuite name="Create Folder.When user opens the form create a folder and clicks the [Cancel] button : " timestamp="2016-08-04T15:49:03" hostname="localhost" time="3.186" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Create Folder.When user opens the form create a folder and clicks the [Cancel] button : " name="Should check create folders form has been closed" time="3.186" />
  </testsuite>
- <testsuite name="Create Bucket.When user input bucket name and click the [CREATE] button: " timestamp="2016-08-03T20:05:29" hostname="localhost" time="2.978" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Create Bucket.When user input bucket name and click the [CREATE] button: " name="Should check show create bucket success message" time="2.978" />
+ <testsuite name="Create Folder.When user opens the form create a folder and clicks the [x] button : " timestamp="2016-08-04T15:49:06" hostname="localhost" time="3.498" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Create Folder.When user opens the form create a folder and clicks the [x] button : " name="Should check create folders form has been closed" time="3.498" />
  </testsuite>
- <testsuite name="Create Bucket.When user has added a new bucket: " timestamp="2016-08-03T20:05:32" hostname="localhost" time="2.081" errors="0" tests="2" skipped="0" disabled="0" failures="0">
-  <testcase classname="Create Bucket.When user has added a new bucket: " name="Should check the bucket exists in the file list" time="1.069" />
-  <testcase classname="Create Bucket.When user has added a new bucket: " name="Should check sort situation" time="1.012" />
+ <testsuite name="Create Folder.When user inputs a name for the folder does not exist and clicks the [Create] button : " timestamp="2016-08-04T15:49:10" hostname="localhost" time="6.085" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Create Folder.When user inputs a name for the folder does not exist and clicks the [Create] button : " name="Should check show create folder success message and the folder name exists in the list" time="6.085" />
  </testsuite>
- <testsuite name="Delete Bucket" timestamp="2016-08-03T20:05:34" hostname="localhost" time="31.88" errors="0" tests="0" skipped="0" disabled="0" failures="0">
+ <testsuite name="Create Folder.When user inputs the name of an existing folder : " timestamp="2016-08-04T15:49:16" hostname="localhost" time="5.893" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Create Folder.When user inputs the name of an existing folder : " name="Should check the show message folder already exists" time="5.892" />
  </testsuite>
- <testsuite name="Delete Bucket.When user does not select any of the bucket : " timestamp="2016-08-03T20:05:34" hostname="localhost" time="1.808" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Delete Bucket.When user does not select any of the bucket : " name="Should check the [delete bucket] button is disabled" time="1.808" />
+ <testsuite name="Create Folder.When user has to create a new folder : " timestamp="2016-08-04T15:49:22" hostname="localhost" time="1.828" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Create Folder.When user has to create a new folder : " name="Should check sort situation" time="1.827" />
  </testsuite>
- <testsuite name="Delete Bucket.When user selects to be deleted Bucket : " timestamp="2016-08-03T20:05:36" hostname="localhost" time="2.469" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Delete Bucket.When user selects to be deleted Bucket : " name="Should check the [delete bucket] button is enabled" time="2.469" />
+ <testsuite name="Create Folder.Clear folder" timestamp="2016-08-04T15:49:23" hostname="localhost" time="4.446" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Create Folder.Clear folder" name="Should clear folder" time="4.446" />
  </testsuite>
- <testsuite name="Delete Bucket.When user clicks the [delete bucket] button : " timestamp="2016-08-03T20:05:38" hostname="localhost" time="3.324" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Delete Bucket.When user clicks the [delete bucket] button : " name="Should check the display to delete bucket form" time="3.324" />
+ <testsuite name="Folder Translation" timestamp="2016-08-04T15:49:28" hostname="localhost" time="48.363" errors="0" tests="0" skipped="0" disabled="0" failures="0">
  </testsuite>
- <testsuite name="Delete Bucket.When user clicks the [delete bucket] button but did not inputs the Bucket Name : " timestamp="2016-08-03T20:05:41" hostname="localhost" time="3.18" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Delete Bucket.When user clicks the [delete bucket] button but did not inputs the Bucket Name : " name="Should check the [DELETE] button is disabled" time="3.18" />
+ <testsuite name="Folder Translation.When user opens the create folder form and selects the Traditional Chinese language: " timestamp="2016-08-04T15:49:28" hostname="localhost" time="4.429" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Folder Translation.When user opens the create folder form and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="4.429" />
  </testsuite>
- <testsuite name="Delete Bucket.When user opens the form create a folder and clicks the [Cancel] button : " timestamp="2016-08-03T20:05:45" hostname="localhost" time="3.888" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Delete Bucket.When user opens the form create a folder and clicks the [Cancel] button : " name="Should check delete bucket form has been closed" time="3.888" />
+ <testsuite name="Folder Translation.When user create folder and selects the Traditional Chinese language: " timestamp="2016-08-04T15:49:32" hostname="localhost" time="5.327" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Folder Translation.When user create folder and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="5.327" />
  </testsuite>
- <testsuite name="Delete Bucket.When user opens the form create a folder and clicks the [x] button : " timestamp="2016-08-03T20:05:49" hostname="localhost" time="3.969" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Delete Bucket.When user opens the form create a folder and clicks the [x] button : " name="Should check delete bucket form has been closed" time="3.969" />
+ <testsuite name="Folder Translation.When user create folder input isExist name and selects the Traditional Chinese language: " timestamp="2016-08-04T15:49:38" hostname="localhost" time="5.085" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Folder Translation.When user create folder input isExist name and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="5.085" />
  </testsuite>
- <testsuite name="Delete Bucket.When user inputs bucket name does not exist : " timestamp="2016-08-03T20:05:52" hostname="localhost" time="3.987" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Delete Bucket.When user inputs bucket name does not exist : " name="Should check the show message bucket name is not exists" time="3.987" />
+ <testsuite name="Folder Translation.When user opens the create folder form and selects the Simplified Chinese language: " timestamp="2016-08-04T15:49:43" hostname="localhost" time="4.285" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Folder Translation.When user opens the create folder form and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="4.284" />
  </testsuite>
- <testsuite name="Delete Bucket.When user inputs the bucket name consistent : " timestamp="2016-08-03T20:05:56" hostname="localhost" time="4.08" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Delete Bucket.When user inputs the bucket name consistent : " name="Should check the [DELETE] button is enabled" time="4.08" />
+ <testsuite name="Folder Translation.When user create folder and selects the Simplified Chinese language: " timestamp="2016-08-04T15:49:47" hostname="localhost" time="5.324" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Folder Translation.When user create folder and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="5.324" />
  </testsuite>
- <testsuite name="Delete Bucket.When user inputs the bucket name consistent and clicks the [DELETE] button : " timestamp="2016-08-03T20:06:01" hostname="localhost" time="5.175" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Delete Bucket.When user inputs the bucket name consistent and clicks the [DELETE] button : " name="Should check show delete bucket success message and bucket has been deleted" time="5.175" />
+ <testsuite name="Folder Translation.When user create folder input isExist name and selects the Simplified Chinese language: " timestamp="2016-08-04T15:49:52" hostname="localhost" time="5.148" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Folder Translation.When user create folder input isExist name and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="5.148" />
  </testsuite>
- <testsuite name="Bucket Translation" timestamp="2016-08-03T20:06:06" hostname="localhost" time="137.461" errors="0" tests="0" skipped="0" disabled="0" failures="0">
+ <testsuite name="Folder Translation.When user opens the create folder form and selects the English language: " timestamp="2016-08-04T15:49:58" hostname="localhost" time="4.184" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Folder Translation.When user opens the create folder form and selects the English language: " name="Should check every elements using the right language" time="4.184" />
  </testsuite>
- <testsuite name="Bucket Translation.When user enters the bucket page and selects the Traditional Chinese language: " timestamp="2016-08-03T20:06:06" hostname="localhost" time="3.074" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Bucket Translation.When user enters the bucket page and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="3.073" />
+ <testsuite name="Folder Translation.When user create folder and selects the English language: " timestamp="2016-08-04T15:50:02" hostname="localhost" time="5.111" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Folder Translation.When user create folder and selects the English language: " name="Should check every elements using the right language" time="5.109" />
  </testsuite>
- <testsuite name="Bucket Translation.When user opens the create bucket form and selects the Traditional Chinese language: " timestamp="2016-08-03T20:06:09" hostname="localhost" time="3.655" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Bucket Translation.When user opens the create bucket form and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="3.655" />
+ <testsuite name="Folder Translation.When user create folder  input isExist name and selects the English language: " timestamp="2016-08-04T15:50:07" hostname="localhost" time="5.164" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Folder Translation.When user create folder  input isExist name and selects the English language: " name="Should check every elements using the right language" time="5.164" />
  </testsuite>
- <testsuite name="Bucket Translation.When user clicks the [ACTIONS] button form and selects the Traditional Chinese language: " timestamp="2016-08-03T20:06:12" hostname="localhost" time="3.558" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Bucket Translation.When user clicks the [ACTIONS] button form and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="3.557" />
- </testsuite>
- <testsuite name="Bucket Translation.When user clicks the [ACTIONS] button and selects the Traditional Chinese language: " timestamp="2016-08-03T20:06:16" hostname="localhost" time="3.597" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Bucket Translation.When user clicks the [ACTIONS] button and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="3.597" />
- </testsuite>
- <testsuite name="Bucket Translation.When user create already exists bucket name and selects the Traditional Chinese language: " timestamp="2016-08-03T20:06:20" hostname="localhost" time="4.556" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Bucket Translation.When user create already exists bucket name and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="4.556" />
- </testsuite>
- <testsuite name="Bucket Translation.When user create bucket and selects the Traditional Chinese language: " timestamp="2016-08-03T20:06:24" hostname="localhost" time="4.536" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Bucket Translation.When user create bucket and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="4.535" />
- </testsuite>
- <testsuite name="Bucket Translation.When user open delete bucket form and selects the Traditional Chinese language: " timestamp="2016-08-03T20:06:29" hostname="localhost" time="5.407" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Bucket Translation.When user open delete bucket form and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="5.406" />
- </testsuite>
- <testsuite name="Bucket Translation.When user input null and selects the Traditional Chinese language: " timestamp="2016-08-03T20:06:34" hostname="localhost" time="5.032" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Bucket Translation.When user input null and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="5.032" />
- </testsuite>
- <testsuite name="Bucket Translation.When user input not the same bucket name and selects the Traditional Chinese language: " timestamp="2016-08-03T20:06:39" hostname="localhost" time="5.484" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Bucket Translation.When user input not the same bucket name and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="5.483" />
- </testsuite>
- <testsuite name="Bucket Translation.When user delete bucket and selects the Traditional Chinese language: " timestamp="2016-08-03T20:06:45" hostname="localhost" time="6.607" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Bucket Translation.When user delete bucket and selects the Traditional Chinese language: " name="Should check every elements using the right language" time="6.607" />
- </testsuite>
- <testsuite name="Bucket Translation.When user enters the bucket page and selects the Simplified Chinese language: " timestamp="2016-08-03T20:06:51" hostname="localhost" time="3.15" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Bucket Translation.When user enters the bucket page and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="3.149" />
- </testsuite>
- <testsuite name="Bucket Translation.When user opens the create bucket form and selects the Simplified Chinese language: " timestamp="2016-08-03T20:06:54" hostname="localhost" time="3.542" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Bucket Translation.When user opens the create bucket form and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="3.542" />
- </testsuite>
- <testsuite name="Bucket Translation.When user clicks the [ACTIONS] button form and selects the Simplified Chinese language: " timestamp="2016-08-03T20:06:58" hostname="localhost" time="3.521" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Bucket Translation.When user clicks the [ACTIONS] button form and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="3.521" />
- </testsuite>
- <testsuite name="Bucket Translation.When user clicks the [ACTIONS] button and selects the Simplified Chinese language: " timestamp="2016-08-03T20:07:01" hostname="localhost" time="3.668" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Bucket Translation.When user clicks the [ACTIONS] button and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="3.668" />
- </testsuite>
- <testsuite name="Bucket Translation.When user create already exists bucket name and selects the Simplified Chinese language: " timestamp="2016-08-03T20:07:05" hostname="localhost" time="4.586" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Bucket Translation.When user create already exists bucket name and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="4.586" />
- </testsuite>
- <testsuite name="Bucket Translation.When user create bucket and selects the Simplified Chinese language: " timestamp="2016-08-03T20:07:10" hostname="localhost" time="4.481" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Bucket Translation.When user create bucket and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="4.481" />
- </testsuite>
- <testsuite name="Bucket Translation.When user open delete bucket form and selects the Simplified Chinese language: " timestamp="2016-08-03T20:07:14" hostname="localhost" time="5.26" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Bucket Translation.When user open delete bucket form and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="5.26" />
- </testsuite>
- <testsuite name="Bucket Translation.When user input null and selects the Simplified Chinese language: " timestamp="2016-08-03T20:07:19" hostname="localhost" time="5.521" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Bucket Translation.When user input null and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="5.521" />
- </testsuite>
- <testsuite name="Bucket Translation.When user input not the same bucket name and selects the Simplified Chinese language: " timestamp="2016-08-03T20:07:25" hostname="localhost" time="5.719" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Bucket Translation.When user input not the same bucket name and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="5.719" />
- </testsuite>
- <testsuite name="Bucket Translation.When user delete bucket and selects the Simplified Chinese language: " timestamp="2016-08-03T20:07:31" hostname="localhost" time="6.578" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Bucket Translation.When user delete bucket and selects the Simplified Chinese language: " name="Should check every elements using the right language" time="6.578" />
- </testsuite>
- <testsuite name="Bucket Translation.When user enters the bucket page and selects the English language: " timestamp="2016-08-03T20:07:37" hostname="localhost" time="3.149" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Bucket Translation.When user enters the bucket page and selects the English language: " name="Should check every elements using the right language" time="3.149" />
- </testsuite>
- <testsuite name="Bucket Translation.When user opens the create bucket form and selects the English language: " timestamp="2016-08-03T20:07:40" hostname="localhost" time="3.51" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Bucket Translation.When user opens the create bucket form and selects the English language: " name="Should check every elements using the right language" time="3.51" />
- </testsuite>
- <testsuite name="Bucket Translation.When user clicks the [ACTIONS] button form and selects the English language: " timestamp="2016-08-03T20:07:44" hostname="localhost" time="3.474" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Bucket Translation.When user clicks the [ACTIONS] button form and selects the English language: " name="Should check every elements using the right language" time="3.473" />
- </testsuite>
- <testsuite name="Bucket Translation.When user clicks the [ACTIONS] button and selects the English language: " timestamp="2016-08-03T20:07:47" hostname="localhost" time="3.581" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Bucket Translation.When user clicks the [ACTIONS] button and selects the English language: " name="Should check every elements using the right language" time="3.581" />
- </testsuite>
- <testsuite name="Bucket Translation.When user create already exists bucket name and selects the English language: " timestamp="2016-08-03T20:07:51" hostname="localhost" time="4.58" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Bucket Translation.When user create already exists bucket name and selects the English language: " name="Should check every elements using the right language" time="4.58" />
- </testsuite>
- <testsuite name="Bucket Translation.When user create bucket and selects the English language: " timestamp="2016-08-03T20:07:56" hostname="localhost" time="4.503" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Bucket Translation.When user create bucket and selects the English language: " name="Should check every elements using the right language" time="4.503" />
- </testsuite>
- <testsuite name="Bucket Translation.When user open delete bucket form and selects the English language: " timestamp="2016-08-03T20:08:00" hostname="localhost" time="5.283" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Bucket Translation.When user open delete bucket form and selects the English language: " name="Should check every elements using the right language" time="5.283" />
- </testsuite>
- <testsuite name="Bucket Translation.When user input null and selects the English language: " timestamp="2016-08-03T20:08:05" hostname="localhost" time="5.695" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Bucket Translation.When user input null and selects the English language: " name="Should check every elements using the right language" time="5.695" />
- </testsuite>
- <testsuite name="Bucket Translation.When user input not the same bucket name and selects the English language: " timestamp="2016-08-03T20:08:11" hostname="localhost" time="5.644" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Bucket Translation.When user input not the same bucket name and selects the English language: " name="Should check every elements using the right language" time="5.643" />
- </testsuite>
- <testsuite name="Bucket Translation.When user delete bucket and selects the English language: " timestamp="2016-08-03T20:08:17" hostname="localhost" time="6.509" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="Bucket Translation.When user delete bucket and selects the English language: " name="Should check every elements using the right language" time="6.509" />
+ <testsuite name="Folder Translation.Clear All" timestamp="2016-08-04T15:50:12" hostname="localhost" time="4.306" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="Folder Translation.Clear All" name="Should Clear all" time="4.306" />
  </testsuite>
 </testsuites>

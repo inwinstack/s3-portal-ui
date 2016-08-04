@@ -66,6 +66,8 @@ const languages = {
   'TOAST_RESET_PASSWORD_SUCCESS': /^.*更改密码成功!$/,
   'TOAST_DELETE_ACCOUNT_SUCCESS': /^.* 删除成功!$/,
   'TOAST_DELETE_ACCOUNT_FAIL': /^.* 删除失败，请再试一次!$/,
+  'TOAST_CREATE_FOLDER_SUCCESS': /^资料夹.*建立成功！$/,
+  'TOAST_CREATE_FOLDER_FAIL': /^资料夹.* 建立失败，请再试一次！$/,
   // AUTH
   'AUTH_EMAIL': '电邮',
   'AUTH_PASSWORD': '密码',
