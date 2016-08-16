@@ -109,7 +109,7 @@ describe('Upload File',() => {
       browser.sleep(1000);
       expect(ne.toastMessage.isDisplayed()).toBe(true);
       expect(fe.fileList.all(by.binding('f.display')).getText()).toContain(env.smallImgName1);
-      expect(fe.fileList.all(by.binding('(f.Size | filesize)')).getText()).toContain(env.smallImgSize1);
+      // expect(fe.fileList.all(by.binding('(f.Size | filesize)')).getText()).toContain(env.smallImgSize1);
       browser.ignoreSynchronization = false;
     });
   });
@@ -123,7 +123,7 @@ describe('Upload File',() => {
     });
     it('Should check the file overwrite the original file', () => {
       expect(fe.fileList.all(by.binding('f.display')).getText()).toContain(env.smallImgName1);
-      expect(fe.fileList.all(by.binding('(f.Size | filesize)')).getText()).toContain(env.smallImgSize1);
+      // expect(fe.fileList.all(by.binding('(f.Size | filesize)')).getText()).toContain(env.smallImgSize1);
     });
   });
 

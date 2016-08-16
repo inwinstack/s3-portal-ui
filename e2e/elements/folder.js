@@ -8,6 +8,7 @@ function elements () {
   this.folderExistMessage = element(by.css('[ng-show="create.duplicated"]'));
   this.folderCheckbox = element.all(by.css('[ng-checked="f.checked"]'));
   this.folderContainer = element(by.css('md-input-container[class="md-block md-input-has-value"]'));
+  this.checkDeleteFolderBtn = element(by.css('[ng-click="dialog.hide()"]'));
 }
 
 module.exports = elements;

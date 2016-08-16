@@ -62,9 +62,12 @@ const languages = {
   'TOAST_SIGN_OUT_FAILURE': '登出失敗！',
   'TOAST_CREATE_BUCKET_SUCCESS': /^Bucket.*已创建成功！$/,
   'TOAST_CREATE_BUCKET_FAILURE': /^Bucket.*创建失敗，请再试一次！$/,
+  'TOAST_DELETE_BUCKET_SUCCESS': /^Bucket.*删除成功!$/,
   'TOAST_RESET_PASSWORD_SUCCESS': /^.*更改密码成功!$/,
   'TOAST_DELETE_ACCOUNT_SUCCESS': /^.* 删除成功!$/,
   'TOAST_DELETE_ACCOUNT_FAIL': /^.* 删除失败，请再试一次!$/,
+  'TOAST_CREATE_FOLDER_SUCCESS': /^资料夹.*建立成功！$/,
+  'TOAST_CREATE_FOLDER_FAIL': /^资料夹.* 建立失败，请再试一次！$/,
   // AUTH
   'AUTH_EMAIL': '电邮',
   'AUTH_PASSWORD': '密码',

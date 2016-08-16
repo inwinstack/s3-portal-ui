@@ -892,6 +892,10 @@ describe('Administrator Translation', () => {
       ne.menuBtn.first().click();
       ne.signoutBtn.click();
     });
-    it('Clear',() => {});
+    it('Clear',() => {
+      browser.ignoreSynchronization = true;
+      browser.sleep(500);
+      browser.ignoreSynchronization = false;
+    });
   });
 });

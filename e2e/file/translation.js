@@ -29,9 +29,6 @@ describe('File Translation', () => {
   // TW
   describe('When user into the file management page and selects the Traditional Chinese language : ', () => {
     beforeEach(() => {
-      sie.emailInput.sendKeys(env.correctEmail);
-      sie.passwordInput.sendKeys(env.correctPassword);
-      sie.signinBtn.click();
       browser.actions().doubleClick(be.bucketList.first()).perform();
       ne.menuBtn.get(1).click();
       ne.topNavLanguagesBtn.get(1).click();
@@ -671,6 +668,18 @@ describe('File Translation', () => {
       expect(ne.toastMessage.getText()).toMatch(translate('en', 'TRANSFER_CANCEL_UPLOAD'));
       browser.ignoreSynchronization = false;
       expect(fie.transfersCanceled.getText()).toBe(translate('en' , 'TRANSFER_CANCELED'));
+    });
+  });
+
+  describe('When user click the [Sign Out] : ',() => {
+    beforeEach(() => {
+      ne.menuBtn.first().click();
+      ne.signoutBtn.click();
+    });
+    it('Clear',() => {
+      browser.ignoreSynchronization = true;
+      browser.sleep(500);
+      browser.ignoreSynchronization = false;
     });
   });
 });

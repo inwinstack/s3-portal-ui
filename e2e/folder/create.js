@@ -7,7 +7,7 @@ const signinElements = require('../elements/signin.js');
 const bucketElements = require('../elements/bucket.js');
 const navElements = require('../elements/nav.js');
 
-describe('Create Folder',() => {
+describe('Create Folder', () => {
   const env = new environment();
   const sie = new signinElements();
   const be = new bucketElements();
@@ -23,60 +23,63 @@ describe('Create Folder',() => {
     browser.get(ps.signInPage);
   });
 
-  describe('When user clicks the [Create folder] button : ',() => {
+  describe('When user clicks the [Create folder] button : ', () => {
     beforeEach(() => {
+      sie.emailInput.sendKeys(env.correctEmail);
+      sie.passwordInput.sendKeys(env.correctPassword);
+      sie.signinBtn.click();
       browser.actions().doubleClick(be.bucketList.first()).perform();
       fe.createFolderBtn.first().click();
     });
-    it('Should check the display to create folder form',() => {
+    it('Should check the display to create folder form', () => {
       expect(fe.createFolderForm.isDisplayed()).toBe(true);
     });
   });
 
-  describe('When user clicks the [Action] and select the [Create folder] button : ',() => {
+  describe('When user clicks the [Action] and select the [Create folder] button : ', () => {
     beforeEach(() => {
       browser.actions().doubleClick(be.bucketList.first()).perform();
       ne.menuBtn.get(2).click();
       fe.createFolderBtn.get(1).click();
     });
-    it('Should check the display to create folder form',() => {
+    it('Should check the display to create folder form', () => {
       expect(fe.createFolderForm.isDisplayed()).toBe(true);
     });
   });
 
-  describe('When user opens the form create a folder : ',() => {
+  describe('When user opens the form create a folder : ', () => {
     beforeEach(() => {
       browser.actions().doubleClick(be.bucketList.first()).perform();
       fe.createFolderBtn.first().click();
     });
-    it('Should check the [Create] is enabled',() => {
+    it('Should check the [Create] is enabled', () => {
       expect(fe.checkCreateFolderBtn.isEnabled()).toBe(true);
     });
   });
 
-  describe('When user opens the form create a folder and clicks the [Cancel] button : ',() => {
+  describe('When user opens the form create a folder and clicks the [Cancel] button : ', () => {
     beforeEach(() => {
       browser.actions().doubleClick(be.bucketList.first()).perform();
       fe.createFolderBtn.first().click();
       fe.cancelFormBtn.get(1).click();
     });
-    it('Should check create folders form has been closed',() => {
+    it('Should check create folders form has been closed', () => {
       expect(fe.createFolderForm.isPresent()).not.toBe(true);
     });
   });
 
-  describe('When user opens the form create a folder and clicks the [x] button : ',() => {
+  describe('When user opens the form create a folder and clicks the [x] button : ', () => {
     beforeEach(() => {
       browser.actions().doubleClick(be.bucketList.first()).perform();
       fe.createFolderBtn.first().click();
       fe.cancelFormBtn.first().click();
     });
-    it('Should check create folders form has been closed',() => {
+    it('Should check create folders form has been closed', () => {
       expect(fe.createFolderForm.isPresent()).not.toBe(true);
     });
   });
 
-  describe('When user inputs a name for the folder does not exist and clicks the [Create] button : ',() => {
+  describe('When user inputs a name for the folder does not exist and clicks the [Create] button : ', () => {
     beforeEach(() => {
       browser.actions().doubleClick(be.bucketList.first()).perform();
       fe.createFolderBtn.first().click();
@@ -84,41 +87,51 @@ describe('Create Folder',() => {
       fe.createFolderInput.sendKeys(env.folderName);
       fe.checkCreateFolderBtn.click();
     });
-    it('Should check show create folder success message and the folder name exists in the list',() => {
+    it('Should check show create folder success message and the folder name exists in the list', () => {
       browser.ignoreSynchronization = true;
-      browser.sleep(500);
+      browser.sleep(1000);
       expect(ne.toastMessage.isDisplayed()).toBe(true);
       browser.ignoreSynchronization = false;
       expect(fe.folderList.all(by.binding('f.display')).getText()).toContain(env.folderName);
     });
   });
 
-  // describe('When user inputs the name of an existing folder : ',() => {
-  //   beforeEach(() => {
-  //     browser.actions().doubleClick(be.bucketList.first()).perform();
-  //     fe.createFolderBtn.first().click();
-  //     fe.createFolderInput.clear();
-  //     fe.createFolderInput.sendKeys(env.folderName);
-  //     fe.checkCreateFolderBtn.click();
-  //   });
-  //   it('Should check the show message folder already exists',() => {
-  //     expect(fe.folderExistMessage.getText()).toBe(translate('en', 'CREATE_FOLDER_EXIST'));
-  //   });
-  // });
+  describe('When user inputs the name of an existing folder : ', () => {
+    beforeEach(() => {
+      browser.actions().doubleClick(be.bucketList.first()).perform();
+      fe.createFolderBtn.first().click();
+      fe.createFolderInput.clear();
+      fe.createFolderInput.sendKeys(env.folderName);
+      fe.checkCreateFolderBtn.click();
+    });
+    it('Should check the show message folder already exists', () => {
+      expect(fe.folderExistMessage.isDisplayed()).toBe(true);
+    });
+  });
 
-  describe('When user has to create a new folder : ',() => {
+  describe('When user has to create a new folder : ', () => {
     beforeEach(() => {
       browser.actions().doubleClick(be.bucketList.first()).perform();
     });
-    it('Should check sort situation',() => {
+    it('Should check sort situation', () => {
       fe.folderList.getText().then((result) => {
         expect(result).toBe(result.sort(naturalSort));
       });
     });
-    afterEach(() => {
-      fe.folderCheckbox.get(0).click();
+  });
+
+  describe('Clear folder', () => {
+    beforeEach(() => {
+      browser.actions().doubleClick(be.bucketList.first()).perform();
+      fe.folderCheckbox.first().click();
       ne.menuBtn.get(2).click();
       ne.deleteFileBtn.click();
+      fe.checkDeleteFolderBtn.click();
+    });
+    it('Should clear folder', () => {
+      browser.ignoreSynchronization = true;
+      browser.sleep(500);
+      browser.ignoreSynchronization = false;
     })
   });
 });

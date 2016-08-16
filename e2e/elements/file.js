@@ -2,6 +2,7 @@ function elements () {
   this.createFolderBtn = element(by.css('[ng-click="file.createFolder()"]'));
   this.clearTransferList = element(by.css('[ng-click="transfer.toggleAutoClear()"]'));
   this.checkUploadBtn = element(by.css('[ng-click="upload.upload()"]'));
+  this.checkDeleteFile = element(by.css('[ng-click="dialog.hide()"]'));
   this.cancelSeletedFiles = element.all(by.css('[ng-click="upload.delete(file.id)"]'));
   this.fileCheckbox = element.all(by.css('[ng-checked="f.checked"]'));
   this.fileList = element.all(by.repeater('f in file.data'));
