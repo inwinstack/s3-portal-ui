@@ -36,19 +36,19 @@ const users = {
     'incorrectPassword': 'pass',
     'smallImg': {
       'name': 'small.png',
-      'path': '/home/ubuntu/img/',
-      'size': '8.15 KB',
+      'path': '/home/protractor/img/',
+      'size': '15.82 KB',
       'newName': 'newSmall.png'
     },
     'smallImg2': {
       'name': 'small2.png',
-      'path': '/home/ubuntu/img/',
-      'size': '46.41 KB'
+      'path': '/home/protractor/img/',
+      'size': '34.2 KB'
     },
     'bigImg': {
       'name': 'win10.iso',
-      'path': '/home/ubuntu/img/',
-      'size': '8.15 KB'
+      'path': '/home/protractor/img/',
+      'size': '633.9 MB'
     },
     'bucketName': 'ubuntu-chrome-bucket',
     'folderName': 'ubuntu-chrome-folder',

@@ -670,4 +670,16 @@ describe('File Translation', () => {
       expect(fie.transfersCanceled.getText()).toBe(translate('en' , 'TRANSFER_CANCELED'));
     });
   });
+
+  describe('When user click the [Sign Out] : ',() => {
+    beforeEach(() => {
+      ne.menuBtn.first().click();
+      ne.signoutBtn.click();
+    });
+    it('Clear',() => {
+      browser.ignoreSynchronization = true;
+      browser.sleep(500);
+      browser.ignoreSynchronization = false;
+    });
+  });
 });

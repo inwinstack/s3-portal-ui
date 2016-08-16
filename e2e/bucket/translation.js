@@ -503,4 +503,16 @@ describe('Bucket Translation', () => {
       browser.ignoreSynchronization = false;
     });
   });
+
+  describe('When user click the [Sign Out] : ',() => {
+    beforeEach(() => {
+      ne.menuBtn.first().click();
+      ne.signoutBtn.click();
+    });
+    it('Clear',() => {
+      browser.ignoreSynchronization = true;
+      browser.sleep(500);
+      browser.ignoreSynchronization = false;
+    });
+  });
 });

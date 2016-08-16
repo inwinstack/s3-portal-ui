@@ -6,6 +6,7 @@ const folderElements = require('../elements/folder.js');
 const signinElements = require('../elements/signin.js');
 const bucketElements = require('../elements/bucket.js');
 const navElements = require('../elements/nav.js');
+const administratorElements = require('../elements/administrator.js');
 
 describe('Folder Translation',() => {
   const env = new environment();
@@ -14,6 +15,7 @@ describe('Folder Translation',() => {
   const ps = new pages();
   const ne = new navElements();
   const foe = new folderElements();
+  const ad = new administratorElements();
 
   browser.getProcessedConfig().then((config) => {
     env.setUser(config.capabilities.browserName + "-" + config.capabilities.os);
@@ -189,8 +191,42 @@ describe('Folder Translation',() => {
       be.deleteBucketBtn.click();
       be.deleteBucketInput.sendKeys(env.bucketName);
       be.checkDeleteBucket.click();
+      ne.menuBtn.first().click();
+      ne.signoutBtn.click();
     });
     it('Should Clear all',() => {
+      browser.ignoreSynchronization = true;
+      browser.sleep(500);
+      browser.ignoreSynchronization = false;
+    });
+  });
+
+  describe('Clear all test account',() => {
+    beforeEach(() => {
+      sie.emailInput.sendKeys(env.adminEmail);
+      sie.passwordInput.sendKeys(env.adminPassword);
+      sie.signinBtn.click();
+      ne.menuBtn.first().click();
+      ad.accountListBtn.click();
+      ad.searchUser.sendKeys(env.correctEmail);
+      ad.accountListCheckbox.first().click();
+      ad.deleteUserBtn.click();
+      ad.deleteUserEmailInput.sendKeys(env.correctEmail);
+      ad.checkDeleteUserBtn.click();
+      ad.accountListCheckbox.first().click();
+      ad.deleteUserBtn.click();
+      ad.deleteUserEmailInput.sendKeys(env.correctEmail + '1');
+      ad.checkDeleteUserBtn.click();
+      ad.accountListCheckbox.first().click();
+      ad.deleteUserBtn.click();
+      ad.deleteUserEmailInput.sendKeys(env.correctEmail + '3');
+      ad.checkDeleteUserBtn.click();
+      ad.accountListCheckbox.first().click();
+      ad.deleteUserBtn.click();
+      ad.deleteUserEmailInput.sendKeys(env.correctEmail + '5');
+      ad.checkDeleteUserBtn.click();
+    });
+    it('Should clear all test account',() => {
       browser.ignoreSynchronization = true;
       browser.sleep(500);
       browser.ignoreSynchronization = false;

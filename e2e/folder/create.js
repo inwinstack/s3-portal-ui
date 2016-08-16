@@ -25,6 +25,9 @@ describe('Create Folder', () => {
 
   describe('When user clicks the [Create folder] button : ', () => {
     beforeEach(() => {
+      sie.emailInput.sendKeys(env.correctEmail);
+      sie.passwordInput.sendKeys(env.correctPassword);
+      sie.signinBtn.click();
       browser.actions().doubleClick(be.bucketList.first()).perform();
       fe.createFolderBtn.first().click();
     });
