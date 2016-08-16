@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+ <testsuite name="User List" timestamp="2016-08-01T17:22:38" hostname="localhost" time="99.796" errors="0" tests="0" skipped="0" disabled="0" failures="0">
+ </testsuite>
+ <testsuite name="User List.When user signIn with administrator and click user list: " timestamp="2016-08-01T17:22:38" hostname="localhost" time="74.93" errors="0" tests="1" skipped="0" disabled="0" failures="2">
+  <testcase classname="User List.When user signIn with administrator and click user list: " name="Should check into the user list page" time="74.928">
+   <failure type="exception" message="Error: Timeout - Async callback was not invoked within timeout specified by jasmine.DEFAULT_TIMEOUT_INTERVAL."><![CDATA[Error: Timeout - Async callback was not invoked within timeout specified by jasmine.DEFAULT_TIMEOUT_INTERVAL.
+    at [object Object]._onTimeout (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1909:23)
+    at Timer.listOnTimeout (timers.js:92:15)]]>
+   </failure>
+   <failure type="exception" message="Error: Timeout - Async callback was not invoked within timeout specified by jasmine.DEFAULT_TIMEOUT_INTERVAL."><![CDATA[Error: Timeout - Async callback was not invoked within timeout specified by jasmine.DEFAULT_TIMEOUT_INTERVAL.
+    at [object Object]._onTimeout (/home/user/.nvm/versions/node/v4.2.4/lib/node_modules/protractor/node_modules/jasmine/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1909:23)
+    at Timer.listOnTimeout (timers.js:92:15)]]>
+   </failure>
+  </testcase>
+ </testsuite>
+ <testsuite name="User List.When user clicks the bucket list : " timestamp="2016-08-01T17:23:53" hostname="localhost" time="24.866" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="User List.When user clicks the bucket list : " name="Should check back the bucket page" time="24.866" />
+ </testsuite>
+</testsuites>
