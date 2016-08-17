@@ -9,3 +9,5 @@ db.json
 /coverage
 config.js
 .idea
+page.js
+reports
