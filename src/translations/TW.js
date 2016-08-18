@@ -73,6 +73,7 @@ export default {
     RESET_SUCCESS: '{{ email }} 更改密碼成功!',
     RESET_FAIL: '{{ email }} 更改密碼失敗，請再試一次',
     CANCEL_UPLOAD: '{{ name }} 的上傳已被取消',
+    CONNECT_ERROR: '連線失敗，請再試一次!',
   },
   AUTH: {
     EMAIL: '電子郵件',
