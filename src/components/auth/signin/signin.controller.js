@@ -34,9 +34,17 @@ export default class SignInController {
             this.$toast.show(signInSuccess);
           })
       })
-      .catch(() => {
+      .catch((res) => {
         this.form.$submitted = false;
-        this.incorrect = true;
+        if (res.status != -1) {
+          this.incorrect = true;
+        } else {
+          this.incorrect = false;
+          this.$translate('TOAST.CONNECT_ERROR')
+            .then(message => {
+              this.$toast.show(message);
+            })
+        }
       });
   }
 }

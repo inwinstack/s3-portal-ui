@@ -76,6 +76,7 @@ export default {
     RESET_SUCCESS: '{{ email }} Reset Password Success!',
     RESET_FAIL: '{{ email }} Reset Password Fail，Please Try Again!',
     CANCEL_UPLOAD: 'Upload {{ name }} Has Been Cancel',
+    CONNECT_ERROR: 'Connection Error! Please Try Again!',
   },
   AUTH: {
     EMAIL: 'Email',

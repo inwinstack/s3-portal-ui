@@ -73,6 +73,7 @@ export default {
     RESET_SUCCESS: '{{ email }} 更改密码成功!',
     RESET_FAIL: '{{ email }} 更改密码失败，请再试一次',
     CANCEL_UPLOAD: '{{ name }} 的上传已被取消',
+    CONNECT_ERROR: '联机失败，请再试一次!',
   },
   AUTH: {
     EMAIL: '电邮',

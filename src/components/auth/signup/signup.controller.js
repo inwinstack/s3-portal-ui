@@ -34,10 +34,18 @@ export default class SignUpController {
           this.emailIsValid = true;
           this.emailIsInvalid = false;
         })
-        .catch(() => {
-          this.emailIsValid = false;
-          this.emailIsInvalid = true;
-          this.showEmailCheckedMessage = true;
+        .catch((res) => {
+            this.emailIsValid = false;
+            this.emailIsInvalid = true;
+          if (res.status != -1) {
+            this.showEmailCheckedMessage = true;
+          } else {
+            this.showEmailCheckedMessage = false;
+            this.$translate('TOAST.CONNECT_ERROR')
+              .then(message => {
+                this.$toast.show(message);
+              })
+          }
         })
         .finally(() => (this.isCheckEmail = false));
     } else {
@@ -57,6 +65,14 @@ export default class SignUpController {
         this.$state.go('auth.signin');
         this.$toast.show(signUpSuccess);
       })
-      .catch(() => (this.form.$submitted = false));
+      .catch((res) => {
+        this.form.$submitted = false;
+        if (res.status == -1) {
+          this.$translate('TOAST.CONNECT_ERROR')
+            .then(message => {
+              this.$toast.show(message);
+            })
+          }
+      });
   }
 }
