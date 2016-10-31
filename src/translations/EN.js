@@ -77,6 +77,7 @@ export default {
     RESET_FAIL: '{{ email }} Reset Password Fail，Please Try Again!',
     CANCEL_UPLOAD: 'Upload {{ name }} Has Been Cancel',
     CONNECT_ERROR: 'Connection Error! Please Try Again!',
+    CONNECT_CEPH_ERROR: 'Connect To Ceph Error! Please Try Again Later!',
   },
   AUTH: {
     EMAIL: 'Email',
