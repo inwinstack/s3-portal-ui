@@ -49,6 +49,7 @@ export default {
     DELETE_CONFIRM: `Deleting this bucket and its objects (
     including older versions if applicable) <b>cannot be undone</b>.
     Are you sure you want to delete <b>{{ name }}</b>?`,
+    VALIDATE_ERROR: 'You need contain at least 1 uppercase character (A-Z)',
   },
   ACTION_NAVBAR: {
     ACTIONS: 'Actions',

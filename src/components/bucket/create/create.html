@@ -24,10 +24,14 @@
         <md-input-container class="md-block">
           <label translate>BUCKET.NAME</label>
           <input
-            name="bucket" required
+            name="bucket" required bucket
             ng-model="create.bucket"
             ng-readonly="create.form.$submitted"
           >
+
+          <span class="md-caption text-warn" ng-show="!create.form.bucket.$valid && create.form.bucket.$touched" translate>
+            BUCKET.VALIDATE_ERROR
+          </span>
 
           <span class="md-caption text-warn" ng-show="create.duplicated" translate>
             BUCKET.DUPLICATE_MESSAGE

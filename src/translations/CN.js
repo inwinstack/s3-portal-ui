@@ -46,6 +46,7 @@ export default {
     DELETE_CONFIRM: `删除此 bucket 及此 bucket 内的所有文件与文件夹
     （若有支援旧版本则包含旧版本）<b>会无法复原</b>。
     你确认要删除 <b>{{ name }}</b> 吗？`,
+    VALIDATE_ERROR: '至少需要一个大写英文字母',
   },
   ACTION_NAVBAR: {
     ACTIONS: '操作',
