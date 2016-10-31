@@ -74,6 +74,7 @@ export default {
     RESET_FAIL: '{{ email }} 更改密码失败，请再试一次',
     CANCEL_UPLOAD: '{{ name }} 的上传已被取消',
     CONNECT_ERROR: '联机失败，请再试一次!',
+    CONNECT_CEPH_ERROR: '连线至 Ceph 失败! 请稍後!',
   },
   AUTH: {
     EMAIL: '电邮',

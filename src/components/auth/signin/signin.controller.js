@@ -38,7 +38,7 @@ export default class SignInController {
         this.form.$submitted = false;
         if (res.status != -1) {
           if (res.data.message == 'Connection to Ceph failed') {
-            this.$translate('TOAST.CONNECT_ERROR')
+            this.$translate('TOAST.CONNECT_CEPH_ERROR')
               .then(message => {
                 this.$toast.show(message);
               })

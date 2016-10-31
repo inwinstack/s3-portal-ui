@@ -74,6 +74,7 @@ export default {
     RESET_FAIL: '{{ email }} 更改密碼失敗，請再試一次',
     CANCEL_UPLOAD: '{{ name }} 的上傳已被取消',
     CONNECT_ERROR: '連線失敗，請再試一次!',
+    CONNECT_CEPH_ERROR: '連線至 Ceph 失敗! 請稍後!',
   },
   AUTH: {
     EMAIL: '電子郵件',
