@@ -1,0 +1,30 @@
+.account-info md-content {
+  background-color: transparent !important; 
+}
+
+.account-info md-content md-tabs {
+  background: #f6f6f6;
+  border: 1px solid #e1e1e1;
+}
+
+.account-info md-content md-tabs md-tabs-wrapper {
+  background: white;
+}
+
+.account-info md-content md-tabs section .md-secondary{
+  padding-left: 15px;
+}
+
+md-content .md-padding{
+  min-width: 300px;
+  max-width: 1000px;
+  margin:0px auto;
+}
+
+.account-info md-content h1:first-child {
+  margin-top: 0; 
+}
+
+.md-actions > .md-display-1 {
+  padding: 15px;
+}

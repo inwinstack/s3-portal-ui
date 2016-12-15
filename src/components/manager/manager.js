@@ -12,6 +12,7 @@ import ManagerNavbarTemplate from '../layout/manager-navbar/manager-navbar.html'
 import ManagerNavbarService from '../layout/manager-navbar/manager-navbar.service';
 import ManagerService from './manager.service';
 import List	from './list/list';
+import Storage from './storage/storage';
 import './manager.css';
 
 /** @ngInject */
@@ -29,9 +30,9 @@ const route = $stateProvider => {
         controllerAs: 'topNav',
       },
       'manager-navbar@manager': {
-      	template: ManagerNavbarTemplate,
-      	controller: ManagerNavbarController,
-      	controllerAs: 'managerNav',
+        template: ManagerNavbarTemplate,
+        controller: ManagerNavbarController,
+        controllerAs: 'managerNav',
       }
     }
   });
@@ -40,6 +41,7 @@ const route = $stateProvider => {
 const Manager = module('manager', [
   router,
 
+  Storage,
   List,
 ])
 .service('$manager', ManagerService)
