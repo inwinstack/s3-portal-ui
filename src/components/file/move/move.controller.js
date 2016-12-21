@@ -11,18 +11,37 @@ export default class MoveController {
         fileSelected: newVal.data.filter(({ checked }) => checked),
       })
     , true);
-    $scope.$watch(
-      () => $move.state,
-      newVal => Object.assign(this, newVal)
-    , true);
+
+    // ------------------------------
+    // these objects are used for mock data
+
+    this.lists = {
+      data: [],
+    };
+
+    for (let i = 0; i < 20; i++) {
+      this.lists.data.push({
+        Key: `Test/${i + 1}`,
+        LastModified: '2016-12-21T06:43:19.911Z',
+        Size: '0',
+        display: `${i + 1}`,
+        icon: 'folder',
+        isFolder: true,
+      });
+    }
+    // ------------------------------
   }
 
   cancel() {
     this.$move.closeDialog();
   }
 
-  move() {
-    this.$move.moveFile(this.fileSelected, this.newName)
-      .then(() => (this.form.$submitted = false));
+  doubleClick({ isFolder, display }) {
+    if (isFolder) {
+      const currentPath = this.$file.getFullPaths();
+      const path = `/bucket/${currentPath}${display}`;
+      this.$location.path(path);
+    }
   }
+
 }

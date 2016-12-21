@@ -6,7 +6,7 @@
         <span flex></span>
 
         <md-button
-          class="md-icon-button" aria-label="Close Create Folder Dialog"
+          class="md-icon-button" aria-label="Close Move File Dialog"
           ng-click="move.cancel()"
         >
           <md-icon class="material-icons">clear</md-icon>
@@ -28,21 +28,30 @@
           >
         </md-input-container>
 
-        <md-input-container class="md-block">
-          <label translate>FILE.NEW_NAME</label>
-          <input
-            name="folder" required
-            ng-model="move.newName"
-            ng-readonly="move.form.$submitted"
-          >
-          <span class="md-caption text-warn" ng-show="move.duplicated" translate>
-            FILE.FOLDER_DUPLICATED_MESSAGE
-          </span>
-
-          <div ng-messages="move.form.folder.$error" ng-if="move.form.folder.$touched">
-            <div ng-messages-include="messages.html"></div>
-          </div>
-        </md-input-container>
+        <table class="table table-cursor table-hover move-list-title md-padding">
+          <thead>
+            <tr>
+              <th class="icon-width"></th>
+              <th translate>My Folders</th>
+            </tr>
+          </thead>
+        </table>
+        
+        <div class="move-file-list">
+          <md-list>
+            <md-list-item
+              aria-label="Click a file"
+              ng-repeat="f in move.lists.data"
+              ng-class="{ checked: f.checked }"
+              ng-click="move.clickFile(f)"
+            >
+              <md-icon ng-bind="f.icon"></md-icon>
+              <p class="break-word flex-grow">
+                <span ng-bind="f.display"></span>
+              </p>
+            </md-list-item>
+          </md-list>
+        </div>
       </div>
     </md-dialog-content>
 
@@ -52,11 +61,11 @@
       </md-button>
 
       <md-button
-        ng-click="move.move()" type="submit"
-        aria-label="Create" class="md-primary"
-        ng-disabled="move.form.$invalid || move.form.$submitted"
+        type="submit"
+        aria-label="move here" class="md-primary"
+        ng-disabled="true"
       >
-        <span translate>UTILS.CONFIRM</span>
+        <span translate>MOVE HERE</span>
         <md-progress-circular
           class="md-primary" md-mode="indeterminate"
           md-diameter="30" ng-show="move.form.$submitted"

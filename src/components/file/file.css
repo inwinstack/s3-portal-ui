@@ -38,3 +38,20 @@
 .time-width {
   width: 225px;
 }
+
+.move-file-list {
+  overflow: auto;
+  max-height: 200px;
+}
+
+.move-list md-list-item {
+  padding-left: 10px;
+}
+
+.icon-width {
+  width: 40px;
+}
+
+.move-list-title{
+  background: #e8e8e9;
+}
