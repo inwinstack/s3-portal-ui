@@ -1,6 +1,7 @@
 export default class FileController {
   /** @ngInject */
-  constructor($scope, $location, $stateParams, $file, $bucket, $breadcrumb, $upload, $folder, $properties) {
+  constructor($scope, $location, $stateParams, $file, $bucket, $breadcrumb, $upload,
+              $folder, $properties) {
     Object.assign(this, {
       $location, $file, $upload, $bucket, $breadcrumb, $folder, $properties,
     });
@@ -28,7 +29,7 @@ export default class FileController {
   }
 
   clickFile(file) {
-    this.$properties.showProperties(this.$file.state.paths.bucket ,file);
+    this.$properties.showProperties(this.$file.state.paths.bucket, file);
   }
 
   doubleClick({ isFolder, display }) {

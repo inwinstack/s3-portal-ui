@@ -7,6 +7,7 @@ import FileTemplate from './file.html';
 import UploadService from './upload/upload.service';
 import FolderService from './folder/folder.service';
 import RenameService from './rename/rename.service';
+import MoveService from './move/move.service';
 import './file.css';
 
 /** @ngInject */
@@ -28,6 +29,7 @@ const File = module('file', [
 .service('$upload', UploadService)
 .service('$folder', FolderService)
 .service('$rename', RenameService)
+.service('$move', MoveService)
 .config(route);
 
 export default File.name;
