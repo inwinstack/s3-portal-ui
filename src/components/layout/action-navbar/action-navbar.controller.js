@@ -1,8 +1,8 @@
 export default class ActionNavbarController {
   /** @ngInject */
-  constructor($scope, $bucket, $nav, $file, $upload, $layout, $folder, $rename) {
+  constructor($scope, $bucket, $nav, $file, $upload, $layout, $folder, $rename, $move) {
     Object.assign(this, {
-      $bucket, $file, $upload, $layout, $folder, $rename,
+      $bucket, $file, $upload, $layout, $folder, $rename, $move
     });
 
     $scope.$watch(
@@ -41,7 +41,7 @@ export default class ActionNavbarController {
   }
 
   judgeFolder(files) {
-    return !(files.filter(({ isFolder }) => isFolder).length)
+    return !(files.filter(({ isFolder }) => isFolder).length);
   }
 
   open() {
@@ -62,6 +62,10 @@ export default class ActionNavbarController {
 
   rename($event) {
     this.$rename.createDialog($event);
+  }
+
+  move($event) {
+    this.$move.createDialog($event);
   }
 
   closeSidePanels() {

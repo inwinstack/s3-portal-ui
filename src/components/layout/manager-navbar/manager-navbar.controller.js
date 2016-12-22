@@ -8,7 +8,7 @@ export default class ActionNavbarController {
     $scope.$watch(
       () => $manager.state.lists,
       newVal => Object.assign(this, {
-        selectedOne: newVal.data.filter(({ checked }) => checked).length == 1,
+        selectedOne: newVal.data.filter(({ checked }) => checked).length === 1,
       })
     , true);
   }
