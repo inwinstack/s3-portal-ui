@@ -46,6 +46,7 @@ export default class ManagerService {
 
   }
 
+
   selectAccount(id) {
     this.state.lists.data = this.state.lists.data.map(user => {
       let checked = user.checked;
