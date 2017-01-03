@@ -3,7 +3,8 @@ const webpack = require('webpack');
 const config = require('../config');
 
 module.exports = {
-  devtool: 'eval',
+  // devtool: 'eval',
+  devtool: '#inline-source-map',
   entry: [
     'babel-polyfill',
     './src',

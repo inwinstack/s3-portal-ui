@@ -29,9 +29,9 @@ const route = $stateProvider => {
         controllerAs: 'topNav',
       },
       'manager-navbar@manager': {
-      	template: ManagerNavbarTemplate,
-      	controller: ManagerNavbarController,
-      	controllerAs: 'managerNav',
+        template: ManagerNavbarTemplate,
+        controller: ManagerNavbarController,
+        controllerAs: 'managerNav',
       }
     }
   });
