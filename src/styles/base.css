@@ -1,0 +1,75 @@
+
+/**
+ * @author Jamie jamie.h@inwinstack.com
+ */
+
+/* margin ----------------------------------------------- */
+.no-margin {
+    margin: 0;
+}
+
+.no-margin-b{
+    margin-bottom: 0;
+}
+
+.no-margin-l{
+    margin-left: 0;
+}
+
+.no-margin-r{
+    margin-right: 0;
+}
+
+.no-margin-t{
+    margin-top: 0;
+}
+
+/* border radius ----------------------------------------- */
+.radius-small {
+    border-radius: 4px;
+}
+
+.radius-medium {
+    border-radius: 6px;
+}
+
+.radius-large {
+    border-radius: 10px;
+}
+
+/* text alignment ------------------------------------------------- */
+.text-center {
+    text-align: center;
+}
+
+.break-word {
+  word-break: break-word;
+}
+
+/* display */
+
+.inline{
+	display: inline;
+}
+
+.block{
+	display: block;
+}
+
+.inline-block{
+	display: inline-block;
+}
+
+/* align */
+
+.valign-bottom{
+	vertical-align: bottom;
+}
+
+.valign-middle{
+	vertical-align: middle;
+}
+
+.valign-top{
+	vertical-align: top;
+}

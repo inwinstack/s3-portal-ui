@@ -1,0 +1,80 @@
+<div class="account-info">
+  <md-content>
+    <md-tabs md-dynamic-height="" md-border-bottom="">
+      <md-tab label="Storage Capacity" layout layout-align="center">
+        <md-content class="md-padding">
+          <section class="md-whiteframe-5dp" layout="column">
+            <div class="md-actions" layout layout-align="end center">
+              <md-header class="md-display-1">Cpacity Storage</md-header>
+              <span flex></span>
+            </div>
+            <md-divider></md-divider>
+            <div layout="cloumn">
+              <div flex="50">
+                <md-list>
+                  <md-list-item ng-repeat="item in storage.mockData" class="md-2-line" layout="row" layout-align="center none">
+                    <md-content class="md-list-item-text" layout="row" layout-align="center">
+                      <h3 class="md-body-2">{{ item.text }}</h3>
+                      <span flex></span>
+                      <p class="md-caption" ng-if="storage.options.formatGB">{{ item.formatValue }} GB</p>
+                      <p class="md-caption" ng-if="!storage.options.formatGB">{{ item.value }} MB</p>
+                      <span flex></span>
+                    </md-content>
+                    </md-list-item>
+                </md-list>
+              </div>
+              <div flex="50">
+                <nvd3 options="storage.options" data="storage.data" class="with-3d-shadow with-transitions" ng-if="storage.mockData"></nvd3>
+              </div>
+            </div>
+            <md-switch class="md-secondary" ng-model="storage.options.formatGB">Display GB</md-switch>
+            <div layout="row" layout-align="center center">
+              <md-button
+                aria-label="confirm" ng-click="storage.confirm()">
+                <md-icon class="md-raised">done</md-icon>
+                <span>Confirm</span>
+              </md-button>
+            </div>
+          </section>
+        </md-content>
+      </md-tab>
+      <md-tab label="two">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Tab Two</h1>
+          
+          <p>Git repository manager and developer playground GitLab has decided it is time to quit the cloud, joining Dropbox in concluding that at a certain scale the cloud just can't do the job.
+
+GitLab came to the decision after moving to the Ceph Filesystem, the new-ish filesystem that uses a cluster running the Ceph objects-and-blocks-and-files storage platform.
+
+As GitLab's infrastructure lead Pablo Carranza explains, Ceph FS “needs to have a really performant underlaying infrastructure because it needs to read and write a lot of things really fast.”
+
+“If one of the hosts delays writing to the journal, then the rest of the fleet is waiting for that operation alone, and the whole file system is blocked. When this happens, all of the hosts halt, and you have a locked file system; no one can read or write anything and that basically takes everything down.”</p>
+
+<p>Ceph FS was part of the problem, as Carranza said “What we learned is that when you get into the consistency, accessibility, and partition tolerance (CAP) of CephFS, it will just give away availability in exchange for consistency. We also learned that when you put a lot of pressure on the system, it will generate hot spots. For example, in specific places in the cluster of machines hosting the GitLab CE repo, all the reads and writes end up being on the same spot during high load times.”
+
+Those issues meant that GitLab became its own worst enemy, as its Ceph FS became the “noisy neighbours” that hog a cloud server's resources for all of its users, degrading performance for all.
+
+Carranza eventually concluded that “... the cloud was not meant to provide the level of IOPS performance we needed to run an aggressive system like CephFS.”
+
+Here's his conclusion about cloud in general:</p>
+
+<p>“At a small scale, the cloud is cheaper and sufficient for many projects. However, if you need to scale, it's not so easy. It's often sold as, "If you need to scale and add more machines, you can spawn them because the cloud is 'infinite'". What we discovered is that yes, you can keep spawning more machines but there is a threshold in time, particulary when you're adding heavy IOPS, where it becomes less effective and very expensive. You'll still have to pay for bigger machines. The nature of the cloud is time sharing so you still will not get the best performance. When it comes down to it, you're paying a lot of money to get a subpar level of service while still needing more performance.
+Ouch.
+
+Carranza therefore says “At this point, moving to dedicated hardware makes sense for us.”
+
+“From a cost perspective, it is more economical and reliable because of how the culture of the cloud works and the level of performance we need. Of course hardware comes with it's upfront costs: components will fail and need to be replaced. This requires services and support that we currently don't have today. You have to know the hardware you are getting into and put a lot more effort into keeping it alive.”
+
+“But in the long run, it will make GitLab more efficient, consistent, and reliable as we will have more ownership of the entire infrastructure.”
+
+Like Dropbox, GitLab has unusual requirements. Suggestions that public clouds are doing something wrong if they lose clients of this type is therefore not sound thinking: would you clouds chase every use case when the opportunity is there to take millions upon millions of mainstream workloads into the cloud in coming years?
+
+Digital Ocean may beg to dispute our logic: it's known to be one of GitLab's cloudy suppliers. ®
+
+Tips and corrections
+</p>
+        </md-content>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+</div>

@@ -1,0 +1,15 @@
+<script type ="text/ng-template" id="messages.html">
+  <div ng-message="required" translate>VALIDATION.REQUIRED</div>
+  <div ng-message="email" translate>VALIDATION.EMAIL</div>
+  <div
+    ng-message="minlength"
+    translate="VALIDATION.MIN_LENGTH"
+    translate-value-minlength="{{ minlength }}"
+  ></div>
+  <div
+    ng-message="maxlength"
+    translate="VALIDATION.MAX_LENGTH"
+    translate-value-maxlength="{{ minlength }}"
+  ></div>
+  <div ng-message="match" translate="VALIDATION.MATCH"></div>
+</script>

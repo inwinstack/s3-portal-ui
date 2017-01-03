@@ -1,0 +1,28 @@
+
+/**
+ * @author Jamie jamie.h@inwinstack.com
+ */
+
+.layout-scrollable {
+  overflow: auto;
+}
+
+#header-container {
+  position: absolute;
+  width: 100%;
+}
+
+#breadcrumb-container {
+  border-bottom: 2px solid #E0E0E0;
+}
+
+#container {
+  bottom: 0;
+  top: 154px;
+  position: absolute;
+  width: 100%;
+}
+
+#list-container {
+  border-right: 4px solid #E0E0E0;
+}

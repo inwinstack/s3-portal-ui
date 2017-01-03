@@ -1,0 +1,110 @@
+<md-content layout-padding>
+    <md-input-container flex-gt-sm>
+      <label translate>MANAGER.SEARCH</label>
+      <input 
+        name="searchText" 
+        ng-model="list.searchText"
+        ng-model-options='{ debounce: 500 }'
+      />
+    </md-input-container>
+  <div
+    class="md-whiteframe-4dp"
+    ng-if="list.data.length && ! list.requesting && ! list.error"
+  >
+    <table class="table table-cursor table-hover">
+      <thead>
+        <tr>
+          <th class="manager-checkbox-icon-width"></th>
+          <th translate>MANAGER.USER_ACCOUNT</th>
+          <th class="size-width" translate>MANAGER.USER_ROLE</th>
+          <th class="hide show-gt-sm time-title-width" translate>MANAGER.USER_REGISTER_TIME</th>
+        </tr>
+      </thead>
+    </table>
+    <md-list class="list">
+      <md-list-item
+        aria-label="Click a file"
+        ng-repeat="f in list.data | filter:list.searchText"
+        ng-class="{ checked: f.checked }"
+        ng-click="list.clickFile(f)"
+        ng-Dblclick="list.doubleClick(f)"
+      >
+        <md-checkbox
+          aria-label="Get check"
+          class="md-secondary"
+          ng-checked="f.checked"
+          ng-click="list.selectAccount(f)"
+        ></md-checkbox>
+          <p class="break-word flex-grow">
+            <span ng-bind="f.name"></span>
+          </p>
+          <p class="flex-none">
+            <span
+              class="size-width inline-block"
+              ng-bind="f.role"
+            ></span>
+          </p>
+          <p class="flex-none" hide show-gt-sm>
+            <span
+              class="time-width inline-block"
+              ng-bind="(f.created_at | date: 'yyyy-MM-dd')"
+            ></span>
+          </p>
+      </md-list-item>
+    </md-list>
+  </div>
+
+  <div
+    class="progress-state"
+    layout="column" layout-align="center center"
+    ng-if="list.requesting"
+  >
+    <md-progress-circular md-mode="indeterminate" md-diameter="70"></md-progress-circular>
+    <div class="md-headline" translate>UTILS.LOADING</div>
+  </div>
+
+  <div
+    class="empty-state"
+    layout="column" layout-align="center center"
+    ng-if="! list.data.length && ! list.requesting && ! list.error"
+  >
+    <div class="md-headline" translate="FILE.EMPTY_{{ list.level }}"></div>
+    <div class="md-subhead" translate>FILE.DO_ACTIONS</div>
+
+    <div layout="row" layout-align="center center">
+      <md-button
+        class="md-raised md-primary" aria-label="Upload File"
+        ng-click="list.upload()"
+      >
+        <md-icon>file_upload</md-icon>
+        <span translate>FILE.UPLOAD</span>
+      </md-button>
+
+      <span translate>UTILS.OR</span>
+
+      <md-button
+        class="md-raised" aria-label="Create Folder"
+        ng-click="list.createFolder()"
+      >
+        <md-icon class="material-icons">create_new_folder</md-icon>
+        <span translate>FILE.CREATE_FOLDER</span>
+      </md-button>
+    </div>
+  </div>
+
+  <div
+    class="load-fail-state"
+    layout="column" layout-align="center center"
+    ng-if="list.error && ! list.requesting"
+  >
+    <div class="md-headline">BUCKET.ERROR_MESSAGE</div>
+    <div class="md-subhead">BUCKET.REFRESH_MESSAGE</div>
+
+    <md-button
+      class="md-icon-button" aria-label="Refresh"
+      ng-click="list.refresh()"
+    >
+      <md-icon class="icon-default">refresh</md-icon>
+    </md-button>
+  </div>
+</md-content>

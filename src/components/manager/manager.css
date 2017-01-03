@@ -1,0 +1,36 @@
+
+/**
+ * @author Jamie jamie.h@inwinstack.com
+ */
+
+.file-list  md-list-item > .md-list-item-inner > p {
+  padding: 0 15px;
+}
+
+.manager-checkbox-icon-width {
+  width: 55px;
+}
+
+.checkbox-icon-width {
+  width: 100px;
+}
+
+.manager-email-class-width {
+  width: 800px;
+}
+
+.size-title-width {
+  width: 84px;
+}
+
+.size-width {
+  width: 110px;
+}
+
+.time-title-width {
+  width: 220px;
+}
+
+.time-width {
+  width: 225px;
+}

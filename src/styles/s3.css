@@ -1,0 +1,201 @@
+
+/**
+ * @author Jamie jamie.h@inwinstack.com
+ */
+/* panel ------------------------------------------------- */
+.panel-signup,
+.panel-login {
+  border-radius: 4px;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  top: 200px;
+  width: 360px;
+}
+
+.panel-title {
+  color: #fff;
+  height: 50px;
+  padding-top: 12px;
+}
+
+.panel-body {
+  padding: 0 8px 8px 8px;;
+}
+
+.panel-footer {
+  margin: 20px;
+}
+
+/* footer ------------------------------------------------ */
+.footer {
+  margin-top: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, .3);
+}
+
+.footer ul {
+  list-style:none;
+  padding: 0;
+}
+
+.footer ul>li {
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.footer a {
+  color: #1976D2;
+  text-decoration: none;
+}
+
+.footer a.active {
+  color: #555;
+  cursor: text;
+  pointer-events: none;
+}
+
+/* button ------------------------------------------------ */
+.btn-block {
+  display: block;
+  margin: 6px 0;
+  width: 100%;
+}
+
+button md-progress-circular {
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  top: 3px;
+}
+
+/* icon ---------------------------------------------------*/
+.icon-default {
+  color: #616161;
+}
+
+.icon-success {
+  color: #00BCD4;
+}
+
+.icon-warn {
+  color: #FF6D00;
+}
+
+/* text ------------------------------------------------- */
+.text-warn {
+  color: #FF6D00;
+}
+
+.text-success {
+  color: #00BCD4;
+}
+
+/* input container -------------------------------------- */
+md-input-container.md-input-invalid md-icon {
+  color: #FF9800;
+}
+
+md-input-container md-progress-circular {
+  left: 2px;
+  position: absolute;
+  right: auto;
+  top: 5px;
+}
+
+
+/* breadcrumb ------------------------------------------- */
+.breadcrumb {
+  display: inherit;
+  list-style: none;
+  margin: 0;
+  padding: 0 8px;
+}
+
+.breadcrumb > li > a {
+  color: #1976D2;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.breadcrumb > li:last-child > a {
+  color: #999;
+  cursor: text;
+  pointer-events: none;
+}
+
+.breadcrumb>li+li:before {
+  color: gray;
+  content: "/\00a0";
+  padding: 0 5px;
+}
+
+/* toolbar ----------------------------------------------- */
+@media only screen and (max-width: 959px) and (min-width: 0) and (orientation: landscape) {
+  .md-toolbar-tools {
+    height: 64px;
+    max-height: 64px;
+  }
+}
+
+@media only screen and (max-width: 959px) and (min-width: 0) and (orientation: portrait) {
+  .md-toolbar-tools {
+    height: 64px;
+    max-height: 64px;
+  }
+}
+
+/* page state -------------------------------------------- */
+.progress-state,
+.empty-state,
+.load-fail-state {
+  margin-top: 10%;
+}
+
+/* list item --------------------------------------------- */
+md-list-item.checked {
+  background: #E8EAF6;
+}
+
+md-list-item > p.flex-none,
+md-list-item > .md-list-item-inner > p.flex-none,
+md-list-item .md-list-item-inner > p.flex-none,
+md-list-item .md-list-item-inner > .md-list-item-inner > p.flex-none {
+  flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+}
+
+md-list-item > p.flex-grow,
+md-list-item > .md-list-item-inner > p.flex-grow,
+md-list-item .md-list-item-inner > p.flex-grow,
+md-list-item .md-list-item-inner > .md-list-item-inner > p.flex-grow {
+  flex: 1 1 100%;
+  -ms-flex: 1 1 100%;
+}
+
+md-list.md-default-theme md-list-item.md-2-line .md-list-item-text p.text-warn,
+md-list md-list-item.md-2-line .md-list-item-text p.text-warn,
+md-list.md-default-theme md-list-item.md-3-line .md-list-item-text p.text-warn,
+md-list md-list-item.md-3-line .md-list-item-text p.text-warn {
+  color: #FF6D00;
+}
+
+.transfer-list md-list-item.md-2-line .md-list-item-text h3,
+.transfer-list md-list-item.md-2-line > .md-no-style .md-list-item-text h3,
+.transfer-list md-list-item.md-3-line .md-list-item-text h3,
+.transfer-list md-list-item.md-3-line > .md-no-style .md-list-item-text h3 {
+  margin-top: 3px;
+  white-space: normal;
+}
+
+/* fix flexbox type layout issues in IE10 */
+span.flex {
+  display: block;
+}

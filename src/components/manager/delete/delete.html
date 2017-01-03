@@ -1,0 +1,70 @@
+<md-dialog class="input-dialog" aria-label="Delete Bucket Dialog">
+  <form name="delete.form">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2 translate>MANAGER.DELETE_TITLE</h2>
+        <span flex></span>
+
+        <md-button
+          class="md-icon-button" aria-label="Close Delete Bucket Dialog"
+          ng-click="delete.cancel()"
+        >
+          <md-icon class="material-icons">clear</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <div class="dialog-description">
+          <div layout="row" layout-align="space-around center" layout-margin>
+            <md-icon class="md-warn">error</md-icon>
+            <p
+            class="text-warn"
+            translate="MANAGER.DELETE_CONFIRM"
+            translate-value-name="{{ delete.deleteAccount[0].name }}"
+          ></p>
+          </div>
+          <p translate>MANAGER.DELETE_TYPE_NAME</p>
+        </div>
+
+        <md-input-container class="md-block">
+          <label translate>MANAGER.EMAIL</label>
+          <input
+            name="name" required
+            ng-model="delete.inputName"
+            ng-readonly="@A.5"
+            ng-trim=false
+            ng-change="delete.check()"
+            ng-model-options='{ debounce: 500 }'
+          >
+
+          <span class="md-caption text-warn" ng-show="delete.checkStatus" translate>
+            MANAGER.DELETE_ERROR_MESSAGE
+          </span>
+
+          <div ng-messages="delete.form.name.$error" ng-if="delete.form.name.$touched">
+            <div ng-messages-include="messages.html"></div>
+          </div>
+        </md-input-container>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button aria-label="Cancel" ng-click="delete.cancel()">
+        <span translate>UTILS.CANCEL</span>
+      </md-button>
+
+      <md-button
+        ng-click="delete.accountDelete()" type="submit"
+        aria-label="Delete" class="md-warn"
+        ng-disabled="delete.form.$invalid || delete.form.$submitted || delete.checkStatus"
+      >
+        <span translate>UTILS.DELETE</span>
+        <md-progress-circular
+          class="md-primary" md-mode="indeterminate"
+          md-diameter="30" ng-show="delete.form.$submitted"
+        ></md-progress-circular>
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

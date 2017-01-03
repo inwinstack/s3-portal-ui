@@ -1,0 +1,79 @@
+<div class="panel-login" layout="column" layout-paddings>
+  <div class="panel-title text-center">
+    <h1 class="no-margin">S3 Portal</h1>
+  </div>
+
+  <md-content class="radius-large md-whiteframe-1dp">
+    <div class="panel-body">
+      <md-subheader class="text-center">
+        <span translate>AUTH.LOGIN_TO_YOUR_ACCOUNT</span>
+      </md-subheader>
+      <form name="signin.form">
+        <md-input-container md-no-float class="md-icon-left md-block">
+          <md-icon class="icon-default">email</md-icon>
+
+          <input
+            type="email" name="email" required email
+            placeholder="{{ 'AUTH.EMAIL' | translate }}"
+            ng-model="signin.credentials.email"
+            ng-readonly="signin.form.$submitted"
+          >
+
+          <div
+            ng-messages="signin.form.email.$error"
+            ng-if="signin.form.email.$touched"
+          >
+            <div ng-messages-include="messages.html"></div>
+          </div>
+        </md-input-container>
+
+        <md-input-container md-no-float class="md-icon-left md-block">
+          <md-icon class="icon-default">lock</md-icon>
+
+          <input
+            type="password" name="password" required
+            placeholder="{{ 'AUTH.PASSWORD' | translate }}"
+            ng-model="signin.credentials.password"
+            ng-readonly="signin.form.$submitted"
+          >
+
+          <div
+            ng-messages="signin.form.password.$error"
+            ng-if="signin.form.password.$touched"
+          >
+            <div ng-messages-include="messages.html"></div>
+          </div>
+        </md-input-container>
+
+        <div ng-show="signin.incorrect" class="text-center">
+          <span class="md-caption text-warn" translate>AUTH.SIGN_IN_INCORRECT</span>
+        </div>
+
+        <md-button class="md-raised md-primary btn-block" type="submit"
+          ng-disabled="signin.form.$invalid || signin.form.$submitted"
+          ng-click="signin.submit()"
+        >
+          <span ng-hide="signin.form.$submitted" translate>AUTH.SIGN_IN</span>
+          <md-progress-circular
+            class="md-accent" md-mode="indeterminate"
+            md-diameter="30" ng-hide="! signin.form.$submitted"
+          ></md-progress-circular>
+        </md-button>
+      </form>
+
+      <div class="panel-footer text-center md-caption">
+        <span translate>AUTH.HAVE_NOT_ACCOUNT</span>
+        <a ui-sref="auth.signup" translate>AUTH.CREATE_ACCOUNT</a>
+      </div>
+    </div>
+  </md-content>
+</div>
+
+<div class="footer text-center md-caption">
+  <ul>
+    <li ng-repeat="language in signin.languages">
+      <a href ng-class="{active: language.key === signin.currentLanguage}"
+        ng-click="signin.changeLanguage(language.key)" ng-bind="language.name"></a>
+    </li>
+  </ul>
+</div>

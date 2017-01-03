@@ -1,0 +1,76 @@
+<md-dialog class="input-dialog" aria-label="Create Folder Dialog">
+  <form name="move.form">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2 translate>Move File</h2>
+        <span flex></span>
+
+        <md-button
+          class="md-icon-button" aria-label="Close Move File Dialog"
+          ng-click="move.cancel()"
+        >
+          <md-icon class="material-icons">clear</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <span translate class="ng-binding">Choose select file folder where you want to move?</span>
+      </div>
+      <div class="md-dialog-content">
+
+        <md-input-container class="md-prompt-input-container ng-scope md-input-has-placeholder md-default-theme md-input-has-value">
+          <label translate>FILE.ITEM_NAME</label>
+          <input
+            name="folder" required
+            ng-model="move.fileSelected[0].display"
+            ng-readonly="true"
+          >
+        </md-input-container>
+
+        <table class="table table-cursor table-hover move-list-title md-padding">
+          <thead>
+            <tr>
+              <th class="icon-width"></th>
+              <th translate>My Folders</th>
+            </tr>
+          </thead>
+        </table>
+        
+        <div class="move-file-list">
+          <md-list>
+            <md-list-item
+              aria-label="Click a file"
+              ng-repeat="f in move.lists.data"
+              ng-class="{ checked: f.checked }"
+              ng-click="move.clickFile(f)"
+            >
+              <md-icon ng-bind="f.icon"></md-icon>
+              <p class="break-word flex-grow">
+                <span ng-bind="f.display"></span>
+              </p>
+            </md-list-item>
+          </md-list>
+        </div>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button aria-label="Cancel" ng-click="move.cancel()">
+        <span translate>UTILS.CANCEL</span>
+      </md-button>
+
+      <md-button
+        type="submit"
+        aria-label="move here" class="md-primary"
+        ng-disabled="true"
+      >
+        <span translate>MOVE HERE</span>
+        <md-progress-circular
+          class="md-primary" md-mode="indeterminate"
+          md-diameter="30" ng-show="move.form.$submitted"
+        ></md-progress-circular>
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
