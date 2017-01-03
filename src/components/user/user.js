@@ -6,6 +6,7 @@ import TopNavbarController from '../layout/top-navbar/top-navbar.controller';
 import TopNavbarTemplate from '../layout/top-navbar/top-navbar.html';
 import ManagerService from '../manager/manager.service';
 import Storage from './storage/storage';
+import './user.css';
 
 /** @ngInject */
 const route = $stateProvider => {
