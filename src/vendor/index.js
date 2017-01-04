@@ -6,6 +6,7 @@ import validationMatch from 'angular-validation-match';
 import fileUpload from 'ng-file-upload';
 import satellizer from 'satellizer';
 import ngCookies from 'angular-cookies';
+import nvd3 from 'angular-nvd3';
 
 const Vendor = module('app.vendor', [
   router,
@@ -15,6 +16,7 @@ const Vendor = module('app.vendor', [
   satellizer,
   fileUpload,
   ngCookies,
+  nvd3,
 ]);
 
 export default Vendor.name;
