@@ -42,6 +42,7 @@
     "angular-cookies": "^1.5.7",
     "angular-material": "~1.0.5",
     "angular-messages": "^1.5.0",
+    "angular-nvd3": "^1.0.9",
     "angular-translate": "^2.9.2",
     "angular-ui-router": "^0.2.18",
     "angular-validation-match": "^1.7.1",
