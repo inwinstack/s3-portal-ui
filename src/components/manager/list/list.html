@@ -16,6 +16,7 @@
         <tr>
           <th class="manager-checkbox-icon-width"></th>
           <th translate>MANAGER.USER_ACCOUNT</th>
+          <th class="ratio-width" translate>User Quota</th>
           <th class="size-width" translate>MANAGER.USER_ROLE</th>
           <th class="hide show-gt-sm time-title-width" translate>MANAGER.USER_REGISTER_TIME</th>
         </tr>
@@ -37,6 +38,18 @@
         ></md-checkbox>
           <p class="break-word flex-grow">
             <span ng-bind="f.name"></span>
+          </p>
+          <p class="flex-none">
+            <span
+              class="ratio-width inline-block"
+              >(6GB / 10GB) 60%
+              <md-button
+                aria-label="Quota Setting" class="md-icon-button"
+                ng-click="list.createQuotaSettingDiag($event)"
+              >
+                <md-icon>settings</md-icon>
+              </md-button>
+            </span>
           </p>
           <p class="flex-none">
             <span

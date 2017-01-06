@@ -6,6 +6,8 @@ import DeleteAccountController from './delete/delete.controller';
 import DeleteAccountTemplate from './delete/delete.html';
 import ResetPasswordController from './reset/reset.controller';
 import ResetPasswordTemplate from './reset/reset.html';
+import QuotaSettingController from './quota-setting/quota-setting.controller';
+import QuotaSettingTemplate from './quota-setting/quota-setting.html';
 
 
 /** @ngInject */
@@ -54,6 +56,20 @@ export default class ManagerService {
       if (id === user.id) checked = ! checked;
 
       return { ...user, checked };
+    });
+  }
+
+  createQuotaSettingDiag($event) {
+    this.$mdDialog.show({
+      controller: QuotaSettingController,
+      controllerAs: 'quota',
+      template: QuotaSettingTemplate,
+      parent: element(document.body),
+      targetEvent: $event,
+      clickOutsideToClose: true,
+      // onRemoving: () => {
+      //   this.state.duplicated = false;
+      // }
     });
   }
 

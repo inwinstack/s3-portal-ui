@@ -20,4 +20,8 @@ export default class ManagerListController {
   selectAccount(account) {
     this.$manager.selectAccount(account.id);
   }
+
+  createQuotaSettingDiag($event) {
+    this.$manager.createQuotaSettingDiag($event);
+  }
 }
