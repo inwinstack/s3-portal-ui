@@ -1,0 +1,66 @@
+<md-dialog class="input-dialog" aria-label="Quota Setting Dialog">
+  <form name="quotaSetting">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2 translate>Change User Quota</h2>
+        <span flex></span>
+
+        <md-button
+          class="md-icon-button" aria-label="Close Setting Dialog"
+          ng-click="quota.cancel()"
+        >
+          <md-icon class="material-icons">clear</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content layout-padding="">
+
+      <div layout="column">
+        <div layout="row">
+          <md-input-container class="md-block md-input-has-value" flex="40">
+            <label translate>Original Quota Storage</label>
+            <input
+              name="quota" required
+              value="{{quota.quota | filesize}}"
+              ng-readonly="true"
+            >
+          </md-input-container>
+        </div>
+
+        <div layout="row" layout-align="start center">
+          <div flex="40">
+            <md-input-container class="md-block">
+              <label translate>Quota Capacity Selections</label>
+              <input ng-model="quota.quotaSize" name="selectedQuota" type="number" step="1" required>
+              <div ng-messages="quotaSetting.selectedQuota.$error">
+                <div ng-message="required">Required</div>
+              </div>
+            </md-input-container>
+          </div>
+          <div flex="30">
+            <span>GB</span>
+          </div>
+        </div>
+      </div>
+
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button aria-label="Cancel" ng-click="quota.cancel()">
+        <span translate>UTILS.CANCEL</span>
+      </md-button>
+
+      <md-button
+        type="submit"
+        aria-label="save change" class="md-primary"
+        ng-disabled="true"
+      >
+        <span translate>SAVE CHANGE</span>
+        <md-progress-circular
+          class="md-primary" md-mode="indeterminate"
+          md-diameter="30" ng-disabled="true"
+        ></md-progress-circular>
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
