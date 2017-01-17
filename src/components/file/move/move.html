@@ -2,7 +2,7 @@
   <form name="move.form">
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <h2 translate>Move File</h2>
+        <h2 translate>UTILS.MOVE</h2>
         <span flex></span>
 
         <md-button
@@ -15,7 +15,7 @@
     </md-toolbar>
     <md-dialog-content>
       <div class="md-dialog-content">
-        <span translate class="ng-binding">Choose select file folder where you want to move?</span>
+        <span translate class="ng-binding">FILE.MOVE_CONTENT</span>
       </div>
       <div class="md-dialog-content">
 
@@ -41,9 +41,10 @@
           <md-list>
             <md-list-item
               aria-label="Click a file"
-              ng-repeat="f in move.lists.data"
+              ng-repeat="f in move.data"
               ng-class="{ checked: f.checked }"
               ng-click="move.clickFile(f)"
+              ng-DBlClick="move.doubleClick(f)"
             >
               <md-icon ng-bind="f.icon"></md-icon>
               <p class="break-word flex-grow">
@@ -61,11 +62,11 @@
       </md-button>
 
       <md-button
-        type="submit"
+        type="submit" ng-click="move.move()"
         aria-label="move here" class="md-primary"
-        ng-disabled="true"
+        ng-disabled= "move.paths + move.fileSelected[0].display == move.fileSelected[0].Key"
       >
-        <span translate>MOVE HERE</span>
+        <span translate>UTILS.MOVE</span>
         <md-progress-circular
           class="md-primary" md-mode="indeterminate"
           md-diameter="30" ng-show="move.form.$submitted"

@@ -1,6 +1,6 @@
 export default class MoveController {
   /** @ngInject */
-  constructor($file, $move, $scope) {
+  constructor($file, $move, $scope, $stateParams) {
     Object.assign(this, {
       $file, $move, $scope,
     });
@@ -11,37 +11,39 @@ export default class MoveController {
         fileSelected: newVal.data.filter(({ checked }) => checked),
       })
     , true);
-
-    // ------------------------------
-    // these objects are used for mock data
-
-    this.lists = {
-      data: [],
-    };
-
-    for (let i = 0; i < 20; i++) {
-      this.lists.data.push({
-        Key: `Test/${i + 1}`,
-        LastModified: '2016-12-21T06:43:19.911Z',
-        Size: '0',
-        display: `${i + 1}`,
-        icon: 'folder',
-        isFolder: true,
-      });
-    }
-    // ------------------------------
+    $scope.$watch(
+      () => $move.state.lists,
+      newVal => Object.assign(this, newVal)
+    , true);
+    this.paths = $stateParams.path.split('/');
+    this.bucket = this.paths[0];
+    this.paths = '';
+    this.$move.getFiles(this.bucket);
   }
 
   cancel() {
     this.$move.closeDialog();
   }
-
+  
   doubleClick({ isFolder, display }) {
     if (isFolder) {
-      const currentPath = this.$file.getFullPaths();
-      const path = `/bucket/${currentPath}${display}`;
-      this.$location.path(path);
+      this.setPaths(display);
+      this.$move.getFiles(this.bucket, this.paths);
     }
   }
+  
+  setPaths(paths) {
+    this.paths = this.paths + `${paths}/`;
+  }
 
+  getFullPaths() {
+    return this.paths.split('/');
+  }
+
+  move() {
+    for (const file in this.fileSelected) {
+      this.$move.moveFile(this.bucket, this.fileSelected[file].Key, this.bucket, this.paths, this.fileSelected[file].display)
+        .then(() => (this.form.$submitted = false));
+    }
+  }
 }
