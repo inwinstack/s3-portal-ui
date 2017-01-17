@@ -8,27 +8,25 @@ describe('SignIn unit test', function() {
   let makeController;
   let makeDeferred;
   let makeTemplate;
-  let $httpBackend
+  let $httpBackend;
   let $compile;
   let $toast;
   let $state;
   let $auth;
   let form;
+  let $translate;
+  let $cookies;
 
   beforeEach(angular.mock.module('app'));
 
-  beforeEach(inject(($q, _$rootScope_, _$toast_, _$state_, _$auth_, _$compile_, _$httpBackend_) => {
+  beforeEach(inject(($q, _$rootScope_, _$toast_, _$state_, _$auth_, _$compile_, _$translate_, _$cookies_) => {
     $rootScope = _$rootScope_;
-
-    $httpBackend = _$httpBackend_;
-
     $compile = _$compile_;
-
     $toast = _$toast_;
-
     $state = _$state_;
-
     $auth = _$auth_;
+    $translate = _$translate_;
+    $cookies = _$cookies_;
 
     makeTemplate = angular.element(signInTemplate);
 
@@ -41,7 +39,7 @@ describe('SignIn unit test', function() {
     };
 
     makeController = () => {
-      return new signInCtrl($auth, $state, $toast);
+      return new signInCtrl($auth, $state, $toast, $translate, $cookies);
     };
   }));
   describe('when fill invalid email', function() {
@@ -93,11 +91,16 @@ describe('SignIn unit test', function() {
     });
   });
   describe('when signin success', function() {
-    it('should invoke $state.go called with dashboard', function() {
+    it('should invoke $state.go called with dashboard', function(done) {
       const AuthMock = sinon.mock($auth);
       const authDeferred = makeDeferred();
+
       AuthMock.expects('login').returns(authDeferred.promise);
-      authDeferred.resolve();
+      authDeferred.resolve({
+        data: {
+          role: 'admin',
+        }
+      });
 
       const controller = makeController();
 
@@ -106,13 +109,20 @@ describe('SignIn unit test', function() {
       controller.submit();
       $rootScope.$digest();
 
-      chai.expect(state).to.have.been.calledWith('dashboard');
+      process.nextTick(() => {
+        done();
+        expect(state).to.have.been.calledWith('dashboard');
+      });
     });
-    it ('should invoke $toast.show called with Sign In Success!', function() {
+    it ('should invoke $toast.show called with Sign In Success!', function(done) {
       const AuthMock = sinon.mock($auth);
       const authDeferred = makeDeferred();
       AuthMock.expects('login').returns(authDeferred.promise);
-      authDeferred.resolve();
+      authDeferred.resolve({
+        data: {
+          role: 'admin',
+        }
+      });
 
       const controller = makeController();
 
@@ -120,16 +130,24 @@ describe('SignIn unit test', function() {
 
       controller.submit();
       $rootScope.$digest();
-      
-      chai.expect(toast).to.have.been.calledWith('Sign In Success!');
+
+      process.nextTick(() => {
+        done();
+        expect(toast).to.have.been.calledWith('Sign In Success!');
+      });
     });
   });
   describe('when signin fail', function() {
-    it('should let controller.incorrect be true and form.$submitted be false', function() {
+    it('should let controller.incorrect be true and form.$submitted be false', function(done) {
       const AuthMock = sinon.mock($auth);
       const authDeferred = makeDeferred();
       AuthMock.expects('login').returns(authDeferred.promise);
-      authDeferred.reject();
+      authDeferred.reject({
+        status: '404',
+        data: {
+          message: 'errror',
+        },
+      });
 
       const controller = makeController();
 
@@ -138,8 +156,11 @@ describe('SignIn unit test', function() {
       controller.submit();
       $rootScope.$digest();
 
-      chai.expect(controller.incorrect).to.eq(true);
-      chai.expect(controller.form.$submitted).to.eq(false);
+      process.nextTick(() => {
+        done();
+        expect(controller.incorrect).to.eq(true);
+        expect(controller.form.$submitted).to.eq(false);
+      });
     });
   });
 });
