@@ -1,10 +1,12 @@
+[![Build Status](https://travis-ci.org/JuliusChen/s3-portal-ui.svg?branch=dev)](https://travis-ci.org/JuliusChen/s3-portal-ui)
+
 # S3 Portal
 
 > Constructing...
 
 ### Requirement
 
-`Node >= 4.2.0`
+`Node >= 6.1.0`
 
 ### Usage
 
