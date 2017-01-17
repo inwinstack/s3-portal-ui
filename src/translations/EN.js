@@ -12,6 +12,7 @@ export default {
     REFRESH: 'Refresh',
     CONFIRM: 'Confirm',
     OR: 'or',
+    MOVE: 'Move',
   },
   VALIDATION: {
     REQUIRED: 'You left the field blank.',
@@ -147,6 +148,9 @@ export default {
     PROPERTIES_NAME: 'File Name',
     RENAME_SUCCESS: 'Your File {{ fileName }} Rename Success',
     RENAME_FAILURE: 'Your File {{ fileName }} Rename Failure, Please Try Again!',
+    MOVE_SUCCESS: 'Your File {{ fileName }} Move Success',
+    MOVE_FAILURE: 'Your File {{ fileName }} Move Failure, Please Try Again!',
+    MOVE_CONTENT: 'Choose select file folder where you want to move',
   },
   MANAGER: {
     USER_LIST: 'User List',

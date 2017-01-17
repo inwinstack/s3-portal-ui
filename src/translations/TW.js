@@ -12,6 +12,7 @@ export default {
     REFRESH: '重新整理',
     CONFIRM: '確定',
     OR: '或',
+    MOVE: '移動',
   },
   VALIDATION: {
     REQUIRED: '此欄位不得為空。',
@@ -137,6 +138,9 @@ export default {
     PROPERTIES_NAME: '檔案名稱',
     RENAME_SUCCESS: '檔案 {{ fileName }} 重新命名成功',
     RENAME_FAILURE: '檔案 {{ fileName }} 重新命名失敗，請再試一次!',
+    MOVE_SUCCESS: '檔案 {{ fileName }} 移動檔案成功',
+    MOVE_FAILURE: '檔案 {{ fileName }} 移動檔案失敗，請再試一次!',
+    MOVE_CONTENT: '選擇移動的目的地資料夾',
   },
   MANAGER: {
     USER_LIST: '使用者列表',

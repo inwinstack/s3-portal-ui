@@ -12,6 +12,7 @@ export default {
     REFRESH: '刷新',
     CONFIRM: '确定',
     OR: '或',
+    MOVE: '移动',
   },
   VALIDATION: {
     REQUIRED: '此栏位不得为空。',
@@ -137,6 +138,9 @@ export default {
     PROPERTIES_NAME: '文件名',
     RENAME_SUCCESS: '档案 {{ fileName }} 重新命名成功',
     RENAME_FAILURE: '档案 {{ fileName }} 重新命名失败，请再试一次!',
+    MOVE_SUCCESS: '档案 {{ fileName }} 移动档案成功',
+    MOVE_FAILURE: '档案 {{ fileName }} 移动档案失败，请再试一次!',
+    MOVE_CONTENT: '选择移动的目的地资料夹',
   },
   MANAGER: {
     USER_LIST: '使用者列表',
