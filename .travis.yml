@@ -1,8 +1,10 @@
 language: node_js
 node_js:
-  - "4.2"
+  - "6"
 env:
   - CXX=g++-4.8
+before_script:
+  - 'npm install -g bower grunt-cli karma'
 addons:
   apt:
     sources:
@@ -12,3 +14,4 @@ addons:
 cache:
   directories:
    - node_modules
+script: npm test
