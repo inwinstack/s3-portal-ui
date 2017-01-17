@@ -35,16 +35,16 @@ export default class SignUpController {
           this.emailIsInvalid = false;
         })
         .catch((res) => {
-            this.emailIsValid = false;
-            this.emailIsInvalid = true;
-          if (res.status != -1) {
+          this.emailIsValid = false;
+          this.emailIsInvalid = true;
+          if (res.status !== -1) {
             this.showEmailCheckedMessage = true;
           } else {
             this.showEmailCheckedMessage = false;
             this.$translate('TOAST.CONNECT_ERROR')
               .then(message => {
                 this.$toast.show(message);
-              })
+              });
           }
         })
         .finally(() => (this.isCheckEmail = false));

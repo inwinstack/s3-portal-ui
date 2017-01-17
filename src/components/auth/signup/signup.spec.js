@@ -15,22 +15,17 @@ describe('SignUp unit test', function() {
   let $compile;
   let form;
   let AuthService;
+  let $translate;
 
   beforeEach(angular.mock.module('app'));
 
-  beforeEach(inject(($q, _$rootScope_, _$toast_, _$state_, _$auth_, _AuthService_, _$compile_, _$httpBackend_) => {
+  beforeEach(inject(($q, _$rootScope_, _$toast_, _$state_, _$auth_, _AuthService_, _$compile_, _$translate_) => {
     $rootScope = _$rootScope_;
-
     $toast = _$toast_;
-
     $state = _$state_;
-
     $auth = _$auth_;
-
     $compile = _$compile_;
-
-    $httpBackend = _$httpBackend_;
-
+    $translate = _$translate_;
     AuthService = _AuthService_;
 
     makeTemplate = angular.element(signUpTemplate);
@@ -44,67 +39,60 @@ describe('SignUp unit test', function() {
     };
 
     makeController = () => {
-      return new signUpCtrl($auth, $state, $toast, AuthService);
+      return new signUpCtrl($auth, $state, $toast, $translate, AuthService);
     };
   }));
-  describe('when fill a email in invalid format', function() {
-    it('should be invalid', function() {
-      form.email.$setViewValue('eeeiii');
-      $rootScope.$digest();
-      expect(form.email.$valid).to.eq(false);
-      expect(form.email.$viewValue).to.eq('eeeiii');
+  describe('when fill a non-exist valid email', function() {                                                                                                                                             
+    it('should invoke ckeckEmail() in signup.controller and emailIsValid should be true', function(done) {  
+      const controller = makeController();
+      const AuthMock = sinon.mock(AuthService);
 
-      form.email.$setViewValue('');
-      $rootScope.$digest();
-      expect(form.email.$valid).to.eq(false);
-      expect(form.email.$viewValue).to.eq('');
+      form.email.$setViewValue('chaoen@inwinstack.com');
+      const data = { email: form.email.$setViewValue };
+      controller.form = { email: { $valid: form.email.$valid } };
+      controller.credentials = data;
 
-      form.email.$setViewValue('chaoeninwinstack.com');
+      const checkEmailDeferred = makeDeferred();
+      AuthMock.expects('checkEmail').returns(checkEmailDeferred.promise);
+      checkEmailDeferred.reject({ status: 403 });
+
+      controller.checkEmail();
       $rootScope.$digest();
-      expect(form.email.$valid).to.eq(false);
-      expect(form.email.$viewValue).to.eq('chaoeninwinstack.com');
-    });
-  });
-  describe('when fill a non-exist valid email', function() {                                            
-    it('should be valid', function() {                                                                  
-      form.email.$setViewValue('chaoen@inwinstack.com');                                                
-      $rootScope.$digest();                                                                             
-      expect(form.email.$valid).to.eq(true);                                                            
-      expect(form.email.$viewValue).to.eq('chaoen@inwinstack.com');                                     
-    });                                                                                                 
-    it('should invoke ckeckEmail() in signup.controller and emailIsValid should be true', function() {  
-      const controller = makeController();                                                              
-      form.email.$setViewValue('chaoen@inwinstack.com');                                                
-      const data = { email: form.email.$setViewValue };                                                 
-      controller.form = { email: { '$valid': form.email.$valid }};                                      
-      controller.credentials = data;                                                                    
-      $httpBackend.expectPOST('http://163.17.136.83:8080/api/v1/auth/checkEmail', data).respond(200);   
-      controller.checkEmail();                                                                          
-      $httpBackend.flush();                                                                             
-      $rootScope.$digest();                                                                             
-      expect(controller.emailIsValid).to.eq(true);                                                      
+
+      process.nextTick(() => {
+        done();
+        expect(controller.emailIsValid).to.eq(true);
+      });
     });                                                                                                 
   });                                                                                                   
   describe('when fill a exist email', function() {                                                      
     it('should be valid', function() {                                                                  
-      form.email.$setViewValue('chaoen.l@inwinstack.com');                                              
-      $rootScope.$digest();                                                                             
-      expect(form.email.$valid).to.eq(true);                                                            
-      expect(form.email.$viewValue).to.eq('chaoen.l@inwinstack.com');                                   
-      expect(form.$invalid).to.eq(true);                                                                
+      form.email.$setViewValue('chaoenl@inwinstack.com');
+      expect(form.email.$valid).to.eq(true);
+      expect(form.email.$viewValue).to.eq('chaoenl@inwinstack.com');
+      expect(form.$invalid).to.eq(false);
     });                                                                                                 
-    it('should invoke ckeckEmail() in signup.controller and emailIsValid should be false', function() { 
-      const controller = makeController();                                                              
-      form.email.$setViewValue('chaoen.l@inwinstack.com');                                              
-      const data = { email: form.email.$setViewValue };                                                 
-      controller.form = { email: { '$valid': form.email.$valid }};                                      
-      controller.credentials = data;                                                                    
-      $httpBackend.expectPOST('http://163.17.136.83:8080/api/v1/auth/checkEmail', data).respond(403);   
-      controller.checkEmail();                                                                          
-      $httpBackend.flush();                                                                             
-      $rootScope.$digest();                                                                             
-      expect(controller.emailIsValid).to.eq(false);                                                     
-    });                                                                                                 
+    it('should invoke ckeckEmail() in signup.controller and emailIsValid should be false', function(done) { 
+      const controller = makeController();
+      const AuthMock = sinon.mock(AuthService);
+
+      form.email.$setViewValue('chaoen.l@inwinstack.com');
+      const data = { email: form.email.$setViewValue };
+      controller.form = { email: { $valid: form.email.$valid } };
+      controller.credentials = data;
+
+      const checkEmailDeferred = makeDeferred();
+      AuthMock.expects('checkEmail').returns(checkEmailDeferred.promise);
+      checkEmailDeferred.resolve();
+
+      controller.checkEmail();
+      $rootScope.$digest();
+
+      process.nextTick(() => {
+        done();
+        expect(controller.emailIsValid).to.eq(false);
+      });
+    });
   });
   describe('when fill different text in password and password_confirmation', function() {
       it('should be invalid', function() {
@@ -145,22 +133,24 @@ describe('SignUp unit test', function() {
       expect(controller.emailIsValid).to.eq(true);
     });
   });
-  describe('when checkEmail fail', function() {
+  describe('when checkEmail fail', function(done) {
     it('should let emailIsInvalid to be true, isCheckEmail and emailIsValid to be false', function() {
+      const controller = makeController();
       const AuthServiceMock = sinon.mock(AuthService);
       const authDeferred = makeDeferred();
-      AuthServiceMock.expects('checkEmail').returns(authDeferred.promise);
-      authDeferred.reject();
-    
-      const controller = makeController();
 
-      controller.form = { email: {'$valid' : true }};
+      AuthServiceMock.expects('checkEmail').returns(authDeferred.promise);
+      authDeferred.reject({ status: 403 });
+
+      controller.form = { email: { $valid: true }};
       controller.checkEmail();
       $rootScope.$digest();
 
-      expect(controller.isCheckEmail).to.eq(false);
-      expect(controller.emailIsValid).to.eq(false);
-      expect(controller.emailIsInvalid).to.eq(true);
+      process.nextTick((done) => {
+        expect(controller.isCheckEmail).to.eq(false);
+        expect(controller.emailIsValid).to.eq(false);
+        expect(controller.emailIsInvalid).to.eq(true);
+      });
     });
   });
   describe('when signup success', function() {
@@ -178,7 +168,7 @@ describe('SignUp unit test', function() {
       
       chai.expect(state).to.have.been.calledWith('auth.signin');
     });
-    it('should invoke $toast.show and called with Sign Up Success!', function() {
+    it('should invoke $toast.show and called with Sign Up Success!', function(done) {
       const AuthMock = sinon.mock($auth);
       const authDeferred = makeDeferred();
       AuthMock.expects('signup').returns(authDeferred.promise);
@@ -190,23 +180,29 @@ describe('SignUp unit test', function() {
       controller.submit();
       $rootScope.$digest();
 
-      chai.expect(toast).to.have.been.calledWith('Sign Up Success!');
+      process.nextTick(() => {
+        done();
+        expect(toast).to.have.been.calledWith('Sign Up Success!');
+      });
     });
   });
   describe('when signup fail', function() {
-    it('should let controller.form.$submitted be false', function() {
+    it('should let controller.form.$submitted be false', function(done) {
       const AuthMock = sinon.mock($auth);
       const authDeferred = makeDeferred();
       AuthMock.expects('signup').returns(authDeferred.promise);
-      authDeferred.reject();
+      authDeferred.reject({ status: 403 });
 
       const controller = makeController();
-      controller.form = { '$submitted': true };
+      controller.form = { $submitted: true };
 
       controller.submit();
       $rootScope.$digest();
 
-      expect(controller.form.$submitted).to.eq(false);
+      process.nextTick(() => {
+        done();
+        expect(controller.form.$submitted).to.eq(false);
+      });
     });
   });
 });
