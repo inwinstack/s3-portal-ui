@@ -42,6 +42,14 @@ describe('SignIn unit test', function() {
       return new signInCtrl($auth, $state, $toast, $translate, $cookies);
     };
   }));
+  describe('when use translate', function() {
+    it('should invoke changeLanguage', function() {
+      const controller = makeController();
+      controller.changeLanguage('EN');
+
+      expect(controller.currentLanguage).to.eq('EN');
+    });
+  });
   describe('when fill invalid email', function() {
     it('should be invalid', function() {
       form.email.$setViewValue('eeeiii');
@@ -159,6 +167,53 @@ describe('SignIn unit test', function() {
       process.nextTick(() => {
         done();
         expect(controller.incorrect).to.eq(true);
+        expect(controller.form.$submitted).to.eq(false);
+      });
+    });
+    it('should let toast show connect ceph error message', function(done) {
+      const AuthMock = sinon.mock($auth);
+      const authDeferred = makeDeferred();
+      AuthMock.expects('login').returns(authDeferred.promise);
+      authDeferred.reject({
+        status: '404',
+        data: {
+          message: 'Connection to Ceph failed',
+        },
+      });
+
+      const controller = makeController();
+      const toast = sinon.spy($toast, 'show');
+
+      controller.form = { '$submitted' : true };
+
+      controller.submit();
+      $rootScope.$digest();
+
+      process.nextTick(() => {
+        done();
+        expect(toast).should.have.been.calledWith('Connect To Ceph Error! Please Try Again Later!');
+        expect(controller.form.$submitted).to.eq(false);
+      });
+    });
+    it('should let toast show connect error message', function(done) {
+      const AuthMock = sinon.mock($auth);
+      const authDeferred = makeDeferred();
+      AuthMock.expects('login').returns(authDeferred.promise);
+      authDeferred.reject({
+        status: '-1',
+      });
+
+      const controller = makeController();
+      const toast = sinon.spy($toast, 'show');
+
+      controller.form = { '$submitted' : true };
+
+      controller.submit();
+      $rootScope.$digest();
+
+      process.nextTick(() => {
+        done();
+        expect(toast).should.have.been.calledWith('Connection Error! Please Try Again!');
         expect(controller.form.$submitted).to.eq(false);
       });
     });

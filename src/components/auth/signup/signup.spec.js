@@ -42,6 +42,14 @@ describe('SignUp unit test', function() {
       return new signUpCtrl($auth, $state, $toast, $translate, AuthService);
     };
   }));
+  describe('when use translate', function() {
+    it('should invoke changeLanguage', function() {
+      const controller = makeController();
+      controller.changeLanguage('EN');
+
+      expect(controller.currentLanguage).to.eq('EN');
+    });
+  });
   describe('when fill a non-exist valid email', function() {                                                                                                                                             
     it('should invoke ckeckEmail() in signup.controller and emailIsValid should be true', function(done) {  
       const controller = makeController();
@@ -133,8 +141,8 @@ describe('SignUp unit test', function() {
       expect(controller.emailIsValid).to.eq(true);
     });
   });
-  describe('when checkEmail fail', function(done) {
-    it('should let emailIsInvalid to be true, isCheckEmail and emailIsValid to be false', function() {
+  describe('when checkEmail fail', function() {
+    it('should let emailIsInvalid to be true, isCheckEmail and emailIsValid to be false', function(done) {
       const controller = makeController();
       const AuthServiceMock = sinon.mock(AuthService);
       const authDeferred = makeDeferred();
@@ -146,11 +154,48 @@ describe('SignUp unit test', function() {
       controller.checkEmail();
       $rootScope.$digest();
 
-      process.nextTick((done) => {
+      process.nextTick(() => {
+        done();
         expect(controller.isCheckEmail).to.eq(false);
         expect(controller.emailIsValid).to.eq(false);
         expect(controller.emailIsInvalid).to.eq(true);
       });
+    });
+    it('showing error message when connecting error',function(done) {
+      const controller = makeController();
+      const AuthMock = sinon.mock(AuthService);
+      const toast = sinon.spy($toast, 'show');
+
+      form.email.$setViewValue('chaoen.l@inwinstack.com');
+      const data = { email: form.email.$setViewValue };
+      controller.form = { email: { $valid: form.email.$valid } };
+      controller.credentials = data;
+
+      const checkEmailDeferred = makeDeferred();
+      AuthMock.expects('checkEmail').returns(checkEmailDeferred.promise);
+      checkEmailDeferred.reject({ status: -1 });
+
+      controller.checkEmail();
+      $rootScope.$digest();
+
+      process.nextTick(() => {
+        done();
+        expect(controller.emailIsValid).to.eq(false);
+        expect(controller.emailIsInvalid).to.eq(true);
+        expect(controller.showEmailCheckedMessage).to.eq(false);
+        expect(toast).should.have.been.calledWith('Connection Error! Please Try Again!');
+      });
+    });
+    it('showing detect email not filled up',function() {
+      const controller = makeController();
+      const AuthMock = sinon.mock(AuthService);
+
+      controller.form = { email: { $valid: false } };
+
+      controller.checkEmail();
+      $rootScope.$digest();
+
+      expect(controller.showEmailCheckedMessage).to.eq(false);
     });
   });
   describe('when signup success', function() {
@@ -191,9 +236,10 @@ describe('SignUp unit test', function() {
       const AuthMock = sinon.mock($auth);
       const authDeferred = makeDeferred();
       AuthMock.expects('signup').returns(authDeferred.promise);
-      authDeferred.reject({ status: 403 });
+      authDeferred.reject({ status: '-1' });
 
       const controller = makeController();
+      const toast = sinon.spy($toast, 'show');
       controller.form = { $submitted: true };
 
       controller.submit();
@@ -202,6 +248,7 @@ describe('SignUp unit test', function() {
       process.nextTick(() => {
         done();
         expect(controller.form.$submitted).to.eq(false);
+        expect(toast).should.have.been.calledWith('Connection Error! Please Try Again!');
       });
     });
   });
