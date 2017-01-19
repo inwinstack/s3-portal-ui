@@ -12,7 +12,7 @@
       </thead>
     </table>
 
-    <md-list class="list">
+    <md-list class="list" layout="column">
       <md-list-item
         aria-label="Bucket list item"
         ng-class="{ checked: b.checked }"
@@ -22,7 +22,6 @@
       >
         <md-checkbox
           aria-label="checkbox of bucket list item"
-          class="md-secondary"
           ng-checked="b.checked"
           ng-click="bucket.selectBucket(b.Name)"
         ></md-checkbox>
