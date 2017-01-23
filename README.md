@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/JuliusChen/s3-portal-ui.svg?branch=dev)](https://travis-ci.org/JuliusChen/s3-portal-ui)
+[![Build Status](https://travis-ci.org/inwinstack/s3-portal-ui.svg?branch=dev)](https://travis-ci.org/inwinstack/s3-portal-ui)
 
 # S3 Portal
 
