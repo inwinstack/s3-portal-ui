@@ -150,7 +150,7 @@ export default {
     RENAME_FAILURE: 'Your File {{ fileName }} Rename Failure, Please Try Again!',
     MOVE_SUCCESS: 'Your File {{ fileName }} Move Success',
     MOVE_FAILURE: 'Your File {{ fileName }} Move Failure, Please Try Again!',
-    MOVE_CONTENT: 'Choose select file folder where you want to move',
+    MOVE_CONTENT: 'Choose select files or folders where you want to move',
   },
   MANAGER: {
     USER_LIST: 'User List',
