@@ -11,7 +11,7 @@
         </tr>
       </thead>
     </table>
-    <md-list class="list">
+    <md-list class="list file-list" layout="column">
       <md-list-item
         aria-label="Click a file"
         ng-repeat="f in file.data"
@@ -21,7 +21,6 @@
       >
         <md-checkbox
           aria-label="Get Check"
-          class="md-secondary"
           ng-checked="f.checked"
           ng-click="file.selectFile(f)"
         ></md-checkbox>
