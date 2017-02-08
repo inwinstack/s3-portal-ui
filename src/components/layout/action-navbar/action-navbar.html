@@ -96,7 +96,7 @@
           <md-button
             aria-label="Move"
             ng-click="actionNav.move($event)"
-            ng-disabled=>
+            ng-disabled="!actionNav.fileSelected">
             <span ng-show="actionNav.isFile()" translate>UTILS.MOVE</span>
           </md-button>
         </md-menu-item>

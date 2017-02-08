@@ -64,7 +64,10 @@
       <md-button
         type="submit" ng-click="move.move()"
         aria-label="move here" class="md-primary"
-        ng-disabled= "move.paths + move.fileSelected[0].display == move.fileSelected[0].Key"
+        ng-disabled="(move.fileSelected[0].isFolder && 
+          move.fileSelected[0].Key === move.paths + move.fileSelected[0].display +'/') ||
+          (!move.fileSelected[0].isFolder && 
+          move.fileSelected[0].Key === move.paths + move.fileSelected[0].display)"
       >
         <span translate>UTILS.MOVE</span>
         <md-progress-circular
