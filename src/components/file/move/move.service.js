@@ -34,6 +34,7 @@ export default class MoveService {
 
   getFiles(bucket, prefix = '') {
     const endpoint = `/v1/file/list/${bucket}?prefix=${prefix}`;
+    const selected = this.$file.state.lists.data.filter(({ checked }) => checked).map(file => { return file.Key });
 
     this.state.lists.requesting = true;
     this.state.lists.data = [];
@@ -42,7 +43,7 @@ export default class MoveService {
       .get(endpoint)
       .then(({ data }) => {
         this.state.lists.error = false;
-        this.state.lists.data = sortFiles(this.formatFilesData(data.files, prefix));
+        this.state.lists.data = sortFiles(this.formatFilesData(data.files, prefix, selected));
       })
       .catch(() => {
         this.state.lists.error = true;
@@ -59,7 +60,7 @@ export default class MoveService {
     return { isFolder, display };
   }
 
-  formatFilesData(files, prefix) {
+  formatFilesData(files, prefix, selected) {
     const baseLen = prefix.split('/').length;
 
     return (! files) ? [] :
@@ -69,7 +70,7 @@ export default class MoveService {
           length === baseLen
           || length === baseLen + 1
           && Key.endsWith('/')
-        ) && Key !== prefix;
+        ) && Key !== prefix && selected.indexOf(Key) == -1;
       }).map(file => ({
         ...file,
         ...this.formatFileType(file.Key, prefix),
@@ -86,13 +87,29 @@ export default class MoveService {
     return this.$fetch.post('/v1/file/move', {
       sourceBucket: sourceBucket, sourceFile: sourceFile, goalBucket, goalBucket, goalFile: goalFile + fileName
     })
-    .then(() => this.$translate("FILE.RENAME_SUCCESS", { fileName })
+    .then(() => this.$translate("FILE.MOVE_SUCCESS", { fileName })
       .then(message => {
         this.$file.getFiles();
         this.$toast.show(message);
         this.closeDialog();
       }))
-    .catch(() => this.$translate("FILE.RENAME_FAILURE", { fileName })
+    .catch(() => this.$translate("FILE.MOVE_FAILURE", { fileName })
+      .then(message => {
+        this.$toast.show(message);
+      }));
+  }
+
+  moveFolder(sourceBucket, sourceFolder, goalBucket, goalFolder, folderName) {
+    return this.$fetch.post('/v1/folder/move', {
+      sourceBucket: sourceBucket, sourceFolder: sourceFolder.slice(0, -1), goalBucket, goalBucket, goalFolder: goalFolder + folderName
+    })
+    .then(() => this.$translate("FILE.MOVE_SUCCESS", { folderName })
+      .then(message => {
+        this.$file.getFiles();
+        this.$toast.show(message);
+        this.closeDialog();
+      }))
+    .catch(() => this.$translate("FILE.MOVE_FAILURE", { folderName })
       .then(message => {
         this.$toast.show(message);
       }));
