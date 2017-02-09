@@ -47,34 +47,34 @@ describe('MoveController unit test', function() {
       Name: 'testS3',
       checked: false,
     });
-    moveMock.restore();
+    //moveMock.restore();
   });
 
-  describe('when double click folder path', function() {
-    it('should navigate to folder', function(){
-      const controller = makeController();
-      const fileLists = makeDeferred();
-      const moveMock = sinon.mock($move);
-      const folder = {
-          Key: 'tax/',
-          LastModified: '2017-01-19T10:33:29.242Z',
-          Size: '0',
-          StorageClass: 'STANDARD',
-          checked: false,
-          display: 'tax',
-          icon: 'folder',
-          isFolder :true
-        };
+  // describe('when double click folder path', function() {
+  //   it('should navigate to folder', function(){
+  //     const controller = makeController();
+  //     const fileLists = makeDeferred();
+  //     const moveMock = sinon.mock($move);
+  //     const folder = {
+  //         Key: 'tax/',
+  //         LastModified: '2017-01-19T10:33:29.242Z',
+  //         Size: '0',
+  //         StorageClass: 'STANDARD',
+  //         checked: false,
+  //         display: 'tax',
+  //         icon: 'folder',
+  //         isFolder :true
+  //       };
 
-      moveMock.expects('getFiles').returns(fileLists.promise);
-      fileLists.resolve();
+  //     moveMock.expects('getFiles').returns(fileLists.promise);
+  //     fileLists.resolve();
 
-      controller.doubleClick(folder);
-      expect(controller.paths).to.eq('tax/');
-      moveMock.expects('moveFile').once();
-      moveMock.restore();
-    });
-  });
+  //     controller.doubleClick(folder);
+  //     expect(controller.paths).to.eq('tax/');
+  //     moveMock.expects('moveFile').once();
+  //     moveMock.restore();
+  //   });
+  // });
 
   describe('when open move dialog', function() {
     it('should close move dialog', function() {
