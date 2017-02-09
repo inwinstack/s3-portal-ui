@@ -13,6 +13,7 @@ export default {
     CONFIRM: 'Confirm',
     OR: 'or',
     MOVE: 'Move',
+    REPLICATE: 'Replicate',
   },
   VALIDATION: {
     REQUIRED: 'You left the field blank.',
@@ -77,6 +78,8 @@ export default {
     DELETE_ACCOUNT_FAIL: '{{ name }} Delete Fail Please Try Again!',
     RESET_SUCCESS: '{{ email }} Reset Password Success!',
     RESET_FAIL: '{{ email }} Reset Password Fail，Please Try Again!',
+    REPLICATE_SUCCESS: '{{ file }} Replicate Success!',
+    REPLICATE_FAIL: '{{ file }} Reset Replicate Fail，Please Try Again!',
     CANCEL_UPLOAD: 'Upload {{ name }} Has Been Cancel',
     CONNECT_ERROR: 'Connection Error! Please Try Again!',
     CONNECT_CEPH_ERROR: 'Connect To Ceph Error! Please Try Again Later!',
@@ -140,6 +143,8 @@ export default {
     DELETE_DESCRIPTION: `Deleting those objects cannot be undone.
     Are you sure you want to delete selected items?`,
     DELETE_ARIA_LABEL: 'Delete Objects',
+    REPLICATE_TITLE: 'Would you like to replicate the selected item?',
+    REPLICATE_ARIA_LABEL: 'Replicate Objects',
     RENAME_TITLE: 'Rename',
     RENAME_DESCRIPTION: `Are you sure you want to rename this item?`,
     RENAME_ARIA_LABEL: 'Rename Object',
