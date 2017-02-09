@@ -1,7 +1,7 @@
 import MoveController from './move.controller';
 import moveTemplate from './move.html'
 
-describe('MoveList unit test', function() {
+describe('MoveController unit test', function() {
   let $rootScope;
   let makeController;
   let makeDeferred;
@@ -11,15 +11,17 @@ describe('MoveList unit test', function() {
   let $move;
   let $file;
   let $compile;
+  let $httpBackend;
 
   beforeEach(angular.mock.module('app'));
 
-  beforeEach(inject(($q, _$rootScope_, _$move_, _$file_, _$stateParams_,  _$compile_) => {
+  beforeEach(inject(($q, _$rootScope_, _$move_, _$file_, _$stateParams_,  _$compile_, _$httpBackend_) => {
     $rootScope = _$rootScope_;
     $move = _$move_;
     $file = _$file_;
     $stateParams = _$stateParams_;
     $compile = _$compile_;
+    $httpBackend = _$httpBackend_;
 
     makeTemplate = angular.element(moveTemplate);
 
@@ -39,32 +41,49 @@ describe('MoveList unit test', function() {
   beforeEach(function() {
     $stateParams.path = 'testS3';
     const moveLists = makeDeferred();
-    const MoveMock = sinon.mock($move);
-    MoveMock.expects('getFiles').returns(moveLists.promise);
+    const moveMock = sinon.mock($move);
+    moveMock.expects('getFiles').returns(moveLists.promise);
     moveLists.resolve({
       $$hashKey: 'object:272',
       CreationDate: '2016-12-29T06:40:39.840Z',
       Name: 'testS3',
       checked: false,
     });
+    moveMock.restore();
   });
 
-  describe('when open dialog', function() {
+  describe('when open move dialog', function() {
     it('should close move dialog', function() {
       const controller = makeController();
       const moveMock = sinon.mock($move);
+
+      $httpBackend.whenGET("undefined/api/v1/file/list/testS3?prefix=").respond({ hello: 'World' });
+      $httpBackend.expectGET("undefined/api/v1/file/list/testS3?prefix=");
+
       controller.cancel();
       $rootScope.$digest();
 
       moveMock.expects('closeDialog').once();
+      moveMock.restore();
     });
 
     it('click move button should trigger file transfer', function(done) {
       const controller = makeController();
-      const moveLists = makeDeferred();
-      const MoveMock = sinon.mock($move);
-      MoveMock.expects('moveFile').returns(moveLists.promise);
-      moveLists.resolve();
+      const moveMock = sinon.mock($move);
+
+      $httpBackend.whenGET("undefined/api/v1/file/list/testS3?prefix=").respond({ hello: 'World' });
+      $httpBackend.expectGET("undefined/api/v1/file/list/testS3?prefix=");
+
+      const moveList = [];
+      moveList.push(makeDeferred());
+      moveList.push(makeDeferred());
+
+      controller.fileSelected = [];
+
+      for ( let i = 0; i < 2; i++ ) {
+        moveMock.expects('moveFile').returns(moveList[i].promise);
+        moveList[i].resolve();
+      }
 
       controller.fileSelected = [
         {
@@ -76,27 +95,52 @@ describe('MoveList unit test', function() {
           display: 'catsense.jpg',
           icon: 'insert_drive_file',
           isFolder :false
+        },
+        {
+          Key: 'tax/ceph-status2.png',
+          LastModified: '2017-01-19T10:33:29.242Z',
+          Size: '30219',
+          StorageClass: 'STANDARD',
+          checked: true,
+          display: 'ceph-status2.png',
+          icon: 'insert_drive_file',
+          isFolder :false
         }
-        // {
-        //   Key: 'tax/ceph-status2.png',
-        //   LastModified: '2017-01-19T10:33:29.242Z',
-        //   Size: '30219',
-        //   StorageClass: 'STANDARD',
-        //   checked: true,
-        //   display: 'ceph-status2.png',
-        //   icon: 'insert_drive_file',
-        //   isFolder :false
-        // }
       ];
       controller.paths = 'testS3';
+      controller.form = { '$submitted' : true };
 
       controller.move();
       $rootScope.$digest();
 
       process.nextTick(() => {
         done();
+        moveMock.expects('moveFile').twice();
         expect(controller.form.$submitted).to.eq(false);
+        moveMock.restore();
       });
     });
-  });  
+  });
+
+  describe('when double click folder path', function() {
+    it('should navigate to folder', function(){
+      const controller = makeController();
+      const moveMock = sinon.mock($move);
+      const folder = {
+          Key: 'tax/',
+          LastModified: '2017-01-19T10:33:29.242Z',
+          Size: '0',
+          StorageClass: 'STANDARD',
+          checked: false,
+          display: 'tax',
+          icon: 'folder',
+          isFolder :true
+        };
+
+      controller.doubleClick(folder);
+      expect(controller.paths).to.eq('tax/');
+      moveMock.expects('moveFile').once();
+      moveMock.restore();
+    });
+  });
 });

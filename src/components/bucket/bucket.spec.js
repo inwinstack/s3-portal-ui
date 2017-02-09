@@ -46,7 +46,7 @@ describe('Bucket unit test', function() {
     });
   });
 
-  describe('create bucket', function() {
+  describe('when create bucket', function() {
     it('should call create bucket dialog', function() {
       const controller = makeController();
       const BucketMock = sinon.mock($bucket);
@@ -57,7 +57,7 @@ describe('Bucket unit test', function() {
     });
   });
 
-  describe('click bucket', function() {
+  describe('when click bucket', function() {
     it('should call clickBucket', function(done) {
       const controller = makeController();
       controller.clickBucket('tests3');
