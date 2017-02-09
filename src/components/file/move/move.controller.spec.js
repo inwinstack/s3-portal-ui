@@ -72,6 +72,7 @@ describe('MoveController unit test', function() {
       controller.doubleClick(folder);
       expect(controller.paths).to.eq('tax/');
       moveMock.expects('moveFile').once();
+      moveMock.restore();
     });
   });
 
