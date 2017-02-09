@@ -47,7 +47,7 @@ describe('MoveController unit test', function() {
       Name: 'testS3',
       checked: false,
     });
-    //moveMock.restore();
+    moveMock.restore();
   });
 
   // describe('when double click folder path', function() {
