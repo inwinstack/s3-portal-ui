@@ -47,11 +47,11 @@ describe('MoveController unit test', function() {
       Name: 'testS3',
       checked: false,
     });
-    // moveMock.restore();
+    moveMock.restore();
   });
 
   describe('when double click folder path', function() {
-    it('should navigate to folnode -vder', function(){
+    it('should navigate to folder', function(){
       const controller = makeController();
       const fileLists = makeDeferred();
       const moveMock = sinon.mock($move);
