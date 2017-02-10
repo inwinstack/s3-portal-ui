@@ -40,16 +40,6 @@ describe('MoveController unit test', function() {
 
   beforeEach(function() {
     $stateParams.path = 'testS3';
-    const moveLists = makeDeferred();
-    const moveMock = sinon.mock($move);
-    moveMock.expects('getFiles').returns(moveLists.promise);
-    moveLists.resolve({
-      $$hashKey: 'object:272',
-      CreationDate: '2016-12-29T06:40:39.840Z',
-      Name: 'testS3',
-      checked: false,
-    });
-    moveMock.restore();
   });
 
   describe('when open move dialog', function() {
@@ -57,7 +47,16 @@ describe('MoveController unit test', function() {
       const controller = makeController();
       const moveMock = sinon.mock($move);
 
-      $httpBackend.whenGET("undefined/api/v1/file/list/testS3?prefix=").respond({ hello: 'World' });
+      $httpBackend.whenGET("undefined/api/v1/file/list/testS3?prefix=").respond({
+          Key: 'tax/catsense.jpg',
+          LastModified: '2017-01-19T10:33:29.242Z',
+          Size: '8550',
+          StorageClass: 'STANDARD',
+          checked: true,
+          display: 'catsense.jpg',
+          icon: 'insert_drive_file',
+          isFolder :false
+        });
       $httpBackend.expectGET("undefined/api/v1/file/list/testS3?prefix=");
 
       controller.cancel();
@@ -71,7 +70,16 @@ describe('MoveController unit test', function() {
       const controller = makeController();
       const moveMock = sinon.mock($move);
 
-      $httpBackend.whenGET("undefined/api/v1/file/list/testS3?prefix=").respond({ hello: 'World' });
+      $httpBackend.whenGET("undefined/api/v1/file/list/testS3?prefix=").respond({
+          Key: 'tax/catsense.jpg',
+          LastModified: '2017-01-19T10:33:29.242Z',
+          Size: '8550',
+          StorageClass: 'STANDARD',
+          checked: true,
+          display: 'catsense.jpg',
+          icon: 'insert_drive_file',
+          isFolder :false
+        });
       $httpBackend.expectGET("undefined/api/v1/file/list/testS3?prefix=");
 
       const moveList = [];
