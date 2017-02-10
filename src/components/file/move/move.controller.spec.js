@@ -106,7 +106,7 @@ describe('MoveController unit test', function() {
       moveList.push(makeDeferred());
       moveList.push(makeDeferred());
 
-      //const moveMock = sinon.mock($move);
+      const moveMock = sinon.mock($move);
       controller.fileSelected = [];
 
       for ( let i = 0; i < 2; i++ ) {
