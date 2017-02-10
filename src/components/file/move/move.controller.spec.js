@@ -57,8 +57,8 @@ describe('MoveController unit test', function() {
       const controller = makeController();
       const moveMock = sinon.mock($move);
 
-      $httpBackend.whenGET("api/v1/file/list/testS3?prefix=").respond({ hello: 'World' });
-      $httpBackend.expectGET("api/v1/file/list/testS3?prefix=");
+      $httpBackend.whenGET("undefined/api/v1/file/list/testS3?prefix=").respond({ hello: 'World' });
+      $httpBackend.expectGET("undefined/api/v1/file/list/testS3?prefix=");
 
       controller.cancel();
       $rootScope.$digest();
@@ -71,8 +71,8 @@ describe('MoveController unit test', function() {
       const controller = makeController();
       const moveMock = sinon.mock($move);
 
-      $httpBackend.whenGET("api/v1/file/list/testS3?prefix=").respond({ hello: 'World' });
-      $httpBackend.expectGET("api/v1/file/list/testS3?prefix=");
+      $httpBackend.whenGET("undefined/api/v1/file/list/testS3?prefix=").respond({ hello: 'World' });
+      $httpBackend.expectGET("undefined/api/v1/file/list/testS3?prefix=");
 
       const moveList = [];
       moveList.push(makeDeferred());
