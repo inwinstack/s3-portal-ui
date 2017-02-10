@@ -97,16 +97,16 @@ describe('MoveController unit test', function() {
       const controller = makeController();
 
       const fileLists = makeDeferred();
-      const getFilesMock = sinon.mock($move);
+      const moveMock = sinon.mock($move);
 
-      getFilesMock.expects('getFiles').returns(fileLists.promise);
+      moveMock.expects('getFiles').returns(fileLists.promise);
       fileLists.resolve();
 
       const moveList = [];
       moveList.push(makeDeferred());
       moveList.push(makeDeferred());
 
-      const moveMock = sinon.mock($move);
+      //const moveMock = sinon.mock($move);
       controller.fileSelected = [];
 
       for ( let i = 0; i < 2; i++ ) {
