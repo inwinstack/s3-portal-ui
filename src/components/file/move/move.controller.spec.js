@@ -55,16 +55,6 @@ describe('MoveController unit test', function() {
       const controller = makeController();
       const fileLists = makeDeferred();
       const moveMock = sinon.mock($move);
-      const folder = {
-          Key: 'tax/',
-          LastModified: '2017-01-19T10:33:29.242Z',
-          Size: '0',
-          StorageClass: 'STANDARD',
-          checked: false,
-          display: 'tax',
-          icon: 'folder',
-          isFolder :true
-        };
 
       moveMock.expects('getFiles').returns(fileLists.promise);
       fileLists.resolve();
@@ -82,16 +72,6 @@ describe('MoveController unit test', function() {
 
       const fileLists = makeDeferred();
       const moveMock = sinon.mock($move);
-      const folder = {
-          Key: 'tax/',
-          LastModified: '2017-01-19T10:33:29.242Z',
-          Size: '0',
-          StorageClass: 'STANDARD',
-          checked: false,
-          display: 'tax',
-          icon: 'folder',
-          isFolder :true
-        };
 
       moveMock.expects('getFiles').returns(fileLists.promise);
       fileLists.resolve();
@@ -107,19 +87,9 @@ describe('MoveController unit test', function() {
       const controller = makeController();
 
       const fileLists = makeDeferred();
-      const moveMock = sinon.mock($move);
-      const folder = {
-          Key: 'tax/',
-          LastModified: '2017-01-19T10:33:29.242Z',
-          Size: '0',
-          StorageClass: 'STANDARD',
-          checked: false,
-          display: 'tax',
-          icon: 'folder',
-          isFolder :true
-        };
+      const getFilesMock = sinon.mock($move);
 
-      moveMock.expects('getFiles').returns(fileLists.promise);
+      getFilesMock.expects('getFiles').returns(fileLists.promise);
       fileLists.resolve();
 
       const moveList = [];
