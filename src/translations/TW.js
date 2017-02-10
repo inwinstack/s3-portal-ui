@@ -13,6 +13,7 @@ export default {
     CONFIRM: '確定',
     OR: '或',
     MOVE: '移動',
+    REPLICATE: '製作副本',
   },
   VALIDATION: {
     REQUIRED: '此欄位不得為空。',
@@ -72,6 +73,8 @@ export default {
     DELETE_FILE_FAILURE: '{{ name }} 刪除失敗，請再試一次！',
     DELETE_ACCOUNT_SUCCESS: '{{ name }} 删除成功!',
     DELETE_ACCOUNT_FAIL: '{{ name }} 刪除失敗，請再試一次!',
+    REPLICATE_SUCCESS: '{{ file }} 製作副本成功!',
+    REPLICATE_FAIL: '{{ file }} 製作副本失敗，請再試一次!',
     RESET_SUCCESS: '{{ email }} 更改密碼成功!',
     RESET_FAIL: '{{ email }} 更改密碼失敗，請再試一次',
     CANCEL_UPLOAD: '{{ name }} 的上傳已被取消',
