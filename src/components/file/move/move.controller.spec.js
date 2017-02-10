@@ -79,7 +79,23 @@ describe('MoveController unit test', function() {
   describe('when open move dialog', function() {
     it('should close move dialog', function() {
       const controller = makeController();
+
+      const fileLists = makeDeferred();
       const moveMock = sinon.mock($move);
+      const folder = {
+          Key: 'tax/',
+          LastModified: '2017-01-19T10:33:29.242Z',
+          Size: '0',
+          StorageClass: 'STANDARD',
+          checked: false,
+          display: 'tax',
+          icon: 'folder',
+          isFolder :true
+        };
+
+      moveMock.expects('getFiles').returns(fileLists.promise);
+      fileLists.resolve();
+
       controller.cancel();
       $rootScope.$digest();
 
@@ -89,6 +105,23 @@ describe('MoveController unit test', function() {
 
     it('click move button should trigger file transfer', function(done) {
       const controller = makeController();
+
+      const fileLists = makeDeferred();
+      const moveMock = sinon.mock($move);
+      const folder = {
+          Key: 'tax/',
+          LastModified: '2017-01-19T10:33:29.242Z',
+          Size: '0',
+          StorageClass: 'STANDARD',
+          checked: false,
+          display: 'tax',
+          icon: 'folder',
+          isFolder :true
+        };
+
+      moveMock.expects('getFiles').returns(fileLists.promise);
+      fileLists.resolve();
+
       const moveList = [];
       moveList.push(makeDeferred());
       moveList.push(makeDeferred());
