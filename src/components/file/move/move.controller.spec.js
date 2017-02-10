@@ -11,15 +11,17 @@ describe('MoveController unit test', function() {
   let $move;
   let $file;
   let $compile;
+  let $httpBackend;
 
   beforeEach(angular.mock.module('app'));
 
-  beforeEach(inject(($q, _$rootScope_, _$move_, _$file_, _$stateParams_,  _$compile_) => {
+  beforeEach(inject(($q, _$rootScope_, _$move_, _$file_, _$stateParams_,  _$compile_, _$httpBackend_) => {
     $rootScope = _$rootScope_;
     $move = _$move_;
     $file = _$file_;
     $stateParams = _$stateParams_;
     $compile = _$compile_;
+    $httpBackend = _$httpBackend_;
 
     makeTemplate = angular.element(moveTemplate);
 
@@ -53,12 +55,10 @@ describe('MoveController unit test', function() {
   describe('when open move dialog', function() {
     it('should close move dialog', function() {
       const controller = makeController();
-
-      const fileLists = makeDeferred();
       const moveMock = sinon.mock($move);
 
-      moveMock.expects('getFiles').returns(fileLists.promise);
-      fileLists.resolve();
+      $httpBackend.whenGET("api/v1/file/list/testS3?prefix=").respond({ hello: 'World' });
+      $httpBackend.expectGET("api/v1/file/list/testS3?prefix=");
 
       controller.cancel();
       $rootScope.$digest();
@@ -69,12 +69,10 @@ describe('MoveController unit test', function() {
 
     it('click move button should trigger file transfer', function(done) {
       const controller = makeController();
-
-      const fileLists = makeDeferred();
       const moveMock = sinon.mock($move);
 
-      moveMock.expects('getFiles').returns(fileLists.promise);
-      fileLists.resolve();
+      $httpBackend.whenGET("api/v1/file/list/testS3?prefix=").respond({ hello: 'World' });
+      $httpBackend.expectGET("api/v1/file/list/testS3?prefix=");
 
       const moveList = [];
       moveList.push(makeDeferred());
@@ -127,7 +125,6 @@ describe('MoveController unit test', function() {
   describe('when double click folder path', function() {
     it('should navigate to folder', function(){
       const controller = makeController();
-      // const fileLists = makeDeferred();
       const moveMock = sinon.mock($move);
       const folder = {
           Key: 'tax/',
@@ -139,9 +136,6 @@ describe('MoveController unit test', function() {
           icon: 'folder',
           isFolder :true
         };
-
-      // moveMock.expects('getFiles').returns(fileLists.promise);
-      // fileLists.resolve();
 
       controller.doubleClick(folder);
       expect(controller.paths).to.eq('tax/');
