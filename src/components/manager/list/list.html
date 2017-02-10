@@ -1,12 +1,11 @@
 <md-content layout-padding>
-    <md-input-container flex-gt-sm>
-      <label translate>MANAGER.SEARCH</label>
-      <input 
-        name="searchText" 
-        ng-model="list.searchText"
-        ng-model-options='{ debounce: 500 }'
-      />
-    </md-input-container>
+      <div class="md-toolbar-tools">
+        <md-input-container md-theme="input" flex>
+              <label>&nbsp;</label>
+              <md-icon>search</md-icon>
+              <input ng-model="list.searchText" placeholder="enter search">
+        </md-input-container>
+      </div>
   <div
     class="md-whiteframe-4dp"
     ng-if="list.data.length && ! list.requesting && ! list.error"

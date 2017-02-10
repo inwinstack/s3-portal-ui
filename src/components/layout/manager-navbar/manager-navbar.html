@@ -1,16 +1,18 @@
 <md-toolbar class="md-menu-toolbar">
   <div class="md-toolbar-tools">
     <md-button
-      class="md-raised"
+      class="md-raised md-primary" aria-label="create account"
       ng-click="managerNav.createAccountDialog($event)"
     >
+      <md-icon class="material-icons">add</md-icon>
       <span translate>MANAGER.CREATE_USER</span>
     </md-button>
     <md-button
-      class="md-raised"
+      class="md-raised" aria-label="delete account"
       ng-click="managerNav.delete()"
       ng-disabled="!managerNav.selectedOne"
     >
+      <md-icon class="material-icons">delete_forever</md-icon>
       <span translate>MANAGER.USER_DELETE</span>
     </md-button>
     <md-button

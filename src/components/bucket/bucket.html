@@ -6,13 +6,13 @@
     <table class="table table-cursor table-hover">
       <thead>
         <tr>
-          <th class="checkbox-width"></th>
+          <th class="checkbox-icon-width"></th>
           <th translate>UTILS.NAME</th>
         </tr>
       </thead>
     </table>
 
-    <md-list class="list" layout="column">
+    <md-list class="list file-list" layout="column">
       <md-list-item
         aria-label="Bucket list item"
         ng-class="{ checked: b.checked }"
@@ -25,6 +25,7 @@
           ng-checked="b.checked"
           ng-click="bucket.selectBucket(b.Name)"
         ></md-checkbox>
+        <md-icon>cloud</md-icon>
         <p class="break-word flex-grow">
           <span ng-bind="b.Name"></span>
         </p>
