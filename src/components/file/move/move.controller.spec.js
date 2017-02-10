@@ -127,7 +127,7 @@ describe('MoveController unit test', function() {
   describe('when double click folder path', function() {
     it('should navigate to folder', function(){
       const controller = makeController();
-      const fileLists = makeDeferred();
+      // const fileLists = makeDeferred();
       const moveMock = sinon.mock($move);
       const folder = {
           Key: 'tax/',
@@ -140,8 +140,8 @@ describe('MoveController unit test', function() {
           isFolder :true
         };
 
-      moveMock.expects('getFiles').returns(fileLists.promise);
-      fileLists.resolve();
+      // moveMock.expects('getFiles').returns(fileLists.promise);
+      // fileLists.resolve();
 
       controller.doubleClick(folder);
       expect(controller.paths).to.eq('tax/');
