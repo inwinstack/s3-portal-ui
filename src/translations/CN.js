@@ -13,6 +13,7 @@ export default {
     CONFIRM: '确定',
     OR: '或',
     MOVE: '移动',
+    REPLICATE: '製作副本',
   },
   VALIDATION: {
     REQUIRED: '此栏位不得为空。',
@@ -70,6 +71,8 @@ export default {
     UPLOAD_FILE_FAILURE: '档案 {{ name }} 上传失败，请再试一次!',
     DELETE_FILE_SUCCESS: '{{ name }} 删除成功！',
     DELETE_FILE_FAILURE: '{{ name }} 删除失败,请再试一次！',
+    REPLICATE_SUCCESS: '{{ file }} 製作副本成功!',
+    REPLICATE_FAIL: '{{ file }} 製作副本失败，请再试一次!',
     DELETE_ACCOUNT_SUCCESS: '{{ name }} 删除成功!',
     DELETE_ACCOUNT_FAIL: '{{ name }} 删除失败，请再试一次!',
     RESET_SUCCESS: '{{ email }} 更改密码成功!',

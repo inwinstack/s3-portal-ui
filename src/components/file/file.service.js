@@ -190,4 +190,45 @@ export default class FileService {
         this.getFiles();
       });
   }
+
+  replicateDialog($event) {
+    const sources = [
+      'FILE.REPLICATE_TITLE',
+      'FILE.REPLICATE_ARIA_LABEL',
+      'UTILS.CONFIRM',
+      'UTILS.CANCEL',
+    ];
+
+    this.$translate(sources)
+      .then(translations => this.$mdDialog.confirm()
+        .title(translations[sources[0]])
+        .ariaLabel(translations[sources[1]])
+        .targetEvent($event)
+        .ok(translations[sources[2]])
+        .cancel(translations[sources[3]]))
+      .then(confirm => this.$mdDialog.show(confirm)
+        .then(() => this.replicate())
+      );
+  }
+
+  replicate()
+  {
+    const selected = this.state.lists.data.filter(({ checked }) => checked);
+    const { bucket } = this.state.paths;
+    
+    this.$fetch.post('/v1/file/replicate', {bucket: bucket, file: selected[0].Key})
+      .then(() => this.$translate("TOAST.REPLICATE_SUCCESS")
+        .then(message => {
+          this.$toast.show(message);
+          this.getFiles();
+        }))
+      .catch(() => this.$translate("TOAST.REPLICATE_FAIL")
+        .then(message => {
+          this.$toast.show(message);
+        }))
+      .finally(() => {
+        this.$mdDialog.cancel();
+      })
+
+  }
 }

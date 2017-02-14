@@ -68,6 +68,10 @@ export default class ActionNavbarController {
     this.$move.createDialog($event);
   }
 
+  replicate($event) {
+    this.$file.replicateDialog($event);
+  }
+
   closeSidePanels() {
     this.$layout.closeSidePanels();
   }

@@ -96,8 +96,17 @@
           <md-button
             aria-label="Move"
             ng-click="actionNav.move($event)"
-            ng-disabled=>
+            ng-disabled="!actionNav.fileSelected">
             <span ng-show="actionNav.isFile()" translate>UTILS.MOVE</span>
+          </md-button>
+        </md-menu-item>
+
+        <md-menu-item ng-if="actionNav.isFile()">
+          <md-button
+            aria-label="Replicate"
+            ng-click="actionNav.replicate($event)"
+            ng-disabled="! (actionNav.fileSelectedOne && actionNav.folderSelected)">
+            <span ng-show="actionNav.isFile()" translate>UTILS.REPLICATE</span>
           </md-button>
         </md-menu-item>
 

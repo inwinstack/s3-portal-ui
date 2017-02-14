@@ -36,14 +36,13 @@ export default class MoveController {
     this.paths = this.paths + `${paths}/`;
   }
 
-  getFullPaths() {
-    return this.paths.split('/');
-  }
-
   move() {
     for (const file in this.fileSelected) {
-      this.$move.moveFile(this.bucket, this.fileSelected[file].Key, this.bucket, this.paths, this.fileSelected[file].display)
-        .then(() => (this.form.$submitted = false));
+      if (this.fileSelected[file].isFolder) {
+        this.$move.moveFolder(this.bucket, this.fileSelected[file].Key, this.bucket, this.paths, this.fileSelected[file].display);
+      } else {
+        this.$move.moveFile(this.bucket, this.fileSelected[file].Key, this.bucket, this.paths, this.fileSelected[file].display)
+      }
     }
   }
 }
