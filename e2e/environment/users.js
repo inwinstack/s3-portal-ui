@@ -55,6 +55,16 @@ const users = {
     'administrator': {
       'email' : 'root@inwinstack.com',
       'password' : '123456'
+    },
+    'abImg': {
+      'name':'ab.png',
+      'path': '/home/titan/img/'
+      // 'path': '/home/protractor/img/'
+      // 'path': '/home/ubuntu/img/'
+    },
+    'abcImg': {
+      'name':'abc.png',
+      'path': '/home/titan/img/'
     }
   },
   'chrome-win7': {

@@ -12,6 +12,12 @@ function elements () {
   this.actionNavbarPropertiesBtn = element.all(by.css('[ng-click="actionNav.openProperties()"]'));
   this.actionNavbarTransfers = element(by.css('[ng-click="actionNav.openTransfers()"]'));
   this.allBucketBtn = element.all(by.repeater('path in bc.paths'));
+
+  this.moveFileBtn = element(by.css('[ng-click="actionNav.move($event)"]'));
+  this.toastOk = element(by.css('[ng-if="toast.action"]'));
+  this.toastMessage = element(by.css('[class="md-toast-text ng-binding"]'));
+  this.replicateFileBtn = element(by.css('[ng-click="actionNav.replicate($event)"]'));
+  this.createFolder = element.all(by.css('[ng-click="actionNav.createFolder($event)"]'));
 }
 
 module.exports = elements;
