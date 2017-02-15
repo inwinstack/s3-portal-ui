@@ -1,70 +1,12 @@
 <md-content layout-padding>
-      <div class="md-toolbar-tools">
-        <md-input-container md-theme="input" flex>
-              <label>&nbsp;</label>
-              <md-icon>search</md-icon>
-              <input ng-model="list.searchText" placeholder="enter search">
-        </md-input-container>
-      </div>
-  <div
-    class="md-whiteframe-4dp"
-    ng-if="list.data.length && ! list.requesting && ! list.error"
-  >
-    <table class="table table-cursor table-hover">
-      <thead>
-        <tr>
-          <th class="manager-checkbox-icon-width"></th>
-          <th translate>MANAGER.USER_ACCOUNT</th>
-          <th class="ratio-width" translate>User Quota</th>
-          <th class="size-width" translate>MANAGER.USER_ROLE</th>
-          <th class="hide show-gt-sm time-title-width" translate>MANAGER.USER_REGISTER_TIME</th>
-        </tr>
-      </thead>
-    </table>
-    <md-list class="list">
-      <md-list-item
-        aria-label="Click a file"
-        ng-repeat="f in list.data | filter:list.searchText"
-        ng-class="{ checked: f.checked }"
-        ng-click="list.clickFile(f)"
-        ng-Dblclick="list.doubleClick(f)"
-      >
-        <md-checkbox
-          aria-label="Get check"
-          ng-checked="f.checked"
-          ng-click="list.selectAccount(f)"
-        ></md-checkbox>
-          <p class="break-word flex-grow">
-            <span ng-bind="f.name"></span>
-          </p>
-          <p class="flex-none">
-            <span
-              class="ratio-width inline-block"
-              >(6GB / 10GB) 60%
-              <md-button
-                aria-label="Quota Setting" class="md-icon-button"
-                ng-click="list.createQuotaSettingDiag($event)"
-              >
-                <md-icon>settings</md-icon>
-              </md-button>
-            </span>
-          </p>
-          <p class="flex-none">
-            <span
-              class="size-width inline-block"
-              ng-bind="f.role"
-            ></span>
-          </p>
-          <p class="flex-none" hide show-gt-sm>
-            <span
-              class="time-width inline-block"
-              ng-bind="(f.created_at | date: 'yyyy-MM-dd')"
-            ></span>
-          </p>
-      </md-list-item>
-    </md-list>
+  <div class="md-toolbar-tools">
+    <md-input-container md-theme="input" flex>
+          <label>&nbsp;</label>
+          <md-icon>search</md-icon>
+          <input ng-model="list.searchText" placeholder="enter search">
+    </md-input-container>
   </div>
-
+  
   <div
     class="progress-state"
     layout="column" layout-align="center center"
@@ -75,32 +17,49 @@
   </div>
 
   <div
-    class="empty-state"
-    layout="column" layout-align="center center"
-    ng-if="! list.data.length && ! list.requesting && ! list.error"
+    class="md-whiteframe-4dp"
+    ng-if="list.data.length && ! list.requesting && ! list.error"
   >
-    <div class="md-headline" translate="FILE.EMPTY_{{ list.level }}"></div>
-    <div class="md-subhead" translate>FILE.DO_ACTIONS</div>
+        <md-table-container>
+          <table class="table table-cursor table-hover" md-table md-row-select="list.options.rowSelection" multiple="{{list.options.multiSelect}}" ng-model="list.selected" md-progress="promise">
+            <thead ng-if="!list.options.decapitate" md-head md-order="list.query.order" md-on-reorder="logOrder">
+              <tr md-row>
+                <th class="manager-checkbox-icon-width"></th>
+                <th md-column md-order-by="name"><span translate>MANAGER.USER_ACCOUNT</span></th>
+                <th md-column md-order-by="name"><span class="ratio-width" translate>MANAGER.USER_QUOTA</span></th>
+                <th md-column md-numeric md-order-by="role" md-desc><span class="size-width" translate>MANAGER.USER_ROLE</span></th>
+                <th md-column md-numeric md-order-by="created_at" hide show-gt-sm show-gt-lg><span class="time-title-width" translate>MANAGER.USER_REGISTER_TIME</span></th>
+              </tr>
+            </thead>
+            <tbody md-body>
+              <tr md-row md-select="list.data" md-on-select="list.logItem" md-auto-select="list.options.autoSelect" ng-repeat="user in list.data | filter: list.searchText | orderBy: list.query.order | limitTo: list.query.limit : (list.query.page -1) * list.query.limit">
+                <td md-cell>
+                  <md-checkbox
+                    aria-label="Get check"
+                    ng-checked="user.checked"
+                    ng-click="list.selectAccount(user)"
+                  ></md-checkbox>
+                </td>
+                <td md-cell>{{user.name}}</td>
+                <td md-cell class="ratio-width">(6GB / 10GB) 60%
+                  <md-button
+                    aria-label="Quota Setting" class="md-icon-button"
+                    ng-click="list.createQuotaSettingDiag($event)"
+                  >
+                  <md-icon>settings</md-icon>
+                  </md-button>
+                </td>
+                <td md-cell show-gt-md>{{user.role}}</td>
+                <td md-cell hide show-gt-sm show-gt-lg><span
+                    class="time-width inline-block"
+                    ng-bind="(user.created_at | date: 'yyyy-MM-dd')"
+                ></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </md-table-container>
 
-    <div layout="row" layout-align="center center">
-      <md-button
-        class="md-raised md-primary" aria-label="Upload File"
-        ng-click="list.upload()"
-      >
-        <md-icon>file_upload</md-icon>
-        <span translate>FILE.UPLOAD</span>
-      </md-button>
-
-      <span translate>UTILS.OR</span>
-
-      <md-button
-        class="md-raised" aria-label="Create Folder"
-        ng-click="list.createFolder()"
-      >
-        <md-icon class="material-icons">create_new_folder</md-icon>
-        <span translate>FILE.CREATE_FOLDER</span>
-      </md-button>
-    </div>
+        <md-table-pagination md-limit="list.query.limit" md-limit-options="limitOptions" md-page="list.query.page" md-total="{{list.data.length}}" md-page-select="list.options.pageSelect" md-boundary-links="list.options.boundaryLinks"></md-table-pagination>
   </div>
 
   <div

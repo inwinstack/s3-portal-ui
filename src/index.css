@@ -7,3 +7,4 @@
 @import './styles/table.css';
 @import './styles/list.css';
 @import './styles/nv.d3.min.css';
+@import '../node_modules/angular-material-data-table/dist/md-data-table.min.css';
