@@ -22,6 +22,11 @@ User.prototype.setUser = function(user){
   this.folderName = users[user]['folderName'];
   this.adminEmail = users[user]['administrator']['email'];
   this.adminPassword = users[user]['administrator']['password'];
+
+  this.abImgName = users[user]['abImg']['name'];
+  this.abImgPath = users[user]['abImg']['path'];
+  this.abcImgName = users[user]['abcImg']['name'];
+  this.abcImgPath = users[user]['abcImg']['path'];
 };
 
 module.exports = User;
