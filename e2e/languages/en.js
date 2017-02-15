@@ -148,6 +148,14 @@ const languages = {
   'MANAGER_DELETE_TYPE_NAME': 'Type the email of the account to confirm deletion:',
   'MANAGER_DELETE_ERROR_MESSAGE': 'Type the exact email of the account you are trying to delete.',
   'MANAGER_DELETE_CONFIRM': /^Deleting this account and its bucket \( including older versions if applicable\) cannot be undone\. Are you sure you want to delete .*?$/,
+  //MOVE
+  'UTILS_MOVE': 'Move',
+  'MOVE_TITLE': 'Move',
+  'MOVE_DESCRIPTION': 'Choose select files or folders where you want to move',
+  'MOVE_SELECTED_ITEMS': 'Selected Items',
+  'MOVE_FOIDER': 'My Folders',
+  'TOAST_MOVE_SUCCESSFULLY': 'Your File ab.png Move Success',
+  'TOAST_MOVE_FAILURE' : 'Your File ab.png Move Failure, Please Try Again!',
   }
 
 module.exports = Translate;

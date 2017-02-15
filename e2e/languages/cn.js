@@ -135,6 +135,14 @@ const languages = {
   'MANAGER_DELETE_TYPE_NAME': '请输入 Email 以确认删除。',
   'MANAGER_DELETE_ERROR_MESSAGE': '请输入欲删除的完整 Email。',
   'MANAGER_DELETE_CONFIRM': /^删除此 Account 及此 Account 内的所有 Bucket （若有支持旧版本则包含旧版本）会无法复原。 你确认要删除 .* 吗？$/,
+  //MOVE
+  'UTILS_MOVE': '移动',
+  'MOVE_TITLE': '移动',
+  'MOVE_DESCRIPTION': '选择移动的目的地资料夹',
+  'MOVE_SELECTED_ITEMS': 'Selected Items',
+  'MOVE_FOIDER': 'My Folders',
+  'TOAST_MOVE_SUCCESSFULLY': '档案 ab.png 移动档案成功',
+  'TOAST_MOVE_FAILURE' : '档案 ab.png 移动档案失败，请再试一次!',
 }
 
 module.exports = Translate;
