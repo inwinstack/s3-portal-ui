@@ -133,6 +133,14 @@ const languages = {
   'MANAGER_DELETE_TYPE_NAME': '請輸入 Email 以確認刪除。',
   'MANAGER_DELETE_ERROR_MESSAGE': '請輸入欲刪除的完整 Email。',
   'MANAGER_DELETE_CONFIRM': /^刪除此 Account 及此 Account 內的所有 Bucket （若有支援舊版本則包含舊版本）會無法復原。 你確認要刪除.*嗎？$/,
+  //MOVE
+  'UTILS_MOVE': '移動',
+  'MOVE_TITLE': '移動',
+  'MOVE_DESCRIPTION': '選擇移動的目的地資料夾',
+  'MOVE_SELECTED_ITEMS': 'Selected Items',
+  'MOVE_FOIDER': 'My Folders',
+  'TOAST_MOVE_SUCCESSFULLY': '檔案 ab.png 移動檔案成功',
+  'TOAST_MOVE_FAILURE' : '檔案 ab.png 移動檔案失敗，請再試一次!',
 
   // // AUTH
   // 'AUTH_LOGIN_TO_YOUR_ACCOUNT': '登入你的帳號',
