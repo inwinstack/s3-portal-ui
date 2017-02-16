@@ -58,13 +58,11 @@ const users = {
     },
     'abImg': {
       'name':'ab.png',
-      'path': '/home/titan/img/'
-      // 'path': '/home/protractor/img/'
-      // 'path': '/home/ubuntu/img/'
+      'path': '/home/ubuntu/img/'
     },
     'abcImg': {
       'name':'abc.png',
-      'path': '/home/titan/img/'
+      'path': '/home/ubuntu/img/'
     }
   },
   'chrome-win7': {
