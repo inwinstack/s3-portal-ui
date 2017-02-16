@@ -146,6 +146,7 @@ export default {
     MOVE_CONTENT: '選擇移動的目的地資料夾',
   },
   MANAGER: {
+    USER_QUOTA: '使用者配額',
     USER_LIST: '使用者列表',
     RESET_USER: '重新設定密碼',
     SEARCH: '搜尋',

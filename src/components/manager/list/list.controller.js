@@ -24,4 +24,8 @@ export default class ManagerListController {
   createQuotaSettingDiag($event) {
     this.$manager.createQuotaSettingDiag($event);
   }
+
+  refresh() {
+    this.$manager.getAccounts();
+  }
 }
