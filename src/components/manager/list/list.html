@@ -21,18 +21,19 @@
     ng-if="list.data.length && ! list.requesting && ! list.error"
   >
         <md-table-container>
-          <table class="table table-cursor table-hover" md-table md-row-select="list.options.rowSelection" multiple="{{list.options.multiSelect}}" ng-model="list.selected" md-progress="promise">
+          <table class="table table-cursor table-hover" md-table md-row-select="list.options.rowSelection" 
+                 multiple="{{list.options.multiSelect}}" ng-model="list.selected" md-progress="promise">
             <thead ng-if="!list.options.decapitate" md-head md-order="list.query.order" md-on-reorder="logOrder">
               <tr md-row>
                 <th class="manager-checkbox-icon-width"></th>
                 <th md-column md-order-by="name"><span translate>MANAGER.USER_ACCOUNT</span></th>
-                <th md-column md-order-by="name"><span class="ratio-width" translate>MANAGER.USER_QUOTA</span></th>
-                <th md-column md-numeric md-order-by="role" md-desc><span class="size-width" translate>MANAGER.USER_ROLE</span></th>
+                <th md-column md-numeric md-order-by="name"><span class="ratio-width" translate>MANAGER.USER_QUOTA</span></th>
+                <th md-column md-order-by="role" md-desc><span class="size-width" translate>MANAGER.USER_ROLE</span></th>
                 <th md-column md-numeric md-order-by="created_at" hide show-gt-sm show-gt-lg><span class="time-title-width" translate>MANAGER.USER_REGISTER_TIME</span></th>
               </tr>
             </thead>
             <tbody md-body>
-              <tr md-row md-select="list.data" md-on-select="list.logItem" md-auto-select="list.options.autoSelect" ng-repeat="user in list.data | filter: list.searchText | orderBy: list.query.order | limitTo: list.query.limit : (list.query.page -1) * list.query.limit">
+              <tr md-row ng-repeat="user in list.data | filter: list.searchText | orderBy: list.query.order | limitTo: list.query.limit : (list.query.page -1) * list.query.limit">
                 <td md-cell>
                   <md-checkbox
                     aria-label="Get check"
@@ -59,7 +60,8 @@
           </table>
         </md-table-container>
 
-        <md-table-pagination md-limit="list.query.limit" md-limit-options="limitOptions" md-page="list.query.page" md-total="{{list.data.length}}" md-page-select="list.options.pageSelect" md-boundary-links="list.options.boundaryLinks"></md-table-pagination>
+        <md-table-pagination md-limit="list.query.limit" md-limit-options="list.limitOptions" md-page="list.query.page" md-total="{{list.data.length}}" 
+         md-page-select="list.options.pageSelect" md-boundary-links="list.options.boundaryLinks"></md-table-pagination>
   </div>
 
   <div
