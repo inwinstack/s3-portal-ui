@@ -32,8 +32,8 @@
         <md-menu-item ng-if="actionNav.isFile()">
           <md-button
             aria-label="Open File"
-            ng-click="actionNav.open()"
-            ng-disabled="@A.15"
+            ng-click="actionNav.open(list.fileSelectedProperty)"
+            ng-disabled="!actionNav.fileSelectedOne"
           >
             <span translate>UTILS.OPEN</span>
           </md-button>

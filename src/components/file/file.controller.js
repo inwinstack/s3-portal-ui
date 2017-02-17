@@ -33,12 +33,8 @@ export default class FileController {
     this.$file.state.lists.propertyCheck = true;
   }
 
-  doubleClick({ isFolder, display }) {
-    if (isFolder) {
-      const currentPath = this.$file.getFullPaths();
-      const path = `/bucket/${currentPath}${display}`;
-      this.$location.path(path);
-    }
+  doubleClick(file) {
+    this.$file.openFile(file);
   }
 
   selectFile(file) {
