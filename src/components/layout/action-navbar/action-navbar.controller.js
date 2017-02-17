@@ -22,6 +22,7 @@ export default class ActionNavbarController {
         fileSelectedOne: newVal.data.filter(({ checked }) => checked).length == 1,
         folderSelected: this.judgeFolder(newVal.data.filter(({ checked }) => checked)),
         downloadButton: ! newVal.downloadName,
+        propertyCheck: !!newVal.propertyCheck ? true : false,
       })
     , true);
 
