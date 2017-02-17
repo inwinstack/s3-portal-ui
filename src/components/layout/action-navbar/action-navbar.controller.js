@@ -1,8 +1,8 @@
 export default class ActionNavbarController {
   /** @ngInject */
-  constructor($scope, $bucket, $nav, $file, $upload, $layout, $folder, $rename, $move) {
+  constructor($scope, $bucket, $nav, $file, $upload, $layout, $location, $folder, $rename, $move) {
     Object.assign(this, {
-      $bucket, $file, $upload, $layout, $folder, $rename, $move
+      $bucket, $file, $upload, $layout, $location, $folder, $rename, $move
     });
 
     $scope.$watch(
@@ -18,6 +18,7 @@ export default class ActionNavbarController {
     $scope.$watch(
       () => $file.state.lists,
       newVal => Object.assign(this, {
+        fileSelectedProperty : newVal.data.filter((data) => data.checked),
         fileSelected: !! newVal.data.filter(({ checked }) => checked).length,
         fileSelectedOne: newVal.data.filter(({ checked }) => checked).length == 1,
         folderSelected: this.judgeFolder(newVal.data.filter(({ checked }) => checked)),
@@ -46,7 +47,7 @@ export default class ActionNavbarController {
   }
 
   open() {
-    //
+    this.$file.openFile(this.fileSelectedProperty[0]);
   }
 
   download() {

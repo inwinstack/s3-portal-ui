@@ -3,9 +3,9 @@ import { sortFiles } from '../../utils/sort';
 
 export default class FileService {
   /** @ngInject */
-  constructor($mdDialog, $fetch, $bucket, $toast, $injector, Config, $http, $translate) {
+  constructor($mdDialog, $fetch, $bucket, $toast, $location, $injector, Config, $http, $translate) {
     Object.assign(this, {
-      $mdDialog, $fetch, $bucket, $toast, $injector, Config, $http, $translate,
+      $mdDialog, $fetch, $bucket, $toast, $injector, $location, Config, $http, $translate,
     });
 
     this.initState();
@@ -85,6 +85,14 @@ export default class FileService {
         icon: this.getIcon(file.Key),
         checked: false,
       }));
+  }
+
+  openFile(file) {
+      if (file.isFolder) {
+      const currentPath = this.getFullPaths();
+      const path = `/bucket/${currentPath}${file.display}`;
+      this.$location.path(path);
+    }
   }
 
   selectFile(name) {
