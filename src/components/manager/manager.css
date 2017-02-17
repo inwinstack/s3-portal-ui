@@ -30,3 +30,16 @@
 .time-width {
   width: 225px;
 }
+
+table.md-table td.md-cell {
+  font-size: 16px;
+}
+
+table.md-table th.md-column {
+  color: #999;
+  font-size: 15px;
+}
+
+.md-table-pagination{
+  font-size: 14px;
+}
