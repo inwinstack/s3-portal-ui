@@ -33,12 +33,7 @@
               </tr>
             </thead>
             <tbody md-body>
-<<<<<<< Updated upstream
-              <tr md-row md-select="list.data" md-on-select="list.logItem" md-auto-select="list.options.autoSelect" 
-               ng-repeat="user in list.data | filter: list.searchText | orderBy: list.query.order | limitTo: list.query.limit : (list.query.page -1) * list.query.limit">
-=======
               <tr md-row ng-repeat="user in list.data | filter: list.searchText | orderBy: list.query.order | limitTo: list.query.limit : (list.query.page -1) * list.query.limit">
->>>>>>> Stashed changes
                 <td md-cell>
                   <md-checkbox
                     aria-label="Get check"
@@ -65,13 +60,8 @@
           </table>
         </md-table-container>
 
-<<<<<<< Updated upstream
-        <md-table-pagination md-limit="list.query.limit" md-limit-options="limitOptions" md-page="list.query.page" 
-        md-total="{{list.data.length}}" md-page-select="list.options.pageSelect" md-boundary-links="list.options.boundaryLinks">
-        </md-table-pagination>
-=======
-        <md-table-pagination md-limit="list.query.limit" md-limit-options="list.limitOptions" md-page="list.query.page" md-total="{{list.data.length}}" md-page-select="list.options.pageSelect" md-boundary-links="list.options.boundaryLinks"></md-table-pagination>
->>>>>>> Stashed changes
+        <md-table-pagination md-limit="list.query.limit" md-limit-options="list.limitOptions" md-page="list.query.page" md-total="{{list.data.length}}" 
+         md-page-select="list.options.pageSelect" md-boundary-links="list.options.boundaryLinks"></md-table-pagination>
   </div>
 
   <div
