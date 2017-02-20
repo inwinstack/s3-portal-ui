@@ -32,8 +32,8 @@
         <md-menu-item ng-if="actionNav.isFile()">
           <md-button
             aria-label="Open File"
-            ng-click="actionNav.open()"
-            ng-disabled="@A.15"
+            ng-click="actionNav.open(list.fileSelectedProperty)"
+            ng-disabled="!actionNav.fileSelectedOne"
           >
             <span translate>UTILS.OPEN</span>
           </md-button>
@@ -126,7 +126,8 @@
         <md-menu-item>
           <md-button
             aria-label="Properties"
-            ng-click="actionNav.openProperties()" ng-disabled="@A.18"
+            ng-click="actionNav.openProperties()"
+            ng-disabled="!actionNav.fileSelected"
           >
             <span translate>ACTION_NAVBAR.PROPERTIES</span>
           </md-button>
@@ -146,7 +147,7 @@
 
     <md-button
       class="md-raised" aria-label="Properties"
-      ng-click="actionNav.openProperties()" ng-disabled="actionNav.properties"
+      ng-click="actionNav.openProperties()" ng-disabled="!actionNav.propertyCheck"
     >
       <md-icon class="material-icons icon-default">info_outline</md-icon>
       <span translate>ACTION_NAVBAR.PROPERTIES</span>

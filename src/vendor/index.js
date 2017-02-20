@@ -7,6 +7,7 @@ import fileUpload from 'ng-file-upload';
 import satellizer from 'satellizer';
 import ngCookies from 'angular-cookies';
 import nvd3 from 'angular-nvd3';
+import mdTable from 'angular-material-data-table';
 
 const Vendor = module('app.vendor', [
   router,
@@ -17,6 +18,7 @@ const Vendor = module('app.vendor', [
   fileUpload,
   ngCookies,
   nvd3,
+  mdTable,
 ]);
 
 export default Vendor.name;

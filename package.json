@@ -41,6 +41,7 @@
     "angular-aria": "^1.5.0",
     "angular-cookies": "^1.5.7",
     "angular-material": "~1.1.0",
+    "angular-material-data-table": "^0.10.10",
     "angular-messages": "^1.5.0",
     "angular-nvd3": "^1.0.9",
     "angular-translate": "^2.9.2",
