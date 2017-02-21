@@ -27,7 +27,7 @@ export default class ManagerListController {
 
     this.query = {
       order: 'name',
-      limit: 5,
+      limit: 10,
       page: 1
     };
 
@@ -44,5 +44,9 @@ export default class ManagerListController {
 
   createQuotaSettingDiag($event) {
     this.$manager.createQuotaSettingDiag($event);
+  }
+
+  refresh() {
+    this.$manager.getAccounts();
   }
 }

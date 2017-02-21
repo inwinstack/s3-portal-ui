@@ -22,7 +22,8 @@ export default class ManagerService {
         data: [],
         requesting: false,
         error: false,
-      }
+      },
+      index: 1,
     };
   }
 
@@ -30,14 +31,15 @@ export default class ManagerService {
     this.state.lists.requesting = true;
     this.state.lists.data = [];
 
-    this.$fetch.get('/v1/admin/list')
+    this.$fetch.get('/v1/admin/list/' + this.state.index)
       .then(({ data }) => {
         this.state.lists.error = false;
-        const users = data.Users.map(account => ({
+        console.log(data);
+        const users = data.users.map(account => ({
           ...account,
           checked: false,
         }));
-        this.state.lists.data = users.sort(sortByEmail);
+        this.state.lists.data = this.formatUser(users.sort(sortByEmail));
       })
       .catch(() => {
         this.state.lists.error = true;
@@ -46,6 +48,18 @@ export default class ManagerService {
         this.state.lists.requesting = false;
       });
 
+  }
+
+  setListIndex(index) {
+    this.state.index = index;
+    this.getAccounts();
+  }
+
+  formatUser(user) {
+    return user.map(user => ({
+      ...user,
+      quota: isNaN(user.used_size_kb/user.total_size_kb) ? 0 : user.used_size_kb/user.total_size_kb,
+    }))
   }
 
 
