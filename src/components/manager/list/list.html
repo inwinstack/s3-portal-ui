@@ -61,7 +61,8 @@
             </tbody>
           </table>
         </md-table-container>
-        <md-table-pagination md-limit="list.query.limit" md-limit-options="limitOptions" md-page="list.query.page" md-total="{{list.data.total_page}}" md-page-select="list.options.pageSelect" md-boundary-links="list.options.boundaryLinks"></md-table-pagination>
+        <md-table-pagination md-limit="list.query.limit" md-limit-options="limitOptions" md-page="list.query.page" md-total="31" md-page-select="list.options.pageSelect" md-boundary-links="list.options.boundaryLinks" md-on-paginate="list.moreUser()"></md-table-pagination>
+        <md-button ng-click="list.test()">123</md-button>
   </div>
 
   <div
