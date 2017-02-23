@@ -142,6 +142,12 @@ const languages = {
   'TOAST_MOVE_SUCCESSFULLY': '檔案 ab.png 移動檔案成功',
   'TOAST_MOVE_FAILURE' : '檔案 ab.png 移動檔案失敗，請再試一次!',
   'TOAST_MOVE_FOLDER_SUCCESSFULLY': '檔案移動檔案成功',
+  //MAKECOPY
+  'UTILS_MOVE': '製作副本',
+  'REPLICATE_DESCRIPTION': '您要將所選項目製作副本嗎？',
+  'REPLICATE_CANCEL': '取消',
+  'REPLICATE_CONFIRM': '確定',
+  'TOAST_REPLICATE_SUCCESSFULLY': '製作副本成功!',
 
   // // AUTH
   // 'AUTH_LOGIN_TO_YOUR_ACCOUNT': '登入你的帳號',

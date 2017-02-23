@@ -27,7 +27,10 @@ exports.config = {
    './folder/create.js',
    './folder/translation.js',
    './file/moveFile.js',
+   './file/moveFolder.js',
    './file/moveLanguages.js',
+   './file/makeCopy.js',
+   './file/makeCopyLanguage.js',
   ],
   multiCapabilities: [
   {
