@@ -141,6 +141,7 @@ const languages = {
   'MOVE_FOIDER': 'My Folders',
   'TOAST_MOVE_SUCCESSFULLY': '檔案 ab.png 移動檔案成功',
   'TOAST_MOVE_FAILURE' : '檔案 ab.png 移動檔案失敗，請再試一次!',
+  'TOAST_MOVE_FOLDER_SUCCESSFULLY': '檔案移動檔案成功',
 
   // // AUTH
   // 'AUTH_LOGIN_TO_YOUR_ACCOUNT': '登入你的帳號',

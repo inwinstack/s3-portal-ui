@@ -143,6 +143,7 @@ const languages = {
   'MOVE_FOIDER': 'My Folders',
   'TOAST_MOVE_SUCCESSFULLY': '档案 ab.png 移动档案成功',
   'TOAST_MOVE_FAILURE' : '档案 ab.png 移动档案失败，请再试一次!',
+  'TOAST_MOVE_FOLDER_SUCCESSFULLY': '档案移动档案成功',
 }
 
 module.exports = Translate;
