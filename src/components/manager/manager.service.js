@@ -39,7 +39,7 @@ export default class ManagerService {
           checked: false,
         }));
         this.state.lists.data = uniqBy([...this.formatUser(users.sort(sortByEmail)), ...this.state.lists.data], 'id');
-        this.state.lists.data.total_page = data.total_page;
+        this.state.lists.data.count = data.count;
       })
       .catch(() => {
         this.state.lists.error = true;
