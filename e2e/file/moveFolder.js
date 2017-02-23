@@ -28,23 +28,6 @@ describe('File Move',() => {
     browser.driver.manage().window().maximize();
   });
 
-//signIn
-  describe('When user signIn and click user list:', () => {
-    beforeEach(() => {
-      sie.emailInput.sendKeys('Titan@imac.com');
-      sie.passwordInput.sendKeys('123456');
-      sie.signinBtn.click();
-    });
-
-    it('Should cheak into the user list page', () => {
-      browser.ignoreSynchronization = true;
-      browser.sleep(1000);
-      expect(nae.toastMessage.isDisplayed()).toBe(true);
-      expect(browser.getCurrentUrl()).toBe(ps.bucketListPage);
-      browser.ignoreSynchronization = false;
-    });
-  });
-
   //create folder
   describe('When user create folder', () => {
     beforeEach(() => {
