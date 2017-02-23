@@ -156,6 +156,7 @@ const languages = {
   'MOVE_FOIDER': 'My Folders',
   'TOAST_MOVE_SUCCESSFULLY': 'Your File ab.png Move Success',
   'TOAST_MOVE_FAILURE' : 'Your File ab.png Move Failure, Please Try Again!',
+  'TOAST_MOVE_FOLDER_SUCCESSFULLY': 'Your File Move Success',
   }
 
 module.exports = Translate;
