@@ -5,8 +5,7 @@
           <md-icon>search</md-icon>
           <input ng-model="list.searchText" placeholder="enter search">
     </md-input-container>
-  </div>
-  
+  </div>  
   <div
     class="progress-state"
     layout="column" layout-align="center center"
@@ -27,8 +26,8 @@
               <tr md-row>
                 <th class="manager-checkbox-icon-width"></th>
                 <th md-column md-order-by="name"><span translate>MANAGER.USER_ACCOUNT</span></th>
-                <th md-column md-numeric><span class="ratio-width" translate>MANAGER.USER_QUOTA</span></th>
-                <th md-column md-order-by="role" md-desc><span class="size-width" translate>MANAGER.USER_ROLE</span></th>
+                <th md-column md-order-by="quota"><span class="ratio-width" translate>MANAGER.USER_QUOTA</span></th>
+                <th md-column md-numeric md-order-by="role" md-desc><span class="size-width" translate>MANAGER.USER_ROLE</span></th>
                 <th md-column md-numeric md-order-by="created_at" hide show-gt-sm show-gt-lg><span class="time-title-width" translate>MANAGER.USER_REGISTER_TIME</span></th>
               </tr>
             </thead>
@@ -42,13 +41,16 @@
                   ></md-checkbox>
                 </td>
                 <td md-cell>{{user.name}}</td>
-                <td md-cell class="ratio-width">(6GB / 10GB) 60%
-                  <md-button
-                    aria-label="Quota Setting" class="md-icon-button"
-                    ng-click="list.createQuotaSettingDiag($event)"
-                  >
-                  <md-icon>settings</md-icon>
-                  </md-button>
+                <td md-cell class="ratio-width">
+                  <span>
+                    ({{ user.used_size_kb * 1024 | filesize }}/{{ user.total_size_kb * 1024 | filesize }}){{ user.quota * 100 | number:2 }}%
+                    <md-button
+                      aria-label="Quota Setting" class="md-icon-button"
+                      ng-click="list.createQuotaSettingDiag($event)"
+                    >
+                    <md-icon>settings</md-icon>
+                    </md-button>
+                  </span>
                 </td>
                 <td md-cell show-gt-md>{{user.role}}</td>
                 <td md-cell hide show-gt-sm show-gt-lg><span
@@ -59,9 +61,7 @@
             </tbody>
           </table>
         </md-table-container>
-
-        <md-table-pagination md-limit="list.query.limit" md-limit-options="list.limitOptions" md-page="list.query.page" md-total="{{list.data.length}}" 
-         md-page-select="list.options.pageSelect" md-boundary-links="list.options.boundaryLinks"></md-table-pagination>
+        <md-table-pagination md-limit="list.query.limit" md-limit-options="limitOptions" md-page="list.query.page" md-total="{{list.data.count}}" md-page-select="list.options.pageSelect" md-boundary-links="list.options.boundaryLinks" md-on-paginate="list.moreUser()"></md-table-pagination>
   </div>
 
   <div
@@ -69,8 +69,8 @@
     layout="column" layout-align="center center"
     ng-if="list.error && ! list.requesting"
   >
-    <div class="md-headline">BUCKET.ERROR_MESSAGE</div>
-    <div class="md-subhead">BUCKET.REFRESH_MESSAGE</div>
+    <div class="md-headline" translate>BUCKET.ERROR_MESSAGE</div>
+    <div class="md-subhead" translate>BUCKET.REFRESH_MESSAGE</div>
 
     <md-button
       class="md-icon-button" aria-label="Refresh"

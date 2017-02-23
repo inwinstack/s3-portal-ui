@@ -158,6 +158,7 @@ export default {
     MOVE_CONTENT: 'Choose select files or folders where you want to move',
   },
   MANAGER: {
+    USER_QUOTA: 'User Quota',
     USER_LIST: 'User List',
     RESET_USER: 'Reset Password',
     SEARCH: 'Search',

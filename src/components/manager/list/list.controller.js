@@ -1,14 +1,25 @@
 export default class ManagerListController {
   /** @ngInject */
-  constructor($scope, $manager,) {
+  constructor($scope, $manager,$timeout) {
     Object.assign(this, {
-      $scope, $manager,
+      $scope, $manager, $timeout
     });
 
     this.$scope.$watch(
       () => $manager.state.lists,
       newVal => Object.assign(this, newVal)
     , true);
+
+    this.query = {
+      order: 'name',
+      limit: 10,
+      page: 1
+    };
+    // default sort order by name,what page number is it and limit row options
+    this.$scope.$watch(
+      () => this.query.page,
+      newVal => (this.$manager.setListIndex(newVal))
+    ,true);
 
     this.$manager.getAccounts();
 
@@ -18,18 +29,12 @@ export default class ManagerListController {
       autoSelect: true,
       decapitate: false, // no table titles
       largeEditDialog: false, //add edit dialog to your row option
-      boundaryLinks: true,   // jump to first or last page button
+      boundaryLinks: false,   // jump to first or last page button
       limitSelect: true, // how many rows per page
-      pageSelect: true // select page option
+      pageSelect: false // select page option
     };
     // list select options
 
-    this.query = {
-      order: 'name',
-      limit: 5,
-      page: 1
-    };
-    // default sort order by name,what page number is it and limit row options
 
     this.limitOptions = [5, 10, 15];
     // limit rows per page
@@ -46,5 +51,9 @@ export default class ManagerListController {
 
   createQuotaSettingDiag($event) {
     this.$manager.createQuotaSettingDiag($event);
+  }
+
+  refresh() {
+    this.$manager.getAccounts();
   }
 }

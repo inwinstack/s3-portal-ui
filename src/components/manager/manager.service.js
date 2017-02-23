@@ -8,11 +8,12 @@ import ResetPasswordController from './reset/reset.controller';
 import ResetPasswordTemplate from './reset/reset.html';
 import QuotaSettingController from './quota-setting/quota-setting.controller';
 import QuotaSettingTemplate from './quota-setting/quota-setting.html';
+import uniqBy from 'lodash/uniqBy';
 
 
 /** @ngInject */
 export default class ManagerService {
-  constructor($toast, $mdDialog, $fetch, $translate) {
+  constructor($toast, $mdDialog, $fetch, $translate,) {
     Object.assign(this, {
       $toast, $mdDialog, $fetch, $translate,
     });
@@ -22,22 +23,23 @@ export default class ManagerService {
         data: [],
         requesting: false,
         error: false,
-      }
+      },
+      index: 1,
     };
   }
 
   getAccounts() {
     this.state.lists.requesting = true;
-    this.state.lists.data = [];
 
-    this.$fetch.get('/v1/admin/list')
+    this.$fetch.get('/v1/admin/list/' + this.state.index)
       .then(({ data }) => {
         this.state.lists.error = false;
-        const users = data.Users.map(account => ({
+        const users = data.users.map(account => ({
           ...account,
           checked: false,
         }));
-        this.state.lists.data = users.sort(sortByEmail);
+        this.state.lists.data = uniqBy([...this.formatUser(users.sort(sortByEmail)), ...this.state.lists.data], 'id');
+        this.state.lists.data.count = data.count;
       })
       .catch(() => {
         this.state.lists.error = true;
@@ -46,6 +48,18 @@ export default class ManagerService {
         this.state.lists.requesting = false;
       });
 
+  }
+
+  setListIndex(index) {
+    this.state.index = index;
+    this.getAccounts();
+  }
+
+  formatUser(user) {
+    return user.map(user => ({
+      ...user,
+      quota: isNaN(user.used_size_kb/user.total_size_kb) ? 0 : user.used_size_kb/user.total_size_kb,
+    }))
   }
 
 
