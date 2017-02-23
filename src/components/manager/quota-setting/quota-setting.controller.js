@@ -16,7 +16,7 @@ export default class QuotaSettingController {
   submit() {
     this.$fetch.post(`/v1/auth/setUserQuota`, {   
               "email": this.user.email,
-              "maxSizeKB": (this.quotaSize * 1024 * 1024),
+              "maxSizeKB": this.quotaSize == -1 ? -1 : this.quotaSize * 1024 * 1024,
               "enabled" : true
             })
       .then(() => this.$translate("TOAST.SET_USER_QUOTA_SUCCESS")
