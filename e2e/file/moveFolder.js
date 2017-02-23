@@ -5,9 +5,9 @@ const bucketElements = require('../elements/bucket.js');
 const fileElements = require('../elements/file.js');
 const moveElements = require('../elements/move.js');
 const folderElements = require('../elements/folder.js');
-const pages = require('../page.js');
 const naturalSort = require('javascript-natural-sort');
 const translate = require('../languages/index.js');
+const pages = require('../page.js');
 
 describe('File Move',() => {
   const evn = new environment();
