@@ -83,6 +83,8 @@ export default {
     CANCEL_UPLOAD: 'Upload {{ name }} Has Been Cancel',
     CONNECT_ERROR: 'Connection Error! Please Try Again!',
     CONNECT_CEPH_ERROR: 'Connect To Ceph Error! Please Try Again Later!',
+    SET_USER_QUOTA_SUCCESS: 'Setting User Quota Success!',
+    SET_USER_QUOTA_FAIL: 'Setting User Quota Fail，Please Try Again!'
   },
   AUTH: {
     EMAIL: 'Email',

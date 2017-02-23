@@ -46,7 +46,7 @@
                     ({{ user.used_size_kb * 1024 | filesize }}/{{ user.total_size_kb * 1024 | filesize }}){{ user.quota * 100 | number:2 }}%
                     <md-button
                       aria-label="Quota Setting" class="md-icon-button"
-                      ng-click="list.createQuotaSettingDiag($event)"
+                      ng-click="list.createQuotaSettingDiag($event, user)"
                     >
                     <md-icon>settings</md-icon>
                     </md-button>

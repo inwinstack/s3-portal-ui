@@ -34,7 +34,6 @@ export default class ManagerService {
     this.$fetch.get('/v1/admin/list/' + this.state.index)
       .then(({ data }) => {
         this.state.lists.error = false;
-        console.log(data);
         const users = data.users.map(account => ({
           ...account,
           checked: false,
@@ -73,7 +72,7 @@ export default class ManagerService {
     });
   }
 
-  createQuotaSettingDiag($event) {
+  createQuotaSettingDiag($event, user) {
     this.$mdDialog.show({
       controller: QuotaSettingController,
       controllerAs: 'quota',
@@ -81,6 +80,9 @@ export default class ManagerService {
       parent: element(document.body),
       targetEvent: $event,
       clickOutsideToClose: true,
+      locals : {
+        user: user
+      }
       // onRemoving: () => {
       //   this.state.duplicated = false;
       // }
