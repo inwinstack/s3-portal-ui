@@ -9,22 +9,30 @@
               <span flex></span>
             </div>
             <md-divider></md-divider>
-            <div layout="cloumn">
+            <div
+              class="progress-state"
+              layout="column" layout-align="center center"
+              ng-if="storage.requesting"
+            >
+              <md-progress-circular md-mode="indeterminate" md-diameter="70"></md-progress-circular>
+              <div class="md-headline" translate>UTILS.LOADING</div>
+            </div>
+            <div layout="cloumn" ng-if="!storage.requesting">
               <div flex="50">
                 <md-list>
-                  <md-list-item ng-repeat="item in storage.mockData" class="md-2-line" layout="row" layout-align="center none">
+                  <md-list-item ng-repeat="item in storage.canvas" class="md-2-line" layout="row" layout-align="center none">
                     <md-content class="md-list-item-text" layout="row" layout-align="center">
                       <h3 class="md-body-2">{{ item.text }}</h3>
                       <span flex></span>
-                      <p class="md-caption" ng-if="storage.options.formatGB">{{ item.formatValue }} GB</p>
-                      <p class="md-caption" ng-if="!storage.options.formatGB">{{ item.value }} MB</p>
+                      <p class="md-caption" ng-if="storage.options.formatGB">{{ (item.value / 1024) | number:0}} GB</p>
+                      <p class="md-caption" ng-if="!storage.options.formatGB">{{ item.value | number:0}} MB</p>
                       <span flex></span>
                     </md-content>
                     </md-list-item>
                 </md-list>
               </div>
               <div flex="50">
-                <nvd3 options="storage.options" data="storage.data" class="with-3d-shadow with-transitions" ng-if="storage.mockData"></nvd3>
+                <nvd3 options="storage.options" data="storage.data" class="with-3d-shadow with-transitions" ng-if="storage.canvas"></nvd3>
               </div>
             </div>
             <md-switch class="md-secondary" ng-model="storage.options.formatGB">Display GB</md-switch>
