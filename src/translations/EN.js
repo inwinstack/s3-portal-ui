@@ -176,4 +176,9 @@ export default {
     including older versions if applicable) <b>cannot be undone</b>.
     Are you sure you want to delete <b>{{ name }}</b>?`,
   },
+  ACCOUNT: {
+    QUOTA_REMAIN:'Remaining',
+    QUOTA_USED:'Used',
+    QUOTA_TOTAL: 'Total'
+  },
 };

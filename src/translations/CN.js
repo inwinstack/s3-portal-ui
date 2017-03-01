@@ -163,6 +163,10 @@ export default {
     DELETE_CONFIRM: `删除此 Account 及此 Account 内的所有 Bucket 
     （若有支持旧版本则包含旧版本）<b>会无法复原</b>。
     你确认要删除 <b>{{ name }}</b> 吗？`,
-
+  },
+  ACCOUNT: {
+    QUOTA_REMAIN:'剩馀',
+    QUOTA_USED:'已使用',
+    QUOTA_TOTAL: '总共'
   },
 };
