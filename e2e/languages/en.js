@@ -156,6 +156,13 @@ const languages = {
   'MOVE_FOIDER': 'My Folders',
   'TOAST_MOVE_SUCCESSFULLY': 'Your File ab.png Move Success',
   'TOAST_MOVE_FAILURE' : 'Your File ab.png Move Failure, Please Try Again!',
+  'TOAST_MOVE_FOLDER_SUCCESSFULLY': 'Your File Move Success',
+  //MAKECOPY
+  'UTILS_MOVE': 'Replicate',
+  'REPLICATE_DESCRIPTION': 'Would you like to replicate the selected item?',
+  'REPLICATE_CANCEL': 'CANCEL',
+  'REPLICATE_CONFIRM': 'CONFIRM',
+  'TOAST_REPLICATE_SUCCESSFULLY': 'Replicate Success!',
   }
 
 module.exports = Translate;
