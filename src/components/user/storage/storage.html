@@ -22,7 +22,7 @@
                 <md-list>
                   <md-list-item ng-repeat="item in storage.canvas" class="md-2-line" layout="row" layout-align="center none">
                     <md-content class="md-list-item-text" layout="row" layout-align="center">
-                      <h3 class="md-body-2">{{ item.text }}</h3>
+                      <h3 class="md-body-2" translate>{{ item.text }}</h3>
                       <span flex></span>
                       <p class="md-caption" ng-if="storage.options.formatGB">{{ (item.value / 1024) | number:0}} GB</p>
                       <p class="md-caption" ng-if="!storage.options.formatGB">{{ item.value | number:0}} MB</p>
@@ -32,7 +32,8 @@
                 </md-list>
               </div>
               <div flex="50">
-                <nvd3 options="storage.options" data="storage.data" class="with-3d-shadow with-transitions" ng-if="storage.canvas"></nvd3>
+                <nvd3 options="storage.options" data="storage.data" class="with-3d-shadow with-transitions" ng-if="storage.data[0].y != -1"></nvd3>
+                <span ng-if="storage.data[0].y == -1" layout-align="center center">unlimited</span>
               </div>
             </div>
             <md-switch class="md-secondary" ng-model="storage.options.formatGB">Display GB</md-switch>

@@ -61,17 +61,17 @@ export default class StorageController {
             y: data.max_size_kb - data.total_size_kb
           },
           {
-            key:translate[source[1]],
+            key: translate[source[1]],
             y:data.total_size_kb
           }
         ];
         this.canvas = [
           {
-            text:translate[source[2]],
+            text:"ACCOUNT.QUOTA_TOTAL",
             value: data.max_size_kb / 1024
           },
           {
-            text:translate[source[0]],
+            text:"ACCOUNT.QUOTA_REMAIN",
             value: (data.max_size_kb - data.total_size_kb) / 1024
           }
         ];

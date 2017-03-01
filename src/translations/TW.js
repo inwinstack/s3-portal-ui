@@ -164,4 +164,9 @@ export default {
     （若有支援舊版本則包含舊版本）<b>會無法復原</b>。
     你確認要刪除 <b>{{ name }}</b> 嗎？`,
   },
+  ACCOUNT: {
+    QUOTA_REMAIN:'剩餘',
+    QUOTA_USED:'已使用',
+    QUOTA_TOTAL: '總共'
+  },
 };
