@@ -49,8 +49,8 @@ export default class ManagerListController {
     this.$manager.selectAccount(account.id);
   }
 
-  createQuotaSettingDiag($event) {
-    this.$manager.createQuotaSettingDiag($event);
+  createQuotaSettingDiag($event, user) {
+    this.$manager.createQuotaSettingDiag($event, user);
   }
 
   refresh() {

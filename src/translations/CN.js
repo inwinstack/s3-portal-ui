@@ -80,6 +80,8 @@ export default {
     CANCEL_UPLOAD: '{{ name }} 的上传已被取消',
     CONNECT_ERROR: '联机失败，请再试一次!',
     CONNECT_CEPH_ERROR: '连线至 Ceph 失败! 请稍後!',
+    SET_USER_QUOTA_SUCCESS: '设定使用者配额成功!',
+    SET_USER_QUOTA_FAIL: '设定使用者配额失败，请在试一次!'
   },
   AUTH: {
     EMAIL: '电邮',

@@ -73,7 +73,7 @@ export default class ManagerService {
     });
   }
 
-  createQuotaSettingDiag($event) {
+  createQuotaSettingDiag($event, user) {
     this.$mdDialog.show({
       controller: QuotaSettingController,
       controllerAs: 'quota',
@@ -81,6 +81,9 @@ export default class ManagerService {
       parent: element(document.body),
       targetEvent: $event,
       clickOutsideToClose: true,
+      locals : {
+        user: user
+      }
       // onRemoving: () => {
       //   this.state.duplicated = false;
       // }
