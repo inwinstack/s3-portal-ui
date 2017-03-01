@@ -8,11 +8,12 @@ import ResetPasswordController from './reset/reset.controller';
 import ResetPasswordTemplate from './reset/reset.html';
 import QuotaSettingController from './quota-setting/quota-setting.controller';
 import QuotaSettingTemplate from './quota-setting/quota-setting.html';
+import uniqBy from 'lodash/uniqBy';
 
 
 /** @ngInject */
 export default class ManagerService {
-  constructor($toast, $mdDialog, $fetch, $translate) {
+  constructor($toast, $mdDialog, $fetch, $translate,) {
     Object.assign(this, {
       $toast, $mdDialog, $fetch, $translate,
     });
@@ -29,17 +30,16 @@ export default class ManagerService {
 
   getAccounts() {
     this.state.lists.requesting = true;
-    this.state.lists.data = [];
 
     this.$fetch.get('/v1/admin/list/' + this.state.index)
       .then(({ data }) => {
         this.state.lists.error = false;
-        console.log(data);
         const users = data.users.map(account => ({
           ...account,
           checked: false,
         }));
-        this.state.lists.data = this.formatUser(users.sort(sortByEmail));
+        this.state.lists.data = uniqBy([...this.formatUser(users.sort(sortByEmail)), ...this.state.lists.data], 'id');
+        this.state.lists.data.count = data.count;
       })
       .catch(() => {
         this.state.lists.error = true;
