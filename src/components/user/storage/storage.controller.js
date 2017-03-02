@@ -1,8 +1,8 @@
 export default class StorageController {
   /** @ngInject */
-  constructor($scope, $state, $fetch, $translate) {
+  constructor($scope, $state, $fetch, $translate, $rootScope) {
     Object.assign(this, {
-      $scope, $state, $fetch, $translate
+      $scope, $state, $fetch, $translate, $rootScope
     });
 
     this.requesting = true;
@@ -28,6 +28,9 @@ export default class StorageController {
     };
 
     this.getInfomation();
+    this.$rootScope.$on('$translateChangeSuccess', () => {
+      this.getInfomation();
+    });
   }
 
   /**
@@ -54,27 +57,27 @@ export default class StorageController {
       'ACCOUNT.QUOTA_TOTAL'
     ];
     this.$translate(source)
-      .then(translate => {
-        this.data = [
-          {
-            key: translate[source[0]],
-            y: data.max_size_kb - data.total_size_kb
-          },
-          {
-            key: translate[source[1]],
-            y:data.total_size_kb
-          }
-        ];
-        this.canvas = [
-          {
-            text:"ACCOUNT.QUOTA_TOTAL",
-            value: data.max_size_kb / 1024
-          },
-          {
-            text:"ACCOUNT.QUOTA_REMAIN",
-            value: (data.max_size_kb - data.total_size_kb) / 1024
-          }
-        ];
-      })
+    .then(translate => {
+      this.data = [
+        {
+          key: translate[source[0]],
+          y: data.max_size_kb - data.total_size_kb
+        },
+        {
+          key: translate[source[1]],
+          y:data.total_size_kb
+        }
+      ];
+      this.canvas = [
+        {
+          text:"ACCOUNT.QUOTA_TOTAL",
+          value: data.max_size_kb / 1024
+        },
+        {
+          text:"ACCOUNT.QUOTA_REMAIN",
+          value: (data.max_size_kb - data.total_size_kb) / 1024
+        }
+      ];
+    });
   }
 }
