@@ -14,7 +14,7 @@ export default class QuotaSettingController {
   }
 
   submit() {
-    this.$fetch.post(`/v1/auth/setUserQuota`, {   
+    this.$fetch.post(`/v1/admin/setQuota`, {   
               "email": this.user.email,
               "maxSizeKB": this.quotaSize == -1 ? -1 : this.quotaSize * 1024 * 1024,
               "enabled" : true
