@@ -137,17 +137,19 @@ const languages = {
   'UTILS_MOVE': '移動',
   'MOVE_TITLE': '移動',
   'MOVE_DESCRIPTION': '選擇移動的目的地資料夾',
-  'MOVE_SELECTED_ITEMS': 'Selected Items',
-  'MOVE_FOIDER': 'My Folders',
-  'TOAST_MOVE_SUCCESSFULLY': '檔案 ab.png 移動檔案成功',
-  'TOAST_MOVE_FAILURE' : '檔案 ab.png 移動檔案失敗，請再試一次!',
+  'MOVE_SELECTED_ITEMS': '所選項目',
+  'MOVE_FOIDER': '我的文件夾',
+  'TOAST_MOVE_SUCCESSFULLY': /^檔案.*移動檔案成功$/,
+  'TOAST_MOVE_FAILURE' : /^檔案.*移動檔案失敗，請再試一次!$/,
   'TOAST_MOVE_FOLDER_SUCCESSFULLY': '檔案移動檔案成功',
-  //MAKECOPY
-  'UTILS_MOVE': '製作副本',
+  //MAKE_COPY
+  'UTILS_REPLICATE': '製作副本',
   'REPLICATE_DESCRIPTION': '您要將所選項目製作副本嗎？',
   'REPLICATE_CANCEL': '取消',
   'REPLICATE_CONFIRM': '確定',
   'TOAST_REPLICATE_SUCCESSFULLY': '製作副本成功!',
+  //USER_QUOTA
+  'QUOTA_TITLE' : '使用者配額',
 
   // // AUTH
   // 'AUTH_LOGIN_TO_YOUR_ACCOUNT': '登入你的帳號',

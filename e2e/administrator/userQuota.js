@@ -3,9 +3,10 @@ const navElements = require('../elements/nav.js');
 const signinElements = require('../elements/signin.js')
 const bucketElements = require('../elements/bucket.js');
 const administratorElements = require('../elements/administrator.js');
+const translate = require('../languages/index.js');
 const pages = require('../page.js');
 
-describe('File Move',() => {
+describe('User Quota',() => {
   const evn = new environment();
   const nae = new navElements();
   const sie = new signinElements();
@@ -25,8 +26,8 @@ describe('File Move',() => {
 //signIn
   describe('When user signIn and click user list:', () => {
     beforeEach(() => {
-      sie.emailInput.sendKeys('root@imac.com');
-      sie.passwordInput.sendKeys('123456');
+      sie.emailInput.sendKeys('root@inwinstack.com');
+      sie.passwordInput.sendKeys('password');
       sie.signinBtn.click();
     });
 
@@ -46,7 +47,7 @@ describe('File Move',() => {
     });
 
     it('Should check capacity item true', () => {
-      expect(ade.userList.element(by.css('th[class="md-column ng-isolate-scope md-sort"]')).getText()).toBe("User Quota");
+      expect(ade.quotaTitle.getText()).toBe(translate('en','QUOTA_TITLE'));
     });
   });
 
@@ -59,7 +60,7 @@ describe('File Move',() => {
     });
 
     it('Should check capacity item true', () => {
-      expect(ade.userList.element(by.css('th[class="md-column ng-isolate-scope md-sort"]')).getText()).toBe("使用者配額");
+      expect(ade.quotaTitle.getText()).toBe(translate('tw','QUOTA_TITLE'));
     });
   });
 
@@ -72,7 +73,7 @@ describe('File Move',() => {
     });
 
     it('Should check capacity item true', () => {
-      expect(ade.userList.element(by.css('th[class="md-column ng-isolate-scope md-sort"]')).getText()).toBe("使用者配额");
+      expect(ade.quotaTitle.getText()).toBe(translate('cn','QUOTA_TITLE'));
     });
   });
 
@@ -84,7 +85,7 @@ describe('File Move',() => {
 
     it(('Should check Wait icon'), () => {
       browser.ignoreSynchronization = true;
-      expect(element(by.css('[class="ng-isolate-scope md-mode-indeterminate"]')).isPresent()).toBe(true);
+      expect(ade.loadingIcon.isPresent()).toBe(true);
       browser.sleep(1000);
       browser.ignoreSynchronization = false;
     });
@@ -98,7 +99,7 @@ describe('File Move',() => {
     });
 
     it(('Should check \% and total Quota'), () => {
-      expect(ade.allAccountList.first().element(by.css('[class="ratio-width md-cell"]')).getText()).toBe("(0 bytes/48.83 MB)0.00%\nsettings");
+      expect(ade.userMsg.first().getText()).toMatch(/^\(*\/*\)*.??%*/);
     });
   });
 });
