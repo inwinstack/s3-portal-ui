@@ -139,17 +139,19 @@ const languages = {
   'UTILS_MOVE': '移动',
   'MOVE_TITLE': '移动',
   'MOVE_DESCRIPTION': '选择移动的目的地资料夹',
-  'MOVE_SELECTED_ITEMS': 'Selected Items',
-  'MOVE_FOIDER': 'My Folders',
-  'TOAST_MOVE_SUCCESSFULLY': '档案 ab.png 移动档案成功',
-  'TOAST_MOVE_FAILURE' : '档案 ab.png 移动档案失败，请再试一次!',
+  'MOVE_SELECTED_ITEMS': '所选项目',
+  'MOVE_FOIDER': '我的文件夹',
+  'TOAST_MOVE_SUCCESSFULLY': /^档案.*移动档案成功$/,
+  'TOAST_MOVE_FAILURE' : /^档案.*移动档案失败，请再试一次!$/,
   'TOAST_MOVE_FOLDER_SUCCESSFULLY': '档案移动档案成功',
-  //MAKECOPY
-  'UTILS_MOVE': '製作副本',
+  //MAKE_COPY
+  'UTILS_REPLICATE': '製作副本',
   'REPLICATE_DESCRIPTION': '您要将所选项目制作副本吗？',
   'REPLICATE_CANCEL': '取消',
   'REPLICATE_CONFIRM': '确定',
   'TOAST_REPLICATE_SUCCESSFULLY': '製作副本成功!',
+  //USER_QUOTA
+  'QUOTA_TITLE' : '使用者配额',
 }
 
 module.exports = Translate;

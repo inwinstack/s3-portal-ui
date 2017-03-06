@@ -7,7 +7,7 @@ const replicateBtnElements = require('../elements/makeCopy.js');
 const naturalSort = require('javascript-natural-sort');
 const pages = require('../page.js');
 
-describe('File ReplicateBtn', () => {
+describe('File Replicate', () => {
   const evn = new environment();
   const nae = new navElements();
   const sie = new signinElements();

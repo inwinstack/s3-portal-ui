@@ -9,7 +9,7 @@ const naturalSort = require('javascript-natural-sort');
 const translate = require('../languages/index.js');
 const pages = require('../page.js');
 
-describe('File Move',() => {
+describe('Folder Move',() => {
   const evn = new environment();
   const nae = new navElements();
   const sie = new signinElements();
