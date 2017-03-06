@@ -154,15 +154,17 @@ const languages = {
   'MOVE_DESCRIPTION': 'Choose select files or folders where you want to move',
   'MOVE_SELECTED_ITEMS': 'Selected Items',
   'MOVE_FOIDER': 'My Folders',
-  'TOAST_MOVE_SUCCESSFULLY': 'Your File ab.png Move Success',
-  'TOAST_MOVE_FAILURE' : 'Your File ab.png Move Failure, Please Try Again!',
+  'TOAST_MOVE_SUCCESSFULLY': /^Your File.*Move Success$/,
+  'TOAST_MOVE_FAILURE': /^Your File.*Move Failure, Please Try Again!$/,
   'TOAST_MOVE_FOLDER_SUCCESSFULLY': 'Your File Move Success',
-  //MAKECOPY
-  'UTILS_MOVE': 'Replicate',
+  //MAKE_COPY
+  'UTILS_REPLICATE': 'Replicate',
   'REPLICATE_DESCRIPTION': 'Would you like to replicate the selected item?',
   'REPLICATE_CANCEL': 'CANCEL',
   'REPLICATE_CONFIRM': 'CONFIRM',
   'TOAST_REPLICATE_SUCCESSFULLY': 'Replicate Success!',
+  //USER_QUOTA
+  'QUOTA_TITLE' : 'User Quota',
   }
 
 module.exports = Translate;
