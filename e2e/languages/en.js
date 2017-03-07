@@ -170,6 +170,15 @@ const languages = {
   'QUOTA_FORM_LABLE1' : 'Quota Capacity Selections',
   'QUOTA_FORM_CANCEL' : 'CANCEL',
   'QUOTA_FORM_SAVE' : 'SAVE CHANGE',
+  //ACCOUNT
+  'UTILS_ACCOUNT' : 'My Account',
+  'ACCOUNT_TITLE' : 'Cpacity Storage',
+  'ACOOUNT_TOTAL' : 'Total',
+  'ACCOUNT_REMAIN' : 'Remaining',
+  'ACCOUNT_TAG_REMAIN' : 'Remaining',
+  'ACCOUNT_TAG_USED' : 'Used',
+  'ACCOUNT_DISPLAY' : 'Display GB',
+  'ACCOUNT_CONFIRM' : 'CONFIRM',
   }
 
 module.exports = Translate;
