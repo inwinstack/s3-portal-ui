@@ -152,6 +152,11 @@ const languages = {
   'TOAST_REPLICATE_SUCCESSFULLY': '製作副本成功!',
   //USER_QUOTA
   'QUOTA_TITLE' : '使用者配额',
+  'QUOTA_FORM_TITLE' : 'Change User Quota',
+  'QUOTA_FORM_LABLE0' : 'Original Quota Storage',
+  'QUOTA_FORM_LABLE1' : 'Quota Capacity Selections',
+  'QUOTA_FORM_CANCEL' : '取消',
+  'QUOTA_FORM_SAVE' : 'SAVE CHANGE',
 }
 
 module.exports = Translate;

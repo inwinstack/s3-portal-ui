@@ -34,6 +34,7 @@ exports.config = {
    './auth/signout.js',
    './administrator/userQuota.js',
    './administrator/setQuota.js',
+   './administrator/quotaLanguage.js',
   ],
   multiCapabilities: [
   {
