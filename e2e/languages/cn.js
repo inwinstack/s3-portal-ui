@@ -157,6 +157,15 @@ const languages = {
   'QUOTA_FORM_LABLE1' : 'Quota Capacity Selections',
   'QUOTA_FORM_CANCEL' : '取消',
   'QUOTA_FORM_SAVE' : 'SAVE CHANGE',
+  //ACCOUNT
+  'UTILS_ACCOUNT' : '我的帐户',
+  'ACCOUNT_TITLE' : 'Cpacity Storage',
+  'ACOOUNT_TOTAL' : '总共',
+  'ACCOUNT_REMAIN' : '剩馀',
+  'ACCOUNT_TAG_REMAIN' : '剩馀',
+  'ACCOUNT_TAG_USED' : '已使用',
+  'ACCOUNT_DISPLAY' : 'Display GB',
+  'ACCOUNT_CONFIRM' : 'CONFIRM',
 }
 
 module.exports = Translate;

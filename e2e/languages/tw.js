@@ -155,6 +155,15 @@ const languages = {
   'QUOTA_FORM_LABLE1' : 'Quota Capacity Selections',
   'QUOTA_FORM_CANCEL' : '取消',
   'QUOTA_FORM_SAVE' : 'SAVE CHANGE',
+  //ACCOUNT
+  'UTILS_ACCOUNT' : '我的帳戶',
+  'ACCOUNT_TITLE' : 'Cpacity Storage',
+  'ACOOUNT_TOTAL' : '總共',
+  'ACCOUNT_REMAIN' : '剩餘',
+  'ACCOUNT_TAG_REMAIN' : '剩餘',
+  'ACCOUNT_TAG_USED' : '已使用',
+  'ACCOUNT_DISPLAY' : 'Display GB',
+  'ACCOUNT_CONFIRM' : 'CONFIRM',
 
   // // AUTH
   // 'AUTH_LOGIN_TO_YOUR_ACCOUNT': '登入你的帳號',
