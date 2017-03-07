@@ -3,7 +3,6 @@ const navElements = require('../elements/nav.js');
 const signinElements = require('../elements/signin.js')
 const bucketElements = require('../elements/bucket.js');
 const administratorElements = require('../elements/administrator.js');
-const translate = require('../languages/index.js');
 const pages = require('../page.js');
 
 describe('User Quota',() => {
@@ -37,43 +36,6 @@ describe('User Quota',() => {
       expect(nae.toastMessage.isDisplayed()).toBe(true);
       expect(browser.getCurrentUrl()).toBe(ps.bucketListPage);
       browser.ignoreSynchronization = false;
-    });
-  });
-
-  describe('When root check EN capacity item:', () => {
-    beforeEach(() => {
-      nae.menuBtn.first().click();
-      ade.accountListBtn.click();
-    });
-
-    it('Should check capacity item true', () => {
-      expect(ade.quotaTitle.getText()).toBe(translate('en','QUOTA_TITLE'));
-    });
-  });
-
-  describe('When root check TW capacity item:', () => {
-    beforeEach(() => {
-      nae.menuBtn.get(1).click();
-      nae.topNavLanguagesBtn.get(1).click();
-      nae.menuBtn.first().click();
-      ade.accountListBtn.click();
-    });
-
-    it('Should check capacity item true', () => {
-      expect(ade.quotaTitle.getText()).toBe(translate('tw','QUOTA_TITLE'));
-    });
-  });
-
-  describe('When root check CN capacity item:', () => {
-    beforeEach(() => {
-      nae.menuBtn.get(1).click();
-      nae.topNavLanguagesBtn.get(2).click();
-      nae.menuBtn.first().click();
-      ade.accountListBtn.click();
-    });
-
-    it('Should check capacity item true', () => {
-      expect(ade.quotaTitle.getText()).toBe(translate('cn','QUOTA_TITLE'));
     });
   });
 
