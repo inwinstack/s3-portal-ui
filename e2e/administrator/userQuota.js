@@ -23,10 +23,10 @@ describe('User Quota',() => {
   });
 
 //signIn
-  describe('When user signIn and click user list:', () => {
+  describe('When user signIn and click user list :', () => {
     beforeEach(() => {
-      sie.emailInput.sendKeys('root@inwinstack.com');
-      sie.passwordInput.sendKeys('password');
+      sie.emailInput.sendKeys(evn.adminEmail);
+      sie.passwordInput.sendKeys(evn.adminPassword);
       sie.signinBtn.click();
     });
 
@@ -39,7 +39,7 @@ describe('User Quota',() => {
     });
   });
 
-  describe('When root wait view:', () => {
+  describe('When root wait view :', () => {
     beforeEach(() => {
       nae.menuBtn.first().click();
       ade.accountListBtn.click();
@@ -53,7 +53,7 @@ describe('User Quota',() => {
     });
   });
 
-  describe('When root userList views', () => {
+  describe('When root userList views :', () => {
     beforeEach(() => {
       nae.menuBtn.first().click();
       ade.accountListBtn.click();
