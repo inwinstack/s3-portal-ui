@@ -154,15 +154,33 @@ const languages = {
   'MOVE_DESCRIPTION': 'Choose select files or folders where you want to move',
   'MOVE_SELECTED_ITEMS': 'Selected Items',
   'MOVE_FOIDER': 'My Folders',
-  'TOAST_MOVE_SUCCESSFULLY': 'Your File ab.png Move Success',
-  'TOAST_MOVE_FAILURE' : 'Your File ab.png Move Failure, Please Try Again!',
+  'MOVE_CANCEL' : 'CANCEL',
+  'MOVE_CONFIRM' : 'MOVE',
+  'TOAST_MOVE_SUCCESSFULLY': /^Your File.*Move Success$/,
+  'TOAST_MOVE_FAILURE': /^Your File.*Move Failure, Please Try Again!$/,
   'TOAST_MOVE_FOLDER_SUCCESSFULLY': 'Your File Move Success',
-  //MAKECOPY
-  'UTILS_MOVE': 'Replicate',
+  //MAKE_COPY
+  'UTILS_REPLICATE': 'Replicate',
   'REPLICATE_DESCRIPTION': 'Would you like to replicate the selected item?',
   'REPLICATE_CANCEL': 'CANCEL',
   'REPLICATE_CONFIRM': 'CONFIRM',
   'TOAST_REPLICATE_SUCCESSFULLY': 'Replicate Success!',
+  //USER_QUOTA
+  'QUOTA_TITLE' : 'User Quota',
+  'QUOTA_FORM_TITLE' : 'Change User Quota',
+  'QUOTA_FORM_LABLE0' : 'Original Quota Storage',
+  'QUOTA_FORM_LABLE1' : 'Quota Capacity Selections',
+  'QUOTA_FORM_CANCEL' : 'CANCEL',
+  'QUOTA_FORM_SAVE' : 'SAVE CHANGE',
+  //ACCOUNT
+  'UTILS_ACCOUNT' : 'My Account',
+  'ACCOUNT_TITLE' : 'Cpacity Storage',
+  'ACOOUNT_TOTAL' : 'Total',
+  'ACCOUNT_REMAIN' : 'Remaining',
+  'ACCOUNT_TAG_REMAIN' : 'Remaining',
+  'ACCOUNT_TAG_USED' : 'Used',
+  'ACCOUNT_DISPLAY' : 'Display GB',
+  'ACCOUNT_CONFIRM' : 'CONFIRM',
   }
 
 module.exports = Translate;

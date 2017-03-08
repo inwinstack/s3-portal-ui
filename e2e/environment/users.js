@@ -54,15 +54,42 @@ const users = {
     'folderName': 'ubuntu-chrome-folder',
     'administrator': {
       'email' : 'root@inwinstack.com',
-      'password' : '123456'
+      'password' : 'password'
     },
     'abImg': {
       'name':'ab.png',
-      'path': '/home/ubuntu/img/'
+      // 'path': '/home/ubuntu/img/'
+      'path': '/home/titan/img/'
     },
     'abcImg': {
       'name':'abc.png',
-      'path': '/home/ubuntu/img/'
+      // 'path': '/home/ubuntu/img/'
+      'path': '/home/titan/img/'
+    },
+    'abdImg': {
+      'name':'abd.png',
+      // 'path': '/home/ubuntu/img/'
+      'path': '/home/titan/img/'
+    },
+    'abd1Img': {
+      'name':'abd1.png',
+      // 'path': '/home/ubuntu/img/'
+      'path': '/home/titan/img/'
+    },
+    'abd2Img': {
+      'name':'abd2.png',
+      // 'path': '/home/ubuntu/img/'
+      'path': '/home/titan/img/'
+    },
+    'abd11Img': {
+      'name':'abd11.png',
+      // 'path': '/home/ubuntu/img/'
+      'path': '/home/titan/img/'
+    },
+    'abd22Img': {
+      'name':'abd22.png',
+      // 'path': '/home/ubuntu/img/'
+      'path': '/home/titan/img/'
     }
   },
   'chrome-win7': {
