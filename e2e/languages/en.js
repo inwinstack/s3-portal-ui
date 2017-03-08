@@ -154,6 +154,8 @@ const languages = {
   'MOVE_DESCRIPTION': 'Choose select files or folders where you want to move',
   'MOVE_SELECTED_ITEMS': 'Selected Items',
   'MOVE_FOIDER': 'My Folders',
+  'MOVE_CANCEL' : 'CANCEL',
+  'MOVE_CONFIRM' : 'MOVE',
   'TOAST_MOVE_SUCCESSFULLY': /^Your File.*Move Success$/,
   'TOAST_MOVE_FAILURE': /^Your File.*Move Failure, Please Try Again!$/,
   'TOAST_MOVE_FOLDER_SUCCESSFULLY': 'Your File Move Success',
