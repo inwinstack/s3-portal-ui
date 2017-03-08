@@ -26,6 +26,8 @@ describe('Quota Translation',() => {
   //EN
   describe('When root check [User Quota] and selects the English language:', () => {
     beforeEach(() => {
+      nae.menuBtn.get(1).click();
+      nae.topNavLanguagesBtn.first().click();
       nae.menuBtn.first().click();
       ade.accountListBtn.click();
     });

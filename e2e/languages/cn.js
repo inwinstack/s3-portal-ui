@@ -154,11 +154,11 @@ const languages = {
   'TOAST_REPLICATE_SUCCESSFULLY': '製作副本成功!',
   //USER_QUOTA
   'QUOTA_TITLE' : '使用者配额',
-  'QUOTA_FORM_TITLE' : 'Change User Quota',
-  'QUOTA_FORM_LABLE0' : 'Original Quota Storage',
-  'QUOTA_FORM_LABLE1' : 'Quota Capacity Selections',
+  'QUOTA_FORM_TITLE' : '更改用户配额',
+  'QUOTA_FORM_LABLE0' : '原始存储配额',
+  'QUOTA_FORM_LABLE1' : '选择配额容量',
   'QUOTA_FORM_CANCEL' : '取消',
-  'QUOTA_FORM_SAVE' : 'SAVE CHANGE',
+  'QUOTA_FORM_SAVE' : '保存更改',
   //ACCOUNT
   'UTILS_ACCOUNT' : '我的帐户',
   'ACCOUNT_TITLE' : 'Cpacity Storage',

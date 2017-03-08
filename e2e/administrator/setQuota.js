@@ -5,7 +5,7 @@ const bucketElements = require('../elements/bucket.js');
 const administratorElements = require('../elements/administrator.js');
 const pages = require('../page.js');
 
-describe('File Move',() => {
+describe('Set Quota',() => {
   const evn = new environment();
   const nae = new navElements();
   const sie = new signinElements();
@@ -86,6 +86,8 @@ describe('File Move',() => {
       browser.ignoreSynchronization = true;
       browser.sleep(1000);
       expect(nae.toastMessage.isDisplayed()).toBe(true);
+      browser.sleep(3000);
+      expect(ade.setQuotaForm.isPresent()).toBe(false);
       browser.ignoreSynchronization = false;
     });
   });
