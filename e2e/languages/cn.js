@@ -141,6 +141,8 @@ const languages = {
   'MOVE_DESCRIPTION': '选择移动的目的地资料夹',
   'MOVE_SELECTED_ITEMS': '所选项目',
   'MOVE_FOIDER': '我的文件夹',
+  'MOVE_CANCEL' : '取消',
+  'MOVE_CONFIRM' : '移动',
   'TOAST_MOVE_SUCCESSFULLY': /^档案.*移动档案成功$/,
   'TOAST_MOVE_FAILURE' : /^档案.*移动档案失败，请再试一次!$/,
   'TOAST_MOVE_FOLDER_SUCCESSFULLY': '档案移动档案成功',

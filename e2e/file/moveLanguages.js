@@ -29,7 +29,7 @@ describe('File Translation', () => {
   });
 
 //create folder
-  describe('When user create folder', () => {
+  describe('When user create folder :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(2).click();
@@ -59,7 +59,7 @@ describe('File Translation', () => {
     });
   });
 
-  describe('When user click moveFileBtn and check language', () => {
+  describe('When user click moveFileBtn and check language :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -77,10 +77,12 @@ describe('File Translation', () => {
       expect(mve.moveForm.element(by.css('span[class="ng-binding ng-scope"]')).getText()).toBe(translate('en','MOVE_DESCRIPTION'));
       expect(mve.moveForm.all(by.css('th[class="ng-scope"]')).first().getText()).toBe(translate('en','MOVE_SELECTED_ITEMS'));
       expect(mve.moveForm.all(by.css('th[class="ng-scope"]')).get(1).getText()).toBe(translate('en','MOVE_FOIDER'));
+      expect(mve.closeBtn.get(1).getText()).toBe(translate('en','MOVE_CANCEL'));
+      expect(mve.moveBtn.getText()).toBe(translate('en','MOVE_CONFIRM'));
     });
   });
 
-  describe('When user move file and check toast language successfully', () => {
+  describe('When user move file and check toast language successfully :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -101,7 +103,7 @@ describe('File Translation', () => {
     });
   });
 
-  describe('When user move file and check toast language failure', () => {
+  describe('When user move file and check toast language failure :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -125,7 +127,7 @@ describe('File Translation', () => {
     });
   });
 
-  describe('deleted file', () => {
+  describe('Deleted file :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       fie.fileCheckbox.get(1).click();
@@ -160,7 +162,7 @@ describe('File Translation', () => {
     });
   });
 
-  describe('When user click moveBtn and check language', () => {
+  describe('When user click moveBtn and check language :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -178,10 +180,12 @@ describe('File Translation', () => {
       expect(mve.moveForm.element(by.css('span[class="ng-binding ng-scope"]')).getText()).toBe(translate('tw','MOVE_DESCRIPTION'));
       expect(mve.moveForm.all(by.css('th[class="ng-scope"]')).first().getText()).toBe(translate('tw','MOVE_SELECTED_ITEMS'));
       expect(mve.moveForm.all(by.css('th[class="ng-scope"]')).get(1).getText()).toBe(translate('tw','MOVE_FOIDER'));
+      expect(mve.closeBtn.get(1).getText()).toBe(translate('tw','MOVE_CANCEL'));
+      expect(mve.moveBtn.getText()).toBe(translate('tw','MOVE_CONFIRM'));
     });
   });
 
-  describe('When user move file and check toast language successfully', () => {
+  describe('When user move file and check toast language successfully :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -202,7 +206,7 @@ describe('File Translation', () => {
     });
   });
 
-  describe('When user move file and check toast language failure', () => {
+  describe('When user move file and check toast language failure :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -226,7 +230,7 @@ describe('File Translation', () => {
     });
   });
 
-  describe('deleted file', () => {
+  describe('Deleted file :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       fie.fileCheckbox.get(1).click();
@@ -261,7 +265,7 @@ describe('File Translation', () => {
     });
   });
 
-  describe('When user click moveBtn and check language', () => {
+  describe('When user click moveBtn and check language :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -279,10 +283,12 @@ describe('File Translation', () => {
       expect(mve.moveForm.element(by.css('span[class="ng-binding ng-scope"]')).getText()).toBe(translate('cn','MOVE_DESCRIPTION'));
       expect(mve.moveForm.all(by.css('th[class="ng-scope"]')).first().getText()).toBe(translate('cn','MOVE_SELECTED_ITEMS'));
       expect(mve.moveForm.all(by.css('th[class="ng-scope"]')).get(1).getText()).toBe(translate('cn','MOVE_FOIDER'));
+      expect(mve.closeBtn.get(1).getText()).toBe(translate('cn','MOVE_CANCEL'));
+      expect(mve.moveBtn.getText()).toBe(translate('cn','MOVE_CONFIRM'));
     });
   });
 
-  describe('When user move file and check toast language successfully', () => {
+  describe('When user move file and check toast language successfully :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -303,7 +309,7 @@ describe('File Translation', () => {
     });
   });
 
-  describe('When user move file and check toast language failure', () => {
+  describe('When user move file and check toast language failure :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -327,7 +333,7 @@ describe('File Translation', () => {
     });
   });
 
-  describe('deleted file', () => {
+  describe('Deleted file :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       fie.fileCheckbox.get(0).click();

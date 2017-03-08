@@ -29,7 +29,7 @@ describe('Folder Move',() => {
   });
 
   //create folder
-  describe('When user create folder', () => {
+  describe('When user create folder :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(2).click();
@@ -49,6 +49,7 @@ describe('Folder Move',() => {
     it('',() => {
       browser.ignoreSynchronization = true;
       browser.sleep(1000);
+      expect(nae.toastMessage.isDisplayed()).toBe(true);
       browser.ignoreSynchronization = false;
     });
   });
@@ -67,7 +68,7 @@ describe('Folder Move',() => {
   });
 
   //moveForm moveBtn false and form is true
-  describe('When click moveBtn moveThis disabled', () => {
+  describe('When click moveBtn moveThis disabled :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       fie.fileCheckbox.get(0).click();
@@ -95,13 +96,15 @@ describe('Folder Move',() => {
     it('Should check toastMessage', () => {
       browser.ignoreSynchronization = true;
       browser.sleep(1000);
+      expect(nae.toastMessage.isDisplayed()).toBe(true);
       expect(nae.toastMessage.getText()).toBe(translate('en','TOAST_MOVE_FOLDER_SUCCESSFULLY'));
+      expect(mve.moveForm.isPresent()).toBe(false);
       browser.ignoreSynchronization = false;
     });
   });
 
   //check file
-  describe('When the user checks whether the mobile data is correct:', () => {
+  describe('When the user checks whether the mobile data is correct :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       browser.actions().doubleClick(fie.fileList.first()).perform();
@@ -115,7 +118,7 @@ describe('Folder Move',() => {
   });
 
   //deleted file
-  describe('deleted file', () => {
+  describe('Deleted file :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       fie.fileCheckbox.get(0).click();

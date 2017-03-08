@@ -139,6 +139,8 @@ const languages = {
   'MOVE_DESCRIPTION': '選擇移動的目的地資料夾',
   'MOVE_SELECTED_ITEMS': '所選項目',
   'MOVE_FOIDER': '我的文件夾',
+  'MOVE_CANCEL' : '取消',
+  'MOVE_CONFIRM' : '移動',
   'TOAST_MOVE_SUCCESSFULLY': /^檔案.*移動檔案成功$/,
   'TOAST_MOVE_FAILURE' : /^檔案.*移動檔案失敗，請再試一次!$/,
   'TOAST_MOVE_FOLDER_SUCCESSFULLY': '檔案移動檔案成功',
