@@ -96,6 +96,7 @@ export default class MoveService {
     .catch(() => this.$translate("FILE.MOVE_FAILURE", { fileName })
       .then(message => {
         this.$toast.show(message);
+        this.closeDialog();
       }));
   }
 
@@ -112,6 +113,7 @@ export default class MoveService {
     .catch(() => this.$translate("FILE.MOVE_FAILURE", { folderName })
       .then(message => {
         this.$toast.show(message);
+        this.closeDialog();
       }));
   }
 }
