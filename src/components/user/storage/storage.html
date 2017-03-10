@@ -5,7 +5,7 @@
         <md-content class="md-padding">
           <section class="md-whiteframe-5dp" layout="column">
             <div class="md-actions" layout layout-align="end center">
-              <md-header class="md-display-1">Cpacity Storage</md-header>
+              <md-header class="md-display-1" translate>USER.CPACITY_STORAGE</md-header>
               <span flex></span>
             </div>
             <md-divider></md-divider>
@@ -36,12 +36,12 @@
                 <span ng-if="storage.data[0].y == -1" layout-align="center center">unlimited</span>
               </div>
             </div>
-            <md-switch class="md-secondary" ng-model="storage.options.formatGB">Display GB</md-switch>
+            <md-switch class="md-secondary" ng-model="storage.options.formatGB"><span translate>USER.DISPLAY</span>GB</md-switch>
             <div layout="row" layout-align="center center">
               <md-button
                 aria-label="confirm" ng-click="storage.confirm()">
                 <md-icon class="md-raised">done</md-icon>
-                <span>Confirm</span>
+                <span translate>UTILS.CONFIRM</span>
               </md-button>
             </div>
           </section>

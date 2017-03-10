@@ -135,6 +135,7 @@ export default {
     DELETE_TITLE: '您確定要刪除所選項目嗎?',
     DELETE_DESCRIPTION: `刪除後將無法復原，您確定要刪除所選項目嗎?`,
     DELETE_ARIA_LABEL: 'Delete Objects',
+    REPLICATE_TITLE: '您要為您選擇的物件製作一個副本嗎?',
     RENAME_TITLE: '重新命名',
     RENAME_DESCRIPTION: `您確定要修改這個物件的名稱嗎?`,
     RENAME_ARIA_LABEL: 'Rename Object',
@@ -146,6 +147,7 @@ export default {
     MOVE_SUCCESS: '檔案 {{ fileName }} 移動檔案成功',
     MOVE_FAILURE: '檔案 {{ fileName }} 移動檔案失敗，請再試一次!',
     MOVE_CONTENT: '選擇移動的目的地資料夾',
+    SELECTED_ITEMS: '已選擇的物件',
   },
   MANAGER: {
     USER_QUOTA: '使用者配額',
@@ -165,10 +167,19 @@ export default {
     DELETE_CONFIRM: `刪除此 Account 及此 Account 內的所有 Bucket 
     （若有支援舊版本則包含舊版本）<b>會無法復原</b>。
     你確認要刪除 <b>{{ name }}</b> 嗎？`,
+    QUOTA:{
+        CHANGE_QUOTA:'更改使用者容量',
+        ORIGINAL_QUOTA:'原始使用者容量',
+        CAPACITY_SELECTION:'新的使用者容量',
+    },
   },
   ACCOUNT: {
     QUOTA_REMAIN:'剩餘',
     QUOTA_USED:'已使用',
     QUOTA_TOTAL: '總共'
+  },
+  USER: {
+    CPACITY_STORAGE:'容量配額',
+    DISPLAY:'顯示',
   },
 };

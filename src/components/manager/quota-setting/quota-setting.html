@@ -2,7 +2,7 @@
   <form name="quota.form">
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <h2 translate>Change User Quota</h2>
+        <h2 translate>MANAGER.QUOTA.CHANGE_QUOTA</h2>
         <span flex></span>
 
         <md-button
@@ -18,7 +18,7 @@
       <div layout="column">
         <div layout="row">
           <md-input-container class="md-block md-input-has-value" flex="40">
-            <label translate>Original Quota Storage</label>
+            <label translate>MANAGER.QUOTA.ORIGINAL_QUOTA</label>
             <input
               name="quota" required
               value="{{quota.user.total_size_kb * 1024 | filesize}}"
@@ -30,7 +30,7 @@
         <div layout="row" layout-align="start center">
           <div flex="40">
             <md-input-container class="md-block">
-              <label translate>Quota Capacity Selections</label>
+              <label translate>MANAGER.QUOTA.CAPACITY_SELECTION</label>
               <input ng-model="quota.quotaSize" name="selectedQuota" type="number" step="1" required>
               <div ng-messages="quotaSetting.selectedQuota.$error">
                 <div ng-message="required">Required</div>
@@ -56,7 +56,7 @@
         ng-disabled="quota.form.$submitted"
         ng-click="quota.submit()"
       >
-        <span translate>SAVE CHANGE</span>
+        <span translate>UTILS.CONFIRM</span>
         <md-progress-circular
           class="md-primary" md-mode="indeterminate"
           md-diameter="30" ng-show="quota.form.$submitted"
