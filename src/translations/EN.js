@@ -158,6 +158,7 @@ export default {
     MOVE_SUCCESS: 'Your File {{ fileName }} Move Success',
     MOVE_FAILURE: 'Your File {{ fileName }} Move Failure, Please Try Again!',
     MOVE_CONTENT: 'Choose select files or folders where you want to move',
+    SELECTED_ITEMS: 'Seleted Items',
   },
   MANAGER: {
     USER_QUOTA: 'User Quota',
@@ -177,10 +178,19 @@ export default {
     DELETE_CONFIRM: `Deleting this account and its bucket (
     including older versions if applicable) <b>cannot be undone</b>.
     Are you sure you want to delete <b>{{ name }}</b>?`,
+    QUOTA:{
+        CHANGE_QUOTA:'Change User Quota',
+        ORIGINAL_QUOTA:'Original Quota Storage',
+        CAPACITY_SELECTION:'Quota Capacity Selections',
+    }
   },
   ACCOUNT: {
     QUOTA_REMAIN:'Remaining',
     QUOTA_USED:'Used',
     QUOTA_TOTAL: 'Total'
+  },
+  USER: {
+    CPACITY_STORAGE:'Cpacity Storage',
+    DISPLAY:'Display',
   },
 };
