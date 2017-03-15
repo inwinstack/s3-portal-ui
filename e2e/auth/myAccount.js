@@ -45,7 +45,7 @@ describe('My Account',() => {
     it('Should show loadingIcon', () => {
       browser.ignoreSynchronization = true;
       expect(ace.loadingIcon.isPresent()).toBe(true);
-      browser.sleep(3000);
+      browser.sleep(1000);
       browser.ignoreSynchronization = false;
     });
   });
@@ -88,6 +88,29 @@ describe('My Account',() => {
       expect(browser.getCurrentUrl()).toBe(ps.bucketListPage);
       browser.sleep(1000);
       browser.ignoreSynchronization = false;
+    });
+  });
+
+  describe('When user check [TWO] enable:',() => {
+    beforeEach(() => {
+      nae.menuBtn.get(0).click();
+      nae.myAccountBtn.click();
+    });
+
+    it('Should [TWO] enable', () => {
+      expect(ace.accountTab.get(1).isEnabled()).toBe(true);
+    });
+  });
+
+  describe('When user check [STORAGE CAPACITY] enable:',() => {
+    beforeEach(() => {
+      nae.menuBtn.get(0).click();
+      nae.myAccountBtn.click();
+      ace.accountTab.get(1).click();
+    });
+
+    it('Should [STORAGE CAPACITY] enable', () => {
+      expect(ace.accountTab.get(0).isEnabled()).toBe(true);
     });
   });
 });

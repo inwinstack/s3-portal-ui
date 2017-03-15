@@ -9,6 +9,8 @@ function elements () {
   this.accountTagUsed = element.all(by.css('g[class="nv-series"]')).get(1);
   this.accountDisplay = element(by.css('[class="md-secondary ng-pristine ng-untouched ng-valid ng-empty"]'));
   this.accountConfirm = element(by.css('[ng-click="storage.confirm()"]')).element(by.css('[class="ng-scope"]'));
+  this.accountTab = element.all(by.css('[ng-click="$mdTabsCtrl.select(tab.getIndex())"]'));
+  this.accountTwo = element.all(by.css('[class="md-padding ng-scope _md"]'));
 }
 
 module.exports = elements;

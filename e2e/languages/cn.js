@@ -162,13 +162,15 @@ const languages = {
   'QUOTA_FORM_SAVE' : '保存更改',
   //ACCOUNT
   'UTILS_ACCOUNT' : '我的帐户',
-  'ACCOUNT_TITLE' : 'Cpacity Storage',
+  'ACCOUNT_TITLE' : '容量配额',
   'ACOOUNT_TOTAL' : '总共',
   'ACCOUNT_REMAIN' : '剩馀',
   'ACCOUNT_TAG_REMAIN' : '剩馀',
   'ACCOUNT_TAG_USED' : '已使用',
-  'ACCOUNT_DISPLAY' : 'Display GB',
-  'ACCOUNT_CONFIRM' : 'CONFIRM',
+  'ACCOUNT_DISPLAY' : '显示GB',
+  'ACCOUNT_CONFIRM' : '确定',
+  'ACCOUNT_STORAGE' : 'STORAGE CAPACITY',
+  'ACCOUNT_TWO' : 'TWO',
 }
 
 module.exports = Translate;
