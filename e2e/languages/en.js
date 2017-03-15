@@ -182,6 +182,8 @@ const languages = {
   'ACCOUNT_TAG_USED' : 'Used',
   'ACCOUNT_DISPLAY' : 'Display GB',
   'ACCOUNT_CONFIRM' : 'CONFIRM',
+  'ACCOUNT_STORAGE' : 'STORAGE CAPACITY',
+  'ACCOUNT_TWO' : 'TWO',
   }
 
 module.exports = Translate;

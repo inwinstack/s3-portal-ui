@@ -6,7 +6,7 @@ const accountElements = require('../elements/account.js');
 const translate = require('../languages/index.js');
 const pages = require('../page.js');
 
-describe('My Account',() => {
+describe('My Account Translation',() => {
   const evn = new environment();
   const nae = new navElements();
   const sie = new signinElements();
@@ -55,6 +55,20 @@ describe('My Account',() => {
     });
   });
 
+  describe('When user check [TWO] and [STORAGE CAPACITY] and selects the English language:',() => {
+    beforeEach(() => {
+      nae.menuBtn.get(1).click();
+      nae.topNavLanguagesBtn.first().click();
+      nae.menuBtn.get(0).click();
+      nae.myAccountBtn.click();
+    });
+
+    it('Should [TWO] and [STORAGE CAPACITY] using the right language', () => {
+      expect(ace.accountTab.first().getText()).toBe(translate('en','ACCOUNT_STORAGE'));
+      expect(ace.accountTab.get(1).getText()).toBe(translate('en','ACCOUNT_TWO'));
+    });
+  });
+
   //TW
   describe('When user check [My Account] and selects the Traditional Chinese language:', () => {
     beforeEach(() => {
@@ -87,6 +101,20 @@ describe('My Account',() => {
     });
   });
 
+  describe('When user check [TWO] and [STORAGE CAPACITY] and selects the Traditional Chinese language:',() => {
+    beforeEach(() => {
+      nae.menuBtn.get(1).click();
+      nae.topNavLanguagesBtn.get(1).click();
+      nae.menuBtn.get(0).click();
+      nae.myAccountBtn.click();
+    });
+
+    it('Should [TWO] and [STORAGE CAPACITY] using the right language', () => {
+      expect(ace.accountTab.first().getText()).toBe(translate('tw','ACCOUNT_STORAGE'));
+      expect(ace.accountTab.get(1).getText()).toBe(translate('tw','ACCOUNT_TWO'));
+    });
+  });
+
   //CN
   describe('When user check [My Account] and selects the Simplified Chinese language:', () => {
     beforeEach(() => {
@@ -116,6 +144,20 @@ describe('My Account',() => {
       expect(ace.accountTagUsed.getText()).toBe(translate('cn','ACCOUNT_TAG_USED'));
       expect(ace.accountDisplay.getText()).toBe(translate('cn','ACCOUNT_DISPLAY'));
       expect(ace.accountConfirm.getText()).toBe(translate('cn','ACCOUNT_CONFIRM'));
+    });
+  });
+
+  describe('When user check [TWO] and [STORAGE CAPACITY] and selects the Simplified Chinese language:',() => {
+    beforeEach(() => {
+      nae.menuBtn.get(1).click();
+      nae.topNavLanguagesBtn.get(1).click();
+      nae.menuBtn.get(0).click();
+      nae.myAccountBtn.click();
+    });
+
+    it('Should [TWO] and [STORAGE CAPACITY] using the right language', () => {
+      expect(ace.accountTab.first().getText()).toBe(translate('cn','ACCOUNT_STORAGE'));
+      expect(ace.accountTab.get(1).getText()).toBe(translate('cn','ACCOUNT_TWO'));
     });
   });
 });

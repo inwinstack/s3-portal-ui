@@ -160,13 +160,15 @@ const languages = {
   'QUOTA_FORM_SAVE' : '保存更改',
   //ACCOUNT
   'UTILS_ACCOUNT' : '我的帳戶',
-  'ACCOUNT_TITLE' : 'Cpacity Storage',
+  'ACCOUNT_TITLE' : '容量配額',
   'ACOOUNT_TOTAL' : '總共',
   'ACCOUNT_REMAIN' : '剩餘',
   'ACCOUNT_TAG_REMAIN' : '剩餘',
   'ACCOUNT_TAG_USED' : '已使用',
-  'ACCOUNT_DISPLAY' : 'Display GB',
-  'ACCOUNT_CONFIRM' : 'CONFIRM',
+  'ACCOUNT_DISPLAY' : '顯示GB',
+  'ACCOUNT_CONFIRM' : '確定',
+  'ACCOUNT_STORAGE' : 'STORAGE CAPACITY',
+  'ACCOUNT_TWO' : 'TWO',
 
   // // AUTH
   // 'AUTH_LOGIN_TO_YOUR_ACCOUNT': '登入你的帳號',
