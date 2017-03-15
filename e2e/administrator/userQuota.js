@@ -39,6 +39,16 @@ describe('User Quota',() => {
     });
   });
 
+  describe('When root click [User List] :', () => {
+    beforeEach(() => {
+      nae.menuBtn.first().click();
+    });
+
+    it(('Should check [User List] enable'), () => {
+      expect(ade.accountListBtn.isEnabled()).toBe(true);
+    });
+  });
+
   describe('When root wait view :', () => {
     beforeEach(() => {
       nae.menuBtn.first().click();
@@ -57,7 +67,7 @@ describe('User Quota',() => {
     beforeEach(() => {
       nae.menuBtn.first().click();
       ade.accountListBtn.click();
-      ade.search.sendKeys("Titan@imac.com");
+      ade.search.sendKeys(evn.correctEmail);
     });
 
     it(('Should check \% and total Quota'), () => {

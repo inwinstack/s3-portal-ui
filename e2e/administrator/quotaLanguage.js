@@ -24,6 +24,18 @@ describe('Quota Translation',() => {
   });
 
   //EN
+  describe('When root check [User List] and selects the English language:', () => {
+    beforeEach(() => {
+      nae.menuBtn.get(1).click();
+      nae.topNavLanguagesBtn.first().click();
+      nae.menuBtn.first().click();
+    });
+
+    it(('Should check Wait icon'), () => {
+      expect(ade.accountListBtn.getText()).toBe(translate('en','UTILS_QUOTA'));
+    });
+  });
+
   describe('When root check [User Quota] and selects the English language:', () => {
     beforeEach(() => {
       nae.menuBtn.get(1).click();
@@ -32,7 +44,7 @@ describe('Quota Translation',() => {
       ade.accountListBtn.click();
     });
 
-    it('Should check capacity item true', () => {
+    it('Should check capacity item using the right language', () => {
       expect(ade.quotaTitle.getText()).toBe(translate('en','QUOTA_TITLE'));
     });
   });
@@ -55,7 +67,40 @@ describe('Quota Translation',() => {
     });
   });
 
+  describe('When root change User Quota and selects the English language:', () => {
+    beforeEach(() => {
+      nae.menuBtn.get(1).click();
+      nae.topNavLanguagesBtn.first().click();
+      nae.menuBtn.first().click();
+      ade.accountListBtn.click();
+      ade.search.sendKeys(evn.correctEmail);
+      ade.setQuota.first().click();
+      ade.quotaSize.clear();
+      ade.quotaSize.sendKeys("6");
+      ade.setQuotaSave.click();
+    });
+
+    it('Should check toast and selects the English language:', () => {
+      browser.ignoreSynchronization = true;
+      browser.sleep(3000);
+      expect(nae.toastMessage.getText()).toBe(translate('en','TOAST_QUOTA_SUCCESSFULLY'));
+      browser.ignoreSynchronization = false;
+    });
+  });
+
   //TW
+  describe('When root check [User List] and selects the English language:', () => {
+    beforeEach(() => {
+      nae.menuBtn.get(1).click();
+      nae.topNavLanguagesBtn.get(1).click();
+      nae.menuBtn.first().click();
+    });
+
+    it(('Should check Wait icon'), () => {
+      expect(ade.accountListBtn.getText()).toBe(translate('tw','UTILS_QUOTA'));
+    });
+  });
+
   describe('When root check [User Quota] and selects the Traditional Chinese language:', () => {
     beforeEach(() => {
       nae.menuBtn.get(1).click();
@@ -64,7 +109,7 @@ describe('Quota Translation',() => {
       ade.accountListBtn.click();
     });
 
-    it('Should check capacity item true', () => {
+    it('Should check capacity item using the right language', () => {
       expect(ade.quotaTitle.getText()).toBe(translate('tw','QUOTA_TITLE'));
     });
   });
@@ -87,7 +132,40 @@ describe('Quota Translation',() => {
     });
   });
 
+  describe('When root change User Quota and selects the English language:', () => {
+    beforeEach(() => {
+      nae.menuBtn.get(1).click();
+      nae.topNavLanguagesBtn.get(1).click();
+      nae.menuBtn.first().click();
+      ade.accountListBtn.click();
+      ade.search.sendKeys(evn.correctEmail);
+      ade.setQuota.first().click();
+      ade.quotaSize.clear();
+      ade.quotaSize.sendKeys("6");
+      ade.setQuotaSave.click();
+    });
+
+    it('Should check toast and selects the English language:', () => {
+      browser.ignoreSynchronization = true;
+      browser.sleep(3000);
+      expect(nae.toastMessage.getText()).toBe(translate('tw','TOAST_QUOTA_SUCCESSFULLY'));
+      browser.ignoreSynchronization = false;
+    });
+  });
+
   //CN
+  describe('When root check [User List] and selects the English language:', () => {
+    beforeEach(() => {
+      nae.menuBtn.get(1).click();
+      nae.topNavLanguagesBtn.get(2).click();
+      nae.menuBtn.first().click();
+    });
+
+    it(('Should check Wait icon'), () => {
+      expect(ade.accountListBtn.getText()).toBe(translate('cn','UTILS_QUOTA'));
+    });
+  });
+
   describe('When root check [User Quota] and selects the Simplified Chinese language:', () => {
     beforeEach(() => {
       nae.menuBtn.get(1).click();
@@ -96,7 +174,7 @@ describe('Quota Translation',() => {
       ade.accountListBtn.click();
     });
 
-    it('Should check capacity item true', () => {
+    it('Should check capacity item using the right language', () => {
       expect(ade.quotaTitle.getText()).toBe(translate('cn','QUOTA_TITLE'));
     });
   });
@@ -116,6 +194,27 @@ describe('Quota Translation',() => {
       expect(ade.quotaFormLabel.get(1).getText()).toBe(translate('cn','QUOTA_FORM_LABLE1'));
       expect(ade.setQuotaCancel.get(1).getText()).toBe(translate('cn','QUOTA_FORM_CANCEL'));
       expect(ade.setQuotaSave.getText()).toBe(translate('cn','QUOTA_FORM_SAVE'));
+    });
+  });
+
+  describe('When root change User Quota and selects the English language:', () => {
+    beforeEach(() => {
+      nae.menuBtn.get(1).click();
+      nae.topNavLanguagesBtn.get(2).click();
+      nae.menuBtn.first().click();
+      ade.accountListBtn.click();
+      ade.search.sendKeys(evn.correctEmail);
+      ade.setQuota.first().click();
+      ade.quotaSize.clear();
+      ade.quotaSize.sendKeys("6");
+      ade.setQuotaSave.click();
+    });
+
+    it('Should check toast and selects the English language:', () => {
+      browser.ignoreSynchronization = true;
+      browser.sleep(3000);
+      expect(nae.toastMessage.getText()).toBe(translate('cn','TOAST_QUOTA_SUCCESSFULLY'));
+      browser.ignoreSynchronization = false;
     });
   });
 });
