@@ -154,12 +154,14 @@ const languages = {
   'REPLICATE_CONFIRM': '确定',
   'TOAST_REPLICATE_SUCCESSFULLY': '製作副本成功!',
   //USER_QUOTA
+  'UTILS_QUOTA' : '使用者列表',
   'QUOTA_TITLE' : '使用者配额',
-  'QUOTA_FORM_TITLE' : '更改用户配额',
-  'QUOTA_FORM_LABLE0' : '原始存储配额',
-  'QUOTA_FORM_LABLE1' : '选择配额容量',
+  'QUOTA_FORM_TITLE' : '更改使用者容量',
+  'QUOTA_FORM_LABLE0' : '原始使用者容量',
+  'QUOTA_FORM_LABLE1' : '新的使用者容量',
   'QUOTA_FORM_CANCEL' : '取消',
-  'QUOTA_FORM_SAVE' : '保存更改',
+  'QUOTA_FORM_SAVE' : '确定',
+  'TOAST_QUOTA_SUCCESSFULLY': '设定使用者配额成功!',
   //ACCOUNT
   'UTILS_ACCOUNT' : '我的帐户',
   'ACCOUNT_TITLE' : '容量配额',

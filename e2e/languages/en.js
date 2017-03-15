@@ -167,12 +167,14 @@ const languages = {
   'REPLICATE_CONFIRM': 'CONFIRM',
   'TOAST_REPLICATE_SUCCESSFULLY': 'Replicate Success!',
   //USER_QUOTA
+  'UTILS_QUOTA' : 'User List',
   'QUOTA_TITLE' : 'User Quota',
   'QUOTA_FORM_TITLE' : 'Change User Quota',
   'QUOTA_FORM_LABLE0' : 'Original Quota Storage',
   'QUOTA_FORM_LABLE1' : 'Quota Capacity Selections',
   'QUOTA_FORM_CANCEL' : 'CANCEL',
-  'QUOTA_FORM_SAVE' : 'SAVE CHANGE',
+  'QUOTA_FORM_SAVE' : 'CONFIRM',
+  'TOAST_QUOTA_SUCCESSFULLY' : 'Setting User Quota Success!',
   //ACCOUNT
   'UTILS_ACCOUNT' : 'My Account',
   'ACCOUNT_TITLE' : 'Cpacity Storage',

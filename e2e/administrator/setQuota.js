@@ -75,7 +75,7 @@ describe('Set Quota',() => {
     beforeEach(() => {
       nae.menuBtn.first().click();
       ade.accountListBtn.click();
-      ade.search.sendKeys("Titan@imac.com");
+      ade.search.sendKeys(evn.correctEmail);
       ade.setQuota.first().click();
       ade.quotaSize.clear();
       ade.quotaSize.sendKeys("10");
@@ -96,7 +96,7 @@ describe('Set Quota',() => {
     beforeEach(() => {
       nae.menuBtn.first().click();
       ade.accountListBtn.click();
-      ade.search.sendKeys("Titan@imac.com");
+      ade.search.sendKeys(evn.correctEmail);
     });
 
     it(('Should check total Quota 10GB'), () => {
@@ -108,7 +108,7 @@ describe('Set Quota',() => {
     beforeEach(() => {
       nae.menuBtn.first().click();
       ade.accountListBtn.click();
-      ade.search.sendKeys("Titan@imac.com");
+      ade.search.sendKeys(evn.correctEmail);
       ade.setQuota.first().click();
       ade.quotaSize.clear();
       ade.quotaSize.sendKeys("6");
