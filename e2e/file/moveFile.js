@@ -31,8 +31,8 @@ describe('File Move',() => {
   //signIn
   describe('When user signIn and click user list:', () => {
     beforeEach(() => {
-      sie.emailInput.sendKeys('Titan@imac.com');
-      sie.passwordInput.sendKeys('123456');
+      sie.emailInput.sendKeys(evn.correctEmail+'');
+      sie.passwordInput.sendKeys(evn.correctPassword+'');
       sie.signinBtn.click();
     });
 
@@ -81,7 +81,6 @@ describe('File Move',() => {
 
     it('Should check show upload success', () => {
       browser.sleep(3000);
-      expect(nae.toastMessage.isDisplayed()).toBe(true);
       browser.ignoreSynchronization = false;
       fie.fileList.getText().then((result) => {
         expect(result).toBe(result.sort(naturalSort));
@@ -162,6 +161,7 @@ describe('File Move',() => {
       browser.sleep(1000);
       expect(nae.toastMessage.isDisplayed()).toBe(true);
       expect(nae.toastMessage.getText()).toMatch(languages('en','TOAST_MOVE_SUCCESSFULLY'));
+      browser.sleep(3000);
       expect(mve.moveForm.isPresent()).toBe(false);
       browser.ignoreSynchronization = false;
     });
@@ -186,6 +186,7 @@ describe('File Move',() => {
       browser.sleep(1000);
       expect(nae.toastMessage.isDisplayed()).toBe(true);
       expect(nae.toastMessage.getText()).toMatch(languages('en','TOAST_MOVE_FAILURE'));
+      browser.sleep(3000);
       expect(mve.moveForm.isPresent()).toBe(false);
       browser.ignoreSynchronization = false;
     });
@@ -204,7 +205,7 @@ describe('File Move',() => {
 
     it('Should deleted file', () => {
       browser.ignoreSynchronization = true;
-      browser.sleep(1000);
+      browser.sleep(3000);
       browser.ignoreSynchronization = false;
     });
   });
