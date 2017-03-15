@@ -31,8 +31,8 @@ describe('File Move',() => {
   //signIn
   describe('When user signIn and click user list:', () => {
     beforeEach(() => {
-      sie.emailInput.sendKeys(evn.correctEmail+'');
-      sie.passwordInput.sendKeys(evn.correctPassword+'');
+      sie.emailInput.sendKeys(evn.correctEmail);
+      sie.passwordInput.sendKeys(evn.correctPassword);
       sie.signinBtn.click();
     });
 
