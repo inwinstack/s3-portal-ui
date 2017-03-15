@@ -345,7 +345,7 @@ describe('File Translation', () => {
 
     it('Should deleted file', () => {
       browser.ignoreSynchronization = true;
-      browser.sleep(1000);
+      browser.sleep(3000);
       browser.ignoreSynchronization = false;
     });
   });

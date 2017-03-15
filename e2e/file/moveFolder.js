@@ -48,7 +48,7 @@ describe('Folder Move',() => {
 
     it('',() => {
       browser.ignoreSynchronization = true;
-      browser.sleep(1000);
+      browser.sleep(3000);
       expect(nae.toastMessage.isDisplayed()).toBe(true);
       browser.ignoreSynchronization = false;
     });
@@ -91,13 +91,13 @@ describe('Folder Move',() => {
       nae.moveFileBtn.click();
       browser.actions().doubleClick(mve.fileMoveList.first()).perform();
       mve.moveBtn.click();
+      browser.ignoreSynchronization = true;
+      browser.sleep(3000);
     });
 
-    it('Should check toastMessage', () => {
-      browser.ignoreSynchronization = true;
-      browser.sleep(1000);
-      expect(nae.toastMessage.isDisplayed()).toBe(true);
+    it('Should check toastMessage successfully', () => {
       expect(nae.toastMessage.getText()).toBe(translate('en','TOAST_MOVE_FOLDER_SUCCESSFULLY'));
+      browser.sleep(3000);
       expect(mve.moveForm.isPresent()).toBe(false);
       browser.ignoreSynchronization = false;
     });
@@ -117,11 +117,36 @@ describe('Folder Move',() => {
     });
   });
 
+  describe('When user move folder:', () => {
+    beforeEach(() => {
+      browser.actions().doubleClick(bue.bucketList.first()).perform();
+      nae.menuBtn.get(2).click();
+      nae.createFolder.get(1).click();
+      foe.createFolderInput.sendKeys("1");
+      foe.checkCreateFolderBtn.click();
+      fie.fileCheckbox.get(1).click();
+      nae.menuBtn.get(2).click();
+      nae.moveFileBtn.click();
+      browser.actions().doubleClick(mve.fileMoveList.first()).perform();
+      mve.moveBtn.click();
+    });
+
+    it('Should check toastMessage failure', () => {
+      browser.ignoreSynchronization = true;
+      browser.sleep(1000);
+      expect(nae.toastMessage.getText()).toBe(translate('en','TOAST_MOVE_FOLDER_FAILURE'));
+      browser.sleep(3000);
+      expect(mve.moveForm.isPresent()).toBe(false);
+      browser.ignoreSynchronization = false;
+    });
+  });
+
   //deleted file
   describe('Deleted file :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       fie.fileCheckbox.get(0).click();
+      fie.fileCheckbox.get(1).click();
       nae.menuBtn.get(2).click();
       nae.deleteFileBtn.click();
       nae.checkDeleteFileBtn.click();

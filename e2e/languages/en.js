@@ -159,6 +159,7 @@ const languages = {
   'TOAST_MOVE_SUCCESSFULLY': /^Your File.*Move Success$/,
   'TOAST_MOVE_FAILURE': /^Your File.*Move Failure, Please Try Again!$/,
   'TOAST_MOVE_FOLDER_SUCCESSFULLY': 'Your File Move Success',
+  'TOAST_MOVE_FOLDER_FAILURE': 'Your File Move Failure, Please Try Again!',
   //MAKE_COPY
   'UTILS_REPLICATE': 'Replicate',
   'REPLICATE_DESCRIPTION': 'Would you like to replicate the selected item?',
