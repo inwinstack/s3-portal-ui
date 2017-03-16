@@ -91,13 +91,13 @@ describe('Folder Move',() => {
       nae.moveFileBtn.click();
       browser.actions().doubleClick(mve.fileMoveList.first()).perform();
       mve.moveBtn.click();
+      browser.ignoreSynchronization = true;
+      browser.sleep(3000);
     });
 
     it('Should check toastMessage successfully', () => {
-      browser.ignoreSynchronization = true;
+      expect(nae.toastMessage.isDisplayed()).toBe(true);
       browser.sleep(1000);
-      expect(nae.toastMessage.getText()).toBe(translate('en','TOAST_MOVE_FOLDER_SUCCESSFULLY'));
-      browser.sleep(3000);
       expect(mve.moveForm.isPresent()).toBe(false);
       browser.ignoreSynchronization = false;
     });
@@ -112,8 +112,8 @@ describe('Folder Move',() => {
     });
 
     it('Should check file exist', () => {
-      expect(fie.fileList.get(0).element(by.css('p[class="break-word flex-grow"]')).getText()).toBe("ab.png");
-      expect(fie.fileList.get(1).element(by.css('p[class="break-word flex-grow"]')).getText()).toBe("abc.png");
+      expect(fie.fileList.get(0).element(by.css('p[class="break-word flex-grow"]')).getText()).toBe(evn.abImgName);
+      expect(fie.fileList.get(1).element(by.css('p[class="break-word flex-grow"]')).getText()).toBe(evn.abcImgName);
     });
   });
 
@@ -129,12 +129,12 @@ describe('Folder Move',() => {
       nae.moveFileBtn.click();
       browser.actions().doubleClick(mve.fileMoveList.first()).perform();
       mve.moveBtn.click();
+      browser.ignoreSynchronization = true;
+      browser.sleep(1000);
     });
 
     it('Should check toastMessage failure', () => {
-      browser.ignoreSynchronization = true;
-      browser.sleep(1000);
-      expect(nae.toastMessage.getText()).toBe(translate('en','TOAST_MOVE_FOLDER_FAILURE'));
+      expect(fie.fileList.get(1).element(by.css('p[class="break-word flex-grow"]')).getText()).toBe("New folder1");
       browser.sleep(3000);
       expect(mve.moveForm.isPresent()).toBe(false);
       browser.ignoreSynchronization = false;
