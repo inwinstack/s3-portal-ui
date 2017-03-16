@@ -59,7 +59,7 @@ describe('File Translation', () => {
     });
   });
 
-  describe('When user click moveFileBtn and check language :', () => {
+  describe('When user click moveFileBtn and selects the English language :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -82,7 +82,7 @@ describe('File Translation', () => {
     });
   });
 
-  describe('When user move file and check toast language successfully :', () => {
+  describe('When user move file and check toast language successfully and selects the English language:', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -97,13 +97,12 @@ describe('File Translation', () => {
     it('Should check every elements using the right language', () => {
       browser.ignoreSynchronization = true;
       browser.sleep(1000);
-      expect(nae.toastMessage.isDisplayed()).toBe(true);
       expect(nae.toastMessage.getText()).toMatch(translate('en','TOAST_MOVE_SUCCESSFULLY'));
       browser.ignoreSynchronization = false;
     });
   });
 
-  describe('When user move file and check toast language failure :', () => {
+  describe('When user move file and check toast language failure and selects the English language:', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -121,7 +120,6 @@ describe('File Translation', () => {
     it('Should check every elements using the right language', () => {
       browser.ignoreSynchronization = true;
       browser.sleep(1000);
-      expect(nae.toastMessage.isDisplayed()).toBe(true);
       expect(nae.toastMessage.getText()).toMatch(translate('en','TOAST_MOVE_FAILURE'));
       browser.ignoreSynchronization = false;
     });
@@ -162,7 +160,7 @@ describe('File Translation', () => {
     });
   });
 
-  describe('When user click moveBtn and check language :', () => {
+  describe('When user click moveBtn and check language and selects the Traditional Chinese language:', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -185,7 +183,7 @@ describe('File Translation', () => {
     });
   });
 
-  describe('When user move file and check toast language successfully :', () => {
+  describe('When user move file and check toast language successfully and selects the Traditional Chinese language:', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -200,13 +198,12 @@ describe('File Translation', () => {
     it('Should check every elements using the right language', () => {
       browser.ignoreSynchronization = true;
       browser.sleep(1000);
-      expect(nae.toastMessage.isDisplayed()).toBe(true);
       expect(nae.toastMessage.getText()).toMatch(translate('tw','TOAST_MOVE_SUCCESSFULLY'));
       browser.ignoreSynchronization = false;
     });
   });
 
-  describe('When user move file and check toast language failure :', () => {
+  describe('When user move file and check toast language failure and selects the Traditional Chinese language:', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -224,7 +221,6 @@ describe('File Translation', () => {
     it('Should check every elements using the right language', () => {
       browser.ignoreSynchronization = true;
       browser.sleep(1000);
-      expect(nae.toastMessage.isDisplayed()).toBe(true);
       expect(nae.toastMessage.getText()).toMatch(translate('tw','TOAST_MOVE_FAILURE'));
       browser.ignoreSynchronization = false;
     });
@@ -265,7 +261,7 @@ describe('File Translation', () => {
     });
   });
 
-  describe('When user click moveBtn and check language :', () => {
+  describe('When user click moveBtn and check language and selects the Simplified Chinese language:', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -288,7 +284,7 @@ describe('File Translation', () => {
     });
   });
 
-  describe('When user move file and check toast language successfully :', () => {
+  describe('When user move file and check toast language successfully and selects the Simplified Chinese language:', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -303,13 +299,12 @@ describe('File Translation', () => {
     it('Should check every elements using the right language', () => {
       browser.ignoreSynchronization = true;
       browser.sleep(1000);
-      expect(nae.toastMessage.isDisplayed()).toBe(true);
       expect(nae.toastMessage.getText()).toMatch(translate('cn','TOAST_MOVE_SUCCESSFULLY'));
       browser.ignoreSynchronization = false;
     });
   });
 
-  describe('When user move file and check toast language failure :', () => {
+  describe('When user move file and check toast language failure and selects the Simplified Chinese language:', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -327,7 +322,6 @@ describe('File Translation', () => {
     it('Should check every elements using the right language', () => {
       browser.ignoreSynchronization = true;
       browser.sleep(1000);
-      expect(nae.toastMessage.isDisplayed()).toBe(true);
       expect(nae.toastMessage.getText()).toMatch(translate('cn','TOAST_MOVE_FAILURE'));
       browser.ignoreSynchronization = false;
     });

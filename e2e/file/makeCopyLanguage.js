@@ -27,7 +27,7 @@ describe('File Replicate Translation', () => {
   });
 
   //EN
-  describe('When user into the upload file form and the list is not empty:', () => {
+  describe('When user into the upload file form and the list is not empty :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       fie.uploadBtn.click();
@@ -56,7 +56,7 @@ describe('File Replicate Translation', () => {
     });
   });
 
-  describe('When user click replicateFileBtn and check language', () => {
+  describe('When user click replicateFileBtn and selects the English language :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -74,7 +74,7 @@ describe('File Replicate Translation', () => {
     });
   });
 
-  describe('When user click replicateConfirmBtn and check toast', () => {
+  describe('When user click replicateConfirmBtn and check toast and selects the English language :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -88,7 +88,6 @@ describe('File Replicate Translation', () => {
     it('Should check toastMessage is success', () => {
       browser.ignoreSynchronization = true;
       browser.sleep(1000);
-      expect(nae.toastMessage.isDisplayed()).toBe(true);
       expect(nae.toastMessage.getText()).toBe(translate('en','TOAST_REPLICATE_SUCCESSFULLY'));
       browser.ignoreSynchronization = false;
     });
@@ -113,7 +112,7 @@ describe('File Replicate Translation', () => {
   });
 
   //TW
-  describe('When user into the upload file form and the list is not empty:', () => {
+  describe('When user into the upload file form and the list is not empty :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       fie.uploadBtn.click();
@@ -142,7 +141,7 @@ describe('File Replicate Translation', () => {
     });
   });
 
-  describe('When user click replicateFileBtn and check language', () => {
+  describe('When user click replicateFileBtn and selects the Traditional Chinese language :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -160,7 +159,7 @@ describe('File Replicate Translation', () => {
     });
   });
 
-  describe('When user click replicateConfirmBtn and check toast', () => {
+  describe('When user click replicateConfirmBtn and check toast and selects the Traditional Chinese language :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -199,7 +198,7 @@ describe('File Replicate Translation', () => {
   });
 
   //CN
-  describe('When user into the upload file form and the list is not empty:', () => {
+  describe('When user into the upload file form and the list is not empty :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       fie.uploadBtn.click();
@@ -228,7 +227,7 @@ describe('File Replicate Translation', () => {
     });
   });
 
-  describe('When user click replicateFileBtn and check language', () => {
+  describe('When user click replicateFileBtn and selects the Simplified Chinese language :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -246,7 +245,7 @@ describe('File Replicate Translation', () => {
     });
   });
 
-  describe('When user click replicateConfirmBtn and check toast', () => {
+  describe('When user click replicateConfirmBtn and check toast and selects the Simplified Chinese language :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -260,7 +259,6 @@ describe('File Replicate Translation', () => {
     it('Should check toastMessage is success', () => {
       browser.ignoreSynchronization = true;
       browser.sleep(1000);
-      expect(nae.toastMessage.isDisplayed()).toBe(true);
       expect(nae.toastMessage.getText()).toBe(translate('cn','TOAST_REPLICATE_SUCCESSFULLY'));
       browser.ignoreSynchronization = false;
     });

@@ -159,7 +159,6 @@ describe('File Move',() => {
     it('Should cheak into the user list page and check sort situation', () => {
       browser.ignoreSynchronization = true;
       browser.sleep(1000);
-      expect(nae.toastMessage.isDisplayed()).toBe(true);
       expect(nae.toastMessage.getText()).toMatch(languages('en','TOAST_MOVE_SUCCESSFULLY'));
       browser.sleep(3000);
       expect(mve.moveForm.isPresent()).toBe(false);
@@ -184,7 +183,6 @@ describe('File Move',() => {
     it('Should check toastMessage is failure', () => {
       browser.ignoreSynchronization = true;
       browser.sleep(1000);
-      expect(nae.toastMessage.isDisplayed()).toBe(true);
       expect(nae.toastMessage.getText()).toMatch(languages('en','TOAST_MOVE_FAILURE'));
       browser.sleep(3000);
       expect(mve.moveForm.isPresent()).toBe(false);
