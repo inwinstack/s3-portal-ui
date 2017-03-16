@@ -138,7 +138,7 @@ const languages = {
   'MOVE_TITLE': '移動',
   'MOVE_DESCRIPTION': '選擇移動的目的地資料夾',
   'MOVE_SELECTED_ITEMS': '已選擇的物件',
-  'MOVE_FOIDER': '我的文件夾',
+  'MOVE_FOIDER': 'My Folders',
   'MOVE_CANCEL' : '取消',
   'MOVE_CONFIRM' : '移動',
   'TOAST_MOVE_SUCCESSFULLY': /^檔案.*移動檔案成功$/,
@@ -147,7 +147,7 @@ const languages = {
   'TOAST_MOVE_FOLDER_FAILURE': '檔案移動檔案失敗，請再試一次!',
   //MAKE_COPY
   'UTILS_REPLICATE': '製作副本',
-  'REPLICATE_DESCRIPTION': '您要將所選項目製作副本嗎？',
+  'REPLICATE_DESCRIPTION': '您要為您選擇的物件製作一個副本嗎?',
   'REPLICATE_CANCEL': '取消',
   'REPLICATE_CONFIRM': '確定',
   'TOAST_REPLICATE_SUCCESSFULLY': '製作副本成功!',
@@ -167,9 +167,9 @@ const languages = {
   'ACCOUNT_REMAIN' : '剩餘',
   'ACCOUNT_TAG_REMAIN' : '剩餘',
   'ACCOUNT_TAG_USED' : '已使用',
-  'ACCOUNT_DISPLAY' : '顯示GB',
+  'ACCOUNT_DISPLAY' : '顯示 GB',
   'ACCOUNT_CONFIRM' : '確定',
-  'ACCOUNT_STORAGE' : 'STORAGE CAPACITY',
+  'ACCOUNT_STORAGE' : '容量配額',
   'ACCOUNT_TWO' : 'TWO',
 
   // // AUTH

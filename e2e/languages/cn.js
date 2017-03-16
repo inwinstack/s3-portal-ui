@@ -140,7 +140,7 @@ const languages = {
   'MOVE_TITLE': '移动',
   'MOVE_DESCRIPTION': '选择移动的目的地资料夹',
   'MOVE_SELECTED_ITEMS': '已选择的物件',
-  'MOVE_FOIDER': '我的文件夹',
+  'MOVE_FOIDER': 'My Folders',
   'MOVE_CANCEL' : '取消',
   'MOVE_CONFIRM' : '移动',
   'TOAST_MOVE_SUCCESSFULLY': /^档案.*移动档案成功$/,
@@ -149,7 +149,7 @@ const languages = {
   'TOAST_MOVE_FOLDER_FAILURE': '档案移动档案失败，请再试一次!',
   //MAKE_COPY
   'UTILS_REPLICATE': '製作副本',
-  'REPLICATE_DESCRIPTION': '您要将所选项目制作副本吗？',
+  'REPLICATE_DESCRIPTION': '您要为您选择的物件製作一个副本吗?',
   'REPLICATE_CANCEL': '取消',
   'REPLICATE_CONFIRM': '确定',
   'TOAST_REPLICATE_SUCCESSFULLY': '製作副本成功!',
@@ -169,9 +169,9 @@ const languages = {
   'ACCOUNT_REMAIN' : '剩馀',
   'ACCOUNT_TAG_REMAIN' : '剩馀',
   'ACCOUNT_TAG_USED' : '已使用',
-  'ACCOUNT_DISPLAY' : '显示GB',
+  'ACCOUNT_DISPLAY' : '显示 GB',
   'ACCOUNT_CONFIRM' : '确定',
-  'ACCOUNT_STORAGE' : 'STORAGE CAPACITY',
+  'ACCOUNT_STORAGE' : '容量配額',
   'ACCOUNT_TWO' : 'TWO',
 }
 
