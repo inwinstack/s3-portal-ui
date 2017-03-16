@@ -1,6 +1,6 @@
 
 /**
- * @author Jamie jamie.h@inwinstack.com
+ * @author Jamie jamie.h@inwinstack.com, julius.j@inwinstack.com
  */
 
 .file-list  md-list-item > .md-list-item-inner > p {
@@ -11,35 +11,87 @@
   width: 55px;
 }
 
-.manager-email-class-width {
-  width: 800px;
+.manager-checkbox {
+  margin: 0 auto;
 }
 
-.size-title-width {
-  width: 84px;
+/*
+ *  user list table css
+*/
+
+table.user-list{
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
 }
 
-.size-width {
-  width: 110px;
+.user-list th{
+  text-align: left;
+  height: 48px;
+  border-bottom: 3px solid #ddd;
+  border-top: 0;
+  color: #ABAFB0;
 }
 
-.time-title-width {
-  width: 220px;
+.user-list td{
+  border-top: 1px solid #ddd;
+  height: 48px;
+  border-bottom: 1px solid #ddd;
+}
+
+.user-list td,.user-list th {
+  padding: 8px;
+}
+
+.name-width {
+  width: 25%;
+}
+
+.quota-width {
+  width: 33%;
 }
 
 .time-width {
-  width: 225px;
+  text-align: right;
+  padding-right: 50px;
 }
 
-table.md-table td.md-cell {
-  font-size: 16px;
+.list-pagination {
+  text-align: right;
+  padding-right: 20px;
+  height: 64px;
 }
 
-table.md-table th.md-column {
-  color: #999;
-  font-size: 15px;
+.pagination-button {
+  min-width: 24px;
+  margin: 6px 3px 6px 3px;
 }
 
-.md-table-pagination{
+.icon-color {
+  color: #ABAFB0;
+}
+
+.page-number {
   font-size: 14px;
+  color: #7C7A7A;
+  margin: 10px;
+}
+
+@media screen and (max-width: 960px) {
+  .name-width {
+    width: 40%;
+  }
+
+  .quota-width {
+   width: 40%;
+  }
+
+  .role-width {
+    text-align: right;
+    padding-right: 50px;
+  }
+
+  .list-pagination {
+    padding-right: 0px;
+  }
 }
