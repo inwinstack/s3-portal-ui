@@ -159,9 +159,23 @@ describe('File Move',() => {
     it('Should cheak into the user list page and check sort situation', () => {
       browser.ignoreSynchronization = true;
       browser.sleep(1000);
-      expect(nae.toastMessage.getText()).toMatch(languages('en','TOAST_MOVE_SUCCESSFULLY'));
+      expect(nae.toastMessage.isDisplayed()).toBe(true);
       browser.sleep(3000);
       expect(mve.moveForm.isPresent()).toBe(false);
+      browser.ignoreSynchronization = false;
+    });
+  });
+
+  describe('When user move successfully and check file:', () => {
+    beforeEach(() => {
+      browser.actions().doubleClick(bue.bucketList.first()).perform();
+      browser.actions().doubleClick(fie.fileList.first()).perform();
+      browser.ignoreSynchronization = true;
+      browser.sleep(1000);
+    });
+
+    it('Should cheak file move exist', () => {
+      expect(fie.fileList.get(0).element(by.css('[class="break-word flex-grow"]')).getText()).toBe(evn.abImgName);
       browser.ignoreSynchronization = false;
     });
   });
@@ -178,12 +192,13 @@ describe('File Move',() => {
       nae.moveFileBtn.click();
       browser.actions().doubleClick(mve.fileMoveList.first()).perform();
       mve.moveBtn.click();
+      browser.ignoreSynchronization = true;
+      browser.sleep(1000);
     });
 
     it('Should check toastMessage is failure', () => {
-      browser.ignoreSynchronization = true;
-      browser.sleep(1000);
-      expect(nae.toastMessage.getText()).toMatch(languages('en','TOAST_MOVE_FAILURE'));
+      expect(nae.toastMessage.isDisplayed()).toBe(true);
+      expect(fie.fileList.get(1).element(by.css('[class="break-word flex-grow"]')).getText()).toBe(evn.abImgName);
       browser.sleep(3000);
       expect(mve.moveForm.isPresent()).toBe(false);
       browser.ignoreSynchronization = false;
