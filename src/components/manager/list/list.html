@@ -19,49 +19,90 @@
     class="md-whiteframe-4dp"
     ng-if="list.data.length && ! list.requesting && ! list.error"
   >
-        <md-table-container>
-          <table class="table table-cursor table-hover" md-table md-row-select="list.options.rowSelection" 
-                 multiple="{{list.options.multiSelect}}" ng-model="list.selected" md-progress="promise">
-            <thead ng-if="!list.options.decapitate" md-head md-order="list.query.order" md-on-reorder="logOrder">
-              <tr md-row>
-                <th class="manager-checkbox-icon-width"></th>
-                <th md-column md-order-by="name"><span translate>MANAGER.USER_ACCOUNT</span></th>
-                <th md-column md-order-by="quota"><span class="ratio-width" translate>MANAGER.USER_QUOTA</span></th>
-                <th md-column md-numeric md-order-by="role" md-desc><span class="size-width" translate>MANAGER.USER_ROLE</span></th>
-                <th md-column md-numeric md-order-by="created_at" hide show-gt-sm show-gt-lg><span class="time-title-width" translate>MANAGER.USER_REGISTER_TIME</span></th>
-              </tr>
-            </thead>
-            <tbody md-body>
-              <tr md-row ng-repeat="user in list.data | filter: list.searchText | orderBy: list.query.order | limitTo: list.query.limit : (list.query.page -1) * list.query.limit">
-                <td md-cell>
-                  <md-checkbox
-                    aria-label="Get check"
-                    ng-checked="user.checked"
-                    ng-click="list.selectAccount(user)"
-                  ></md-checkbox>
-                </td>
-                <td md-cell>{{user.name}}</td>
-                <td md-cell class="ratio-width">
-                  <span>
-                    ({{ user.used_size_kb * 1024 | filesize }}/{{ user.total_size_kb * 1024 | filesize }}){{ user.quota * 100 | number:2 }}%
-                    <md-button
-                      aria-label="Quota Setting" class="md-icon-button"
-                      ng-click="list.createQuotaSettingDiag($event, user)"
-                    >
-                    <md-icon>settings</md-icon>
-                    </md-button>
-                  </span>
-                </td>
-                <td md-cell show-gt-md>{{user.role}}</td>
-                <td md-cell hide show-gt-sm show-gt-lg><span
-                    class="time-width inline-block"
-                    ng-bind="(user.created_at | date: 'yyyy-MM-dd')"
-                ></span></td>
-              </tr>
-            </tbody>
-          </table>
-        </md-table-container>
-        <md-table-pagination md-limit="list.query.limit" md-limit-options="limitOptions" md-page="list.query.page" md-total="{{list.data.total_page}}" md-page-select="list.options.pageSelect" md-boundary-links="list.options.boundaryLinks"></md-table-pagination> 
+    <md-content layout-padding>
+    <table class="user-list">
+      <thead>
+        <tr>
+          <th class="manager-checkbox-icon-width"></th>
+          <th><span translate>MANAGER.USER_ACCOUNT</span></th>
+          <th><span class="ratio-width" translate><span class="time-title-width">MANAGER.USER_QUOTA</span></th>
+          <th class="role-width"><span translate>MANAGER.USER_ROLE</span></th>
+          <th class="time-width" hide show-gt-sm show-gt-lg><span class="time-title-width" translate>MANAGER.USER_REGISTER_TIME</span></th>
+        </tr>
+      </thead>
+      <tr ng-repeat="user in list.data | filter: list.searchText">
+        <td>
+          <md-checkbox style="margin: 0 auto"
+            aria-label="Get check"
+            ng-checked="user.checked"
+            ng-click="list.selectAccount(user)"
+          ></md-checkbox>
+        </td>
+        <td class="name-width" ng-bind="user.name"></td>
+        <td class="quota-width">
+          ({{ user.used_size_kb * 1024 | filesize }}/{{ user.total_size_kb * 1024 | filesize }}){{ user.quota * 100 | number:2 }}%
+          <md-button
+            aria-label="Quota Setting" class="md-icon-button"
+            ng-click="list.createQuotaSettingDiag($event, user)"
+          >
+            <md-icon>settings</md-icon>
+          </md-button>
+          </td>
+        <td class="role-width" ng-bind="user.role"></td>
+        <td hide show-gt-sm show-gt-lg>
+          <span
+            class="time-width inline-block"
+            ng-bind="(user.created_at | date: 'yyyy-MM-dd')">
+          </span>
+        </td>
+      </tr>
+    </table>
+
+      <div layout="row" layout-align="end center" class="list-pagination">
+        <!--<label for="rows per page"  class="page-number"  hide show-gt-sm show-gt-lg> Rows Per Page: </label>
+        <md-select  aria-label="rows per page" ng-model="rowPerPage" 
+          placeholder="5" class="md-no-underline page-number" hide show-gt-sm show-gt-lg>
+          <md-option ng-repeat="rowOptions in list.limitOptions" ng-value="rowOptions" ng-bind="rowOptions"></md-option>
+        </md-select>-->
+
+        <label for="page number select"  class="page-number"> Page: </label>
+        <md-select  aria-label="page number select" ng-model="list.query.page" placeholder="1" class="md-no-underline page-number">
+          <md-option ng-repeat="options in list.query.pageOptions" ng-value="options"  ng-bind="options"></md-option>
+        </md-select>
+
+        <span class="page-number" style="margin:right 0"> {{list.currentIndexInitial}} - {{list.currentIndexEnd}} of {{list.currentIndexEnd}}</span>
+
+        <md-button class="pagination-button"
+          aria-label="navigate first"
+          ng-click="list.firstPageNumber()"
+        >
+          <md-icon class="icon-color">first_page</md-icon>
+        </md-button>
+
+        <md-button class="pagination-button"
+          aria-label="navigate before"
+          ng-click="list.previousPageNumber()"
+        >
+          <md-icon class="icon-color">chevron_left</md-icon>
+        </md-button>
+
+        <span class="page-number"> {{list.query.page}} </span>
+
+        <md-button class="pagination-button"
+          aria-label="navigate next"
+          ng-click="list.nextPageNumber()"
+        >
+          <md-icon class="icon-color">chevron_right</md-icon>
+        </md-button>
+
+        <md-button class="pagination-button"
+          aria-label="navigate last"
+          ng-click="list.lastPageNumber()"
+        >
+          <md-icon class="icon-color">last_page</md-icon>
+        </md-button>
+      </div>
+    </md-content>
   </div>
 
   <div

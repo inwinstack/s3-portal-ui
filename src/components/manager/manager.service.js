@@ -31,15 +31,16 @@ export default class ManagerService {
   getAccounts() {
     this.state.lists.requesting = true;
 
-    this.$fetch.get('/v1/admin/list/' + this.state.index)
+    return this.$fetch.get('/v1/admin/list/' + this.state.index)
       .then(({ data }) => {
         this.state.lists.error = false;
         const users = data.users.map(account => ({
           ...account,
           checked: false,
         }));
-        this.state.lists.data = uniqBy([...this.formatUser(users.sort(sortByEmail)), ...this.state.lists.data], 'id');
+        this.state.lists.data = this.formatUser(users.sort(sortByEmail));
         this.state.lists.data.count = data.count;
+        return this.state.lists.data;
       })
       .catch(() => {
         this.state.lists.error = true;
