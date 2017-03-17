@@ -9,6 +9,7 @@ import FolderService from './folder/folder.service';
 import RenameService from './rename/rename.service';
 import MoveService from './move/move.service';
 import './file.css';
+import './move/move.css';
 
 /** @ngInject */
 const route = $stateProvider => {

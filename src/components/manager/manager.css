@@ -26,8 +26,7 @@ table.user-list{
 }
 
 .user-list th{
-  text-align: left;
-  height: 48px;
+  height: 36px;
   border-bottom: 3px solid #ddd;
   border-top: 0;
   color: #ABAFB0;
@@ -40,7 +39,8 @@ table.user-list{
 }
 
 .user-list td,.user-list th {
-  padding: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .name-width {
@@ -58,8 +58,9 @@ table.user-list{
 
 .list-pagination {
   text-align: right;
+  margin-top: 8px;
   padding-right: 20px;
-  height: 64px;
+  height: 42px;
 }
 
 .pagination-button {
