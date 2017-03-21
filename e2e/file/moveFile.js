@@ -28,8 +28,25 @@ describe('File Move',() => {
     browser.driver.manage().window().maximize();
   });
 
+  //signIn
+  describe('When user signIn and click user list:', () => {
+    beforeEach(() => {
+      sie.emailInput.sendKeys(evn.correctEmail);
+      sie.passwordInput.sendKeys(evn.correctPassword);
+      sie.signinBtn.click();
+    });
+
+    it('Should cheak into the user list page', () => {
+      browser.ignoreSynchronization = true;
+      browser.sleep(1000);
+      expect(nae.toastMessage.isDisplayed()).toBe(true);
+      expect(browser.getCurrentUrl()).toBe(ps.bucketListPage);
+      browser.ignoreSynchronization = false;
+    });
+  });
+
 //create folder
-  describe('When user create folder', () => {
+  describe('When user create folder:', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(2).click();
@@ -50,17 +67,24 @@ describe('File Move',() => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       fie.uploadBtn.click();
-      fie.selectUploadFile.sendKeys(evn.abImgPath+evn.abImgName);
       browser.ignoreSynchronization = true;
+      fie.selectUploadFile.sendKeys(evn.abImgPath+evn.abImgName);
       fie.selectUploadFile.sendKeys(evn.abcImgPath+evn.abcImgName);
+      fie.selectUploadFile.sendKeys(evn.abdImgPath+evn.abdImgName);
+      fie.selectUploadFile.sendKeys(evn.abd1ImgPath+evn.abd1ImgName);
+      fie.selectUploadFile.sendKeys(evn.abd2ImgPath+evn.abd2ImgName);
+      fie.selectUploadFile.sendKeys(evn.abd11ImgPath+evn.abd11ImgName);
+      fie.selectUploadFile.sendKeys(evn.abd22ImgPath+evn.abd22ImgName);
       browser.sleep(1000);
       fie.checkUploadBtn.click();
     });
 
     it('Should check show upload success', () => {
       browser.sleep(3000);
-      expect(nae.toastMessage.isDisplayed()).toBe(true);
       browser.ignoreSynchronization = false;
+      fie.fileList.getText().then((result) => {
+        expect(result).toBe(result.sort(naturalSort));
+      });
     });
   });
 
@@ -77,7 +101,7 @@ describe('File Move',() => {
   });
 
 //moveForm moveBtn this false
-  describe('When click moveBtn moveThis disabled', () => {
+  describe('When click moveBtn:', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       fie.fileCheckbox.get(1).click();
@@ -85,13 +109,14 @@ describe('File Move',() => {
       nae.moveFileBtn.click();
     });
 
-    it('Should check the [Move] button is disabled', () => {
+    it('Should check the [Move] button is disabled and moveForm display', () => {
+      expect(mve.moveForm.isPresent()).toBe(true);
       expect(mve.moveBtn.isEnabled()).toBe(false);
     });
   });
 
 //moveForm cancelBtn0 true
-  describe('When click moveBtn check closeBtn', () => {
+  describe('When click moveBtn check closeBtn:', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       fie.fileCheckbox.get(1).click();
@@ -100,13 +125,13 @@ describe('File Move',() => {
       mve.closeBtn.get(0).click();
     });
 
-    it('Should check the [Close] button is enable', () => {
+    it('Should check the [x] button is enable', () => {
       expect(mve.moveForm.isPresent()).toBe(false);
     });
   });
 
 //moveForm cancelBtn1 true
-  describe('When click moveBtn check closeBtn', () => {
+  describe('When click moveBtn check closeBtn:', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       fie.fileCheckbox.get(1).click();
@@ -115,13 +140,13 @@ describe('File Move',() => {
       mve.closeBtn.get(1).click();
     });
 
-    it('Should check the [Close] button is enable', () => {
+    it('Should check the [CANCEL] button is enable', () => {
       expect(mve.moveForm.isPresent()).toBe(false);
     });
   });
 
 //move file
-  describe('When user move', () => {
+  describe('When user move successfully:', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       fie.fileCheckbox.get(1).click();
@@ -135,16 +160,28 @@ describe('File Move',() => {
       browser.ignoreSynchronization = true;
       browser.sleep(1000);
       expect(nae.toastMessage.isDisplayed()).toBe(true);
-      expect(browser.getCurrentUrl()).toBe(ps.bucketListPage + "/Apple");
+      browser.sleep(3000);
+      expect(mve.moveForm.isPresent()).toBe(false);
       browser.ignoreSynchronization = false;
-      fie.fileList.getText().then((result) => {
-        expect(result).toBe(result.sort(naturalSort));
-      });
+    });
+  });
+
+  describe('When user move successfully and check file:', () => {
+    beforeEach(() => {
+      browser.actions().doubleClick(bue.bucketList.first()).perform();
+      browser.actions().doubleClick(fie.fileList.first()).perform();
+      browser.ignoreSynchronization = true;
+      browser.sleep(1000);
+    });
+
+    it('Should cheak file move exist', () => {
+      expect(fie.fileList.get(0).element(by.css('[class="break-word flex-grow"]')).getText()).toBe(evn.abImgName);
+      browser.ignoreSynchronization = false;
     });
   });
 
 //moveFile failure
-  describe('When user move failure', () => {
+  describe('When user move failure:', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       fie.uploadBtn.click();
@@ -155,23 +192,25 @@ describe('File Move',() => {
       nae.moveFileBtn.click();
       browser.actions().doubleClick(mve.fileMoveList.first()).perform();
       mve.moveBtn.click();
+      browser.ignoreSynchronization = true;
+      browser.sleep(1000);
     });
 
     it('Should check toastMessage is failure', () => {
-      browser.ignoreSynchronization = true;
-      browser.sleep(1000);
       expect(nae.toastMessage.isDisplayed()).toBe(true);
-      expect(nae.toastMessage.getText()).toBe(languages('en','TOAST_MOVE_FAILURE'));
+      expect(fie.fileList.get(1).element(by.css('[class="break-word flex-grow"]')).getText()).toBe(evn.abImgName);
+      browser.sleep(3000);
+      expect(mve.moveForm.isPresent()).toBe(false);
       browser.ignoreSynchronization = false;
     });
   });
 //deleted file
-  describe('deleted file', () => {
+  describe('Deleted file:', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
-      fie.fileCheckbox.get(0).click();
-      fie.fileCheckbox.get(1).click();
-      fie.fileCheckbox.get(2).click();
+      for(var i=0 ; i<8 ; i++){
+        fie.fileCheckbox.get(i).click();
+      }
       nae.menuBtn.get(2).click();
       nae.deleteFileBtn.click();
       nae.checkDeleteFileBtn.click();
@@ -179,7 +218,7 @@ describe('File Move',() => {
 
     it('Should deleted file', () => {
       browser.ignoreSynchronization = true;
-      browser.sleep(1000);
+      browser.sleep(3000);
       browser.ignoreSynchronization = false;
     });
   });

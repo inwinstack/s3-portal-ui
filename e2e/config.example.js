@@ -31,6 +31,12 @@ exports.config = {
    './file/moveLanguages.js',
    './file/makeCopy.js',
    './file/makeCopyLanguage.js',
+   './auth/myAccount.js',
+   './auth/accountLanguage.js',
+   './auth/signout.js',
+   './administrator/userQuota.js',
+   './administrator/setQuota.js',
+   './administrator/quotaLanguage.js',
   ],
   multiCapabilities: [
   {

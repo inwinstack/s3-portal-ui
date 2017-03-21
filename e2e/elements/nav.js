@@ -18,6 +18,7 @@ function elements () {
   this.toastMessage = element(by.css('[class="md-toast-text ng-binding"]'));
   this.replicateFileBtn = element(by.css('[ng-click="actionNav.replicate($event)"]'));
   this.createFolder = element.all(by.css('[ng-click="actionNav.createFolder($event)"]'));
+  this.myAccountBtn = element(by.css('a[class="md-button md-ink-ripple"]'));
 }
 
 module.exports = elements;

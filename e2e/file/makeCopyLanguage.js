@@ -1,7 +1,6 @@
 const environment = require('../environment/index.js');
 const signinElements = require('../elements/signin.js');
 const bucketElements = require('../elements/bucket.js');
-const folderElements = require('../elements/folder.js');
 const navElements = require('../elements/nav.js');
 const fileElements = require('../elements/file.js');
 const naturalSort = require('javascript-natural-sort');
@@ -9,13 +8,12 @@ const translate = require('../languages/index.js');
 const replicateElements = require('../elements/makeCopy.js');
 const pages = require('../page.js');
 
-describe('File Translation', () => {
+describe('File Replicate Translation', () => {
   const env = new environment();
   const sie = new signinElements();
   const bue = new bucketElements();
   const fie = new fileElements();
   const nae = new navElements();
-  const foe = new folderElements();
   const ps = new pages();
   const ree = new replicateElements();
 
@@ -29,7 +27,7 @@ describe('File Translation', () => {
   });
 
   //EN
-  describe('When user into the upload file form and the list is not empty:', () => {
+  describe('When user into the upload file form and the list is not empty :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       fie.uploadBtn.click();
@@ -54,11 +52,11 @@ describe('File Translation', () => {
     });
 
     it('Should check every elements using the right language', () => {
-      expect(nae.replicateFileBtn.getText()).toBe(translate('en','UTILS_MOVE'));
+      expect(nae.replicateFileBtn.getText()).toBe(translate('en','UTILS_REPLICATE'));
     });
   });
 
-  describe('When user click replicateFileBtn and check language', () => {
+  describe('When user click replicateFileBtn and selects the English language :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -76,7 +74,7 @@ describe('File Translation', () => {
     });
   });
 
-  describe('When user click replicateConfirmBtn and check toast', () => {
+  describe('When user click replicateConfirmBtn and check toast and selects the English language :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -90,7 +88,6 @@ describe('File Translation', () => {
     it('Should check toastMessage is success', () => {
       browser.ignoreSynchronization = true;
       browser.sleep(1000);
-      expect(nae.toastMessage.isDisplayed()).toBe(true);
       expect(nae.toastMessage.getText()).toBe(translate('en','TOAST_REPLICATE_SUCCESSFULLY'));
       browser.ignoreSynchronization = false;
     });
@@ -115,7 +112,7 @@ describe('File Translation', () => {
   });
 
   //TW
-  describe('When user into the upload file form and the list is not empty:', () => {
+  describe('When user into the upload file form and the list is not empty :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       fie.uploadBtn.click();
@@ -140,11 +137,11 @@ describe('File Translation', () => {
     });
 
     it('Should check every elements using the right language', () => {
-      expect(nae.replicateFileBtn.getText()).toBe(translate('tw','UTILS_MOVE'));
+      expect(nae.replicateFileBtn.getText()).toBe(translate('tw','UTILS_REPLICATE'));
     });
   });
 
-  describe('When user click replicateFileBtn and check language', () => {
+  describe('When user click replicateFileBtn and selects the Traditional Chinese language :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -162,7 +159,7 @@ describe('File Translation', () => {
     });
   });
 
-  describe('When user click replicateConfirmBtn and check toast', () => {
+  describe('When user click replicateConfirmBtn and check toast and selects the Traditional Chinese language :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -201,7 +198,7 @@ describe('File Translation', () => {
   });
 
   //CN
-  describe('When user into the upload file form and the list is not empty:', () => {
+  describe('When user into the upload file form and the list is not empty :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       fie.uploadBtn.click();
@@ -226,11 +223,11 @@ describe('File Translation', () => {
     });
 
     it('Should check every elements using the right language', () => {
-      expect(nae.replicateFileBtn.getText()).toBe(translate('cn','UTILS_MOVE'));
+      expect(nae.replicateFileBtn.getText()).toBe(translate('cn','UTILS_REPLICATE'));
     });
   });
 
-  describe('When user click replicateFileBtn and check language', () => {
+  describe('When user click replicateFileBtn and selects the Simplified Chinese language :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -248,7 +245,7 @@ describe('File Translation', () => {
     });
   });
 
-  describe('When user click replicateConfirmBtn and check toast', () => {
+  describe('When user click replicateConfirmBtn and check toast and selects the Simplified Chinese language :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -262,7 +259,6 @@ describe('File Translation', () => {
     it('Should check toastMessage is success', () => {
       browser.ignoreSynchronization = true;
       browser.sleep(1000);
-      expect(nae.toastMessage.isDisplayed()).toBe(true);
       expect(nae.toastMessage.getText()).toBe(translate('cn','TOAST_REPLICATE_SUCCESSFULLY'));
       browser.ignoreSynchronization = false;
     });

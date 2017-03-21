@@ -54,7 +54,7 @@ const users = {
     'folderName': 'ubuntu-chrome-folder',
     'administrator': {
       'email' : 'root@inwinstack.com',
-      'password' : '123456'
+      'password' : 'password'
     },
     'abImg': {
       'name':'ab.png',
@@ -62,6 +62,26 @@ const users = {
     },
     'abcImg': {
       'name':'abc.png',
+      'path': '/home/ubuntu/img/'
+    },
+    'abdImg': {
+      'name':'abd.png',
+      'path': '/home/ubuntu/img/'
+    },
+    'abd1Img': {
+      'name':'abd1.png',
+      'path': '/home/ubuntu/img/'
+    },
+    'abd2Img': {
+      'name':'abd2.png',
+      'path': '/home/ubuntu/img/'
+    },
+    'abd11Img': {
+      'name':'abd11.png',
+      'path': '/home/ubuntu/img/'
+    },
+    'abd22Img': {
+      'name':'abd22.png',
       'path': '/home/ubuntu/img/'
     }
   },

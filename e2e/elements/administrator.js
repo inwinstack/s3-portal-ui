@@ -2,7 +2,7 @@ function elements () {
   this.accountListBtn = element(by.css('[aria-label="Account List"]'));
   this.bucketListBtn = element(by.css('[aria-label="Bucket"]'));
   this.userList = element(by.css('[ng-if="list.data.length && ! list.requesting && ! list.error"]'));
-  this.allAccountList = element.all(by.repeater('f in list.data | filter:list.searchText'));
+  // this.allAccountList = element.all(by.repeater('f in list.data | filter:list.searchText'));
   this.accountListCheckbox = element.all(by.css('[ng-checked="f.checked"]'));
   this.createUserBtn = element(by.css('[ng-click="managerNav.createAccountDialog($event)"]'));
   this.deleteUserBtn = element(by.css('[ng-click="managerNav.delete()"]'));
@@ -36,6 +36,19 @@ function elements () {
   this.deleteUserForm = element(by.name('delete.form'));
   this.cancelDeleteUserBtn = element.all(by.css('[ng-click="delete.cancel()"]'));
   this.checkDeleteUserBtn = element(by.css('[ng-click="delete.accountDelete()"]'));
+
+  this.quotaTitle = element(by.css('th[class="md-column ng-isolate-scope md-sort"]'));
+  this.quotaSize = element(by.css('[ng-model="quota.quotaSize"]'));
+  this.setQuota = element.all(by.css('[ng-click="list.createQuotaSettingDiag($event, user)"]'));
+  this.setQuotaForm = element(by.name('quota.form'));
+  this.setQuotaCancel = element.all(by.css('[ng-click="quota.cancel()"]'));
+  this.setQuotaSave = element(by.css('[ng-click="quota.submit()"]'));
+  this.quotaFormTitle = element(by.css('h2[class="ng-scope"]'));
+  this.quotaFormLabel = element.all(by.css('[class="ng-scope md-required"]'));
+  this.search = element(by.css('[ng-model="list.searchText"]'));
+  this.allAccountList = element.all(by.repeater('user in list.data | filter: list.searchText | orderBy: list.query.order | limitTo: list.query.limit : (list.query.page -1) * list.query.limit'));
+  this.loadingIcon = element(by.css('[class="ng-isolate-scope md-mode-indeterminate"]'));
+  this.userMsg = element.all(by.css('[class="ratio-width md-cell"]'));
 }
 
 module.exports = elements;

@@ -29,7 +29,7 @@ describe('File Translation', () => {
   });
 
 //create folder
-  describe('When user create folder', () => {
+  describe('When user create folder :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(2).click();
@@ -44,6 +44,7 @@ describe('File Translation', () => {
       browser.ignoreSynchronization = false;
     });
   });
+
   //EN
   describe('When user into the file management page and selects the English language :',() => {
     beforeEach(() => {
@@ -58,7 +59,7 @@ describe('File Translation', () => {
     });
   });
 
-  describe('When user click moveFileBtn and check language', () => {
+  describe('When user click moveFileBtn and selects the English language :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -76,13 +77,12 @@ describe('File Translation', () => {
       expect(mve.moveForm.element(by.css('span[class="ng-binding ng-scope"]')).getText()).toBe(translate('en','MOVE_DESCRIPTION'));
       expect(mve.moveForm.all(by.css('th[class="ng-scope"]')).first().getText()).toBe(translate('en','MOVE_SELECTED_ITEMS'));
       expect(mve.moveForm.all(by.css('th[class="ng-scope"]')).get(1).getText()).toBe(translate('en','MOVE_FOIDER'));
-      // var moveForm = mve.moveForm;
-      // var apple = moveForm.all(by.css('th[class="ng-scope"]')).get(0);
-      // expect(apple.getText()).toBe(translate('tw','MOVE_SELECTED_ITEMS'));
+      expect(mve.closeBtn.get(1).getText()).toBe(translate('en','MOVE_CANCEL'));
+      expect(mve.moveBtn.getText()).toBe(translate('en','MOVE_CONFIRM'));
     });
   });
 
-  describe('When user move file and check toast language successfully', () => {
+  describe('When user move file and check toast language successfully and selects the English language:', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -97,13 +97,12 @@ describe('File Translation', () => {
     it('Should check every elements using the right language', () => {
       browser.ignoreSynchronization = true;
       browser.sleep(1000);
-      expect(nae.toastMessage.isDisplayed()).toBe(true);
-      expect(nae.toastMessage.getText()).toBe(translate('en','TOAST_MOVE_SUCCESSFULLY'));
+      expect(nae.toastMessage.getText()).toMatch(translate('en','TOAST_MOVE_SUCCESSFULLY'));
       browser.ignoreSynchronization = false;
     });
   });
 
-  describe('When user move file and check toast language failure', () => {
+  describe('When user move file and check toast language failure and selects the English language:', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -121,13 +120,12 @@ describe('File Translation', () => {
     it('Should check every elements using the right language', () => {
       browser.ignoreSynchronization = true;
       browser.sleep(1000);
-      expect(nae.toastMessage.isDisplayed()).toBe(true);
-      expect(nae.toastMessage.getText()).toBe(translate('en','TOAST_MOVE_FAILURE'));
+      expect(nae.toastMessage.getText()).toMatch(translate('en','TOAST_MOVE_FAILURE'));
       browser.ignoreSynchronization = false;
     });
   });
 
-  describe('deleted file', () => {
+  describe('Deleted file :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       fie.fileCheckbox.get(1).click();
@@ -162,7 +160,7 @@ describe('File Translation', () => {
     });
   });
 
-  describe('When user click moveBtn and check language', () => {
+  describe('When user click moveBtn and check language and selects the Traditional Chinese language:', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -180,13 +178,12 @@ describe('File Translation', () => {
       expect(mve.moveForm.element(by.css('span[class="ng-binding ng-scope"]')).getText()).toBe(translate('tw','MOVE_DESCRIPTION'));
       expect(mve.moveForm.all(by.css('th[class="ng-scope"]')).first().getText()).toBe(translate('tw','MOVE_SELECTED_ITEMS'));
       expect(mve.moveForm.all(by.css('th[class="ng-scope"]')).get(1).getText()).toBe(translate('tw','MOVE_FOIDER'));
-      // var moveForm = mve.moveForm;
-      // var apple = moveForm.all(by.css('th[class="ng-scope"]')).get(0);
-      // expect(apple.getText()).toBe(translate('tw','MOVE_SELECTED_ITEMS'));
+      expect(mve.closeBtn.get(1).getText()).toBe(translate('tw','MOVE_CANCEL'));
+      expect(mve.moveBtn.getText()).toBe(translate('tw','MOVE_CONFIRM'));
     });
   });
 
-  describe('When user move file and check toast language successfully', () => {
+  describe('When user move file and check toast language successfully and selects the Traditional Chinese language:', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -201,13 +198,12 @@ describe('File Translation', () => {
     it('Should check every elements using the right language', () => {
       browser.ignoreSynchronization = true;
       browser.sleep(1000);
-      expect(nae.toastMessage.isDisplayed()).toBe(true);
-      expect(nae.toastMessage.getText()).toBe(translate('tw','TOAST_MOVE_SUCCESSFULLY'));
+      expect(nae.toastMessage.getText()).toMatch(translate('tw','TOAST_MOVE_SUCCESSFULLY'));
       browser.ignoreSynchronization = false;
     });
   });
 
-  describe('When user move file and check toast language failure', () => {
+  describe('When user move file and check toast language failure and selects the Traditional Chinese language:', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -225,13 +221,12 @@ describe('File Translation', () => {
     it('Should check every elements using the right language', () => {
       browser.ignoreSynchronization = true;
       browser.sleep(1000);
-      expect(nae.toastMessage.isDisplayed()).toBe(true);
-      expect(nae.toastMessage.getText()).toBe(translate('tw','TOAST_MOVE_FAILURE'));
+      expect(nae.toastMessage.getText()).toMatch(translate('tw','TOAST_MOVE_FAILURE'));
       browser.ignoreSynchronization = false;
     });
   });
 
-  describe('deleted file', () => {
+  describe('Deleted file :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       fie.fileCheckbox.get(1).click();
@@ -266,7 +261,7 @@ describe('File Translation', () => {
     });
   });
 
-  describe('When user click moveBtn and check language', () => {
+  describe('When user click moveBtn and check language and selects the Simplified Chinese language:', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -284,13 +279,12 @@ describe('File Translation', () => {
       expect(mve.moveForm.element(by.css('span[class="ng-binding ng-scope"]')).getText()).toBe(translate('cn','MOVE_DESCRIPTION'));
       expect(mve.moveForm.all(by.css('th[class="ng-scope"]')).first().getText()).toBe(translate('cn','MOVE_SELECTED_ITEMS'));
       expect(mve.moveForm.all(by.css('th[class="ng-scope"]')).get(1).getText()).toBe(translate('cn','MOVE_FOIDER'));
-      // var moveForm = mve.moveForm;
-      // var apple = moveForm.all(by.css('th[class="ng-scope"]')).get(0);
-      // expect(apple.getText()).toBe(translate('tw','MOVE_SELECTED_ITEMS'));
+      expect(mve.closeBtn.get(1).getText()).toBe(translate('cn','MOVE_CANCEL'));
+      expect(mve.moveBtn.getText()).toBe(translate('cn','MOVE_CONFIRM'));
     });
   });
 
-  describe('When user move file and check toast language successfully', () => {
+  describe('When user move file and check toast language successfully and selects the Simplified Chinese language:', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -305,13 +299,12 @@ describe('File Translation', () => {
     it('Should check every elements using the right language', () => {
       browser.ignoreSynchronization = true;
       browser.sleep(1000);
-      expect(nae.toastMessage.isDisplayed()).toBe(true);
-      expect(nae.toastMessage.getText()).toBe(translate('cn','TOAST_MOVE_SUCCESSFULLY'));
+      expect(nae.toastMessage.getText()).toMatch(translate('cn','TOAST_MOVE_SUCCESSFULLY'));
       browser.ignoreSynchronization = false;
     });
   });
 
-  describe('When user move file and check toast language failure', () => {
+  describe('When user move file and check toast language failure and selects the Simplified Chinese language:', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(1).click();
@@ -329,13 +322,12 @@ describe('File Translation', () => {
     it('Should check every elements using the right language', () => {
       browser.ignoreSynchronization = true;
       browser.sleep(1000);
-      expect(nae.toastMessage.isDisplayed()).toBe(true);
-      expect(nae.toastMessage.getText()).toBe(translate('cn','TOAST_MOVE_FAILURE'));
+      expect(nae.toastMessage.getText()).toMatch(translate('cn','TOAST_MOVE_FAILURE'));
       browser.ignoreSynchronization = false;
     });
   });
 
-  describe('deleted file', () => {
+  describe('Deleted file :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       fie.fileCheckbox.get(0).click();
@@ -343,16 +335,11 @@ describe('File Translation', () => {
       nae.menuBtn.get(2).click();
       nae.deleteFileBtn.click();
       nae.checkDeleteFileBtn.click();
-      // browser.actions().doubleClick(fie.fileList.first()).perform();
-      // fie.fileCheckbox.get(0).click();
-      // nae.menuBtn.get(2).click();
-      // nae.deleteFileBtn.click();
-      // nae.checkDeleteFileBtn.click();
     });
 
     it('Should deleted file', () => {
       browser.ignoreSynchronization = true;
-      browser.sleep(1000);
+      browser.sleep(3000);
       browser.ignoreSynchronization = false;
     });
   });

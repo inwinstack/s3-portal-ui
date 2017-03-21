@@ -9,7 +9,7 @@ const naturalSort = require('javascript-natural-sort');
 const translate = require('../languages/index.js');
 const pages = require('../page.js');
 
-describe('File Move',() => {
+describe('Folder Move',() => {
   const evn = new environment();
   const nae = new navElements();
   const sie = new signinElements();
@@ -29,7 +29,7 @@ describe('File Move',() => {
   });
 
   //create folder
-  describe('When user create folder', () => {
+  describe('When user create folder :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       nae.menuBtn.get(2).click();
@@ -48,7 +48,8 @@ describe('File Move',() => {
 
     it('',() => {
       browser.ignoreSynchronization = true;
-      browser.sleep(1000);
+      browser.sleep(3000);
+      expect(nae.toastMessage.isDisplayed()).toBe(true);
       browser.ignoreSynchronization = false;
     });
   });
@@ -67,7 +68,7 @@ describe('File Move',() => {
   });
 
   //moveForm moveBtn false and form is true
-  describe('When click moveBtn moveThis disabled', () => {
+  describe('When click moveBtn moveThis disabled :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       fie.fileCheckbox.get(0).click();
@@ -90,18 +91,20 @@ describe('File Move',() => {
       nae.moveFileBtn.click();
       browser.actions().doubleClick(mve.fileMoveList.first()).perform();
       mve.moveBtn.click();
+      browser.ignoreSynchronization = true;
+      browser.sleep(3000);
     });
 
-    it('Should check toastMessage', () => {
-      browser.ignoreSynchronization = true;
+    it('Should check toastMessage successfully', () => {
+      expect(nae.toastMessage.isDisplayed()).toBe(true);
       browser.sleep(1000);
-      expect(nae.toastMessage.getText()).toBe(translate('en','TOAST_MOVE_FOLDER_SUCCESSFULLY'));
+      expect(mve.moveForm.isPresent()).toBe(false);
       browser.ignoreSynchronization = false;
     });
   });
 
   //check file
-  describe('When the user checks whether the mobile data is correct:', () => {
+  describe('When the user checks whether the mobile data is correct :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       browser.actions().doubleClick(fie.fileList.first()).perform();
@@ -109,16 +112,41 @@ describe('File Move',() => {
     });
 
     it('Should check file exist', () => {
-      expect(fie.fileList.get(0).element(by.css('p[class="break-word flex-grow"]')).getText()).toBe("ab.png");
-      expect(fie.fileList.get(1).element(by.css('p[class="break-word flex-grow"]')).getText()).toBe("abc.png");
+      expect(fie.fileList.get(0).element(by.css('p[class="break-word flex-grow"]')).getText()).toBe(evn.abImgName);
+      expect(fie.fileList.get(1).element(by.css('p[class="break-word flex-grow"]')).getText()).toBe(evn.abcImgName);
+    });
+  });
+
+  describe('When user move folder:', () => {
+    beforeEach(() => {
+      browser.actions().doubleClick(bue.bucketList.first()).perform();
+      nae.menuBtn.get(2).click();
+      nae.createFolder.get(1).click();
+      foe.createFolderInput.sendKeys("1");
+      foe.checkCreateFolderBtn.click();
+      fie.fileCheckbox.get(1).click();
+      nae.menuBtn.get(2).click();
+      nae.moveFileBtn.click();
+      browser.actions().doubleClick(mve.fileMoveList.first()).perform();
+      mve.moveBtn.click();
+      browser.ignoreSynchronization = true;
+      browser.sleep(1000);
+    });
+
+    it('Should check toastMessage failure', () => {
+      expect(fie.fileList.get(1).element(by.css('p[class="break-word flex-grow"]')).getText()).toBe("New folder1");
+      browser.sleep(3000);
+      expect(mve.moveForm.isPresent()).toBe(false);
+      browser.ignoreSynchronization = false;
     });
   });
 
   //deleted file
-  describe('deleted file', () => {
+  describe('Deleted file :', () => {
     beforeEach(() => {
       browser.actions().doubleClick(bue.bucketList.first()).perform();
       fie.fileCheckbox.get(0).click();
+      fie.fileCheckbox.get(1).click();
       nae.menuBtn.get(2).click();
       nae.deleteFileBtn.click();
       nae.checkDeleteFileBtn.click();
