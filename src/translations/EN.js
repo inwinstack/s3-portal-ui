@@ -158,7 +158,7 @@ export default {
     MOVE_SUCCESS: 'Your File {{ fileName }} Move Success',
     MOVE_FAILURE: 'Your File {{ fileName }} Move Failure, Please Try Again!',
     MOVE_CONTENT: 'Choose select files or folders where you want to move',
-    SELECTED_ITEMS: 'Seleted Items',
+    SELECTED_ITEMS: 'Selected Items',
   },
   MANAGER: {
     USER_QUOTA: 'User Quota',
