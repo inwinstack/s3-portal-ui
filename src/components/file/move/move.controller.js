@@ -1,4 +1,3 @@
-import _ from 'lodash';
 export default class MoveController {
   /** @ngInject */
   constructor($file, $move, $scope, $stateParams) {
@@ -16,7 +15,6 @@ export default class MoveController {
       () => $move.state.lists,
       newVal => Object.assign(this, newVal)
     , true);
-
     this.paths = $stateParams.path.split('/');
     this.bucket = this.paths[0];
     this.paths = '';
