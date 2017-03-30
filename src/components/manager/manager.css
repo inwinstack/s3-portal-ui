@@ -1,7 +1,21 @@
 
 /**
- * @author Jamie jamie.h@inwinstack.com, julius.j@inwinstack.com
+ * @author Julius julius.j@inwinstack.com, Jamie jamie.h@inwinstack.com
  */
+
+
+/**
+ *  layout container
+ */
+
+#manager-list-container {
+  bottom: 0;
+  top: 130px;
+  position: absolute;
+  width: 100%;
+}
+
+/*------------------------------------------------------*/
 
 .file-list  md-list-item > .md-list-item-inner > p {
   padding: 0 15px;
@@ -38,6 +52,10 @@ table.user-list{
   border-bottom: 1px solid #ddd;
 }
 
+.user-list tbody tr:hover{
+  background-color: rgba(158,158,158,0.2);
+}
+
 .user-list td,.user-list th {
   padding-top: 8px;
   padding-bottom: 8px;
@@ -55,6 +73,14 @@ table.user-list{
   text-align: right;
   padding-right: 50px;
 }
+
+.checkbox-padding {
+  padding-left: 10px;
+}
+
+/**
+ *  list pagination
+ */
 
 .list-pagination {
   text-align: right;
@@ -78,13 +104,41 @@ table.user-list{
   margin: 10px;
 }
 
+md-input-container.list-search .md-errors-spacer{
+ min-height: 0px;
+}
+
+md-input-container.list-search.ng-hide-remove {
+  flex: 1;
+  transform-origin: right;
+  animation: flexGrow 0.5s ease forwards;
+}
+
+md-input-container.list-search.ng-hide-remove.ng-hide-remove-active {
+  flex: .000001;
+}
+
+md-input-container.list-search.ng-hide-add {
+  flex: .000001;
+}
+
+md-input-container.list-search.ng-hide-add-active {
+  flex: 1;
+  transform-origin: right;
+  animation: flexShrink 0.5s ease forwards;
+}
+
+/**
+ *  RWD media query
+ */
+
 @media screen and (max-width: 960px) {
   .name-width {
     width: 40%;
   }
 
   .quota-width {
-   width: 40%;
+    width: 40%;
   }
 
   .role-width {

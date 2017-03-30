@@ -43,6 +43,7 @@ const Manager = module('manager', [
   List,
 ])
 .service('$manager', ManagerService)
+.service('$managerNav', ManagerNavbarService)
 .config(route);
 
 
