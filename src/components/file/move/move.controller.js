@@ -18,6 +18,7 @@ export default class MoveController {
     this.paths = $stateParams.path.split('/');
     this.bucket = this.paths[0];
     this.paths = '';
+    this.breadcrumb = [{paths:this.bucket, link:''}];
     this.$move.getFiles(this.bucket);
   }
 
@@ -34,6 +35,7 @@ export default class MoveController {
   
   setPaths(paths) {
     this.paths = this.paths + `${paths}/`;
+    this.updateBreadcrumb(paths);
   }
 
   move() {
@@ -44,5 +46,18 @@ export default class MoveController {
         this.$move.moveFile(this.bucket, this.fileSelected[file].Key, this.bucket, this.paths, this.fileSelected[file].display)
       }
     }
+  }
+
+  hrefBreadCrumb(target, index) {
+    this.paths = target;
+    this.breadcrumb.splice(index+1);
+    this.$move.getFiles(this.bucket, this.paths);
+  }
+
+  updateBreadcrumb(paths) {
+    this.breadcrumb = [...this.breadcrumb, {
+      paths: paths,
+      link: this.paths
+    }];
   }
 }

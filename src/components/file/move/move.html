@@ -16,6 +16,7 @@
     <md-dialog-content>
       <div class="md-dialog-content">
         <span translate class="ng-binding">FILE.MOVE_CONTENT</span>
+        <span>{{move.breadcrumb}}</span>
       </div>
       <div class="md-dialog-content">
 
@@ -50,18 +51,9 @@
                 <div layout="row">
                   <ul class="move-breadcrumb md-body-2">
                     <!--move destination breadcrumb placed here-->
-                    <li>
-                        test
-                    </li>
-                    <li>
-                        test
-                    </li>
-                    <li>
-                      <a href="">
-                        test
-                      </a>
-                    </li>  
-
+                    <li ng-repeat="p in move.breadcrumb">
+                        <span ng-click="move.hrefBreadCrumb(p.link, $index)">{{ p.paths }}</span>
+                    </li> 
                   </ul>
                 </div>
               </th>
