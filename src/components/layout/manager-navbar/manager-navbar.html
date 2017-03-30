@@ -26,6 +26,17 @@
     <span flex></span>
 
     <md-button
+      class="md-icon-button" aria-label="Search"
+      ng-click="managerNav.showSearchBar()"
+    >
+      <md-icon class="material-icons icon-default">search</md-icon>
+    </md-button>
+    
+    <md-input-container class="list-search"  flex ng-show="managerNav.showSearchBarInput">
+        <input ng-model="managerNav.searchText">
+    </md-input-container> 
+
+    <md-button
       class="md-icon-button" aria-label="Refresh"
       ng-click="managerNav.refresh()"
     >

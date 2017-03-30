@@ -1,11 +1,4 @@
 <md-content layout-padding>
-  <div class="md-toolbar-tools">
-    <md-input-container md-theme="input" flex>
-          <label>&nbsp;</label>
-          <md-icon>search</md-icon>
-          <input ng-model="list.searchText" placeholder="enter search">
-    </md-input-container>
-  </div>  
   <div
     class="progress-state"
     layout="column" layout-align="center center"
@@ -14,6 +7,14 @@
     <md-progress-circular md-mode="indeterminate" md-diameter="70"></md-progress-circular>
     <div class="md-headline" translate>UTILS.LOADING</div>
   </div>
+
+  <!--<div class="md-toolbar-tools" ng-hide="!list.searchBarShow" flex>
+    <md-input-container>
+          <label>&nbsp;</label>
+          <md-icon>search</md-icon>
+          <input ng-model="list.searchText" placeholder="enter search">
+    </md-input-container>
+  </div>  -->
 
   <div
     class="md-whiteframe-4dp"
@@ -31,7 +32,7 @@
         </tr>
       </thead>
       <tr ng-repeat="user in list.data | filter: list.searchText">
-        <td>
+        <td class="checkbox-padding">
           <md-checkbox style="margin: 0 auto"
             aria-label="Get check"
             ng-checked="user.checked"
@@ -59,12 +60,6 @@
     </table>
 
       <div layout="row" layout-align="end center" class="list-pagination">
-        <!--<label for="rows per page"  class="page-number"  hide show-gt-sm show-gt-lg> Rows Per Page: </label>
-        <md-select  aria-label="rows per page" ng-model="rowPerPage" 
-          placeholder="5" class="md-no-underline page-number" hide show-gt-sm show-gt-lg>
-          <md-option ng-repeat="rowOptions in list.limitOptions" ng-value="rowOptions" ng-bind="rowOptions"></md-option>
-        </md-select>-->
-
         <label for="page number select"  class="page-number"> Page: </label>
         <md-select  aria-label="page number select" ng-model="list.query.page" placeholder="1" class="md-no-underline page-number">
           <md-option ng-repeat="options in list.query.pageOptions" ng-value="options"  ng-bind="options"></md-option>

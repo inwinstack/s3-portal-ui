@@ -1,8 +1,8 @@
 export default class ActionNavbarController {
   /** @ngInject */
-  constructor($scope, $manager) {
+  constructor($scope, $manager, $managerNav) {
     Object.assign(this, {
-      $manager,
+      $manager, $managerNav, $scope
     });
 
     $scope.$watch(
@@ -11,6 +11,14 @@ export default class ActionNavbarController {
         selectedOne: newVal.data.filter(({ checked }) => checked).length === 1,
       })
     , true);
+
+    $scope.$watch(
+      () => this.searchText,
+      newVal => $managerNav.searchText = this.searchText
+    , true);
+
+    this.searchText = '';
+    this.showSearchBarInput = false;
   }
 
   createAccountDialog($event) {
@@ -27,5 +35,10 @@ export default class ActionNavbarController {
 
   reset() {
     this.$manager.resetDialog();
+  }
+
+  showSearchBar() {
+    this.searchText = '';
+    this.showSearchBarInput = !this.showSearchBarInput;
   }
 }

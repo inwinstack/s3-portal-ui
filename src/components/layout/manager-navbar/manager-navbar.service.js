@@ -1,13 +1,5 @@
-export default class ActionNavbarService {
+export default class ManagerNavbarService {
   constructor() {
-    this.type = 'BUCKET';
-  }
-
-  setTypeToBucket() {
-    this.type = 'BUCKET';
-  }
-
-  setTypeToFile() {
-    this.type = 'FILE';
+    this.searchText = '';
   }
 }

@@ -1,8 +1,8 @@
 export default class ManagerListController {
   /** @ngInject */
-  constructor($scope, $manager,$timeout) {
+  constructor($scope, $manager, $managerNav, $timeout) {
     Object.assign(this, {
-      $scope, $manager, $timeout
+      $scope, $manager, $managerNav, $timeout
     });
 
     this.$scope.$watch(
@@ -13,6 +13,11 @@ export default class ManagerListController {
     , true);
 
     this.$scope.$watch(
+      () => $managerNav.searchText,
+      newVal => this.searchText = $managerNav.searchText
+    , true);
+
+    this.$scope.$watch(
       () => this.query.page,
       newVal => {
         this.$manager.setListIndex(newVal);
@@ -20,6 +25,8 @@ export default class ManagerListController {
         this.currentIndexEnd = (this.maxPageNumber === this.query.page) ? this.data.count : this.query.page*10;
       }
     ,true);
+
+    this.searchBarShow = false;
 
     this.query = {
       order: 'name',

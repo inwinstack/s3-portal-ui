@@ -1,6 +1,6 @@
 
 /**
- * @author Jamie jamie.h@inwinstack.com
+ * @author Jamie jamie.h@inwinstack.com, Julius julius.j@inwnstack.com
  */
 
 .layout-scrollable {
@@ -25,4 +25,41 @@
 
 #list-container {
   border-right: 4px solid #E0E0E0;
+}
+
+#info-container.ng-hide-remove {
+  flex: 1;
+  transform-origin: right;
+  animation: flexGrow 0.5s ease forwards;
+}
+
+#info-container.ng-hide-remove.ng-hide-remove-active {
+  flex: .000001;
+  opacity: 0;
+}
+
+#info-container.ng-hide-add {
+  flex: .000001;
+  opacity: 0;
+}
+
+#info-container.ng-hide-add-active {
+  opacity: 0.8;
+  flex: 1;
+  transform-origin: right;
+  animation: flexShrink 0.5s ease forwards;
+}
+
+@keyframes flexGrow {
+  to {
+    flex: 1;
+    opacity: 1;
+  }
+}
+
+@keyframes flexShrink {
+  to {
+    flex: .000001;
+    opacity: 0;
+  }
 }

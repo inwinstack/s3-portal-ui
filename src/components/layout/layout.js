@@ -12,6 +12,7 @@ import BreadcrumbService from './breadcrumb/breadcrumb.service';
 import ActionNavbarController from './action-navbar/action-navbar.controller';
 import ActionNavbarTemplate from './action-navbar/action-navbar.html';
 import ActionNavbarService from './action-navbar/action-navbar.service';
+import ManagerNavbarService from './manager-navbar/manager-navbar.service';
 import TransferController from './transfer/transfer.controller';
 import TransferTemplate from './transfer/transfer.html';
 import TransferService from './transfer/transfer.service';
@@ -70,6 +71,7 @@ const Layout = module('layout', [
 .service('$layout', LayoutService)
 .service('$transfer', TransferService)
 .service('$properties', PropertiesService)
+.service('$managerNav', ManagerNavbarService)
 .config(route);
 
 export default Layout.name;
