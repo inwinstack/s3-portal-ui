@@ -16,9 +16,13 @@
   border-bottom: 2px solid #E0E0E0;
 }
 
+#sidebar-container {
+  width: 200px;
+}
+
 #container {
   bottom: 0;
-  top: 154px;
+  top: 64px;
   position: absolute;
   width: 100%;
 }

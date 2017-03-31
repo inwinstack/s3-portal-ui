@@ -1,22 +1,29 @@
 <header id="header-container">
   <div id="top-navbar" layout="row" ui-view="top-navbar"></div>
-
-  <div id="action-navbar" layout="row" ui-view="action-navbar"></div>
-
-  <div id="breadcrumb-container" layout="row" ui-view="breadcrumb"></div>
 </header>
 
 <section id="container" layout="row" class="layout-scrollable">
-  <article id="list-container" flex layout="column" ui-view></article>
+  <div id="sidebar-container">
+    <div layout="row" ui-view="sidebar"></div>
+  </div>
 
-  <article
-    id="info-container" flex layout="column"
-    ng-show="layout.$layout.state.transfers"
-    ui-view="transfer"
-  ></article>
-  <article
-    id="info-container" flex layout="column"
-    ng-show="layout.$layout.state.properties"
-    ui-view="properties"
-  ></article>
+  <div flex layout="column">
+    <div id="action-navbar" layout="row" ui-view="action-navbar"></div>
+    <div id="breadcrumb-container" layout="row" ui-view="breadcrumb"></div>
+    <md-content layout="row" flex>
+    <!--<div >-->
+      <article id="list-container" flex layout="column" ui-view></article>
+      <article
+        id="info-container" flex layout="column"
+        ng-show="layout.$layout.state.transfers"
+        ui-view="transfer"
+      ></article>
+      <article
+        id="info-container" flex layout="column"
+        ng-show="layout.$layout.state.properties"
+        ui-view="properties"
+      ></article>
+    <!--</div>-->
+    <md-content>
+  </div>
 </section>
