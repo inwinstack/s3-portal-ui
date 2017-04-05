@@ -13,6 +13,8 @@ import ActionNavbarController from './action-navbar/action-navbar.controller';
 import ActionNavbarTemplate from './action-navbar/action-navbar.html';
 import ActionNavbarService from './action-navbar/action-navbar.service';
 import ManagerNavbarService from './manager-navbar/manager-navbar.service';
+import SidebarTemplate from './sidebar/sidebar.html';
+import SidebarController from './sidebar/sidebar.controller';
 import TransferController from './transfer/transfer.controller';
 import TransferTemplate from './transfer/transfer.html';
 import TransferService from './transfer/transfer.service';
@@ -22,6 +24,7 @@ import PropertiesService from './properties/properties.service';
 
 import './layout.css';
 import './transfer/transfer.css';
+import './sidebar/sidebar.css';
 
 /** @ngInject */
 const route = $stateProvider => {
@@ -59,6 +62,11 @@ const route = $stateProvider => {
         controller: PropertiesController,
         controllerAs: 'propertie',
       },
+      'sidebar@root': {
+        template: SidebarTemplate,
+        controller: SidebarController,
+        controllerAs: 'sidenav',
+      }
     },
   });
 };

@@ -16,9 +16,13 @@
   border-bottom: 2px solid #E0E0E0;
 }
 
+#sidebar-container {
+  width: 200px;
+}
+
 #container {
   bottom: 0;
-  top: 154px;
+  top: 64px;
   position: absolute;
   width: 100%;
 }
@@ -48,6 +52,10 @@
   flex: 1;
   transform-origin: right;
   animation: flexShrink 0.5s ease forwards;
+}
+
+md-sidenav.md-sidenav-left{
+  min-height: 100%;
 }
 
 @keyframes flexGrow {

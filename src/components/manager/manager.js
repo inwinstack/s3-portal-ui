@@ -7,12 +7,15 @@ import TopNavbarTemplate from '../layout/top-navbar/top-navbar.html';
 import ActionNavbarController from '../layout/action-navbar/action-navbar.controller';
 import ActionNavbarTemplate from '../layout/action-navbar/action-navbar.html';
 import ActionNavbarService from '../layout/action-navbar/action-navbar.service';
+import SidebarTemplate from '../layout/sidebar/sidebar.html';
+import SidebarController from '../layout/sidebar/sidebar.controller';
 import ManagerNavbarController from '../layout/manager-navbar/manager-navbar.controller';
 import ManagerNavbarTemplate from '../layout/manager-navbar/manager-navbar.html';
 import ManagerNavbarService from '../layout/manager-navbar/manager-navbar.service';
 import ManagerService from './manager.service';
 import List	from './list/list';
 import './manager.css';
+import '../layout/sidebar/sidebar.css';
 
 /** @ngInject */
 const route = $stateProvider => {
@@ -32,6 +35,11 @@ const route = $stateProvider => {
       	template: ManagerNavbarTemplate,
       	controller: ManagerNavbarController,
       	controllerAs: 'managerNav',
+      },
+      'sidebar@manager': {
+        template: SidebarTemplate,
+        controller: SidebarController,
+        controllerAs: 'sidenav',
       }
     }
   });

@@ -4,6 +4,8 @@ import router from 'angular-ui-router';
 import UserTemplate from './user.html';
 import TopNavbarController from '../layout/top-navbar/top-navbar.controller';
 import TopNavbarTemplate from '../layout/top-navbar/top-navbar.html';
+import SidebarTemplate from '../layout/sidebar/sidebar.html';
+import SidebarController from '../layout/sidebar/sidebar.controller';
 import ManagerService from '../manager/manager.service';
 import Storage from './storage/storage';
 
@@ -21,6 +23,11 @@ const route = $stateProvider => {
         controller: TopNavbarController,
         controllerAs: 'topNav',
       },
+      'sidebar@user': {
+        template: SidebarTemplate,
+        controller: SidebarController,
+        controllerAs: 'sidenav',
+      }
     }
   });
 };
