@@ -2,6 +2,12 @@
   <div id="top-navbar" layout="row" ui-view="top-navbar"></div>
 </header>
 
-<section layout="row" class="layout-scrollable">
-  <article id="list-container" flex layout="column" ui-view></article>
+<section id="container" layout="row" class="layout-scrollable">
+  <div id="sidebar-container">
+    <div layout="row" ui-view="sidebar"></div>
+  </div>
+
+  <div flex layout="column">
+    <article id="list-container" flex layout="column" ui-view></article>
+  </div>
 </section>

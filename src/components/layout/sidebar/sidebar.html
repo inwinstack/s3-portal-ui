@@ -4,29 +4,24 @@
         <span>Normal</span>
       </div>
     </md-toolbar>-->
-    <md-sidenav md-is-locked-open="true" md-whiteframe="4" class="md-sidenav-left" md-component-id="left" style="width: 90%">
-        <md-list>
-          <md-list-item ng-click="null">
-            <md-icon class="material-icons md-dark md-24">home</md-icon>
-            <p class="md-body-2">Home</p>
-          </md-list-item>
-          <md-divider></md-divider>
-          <md-list-item ng-click="null">
-            <md-icon class="material-icons md-dark md-24">domain</md-icon>
-            <p class="md-body-2">Company</p>
-          </md-list-item>
-          <md-list-item ng-click="null">
-            <md-icon class="material-icons md-dark md-24">store</md-icon>
-            <p class="md-body-2">Branch office</p>
-          </md-list-item>
-          <md-list-item ng-click="null">
-            <md-icon class="material-icons md-dark md-24">business_center</md-icon>
-            <p class="md-body-2">Position</p>
-          </md-list-item>
-          <md-divider></md-divider>
-          <md-list-item ng-click="null">
-            <md-icon class="material-icons md-dark md-24">exit_to_app</md-icon>
-            <p class="md-body-2">Log out</p>
-          </md-list-item>
-        </md-list>
+    <md-sidenav layout="column" md-is-locked-open="true" md-whiteframe="4" class="md-sidenav-left" md-component-id="left" style="width: 95%">
+        <md-content>
+          <md-list>
+            <md-list-item ui-sref="bucket">
+              <md-icon class="material-icons md-dark md-24">cloud</md-icon>
+              <p class="md-body-2" translate>Bucket</p>
+            </md-list-item>
+            <md-divider></md-divider>
+            <md-list-item ui-sref="manager.list">
+              <md-icon class="material-icons md-dark md-24">supervisor_account</md-icon>
+              <p class="md-body-2" translate>MANAGER.USER_LIST</p>
+            </md-list-item>
+            <md-divider></md-divider>
+            <md-list-item ui-sref="user.storage">
+              <md-icon class="material-icons md-dark md-24">account_circle</md-icon>
+              <p class="md-body-2" translate>SETTINGS.ACCOUNT</p>
+            </md-list-item>
+            <md-divider></md-divider>
+          </md-list>
+        </md-content>
     </md-sidenav>

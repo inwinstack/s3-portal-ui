@@ -54,6 +54,10 @@
   animation: flexShrink 0.5s ease forwards;
 }
 
+md-sidenav.md-sidenav-left{
+  min-height: 100%;
+}
+
 @keyframes flexGrow {
   to {
     flex: 1;

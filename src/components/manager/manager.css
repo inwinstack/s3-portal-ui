@@ -3,20 +3,6 @@
  * @author Julius julius.j@inwinstack.com, Jamie jamie.h@inwinstack.com
  */
 
-
-/**
- *  layout container
- */
-
-#manager-list-container {
-  bottom: 0;
-  top: 130px;
-  position: absolute;
-  width: 100%;
-}
-
-/*------------------------------------------------------*/
-
 .file-list  md-list-item > .md-list-item-inner > p {
   padding: 0 15px;
 }

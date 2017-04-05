@@ -13,3 +13,19 @@
 .material-icons.md-48 {
   font-size: 48px;
 }
+
+md-sidenav.md-sidenav-left md-content{
+  height: 91vh;
+}
+
+md-sidenav.md-sidenav-left md-list {
+  padding-top: 0px;
+}
+
+md-sidenav.md-sidenav-left md-list > md-list-item {
+  border-left: solid 5px rgba(0, 0, 0, 0);
+}
+
+md-sidenav.md-sidenav-left md-list > md-list-item:hover {
+  border-left: solid 5px coral;
+}
