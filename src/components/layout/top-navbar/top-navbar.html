@@ -8,55 +8,6 @@
 
     <md-menu md-offset="0 60" md-position-mode="target-right target">
       <md-button
-        aria-label="Settings Menu" class="md-icon-button toolbar-buttons"
-        ng-click="$mdMenu.open($event)"
-      >
-        <md-icon>settings</md-icon>
-      </md-button>
-
-      <md-menu-content>
-        <md-menu-item ng-show="topNav.AuthService.checkAdmin()" ui-sref="manager.list">
-          <md-button aria-label="Account List">
-            <span translate>MANAGER.USER_LIST</span>
-          </md-button>
-        </md-menu-item>
-
-        <md-menu-item ng-show="true" ui-sref="bucket">
-          <md-button aria-label="Bucket">
-            <span translate>Bucket</span>
-          </md-button>
-        </md-menu-item>
-
-        <md-menu-item >
-          <md-button aria-label="My Account" ui-sref="user.storage">
-            <span translate>SETTINGS.ACCOUNT</span>
-          </md-button>
-        </md-menu-item>
-
-        <!--<md-menu-item >
-          <md-button aria-label="Billing and Cost Management">
-            <span translate>SETTINGS.BILLING</span>
-          </md-button>
-        </md-menu-item>
-
-        <md-menu-item >
-          <md-button aria-label="Security Credentials">
-            <span translate>SETTINGS.SECURITY</span>
-          </md-button>
-        </md-menu-item>-->
-
-        <!-- <md-menu-divider></md-menu-divider> -->
-
-        <md-menu-item>
-          <md-button aria-label="Sign Out" ng-click="topNav.signOut($event)">
-            <span translate>SETTINGS.SIGN_OUT</span>
-          </md-button>
-        </md-menu-item>
-      </md-menu-content>
-    </md-menu>
-
-    <md-menu md-offset="0 60" md-position-mode="target-right target">
-      <md-button
         aria-label="Languages" class="md-icon-button toolbar-buttons"
         ng-click="$mdMenu.open($event)"
       >
@@ -68,9 +19,16 @@
           <md-button aria-label="language.name" ng-click="topNav.changeLanguage(language.key)">
             <span>{{ language.name }}</span>
             <md-icon ng-show="language.key === topNav.currentLanguage">done</md-icon>
+            <md-tooltip md-direction="bottom"><span translate>SETTINGS.SELECT_LANGUAGE</span></md-tooltip>
           </md-button>
         </md-menu-item>
       </md-menu-content>
     </md-menu>
+
+    <md-button aria-label="Sign Out" class="md-icon-button toolbar-buttons" 
+      ng-click="topNav.signOut($event)">
+       <md-tooltip md-direction="bottom"><span translate>SETTINGS.SIGN_OUT</span></md-tooltip>
+      <md-icon>exit_to_app</md-icon>
+    </md-button>
   </div>
 </md-toolbar>

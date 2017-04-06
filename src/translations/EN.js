@@ -32,6 +32,7 @@ export default {
       or uploads and leaving now will cancel them.Still leaving?`,
     LEAVE: 'Leave',
     STAY: 'Stay',
+    SELECT_LANGUAGE: 'Choose Language',
   },
   BUCKET: {
     EMPTY_MESSAGE: 'Looks like you don\'t have any Bucket',

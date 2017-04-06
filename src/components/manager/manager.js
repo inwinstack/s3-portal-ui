@@ -39,7 +39,7 @@ const route = $stateProvider => {
       'sidebar@manager': {
         template: SidebarTemplate,
         controller: SidebarController,
-        controllerAs: 'sidenav',
+        controllerAs: 'sideNav',
       }
     }
   });
