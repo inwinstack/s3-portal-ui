@@ -15,7 +15,7 @@
 }
 
 md-sidenav.md-sidenav-left md-content{
-  height: 91vh;
+  height: calc(100vh - 64px);
 }
 
 md-sidenav.md-sidenav-left md-list {
@@ -26,6 +26,26 @@ md-sidenav.md-sidenav-left md-list > md-list-item {
   border-left: solid 5px rgba(0, 0, 0, 0);
 }
 
-md-sidenav.md-sidenav-left md-list > md-list-item:hover {
-  border-left: solid 5px coral;
+md-sidenav.md-sidenav-left md-list > md-list-item.bucket-view:hover {
+  border-left: solid 5px #CE2624;
+}
+
+md-sidenav.md-sidenav-left md-list > md-list-item.bucket-view > md-icon:hover {
+  color: #CE2624;
+}
+
+md-sidenav.md-sidenav-left md-list > md-list-item.userlist-view:hover {
+  border-left: solid 5px #028ED2;
+}
+
+md-sidenav.md-sidenav-left md-list > md-list-item.userlist-view > md-icon:hover {
+  color: #028ED2;
+}
+
+md-sidenav.md-sidenav-left md-list > md-list-item.account-view:hover {
+  border-left: solid 5px #5EA832;
+}
+
+md-sidenav.md-sidenav-left md-list > md-list-item.account-view > md-icon:hover {
+  color: #5EA832;
 }

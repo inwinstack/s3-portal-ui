@@ -31,6 +31,7 @@ export default {
     SIGN_OUT_CONFIRM_MESSAGE: '你有正在進行的操作或上傳檔案，若離開會將它們全部取消。確定要離開嗎？',
     LEAVE: '離開',
     STAY: '留下',
+    SELECT_LANGUAGE: '選擇語言',
   },
   BUCKET: {
     EMPTY_MESSAGE: '看來你目前沒有任何的 Bucket',

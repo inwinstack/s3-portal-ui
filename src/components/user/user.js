@@ -26,7 +26,7 @@ const route = $stateProvider => {
       'sidebar@user': {
         template: SidebarTemplate,
         controller: SidebarController,
-        controllerAs: 'sidenav',
+        controllerAs: 'sideNav',
       }
     }
   });

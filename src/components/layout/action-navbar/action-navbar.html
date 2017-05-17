@@ -138,26 +138,19 @@
     <span flex></span>
 
     <md-button
-      class="md-raised" aria-label="None"
-      ng-click="actionNav.closeSidePanels()"
-      ng-disabled="! (actionNav.properties || actionNav.transfers)"
-    >
-      <span translate>ACTION_NAVBAR.NONE</span>
-    </md-button>
-
-    <md-button
-      class="md-raised" aria-label="Properties"
+      class="md-icon-button" aria-label="Properties"
       ng-click="actionNav.openProperties()" ng-disabled="!actionNav.propertyCheck"
     >
       <md-icon class="material-icons icon-default">info_outline</md-icon>
-      <span translate>ACTION_NAVBAR.PROPERTIES</span>
+      <md-tooltip md-direction="bottom"><span translate>ACTION_NAVBAR.PROPERTIES</span></md-tooltip>
     </md-button>
 
     <md-button
-      class="md-raised" aria-label="Transfers"
+      class="md-icon-button" aria-label="Transfers"
       ng-click="actionNav.openTransfers()" ng-disabled="actionNav.transfers"
     >
-      <span translate>ACTION_NAVBAR.TRANSFERS</span>
+      <md-icon>compare_arrows</md-icon>
+      <md-tooltip md-direction="bottom"><span translate>ACTION_NAVBAR.TRANSFERS</span></md-tooltip>
     </md-button>
 
     <md-button
