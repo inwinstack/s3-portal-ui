@@ -112,7 +112,7 @@ export default class BucketService {
     this.state.lists.requesting = true;
     this.state.lists.data = [];
 
-    this.$fetch.post('/v1/bucket/list')
+    this.$fetch.get('/v1/bucket/list')
       .then(({ data }) => {
         this.state.lists.error = false;
         const buckets = data.Buckets.map(bucket => ({
