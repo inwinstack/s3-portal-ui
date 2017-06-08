@@ -11,13 +11,13 @@
 ## Usage
 
 #### bucket control screenshot
-![bucket control screenshot](https://github.com/inwinstack/s3-portal-ui/blob/dev/screenshots/bucket%20screenshot.png?raw=true)
+![bucket control screenshot](screenshots/bucket%20screenshot.png)
 
 #### userlist screenshot
-![user list screenshot](https://raw.githubusercontent.com/inwinstack/s3-portal-ui/dev/screenshots/userlist%20screenshot.png)
+![user list screenshot](screenshots/userlist%20screenshot.png)
 
 #### storageinfo screenshot
-![storageinfo screenshot](https://raw.githubusercontent.com/inwinstack/s3-portal-ui/dev/screenshots/storage%20screenshot.png)
+![storageinfo screenshot](screenshots/storage%20screenshot.png)
 
 ---
 
@@ -25,13 +25,15 @@
  -  Upload and Download file
  -  CRUD implements of folder
  -  CRUD implements of files
+ -  Copy and Move files and folders
  -  Check file, folder info details
+ -  Personel storage info
 
 ---
 ## Requirement
 
-- used for `Node >= 6.1.0`
-- need for [S3-portal-api](https://github.com/inwinstack/s3-portal-api) with Laravel
+- Used for `Node >= 6.1.0`
+- Need for [S3-portal-api](https://github.com/inwinstack/s3-portal-api) with Laravel
 
 
 
@@ -60,6 +62,9 @@ $ npm start
 ```
 
 `http://localhost:3001` will automatically open with browser-sync.
+
+Need to modify `confg.example.js` to `config.js` and default web server port is 3000
+
 
 ---
 
