@@ -5,28 +5,38 @@
 
 # S3 Portal
 
-> Constructing...
-
-## Requirement
-
-`Node >= 6.1.0`
-
----
-
-## Usage
-
   Used for connect RadosGW to manager S3 portal objects. 
   A web based file manager to upload and download files from your RadosGW server.
 
-![bucket control image](https://github.com/inwinstack/s3-portal-ui/blob/dev/screenshots/bucket%20screenshot.png)
-  
- 
+## Usage
+
+#### bucket control screenshot
+![bucket control screenshot](https://github.com/inwinstack/s3-portal-ui/blob/dev/screenshots/bucket%20screenshot.png?raw=true)
+
+#### userlist screenshot
+![user list screenshot](https://raw.githubusercontent.com/inwinstack/s3-portal-ui/dev/screenshots/userlist%20screenshot.png)
+
+#### storageinfo screenshot
+![storageinfo screenshot](https://raw.githubusercontent.com/inwinstack/s3-portal-ui/dev/screenshots/storage%20screenshot.png)
+
 ---
 
 ## Features
-![enter image description here](https://drive.google.com/open?id=0B4AYJNawWeecaXlwRDlpbEl1OGM)
+ -  Upload and Download file
+ -  CRUD implements of folder
+ -  CRUD implements of files
+ -  Check file, folder info details
 
 ---
+## Requirement
+
+- used for `Node >= 6.1.0`
+- need for [S3-portal-api](https://github.com/inwinstack/s3-portal-api) with Laravel
+
+
+
+---
+
 
 ## Installation
 
