@@ -1,4 +1,5 @@
 
+
 [![Build Status](https://travis-ci.org/inwinstack/s3-portal-ui.svg?branch=dev)](https://travis-ci.org/inwinstack/s3-portal-ui)
 
 
@@ -14,10 +15,16 @@
 
 ## Usage
 
+  Used for connect RadosGW to manager S3 portal objects. 
+  A web based file manager to upload and download files from your RadosGW server.
+
+![bucket control image](https://github.com/inwinstack/s3-portal-ui/blob/dev/screenshots/bucket%20screenshot.png)
+  
+ 
 ---
 
 ## Features
-
+![enter image description here](https://drive.google.com/open?id=0B4AYJNawWeecaXlwRDlpbEl1OGM)
 
 ---
 
