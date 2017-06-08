@@ -6,11 +6,22 @@
 
 > Constructing...
 
-### Requirement
+## Requirement
 
 `Node >= 6.1.0`
 
-### Usage
+---
+
+## Usage
+
+---
+
+## Features
+
+
+---
+
+## Installation
 
 Copy the `./config.example.js` file to `./config.js` and configure the file for your environment:
 
@@ -33,7 +44,9 @@ $ npm start
 
 `http://localhost:3001` will automatically open with browser-sync.
 
-### Build
+---
+
+## Build
 
 Build the bundle js:
 
@@ -48,15 +61,10 @@ You can start the production server:
 ```sh
 $ npm run prod
 ```
+---
 
-### Test
+## Test
 
 ```sh
 $ npm test
-```
-
-### Lint
-
-```sh
-$ npm run lint
 ```

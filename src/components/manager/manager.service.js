@@ -31,7 +31,7 @@ export default class ManagerService {
   getAccounts() {
     this.state.lists.requesting = true;
 
-    return this.$fetch.get('/v1/admin/list/' + this.state.index)
+    return this.$fetch.get('/v1/admin/list/' + this.state.index + '/10')
       .then(({ data }) => {
         this.state.lists.error = false;
         const users = data.users.map(account => ({
