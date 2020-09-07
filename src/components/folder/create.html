@@ -1,0 +1,65 @@
+<md-dialog class="input-dialog" aria-label="Create Folder Dialog">
+  <form name="@A.1">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2 translate>Create Folder</h2>
+        <span flex></span>
+
+        <md-button
+          class="md-icon-button" aria-label="Close Create Folder Dialog"
+          ng-click="@A.2"
+        >
+          <md-icon class="material-icons">clear</md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content">
+        <md-input-container class="md-block">
+          <label translate>Folder Name</label>
+          
+          <md-icon
+            class="icon-default"
+            ng-class="{'md-warn': @A.3}"
+          >create_new_folder</md-icon>
+          
+          <input
+            name="@A.4" required
+            ng-model="@A.5"
+            ng-readonly="@A.6"
+          >
+
+          <span class="md-caption text-warn" ng-show="@A.7">
+            That folder already exists! Please select a different name and try again.
+          </span>
+
+          <span class="md-caption text-warn" ng-show="@A.8">
+            Failed to create folder! Please try again.
+          </span>
+
+          <div ng-messages="@A.9" ng-if="@A.10">
+            <div ng-messages-include="messages.html"></div>
+          </div>
+        </md-input-container>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button aria-label="Cancel" ng-click="@A.2">
+        <span>Cancel</span>
+      </md-button>
+
+      <md-button
+        ng-click="@A.11" type="submit"
+        aria-label="Create" class="md-primary"
+        ng-disabled="@A.12"
+      >
+        <span>Create</span>
+        <md-progress-circular
+          class="md-primary" md-mode="indeterminate"
+          md-diameter="30" ng-show="@A.13"
+        ></md-progress-circular>
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
